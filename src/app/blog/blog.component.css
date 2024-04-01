@@ -1,0 +1,124 @@
+.elementor-19599 .elementor-element.elementor-element-4f9354d {
+    --display: flex;
+    --flex-direction: column;
+    --container-widget-width: 100%;
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --background-transition: 0.3s;
+}
+
+.elementor-19599 .elementor-element.elementor-element-2d649f4 {
+    --display: flex;
+    --flex-direction: column;
+    --container-widget-width: 100%;
+    --container-widget-height: initial;
+    --container-widget-flex-grow: 0;
+    --container-widget-align-self: initial;
+    --background-transition: 0.3s;
+}
+
+.elementor-19599 .elementor-element.elementor-element-0c22284>.elementor-widget-container {
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-post-collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    column-gap: 20px;
+    grid-column-gap: 20px;
+    row-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection {
+    display: block;
+    margin-left: calc(-20px/2);
+    margin-right: calc(-20px/2);
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection .ae-post-item {
+    width: calc(100% / 2);
+    padding-right: calc(20px/2);
+    padding-left: calc(20px/2);
+    margin-bottom: 20px;
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-widget-title-wrap {
+    text-align: center;
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-post-item-inner {
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
+}
+
+.elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-widget-title-inner {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    padding: 0px 10px 5px 10px;
+    margin: 0px 0px 10px 0px;
+}
+
+@media(max-width:1024px) and (min-width:768px) {
+    .elementor-19599 .elementor-element.elementor-element-2d649f4 {
+        --width: 100%;
+    }
+}
+
+@media(max-width:1024px) {
+    .elementor-19599 .elementor-element.elementor-element-4f9354d {
+        --padding-block-start: 2rem;
+        --padding-block-end: 1rem;
+        --padding-inline-start: 4rem;
+        --padding-inline-end: 4rem;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-post-collection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: grid;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection {
+        display: block;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection .ae-post-item {
+        width: calc(100% / 2);
+    }
+}
+
+@media(max-width:767px) {
+    .elementor-19599 .elementor-element.elementor-element-4f9354d {
+        --padding-block-start: 0rem;
+        --padding-block-end: 0rem;
+        --padding-inline-start: 0.5rem;
+        --padding-inline-end: 0.5rem;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-0c22284 .elementor-heading-title {
+        font-size: 2.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-post-collection {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        display: grid;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection {
+        display: block;
+    }
+
+    .elementor-19599 .elementor-element.elementor-element-b57ff33 .ae-masonry-yes .ae-post-collection .ae-post-item {
+        width: calc(100% / 1);
+    }
+}
+
+/* Start custom CSS for container, class: .elementor-element-4f9354d */
+.elementor-19599 .elementor-element.elementor-element-4f9354d {
+    margin-top: 100px;
+}
+
+/* End custom CSS */

@@ -1,0 +1,7087 @@
+#btnOptionCC {
+
+  /* width: 330px; */
+  width: 380px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+:host ::ng-deep .ML__virtual-keyboard-toggle,
+:host ::ng-deep .ML__menu-toggle {
+  background-color: white;
+  /* Add white background */
+}
+
+
+
+
+
+
+:host math-field::part(virtual-keyboard-toggle) {
+  color: white !important;
+  z-index: 21000000000;
+  /* background-color: white; */
+}
+
+/* Hide the menu toggle */
+:host math-field::part(menu-toggle) {
+  display: none;
+}
+
+math-field {
+  --caret-color: white;
+  --placeholder-color: white;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  /* Adjust the width as needed */
+  cursor: pointer;
+  /* Adjust other styles as needed */
+
+}
+
+.miniBTN {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer
+}
+
+.imgSet {
+  object-fit: cover;
+  background-size: cover;
+}
+
+
+.panelBoxOption {
+  padding: 0 15px;
+  margin-top: 2px;
+  display: none;
+  color: black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#INFOComm {
+  height: 360px;
+  overflow-y: auto;
+}
+
+.microphoneOn {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 30px;
+  transform: translate(-50%, -50%)
+}
+
+.microphoneMobile {
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  transform: translate(-50%, -50%);
+
+}
+
+.ccBoxNew {
+  position: absolute;
+  justify-content: center;
+  /* left: 17%;
+  right: 80px; */
+  /* width: 45%; */
+  width: 680px;
+  /* margin-right: 45px; */
+  align-items: center;
+  z-index: 1100000;
+  bottom: 70px;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 8px;
+}
+
+
+.btnn:disabled {
+  opacity: .0.5 !important;
+}
+
+.btnn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 0px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+
+
+}
+
+
+.settingHeading {
+  color: white;
+  font-size: 14px;
+  margin-left: 8px;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.20px;
+  word-wrap: break-word
+}
+
+.exitPresentBtn {
+  display: flex;
+  background-size: 20px 20px;
+  top: -15px;
+  /* right: -10px; */
+  right: -24px;
+  /* right: 0px; */
+  cursor: pointer;
+  position: fixed;
+  margin: 30px;
+  z-index: 600;
+}
+
+.edyouLoaderWhite {
+  width: 50px;
+  margin-top: -35px;
+  margin-bottom: 30px
+}
+
+
+/* ----- according start --------- */
+
+
+.accordions {
+  background: rgba(0, 0, 0, 0.80);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-radius: 8px;
+}
+
+
+
+.panels {
+  padding: 0 18px;
+  display: none;
+  color: white;
+  background-color: black;
+  overflow: hidden;
+}
+
+/* ----- according end --------- */
+
+
+.commonstyle {
+  cursor: pointer;
+  ;
+  margin-top: -28px;
+}
+
+.feedbackstyle {
+  cursor: pointer;
+  margin-top: -2px;
+  margin-left: -5px;
+}
+
+.exittestPRep {
+  width: 40px;
+  cursor: pointer;
+  z-index: 110000;
+}
+
+/* .avatarGPTLoader{
+  width: 30px;
+  height: 30px;
+} */
+
+.buttMicColor {
+  background-color: blue;
+}
+
+.borderforCircle {
+  border-radius: 30px !important;
+}
+
+.borderforEdge {
+  border-radius: 1px !important;
+}
+
+
+.hidewidget {
+  display: none;
+}
+
+.tree {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.nextButTestseries {
+  /* margin-left: 15px; */
+  margin-right: 10px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  z-index: 1400000;
+  /* width: 120px; */
+  color: black;
+  bottom: 700px;
+  backdrop-filter: blur(2px);
+  -webkit-overflow-scrolling: touch;
+  /* Add this property */
+}
+
+
+.text-button {
+  display: block;
+  background: rgba(255, 255, 255, 0.30);
+  border: none;
+  backdrop-filter: blur(20px);
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  margin-left: 3px;
+  margin-bottom: 5px;
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px auto;
+  font-family: 'DM Sans Regular', sans-serif;
+  line-height: 40px;
+}
+
+.list-button {
+  display: block;
+  /* background-color: #fff;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6); */
+  text-align: center;
+  color: white;
+  /* color: rgb(15, 15, 15); */
+  font-weight: 400;
+  cursor: pointer;
+  /* width: 40%; */
+  width: 90%;
+  border-radius: 5px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  /* margin: 15px auto; */
+  /* font-family: 'Intelo-SemiBold', sans-serif; */
+  font-family: 'DM Sans Regular', sans-serif;
+  line-height: 40px;
+}
+
+.apprachbutton {
+  display: block;
+  background-color: #fff;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  color: black;
+
+  font-weight: 400;
+  cursor: pointer;
+  width: 90%;
+  /* height: 40px; */
+  border-radius: 5px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  font-family: 'DM Sans Regular', sans-serif;
+  line-height: 40px;
+}
+
+.methods {
+  color: white;
+  position: relative;
+  margin-left: 25px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 82px;
+  left: 35px;
+  z-index: 100;
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+}
+
+
+.cc_subtitle {
+  position: absolute;
+  /* bottom: 97px; */
+  bottom: 64px;
+  /* left: 48px; */
+  left: 35px;
+  z-index: 1100000;
+  width: 42px;
+
+  font-size: 18px;
+  border-radius: 21%;
+  cursor: pointer;
+}
+
+
+
+
+.mathsInputSize {
+  width: 200px;
+}
+
+
+.feedbackrules {
+  position: absolute;
+  /* bottom: 235px; */
+  bottom: 191px;
+  left: 50px;
+  z-index: 100;
+  width: 47px;
+  height: 47px;
+  font-size: 18px;
+}
+
+.cc_icon {
+  width: 47px;
+  cursor: pointer;
+}
+
+.feedback_icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+}
+
+.feedbackImage {
+  width: 32px;
+}
+
+.mic_Icon {
+  width: 49px;
+  height: 49px;
+}
+
+.setting {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+}
+
+.chat_icon {
+  width: 50px;
+}
+
+/* .cc_icon:hover,
+.chat_icon:hover {
+  border-radius: 15px;
+  box-shadow: white 0px 5px 15px;
+
+
+} */
+
+.Mic:hover {
+  border-radius: 13px;
+  box-shadow: white 0px 5px 15px;
+}
+
+.avatar_icon {
+  height: 48px;
+  /* border-radius: 10px; */
+  border-radius: 4px;
+
+}
+
+/* .avatar_icon:hover {
+  border-radius: 10px;
+  background-color: #ececec;
+  box-shadow: rgba(40, 41, 42, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+} */
+
+
+.cc_image {
+  width: 56px;
+  height: 56px;
+}
+
+.cc_image_mobile {
+  width: 45px;
+  height: 45px;
+}
+
+.chatSize {
+  width: 59px;
+  height: 59px;
+}
+
+.chatSize_mobile {
+  width: 45px;
+  height: 45px;
+}
+
+
+
+.zz {
+  z-index: 10000;
+}
+
+.bottomleft-large {
+  position: absolute;
+  /* bottom: 43px; */
+  bottom: 15px;
+  /* bottom: 90px; */
+  left: 47px;
+  z-index: 100;
+  width: 47px;
+  height: 47px;
+}
+
+.bottomStopSpeaking {
+  position: absolute;
+  bottom: 35%;
+  left: 31%;
+  z-index: 100;
+  cursor: pointer;
+  width: 47px;
+  height: 47px;
+}
+
+.stopIcon {
+  position: relative;
+  width: 130px;
+
+}
+
+.hand_mobile {
+  width: 45px;
+  height: 45px;
+}
+
+.full_screen {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+  z-index: 100;
+}
+
+.coverbottomOnMobile {
+  background-color: #F6F6F6;
+
+
+}
+
+
+video {
+  /* override other styles to make responsive */
+  /* width: 100% !important;
+  height: auto !important; */
+}
+
+
+.pppp {
+  /* margin-top: 58px; */
+  width: 330px;
+  height: 300px;
+}
+
+.bbb {
+  width: 100%;
+  height: 100%
+}
+
+.barrr {
+  position: fixed;
+  z-index: 5;
+
+  bottom: 50px;
+  margin: 30px;
+  background-color: #fff;
+  border-radius: 1000px;
+  box-shadow: 0px 0px 10px 0px #ccc;
+  padding: 5px;
+  width: 400px;
+
+}
+
+.bottomChat-voice {
+  position: absolute;
+
+  bottom: 23px;
+  right: 115px;
+  z-index: 1100000;
+  width: 32px;
+  height: 32px;
+  font-size: 17px;
+}
+
+
+
+.centerDiv {
+  display: flex;
+  justify-content: right;
+
+}
+
+.speakingsss_large {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  /* right: 10px; */
+  right: -16px;
+  cursor: pointer;
+  position: fixed;
+  margin: 30px;
+  z-index: 600;
+}
+
+
+.rightDiv {
+  /* display: flex;
+  justify-content: right; */
+  /* display: flex; */
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-right: 14px;
+
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: -25px; */
+
+  /* Vertically align image within its container */
+}
+
+
+
+
+.rightDiv-large {
+  display: flex;
+
+  justify-content: right;
+  margin-top: -90px;
+  margin-right: 97px;
+
+}
+
+
+.spaceInText{
+  font-size: 14px;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.20px;
+  word-wrap: break-word;
+}
+
+.userVideo {
+  position: absolute;
+  /* top: 100px;  */
+  width: 100%;
+  height: 100%;
+}
+
+.showI {
+  display: none !important;
+}
+
+.peerVideo {
+  position: flex;
+  z-index: 30000;
+  /* height: 100%; */
+  /* height: 200px;
+    width: 200px; */
+  /* border:5px solid blue; */
+}
+
+
+.leftArrowIcon {
+  width: 25px;
+  position: relative;
+  left: 15px;
+  top: 10px;
+}
+
+
+.feedbox {
+  position: flex;
+  z-index: 60000;
+  height: 100%;
+  margin-top: -10px;
+  /* height: 200px;
+    width: 200px; */
+  /* border:5px solid blue; */
+}
+
+.textDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  bottom: 20px;
+}
+
+.zindex {
+  z-index: 198000000;
+  cursor: pointer;
+}
+
+.fc {
+  z-index: 10000000;
+
+  bottom: 82px;
+
+  font-size: 18px;
+}
+
+.bg-avatar {
+  background: rgb(62, 173, 207);
+  background: linear-gradient(90deg, rgba(62, 173, 207, 1) 40%, rgba(171, 233, 205, 1) 100%);
+}
+
+.uneeqAvatar {
+  /* margin-top: 27px; */
+  /* width: 100%;
+  margin-top: -5px;  */
+
+  width: 80%;
+  /* background-color: red; */
+  /* margin-top: 20px; */
+  margin-top: 0px;
+  border-radius: 10px;
+  margin-left: -10px;
+
+}
+
+.uneeqAv {
+  /* width: 100%; */
+  margin-top: -42px;
+  position: absolute;
+  /* bottom: 0; */
+  bottom: 80px;
+  /* margin-top: -40px; */
+  /* position: fixed; */
+  /* bottom: -7px; */
+
+  /* margin-top: -7px; */
+}
+
+.uneeqLearning {
+
+  z-index: 500000;
+
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version */
+}
+
+
+.userQuesClass {
+  margin: 4px 4px 4px 4px;
+  padding: 4px;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+
+.imgTest {
+  /* background-color:#474A46 ; */
+  /* background: linear-gradient(#1961A9, #26255F ); */
+  background-color: #003A73;
+  /* background-color: #00437e; */
+  /* background-image: url('../../../../assets/interaction/edyou-blue-bg.png'); */
+
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-size: 200px 100px; */
+  overflow-y: auto;
+}
+
+.ImageAspectRatio {
+
+  height: auto;
+  /* sets the height of the image to adjust to its original aspect ratio */
+  width: auto;
+  /* sets the width of the image to adjust to its original aspect ratio */
+  max-height: 100%;
+  /* ensures that the image does not extend beyond the height of the card */
+  display: block;
+  /* to ensure that the image is centered within the card */
+  margin: auto;
+  /* centers the image horizontally within the card */
+
+}
+
+
+.card-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  background-repeat: repeat;
+  background-size: cover;
+  overflow-y: auto;
+}
+
+.snakbarCard {
+  position: absolute;
+  justify-content: center;
+  left: 40%;
+  right: 80px;
+  width: 310px;
+  align-items: center;
+  z-index: 1100000;
+  bottom: 60px;
+}
+
+
+.bottomboxSize {
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  /* height: 75px; */
+  height: 68px;
+  align-items: center;
+  z-index: 1100000;
+  bottom: -1px;
+  background: rgba(37, 43, 66, 0.70);
+  backdrop-filter: blur(20px)
+}
+
+
+.ExplainTestBox {
+  display: flex;
+  justify-content: right;
+  width: 94%;
+  height: 30px;
+}
+
+.avatarspeak {
+  position: absolute;
+  justify-content: center;
+  left: 27.5%;
+  right: 80px;
+  width: 47.5%;
+  align-items: center;
+  z-index: 1100000;
+  /* bottom: 83px; */
+  bottom: 70px;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  border-radius: 8px;
+
+}
+
+
+.ava {
+  border: 0px solid #ddd;
+  z-index: 1400000;
+  text-align: left;
+  padding: 12px;
+  width: calc(100% - 50px);
+  margin: 4px 4px 4px 10px;
+  background-color: #fff;
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 10px 0px #ccc; */
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+  z-index: 1400000;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'DM Sans Regular', sans-serif;
+}
+
+.buttonToOpenLink {
+
+  color: #fff;
+  text-align: center;
+  width: 150px;
+  float: left;
+  margin: 15px;
+  /* font-family: 'Intelo-SemiBold', sans-serif; */
+  font-family: 'DM Sans Regular', sans-serif;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 15px;
+
+
+}
+
+
+.avatarspeak-s {
+  border: 0px solid #ddd;
+  /* width: calc(100% - 50px); */
+  margin: 4px 4px 4px 4px;
+  /* padding: 3px; */
+  padding: 4px;
+  height: 100%;
+  /* max-height: 160px; */
+  max-height: 150px;
+  overflow-y: auto;
+  line-height: 26px;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'DM Sans Regular', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  /* Add this property */
+}
+
+
+
+.hideMessage {
+  display: none;
+}
+
+.showMessage {
+  display: block !important;
+
+}
+
+
+.QuestionCardss {
+  position: absolute;
+  right: 10;
+}
+
+.colorCode {
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 10px 0px #ccc; */
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+.playerOnePPT {
+  margin-left: 10px;
+  margin-top: -25px;
+  float: left;
+  z-index: 1400000;
+
+  /* width: 650px; */
+  width: 750px;
+  color: black;
+}
+
+
+.playerOne {
+  /* margin-left: 15px; */
+  margin-left: 50px;
+  position: sticky;
+  float: left;
+  z-index: 1400000;
+  width: 500px;
+  color: black;
+  bottom: 700px;
+  font-family: 'DM Sans Regular', sans-serif;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.playerTwo {
+  margin-right: 20px;
+  float: right;
+  z-index: 1400000;
+  width: 490px;
+  color: black;
+  bottom: 700px;
+  font-family: 'DM Sans Regular', sans-serif;
+  /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6); */
+  /* border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #ccc; */
+  padding: 5px;
+}
+
+.playerThree {
+  /* margin-right: 20px; */
+  margin-right: 25px;
+  float: right;
+  z-index: 1400000;
+  width: 400px;
+  color: white;
+  bottom: 700px;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* .playerThree {
+  margin-right: 20px;
+  float: right;
+  z-index: 1400000;
+  width: 400px;
+  color: white;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  bottom: 700px;
+  -webkit-overflow-scrolling: touch;
+} */
+
+.descptionContent {
+  padding: 5px;
+  margin-top: 10px;
+  color: white;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 8px;
+  backdrop-filter: blur(15px);
+}
+
+
+.panelss {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+
+.scroll-content {
+  animation: scroll 30s linear;
+  /* Adjust the animation duration (30s) as needed */
+}
+
+@keyframes scroll {
+  0% {
+    top: 0;
+  }
+
+  20% {
+    top: 0;
+    /* Initial delay to read the content */
+  }
+
+  100% {
+    top: -100%;
+    /* Scroll the content to the bottom (-100% means moving out of the container's view) */
+  }
+}
+
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 10px 0px #ccc; */
+
+  background: #a7adc5
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 10px 0px #ccc; */
+  background: #c5c8d3
+}
+
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  /* background-color: transparent; */
+}
+
+
+.accordion {
+  z-index: 1400000;
+}
+
+.QuestionCard {
+
+  margin-left: 15px;
+  z-index: 100;
+  width: 490px;
+  /* height: 450px; */
+  color: black;
+  float: left;
+  bottom: 700px;
+  background-color: #fff;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  /* box-shadow: 0px 0px 10px 0px #ccc; */
+  padding: 5px;
+}
+
+.QuestionCardRight {
+  /* 
+    margin-right: 30px; */
+  position: absolute;
+  align-items: center;
+  z-index: 100;
+  width: 510px;
+  /* height: 450px; */
+  color: black;
+
+  float: left;
+  bottom: 700px;
+
+  background-color: #fff;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px #ccc;
+  padding: 5px;
+  /* height: 400px;
+      cursor: pointer;
+      z-index: 100;
+         overflow-y: scroll ; */
+}
+
+
+.userMessageCard {
+
+  top: 66px;
+  margin-right: 30px;
+  z-index: 1000;
+  width: 510px;
+  /* height: 450px; */
+  color: black;
+
+  float: left;
+  bottom: 600px;
+
+  background-color: #fff;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px #ccc;
+  padding: 5px;
+  /* height: 400px;
+      cursor: pointer;
+      z-index: 100;
+         overflow-y: scroll ; */
+
+}
+
+
+.fixing {
+
+  background-color: red;
+}
+
+.refreshbtnPPT {
+  display: flex;
+  top: -35px;
+  float: right;
+  position: relative;
+  height: 30px;
+  right: 20px;
+}
+
+.ML__virtual-keyboard-toggle .ML__menu-toggle {
+  background: white !important;
+  color: #f4dddd !important;
+  fill: currentColor;
+}
+
+
+/* 
+  >>>>>>>>>>>>> mic animation css */
+
+
+/* ------------------  test series design css -------------------------------------------------- */
+
+.group-container {
+  left: 50px;
+  top: 30px;
+  position: relative
+}
+
+.firstBoxOption {
+  width: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 18px; */
+
+  min-height: 55px;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(20px);
+
+  border-radius: 6px 0 0 6px;
+
+}
+
+.secondBoxoption {
+
+  /* width: 240px; */
+  width: 288px;
+  margin-left: 6px;
+  display: flex;
+  line-height: 15px;
+  font-size: 11px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(20px);
+  min-height: 55px;
+  padding-left: 10px;
+  color: white;
+  padding-right: 28px;
+  text-align: left;
+  /* padding-top: 8px;
+  padding-bottom: 8px; */
+
+  border-radius: 0 7px 7px 0;
+}
+
+.button-1 {
+  color: white;
+  position: relative;
+  /* top: 10px; */
+  font-size: 24px;
+  font-family: DM Sans;
+  font-weight: 900;
+  line-height: 32px;
+  word-wrap: break-word
+}
+
+.button-12 {
+  color: white;
+  display: flex;
+  font-size: 11px;
+  position: relative;
+  top: 10px;
+  justify-content: start;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 15px;
+  word-wrap: break-word;
+}
+
+.question-5-of {
+  color: white;
+  font-size: 24px;
+  font-family: DM Sans;
+  font-weight: 600;
+  line-height: 32px;
+  word-wrap: break-word
+}
+
+.questionTextTest {
+  color: white;
+  font-size: 16px;
+  font-family: DM Sans;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.20px;
+  word-wrap: break-word
+}
+
+.rectangle-parent {
+  padding: 15px;
+  margin-left: -15px;
+  margin-top: 8px;
+  color: white;
+  max-height: 160px;
+  /* max-height: 190px; */
+  /* width: 92%; */
+  width: 98%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.30);
+  border-radius: 8px;
+  /* backdrop-filter: blur(20px) */
+}
+
+.explanation {
+  color: white;
+  font-size: 24px;
+  font-family: DM Sans;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 10px;
+  word-wrap: break-word
+}
+
+
+/* ------------------ end   test series design css -------------------------------------------------- */
+
+
+
+.mic-icon {
+  height: 26px;
+  position: absolute;
+  margin: 15px;
+}
+
+
+.bottomright {
+  position: absolute;
+  bottom: 1px;
+  /* right: 15px; */
+  right: 1px;
+  z-index: 1100000;
+  width: 33px;
+  height: 33px;
+  font-size: 17px;
+}
+
+.bottomChat {
+  position: absolute;
+
+  bottom: 1px;
+  /* right: 74px; */
+  right: 40px;
+  z-index: 1600000;
+  width: 32px;
+  height: 32px;
+  font-size: 17px;
+}
+
+.bottom-avatarOn {
+  position: absolute;
+  bottom: 70px;
+  right: 12px;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+}
+
+/* 
+  >>>>>>>>>>>>> end */
+
+/* //tooltip  */
+
+/* B-st = Top style tip */
+/* Right */
+
+/* // voice css animation  */
+
+
+
+.containerss {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  background: #f25d23;
+  margin-right: 1rem;
+}
+
+
+
+
+.voice-animation {
+  width: 4px;
+  height: 12px;
+  background: #ffffff;
+  animation: listening 1s ease-in-out infinite;
+  animation-delay: 0.4s;
+
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.voice-animation:after,
+.voice-animation:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  background: #ffffff;
+  animation: listening 1s ease-in-out infinite;
+}
+
+.voice-animation:before {
+  right: 9px;
+  animation-delay: 0.2s;
+}
+
+.voice-animation:after {
+  left: 9px;
+  animation-delay: 0.6s;
+}
+
+@keyframes listening {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 #ffffff, 0 0 0 #ffffff;
+  }
+
+  50% {
+    box-shadow: 0 -4px 0 #ffffff, 0 4px 0 #ffffff;
+  }
+}
+
+/* // vvv */
+/* Base styles for the element that has a tooltip */
+.OnOff {
+  width: 50px;
+}
+
+/* @media only screen and (min-device-width: 820px) and (max-device-width: 1180px) {
+  
+    } */
+
+
+.slide-right,
+.slide-left {
+  width: 100%;
+}
+
+/***** Slide Right *****/
+.slide-left {
+  animation: 1s slide-left;
+}
+
+@keyframes slide-left {
+  from {
+    margin-right: -100%;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
+
+.Qimage {
+  height: 320px;
+  max-width: 470px;
+}
+
+
+/* //ripple effects */
+
+
+.glowBut {
+
+  /* box-shadow: 0 0 10px 5px #4d7387, 0 0 20px 7px #ebecca, 0 0 15px 10px #48cddc; */
+
+  /* box-shadow: 0 0 10px 1px #3ea9e1, 0 0 10px 7px #13aec0, 0 0 100px 10px #0de4e3;  */
+
+  /* box-shadow: 0 0 10px 1px #3ea9e1, 0 0 100px 7px #13aec0, 0 0 10px 10px #335e5e; */
+
+  /* box-shadow: 0 0 15px 5px #070707, 0 0 25px 10px #1cdbf1, 0 0 50px 10px #0de4e3; */
+
+  /* box-shadow: 0 0 15px 2px #070707, 0 0 20px 15px #1cdbf1, 0 0 80px 15px #0de4e3; */
+  /* 
+  box-shadow: 0 0 30px 3px #CF8C11; */
+
+  box-shadow: 0 0 20px 3px #CF8C11;
+}
+
+.btn-ripple {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  line-height: 25px;
+  transition: all ease-in-out .5s;
+}
+
+.btn-ripple::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  height: 100%;
+  width: 50%;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all ease-in-out 1s;
+  transform: scale(5, 5);
+}
+
+.btn-ripple:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: .2;
+  transition: 0s;
+  transform: scale(0, 0);
+}
+
+/* ///end */
+
+
+.centerUserCC {
+  display: flex !important;
+  justify-content: center !important;
+
+}
+
+.centerDiv {
+  display: flex;
+  align-items: center;
+  /* margin: 8px 0 8px 0; */
+}
+
+.group-item {
+
+  background-color: rgba(255, 255, 255, 0.20);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  width: 600px;
+  /* height: 60px; */
+  /* height: 55px; */
+  border: 0px;
+}
+
+.group-item ::placeholder {
+  /* Most modern browsers support this now. */
+  color: white;
+}
+
+.group-icon,
+.group-inner {
+
+  width: 60px;
+  height: 60px;
+}
+
+.box-1 {
+  /* width: 600px; */
+  width: 560px;
+  height: 100px;
+  /* Set the height as needed */
+  /* margin: 4px; */
+  margin: 2px;
+  float: left;
+}
+
+.box-2,
+.box-3 {
+  width: 55px;
+  height: 100px;
+  /* Set the height as needed */
+  margin: 4px;
+  /* margin: 0px; */
+  float: left;
+  cursor: pointer;
+}
+
+
+.box-3 {
+  width: 55px;
+  height: 100px;
+  /* Set the height as needed */
+  margin: 4px;
+  /* margin: 0px; */
+  float: left;
+  cursor: pointer;
+}
+
+.box-2 {
+  margin-left: 0px;
+}
+
+.box-3 {
+  margin-left: 0px;
+  /* Add margin between the second and third box */
+}
+
+.rightSideSetting {
+  background-color: red;
+  width: 60px;
+  height: 50px;
+  margin-left: auto;
+
+}
+
+.newIconSize {
+  width: 60px;
+  /* height: 59px; */
+  height: 55px;
+}
+
+.newIconSizeMobile {
+  width: 50px;
+  /* height: 59px; */
+  height: 50px;
+}
+
+
+
+/** toggle switch */
+
+/* The switch - the box around the slider */
+
+/* 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 29px;
+
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} */
+
+
+
+/* Genel stil */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 10px;
+
+
+  z-index: 1400000;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+  display: none;
+}
+
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 24px;
+  background-color: grey;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked+.toggle-label {
+  background-color: #4CAF50;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+  background-color: #BEBEBE;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label {
+  background-color: #9B9B9B;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label::before {
+  transform: translateX(6px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+  background-color: #4B4B4B;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label {
+  background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+
+
+.mathematicsText {
+  color: white;
+  margin-left: 8px;
+  margin-top: -5px;
+  font-size: 16px;
+  font-family: DM Sans;
+  /* font-weight: 700; */
+  line-height: 24px;
+  word-wrap: break-word;
+  position: relative;
+
+  z-index: 1400000;
+}
+
+/* end toggle */
+
+
+
+
+/* dropdown new design with .newIcon  */
+
+
+.chevron-left-icon,
+.chevron-left-icon1,
+.chevron-left-icon2 {
+  position: absolute;
+  height: 11.94%;
+  width: 4.38%;
+  top: 13.43%;
+  right: 4.66%;
+  bottom: 74.63%;
+  left: 90.96%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.chevron-left-icon1,
+.chevron-left-icon2 {
+  top: 44.78%;
+  bottom: 43.28%;
+}
+
+.chevron-left-icon2 {
+  top: 75.37%;
+  bottom: 12.69%;
+}
+
+.group-child1,
+.vector-icon {
+  left: 15px;
+  max-height: 100%;
+  width: 335px;
+}
+
+.vector-icon {
+  position: absolute;
+  top: 46px;
+}
+
+.group-child1 {
+  top: 87px;
+}
+
+.cc,
+.group-child1,
+.icon {
+  position: absolute;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.cc {
+  height: 66.88%;
+  width: 75%;
+  color: white;
+  top: 16.88%;
+  left: 11.25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-parent {
+  position: absolute;
+  height: 59.26%;
+  width: 18.6%;
+  top: 22.22%;
+  right: 81.4%;
+  bottom: 18.52%;
+  left: 0;
+}
+
+.captions {
+  position: absolute;
+  top: 0;
+  left: 26px;
+  color: white;
+  /* font-size: var(--font-size-sm); */
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  line-height: 27px;
+  text-align: left;
+}
+
+.group-div {
+  position: absolute;
+  height: 20.15%;
+  width: 23.56%;
+  top: 8.96%;
+  right: 72.05%;
+  bottom: 70.9%;
+  left: 4.38%;
+  text-align: center;
+  font-size: 8px;
+}
+
+.group-child2 {
+  position: absolute;
+  height: 66.67%;
+  width: 32.14%;
+  top: 18.52%;
+  right: 67.86%;
+  bottom: 14.81%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.help {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 14px;
+  left: 26px;
+  width: 130px;
+  letter-spacing: 0.2px;
+  line-height: 27px;
+}
+
+.group-child3,
+.group-parent1 {
+  position: absolute;
+  height: 20.15%;
+  width: 15.34%;
+  top: 70.15%;
+  right: 80.27%;
+  bottom: 9.7%;
+  left: 4.38%;
+}
+
+.group-child3 {
+  height: 66.67%;
+  width: 15.38%;
+  top: 18.52%;
+  right: 84.62%;
+  bottom: 14.81%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.talking-speed-parent,
+.vector-group {
+  position: absolute;
+  top: 53px;
+  z-index: 12000000;
+  left: 16px;
+  width: 117px;
+  height: 27px;
+
+
+}
+
+.vector-group {
+  /* top: 400px;
+  left: 997px; */
+  backdrop-filter: blur(12px);
+  width: 365px;
+  height: 134px;
+  font-size: var(--font-size-sm);
+}
+
+
+.dropBoxNew {
+  /* position: absolute;
+  bottom: 260px;
+  right: 380px;
+  z-index: 1100000;
+  font-size: 17px; */
+
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1100000;
+  font-size: 17px;
+
+}
+
+/* end new dropdown  */
+
+
+
+/* tooltip */
+
+/* ***************tooltip for Avtar hide ************** */
+.bottomChat .tooltipAvatar {
+  position: absolute;
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0px;
+  /* margin: 5px; */
+  /* border-radius: 7px; */
+  bottom: 15px;
+  right: 105%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.bottomChat:hover .tooltipAvatar {
+  visibility: visible;
+
+}
+
+.bottomChat .tooltipAvatar::after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* **********type input*** */
+.bottomChat .typeinput {
+  position: absolute;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0px;
+  /* margin: 5px; */
+  /* border-radius: 7px; */
+  bottom: 15px;
+  right: 105%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.bottomChat:hover .typeinput {
+  visibility: visible;
+  z-index: 1;
+  position: absolute;
+}
+
+.bottomChat .typeinput::after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+
+}
+
+.tooltipoff .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  margin-left: -135px;
+  margin-top: 40px;
+}
+
+
+.tooltipoff:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltipoff .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* // maths toggle tooltip */
+
+/* .mathsONN .image-container {
+  visibility: hidden;
+  display: none;
+  align-items: center;
+  
+}
+
+.image-container:hover .mathsONN {
+  visibility: visible;
+}
+
+.image-container   .mathsONN:after {
+  content: " ";
+  position:absolute;
+  top: 60%;
+  left: 100%; 
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+
+} */
+
+/* mic-button */
+.bottomright .mic {
+  position: absolute;
+  visibility: hidden;
+  width: 270px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0px;
+  /* margin: 5px; */
+  border-radius: 7px;
+  bottom: 15px;
+  right: 105%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.bottomright:hover .mic {
+  visibility: visible;
+
+}
+
+.bottomright .mic:after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+
+}
+
+/* feedback tooltip */
+.feedbackrules .feedback {
+  visibility: hidden;
+  width: 90px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 5px;
+  left: 109%;
+  position: absolute;
+  z-index: 1;
+}
+
+.feedbackrules:hover .feedback {
+  visibility: visible;
+}
+
+.feedbackrules .feedback::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* cc */
+.cc_subtitle .cc {
+  visibility: hidden;
+  width: 50px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 5px;
+  left: 90%;
+  position: absolute;
+  z-index: 10000;
+}
+
+.cc_subtitle:hover .cc {
+  visibility: visible;
+}
+
+.cc_subtitle .cc::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+
+}
+
+/* info */
+.rules .info {
+  visibility: hidden;
+  width: 50px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 5px;
+  left: 90%;
+  position: absolute;
+  z-index: 100000;
+
+}
+
+.rules:hover .info {
+  visibility: visible;
+
+}
+
+.rules .info::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* stop avtar while speaking/ */
+.stopavatar .stop {
+  visibility: hidden;
+  width: 200px;
+  font-size: 13px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 5px;
+  left: 105%;
+  position: absolute;
+
+}
+
+.stopavatar:hover .stop {
+  visibility: visible;
+}
+
+.stopavatar .stop::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+
+}
+
+/* maximize */
+.speakingsss .max {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  /* bottom: 2px; */
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.speakingsss:hover .max {
+  visibility: visible;
+}
+
+.speakingsss .max::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* min */
+.speakingsss .min {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  bottom: -8px;
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.speakingsss:hover .min {
+  visibility: visible;
+
+}
+
+.speakingsss .min::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+@media only screen and (max-width: 1200px) {
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+
+}
+
+
+
+
+/* ipad air */
+@media all and (device-width: 820px) and (device-height: 1180px) and (orientation:portrait) {
+
+  /* .uneeqAvatar{
+    width: 85%;
+    margin-top: 0px;
+    border-radius: 10px;
+    margin-left: -30px;
+  } */
+  #btnOptionCC {
+    width: 370px !important;
+  }
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 570px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 94%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 4px;
+    height: 100%;
+    max-height: 130px;
+    overflow-y: auto;
+    line-height: 26px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 90% !important;
+    height: 30px;
+  }
+
+  .firstBoxOption {
+    width: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 18px; */
+
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .secondBoxoption {
+    width: 300px !important;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .box-2 {
+    /* width: 0px; */
+    height: 100px;
+    margin: 2px;
+    /* margin: 4px; */
+    float: left;
+    cursor: pointer;
+  }
+
+
+  .box-3 {
+    /* width: 0px; */
+    height: 100px;
+    margin: 2px;
+    /* margin: 4px; */
+    float: left;
+    cursor: pointer;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 17%;
+    right: 80px;
+    width: 71%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .QuestionCard {
+    position: flex;
+    margin-right: 30px;
+    align-items: center;
+    z-index: 100000;
+    width: 750px;
+    /* height: 450px; */
+    color: black;
+
+    float: right;
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    padding: 5px;
+
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 300px;
+    max-width: 400px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 390px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 370px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    margin-right: 20px;
+    float: right;
+    z-index: 1400000;
+    width: 370px;
+    /* width: 82%; */
+    color: white;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+    -webkit-overflow-scrolling: touch;
+    /* Add this property */
+  }
+
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* 
+  .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+  .button-container {
+    position: absolute;
+    left: 47%;
+    margin-top: 225px;
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* ipad pro 11 */
+@media all and (device-width: 834px) and (device-height: 1194px) and (orientation:portrait),
+only screen and (device-width: 834px) and (device-height: 1112px) {
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    margin-top: 0px;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 565px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 4px;
+    height: 100%;
+    max-height: 130px;
+    overflow-y: auto;
+    line-height: 26px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 18%;
+    right: 80px;
+    width: 68%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 390px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+        backdrop-filter: blur(6px);
+        background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  #btnOptionCC {
+    width: 375px !important;
+  }
+
+  .secondBoxoption {
+    width: 230px !important;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    /* width: 91%; */
+    width: 83% !important;
+    height: 30px;
+  }
+
+  /* .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 190px;
+    width: 95%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  } */
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 87%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 270px;
+    max-width: 350px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 370px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    margin-right: 20px;
+    float: right;
+    z-index: 1400000;
+    width: 370px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+
+/* // ipad air */
+@media all and (device-width:1180px) and (device-height: 820px) and (orientation:landscape) {
+  .uneeqAv {
+    margin-top: 215px;
+  }
+
+
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 750px;
+    float: left;
+    margin-top: -10px;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 680px;
+    margin-right: 0px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+/* @media all and (min-device-width:1180px) and (min-device-height: 820px) and (orientation:landscape) { */
+@media all and (device-width:1180px) and (device-height: 820px) and (orientation:landscape) {
+
+
+  #btnOptionCC {
+    width: 340px;
+  }
+
+
+  .secondBoxoption {
+    width: 230px;
+    margin-left: 6px;
+    display: flex;
+    line-height: 15px;
+    font-size: 11px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+}
+
+
+/* @media all and (device-width: 820px) and (device-height: 1180px) and (orientation:portrait) {
+        .uneeqAv{
+          /* margin-top:715px; 
+          margin-top:508px;
+        } 
+      } */
+
+/* ipad mini or ipad */
+/* @media all and (min-width: 1024px) and (min-height: 768px) and (orientation:landscape) { */
+@media all and (min-width: 1024px) and (max-height: 768px) and (orientation:landscape) {
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 650px;
+    margin-top: 5px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  #btnOptionCC {
+    width: 320px;
+  }
+
+  .firstBoxOption {
+    width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 18px; */
+
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .secondBoxoption {
+    width: 250px;
+    margin-left: 6px;
+    line-height: 15px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    text-align: left;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .box-1 {
+    /* width: 450px; */
+    width: 560px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 24%;
+    right: 80px;
+    width: 56%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 380px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 360px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 360px;
+    color: white;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+/* ipad mini or ipad */
+@media all and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation:portrait) {
+
+  /* .uneeqAvatar {
+    width: 85%;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: -50px;
+} */
+
+  #btnOptionCC {
+    width: 345px;
+    /* width: 330px; */
+  }
+
+  .centerUserCC {
+    display: flex !important;
+    justify-content: center !important;
+
+  }
+
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 565px;
+    align-items: center !important;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+  .firstBoxOption {
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 18px; */
+
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .secondBoxoption {
+    width: 270px;
+    margin-left: 6px;
+    display: flex;
+    
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 16%;
+    right: 80px;
+    width: 73%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .QuestionCard {
+
+    position: flex;
+    margin-right: 30px;
+    align-items: center;
+    z-index: 100000;
+    width: 660px;
+    /* height: 450px; */
+    color: black;
+
+    float: right;
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    padding: 5px;
+
+  }
+
+
+  .Qimage {
+    margin-top: 6px;
+    height: 260px;
+    max-width: 340px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 360px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 350px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 350px;
+    /* width: 87%; */
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 4px;
+    height: 100%;
+    max-height: 130px;
+    overflow-y: auto;
+    line-height: 26px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 91%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 87%;
+    height: 30px;
+  }
+
+  #btnOptionCC {
+    width: 330px;
+  }
+
+  .firstBoxOption {
+    width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 18px; */
+
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .secondBoxoption {
+    width: 250px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* ----------------------------------- */
+
+/* Media query for devices with a width between 768px and 1023px, and portrait orientation */
+@media all and (min-device-width: 768px) and (max-device-width: 1023px) and (orientation: portrait) {}
+
+/* Media query for devices with a width between 1024px and 1366px, and portrait orientation */
+/* @media all and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) { */
+@media all and (device-width: 1024px) and (device-width: 1366px) and (orientation: portrait) {
+
+  #btnOptionCC {
+    width: 420px;
+  }
+
+  .secondBoxoption {
+    width: 340px;
+
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89% !important;
+    height: 30px;
+  }
+
+  /* .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 190px;
+ 
+    width: 92%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  } */
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 89.5%;
+    /* width: 92%; */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89% !important;
+    /* width: 89%; */
+    height: 30px;
+  }
+
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 4px;
+    height: 100%;
+    max-height: 130px;
+    overflow-y: auto;
+    line-height: 26px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89% !important;
+    height: 30px;
+  }
+
+}
+
+
+
+/* ----------------------------------- */
+
+
+
+/* nexus 7  */
+@media all and (device-width: 600px) and (device-height: 960px) and (orientation:portrait) {
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 280px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 250px;
+    max-width: 300px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 280px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 280px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+/* ipad mini 6 or ipad */
+@media all and (device-width: 774px) and (device-height: 1133px) and (orientation:portrait) {
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 270px;
+    max-width: 330px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 360px;
+    color: black;
+    bottom: 700px;
+
+    border-radius: 20px;
+
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 350px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 350px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* // nexus 10 */
+@media all and (device-width: 800px) and (device-height: 1280px) and (orientation:portrait) {
+
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  #btnOptionCC {
+    width: 360px;
+  }
+
+  .secondBoxoption {
+    width: 280px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 90%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 86%;
+    height: 30px;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 16.5%;
+    right: 80px;
+    width: 71.5%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 100%;
+    float: left;
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .QuestionCard {
+
+    position: flex;
+    margin-right: 30px;
+    align-items: center;
+    z-index: 100000;
+    width: 700px;
+    /* height: 450px; */
+    color: black;
+
+    float: right;
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    padding: 5px;
+
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 290px;
+    max-width: 350px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 380px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 370px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 20px;
+    float: right;
+    z-index: 1400000;
+    width: 370px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* // surface pro 7 */
+@media all and (device-width: 912px) and (device-height: 1368px) and (orientation:portrait) {
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 100%;
+    margin-top: 0px;
+    float: left;
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+
+  #btnOptionCC {
+    width: 390px;
+}
+
+
+.secondBoxoption {
+  width: 300px;
+  margin-left: 6px;
+  display: flex;
+  line-height: 15px;
+  font-size: 11px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.30);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  min-height: 55px;
+  padding-left: 10px;
+  color: white;
+  padding-right: 28px;
+  text-align: left;
+  border-radius: 0 7px 7px 0;
+}
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    /* max-height: 190px; */
+    max-height: 160px;
+    width: 84%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 81%;
+    height: 30px;
+  }
+
+  .QuestionCard {
+
+    position: flex;
+    margin-right: 30px;
+    align-items: center;
+    z-index: 100000;
+    width: 800px;
+    /* height: 450px; */
+    color: black;
+    float: right;
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 270px;
+    max-width: 360px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 440px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 400px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 400px;
+    color: black;
+    /* bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* air pro */
+@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait) {
+
+  /* .uneeqAvatar {
+    width: 85%;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: -30px;
+} */
+
+  #btnOptionCC {
+    width: 465px;
+  }
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89% !important;
+    height: 30px;
+  }
+
+
+  .box-1 {
+    /* width: 500px; */
+    width: 560px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .secondBoxoption {
+    width: 350px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    text-align: left;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    margin-top: 0px;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .QuestionCard {
+
+    position: flex;
+    margin-right: 30px;
+    align-items: center;
+    z-index: 100000;
+    width: 880px;
+    /* height: 450px; */
+    color: black;
+
+    float: right;
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 490px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 450px;
+    color: black;
+    bottom: 700px;
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 450px;
+    /* width: 77%; */
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 21%;
+    right: 80px;
+    width: 61%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 4px;
+    height: 100%;
+    max-height: 130px;
+    overflow-y: auto;
+    line-height: 26px;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89%;
+    height: 30px;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    /* width: 89%; */
+    width: 92%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 15px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:portrait) {
+
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 89% !important;
+    height: 30px;
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+
+
+
+
+/* Tab s4 */
+@media all and (device-width: 712px) and (device-height: 1138px) and (orientation:portrait),
+(device-width: 884px) and (device-height: 1104px) and (orientation:portrait) {
+
+  /* .uneeqAvatar {
+    width: 85%;
+    margin-top: 0px;
+    border-radius: 10px;
+    margin-left: -50px;
+} */
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 575px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  #btnOptionCC {
+    width: 330px;
+  }
+
+  .secondBoxoption {
+    width: 240px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 95%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    height: 30px;
+  }
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 340px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 250px;
+    max-width: 300px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 320px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 320px;
+    /* width: 78%; */
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 16.5%;
+    right: 80px;
+    width: 71.5%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+
+/* // ipad 9  */
+@media all and (device-width: 810px) and (device-height: 1080px) and (orientation:portrait) {
+
+
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 575px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  #btnOptionCC {
+    width: 330px;
+  }
+
+  .secondBoxoption {
+    width: 240px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 84%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    height: 30px;
+  }
+
+  .QuestionBOx {
+    width: 80% !important;
+  }
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 340px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.6); */
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 250px;
+    max-width: 300px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 320px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 320px;
+    /* width: 78%; */
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 16.5%;
+    right: 80px;
+    width: 71.5%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .rules:hover .info {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* landscape  // galaxy tab s4 , Z fold 2 ,3 */
+@media all and (device-width:1138px) and (device-height: 712px) and (orientation:landscape),
+(device-width:1080px) and (device-height: 810px) and (orientation:landscape),
+(device-width:1104px) and (device-height: 884px) and (orientation:landscape),
+(device-width:1076px) and (device-height: 768px) and (orientation:landscape) {
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 680px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 575px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  #btnOptionCC {
+    width: 330px;
+  }
+
+
+  .secondBoxoption {
+    width: 260px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .box-1 {
+    width: 450px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 25%;
+    right: 80px;
+    width: 53%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+/* //landscape nexus 7 */
+@media all and (device-width:960px) and (device-height: 600px) and (orientation:landscape) {
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 550px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  .playerOne {
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 400px;
+    color: black;
+    bottom: 700px;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .Qimage {
+    margin-top: 6px;
+    height: 250px;
+    max-width: 300px;
+  }
+
+  .playerTwo {
+    margin-right: 20px;
+    float: right;
+    z-index: 100;
+    width: 390px;
+    color: black;
+    bottom: 700px;
+    padding: 5px;
+  }
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 390px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+  }
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .cc_subtitle:hover .cc {
+    visibility: hidden;
+  }
+
+  .feedbackrules:hover .feedback {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+/* /landscape/ nexus 10 , ipad air , ipad pro 11 */
+@media all and (device-width:1180px) and (device-height: 820px) and (orientation:landscape),
+(device-width:1194px) and (device-height: 834px) and (orientation:landscape),
+(device-width:1112px) and (device-height: 834px) and (orientation:landscape),
+(device-width:1134px) and (device-height: 774px) and (orientation:landscape),
+(device-width:1280px) and (device-height: 800px) and (orientation:landscape) {
+  .uneeqAv {
+    margin-top: 215px;
+  }
+
+  .box-1 {
+    /* width: 450px; */
+    width: 560px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 27%;
+    right: 80px;
+    width: 49%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+
+  .playerOnePPT {
+    margin-left: 1px;
+    width: 730px;
+    float: left;
+    margin-top: 3px;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  #btnOptionCC {
+    width: 365px !important;
+  }
+
+
+
+  .secondBoxoption {
+    width: 270px !important;
+    line-height: 15px;
+    font-size: 11px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 94% !important;
+    height: 30px;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+/* /landscape/ ipad pro , surface pro 7  nexus 10 */
+@media all and (min-width:1366px) and (min-height: 1024px) and (orientation:landscape),
+(device-width:1368px) and (device-height: 912px) and (orientation:landscape) {
+
+  .playerOnePPT {
+    margin-left: 1px;
+    /* width:  880px; */
+    margin-top: 5px;
+    width: 820px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 87%;
+    /* width: 79%; */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+
+  #btnOptionCC {
+    width: 370px;
+}
+
+
+  .secondBoxoption{
+    width: 267px !important;
+    margin-left: 6px;
+    display: flex;
+    line-height: 15px;
+    font-size: 11px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+}
+
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 83.4%;
+    /* width: 75%; */
+    height: 30px;
+  }
+
+  .box-1 {
+    /* width: 500px; */
+    width: 560px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 28.5%;
+    right: 80px;
+    width: 46%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* / */
+
+}
+
+
+
+
+
+
+
+@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape) {
+
+  #btnOptionCC {
+    /* width: 330px !important; */
+    width: 370px !important;
+  }
+
+  .secondBoxoption {
+    /* width: 240px !important; */
+    width: 267px !important;
+    margin-left: 6px;
+    display: flex;
+    line-height: 15px;
+    font-size: 11px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+}
+
+
+@media only screen and (device-width: 1024px) and (device-width: 1366px) and (orientation: landscape) {
+
+  /* Styles for iPad Pro 12.9" in landscape mode */
+  #btnOptionCC {
+    width: 330px !important;
+  }
+
+  .secondBoxoption {
+    width: 240px !important;
+    margin-left: 6px;
+    display: flex;
+    line-height: 15px;
+    font-size: 11px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+}
+
+
+
+/* max-device-width: 480px */
+@media only screen and (max-width: 480px) {
+
+  #btnOptionCC {
+
+    /* width: 360px; */
+    width: 96%;
+    margin-left: 15px;
+    padding: 4px;
+  }
+
+  .panelsOption {
+    max-height: 280px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .playerOneForMobile {
+    margin-left: -6px;
+    /* float: left; */
+    z-index: 100;
+    width: 92% !important;
+    color: black;
+    /* bottom: 700px; */
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  .accordionsectionMobile {
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 0px;
+
+
+  }
+
+  .btnn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+
+    user-select: none;
+    background-color: transparent;
+    border: 0px transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 13px;
+    line-height: 1.5;
+    /* border-radius: 0.25rem; */
+    /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+  }
+
+
+  .button-1 {
+    color: white;
+    position: relative;
+    font-size: 18px;
+    font-family: DM Sans;
+    font-weight: 900;
+    line-height: 32px;
+    word-wrap: break-word;
+  }
+
+  .accordinColor {
+    margin-bottom: 3px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: rgba(255, 255, 255, 0.50);
+    color: white;
+    cursor: pointer;
+    padding: 4px;
+    width: 100%;
+    border-radius: 8px;
+    color: black;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'DM Sans Regular';
+    transition: 0.4s;
+  }
+
+  .explanation {
+    color: white;
+    font-size: 16px;
+    margin-left: 6px;
+    font-family: DM Sans;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+  }
+
+  .question-5-of {
+    color: white;
+    font-size: 16px;
+    font-family: DM Sans;
+    font-weight: 600;
+    line-height: 32px;
+    word-wrap: break-word;
+  }
+
+  .firstBoxOption {
+    width: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 12px; */
+    /* padding-left: 18px; */
+    min-height: 25px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+
+  .speakingsss {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    top: -15px;
+    right: 40px;
+    cursor: pointer;
+    position: fixed;
+    margin: 30px;
+    z-index: 600;
+  }
+
+  .ccBoxNew {
+    position: absolute;
+    justify-content: center;
+    width: 90%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+  .questionTextTest {
+    color: white;
+    font-size: 12px;
+    font-family: DM Sans;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+  }
+
+
+
+
+  .secondBoxoption {
+    /* width: 290px; */
+    width: 76%;
+    margin-left: 6px;
+    display: flex;
+    font-size: 10px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 25px;
+    padding-left: 10px;
+    color: white;
+    text-align: left;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .exitPresentBtn {
+    background-size: 20px 20px;
+    top: -15px;
+    left: 0px;
+    cursor: pointer;
+    position: fixed;
+    margin: 30px;
+    z-index: 600;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 88%;
+    height: 30px;
+  }
+
+  .speakingsss_large {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    left: 10px;
+    cursor: pointer;
+    position: fixed;
+    margin: 30px;
+    z-index: 600;
+  }
+
+  .group-container {
+    left: 15px;
+    top: 15px;
+    position: relative
+  }
+
+  .rectangle-parent {
+    padding: 8px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 150px;
+    width: 96%;
+    /* height: 100%; */
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+
+    /* backdrop-filter: blur(20px); */
+  }
+
+  .newIconSize {
+    width: 46px;
+    height: 46px;
+
+  }
+
+  .group-item {
+    background-color: rgba(255, 255, 255, 0.20);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    /* width: 100%; */
+    height: 46px;
+  }
+
+  .box-1 {
+    width: 400px;
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+  .newIconSize {
+    width: 50px;
+    height: 55px;
+  }
+
+  .box-3 {
+    width: 60px;
+    height: 100px;
+    margin: 0px;
+    /* margin: 2px; */
+
+    float: left;
+  }
+
+  .box-2 {
+    width: 60px;
+    height: 100px;
+    margin: 1px;
+    /* margin: 2px; */
+    float: left;
+  }
+
+
+  .bottomboxSize {
+    position: absolute;
+    justify-content: center;
+    /* width: 100%; */
+    height: 55px;
+    align-items: center;
+    z-index: 1100000;
+    /* bottom: 0px; */
+    background: rgba(37, 43, 66, 0.70);
+
+    /* backdrop-filter: blur(20px); */
+  }
+
+  /* start for small card avatar box input --- */
+
+  .bottomboxSizewithSmallBox {
+    position: absolute;
+    justify-content: center;
+    width: 90%;
+    height: 60px;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 67px;
+    background: rgba(37, 43, 66, 0.70);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0px 0px 20px 20px;
+  }
+
+
+
+
+
+
+  /* .group-item {
+  background-color: rgba(255, 255, 255, 0.20);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  width: 200px;
+  height: 50px;
+
+} */
+
+  .newIconSize {
+    width: 50px;
+    height: 55px;
+  }
+
+  /* end for small card avatar box input --- */
+
+  /** */
+
+  .mathsInputSize {
+    width: 150px;
+  }
+
+  .bottomChat-voice {
+    position: absolute;
+
+    bottom: 135px;
+    right: 10px;
+    z-index: 1100000;
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .uneeqAvatar {
+    width: 80%;
+    margin-top: 15px;
+    /* margin-top: 20px; */
+    border-radius: 10px;
+    margin-left: -60px;
+  }
+
+  .uneeqAv {
+    width: 100%;
+    margin-top: -42px;
+    position: absolute;
+    bottom: 60px;
+  }
+
+  /* .containerss {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    display: none;
+    position: relative;
+    border-radius: 50%;
+    background: #f25d23;
+    margin-right: 1rem;
+  }
+  
+
+  .voice-animation {
+    display: none;
+    width: 4px;
+    height: 12px;
+    background: #ffffff;
+    animation: listening 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+  
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  
+  } */
+
+  .full_screen {
+    width: 100%;
+    height: 100%;
+    margin-right: 0px;
+    z-index: 100;
+  }
+
+  /* .bottomright {
+    position: absolute;
+    bottom: 60px;
+    right: 15px;
+    z-index: 1100000;
+    width: 33px;
+    height: 33px;
+    font-size: 17px;
+  } */
+
+  .bottomright {
+    position: absolute;
+    top: 34px;
+    right: 15px;
+    z-index: 1100000;
+    width: 33px;
+    height: 33px;
+    font-size: 17px;
+  }
+
+  .bottomChat {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    /* bottom: -4px;
+    right: 16px; */
+    z-index: 1100000;
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+
+  #INFOComm {
+    height: 360px;
+    overflow-y: auto;
+  }
+
+
+  .maths-button-Off {
+    z-index: 1500000;
+    border: 1px solid red;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 126px;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .maths-button-ON {
+    border: 1px solid white;
+    z-index: 1500000;
+    border-radius: 10px;
+    width: 126px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    background-color: green;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .playerOnePPT {
+    /* margin-left: 1px;  */
+    width: 95%;
+    margin-top: 0px;
+    /* float: left;  */
+    z-index: 1400000;
+    padding: 5px;
+  }
+
+
+  .exitIcon {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .panelss {
+    max-height: 50px;
+    overflow-y: auto;
+  }
+
+  .descptionContent {
+    padding: 5px;
+    /* margin-top: -100px; */
+    color: white;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+  }
+
+
+
+  .mobile_chat {
+    position: fixed;
+    right: 75px;
+
+    z-index: 2;
+    bottom: 2px;
+    margin: 5px;
+
+    background-color: #fff;
+    border-radius: 1000px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    width: 212px;
+    /* width: 230px; */
+    display: block;
+  }
+
+
+  .bottomleft {
+    position: absolute;
+    bottom: 19px;
+    /* left: 31px; */
+    left: 20px;
+
+    z-index: 100;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .bottomleft-large {
+    position: absolute;
+    /* bottom: 63px; */
+    bottom: 17px;
+    /* left: 38px; */
+    left: 25px;
+    z-index: 100;
+    width: 45px;
+    height: 45px;
+  }
+
+
+
+  .cc_subtitle {
+    position: absolute;
+    /* bottom: 109px; */
+    bottom: 59px;
+
+    /* left: 25px; */
+
+    left: 15px;
+    z-index: 100;
+    /* width: 35px;
+      height: 35px; */
+    /* font-size: 18px; */
+  }
+
+
+
+  .feedbackrules {
+    position: absolute;
+    /* bottom: 231px; */
+    /* bottom: 179px; */
+    bottom: 180px;
+    left: 28px;
+    /* left: 40px; */
+    z-index: 100;
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .QuestionCard {
+    position: flex;
+    justify-content: center;
+    margin-right: 0px;
+    align-items: center;
+    z-index: 100000;
+    /* margin-left: 100px; */
+    width: 100%;
+    position: block;
+    color: black;
+
+    bottom: 700px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    /* border-radius: 50px; */
+    box-shadow: 0px 0px 10px 0px #ccc;
+
+
+  }
+
+
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 5%;
+    width: 95%;
+    align-items: center;
+    z-index: 110000;
+    bottom: 70px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  .mobileFonts {
+    font-size: 12px;
+  }
+
+  .ava {
+    border: 0px solid #ddd;
+    text-align: left;
+    padding: 7px;
+    width: calc(100% - 50px);
+    margin: 4px 4px 4px 10px;
+    background-color: #fff;
+    backdrop-filter: blur(6px);
+    border-radius: 5px;
+    /* box-shadow: 0px 0px 10px 0px #ccc; */
+    background: rgba(255, 255, 255, 0.6);
+    color: black;
+    z-index: 1400000;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'DM Sans Regular', sans-serif;
+  }
+
+
+  .playerThree {
+
+    width: 89% !important;
+
+  }
+
+  .spaceInText {
+    /* line-height: 21px;
+
+    margin-top: 3px; */
+    font-size: 12px;
+    line-height: 19px;
+    margin-top: 3px;
+  }
+
+
+  .playerOne {
+
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 89% !important;
+    color: black;
+    bottom: 700px;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .playerTwo {
+
+    margin-right: -10px;
+
+    float: right;
+
+    z-index: 100;
+    width: 86% !important;
+    color: black;
+    bottom: 700px;
+    padding: 2px;
+  }
+
+  .avatarspeak-s {
+    /* border: 0px solid #ddd; */
+    /* width: calc(100% - 50px); */
+    margin: 4px 4px 4px 4px;
+    /* padding: 3px; */
+    padding: 4px;
+    height: 100%;
+    max-height: 60px;
+    overflow-y: auto;
+    color: black;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    /* Add this property */
+  }
+
+
+  .mathsOffClass:hover {
+    border: 1px solid white;
+    box-shadow: none;
+  }
+
+  .maths-button-ON:hover {
+    border: 1px solid white;
+    box-shadow: none;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+}
+
+
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+
+  #INFOComm {
+    height: 270px;
+    overflow-y: auto;
+  }
+
+  .maths-button-Off {
+    z-index: 1500000;
+    border: 1px solid red;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 126px;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .maths-button-ON {
+    border: 1px solid white;
+    z-index: 1500000;
+    border-radius: 10px;
+    width: 126px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    background-color: green;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .exitIcon {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .feedback_icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .feedbackImage {
+    width: 25px;
+  }
+
+  .cc_icon {
+    width: 40px;
+  }
+
+  .mic_Icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .chat_icon {
+    width: 47px;
+
+  }
+
+
+
+  .bottomleft-large {
+    position: absolute;
+    /* bottom: 43px; */
+    bottom: 25px;
+    left: 40px;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .cc_subtitle {
+    position: absolute;
+    /* bottom: 86px; */
+    bottom: 66px;
+    left: 26px;
+    z-index: 100;
+  }
+
+
+
+  .feedbackrules {
+    position: absolute;
+    /* bottom: 200px; */
+    bottom: 171px;
+    left: 40px;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .mobile_chat {
+    position: fixed;
+    align-items: center;
+    z-index: 2;
+    bottom: 45px;
+    margin: 30px;
+    background-color: #fff;
+    padding: 0px;
+    width: 260px;
+    display: block;
+  }
+
+  .playerOne {
+    z-index: 1400000;
+    display: none;
+    margin-left: 15px;
+    float: left;
+    z-index: 100;
+    width: 89% !important;
+    color: black;
+    bottom: 700px;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .playerTwo {
+    display: none;
+    margin-right: -10px;
+
+    float: right;
+
+    z-index: 100;
+    width: 88% !important;
+    color: black;
+    bottom: 700px;
+    padding: 2px;
+  }
+
+
+  .avatarspeak-s {
+    border: 0px solid #ddd;
+    margin: 4px 4px 4px 4px;
+    padding: 3px;
+    height: 100%;
+    max-height: 105px;
+    overflow-y: auto;
+    color: black;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 21px;
+    font-family: 'DM Sans Regular', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    /* Add this property */
+  }
+
+
+  .playerThree {
+    /* margin-right: 20px; */
+    margin-right: 25px;
+    float: right;
+    z-index: 1400000;
+    width: 270px;
+    color: black;
+    bottom: 700px;
+    /* background-color: #fff;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 5px; */
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .mathsOffClass:hover {
+    border: 1px solid white;
+    box-shadow: none;
+  }
+
+  .maths-button-ON:hover {
+    border: 1px solid white;
+    box-shadow: none;
+  }
+
+  /* .cc_icon:hover,
+  .chat_icon:hover {
+    border-radius: 4px;
+    box-shadow: none
+  } */
+
+  .Mic:hover {
+    border-radius: 13px;
+    box-shadow: none
+  }
+
+  /* .avatar_icon:hover {
+    border-radius: 10px;
+    background-color: #ececec;
+    box-shadow: none
+  } */
+
+
+}
+
+
+/* // laptop screen 14 inch*/
+@media only screen and (min-width: 1400px) and (max-height: 900px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -30px;
+    /* width:  920px; */
+    width: 830px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  #btnOptionCC {
+    width: 420px !important;
+  }
+
+
+  .secondBoxoption {
+    width: 330px !important;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    line-height: 15px;
+    font-size: 11px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 98.5%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .firstBoxOption {
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 95% !important;
+    height: 30px;
+  }
+
+  .secondBoxoption {
+    width: 325px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    line-height: 15px;
+    font-size: 11px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+
+}
+
+
+/* 15 inch screen  */
+@media only screen and (device-width: 1366px) and (device-height: 768px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -30px;
+    /* width:  860px; */
+    width: 780px;
+    /* width: 100%; */
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 25%;
+    right: 80px;
+    width: 53%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+  #btnOptionCC {
+    width: 380px;
+  }
+
+  .secondBoxoption {
+    width: 315px;
+    margin-left: 6px;
+    display: flex;
+    line-height: 15px;
+    font-size: 11px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    text-align: left;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/* imac 13 inch */
+/* @media only screen and (min-width: 900px) and (max-width: 1440px) { */
+@media only screen and (min-width: 1400px) and (max-height: 900px) {
+
+
+  .box-1 {
+    width: 560px;
+    /* width: 510px; */
+    /* width: 450px; */
+    height: 100px;
+    /* margin: 4px; */
+    margin: 2px;
+    float: left;
+  }
+
+
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 27.5%;
+    right: 80px;
+    width: 47.5%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+  }
+
+
+
+}
+
+@media only screen and (min-width: 1536px) and (max-height: 864px) {
+
+
+  .avatarspeak {
+    position: absolute;
+    justify-content: center;
+    left: 29%;
+    right: 80px;
+    width: 44.5%;
+    align-items: center;
+    z-index: 1100000;
+    bottom: 70px;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+
+
+  }
+
+}
+
+
+
+
+
+/* Mac pro 16 inch */
+@media only screen and (min-width: 1536px) and (min-height: 960px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -30px;
+    width: 860px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+}
+
+
+/* Media query for screens with width up to 1512px and height up to 982px   henrey screen*/
+/* @media screen and (max-width: 1512px) and (max-height: 982px) {
+
+  #btnOptionCC {
+    width: 330px;
+}
+
+  .secondBoxoption {
+    width: 240px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    text-align: left;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+}
+} */
+
+
+ /* // surface book 13.5 */
+@media only screen and (min-width: 3000px) and (max-height: 2000px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -30px;
+    /* width:  920px; */
+    width: 830px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+  #btnOptionCC {
+    width: 420px !important;
+  }
+
+
+  .secondBoxoption {
+    width: 330px !important;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    line-height: 15px;
+    font-size: 11px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    /* max-height: 190px; */
+    width: 98.5%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+  }
+
+  .firstBoxOption {
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 6px 0 0 6px;
+  }
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 95% !important;
+    height: 30px;
+  }
+
+  .secondBoxoption {
+    width: 325px;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    line-height: 15px;
+    font-size: 11px;
+    text-align: left;
+    color: white;
+    padding-right: 28px;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+
+}
+
+
+
+@media only screen and (device-width: 3200px) and (device-height: 1800px) {
+
+
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+    width: 1500px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+}
+
+@media only screen and (device-width: 2240px) and (device-height: 1260px) {
+
+
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+    width: 1200px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+}
+
+
+@media only screen and (min-width: 2560px) and (min-height: 1440px) {
+
+
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+    width: 1400px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+}
+
+
+
+/* IMac  27 inch retina 4k  */
+/* @media only screen and (min-width: 5120px) and (min-height: 2880px) {
+  .playerOnePPT{
+    margin-left: 1px; 
+    width:  1500px;
+    float: left; 
+    z-index: 1400000;
+ 
+    padding: 5px;
+  }
+} */
+
+
+/* IMac pro 21 inch  */
+@media only screen and (device-width: 2048px) and (device-height: 1152px) {
+
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+    width: 1100px;
+    float: left;
+    z-index: 1400000;
+    /* width: 690px; */
+    padding: 5px;
+  }
+
+
+  #btnOptionCC {
+    width: 490px;
+  }
+
+  .secondBoxoption {
+    width: 390px !important;
+    margin-left: 6px;
+    line-height: 15px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+
+  .spaceInText{
+    font-size: 16px;
+    font-family: DM Sans;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+}
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 84.3%;
+    height: 30px;
+  }
+
+
+}
+
+@media only screen and (min-width: 2200px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+ 
+    float: left;
+    z-index: 1400000;
+    width: 1100px !important;
+    padding: 5px;
+  }
+
+
+  #btnOptionCC {
+    width: 550px !important;
+  }
+
+  .secondBoxoption {
+    width: 450px !important;
+    margin-left: 6px;
+    line-height: 15px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    width: 97.8%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+}
+
+.ExplainTestBox {
+  display: flex;
+  justify-content: right;
+  width: 95.2% !important;
+  height: 30px;
+}
+
+  .spaceInText{
+    font-size: 16px;
+    font-family: DM Sans;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+}
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 76%;
+    height: 30px;
+  }
+
+}
+
+
+@media only screen and (min-width: 2900px) {
+  .playerOnePPT {
+    margin-left: 1px;
+    margin-top: -20px;
+ 
+    float: left;
+    z-index: 1400000;
+    width: 1500px !important;
+    padding: 5px;
+  }
+
+
+  #btnOptionCC {
+    width: 700px !important;
+  }
+
+  .secondBoxoption {
+    width: 600px !important;
+    margin-left: 6px;
+    line-height: 15px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.30);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 55px;
+    padding-left: 10px;
+    color: white;
+    padding-right: 28px;
+    text-align: left;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .rectangle-parent {
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: 8px;
+    color: white;
+    max-height: 160px;
+    width: 91% !important;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 8px;
+}
+
+.ExplainTestBox {
+  display: flex;
+  justify-content: right;
+  width: 89% !important;
+  height: 30px;
+}
+
+  .spaceInText{
+    font-size: 16px;
+    font-family: DM Sans;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.20px;
+    word-wrap: break-word;
+}
+
+
+  .ExplainTestBox {
+    display: flex;
+    justify-content: right;
+    width: 76%;
+    height: 30px;
+  }
+
+}
+
+.oneLine {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+
+.commonBox {
+  margin-top: -7px;
+  font-size: 14px;
+  /* margin-left: 10px; */
+  position: absolute;
+  color: #FFF;
+
+  font-family: "DM Sans";
+  /* font-size: 12px; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  /* 225% */
+  letter-spacing: 0.2px;
+  margin-left: 60px;
+}
+
+.oneLine label {
+  width: 15px;
+  height: 15px;
+  position: relative;
+}
+
+.oneLine label input {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.oneLine label span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #FFF;
+  ;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.75);
+  margin-left: 31px;
+}
+
+.oneLine label span::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  width: 0px;
+  height: 0px;
+  border: solid #292828;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.oneLine input:checked+span::after {
+  width: 5px;
+  height: 9px;
+  opacity: 1;
+  /* border: 1px solid #737373; */
+  /* border-width: 0 2px 2px 0; */
+}
+
+/* tooltip */
+/* min */
+.speakingsss .min {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  bottom: -8px;
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.speakingsss:hover .min {
+  visibility: visible;
+
+}
+
+.speakingsss .min::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* maximize */
+.speakingsss .max {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  /* bottom: 2px; */
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.speakingsss:hover .max {
+  visibility: visible;
+}
+
+.speakingsss .max::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* ***************tooltip for Avtar hide ************** */
+.bottomChat .tooltipAvatar {
+  position: absolute;
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0px;
+  /* margin: 5px; */
+  /* border-radius: 7px; */
+  bottom: 15px;
+  right: 105%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.bottomChat:hover .tooltipAvatar {
+  visibility: visible;
+
+}
+
+.bottomChat .tooltipAvatar::after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* setting */
+.setttingMain .ToolSetting {
+  position: absolute;
+  visibility: hidden;
+  width: 70px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  bottom: 13px;
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.setttingMain:hover .ToolSetting {
+  visibility: visible;
+
+}
+
+.setttingMain .ToolSetting::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* mic */
+.miccc.mic2 {
+  position: absolute;
+  visibility: hidden;
+  width: 270px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px 0px;
+  /* margin: 5px; */
+  border-radius: 7px;
+  bottom: 15px;
+  right: 105%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.miccc:hover .mic2 {
+  visibility: visible;
+
+}
+
+.miccc .mic2::after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+
+}
+
+@media only screen and (max-device-width: 600px) {
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+
+  }
+
+  .avatar_icon {
+    margin-top: -3px;
+    margin-left: -2px;
+  }
+
+  .bottomChat {
+    margin-right: 23px;
+  }
+}
+
+@media only screen and (min-device-width: 768px)and (max-device-width: 1024px) and (orientation: portrait) {
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+
+  }
+}

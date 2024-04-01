@@ -1,0 +1,403 @@
+<div class="fixed-mic " id="movableCard-main">
+  <!-- <a  (click)="micFunction(this)" id="micOff" class="active-mic off-mic">&nbsp;</a> -->
+  <div class="bottomright" id="settingId" style="z-index: 99999999;">
+    <div class="commonstyle" id="tourSetting">
+      <!--  -->
+      <span class="setttingMain" >
+        <span class="ToolSetting">Setting</span>
+        <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../../../assets/interaction/group-2477@2x.png">
+      </span>
+      
+    </div>
+  </div>
+
+
+
+
+
+  <!-- // avatar hide button feature  -->
+  <div class="bottomChat " id="mobileAvatarButton">
+    <div class="commonstyle" onkeyup="event.preventDefault()" (click)="hideMethod()">
+      <div class="">
+        <span class="tooltipAvatar">Hide Hannah</span>
+        <span class="tooltipAvatar" *ngIf="mobileAvatarOnOff">Show Hannah</span>
+        <span>
+          <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon"
+            src="../../../../assets/interaction/hannahMiniMize.png">
+          <!-- <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
+            src="../../../../assets/interaction/hannah12.png"> -->
+            <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
+            src="../../../../assets/interaction/hannahFinal2.png">
+          <!-- <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon chat_icon"
+            src="../../../../assets/interaction/hannahHide1.png"> -->
+        </span>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- // chat input box  -->
+  <div class="centerDiv" id="centerDiv">
+    <div class="" id="chat-bar" style="z-index: 1100000;">
+
+
+    </div>
+  </div>
+
+  <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;" [style.background-color]="backgroundColor" >
+    <ng-container *ngIf="!messageForQueueAvatar">
+      <!-- speakingsss_large   // its use when the card open in full screen on open -->
+      <div class="speakingsss " id="cross" style="position: absolute;" (click)="onLoadCard('sm-video')">
+        <span id="maximizeAvatar">
+          <svg width="23" height="23" fill="#FFFFFF" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 3h6v6"></path>
+            <path d="M9 21H3v-6"></path>
+            <path d="m21 3-7 7"></path>
+            <path d="m3 21 7-7"></path>
+          </svg>
+          <span style="font-style: normal;" class="max">Maximize</span>
+        </span>
+
+
+        <span style="margin-top: -10px;"  style="position: absolute;" id="minimizeAvatar">
+          <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
+         <img id="cross1"  [src]="isMobileNormalTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" style="width: 30px; height: 30px;">
+          <span class="min" style="font-style: normal;">Minimize</span>
+        </span>
+      </div>
+
+      <div class="exitPresentBtn showI" id="exitpresentation" style="position: absolute;">
+        <!-- <img src="../../../../assets/interaction/x-circle.svg" (click)="exitpresentationFun()"
+        
+          style="width: 30px; height: 30px;"> -->
+          <img  [src]="isMobileTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" (click)="exitpresentationFun()"
+        
+          style="width: 30px; height: 30px;">
+      </div>
+
+      <div class="exitPresentBtn showI" id="exitExam" style="position: absolute;">
+        <!-- <img src="../../../../assets/interaction/x-circle.svg" (click)="exitTestSeries()"
+          style="width: 30px; height: 30px;"> -->
+          <img [src]="isMobileTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" (click)="exitTestSeries()"
+          style="width: 30px; height: 30px;">
+      </div>
+
+    </ng-container>
+
+    <div id="iconShow" class="zz showI"
+      style=" justify-content: left; margin-left: 18px; margin-top: 10px; cursor: pointer">
+
+    </div>
+
+    <div class="rightDiv zz">
+     
+      <!-- height: 30px; -->
+      <div  id="hambergerBar" class="notSchool" style="height: 45px;"></div>
+
+    </div>
+
+
+    <!-- // hand stop avatar voice  -->
+    <!-- <div class="div" id="stopTourGuide"> -->
+    <div class="stopavatar showI" id="stopavatarId">
+      <div class="bottomStopSpeaking pausebtn" id="stopspeakingID" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
+        [style.left]="stopLeftSize">
+        <!-- <span class="stop">Stop the AI Being while speaking</span> -->
+        <img src="../../../../assets/interaction/stopspeaking.svg" *ngIf="!unmuteMicrophone" onkeyup="event.preventDefault()"
+          (click)="stopDigitalPerson()" class="stopIcon"> 
+
+          <!-- <img src="../../../../assets/interaction/unmuteSpeaking.png" *ngIf="unmuteMicrophone" onkeyup="event.preventDefault()"
+          (click)="muteDigitalPerson()" class="stopIcon mt-2"> -->
+      </div>
+    <!-- </div> -->
+    </div>
+
+
+        <!-- // hand unmute avatar voice  -->
+        <div class="stopavatar"  *ngIf="unmuteMicrophone" >
+          <div class="bottomStopSpeaking pausebtn" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
+            [style.left]="stopLeftSize">
+              <img src="../../../../assets/interaction/unmuteSpeaking.png"onkeyup="event.preventDefault()"
+              (click)="muteDigitalPerson()" class="stopIcon mt-2">
+          </div>
+        </div>
+
+
+
+    <!-- // queue message for avatar  -->
+    <div *ngIf='messageForQueueAvatar' style="margin-top:50px">
+      <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
+        <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
+      </div>
+      <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
+        Sorry, I am busy in serving others.<br> Give me a moment I will be right back.
+      </p>
+    </div>
+
+
+
+    <!-- // avatar video card -->
+    <div class="userVideo">
+      <div class="g" style="display: flex; justify-content: center;">
+        <!-- <div class="uneeqAvatar" id="sm-video">  [muted]="videoMuted" [autoplay]="autoplayTue"-->
+        <div class="uneeqAvatar" id="sm-video">
+          <video id="smVideo" width="100%" height="100%"  autoplay playsinline></video>
+        </div>
+        <!-- <video src="../../assets/images/mov_bbb.mp4" preload="auto" autoplay muted style=" width: 100%; height: 100%;"></video> -->
+
+      </div>
+    </div>
+
+
+    <div class="peerVideo">
+      <!-- 
+ // text field -->
+      <div class="QuestionCard fontss hideMessage" id="textDisplay" style="margin-top: 21px;">
+        <div class="avatarspeak-s fontss" id="descpText">
+        </div>
+      </div>
+      <!-- 
+ // end text field -->
+
+
+      <!-- Image display area -->
+
+     
+
+
+      <div class="playerOne  hideMessage fontss" id="ImageDisplay" style="margin-top: 21px;">
+        <div class="" style="height:330px;">
+          <img class="ImageAspectRatio Qimage" [src]="ImageData"
+            style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
+          <img class="ImageAspectRatio " src="../../../../assets/nb.jpg"
+            style="height: 330px; max-width: 480px;  box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
+        </div>
+      </div>
+
+      <!-- -----testing---- -->
+
+      <div class="playerOne  hideMessage fontss" id="MathameticsDisplay" style="margin-top: 10px;">
+        <div class="">
+
+          <div class="" style="display: flex; justify-content: center;">
+            <!-- background: #e5f0ee; -->
+            <div class="list-button  fontss" style=" width: 100%; cursor: default; padding:5px ; line-height: 25px;">
+              <span style="display: flex; margin-left: 10px;font-size: 24px;">Question</span>
+              <p id="user_questionD" class="userQuesClass"> &nbsp; </p>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+      <!-- -----testing---- -->
+
+
+
+
+
+      <ng-container *ngIf="DescAnswer != ''">
+
+        <!-- <div class="playerThree  hideMessage " id="message" style="margin-top: 38px;"> -->
+        <div class="playerThree hideMessage " id="message" style="margin-top: 8px;">
+          <div class="descptionContent">
+
+            <div class="avatarspeak-s scrollbar spaceInText" id="outputDesc" style="color: white;">
+
+            </div>
+            <br>
+
+            <!-- <img *ngIf="runLoderGPT" src="../../../../assets/threedot.gif" style="width: 100px;"> -->
+            <div *ngIf="normalGPT" class="di" style="display: flex; justify-content: center;">
+              <img  src="../../../../assets/interaction/edyou-throbber-v2-100-white.gif" style="width: 50px;">
+            </div>
+            <div *ngIf="runLoderGPT" class="di" style="display: flex; justify-content: center;">
+              <img  src="../../../../assets/interaction/edyou-throbber-v2-100-white.gif" class="edyouLoaderWhite"
+                >
+            </div>
+
+
+
+          </div>
+          <!-- ngIf="refreshBtnPPT" -->
+          <div class="refreshbtnPPT" id="refreshTG" *ngIf="refreshBtnPPT" (click)="refreshSlidePPT()">
+            <img class="" src="../../../../assets/interaction/refresh-ccw-01.svg" style="width: 20px;cursor: pointer;">
+          </div>
+
+          <div class="hideMessage" id="mathApproach" style="margin-top: 4px;">
+            <div class="row mt-2">
+              <span class="methods">Methods</span>
+              <ng-container *ngFor="let list of approachesList ; let i = index">
+                <div class="apprachbutton btn-ripple" id="colorApproachOption{{i}}" style="padding:3px;"
+                  (click)="selectMathsListOption(list,i)">{{list}}
+                </div>
+
+              </ng-container>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </ng-container>
+      <!-- -->
+
+   
+
+      <div class="hideMessage" id="userCC">
+        <div class="bottomboxSize">
+          <div class="container">
+            <div class=" d-flex justify-content-center">
+              <div class="ccBoxNew " id="userText">
+
+                <div class="avatarspeak-s" id="local-transcript">
+                  You: {{userInputText}}
+                  <!-- <input type="text" #input1 style="width: 60px;">
+                  <input type="text" #input2 style="width: 60px;"> 
+                  <button (click)="setVideo(input1.value, input2.value)">send</button> -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- -- setting--- -->
+      <div class="dropBoxNew showI" id="dropDownSetting">
+
+        <div class="d"
+          style="width: 360px; background-color: black; color: white;border-radius: 8px ; margin-left: 50px; margin-top: 40px;">
+
+          <button class="accordions" (click)="clickFunction('panel1')" #popup2>
+            <div class="row">
+              <img alt="" style="width: 20px;" class="ml-3" src="../../assets/interaction/cc.svg" /> &nbsp;
+              <span class="settingHeading">Captions</span>
+            </div> <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;"
+                alt="" src="../../assets/interaction/chevron-right.svg" /></span>
+          </button>
+          <div class="panels " id="panel1">
+            
+            <div class="oneLine" >
+              
+              <label >
+                <input (click)="userCCOnOf()" type="checkbox"  name="" id=""  class="check1" [(ngModel)]="UserccOnOff" >
+                <span></span>
+              </label>
+              <!-- <p>User CC</p> -->
+              <p class="commonBox">User CC</p>
+            </div>
+            <!-- <br> -->
+            <div class="oneLine" >
+              
+              <label >
+                <input (click)="avatarCCOnOf()" type="checkbox" name="" id=""  class="check1"  [(ngModel)]="ccOnOff" >
+                <span></span>
+              </label>
+              <!-- <p>AI Being CC</p> -->
+              <p class="commonBox">AI Being CC</p>
+            </div>
+           
+
+          </div>
+
+          
+          <div  style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
+          </div>
+
+
+          <button class="accordions"   (click)="StartTourGuideSetting()">
+            <div class="row" >
+              <img style="width: 20px;" class="ml-3" src="../../../../assets/interaction/map-02.svg" /> &nbsp;
+              <span class="settingHeading" >Tour Guide</span>
+            </div>
+            <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;" alt=""
+                src="../../assets/interaction/chevron-right.svg" /></span>
+          </button>
+
+          <div *ngIf="hideHelpSetting" style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
+          </div>
+
+
+          <button class="accordions" *ngIf="hideHelpSetting" (click)="naviagtionTOHelp()">
+            <div class="row" >
+              <img style="width: 20px;" class="ml-3" src="../../assets/interaction/help-circle.svg" /> &nbsp;
+              <span class="settingHeading" >Help</span>
+            </div>
+            <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;" alt=""
+                src="../../assets/interaction/chevron-right.svg" /></span>
+          </button>
+
+
+        </div>
+
+
+
+      </div>
+
+      <!-- -- chat box , mic ------ -->
+      <div class="bottomboxSize " [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight"
+        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius">
+
+        <div class="container">
+          <div class="d-flex justify-content-center centerDiv">
+            <div class="box-1" id="boxForInput" style="z-index: 21000000">
+              <ng-container >
+                <!-- <input type="text" #input1 style="width: 60px;">
+                <input type="text" #input2 style="width: 60px;"> 
+                <button (click)="setVideo(input1.value, input2.value)">send</button>  [style.margin-left]="inputMarginLeft" -->
+                <input type="text" [style.width]="inputWidthSize" id="textTourBox"  [style.height]="inputheightSize" 
+                  class="group-item text-white" onkeydown="if (event.keyCode == 13)
+              document.getElementById('btnSearch').click()" [(ngModel)]="userText" placeholder="Type here">
+              </ng-container>
+         
+            </div>
+            <div class="box-2" (click)="sendTextToAvatar()" id="btnSearch">
+              <img alt="" id="sendId1"  [style.width.px]="micWidth" [style.height.px]="micHeight" src="../../../../assets/interaction/group-2472.svg" />
+              <!-- <img alt="" id="sendId" class="newIconSize"
+                  src="../../../../assets/interaction/muteMic.svg" /> --> 
+                 
+            </div>
+
+            <img   id="minimiseMathBTN" class="showI miniBTN"  (click)="mathEventHit('')"
+            src="../../../../assets/interaction/Minimize_icon1.svg" />   
+
+            <!-- (click)="toggleUserMicrophone()"   onclickMic-->
+            <div class="box-3" >
+              <div class="di">
+                <!-- <img alt="" id="voiceId" class="newIconSize"
+                  [src]="isMicrophoneOn ? '../../../../assets/interaction/muteMic.svg' : '../../../../assets/interaction/orange_mic.png'" />  -->        
+                <span >
+               
+                  <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"  (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth" [style.height.px]="micHeight"  [style.margin-left]="micMarginLeft2" 
+                  src="../../../../assets/interaction/muteMic.svg" />
+    
+                          
+                <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/interaction/ezgif.com-resize.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" 
+                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" > -->
+                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/Mic GIF.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" >
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
