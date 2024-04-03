@@ -1381,7 +1381,7 @@ math-field {
 
 .box-2,
 .box-3 {
-  width: 55px;
+  /* width: 55px; */
   height: 100px;
   /* Set the height as needed */
   margin: 4px;
@@ -1392,7 +1392,7 @@ math-field {
 
 
 .box-3 {
-  width: 55px;
+  /* width: 55px; */
   height: 100px;
   /* Set the height as needed */
   margin: 4px;

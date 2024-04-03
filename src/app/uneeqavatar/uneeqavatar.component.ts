@@ -2888,15 +2888,17 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPositionWidth = '90%'
       this.bottomPositionWidth = '77.5%'
       // this.inputWidthSize = '201px';
-      this.inputWidthSize = '204px';
+      this.inputWidthSize = '212px';
       $('#settingId').addClass('showI');
       this.inputheightSize = '50px'
       this.inputMarginLeft = '3px'
       this.bottomPositionheight = '60px'
       this.stopBottomSize = '75%'
       this.stopLeftSize = '10%'
-      this.micWidth = '50'
-      this.micWidthOnly = '50'
+      // this.micWidth = '50'
+      this.micWidth = '120'
+      // this.micWidthOnly = '50'
+      this.micWidthOnly = '120'
       this.micMarginleft = '0'
       this.micHeight = '50'
       this.micMarginLeft2 = '0px'
