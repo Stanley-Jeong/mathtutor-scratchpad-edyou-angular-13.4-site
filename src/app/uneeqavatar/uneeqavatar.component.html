@@ -5,7 +5,7 @@
       <!--  -->
       <span class="setttingMain" >
         <span class="ToolSetting">Setting</span>
-        <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../../../assets/interaction/group-2477@2x.png">
+        <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/interaction/group-2477@2x.png">
       </span>
       
     </div>
@@ -23,11 +23,11 @@
         <span class="tooltipAvatar" *ngIf="mobileAvatarOnOff">Show Hannah</span>
         <span>
           <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon"
-            src="../../../../assets/interaction/hannahMiniMize.png">
+            src="../../assets/interaction/hannahMiniMize.png">
           <!-- <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
             src="../../../../assets/interaction/hannah12.png"> -->
             <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
-            src="../../../../assets/interaction/hannahFinal2.png">
+            src="../../assets/interaction/hannahFinal2.png">
           <!-- <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon chat_icon"
             src="../../../../assets/interaction/hannahHide1.png"> -->
         </span>
@@ -62,16 +62,16 @@
 
         <span style="margin-top: -10px;"  style="position: absolute;" id="minimizeAvatar">
           <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
-         <img id="cross1"  [src]="isMobileNormalTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" style="width: 30px; height: 30px;">
+         <img id="cross1"  [src]="isMobileNormalTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" style="width: 30px; height: 30px;">
           <span class="min" style="font-style: normal;">Minimize</span>
         </span>
       </div>
 
       <div class="exitPresentBtn showI" id="exitpresentation" style="position: absolute;">
-        <!-- <img src="../../../../assets/interaction/x-circle.svg" (click)="exitpresentationFun()"
+        <!-- <img src="../../assets/interaction/x-circle.svg" (click)="exitpresentationFun()"
         
           style="width: 30px; height: 30px;"> -->
-          <img  [src]="isMobileTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" (click)="exitpresentationFun()"
+          <img  [src]="isMobileTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" (click)="exitpresentationFun()"
         
           style="width: 30px; height: 30px;">
       </div>
@@ -79,7 +79,7 @@
       <div class="exitPresentBtn showI" id="exitExam" style="position: absolute;">
         <!-- <img src="../../../../assets/interaction/x-circle.svg" (click)="exitTestSeries()"
           style="width: 30px; height: 30px;"> -->
-          <img [src]="isMobileTrue ? '../../../../assets/interaction/arrow-left.svg' : '../../../../assets/interaction/x-circle.svg'" (click)="exitTestSeries()"
+          <img [src]="isMobileTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" (click)="exitTestSeries()"
           style="width: 30px; height: 30px;">
       </div>
 
@@ -104,7 +104,7 @@
       <div class="bottomStopSpeaking pausebtn" id="stopspeakingID" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
         [style.left]="stopLeftSize">
         <!-- <span class="stop">Stop the AI Being while speaking</span> -->
-        <img src="../../../../assets/interaction/stopspeaking.svg" *ngIf="!unmuteMicrophone" onkeyup="event.preventDefault()"
+        <img src="../../assets/interaction/stopspeaking.svg" *ngIf="!unmuteMicrophone" onkeyup="event.preventDefault()"
           (click)="stopDigitalPerson()" class="stopIcon"> 
 
           <!-- <img src="../../../../assets/interaction/unmuteSpeaking.png" *ngIf="unmuteMicrophone" onkeyup="event.preventDefault()"
@@ -118,7 +118,7 @@
         <div class="stopavatar"  *ngIf="unmuteMicrophone" >
           <div class="bottomStopSpeaking pausebtn" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
             [style.left]="stopLeftSize">
-              <img src="../../../../assets/interaction/unmuteSpeaking.png"onkeyup="event.preventDefault()"
+              <img src="../../assets/interaction/unmuteSpeaking.png"onkeyup="event.preventDefault()"
               (click)="muteDigitalPerson()" class="stopIcon mt-2">
           </div>
         </div>
@@ -170,8 +170,10 @@
         <div class="" style="height:330px;">
           <img class="ImageAspectRatio Qimage" [src]="ImageData"
             style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
-          <img class="ImageAspectRatio " src="../../../../assets/nb.jpg"
+            <!-- Want to work -->
+          <img class="ImageAspectRatio " src="../../assets/nb.jpg"  
             style="height: 330px; max-width: 480px;  box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
+            <!-- Finding -->
         </div>
       </div>
 
@@ -187,7 +189,6 @@
               <p id="user_questionD" class="userQuesClass"> &nbsp; </p>
             </div>
           </div>
-       
         </div>
       </div>
       <!-- -----testing---- -->
@@ -209,10 +210,10 @@
 
             <!-- <img *ngIf="runLoderGPT" src="../../../../assets/threedot.gif" style="width: 100px;"> -->
             <div *ngIf="normalGPT" class="di" style="display: flex; justify-content: center;">
-              <img  src="../../../../assets/interaction/edyou-throbber-v2-100-white.gif" style="width: 50px;">
+              <img  src="../../assets/interaction/edyou-throbber-v2-100-white.gif" style="width: 50px;">
             </div>
             <div *ngIf="runLoderGPT" class="di" style="display: flex; justify-content: center;">
-              <img  src="../../../../assets/interaction/edyou-throbber-v2-100-white.gif" class="edyouLoaderWhite"
+              <img  src="../../assets/interaction/edyou-throbber-v2-100-white.gif" class="edyouLoaderWhite"
                 >
             </div>
 
@@ -221,7 +222,7 @@
           </div>
           <!-- ngIf="refreshBtnPPT" -->
           <div class="refreshbtnPPT" id="refreshTG" *ngIf="refreshBtnPPT" (click)="refreshSlidePPT()">
-            <img class="" src="../../../../assets/interaction/refresh-ccw-01.svg" style="width: 20px;cursor: pointer;">
+            <img class="" src="../../assets/interaction/refresh-ccw-01.svg" style="width: 20px;cursor: pointer;">
           </div>
 
           <div class="hideMessage" id="mathApproach" style="margin-top: 4px;">
@@ -311,7 +312,7 @@
 
           <button class="accordions"   (click)="StartTourGuideSetting()">
             <div class="row" >
-              <img style="width: 20px;" class="ml-3" src="../../../../assets/interaction/map-02.svg" /> &nbsp;
+              <img style="width: 20px;" class="ml-3" src="../../assets/interaction/map-02.svg" /> &nbsp;
               <span class="settingHeading" >Tour Guide</span>
             </div>
             <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;" alt=""
@@ -356,14 +357,14 @@
          
             </div>
             <div class="box-2" (click)="sendTextToAvatar()" id="btnSearch">
-              <img alt="" id="sendId1"  [style.width.px]="micWidth" [style.height.px]="micHeight" src="../../../../assets/interaction/group-2472.svg" />
+              <img alt="" id="sendId1"  [style.width.px]="micWidth" [style.height.px]="micHeight" src="../../assets/interaction/group-2472.svg" />
               <!-- <img alt="" id="sendId" class="newIconSize"
                   src="../../../../assets/interaction/muteMic.svg" /> --> 
                  
             </div>
 
             <img   id="minimiseMathBTN" class="showI miniBTN"  (click)="mathEventHit('')"
-            src="../../../../assets/interaction/Minimize_icon1.svg" />   
+            src="../../assets/interaction/Minimize_icon1.svg" />   
 
             <!-- (click)="toggleUserMicrophone()"   onclickMic-->
             <div class="box-3" >
@@ -373,12 +374,12 @@
                 <span >
                
                   <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"  (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth" [style.height.px]="micHeight"  [style.margin-left]="micMarginLeft2" 
-                  src="../../../../assets/interaction/muteMic.svg" />
+                  src="../../assets/interaction/muteMic.svg" />
     
                           
                 <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/interaction/ezgif.com-resize.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" 
                   [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" > -->
-                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/Mic GIF.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/Mic GIF.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
                   [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" >
                 </span>
 

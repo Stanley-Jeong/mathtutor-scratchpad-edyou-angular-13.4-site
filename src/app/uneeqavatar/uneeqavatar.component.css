@@ -501,11 +501,11 @@ math-field {
 }
 
 
-video {
-  /* override other styles to make responsive */
-  /* width: 100% !important;
-  height: auto !important; */
-}
+/* video {
+  override other styles to make responsive
+  width: 100% !important;
+  height: auto !important;
+} */
 
 
 .pppp {
@@ -1029,9 +1029,9 @@ video {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.scrollbar::-webkit-scrollbar-track {
-  /* background-color: transparent; */
-}
+/* .scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+} */
 
 
 .accordion {
@@ -1128,128 +1128,7 @@ video {
 }
 
 
-/* 
-  >>>>>>>>>>>>> mic animation css */
-
-
-/* ------------------  test series design css -------------------------------------------------- */
-
-.group-container {
-  left: 50px;
-  top: 30px;
-  position: relative
-}
-
-.firstBoxOption {
-  width: 64px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* padding-left: 18px; */
-
-  min-height: 55px;
-  background: rgba(255, 255, 255, 0.30);
-  backdrop-filter: blur(20px);
-
-  border-radius: 6px 0 0 6px;
-
-}
-
-.secondBoxoption {
-
-  /* width: 240px; */
-  width: 288px;
-  margin-left: 6px;
-  display: flex;
-  line-height: 15px;
-  font-size: 11px;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.30);
-  backdrop-filter: blur(20px);
-  min-height: 55px;
-  padding-left: 10px;
-  color: white;
-  padding-right: 28px;
-  text-align: left;
-  /* padding-top: 8px;
-  padding-bottom: 8px; */
-
-  border-radius: 0 7px 7px 0;
-}
-
-.button-1 {
-  color: white;
-  position: relative;
-  /* top: 10px; */
-  font-size: 24px;
-  font-family: DM Sans;
-  font-weight: 900;
-  line-height: 32px;
-  word-wrap: break-word
-}
-
-.button-12 {
-  color: white;
-  display: flex;
-  font-size: 11px;
-  position: relative;
-  top: 10px;
-  justify-content: start;
-  font-family: DM Sans;
-  font-weight: 400;
-  line-height: 15px;
-  word-wrap: break-word;
-}
-
-.question-5-of {
-  color: white;
-  font-size: 24px;
-  font-family: DM Sans;
-  font-weight: 600;
-  line-height: 32px;
-  word-wrap: break-word
-}
-
-.questionTextTest {
-  color: white;
-  font-size: 16px;
-  font-family: DM Sans;
-  font-weight: 400;
-  line-height: 27px;
-  letter-spacing: 0.20px;
-  word-wrap: break-word
-}
-
-.rectangle-parent {
-  padding: 15px;
-  margin-left: -15px;
-  margin-top: 8px;
-  color: white;
-  max-height: 160px;
-  /* max-height: 190px; */
-  /* width: 92%; */
-  width: 98%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.30);
-  border-radius: 8px;
-  /* backdrop-filter: blur(20px) */
-}
-
-.explanation {
-  color: white;
-  font-size: 24px;
-  font-family: DM Sans;
-  font-weight: 600;
-  line-height: 32px;
-  margin-bottom: 10px;
-  word-wrap: break-word
-}
-
-
-/* ------------------ end   test series design css -------------------------------------------------- */
-
-
+/* >>>>>>>>>>>>> mic animation css */
 
 .mic-icon {
   height: 26px;
@@ -5663,7 +5542,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     width: 100%;
     height: 100%;
     margin-right: 0px;
-    z-index: 100;
+    z-index: 2147483647;
   }
 
   /* .bottomright {

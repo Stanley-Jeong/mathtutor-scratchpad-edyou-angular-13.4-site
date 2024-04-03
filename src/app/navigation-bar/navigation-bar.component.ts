@@ -59,7 +59,7 @@ export class NavigationBarComponent implements OnInit {
 			
 			jQuery(this.whtContainer + " .site-logo img").css("width", "100px");
 			jQuery(this.whtContainer + " .tagline").css("font-size", "0.7rem");
-			jQuery(this.whtContainer + " .global-nav a").css("font-size", "0.75rem");
+			jQuery(this.whtContainer + " a").css("font-size", "0.75rem");
     // Additional CSS styling
   }
 
@@ -85,7 +85,7 @@ export class NavigationBarComponent implements OnInit {
 			
 			jQuery(this.whtContainer + " .site-logo img").css("width", "125px");
 			jQuery(this.whtContainer + " .tagline").css("font-size", "0.75rem");
-			jQuery(this.whtContainer + " .global-nav a").css("font-size", "1rem");
+			jQuery(this.whtContainer + " a").css("font-size", "1rem");
 
 
     // Additional CSS styling
@@ -198,19 +198,19 @@ export class NavigationBarComponent implements OnInit {
 
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {
-      window.location.reload();
+      // window.location.reload();
     })
   }  
 
   navigateToSafety() {
     this.router.navigate(['/safety']).then(()=> {
-      window.location.reload();
+      // window.location.reload();
     })
   }    
 
   navigateToLabs() {
     this.router.navigate(['/labs']).then(()=> {
-        window.location.reload();
+        // window.location.reload();
       })
   }    
 
