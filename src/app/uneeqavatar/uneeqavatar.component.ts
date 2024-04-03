@@ -20,6 +20,8 @@ import { LearningTour, TestPrepTour, noSchoolTour } from '../../assets/js/index.
   templateUrl: './uneeqavatar.component.html',
   styleUrls: ['./uneeqavatar.component.css']
 })
+
+
 export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stringRef = String;
   // Set the timeout duration in milliseconds (28 seconds)
@@ -226,7 +228,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     };
 
 
-   //  this.avatarFunction()
+    this.avatarFunction()
 
  
 
