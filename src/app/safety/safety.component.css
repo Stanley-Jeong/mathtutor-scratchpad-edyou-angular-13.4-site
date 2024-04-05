@@ -29,3 +29,12 @@
 .elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
     font-size: 59px
 } */
+
+:host {
+    color: white;
+  }
+  
+  /* Optionally, you can target specific elements within the component */
+  h1, h2, h3, p, span {
+    color: white;
+  }

@@ -34,6 +34,16 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
       element.classList.remove(className);
       // element.className = newClassName; // Directly assign empty string
     });
+
+
+
+    //addtional
+    const elementsLight = document.querySelectorAll("." + "light");
+    elementsLight.forEach(element => {
+      
+      element.classList.remove("light");
+      // element.className = newClassName; // Directly assign empty string
+    });
   }
 
 }
