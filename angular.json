@@ -42,9 +42,8 @@
               "src/assets/js/index.js",
               "src/assets/js/smwebsdk.js",
             
-              "./node_modules/jquery/dist/jquery.min.js"
-           
-
+              "./node_modules/jquery/dist/jquery.min.js",
+              "src/assets/scripts/appear.js"
             ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"

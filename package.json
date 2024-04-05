@@ -24,7 +24,7 @@
     "@soulmachines/smwebsdk": "^15.7.0",
     "angular-crumbs": "^3.0.1",
     "aws-sdk": "^2.1497.0",
-    "jquery": "^3.6.1",
+    "jquery": "^3.7.1",
     "mathlive": "^0.98.4",
     "microsoft-cognitiveservices-speech-sdk": "^1.29.0",
     "microsoft-speech-browser-sdk": "0.0.12",

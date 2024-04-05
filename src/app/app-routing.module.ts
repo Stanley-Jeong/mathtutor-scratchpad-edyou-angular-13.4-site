@@ -17,6 +17,10 @@ const routes: Routes = [
   {path:'', redirectTo:'/main', pathMatch:'full'},
   {path:'main', component: MainComponent},
   {path: 'company', component: CompanyComponent},
+  { path: 'company#mission-vision', component: CompanyComponent },
+
+
+
   {path: 'pay-it-forward', component:PayItForwardComponent},
   {path: 'press', component:PressComponent},
   {path: 'safety', component: SafetyComponent },

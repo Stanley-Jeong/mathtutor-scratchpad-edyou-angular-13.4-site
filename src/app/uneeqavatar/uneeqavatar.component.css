@@ -472,13 +472,13 @@ math-field {
   left: 31%;
   z-index: 100;
   cursor: pointer;
-  width: 47px;
+  width: 130px;
   height: 47px;
 }
 
 .stopIcon {
   position: relative;
-  width: 130px;
+  width: 200px;
 
 }
 
@@ -554,8 +554,8 @@ math-field {
 
 .speakingsss_large {
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: 30px; /*before editing it was 20px edited to use in the edyou website*/
+  height: 30px; /*before editing it was 20px edited to use in the edyou website*/
   background-size: 20px 20px;
   /* right: 10px; */
   right: -16px;
@@ -1153,9 +1153,9 @@ math-field {
 
   bottom: 1px;
   /* right: 74px; */
-  right: 40px;
+  right: 20px;
   z-index: 1600000;
-  width: 32px;
+  width: 47px;
   height: 32px;
   font-size: 17px;
 }
@@ -5352,8 +5352,8 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
 
   .speakingsss_large {
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-size: 20px 20px;
     left: 10px;
     cursor: pointer;

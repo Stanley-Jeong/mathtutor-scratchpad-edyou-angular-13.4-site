@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { API } from '../service/restapi';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,7 +36,9 @@ export class UserService {
   private objectValue = new BehaviorSubject(null);
   objvalue = this.objectValue.asObservable();
 
-  constructor(private http: HttpClient) {  
+  constructor(
+    private http: HttpClient
+    ) {  
 
 
     // this.token = JSON.parse(localStorage.getItem('token') || '[]')

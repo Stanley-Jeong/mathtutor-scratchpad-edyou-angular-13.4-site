@@ -212,6 +212,23 @@ export class NavigationBarComponent implements OnInit {
     this.router.navigate(['/labs']).then(()=> {
         // window.location.reload();
       })
-  }    
+  }
+  
+  navigateToPayItForward() {
+    this.router.navigate(['/pay-it-forward']).then(()=> {
+        // window.location.reload();
+      })
+  }
 
+  navigateToPress(){
+    this.router.navigate(['/press'])
+  }
+
+  navigateToAcademicIntegrity(){
+    this.router.navigate(['/academic-integrity']);
+  }
+
+  navigateToBlog(){
+    this.router.navigate(['/blog']);
+  }
 }

@@ -10,6 +10,7 @@ export class PayItForwardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

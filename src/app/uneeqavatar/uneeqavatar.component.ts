@@ -1065,7 +1065,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
               if (this.DescAnswer === "Moving to the next slide" || this.DescAnswer === "Moving to the previous slide" ||
                 this.DescAnswer === "Sure, repeating the slide") {
               } else {
-                this.isManualScrolling = false
+            this.isManualScrolling = false
                 if (this.DescAnswer.length >= 140) {
                   this.startScrolling();
                 }

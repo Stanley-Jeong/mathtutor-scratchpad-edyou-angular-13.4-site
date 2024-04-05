@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-safety',
   templateUrl: './safety.component.html',
   styleUrls: ['./safety.component.css']
 })
-export class SafetyComponent implements OnInit {
+export class SafetyComponent implements AfterViewInit, OnDestroy {
 
-  constructor() { }
+  private ngUnsubscribe = new Subject();
 
-  ngOnInit(): void {
+  constructor(private router: Router) { }
+
+  async ngAfterViewInit() {
+    this.navigateAndReplaceClass();
+  }
+
+  ngOnDestroy(): void {
+    // this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  async navigateAndReplaceClass() {
+    await this.router.navigateByUrl(this.router.url); // Trigger navigation event
+    this.replaceClass("elementor-invisible", "");
+  }
+
+  private replaceClass(className: string, newClassName: string): void {
+    const elements = document.querySelectorAll("." + className);
+    elements.forEach(element => {
+      
+      element.classList.remove(className);
+      // element.className = newClassName; // Directly assign empty string
+    });
   }
 
 }
