@@ -249,7 +249,7 @@ header {background-color:white; display:table; width:calc(100% - 233px); positio
 
 
 /* .speaking-lady {display:block; border:0px solid #fff; box-shadow:0px 0px 5px 0px #ccc; width:350px; height: 240px; border-radius:1px;  margin:0px 20px 65px 20px; }   upper design */
-.speaking-lady {display:block; border:0px solid #fff; box-shadow:0px 0px 5px 0px #ccc; width:350px; height: 240px; border-radius:1px;  margin:0px 80px 12px 20px; } 
+.speaking-lady {display:block; border:0px solid #fff;  width:350px; height: 240px; border-radius:1px;  margin:0px 80px 12px 20px; } 
 
 /* .speaking-lady {display:block; border:0px solid #fff; box-shadow:0px 0px 5px 0px #ccc; width:350px; height: 290px; border-radius:1px;  margin:0px 20px 65px 20px; } */
 
