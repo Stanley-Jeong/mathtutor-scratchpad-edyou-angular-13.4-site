@@ -231,4 +231,8 @@ export class NavigationBarComponent implements OnInit {
   navigateToBlog(){
     this.router.navigate(['/blog']);
   }
+
+  navigateToInvestor(){
+    this.router.navigate(['/investors']);
+  }
 }
