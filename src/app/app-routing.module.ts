@@ -9,6 +9,8 @@ import { AcademicIntegrityComponent } from './academic-integrity/academic-integr
 import { LabsComponent } from './labs/labs.component';
 import { BlogComponent } from './blog/blog.component';
 import { InvestorsComponent } from './investors/investors.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path: 'academic-integrity', component:AcademicIntegrityComponent},
   {path: 'labs', component: LabsComponent},
   {path: 'blog', component: BlogComponent},
-  {path: 'investors', component: InvestorsComponent}
+  {path: 'investors', component: InvestorsComponent},
+  {path: 'terms', component:TermsComponent},
+  {path: 'privacy', component:PrivacyComponent}
 
  
 ];

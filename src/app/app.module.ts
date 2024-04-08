@@ -24,6 +24,8 @@ import { AcademicIntegrityComponent } from './academic-integrity/academic-integr
 import { LabsComponent } from './labs/labs.component';
 import { BlogComponent } from './blog/blog.component';
 import { InvestorsComponent } from './investors/investors.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 
@@ -42,7 +44,9 @@ import { InvestorsComponent } from './investors/investors.component';
     AcademicIntegrityComponent,
     LabsComponent,
     BlogComponent,
-    InvestorsComponent
+    InvestorsComponent,
+    TermsComponent,
+    PrivacyComponent
 
 
 
