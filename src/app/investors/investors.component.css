@@ -204,6 +204,12 @@
     text-decoration: underline
 }
 
-input {
-    padding: .75rem 1rem !important
-}
+/* Custom CSS to reduce placeholder size */
+::placeholder {
+    font-size: 0.9 em; /* Adjust the font size as needed */
+    font-weight: 400;
+  }
+  input, button, textarea{
+    font-size: 14px;
+    font-weight: 300;
+  }

@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { HeaderService } from '../service/header.service';
 
 @Component({
   selector: 'app-safety',
@@ -11,10 +12,13 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
 
   private ngUnsubscribe = new Subject();
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private headerService: HeaderService
+  ) { }
 
   async ngAfterViewInit() {
-    this.navigateAndReplaceClass();
+    await this.navigateAndReplaceClass();
   }
 
   ngOnDestroy(): void {
@@ -37,13 +41,13 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
 
 
 
-    //addtional
-    const elementsLight = document.querySelectorAll("." + "light");
-    elementsLight.forEach(element => {
+    // //addtional
+    // const elementsLight = document.querySelectorAll("." + "light");
+    // elementsLight.forEach(element => {
       
-      element.classList.remove("light");
-      // element.className = newClassName; // Directly assign empty string
-    });
+    //   element.classList.remove("light");
+    //   // element.className = newClassName; // Directly assign empty string
+    // });
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { HeaderService } from '../service/header.service';
 declare var jQuery: any;
 
 @Component({
@@ -16,9 +18,28 @@ export class NavigationBarComponent implements OnInit {
   clrContainer = ".global-nav-color-container";
   whtContainer = ".global-nav-container";
 
+  color: string = '#E7F9FF'; // Default color
+  subscription!: Subscription;
+
   constructor(
-    private router:Router
-  ) { }
+    private router:Router,
+    private headerService: HeaderService
+  ) { 
+    this.subscription = this.headerService.colorChange.subscribe((color:string)=>{
+      this.color = color
+    });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Change header color to blue if the current route is '/terms', otherwise reset it
+        if (this.router.url === '/terms') {
+          this.headerService.setColor('blue');
+        } else {
+          this.headerService.setColor('black'); // Or whatever your default color is
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.initializeScrollListener();
@@ -234,5 +255,8 @@ export class NavigationBarComponent implements OnInit {
 
   navigateToInvestor(){
     this.router.navigate(['/investors']);
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

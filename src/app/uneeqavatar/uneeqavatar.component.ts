@@ -656,9 +656,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   onConnectionSuccess(sessionId: any) {
-    setTimeout(() => {
+    // setTimeout(() => {
       $('#avatarLoaders').css('display', 'none')
-    }, 1000)
+    // }, 1000)
 
     this._personaId = sessionId
     localStorage.setItem('sessionId', sessionId)

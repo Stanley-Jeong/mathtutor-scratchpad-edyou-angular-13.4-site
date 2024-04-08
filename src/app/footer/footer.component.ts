@@ -34,4 +34,12 @@ export class FooterComponent implements OnInit {
       })
   }
 
+  navigateToTerms() {
+    this.router.navigate(['/terms']);
+  }
+
+  navigateToPrivacy() {
+    this.router.navigate(['/privacy'])
+  }
+
 }

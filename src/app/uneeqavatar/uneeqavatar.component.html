@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <div class="fixed-mic " id="movableCard-main">
   <!-- <a  (click)="micFunction(this)" id="micOff" class="active-mic off-mic">&nbsp;</a> -->
   <div class="bottomright" id="settingId" style="z-index: 99999999;">
@@ -45,6 +51,19 @@
   </div>
 
   <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;" [style.background-color]="backgroundColor" >
+ 
+ 
+
+    <div id="avatarLoaders"  style="margin-top:50px">
+      <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
+        <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
+      </div>
+      <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
+        {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a moment.
+      </p>
+    </div>
+ 
+ 
     <ng-container *ngIf="!messageForQueueAvatar">
       <!-- speakingsss_large   // its use when the card open in full screen on open -->
       <div class="speakingsss " id="cross" style="position: absolute;" (click)="onLoadCard('sm-video')">
