@@ -25,7 +25,7 @@
                 data-widget_type="button.default">
                 <div class="elementor-widget-container">
                     <div class="elementor-button-wrapper">
-                        <a class="elementor-button elementor-button-link elementor-size-sm" href="/company/">
+                        <a class="elementor-button elementor-button-link elementor-size-sm" (click)="navigateToCompany()" >
                             <span class="elementor-button-content-wrapper">
                                 <span class="elementor-button-text">Learn More</span>
                             </span>
@@ -130,7 +130,8 @@
 							data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}"
 							data-widget_type="text-editor.default">
 							<div class="elementor-widget-container">
-								<p class="section-content"><span
+								<p class="section-content">
+									<span
 										style="text-align: var(--text-align);">We are a safe, reliable and
 										trustworthy AI platform where humans and AI beings collaborate to
 										achieve great things together. Our infinitely adaptable, specialized
@@ -147,12 +148,7 @@
 							data-widget_type="button.default">
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
-									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="https://hello.edyou.com/">
-										<span class="elementor-button-content-wrapper">
-											<span class="elementor-button-text">Chat with Hannah</span>
-										</span>
-									</a>
+									<a class="elementor-button elementor-button-link elementor-size-sm" (click)="navigateToMain()"></a>
 								</div>
 							</div>
 						</div>
@@ -176,7 +172,6 @@
 									<div class="slide-image" id="image3"><img decoding="async"
 											src="../../assets/avatars/nova-updated.webp"
 											alt="Nova"><p>Nova</p></div>
-
 								</div>
 							</div>
 						</div>
@@ -220,7 +215,7 @@
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
 									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="https://edyou.com/company/">
+										(click)="navigateToSafety()">
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">Learn more</span>
 										</span>
@@ -600,7 +595,7 @@
 							<h3 class="elementor-heading-title elementor-size-default">Our Technology
 								Platform</h3> </div>
 					</div>
-					<div data-ae-url="/labs/#cab"
+					<div routerLink="/labs" fragment="cab"
 						class="has_ae_slider elementor-element elementor-element-e5cf16b e-con-full ae-link-yes e-flex ae-bg-gallery-type-default elementor-invisible e-con e-child"
 						data-id="e5cf16b" data-element_type="container"
 						data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:300,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
@@ -639,7 +634,7 @@
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
 									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="/labs/#cab">
+										routerLink="/labs" fragment="cab" >
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">Learn more</span>
 										</span>
@@ -648,7 +643,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-ae-url="/labs/#pai"
+					<div routerLink="/labs" fragment="pai"
 						class="has_ae_slider elementor-element elementor-element-b9f2fe7 e-con-full ae-link-yes e-flex ae-bg-gallery-type-default elementor-invisible e-con e-child"
 						data-id="b9f2fe7" data-element_type="container"
 						data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation_delay&quot;:300,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
@@ -687,7 +682,7 @@
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
 									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="/labs/#pai">
+										roterLink="/labs" fragment="pai">
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">Learn more</span>
 										</span>
@@ -696,7 +691,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-ae-url="/labs/#ice"
+					<div routerLink="/labs" fragment="ice"
 						class="has_ae_slider elementor-element elementor-element-24560b7 e-con-full ae-link-yes e-flex ae-bg-gallery-type-default elementor-invisible e-con e-child"
 						data-id="24560b7" data-element_type="container"
 						data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation_delay&quot;:600,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
@@ -736,7 +731,7 @@
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
 									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="/labs/#ice">
+										routerLink="/labs" fragment="ice">
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">Learn more</span>
 										</span>
@@ -745,7 +740,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-ae-url="/labs/#pie"
+					<div routerLink="/labs" fragment="pie"
 						class="has_ae_slider elementor-element elementor-element-24bfbfd e-con-full ae-link-yes e-flex ae-bg-gallery-type-default elementor-invisible e-con e-child"
 						data-id="24bfbfd" data-element_type="container"
 						data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation_delay&quot;:600,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:4,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
@@ -784,7 +779,7 @@
 							<div class="elementor-widget-container">
 								<div class="elementor-button-wrapper">
 									<a class="elementor-button elementor-button-link elementor-size-sm"
-										href="/labs/#pie">
+										routerLink="/labs" fragment="pie">
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-text">Learn more</span>
 										</span>
@@ -839,7 +834,7 @@
 						<div class="elementor-widget-container">
 							<div class="elementor-button-wrapper">
 								<a class="elementor-button elementor-button-link elementor-size-sm"
-									href="/safety/">
+									(click)="navigateToSafety()">
 									<span class="elementor-button-content-wrapper">
 										<span class="elementor-button-text">Learn about safety</span>
 									</span>
@@ -903,7 +898,7 @@
 													class="elementor elementor-19676"
 													data-elementor-post-type="ae_global_templates">
 													<div
-														data-ae-url="https://edyou.com/how-edyous-ai-is-reimagining-the-future-of-personalized-learning/"
+														(click)="navigateToEdyousAi()"
 														class="has_ae_slider elementor-element elementor-element-0f841a3 content-card ae-link-yes e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
 														data-id="0f841a3" data-element_type="container"
 														data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
@@ -938,7 +933,7 @@
 																	<div class="elementor-button-wrapper">
 																		<a
 																			class="elementor-button elementor-button-link elementor-size-sm"
-																			href="https://edyou.com/how-edyous-ai-is-reimagining-the-future-of-personalized-learning/">
+																			(click)="navigateToEdyousAi()">
 																			<span class="elementor-button-content-wrapper">
 																				<span class="elementor-button-text">Read Article</span>
 																			</span>
@@ -960,7 +955,7 @@
 													class="elementor elementor-19676"
 													data-elementor-post-type="ae_global_templates">
 													<div
-														data-ae-url="https://edyou.com/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap/"
+														(click)="navigateToRevolutionizingEducation()"
 														class="has_ae_slider elementor-element elementor-element-0f841a3 content-card ae-link-yes e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
 														data-id="0f841a3" data-element_type="container"
 														data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
@@ -996,7 +991,7 @@
 																	<div class="elementor-button-wrapper">
 																		<a
 																			class="elementor-button elementor-button-link elementor-size-sm"
-																			href="https://edyou.com/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap/">
+																			(click)="navigateToRevolutionizingEducation()">
 																			<span class="elementor-button-content-wrapper">
 																				<span class="elementor-button-text">Read Article</span>
 																			</span>

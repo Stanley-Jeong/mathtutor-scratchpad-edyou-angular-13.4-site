@@ -18,28 +18,54 @@ export class FooterComponent implements OnInit {
 
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {
-      window.location.reload();
+      // window.location.reload();
     })
   }  
 
   navigateToSafety() {
     this.router.navigate(['/safety']).then(()=> {
-      window.location.reload();
+      // window.location.reload();
     })
   }    
 
   navigateToLabs() {
     this.router.navigate(['/labs']).then(()=> {
-        window.location.reload();
+        // window.location.reload();
+      })
+  }
+  
+  navigateToPayItForward() {
+    this.router.navigate(['/pay-it-forward']).then(()=> {
+        // window.location.reload();
       })
   }
 
-  navigateToTerms() {
+  navigateToPress(){
+    this.router.navigate(['/press'])
+  }
+
+  navigateToAcademicIntegrity(){
+    this.router.navigate(['/academic-integrity']);
+  }
+
+  navigateToBlog(){
+    this.router.navigate(['/blog']);
+  }
+
+  navigateToInvestor(){
+    this.router.navigate(['/investors']);
+  }
+
+  navigateToTerms(){
     this.router.navigate(['/terms']);
   }
 
-  navigateToPrivacy() {
-    this.router.navigate(['/privacy'])
+  navigateToPrivacy(){
+    this.router.navigate(['/privacy']);
+  }
+
+  navigateToMain(){
+    this.router.navigate(['/main']);
   }
 
 }

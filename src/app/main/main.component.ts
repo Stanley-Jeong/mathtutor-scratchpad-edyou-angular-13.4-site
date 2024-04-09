@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  private ngUnsubscribe = new Subject();
+
+  constructor(
+    private router: Router
+  ) { }
+
+  async ngAfterViewInit() {
+    this.navigateAndReplaceClass();
+  }
+
+  ngOnDestroy(): void {
+    // this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  async navigateAndReplaceClass() {
+    await this.router.navigateByUrl(this.router.url); // Trigger navigation event
+    this.replaceClass("elementor-invisible", "");
+  }
+
+  private replaceClass(className: string, newClassName: string): void {
+    const elements = document.querySelectorAll("." + className);
+    elements.forEach(element => {
+      
+      element.classList.remove(className);
+      // element.className = newClassName; // Directly assign empty string
+    });
+  }
 
   ngOnInit(): void {
     const image1 = document.getElementById('image1') as HTMLImageElement;
@@ -46,4 +75,30 @@ export class MainComponent implements OnInit {
     }, 2000); // Remove fade-out class after animation completes
   }
 
+  navigateToSafety() {
+    this.router.navigate(['/safety']).then(()=> {
+      // window.location.reload();
+    })
+  }    
+  navigateToMain(){
+    this.router.navigate(['/main']);
+  }
+
+  navigateToLabs() {
+    this.router.navigate(['/labs']).then(()=> {
+      // window.location.reload();
+    })
+  }
+
+  navigateToCompany(){
+    this.router.navigate(['/company']);
+  }
+
+  navigateToEdyousAi(){
+    this.router.navigate(['/how-edyous-ai-is-reimagining-the-future-of-personalized-learning']);
+  }
+
+  navigateToRevolutionizingEducation(){
+    this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']);
+  }
 }

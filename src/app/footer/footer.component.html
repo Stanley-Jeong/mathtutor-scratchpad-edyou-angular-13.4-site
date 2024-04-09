@@ -1,6 +1,6 @@
 <div data-elementor-type="footer" data-elementor-id="145"
         class="elementor elementor-145 elementor-location-footer"
-        data-elementor-post-type="elementor_library">
+        data-elementor-post-type="elementor_library" style="z-index: 0 !important;">
         <div
                 class="has_ae_slider elementor-element elementor-element-30cbdda0 footer subscribe elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
                 data-id="30cbdda0" data-element_type="container"
@@ -13,8 +13,7 @@
                                 data-widget_type="divider.default">
                                 <div class="elementor-widget-container">
                                         <div class="elementor-divider">
-                                                <span
-                                                        class="elementor-divider-separator">
+                                                <span class="elementor-divider-separator">
                                                 </span>
                                         </div>
                                 </div>
@@ -104,7 +103,7 @@
                                                         <div
                                                                 class="elementor-icon-box-icon">
                                                                 <a
-                                                                        href="tel:13104449700"
+                                                                        routerLink="tel:13104449700"
                                                                         class="elementor-icon elementor-animation-"
                                                                         tabindex="-1">
                                                                         <i
@@ -117,7 +116,7 @@
                                                                 <p
                                                                         class="elementor-icon-box-title inline">
                                                                         <a
-                                                                                href="tel:13104449700">
+                                                                                routereLink="tel:13104449700">
                                                                                 310.982.6822
                                                                         </a>
                                                                 </p>
@@ -201,7 +200,7 @@
                         <div
                                 class="has_ae_slider elementor-element elementor-element-64d89c4c e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
                                 data-id="64d89c4c" data-element_type="container"
-                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}" style="z-index: 0;">
                                 <div
                                         class="elementor-element elementor-element-cef0c38 elementor-nav-menu__align-end elementor-widget__width-inherit elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu"
                                         data-id="cef0c38"
@@ -219,37 +218,31 @@
                                                                         <ul
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
-                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22180"><a
-                                                                                                href="https://hello.edyou.com/"
-                                                                                                class="elementor-sub-item">Chat
-                                                                                                with
-                                                                                                Hannah</a></li>
-                                                                                <li
-                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181"><a
-                                                                                                href="/company/#why-edyou"
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181">
+                                                                                        <a routerLink="/company" fragment="why-edu"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Why
                                                                                                 edYOU?</a></li>
                                                                                 <li
-                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22186"><a
-                                                                                                href="/company/#mission-vision"
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22186">
+                                                                                        <a routerLink="/company" fragment="mission-vision"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Mission/Vision</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22187"><a
-                                                                                                href="/company/#team"
+                                                                                                routerLink="/company" fragment="team"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Team</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22188"><a
-                                                                                                href="/company/#faq"
+                                                                                                routerLink="/company" fragment="faq"
                                                                                                 class="elementor-sub-item elementor-item-anchor">FAQ</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22178"><a
-                                                                                                href="https://edyou.com/pay-it-forward/"
+                                                                                                (click)="navigateToPayItForward()"
                                                                                                 class="elementor-sub-item">Pay
                                                                                                 It
                                                                                                 Forward</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21974"><a
-                                                                                                href="https://edyou.com/company/press/"
+                                                                                                (click)="navigateToPress()"
                                                                                                 class="elementor-sub-item">Press</a></li>
                                                                         </ul>
                                                                 </li>
@@ -261,23 +254,23 @@
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22197"><a
-                                                                                                href="/safety/#physical-safety"
+                                                                                                routerLink="/safety" fragment="physical-safety"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Physical
                                                                                                 Safety</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22198"><a
-                                                                                                href="/safety/#emotional-wellbeing"
+                                                                                                routerLink="/safety" fragment="emotional-wellbeing"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Emotional
                                                                                                 Wellbeing</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22199"><a
-                                                                                                href="/safety/#ongoing-human-oversight"
+                                                                                                routerLink="/safety" fragment="ongoing-human-oversight"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Ongoing
                                                                                                 Human
                                                                                                 Oversight</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22177"><a
-                                                                                                [routerLink]="['/academic-integrity']"
+                                                                                                (click)="navigateToAcademicIntegrity()"
                                                                                                 class="elementor-sub-item">Academic
                                                                                                 Integrity</a></li>
                                                                         </ul>
@@ -290,28 +283,28 @@
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22192"><a
-                                                                                                href="/labs/#research"
+                                                                                                routerLink="/labs" fragment="research"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Research</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22193"><a
-                                                                                                href="/labs/#cab"
+                                                                                                routerLink="/labs" fragment="cab"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Conversational
                                                                                                 AI
                                                                                                 Beings</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22194"><a
-                                                                                                href="/labs/#pai"
+                                                                                                routerLink="/labs" fragment="pai"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Personalized
                                                                                                 AI</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22195"><a
-                                                                                                href="/labs/#pie"
+                                                                                                routerLink="/labs" fragment="pie"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Proprietary
                                                                                                 Ingestion
                                                                                                 Engine</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22196"><a
-                                                                                                href="/labs/#ice"
+                                                                                                routerLink="/labs" fragment="ice"
                                                                                                 class="elementor-sub-item elementor-item-anchor">Intelligent
                                                                                                 Curation
                                                                                                 Engine</a></li>
@@ -319,11 +312,11 @@
                                                                 </li>
                                                                 <li
                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19614"><a
-                                                                                [routerLink]="['/blog']"
+                                                                                (click)="navigateToBlog()"
                                                                                 class="elementor-item">Blog</a></li>
                                                                 <li
                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21542"><a
-                                                                                [routerLink]="['/investors']"
+                                                                                (click)="navigateToInvestor()"
                                                                                 class="elementor-item">Investor
                                                                                 Area</a></li>
                                                         </ul> 
@@ -355,43 +348,36 @@
                                                                         <ul
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
-                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22180"><a
-                                                                                                href="https://hello.edyou.com/"
-                                                                                                class="elementor-sub-item"
-                                                                                                tabindex="-1">Chat
-                                                                                                with
-                                                                                                Hannah</a></li>
-                                                                                <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181"><a
-                                                                                                href="/company/#why-edyou"
+                                                                                                routerLink="/company" fragment="why-edyou"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Why
                                                                                                 edYOU?</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22186"><a
-                                                                                                href="/company/#mission-vision"
+                                                                                                routerLink="/company" fragment="mission-vision"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Mission/Vision</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22187"><a
-                                                                                                href="/company/#team"
+                                                                                                routerLink="/company" fragment="team"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Team</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22188"><a
-                                                                                                href="/company/#faq"
+                                                                                                routerLink="/company" fragment="faq"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">FAQ</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22178"><a
-                                                                                                [routerLink]="['/pay-it-forward']"
+                                                                                                (click)="navigateToPayItForward()"
                                                                                                 class="elementor-sub-item"
                                                                                                 tabindex="-1">Pay
                                                                                                 It
                                                                                                 Forward</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21974"><a
-                                                                                                [routerLink]="['/press']"
+                                                                                                (click)="navigateToPress()"
                                                                                                 class="elementor-sub-item"
                                                                                                 tabindex="-1">Press</a></li>
                                                                         </ul>
@@ -405,26 +391,26 @@
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22197"><a
-                                                                                                href="/safety/#physical-safety"
+                                                                                                routerLink="/safety" fragment="physical-safety"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Physical
                                                                                                 Safety</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22198"><a
-                                                                                                href="/safety/#emotional-wellbeing"
+                                                                                        routerLink="/safety" fragment="emotional-wellbeing"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Emotional
                                                                                                 Wellbeing</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22199"><a
-                                                                                                href="/safety/#ongoing-human-oversight"
+                                                                                                routerLink="/safety" fragment="ongoing-human-oversight"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Ongoing
                                                                                                 Human
                                                                                                 Oversight</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22177"><a
-                                                                                                [routerLink]="['/academic-integrity']"
+                                                                                                (click)="navigateToAcademicIntegrity()"
                                                                                                 class="elementor-sub-item"
                                                                                                 tabindex="-1">Academic
                                                                                                 Integrity</a></li>
@@ -439,32 +425,32 @@
                                                                                 class="sub-menu elementor-nav-menu--dropdown">
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22192"><a
-                                                                                                href="/labs/#research"
+                                                                                                routerLink="/labs" fragment="research"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Research</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22193"><a
-                                                                                                href="/labs/#cab"
+                                                                                                routerLink="/labs" fragment="cab"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Conversational
                                                                                                 AI
                                                                                                 Beings</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22194"><a
-                                                                                                href="/labs/#pai"
+                                                                                                routerLink="/labs" fragment="pai"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Personalized
                                                                                                 AI</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22195"><a
-                                                                                                href="/labs/#pie"
+                                                                                                routerLink="/labs" fragment="pie"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Proprietary
                                                                                                 Ingestion
                                                                                                 Engine</a></li>
                                                                                 <li
                                                                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22196"><a
-                                                                                                href="/labs/#ice"
+                                                                                                routerLink="/labs" fragment="ice"
                                                                                                 class="elementor-sub-item elementor-item-anchor"
                                                                                                 tabindex="-1">Intelligent
                                                                                                 Curation
@@ -473,12 +459,12 @@
                                                                 </li>
                                                                 <li
                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19614"><a
-                                                                                [routerLink]="['/blog']"
+                                                                                (click)="navigateToBlog()"
                                                                                 class="elementor-item"
                                                                                 tabindex="-1">Blog</a></li>
                                                                 <li
                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21542"><a
-                                                                                [routerLink]="['/investors']"
+                                                                                (click)="navigateToInvestor()"
                                                                                 class="elementor-item"
                                                                                 tabindex="-1">Investor
                                                                                 Area</a></li>
@@ -526,7 +512,7 @@
                                         data-element_type="widget"
                                         data-widget_type="text-editor.default">
                                         <div class="elementor-widget-container">
-                                                © 2024 <a href="/">edYOU</a> All
+                                                © 2024 <a (click)="navigateToMain()" style="cursor: pointer;">edYOU</a> All
                                                 rights reserved. </div>
                                 </div>
                         </div>

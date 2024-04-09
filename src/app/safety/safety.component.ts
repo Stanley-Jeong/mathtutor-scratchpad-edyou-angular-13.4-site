@@ -49,5 +49,6 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
     //   // element.className = newClassName; // Directly assign empty string
     // });
   }
+  
 
 }

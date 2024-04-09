@@ -41,4 +41,12 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
+  navigateToEdyousAi(){
+    this.router.navigate(['/how-edyous-ai-is-reimagining-the-future-of-personalized-learning']);
+  }
+
+  navigateToRevolutionizingEducation(){
+    this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']);
+  }
+
 }

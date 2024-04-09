@@ -9,7 +9,7 @@
             <div class="elementor-element elementor-element-1272a833 site-logo elementor-widget elementor-widget-image"
                 data-id="1272a833" data-element_type="widget" data-widget_type="image.default">
                 <div class="elementor-widget-container">
-                    <a [routerLink]="['/']">
+                    <a (click)="navigateToMain()">
                         <!-- https://edyou.com/wp-content/uploads/2023/02/edyou-logo-white-secondary-300x125.png -->
                         <!-- https://edyou.com/wp-content/uploads/2023/02/edyou-logo-white-secondary-1024x425.png -->
                         <!-- https://edyou.com/wp-content/uploads/2023/02/edyou-logo-white-secondary-768x319.png -->
@@ -27,7 +27,7 @@
             <div class="elementor-element elementor-element-d734891 tagline elementor-widget elementor-widget-text-editor"
                 data-id="d734891" data-element_type="widget" data-widget_type="text-editor.default">
                 <div class="elementor-widget-container">
-                    <p>Educate yourself</p>
+                    <p>Empower yourself</p>
                 </div>
             </div>
         </div>
@@ -46,11 +46,7 @@
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22029">
                                 <a (click)="navigateToCompany()" class="elementor-item">Company</a>
                                 <ul class="sub-menu elementor-nav-menu--dropdown">
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22180">
-                                        <a href="https://hello.edyou.com/" class="elementor-sub-item">Chat with
-                                            Hannah</a>
-                                    </li>
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181">
+                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181">
                                         <a routerLink="/company" fragment="why-edu"
                                             class="elementor-sub-item elementor-item-anchor">Why
                                             edYOU?</a></li>
@@ -132,92 +128,88 @@
                         <ul id="menu-2-232cb070" class="elementor-nav-menu">
                             <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22029">
-                                <a href="https://edyou.com/company/" class="elementor-item" tabindex="-1">Company</a>
+                                <a (click)="navigateToCompany()" class="elementor-item" tabindex="-1">Company</a>
                                 <ul class="sub-menu elementor-nav-menu--dropdown">
-                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22180">
-                                        <a href="https://hello.edyou.com/" class="elementor-sub-item" tabindex="-1">Chat
-                                            with
-                                            Hannah</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181">
-                                        <a href="/company/#why-edyou" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/company" fragment="why-edyou" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Why
                                             edYOU?</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22186">
-                                        <a href="/company/#mission-vision"
+                                        <a routerLink="/company" fragment="mission-vision"
                                             class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Mission/Vision</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22187">
-                                        <a href="/company/#team" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/company" fragment="team" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Team</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22188">
-                                        <a href="/company/#faq" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/company" fragment="faq" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">FAQ</a></li>
                                     <li
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22178">
-                                        <a href="https://edyou.com/pay-it-forward/" class="elementor-sub-item"
+                                        <a (click)="navigateToPayItForward()" class="elementor-sub-item"
                                             tabindex="-1">Pay It
                                             Forward</a></li>
                                     <li
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21974">
-                                        <a href="https://edyou.com/company/press/" class="elementor-sub-item"
+                                        <a (click)="navigateToPress()" class="elementor-sub-item"
                                             tabindex="-1">Press</a></li>
                                 </ul>
                             </li>
                             <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19201">
-                                <a href="https://edyou.com/safety/" class="elementor-item" tabindex="-1">Safety</a>
+                                <a (click)="navigateToSafety()" class="elementor-item" tabindex="-1">Safety</a>
                                 <ul class="sub-menu elementor-nav-menu--dropdown">
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22197">
-                                        <a href="/safety/#physical-safety"
+                                        <a routerLink="/safety" fragment="physical-safety"
                                             class="elementor-sub-item elementor-item-anchor" tabindex="-1">Physical
                                             Safety</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22198">
-                                        <a href="/safety/#emotional-wellbeing"
+                                        <a routerLink="/safety" fragment="emotional-wellbeing"
                                             class="elementor-sub-item elementor-item-anchor" tabindex="-1">Emotional
                                             Wellbeing</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22199">
-                                        <a href="/safety/#ongoing-human-oversight"
+                                        <a routerLink="/safety" fragment="ongoing-human-oversight"
                                             class="elementor-sub-item elementor-item-anchor" tabindex="-1">Ongoing Human
                                             Oversight</a></li>
                                     <li
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22177">
-                                        <a href="https://edyou.com/academic-integrity/" class="elementor-sub-item"
+                                        <a (click)="navigateToAcademicIntegrity()" class="elementor-sub-item"
                                             tabindex="-1">Academic
                                             Integrity</a></li>
                                 </ul>
                             </li>
                             <li
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19142">
-                                <a href="https://edyou.com/labs/" class="elementor-item" tabindex="-1">Labs</a>
+                                <a (click)="navigateToLabs()" class="elementor-item" tabindex="-1">Labs</a>
                                 <ul class="sub-menu elementor-nav-menu--dropdown">
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22192">
-                                        <a href="/labs/#research" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/labs" fragment="research" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Research</a>
                                     </li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22193">
-                                        <a href="/labs/#cab" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/labs" fragment="cab" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Conversational AI
                                             Beings</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22194">
-                                        <a href="/labs/#pai" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/labs" fragment="pai" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Personalized
                                             AI</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22195">
-                                        <a href="/labs/#pie" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/labs" fragment="pie" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Proprietary
                                             Ingestion
                                             Engine</a></li>
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22196">
-                                        <a href="/labs/#ice" class="elementor-sub-item elementor-item-anchor"
+                                        <a routerLink="/labs" fragment="ice" class="elementor-sub-item elementor-item-anchor"
                                             tabindex="-1">Intelligent
                                             Curation
                                             Engine</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19614"><a
-                                    href="https://edyou.com/blog/" class="elementor-item" tabindex="-1">Blog</a></li>
+                                    (click)="navigateToBlog()" class="elementor-item" tabindex="-1">Blog</a></li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21542"><a
-                                    href="https://edyou.com/investor-area/" class="elementor-item"
+                                    (click)="navigateToInvestor()" class="elementor-item"
                                     tabindex="-1">Investor Area</a></li>
                         </ul>
                     </nav>
@@ -253,8 +245,9 @@
                 <div class="elementor-element elementor-element-2b19ce79 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
                     data-id="2b19ce79" data-element_type="widget" data-widget_type="icon-list.default">
                     <div class="elementor-widget-container">
-                        <link rel="stylesheet"
-                            href="https://edyou.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                        <!-- pasted the content of the sheet in navigation-bar.css present in assets/css -->
+                        <!-- <link rel="stylesheet"
+                            href="https://edyou.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css"> -->
                         <ul class="elementor-icon-list-items">
                             <li class="elementor-icon-list-item">
                                 <a (click)="navigateToCompany()">
@@ -263,7 +256,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/company/#cab-content">
+                                <a routerLink="/company" fragment="cab-content">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -272,7 +265,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/company/#why-edyou">
+                                <a routerLink="/company" fragment="why-edyou">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -281,7 +274,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/company/#mission-vision">
+                                <a routerLink="/company" fragment="mission-vision">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -289,7 +282,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/company/#team">
+                                <a routerLink="/company" fragment="team">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -297,7 +290,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/company/#faq">
+                                <a routerLink="/company" fragment="faq">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -305,7 +298,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/pay-it-forward/">
+                                <a (click)="navigateToPayItForward()">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -314,7 +307,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/press/">
+                                <a (click)="navigateToBlog()">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -328,7 +321,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/safety/#physical-safety">
+                                <a routerLink="/safety" fragment="physical-safety">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -337,7 +330,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/safety/#emotional-wellbeing">
+                                <a routerLink="/safety" fragment="emotional-wellbeing">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -346,7 +339,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/safety/#ongoing-human-oversight">
+                                <a routerLink="/safety" fragment="ongoing-human-oversight">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -361,7 +354,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/labs/#research">
+                                <a routerLink="/labs" fragment="research">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -369,7 +362,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/labs/#cab">
+                                <a routerLink="/labs" fragment="cab">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -378,7 +371,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/labs/#pai">
+                                <a routerLink="/labs" fragment="pai">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -387,7 +380,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/labs/#ice">
+                                <a routerLink="/labs" fragment="ice">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -396,7 +389,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/labs/#pie">
+                                <a routerLink="/labs" fragment="pie">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -405,13 +398,13 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/blog/">
+                                <a (click)="navigateToBlog()">
 
                                     <span class="elementor-icon-list-text">Blog</span>
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a href="/investor-area/">
+                                <a (click)="navigateToInvestor()">
 
                                     <span class="elementor-icon-list-text">Investor
                                         Area</span>
@@ -438,12 +431,12 @@
                     <div class="elementor-widget-container">
                         <div class="elementor-icon-box-wrapper">
                             <div class="elementor-icon-box-icon">
-                                <a href="tel:13109826822" class="elementor-icon elementor-animation-" tabindex="-1">
+                                <a routerLink="tel:13109826822" class="elementor-icon elementor-animation-" tabindex="-1">
                                     <i aria-hidden="true" class="fas fa-phone-alt"></i> </a>
                             </div>
                             <div class="elementor-icon-box-content">
                                 <p class="elementor-icon-box-title">
-                                    <a href="tel:13109826822">
+                                    <a routerLink="tel:13109826822">
                                         310.982.6822 </a>
                                 </p>
                             </div>

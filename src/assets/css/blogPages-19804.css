@@ -1,0 +1,175 @@
+.elementor-19804 .elementor-element.elementor-element-c8d47c5 {
+  --display: flex;
+  --gap: 0px 0px;
+  --background-transition: 0.3s;
+  --margin-block-start: 6rem;
+  --margin-block-end: 0rem;
+  --margin-inline-start: 0rem;
+  --margin-inline-end: 0rem;
+  --padding-block-start: 0rem;
+  --padding-block-end: 0rem;
+  --padding-inline-start: 0rem;
+  --padding-inline-end: 0rem
+}
+
+.elementor-19804 .elementor-element.elementor-element-c8d47c5,
+.elementor-19804 .elementor-element.elementor-element-c8d47c5::before {
+  --border-transition: 0.3s
+}
+
+.elementor-19804 .elementor-element.elementor-element-cceb5ac {
+  --display: flex;
+  --min-height: 500px;
+  --justify-content: flex-end;
+  --background-transition: 0.3s;
+  --padding-block-start: 2rem;
+  --padding-block-end: 2rem;
+  --padding-inline-start: 2rem;
+  --padding-inline-end: 2rem
+}
+
+.elementor-19804 .elementor-element.elementor-element-cceb5ac:not(.elementor-motion-effects-element-type-background),
+.elementor-19804 .elementor-element.elementor-element-cceb5ac>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.elementor-19804 .elementor-element.elementor-element-cceb5ac,
+.elementor-19804 .elementor-element.elementor-element-cceb5ac::before {
+  --border-transition: 0.3s
+}
+
+.elementor-19804 .elementor-element.elementor-element-b778097 .elementor-heading-title {
+  font-size: 3.25rem
+}
+
+.elementor-19804 .elementor-element.elementor-element-eaeabb0 {
+  --display: flex;
+  --flex-direction: row;
+  --container-widget-width: initial;
+  --container-widget-height: 100%;
+  --container-widget-flex-grow: 1;
+  --container-widget-align-self: stretch;
+  --gap: 0px 0px;
+  --background-transition: 0.3s;
+  --padding-block-start: 2rem;
+  --padding-block-end: 0rem;
+  --padding-inline-start: 0rem;
+  --padding-inline-end: 0rem
+}
+
+.elementor-19804 .elementor-element.elementor-element-781a837 {
+  --display: flex;
+  --flex-direction: column;
+  --container-widget-width: 100%;
+  --container-widget-height: initial;
+  --container-widget-flex-grow: 0;
+  --container-widget-align-self: initial;
+  --gap: 0px 0px;
+  --background-transition: 0.3s
+}
+
+.elementor-19804 .elementor-element.elementor-element-781a837:not(.elementor-motion-effects-element-type-background),
+.elementor-19804 .elementor-element.elementor-element-781a837>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+  background-image: url(https://staging.edyou.com/wp-content/uploads/2023/08/diagonal-stripe-tile-thin-20.png)
+}
+
+.elementor-19804 .elementor-element.elementor-element-781a837,
+.elementor-19804 .elementor-element.elementor-element-781a837::before {
+  --border-transition: 0.3s
+}
+
+.elementor-19804 .elementor-element.elementor-element-781a837.e-con {
+  --flex-grow: 0;
+  --flex-shrink: 0
+}
+
+.elementor-19804 .elementor-element.elementor-element-ebba204 .elementor-button {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px
+}
+
+.elementor-19804 .elementor-element.elementor-element-ebba204>.elementor-widget-container {
+  margin: 1rem 1rem 0 0
+}
+
+.elementor-19804 .elementor-element.elementor-element-ebba204.elementor-element {
+  --align-self: flex-end
+}
+
+.elementor-19804 .elementor-element.elementor-element-deb1195 {
+  --display: flex;
+  --flex-direction: column;
+  --container-widget-width: 100%;
+  --container-widget-height: initial;
+  --container-widget-flex-grow: 0;
+  --container-widget-align-self: initial;
+  --gap: 0px 0px;
+  --background-transition: 0.3s;
+  --margin-block-start: 0rem;
+  --margin-block-end: 0rem;
+  --margin-inline-start: 2rem;
+  --margin-inline-end: 0rem
+}
+
+@media(min-width:768px) {
+  .elementor-19804 .elementor-element.elementor-element-781a837 {
+    --width: 25%
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-deb1195 {
+    --width: 75%
+  }
+}
+
+@media(max-width:1024px) {
+  .elementor-19804 .elementor-element.elementor-element-b778097 .elementor-heading-title {
+    font-size: 2.5rem;
+    letter-spacing: -1.5px
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-ebba204>.elementor-widget-container {
+    margin: 1rem 1rem 0 0
+  }
+}
+
+@media(max-width:767px) {
+  .elementor-19804 .elementor-element.elementor-element-cceb5ac {
+    --padding-block-start: 1rem;
+    --padding-block-end: 2rem;
+    --padding-inline-start: 1rem;
+    --padding-inline-end: 1rem
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-b778097 .elementor-heading-title {
+    font-size: 2.25rem
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-eaeabb0 {
+    --padding-block-start: 1rem;
+    --padding-block-end: 1rem;
+    --padding-inline-start: 1rem;
+    --padding-inline-end: 1rem
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-ebba204>.elementor-widget-container {
+    margin: 0
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-ebba204.elementor-element {
+    --align-self: flex-start
+  }
+
+  .elementor-19804 .elementor-element.elementor-element-deb1195 {
+    --margin-block-start: 0rem;
+    --margin-block-end: 0rem;
+    --margin-inline-start: 0rem;
+    --margin-inline-end: 0rem;
+    --padding-block-start: 0px;
+    --padding-block-end: 0px;
+    --padding-inline-start: 0px;
+    --padding-inline-end: 0px
+  }
+}

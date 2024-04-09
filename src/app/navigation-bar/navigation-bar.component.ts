@@ -222,18 +222,6 @@ export class NavigationBarComponent implements OnInit {
       // window.location.reload();
     })
   }  
-
-  navigateToSafety() {
-    this.router.navigate(['/safety']).then(()=> {
-      // window.location.reload();
-    })
-  }    
-
-  navigateToLabs() {
-    this.router.navigate(['/labs']).then(()=> {
-        // window.location.reload();
-      })
-  }
   
   navigateToPayItForward() {
     this.router.navigate(['/pay-it-forward']).then(()=> {
@@ -252,11 +240,26 @@ export class NavigationBarComponent implements OnInit {
   navigateToBlog(){
     this.router.navigate(['/blog']);
   }
-
+  
   navigateToInvestor(){
     this.router.navigate(['/investors']);
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  
+  navigateToSafety() {
+    this.router.navigate(['/safety']).then(()=> {
+      // window.location.reload();
+    })
+  }    
+  navigateToMain(){
+    this.router.navigate(['/main']);
+  }
+
+  navigateToLabs() {
+    this.router.navigate(['/labs']).then(()=> {
+      // window.location.reload();
+    })
   }
 }

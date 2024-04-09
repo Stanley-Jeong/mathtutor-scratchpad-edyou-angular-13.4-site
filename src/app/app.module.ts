@@ -26,6 +26,8 @@ import { BlogComponent } from './blog/blog.component';
 import { InvestorsComponent } from './investors/investors.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
+import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 
 
 
@@ -46,7 +48,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
     BlogComponent,
     InvestorsComponent,
     TermsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    EdyousAiComponent,
+    RevolutionizingEducationComponent
 
 
 

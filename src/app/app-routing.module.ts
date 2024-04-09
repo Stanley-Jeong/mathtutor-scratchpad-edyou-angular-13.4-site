@@ -11,6 +11,8 @@ import { BlogComponent } from './blog/blog.component';
 import { InvestorsComponent } from './investors/investors.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
+import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 
 
 
@@ -31,7 +33,9 @@ const routes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'investors', component: InvestorsComponent},
   {path: 'terms', component:TermsComponent},
-  {path: 'privacy', component:PrivacyComponent}
+  {path: 'privacy', component:PrivacyComponent},
+  {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
+  {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent}
 
  
 ];
