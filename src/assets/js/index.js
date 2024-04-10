@@ -41,7 +41,7 @@ var tg = new tourguide.TourGuideClient({
             target: "#tourSetting",
             order: "2",
             // content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/settings.png'  style='width:290px' alt=''>", 
-            content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option.",
+            content: "You can turn on/off captions, restart tour guide.",
 
             title: "Settings",
             group: "",
@@ -51,18 +51,9 @@ var tg = new tourguide.TourGuideClient({
 
         },
         {
-            target: "#GuideMathametic", // target element
-            // order: "3",
+
             order: "3",
-            content: "By turning on this toggle, you will enter the mathematics zone where you can ask mathematical questions.",
-            title: "Mathematics Button",
-            group: "",
-
-        },
-        {
-
-            // order: "3",
-            order: "4",
+            // order: "4",
             content: "You can interrupt AI being while speaking by clicking this button. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/Stop+speaking.png'  style='width:280px; padding:10px ; background:grey' alt=''>",
             title: "Stop Speaking Button",
             group: "",
@@ -79,7 +70,8 @@ var tg = new tourguide.TourGuideClient({
             title: "Exit Button",
             target: "#cross1",
             // order: "8",
-            order: "5",
+            // order: "5",
+            order:"4",
             group: "",
         },
 
@@ -129,7 +121,7 @@ export function tour() {
                 target: "#tourSetting",
                 order: "2",
                 // content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/settings.png'  style='width:290px' alt=''>", 
-                content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option.",
+                content: "You can turn on/off captions, restart tour guide.",
     
                 title: "Settings",
                 group: "",
@@ -139,18 +131,9 @@ export function tour() {
     
             },
             {
-                target: "#GuideMathametic", // target element
-                // order: "3",
+    
                 order: "3",
-                content: "By turning on this toggle, you will enter the mathematics zone where you can ask mathematical questions.",
-                title: "Mathematics Button",
-                group: "",
-    
-            },
-            {
-    
-                // order: "3",
-                order: "4",
+                // order: "4",
                 content: "You can interrupt AI being while speaking by clicking this button. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/Stop+speaking.png'  style='width:280px; padding:10px ; background:grey' alt=''>",
                 title: "Stop Speaking Button",
                 group: "",
@@ -167,7 +150,7 @@ export function tour() {
                 title: "Exit Button",
                 target: "#cross1",
                 // order: "8",
-                order: "5",
+                order: "4",
                 group: "",
             },
     
