@@ -654,6 +654,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   }
 
+  
 
   onConnectionSuccess(sessionId: any) {
     // setTimeout(() => {
