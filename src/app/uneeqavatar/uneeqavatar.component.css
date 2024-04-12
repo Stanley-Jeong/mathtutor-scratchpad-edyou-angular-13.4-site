@@ -5,9 +5,14 @@
 }
 
 ::placeholder {
-  color: white;
+  color: white !important;
   opacity: 1;
   /* Firefox */
+}
+
+/* For browsers that support the ::placeholder pseudo-element */
+#textTourBox::placeholder {
+  color: white !important; /* Change the color to white */
 }
 
 :host ::ng-deep .ML__virtual-keyboard-toggle,

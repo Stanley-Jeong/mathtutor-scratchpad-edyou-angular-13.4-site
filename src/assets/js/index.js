@@ -219,7 +219,7 @@ export function noSchoolTour() {
                 target: "#tourSetting",
                 order: "2",
                 // content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/settings.png'  style='width:290px' alt=''>", 
-                content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option.",
+                content: "You can turn on/off captions, restart tour guide.",
     
                 title: "Settings",
                 group: "",
