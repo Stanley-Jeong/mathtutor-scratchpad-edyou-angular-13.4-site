@@ -1,7 +1,6 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { HeaderService } from '../service/header.service';
 
 @Component({
   selector: 'app-safety',
@@ -14,7 +13,7 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private headerService: HeaderService
+    
   ) { }
 
   async ngAfterViewInit() {

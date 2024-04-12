@@ -19,6 +19,10 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
     
   }
 
+  navigateToSafety(){
+    this.router.navigate(['/safety']);
+  }
+
   async ngAfterViewInit() {
     this.navigateAndReplaceClass();
   }

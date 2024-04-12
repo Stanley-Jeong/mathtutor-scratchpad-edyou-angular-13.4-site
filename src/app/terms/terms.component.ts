@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from '../service/header.service';
 
 @Component({
   selector: 'app-terms',
@@ -8,9 +7,7 @@ import { HeaderService } from '../service/header.service';
 })
 export class TermsComponent implements OnInit {
 
-  constructor(
-    // private headerService: HeaderService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {}
 

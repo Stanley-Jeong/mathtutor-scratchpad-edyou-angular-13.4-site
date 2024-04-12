@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Investor } from '../models/investor';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InvestorsService } from '../service/investors.service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-investors',
@@ -7,51 +12,74 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestorsComponent implements OnInit {
 
-  formContainerRef: any; // Define the appropriate type
-  formRef: any; // Define the appropriate type
-  parent: any; // Define the appropriate type
-  state: any; // Define the appropriate type
-  validation: any; // Define the appropriate type
-  is_edit_mode: boolean = false;
-  message_position: string = 'top';
-  message_successIcon: string = '';
-  message_errorIcon: string = '';
-  message_editSwitch: boolean = false;
-  message_proClass: string = '';
-  is_dummy_markup: boolean = false;
+  investorForm: FormGroup = new FormGroup({});
+  successMessage: string = '';
+  loading: boolean = false; // Track loading state
+  successMessageVisible: boolean = false;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private investorsService: InvestorsService,
+  ) { }
 
   ngOnInit(): void {
-    this.message_position = this.controls_data('messageposition') || 'top';
-    this.message_successIcon = this.controls_data('successicon') || '';
-    this.message_errorIcon = this.controls_data('erroricon') || '';
-    this.message_editSwitch = this.controls_data('editswitchopen') === 'yes';
-    this.message_proClass = this.controls_data('editswitchopen') === 'yes' ? 'mf_pro_activated' : '';
-    this.is_dummy_markup = this.is_edit_mode && this.message_editSwitch;
+    this.investorForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email, Validators.pattern(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+      )]],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern(/^\d+$/)]], // Only allow numeric characters
+      company: ['', [Validators.required]],
+      user_information: ['', [Validators.required]]
+    });
   }
 
-  controls_data(value: string): string {
-    let currentWrapper = "mf-response-props-id-333";
-    let currentEl = document.getElementById(currentWrapper);
-    return currentEl ? currentEl.dataset[value]! : '';
+  requestAccess() {
+    if (this.investorForm.valid) {
+      this.loading = true;
+      const investor: Investor = this.investorForm.value;
+      this.investorsService.requestAccess(investor)
+        .pipe(
+          catchError(error => {
+            console.log("Error submitting form:", error);
+            this.successMessage = 'Error! Requesting access failed';
+            this.showSuccessMessage();
+            // You can return a new error with more context if needed
+            return of(new Error('Form submission failed'));
+          })
+        )
+        .subscribe(
+          response => {
+            console.log(response)
+            console.log(response.statusCode);
+            if (response && response.statusCode === 200) {
+              this.successMessage = '✔️ '+ response.body;
+              this.showSuccessMessage();
+              this.investorForm.reset();
+            } else {
+              this.successMessage = 'Error! Requesting access failed';
+              this.showSuccessMessage();
+              console.log("Error submitting form.");
+            }
+            this.loading = false;
+          }
+        );
+    } else {
+      // Handle invalid form submission
+      console.log("Invalid form submission.");
+    }
   }
 
-  handleFormSubmit(): void {
-    // Define form submit logic here
+  showSuccessMessage() {
+    this.successMessageVisible = true;
+    setTimeout(() => {
+      this.successMessageVisible = false;
+    }, 5000); // 10 seconds
   }
 
-  handleChange(event: any): void {
-    // Define input change logic here
+  // Helper function to check if a form control has an error
+  hasError(controlName: string, errorName: string) {
+    return this.investorForm.get(controlName)?.hasError(errorName) && this.investorForm.get(controlName)?.touched;
   }
-
-  decodeEntities(text: string): string {
-    // Implement decoding logic here if needed
-    return text; // For now, just return the input text
-  }
-
-  activateValidation(validationConfig: any, element: any): void {
-    // Define validation activation logic here
-  }
-
 }

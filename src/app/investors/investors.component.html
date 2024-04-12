@@ -55,114 +55,23 @@
                 class="elementor-heading-title elementor-size-default">Investor
                 Area</h1>
             </div>
+            <div>
+              <iframe width="1140" height="641" src="https://www.youtube.com/embed/KUyivhfPWCM" title="Introduction to edYOU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>           
+            </div>
           </div>
-          <div
+          <!-- <div
             class="elementor-element elementor-element-1b7f741 elementor-invisible elementor-widget elementor-widget-video"
             data-id="1b7f741" data-element_type="widget"
             data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/KUyivhfPWCM&quot;,&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}"
             data-widget_type="video.default">
             <div class="elementor-widget-container">
               <style>
-                /*! elementor - v3.19.0 - 07-02-2024 */
-                .elementor-widget-video .elementor-widget-container {
-                  overflow: hidden;
-                  transform: translateZ(0)
-                }
-
-                .elementor-widget-video .elementor-wrapper {
-                  aspect-ratio: var(--video-aspect-ratio)
-                }
-
-                .elementor-widget-video .elementor-wrapper iframe,
-                .elementor-widget-video .elementor-wrapper video {
-                  height: 100%;
-                  width: 100%;
-                  display: flex;
-                  border: none;
-                  background-color: #000
-                }
-
-                @supports not (aspect-ratio:1/1) {
-                  .elementor-widget-video .elementor-wrapper {
-                    position: relative;
-                    overflow: hidden;
-                    height: 0;
-                    padding-bottom: calc(100% / var(--video-aspect-ratio))
-                  }
-
-                  .elementor-widget-video .elementor-wrapper iframe,
-                  .elementor-widget-video .elementor-wrapper video {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0
-                  }
-                }
-
-                .elementor-widget-video .elementor-open-inline .elementor-custom-embed-image-overlay {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  left: 0;
-                  background-size: cover;
-                  background-position: 50%
-                }
-
-                .elementor-widget-video .elementor-custom-embed-image-overlay {
-                  cursor: pointer;
-                  text-align: center
-                }
-
-                .elementor-widget-video .elementor-custom-embed-image-overlay:hover .elementor-custom-embed-play i {
-                  opacity: 1
-                }
-
-                .elementor-widget-video .elementor-custom-embed-image-overlay img {
-                  display: block;
-                  width: 100%;
-                  aspect-ratio: var(--video-aspect-ratio);
-                  -o-object-fit: cover;
-                  object-fit: cover;
-                  -o-object-position: center center;
-                  object-position: center center
-                }
-
-                @supports not (aspect-ratio:1/1) {
-                  .elementor-widget-video .elementor-custom-embed-image-overlay {
-                    position: relative;
-                    overflow: hidden;
-                    height: 0;
-                    padding-bottom: calc(100% / var(--video-aspect-ratio))
-                  }
-
-                  .elementor-widget-video .elementor-custom-embed-image-overlay img {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0
-                  }
-                }
-
-                .elementor-widget-video .e-hosted-video .elementor-video {
-                  -o-object-fit: cover;
-                  object-fit: cover
-                }
-
-                .e-con-inner>.elementor-widget-video,
-                .e-con>.elementor-widget-video {
-                  width: var(--container-widget-width);
-                  --flex-grow: var(--container-widget-flex-grow)
-                }
-
               </style>
               <div class="elementor-wrapper elementor-open-inline">
                 <div class="elementor-video"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div
@@ -196,56 +105,61 @@
               data-widget_type="text-editor.default">
               <div class="elementor-widget-container">
                 <p>Please fill out the form below to request access to our
-                  investor
-                  area, and we will reach out to you shortly with additional
+                  investor area, and we will reach out to you shortly with additional
                   information.</p>
                 <p>Already have access? <a href="/wp-login.php">Sign in
                     here</a></p>
               </div>
             </div>
 
-            <form>
-              <div class="row justify-content-center m-0">
-                  <div class="col">
-                      <div class=" from-group row">
-                          <div class="form-group col p-0 pr-1">
-                              <input type="text" name="fname" class="form-control" placeholder="First Name" />
-                          </div>
-                          <div class="form-group col p-0 pl-1">
-                              <input type="text" name="lname" class="form-control" placeholder="Last Name" />
-                          </div>
-                      </div>
-          
-                      <div class="form-group row my-0">
-                          <div class="form-group col p-0 pr-1">
-                              <input type="email" name="email" class="form-control" placeholder="Email" />
-                          </div>
-                          <div class="form-group col p-0 pl-1">
-                              <input type="text" name="phone" class="form-control" placeholder="Phone" />
-                          </div>
-                      </div>
-          
-                      <div class="form-group row">
-                          <input type="text" name="company-name" class="form-control" placeholder="Company Name" />
-                      </div>
-          
-                      <div class="form-group row">
-                          <textarea class="form-control" name id rows="4" placeholder="Tell us about yourself."></textarea>
-                      </div>
-          
-                      <div class="form-group row text-left">
-                          <input type="submit" class="btn btn-success" value="Request Access" style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" />
-                      </div>
-                  </div>
+            <form [formGroup]="investorForm" (ngSubmit)="requestAccess()">
+              <!-- First Name -->
+              <div class="form-group row my-0">
+                <div class="form-group col p-0 pr-1">
+                  <input type="text" name="fname" formControlName="firstname" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': hasError('firstname', 'required') }" />
+                </div>
+                <!-- Last Name -->
+                <div class="form-group col p-0 pl-1">
+                  <input type="text" name="lname" formControlName="lastname" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': hasError('lastname', 'required') }" />
+                </div>
+              </div>
+            
+              <!-- Email -->
+              <div class="form-group row my-0">
+                <div class="form-group col p-0 pr-1">
+                  <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': hasError('email', 'required') || hasError('email', 'email') || hasError('email', 'pattern') }" />
+                </div>
+                <!-- Phone -->
+                <div class="form-group col p-0 pl-1">
+                  <input type="text" name="phone" formControlName="phone" class="form-control" placeholder="Phone" [ngClass]="{ 'is-invalid': hasError('phone', 'required') || hasError('phone', 'pattern') }" />
+                </div>
+              </div>
+            
+              <!-- Company Name -->
+              <div class="form-group row">
+                <input type="text" name="company-name" formControlName="company" class="form-control" placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
+              </div>
+            
+              <!-- User Information -->
+              <div class="form-group row">
+                <textarea class="form-control" formControlName="user_information" name id rows="4" placeholder="Tell us about yourself." [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
+              </div>
+            
+              <!-- Submit Button -->
+              <div class="form-group row text-left">
+                <input type="submit" class="btn btn-success" [disabled]="investorForm.invalid" value="Request Access" style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" />
+                <div *ngIf="loading" class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert"> {{successMessage}} </span>
               </div>
             </form>
+            
           
 
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="post-tags">
   </div>
 </main>
