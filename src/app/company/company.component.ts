@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, OnDestroy, OnInit, ElementRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -11,12 +11,11 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
   private ngUnsubscribe = new Subject();
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private el: ElementRef) { }
+    private router: Router) {
+      
+    }
 
   ngOnInit(): void {
-    
   }
 
   navigateToSafety(){

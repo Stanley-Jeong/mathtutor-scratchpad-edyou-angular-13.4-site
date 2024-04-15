@@ -28,7 +28,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
-
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 
 
@@ -60,7 +60,7 @@ import { RevolutionizingEducationComponent } from './revolutionizing-education/r
   imports: [
     BrowserModule,
     HttpClientModule,
-
+    NgxYoutubePlayerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

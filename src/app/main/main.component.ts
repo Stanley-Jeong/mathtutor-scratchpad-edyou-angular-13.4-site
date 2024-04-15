@@ -17,6 +17,13 @@ export class MainComponent implements OnInit {
 
   async ngAfterViewInit() {
     this.navigateAndReplaceClass();
+    // Autoplay the video by triggering a play event
+    const videoIframe= document.getElementById('widget2') as HTMLIFrameElement;
+    if (videoIframe) {
+      console.log('hey');
+      videoIframe.contentWindow?.postMessage('{"event":"command","func":"mute","args":""}', '*');
+      videoIframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    }
   }
 
   ngOnDestroy(): void {

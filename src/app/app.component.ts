@@ -16,6 +16,11 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.initializeScrollListener();
+    if(this.router.url.includes("main")){
+      this.router.navigate(['/company']);
+      setTimeout("",20)
+      this.router.navigate(['/main']);
+    }
   }
    
   constructor(private router: Router) {
