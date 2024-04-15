@@ -195,7 +195,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
-    this.onLoadCard('')
+   // this.onLoadCard('')
 
     this.user = JSON.parse(localStorage.getItem('user') || '[]')
     this.token = localStorage.getItem('token') 

@@ -1193,7 +1193,7 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
 }
 
 .video {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
 }
