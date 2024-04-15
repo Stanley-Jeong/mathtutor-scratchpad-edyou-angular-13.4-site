@@ -4,10 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser'
 
-
-
-
-
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -27,8 +23,6 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
