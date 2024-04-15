@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser'
 
 
 
@@ -28,7 +26,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -60,7 +58,6 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxYoutubePlayerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

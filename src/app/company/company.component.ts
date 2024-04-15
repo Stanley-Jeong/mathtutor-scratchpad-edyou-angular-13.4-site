@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -41,7 +41,6 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
     elements.forEach(element => {
       
       element.classList.remove(className);
-      // element.className = newClassName; // Directly assign empty string
     });
   }
 }
