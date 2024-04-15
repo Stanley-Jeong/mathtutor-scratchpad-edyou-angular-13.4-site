@@ -5406,7 +5406,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     width: 400px;
     height: 100px;
     /* margin: 4px; */
-    margin: 3px;
+    margin: 4px;
     float: left;
   }
 
@@ -5416,7 +5416,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   }
 
   .box-3 {
-    width: 60px;
+    width: 66px;
     height: 100px;
     margin: 0px;
     /* margin: 2px; */
@@ -5425,9 +5425,9 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   }
 
   .box-2 {
-    width: 60px;
+    width: 66px;
     height: 100px;
-    margin: 1px;
+    /* margin: 1px; */
     /* margin: 2px; */
     float: left;
   }
@@ -5577,11 +5577,14 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     /* bottom: -4px;
     right: 16px; */
     z-index: 1100000;
-    width: 32px;
-    height: 32px;
+    /* width: 32px;
+    height: 32px; */
     font-size: 17px;
   }
 
+  .chat_icon{
+    width: 100px;
+}
 
   #INFOComm {
     height: 360px;
@@ -6943,7 +6946,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   }
 
   .bottomChat {
-    margin-right: 23px;
+    margin-right: 10px;
   }
 }
 
