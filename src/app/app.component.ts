@@ -10,8 +10,8 @@ declare var jQuery: any;
 })
 export class AppComponent implements OnInit{
 
-  whiteLogo= "../../assets/logoSets/edyou-logo-white-secondary";
-  colorLogo = "../../assets/logoSets/edyou-logo-color-secondary";
+  whiteLogo= "https://edyouwebsite.s3.us-west-2.amazonaws.com/edyou-logo-horiz-empower-white.png";
+  colorLogo = "https://edyouwebsite.s3.us-west-2.amazonaws.com/edyou-logo-horiz-empower-color.png";
   container = ".global-nav-container";
 
   ngOnInit(): void {
@@ -193,8 +193,8 @@ export class AppComponent implements OnInit{
   applyWhiteTopStyles() {
     jQuery(this.container).css("background-color", "rgba(0,0,0,0)");
 
-    jQuery(this.container + " .site-logo img").attr("src", this.whiteLogo + ".webp");
-    jQuery(this.container + " .site-logo img").attr("srcset", this.whiteLogo + "-300x125.webp 300w, " + this.whiteLogo + "-768x319.webp 768w, " + this.whiteLogo + ".webp 1000w");
+    // jQuery(this.container + " .site-logo img").attr("src", this.whiteLogo + ".webp");
+    // jQuery(this.container + " .site-logo img").attr("srcset", this.whiteLogo + "-300x125.webp 300w, " + this.whiteLogo + "-768x319.webp 768w, " + this.whiteLogo + ".webp 1000w");
     // // CSS
     jQuery(this.container).css("background-color", "rgba(0,0,0,0)");
     jQuery(this.container + " .menu-item a").css("color", "#FFFFFF");
