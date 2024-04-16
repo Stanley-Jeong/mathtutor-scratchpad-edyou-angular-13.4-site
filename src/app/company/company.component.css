@@ -1226,3 +1226,12 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
     height: 100%;
   }
 }
+
+.title-faq{
+  padding: 1rem;
+}
+.faq{
+  cursor: pointer;
+border-top: 0.5px solid white;
+padding:1rem 0;
+}

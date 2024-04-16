@@ -113,43 +113,44 @@
             <form [formGroup]="investorForm" (ngSubmit)="requestAccess()">
               <!-- First Name -->
               <div class="form-group row my-0">
-                <div class="form-group col p-0 pr-1">
+                <div class="form-group col pr-1">
                   <input type="text" name="fname" formControlName="firstname" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': hasError('firstname', 'required') }" />
                 </div>
                 <!-- Last Name -->
-                <div class="form-group col p-0 pl-1">
+                <div class="form-group col pl-1">
                   <input type="text" name="lname" formControlName="lastname" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': hasError('lastname', 'required') }" />
                 </div>
               </div>
             
               <!-- Email -->
               <div class="form-group row my-0">
-                <div class="form-group col p-0 pr-1">
+                <div class="form-group col pr-1">
                   <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': hasError('email', 'required') || hasError('email', 'email') || hasError('email', 'pattern') }" />
                 </div>
                 <!-- Phone -->
-                <div class="form-group col p-0 pl-1">
+                <div class="form-group col pl-1">
                   <input type="text" name="phone" formControlName="phone" class="form-control" placeholder="Phone" [ngClass]="{ 'is-invalid': hasError('phone', 'required') || hasError('phone', 'pattern') }" />
                 </div>
               </div>
             
-              <!-- Company Name -->
-              <div class="form-group row">
-                <input type="text" name="company-name" formControlName="company" class="form-control" placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
-              </div>
-            
-              <!-- User Information -->
-              <div class="form-group row">
-                <textarea class="form-control" formControlName="user_information" name id rows="4" placeholder="Tell us about yourself." [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
-              </div>
-            
-              <!-- Submit Button -->
-              <div class="form-group row text-left">
-                <input type="submit" class="btn btn-success" [disabled]="investorForm.invalid" value="Request Access" style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" />
-                <div *ngIf="loading" class="spinner-border text-primary" role="status">
-                  <span class="sr-only">Loading...</span>
+              <div class="container"><!-- Company Name -->
+                <div class="form-group row">
+                  <input type="text" name="company-name" formControlName="company" class="form-control" placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
                 </div>
-                <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert"> {{successMessage}} </span>
+              
+                <!-- User Information -->
+                <div class="form-group row">
+                  <textarea class="form-control" formControlName="user_information" name id rows="4" placeholder="Tell us about yourself." [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
+                </div>
+              
+                <!-- Submit Button -->
+                <div class="form-group row text-left">
+                  <input type="submit" class="btn btn-success" [disabled]="investorForm.invalid" value="Request Access" style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" />
+                  <div *ngIf="loading" class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert"> {{successMessage}} </span>
+                </div>
               </div>
             </form>
             

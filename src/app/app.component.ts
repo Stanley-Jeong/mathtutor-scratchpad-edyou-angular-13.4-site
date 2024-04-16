@@ -112,9 +112,9 @@ export class AppComponent implements OnInit{
     // Replace the image source here
     const imgElement = document.querySelector('.elementor-widget-container img');
     if (imgElement) {
-      imgElement.setAttribute('src', '../assets/logoSets/edyou-logo-color-secondary.webp');
+      imgElement.setAttribute('src', 'https://edyouwebsite.s3.us-west-2.amazonaws.com/edyou-logo-horiz-empower-color.png');
       imgElement.setAttribute('height', '126');
-      imgElement.setAttribute('srcset', '../assets/logoSets/edyou-logo-color-secondary.webp 300w, ../assets/logoSets/edyou-logo-color-secondary-1024x428.webp 1024w, ../assets/logoSets/edyou-logo-color-secondary-768x321.webp 768w, ../assets/logoSets/edyou-logo-color-secondary.png 1200w');
+      // imgElement.setAttribute('srcset', '../assets/logoSets/edyou-logo-color-secondary.webp 300w, ../assets/logoSets/edyou-logo-color-secondary-1024x428.webp 1024w, ../assets/logoSets/edyou-logo-color-secondary-768x321.webp 768w, ../assets/logoSets/edyou-logo-color-secondary.png 1200w');
     }
 
     jQuery(this.container + " a").css("color", "#0079A5"); // To change the font colours
@@ -125,9 +125,9 @@ export class AppComponent implements OnInit{
   replaceToWhite(){
     const imgElement = document.querySelector('.elementor-widget-container img');
     if (imgElement) {
-      imgElement.setAttribute('src', '../assets/logoSets/edyou-logo-white-secondary.webp');
+      imgElement.setAttribute('src', 'https://edyouwebsite.s3.us-west-2.amazonaws.com/edyou-logo-horiz-empower-white.png');
       imgElement.setAttribute('height', '126');
-      imgElement.setAttribute('srcset', '../assets/logoSets/edyou-logo-white-secondary.webp 300w, ../assets/logoSets/edyou-white-color-secondary-1024x428.webp 1024w, ../assets/logoSets/edyou-logo-white-secondary-768x321.webp 768w, ../assets/logoSets/edyou-logo-white-secondary.png 1200w');
+      // imgElement.setAttribute('srcset', '../assets/logoSets/edyou-logo-white-secondary.webp 300w, ../assets/logoSets/edyou-white-color-secondary-1024x428.webp 1024w, ../assets/logoSets/edyou-logo-white-secondary-768x321.webp 768w, ../assets/logoSets/edyou-logo-white-secondary.png 1200w');
     }
     jQuery(this.container + " a").css("color", "#FFFFFF");
     jQuery(this.container + " p").css("color", "#FFFFFF"); // To change the text under the logo to blue!

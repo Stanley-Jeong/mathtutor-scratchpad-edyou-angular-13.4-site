@@ -43,4 +43,18 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
       element.classList.remove(className);
     });
   }
+
+  toggleActive(tabId: string) {
+    const tabContent = document.getElementById(`ae-tab-content-${tabId}`);
+    const tabTitle = document.getElementById(`ae-tab-title-${tabId}`);
+    if (tabContent && tabTitle) {
+      tabContent.classList.toggle('ae-active');
+      tabTitle.classList.toggle('ae-active');
+      const iconElement = tabTitle.querySelector('.ae-accordion-icon-closed i');
+      if (iconElement) {
+        iconElement.classList.toggle('fa-caret-down');
+        iconElement.classList.toggle('fa-caret-right');
+      }
+    }
+  }
 }
