@@ -1232,6 +1232,6 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
 }
 .faq{
   cursor: pointer;
-border-top: 0.5px solid white;
-padding:1rem 0;
+  border-top:1px solid rgba(255, 255, 255, 0.5);;
+  padding:1rem 0;
 }

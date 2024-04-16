@@ -146,7 +146,7 @@ export class AppComponent implements OnInit{
     jQuery(window).scroll(() => {
       const value = jQuery(window).scrollTop();
 
-      if(this.findLogoName() === 'edyou-logo-white-secondary.webp'){
+      if(this.findLogoName()?.includes('white')){
         if (value > 50) {
           this.applyWhiteScrollStyles();
         } else {
