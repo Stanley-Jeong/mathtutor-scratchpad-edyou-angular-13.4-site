@@ -1482,3 +1482,6 @@ ul.elementor-nav-menu--dropdown a:hover {
         overflow: hidden
     }
 }
+a{
+    cursor: pointer !important;
+}
