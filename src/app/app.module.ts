@@ -23,6 +23,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InvestorLoginComponent } from './investor-login/investor-login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TermsComponent,
     PrivacyComponent,
     EdyousAiComponent,
-    RevolutionizingEducationComponent
+    RevolutionizingEducationComponent,
+    InvestorLoginComponent,
 
 
 

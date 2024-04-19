@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InvestorsService } from '../service/investors.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-investors',
@@ -20,6 +21,7 @@ export class InvestorsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private investorsService: InvestorsService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -81,5 +83,9 @@ export class InvestorsComponent implements OnInit {
   // Helper function to check if a form control has an error
   hasError(controlName: string, errorName: string) {
     return this.investorForm.get(controlName)?.hasError(errorName) && this.investorForm.get(controlName)?.touched;
+  }
+
+  navigateToInvestorLogin(){
+    this.router.navigate(['/investorLogin']);
   }
 }
