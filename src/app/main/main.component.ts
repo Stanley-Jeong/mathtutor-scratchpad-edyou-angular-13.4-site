@@ -105,7 +105,9 @@ export class MainComponent implements OnInit {
   }
 
   navigateToRevolutionizingEducation(){
-    this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']);
+    this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   navigateToPayItForward() {
