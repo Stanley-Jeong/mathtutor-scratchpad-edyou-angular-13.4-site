@@ -230,8 +230,12 @@
 
 <!-- For the pop menu which comes out during the mobile viewport from the navigation bar menu! -->
 
-<div style="z-index: 3;" id="targetDiv" *ngIf="isVisible" data-elementor-type="" data-elementor-id="20065" class="elementor elementor-20065 elementor-location-popup">
-    <i (click)="hideNavigation()" class="closeButton eicon-close"></i>
+<div style="z-index: 3;" id="targetDiv" data-elementor-type="" data-elementor-id="" class="elementor elementor-20065 elementor-location-popup">
+    <!-- <i style="font-size: 30px; background-color: black;" (click)="hideNavigation()" class="closeButton eicon-close"></i> -->
+    <svg (click)="hideNavigation()" class="closeButton" width="24" height="24" fill="none" stroke="#388af5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+    </svg>
     <div style="margin-top: 20px;">
         <div class="e-con-inner">
             <div class="has_ae_slider elementor-element elementor-element-2f3689e1 e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
@@ -421,7 +425,7 @@
                             </div>
                             <div class="elementor-icon-box-content">
                                 <p class="elementor-icon-box-title">
-                                    <a routerLink="tel:13109826822">
+                                    <a routerLink="tel:13109826822" style="color: black;">
                                         310.982.6822 </a>
                                 </p>
                             </div>
