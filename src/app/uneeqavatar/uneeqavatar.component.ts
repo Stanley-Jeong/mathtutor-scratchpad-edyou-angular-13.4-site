@@ -1438,8 +1438,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       const isNotTextInput = e.target.type !== 'text';
       const isNotMathField = !e.target.classList.contains('math-field'); // Adjust the class name if needed
       const detailInput = !e.target.classList.contains('detailInput'); // Adjust the class name if needed
+      const textArea = !e.target.classList.contains('textArea12'); // Adjust the class name if needed
 
-      if (isSpaceBar && isNotTextInput && isNotMathField && detailInput) {
+      if (isSpaceBar && isNotTextInput && isNotMathField && detailInput && textArea) {
         if (this.disableMicButton == true) {
 
         } else {
