@@ -111,7 +111,7 @@ export class NavigationBarComponent implements OnInit {
   showNavigation(): void {
     const targetDiv = document.getElementById('targetDiv');
     if(targetDiv){
-      targetDiv.style.height = '100%';
+      targetDiv.style.height = 'auto';
     }
   }
 
