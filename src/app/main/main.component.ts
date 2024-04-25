@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
