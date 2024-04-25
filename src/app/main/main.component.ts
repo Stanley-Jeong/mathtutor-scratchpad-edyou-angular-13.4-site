@@ -108,4 +108,10 @@ export class MainComponent implements OnInit {
   navigateToRevolutionizingEducation(){
     this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']);
   }
+
+  navigateToPayItForward() {
+    this.router.navigate(['/pay-it-forward']).then(()=> {
+        // window.location.reload();
+      })
+  }
 }

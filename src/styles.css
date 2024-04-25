@@ -1485,3 +1485,14 @@ ul.elementor-nav-menu--dropdown a:hover {
 a{
     cursor: pointer !important;
 }
+
+@media (max-width:1024px) {
+    .space-provider{
+        padding:0 5px;
+    }
+}
+
+input[type=text],input[type=email],input[type=tel] {
+    margin: 3px;
+    height: 45px !important;
+}

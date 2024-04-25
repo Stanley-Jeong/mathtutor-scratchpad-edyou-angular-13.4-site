@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var jQuery: any;
@@ -5,13 +6,33 @@ declare var jQuery: any;
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.css']
+  styleUrls: ['./navigation-bar.component.css'],
+  animations: [
+    trigger('slideDownUp', [
+      state('visible', style({
+        height: '100%'
+      })),
+      transition(':enter', [
+        style({
+          height: '0'
+        }),
+        animate('0.3s ease')
+      ]),
+      transition(':leave', [
+        animate('0.3s ease', style({
+          height: '0'
+        }))
+      ])
+    ])
+  ]
 })
 export class NavigationBarComponent implements OnInit {
 
   constructor(
     private router: Router
   ){}
+
+  isVisible:boolean = false;
 
   ngOnInit(): void {
   }
@@ -64,5 +85,35 @@ export class NavigationBarComponent implements OnInit {
     this.router.navigate(['/labs']).then(()=> {
       // window.location.reload();
     })
+  }
+
+  // showNavigation(){
+  //   this.isVisible=true;
+
+  //   const targetDiv = document.getElementById('targetDiv');
+
+  //   // Modify the CSS properties based on visibility state
+  //   if (targetDiv) {
+  //     // alert("working fine..........................................................................");
+  //     targetDiv.style.display = 'block'; // Make the div visible
+  //     targetDiv.style.position = 'fixed'; // Set position to fixed to overlay all elements
+  //     targetDiv.style.top = '0'; // Position from the top of the viewport
+  //     targetDiv.style.left = '0'; // Position from the left of the viewport
+  //     targetDiv.style.width = '100%'; // Cover the entire width
+  //     targetDiv.style.height = '100%'; // Cover the entire height
+  //     targetDiv.style.overflow ='hidden';
+  //     targetDiv.style.zIndex = '5';
+  //     targetDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent black background
+  //     // Add any other CSS properties as needed
+  //   }
+  // }
+
+  showNavigation(): void {
+    this.isVisible = true;
+  }
+
+  hideNavigation(): void {
+    alert('working');
+    this.isVisible = false;
   }
 }

@@ -219,7 +219,7 @@
                 <div class="elementor-widget-container">
                     <div class="elementor-icon-wrapper">
                         <div class="elementor-icon">
-                            <i aria-hidden="true" class="fas fa-bars"></i>
+                            <i aria-hidden="true" class="fas fa-bars" (click)="showNavigation()"></i>
                         </div>
                     </div>
                 </div>
@@ -230,13 +230,9 @@
 
 <!-- For the pop menu which comes out during the mobile viewport from the navigation bar menu! -->
 
-<div data-elementor-type="popup" data-elementor-id="20065" class="elementor elementor-20065 elementor-location-popup"
-    data-elementor-settings="{&quot;entrance_animation_tablet&quot;:&quot;slideInDown&quot;,&quot;exit_animation_tablet&quot;:&quot;slideInDown&quot;,&quot;open_selector&quot;:&quot;.hamburger-menu&quot;,&quot;entrance_animation&quot;:&quot;slideInDown&quot;,&quot;exit_animation&quot;:&quot;slideInDown&quot;,&quot;entrance_animation_duration&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:0.5,&quot;sizes&quot;:[]},&quot;a11y_navigation&quot;:&quot;yes&quot;,&quot;triggers&quot;:[],&quot;timing&quot;:[]}"
-    data-elementor-post-type="elementor_library">
-    <div class="has_ae_slider elementor-element elementor-element-46d0ee94 light e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
-        data-id="46d0ee94" data-element_type="container"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}"
-        data-core-v316-plus="true">
+<div style="z-index: 3;" id="targetDiv" *ngIf="isVisible" data-elementor-type="" data-elementor-id="20065" class="elementor elementor-20065 elementor-location-popup">
+    <i (click)="hideNavigation()" class="closeButton eicon-close"></i>
+    <div style="margin-top: 20px;">
         <div class="e-con-inner">
             <div class="has_ae_slider elementor-element elementor-element-2f3689e1 e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
                 data-id="2f3689e1" data-element_type="container"
@@ -250,17 +246,17 @@
                         <ul class="elementor-icon-list-items">
                             <li class="elementor-icon-list-item">
                                 <a (click)="navigateToCompany()">
-
                                     <span class="elementor-icon-list-text">Company</span>
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
                                 <a routerLink="/company" fragment="why-edyou">
-
                                     <span class="elementor-icon-list-icon">
-                                        <i aria-hidden="true" class="fas fa-circle"></i> </span>
+                                        <i aria-hidden="true" class="fas fa-circle"></i>
+                                    </span>
                                     <span class="elementor-icon-list-text">Why
-                                        edYOU?</span>
+                                        edYOU?
+                                    </span>
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
@@ -306,7 +302,6 @@
                             </li>
                             <li class="elementor-icon-list-item">
                                 <a (click)="navigateToSafety()">
-
                                     <span class="elementor-icon-list-text">Safety</span>
                                 </a>
                             </li>

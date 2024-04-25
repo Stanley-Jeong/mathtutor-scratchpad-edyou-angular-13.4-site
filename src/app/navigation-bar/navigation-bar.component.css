@@ -1,3 +1,25 @@
 a{
     cursor: pointer;
 }
+
+#targetDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* overflow: hidden; */
+    background-color: #F5F5F7;
+    transition: height 0.3s ease;
+}
+
+.visible {
+    /* height: 100%; */
+}
+
+.closeButton{
+    position: absolute;
+    right: 0;
+    margin: 2%;
+    z-index: 4;
+}
