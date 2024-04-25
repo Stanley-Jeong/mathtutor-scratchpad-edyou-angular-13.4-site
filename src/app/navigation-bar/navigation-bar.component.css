@@ -20,6 +20,6 @@ a{
 .closeButton{
     position: absolute;
     right: 0;
-    margin: 2%;
+    margin: 4%;
     z-index: 4;
 }
