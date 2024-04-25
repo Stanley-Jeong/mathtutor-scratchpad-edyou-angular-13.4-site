@@ -250,7 +250,7 @@
                         <ul class="elementor-icon-list-items">
                             <li class="elementor-icon-list-item">
                                 <a (click)="navigateToCompany()">
-                                    <span class="elementor-icon-list-text">Company</span>
+                                    <span class="elementor-icon-list-text" (click)="hideNavigation()">Company</span>
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
@@ -264,7 +264,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a routerLink="/company" fragment="mission-vision">
+                                <a routerLink="/company" fragment="mission-vision" (click)="hideNavigation()">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -272,7 +272,7 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a routerLink="/company" fragment="team">
+                                <a routerLink="/company" fragment="team" (click)="hideNavigation()">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
@@ -280,14 +280,14 @@
                                 </a>
                             </li>
                             <li class="elementor-icon-list-item">
-                                <a routerLink="/company" fragment="faq">
+                                <a routerLink="/company" fragment="faq" (click)="hideNavigation()">
 
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-circle"></i> </span>
                                     <span class="elementor-icon-list-text">FAQ</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToPayItForward()">
 
                                     <span class="elementor-icon-list-icon">
@@ -296,7 +296,7 @@
                                         It Forward</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToBlog()">
 
                                     <span class="elementor-icon-list-icon">
@@ -304,12 +304,12 @@
                                     <span class="elementor-icon-list-text">Press</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToSafety()">
                                     <span class="elementor-icon-list-text">Safety</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/safety" fragment="physical-safety">
 
                                     <span class="elementor-icon-list-icon">
@@ -318,7 +318,7 @@
                                         Safety</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/safety" fragment="emotional-wellbeing">
 
                                     <span class="elementor-icon-list-icon">
@@ -327,7 +327,7 @@
                                         Wellbeing</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/safety" fragment="ongoing-human-oversight">
 
                                     <span class="elementor-icon-list-icon">
@@ -336,13 +336,13 @@
                                         Human Oversight</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToLabs()">
 
                                     <span class="elementor-icon-list-text">Labs</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/labs" fragment="research">
 
                                     <span class="elementor-icon-list-icon">
@@ -350,7 +350,7 @@
                                     <span class="elementor-icon-list-text">Research</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/labs" fragment="cab">
 
                                     <span class="elementor-icon-list-icon">
@@ -359,7 +359,7 @@
                                         AI Beings</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/labs" fragment="pai">
 
                                     <span class="elementor-icon-list-icon">
@@ -368,7 +368,7 @@
                                         AI</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/labs" fragment="ice">
 
                                     <span class="elementor-icon-list-icon">
@@ -377,7 +377,7 @@
                                         Curation Engine</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a routerLink="/labs" fragment="pie">
 
                                     <span class="elementor-icon-list-icon">
@@ -386,13 +386,13 @@
                                         Ingestion Engine</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToBlog()">
 
                                     <span class="elementor-icon-list-text">Blog</span>
                                 </a>
                             </li>
-                            <li class="elementor-icon-list-item">
+                            <li class="elementor-icon-list-item" (click)="hideNavigation()">
                                 <a (click)="navigateToInvestor()">
 
                                     <span class="elementor-icon-list-text">Investor
