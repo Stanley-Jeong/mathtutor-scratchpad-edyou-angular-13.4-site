@@ -314,4 +314,11 @@ textarea {
   --flex-grow: var(--container-widget-flex-grow)
 }
 
+@media (max-width: 576px) {
+  /* Add margin to the last name input */
+  .last-name, .phone{
+      margin-top: 1rem;
+  }
+}
+
 /* Video Css */

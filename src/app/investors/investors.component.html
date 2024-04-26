@@ -107,57 +107,67 @@
             </div>
 
             <form [formGroup]="investorForm" (ngSubmit)="requestAccess()">
-              <!-- First Name -->
-              <div class="form-group row my-0">
-                <div class="form-group col pr-1">
+              <!-- First Name and Last Name -->
+              <div class="form-group row">
+                <div class="col-sm-6 pr-sm-1">
                   <input type="text" name="fname" formControlName="firstname" class="form-control"
-                    placeholder="First Name" [ngClass]="{ 'is-invalid': hasError('firstname', 'required') }" />
+                         placeholder="First Name" [ngClass]="{ 'is-invalid': hasError('firstname', 'required') }" />
                 </div>
-                <!-- Last Name -->
-                <div class="form-group col pl-1">
-                  <input type="text" name="lname" formControlName="lastname" class="form-control"
-                    placeholder="Last Name" [ngClass]="{ 'is-invalid': hasError('lastname', 'required') }" />
+                <div class="col-sm-6 pl-sm-1">
+                  <input type="text" name="lname" formControlName="lastname" class="last-name form-control"
+                         placeholder="Last Name" [ngClass]="{ 'is-invalid': hasError('lastname', 'required') }" />
                 </div>
               </div>
-
-              <!-- Email -->
-              <div class="form-group row my-0">
-                <div class="form-group col pr-1">
+            
+              <!-- Email and Phone -->
+              <div class="form-group row">
+                <div class="col-sm-6 pr-sm-1">
                   <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email"
-                    [ngClass]="{ 'is-invalid': hasError('email', 'required') || hasError('email', 'email') || hasError('email', 'pattern') }" />
+                         [ngClass]="{ 'is-invalid': hasError('email', 'required') || hasError('email', 'email') || hasError('email', 'pattern') }" />
                 </div>
-                <!-- Phone -->
-                <div class="form-group col pl-1">
-                  <input type="text" name="phone" formControlName="phone" class="form-control" placeholder="Phone"
-                    [ngClass]="{ 'is-invalid': hasError('phone', 'required') || hasError('phone', 'pattern') }" />
+                <div class="col-sm-6 pl-sm-1">
+                  <input type="text" name="phone" formControlName="phone" class="phone form-control" placeholder="Phone"
+                         [ngClass]="{ 'is-invalid': hasError('phone', 'required') || hasError('phone', 'pattern') }" />
                 </div>
               </div>
-
-              <div class="container"><!-- Company Name -->
-                <div class="form-group row">
-                  <input type="text" name="company-name" formControlName="company" class="form-control"
-                    placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
+            
+              <!-- Company Name -->
+              <div class="form-group">
+                <input type="text" name="company-name" formControlName="company" class="form-control"
+                       placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
+              </div>
+            
+              <!-- User Information -->
+              <div class="form-group">
+                <textarea class="form-control textArea12" formControlName="user_information" id rows="4"
+                          placeholder="Tell us about yourself."
+                          [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
+              </div>
+            
+              <!-- Submit Button -->
+              <div class="form-group row text-left">
+                <div class="col-12">
+                    <!-- <input type="submit" class="btn btn-success btn-block" [disabled]="investorForm.invalid" value="Request Access"
+                        style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" /> -->
+                        <button style="height:45px ;" type="submit"
+                        class="btn btn-success sm-btn-block" [disabled]="investorForm.invalid"
+                        style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;"
+                        >
+                        <img class="" style="width : 24px; color:white;" *ngIf="loading"
+                          src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="signIn"
+                          *ngIf="!loading">Request Access</span></button>                        
+                        <!-- <img class="" style="width : 24px; color:white;"
+												src="../../assets/images/Rolling-1s-200px (2).gif"> -->
                 </div>
-
-                <!-- User Information -->
-                <div class="form-group row">
-                  <textarea class="form-control textArea12" formControlName="user_information" name id rows="4"
-                    placeholder="Tell us about yourself."
-                    [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="form-group row text-left">
-                  <input type="submit" class="btn btn-success" [disabled]="investorForm.invalid" value="Request Access"
-                    style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" />
-                  <div *ngIf="loading" class="spinner-border text-primary" role="status">
+                <!-- <div *ngIf="loading" class="spinner-border text-primary mt-2" role="status">
                     <span class="sr-only">Loading...</span>
-                  </div>
-                  <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert">
-                    {{successMessage}} </span>
-                </div>
-              </div>
+                </div> -->
+                <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert">
+                    {{successMessage}}
+                </span>
+            </div>            
             </form>
+            
           </div>
         </div>
       </div>
