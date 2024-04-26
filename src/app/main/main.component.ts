@@ -101,7 +101,9 @@ export class MainComponent implements OnInit {
   }
 
   navigateToEdyousAi(){
-    this.router.navigate(['/how-edyous-ai-is-reimagining-the-future-of-personalized-learning']);
+    this.router.navigate(['/how-edyous-ai-is-reimagining-the-future-of-personalized-learning']).then(() => {
+      window.scrollTo(0, 0);
+    });
   }
 
   navigateToRevolutionizingEducation(){
@@ -112,7 +114,7 @@ export class MainComponent implements OnInit {
 
   navigateToPayItForward() {
     this.router.navigate(['/pay-it-forward']).then(()=> {
-        // window.location.reload();
-      })
+        window.scrollTo(0, 0);
+    });
   }
 }
