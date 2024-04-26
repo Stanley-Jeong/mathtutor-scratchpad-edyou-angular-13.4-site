@@ -108,17 +108,19 @@ export class NavigationBarComponent implements OnInit {
   //   }
   // }
 
-  showNavigation(): void {
+  showNavigation(){
     const targetDiv = document.getElementById('targetDiv');
     if(targetDiv){
       targetDiv.style.height = 'auto';
+      targetDiv.style.minHeight = '100vh';
     }
   }
 
-  hideNavigation(): void {
+  hideNavigation(){
     const targetDiv = document.getElementById('targetDiv');
     if(targetDiv){
       targetDiv.style.height = '0';
+      targetDiv.style.minHeight = '0';
     }
   }
 }
