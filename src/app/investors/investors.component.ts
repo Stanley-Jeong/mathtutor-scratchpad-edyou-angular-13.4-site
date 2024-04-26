@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Investor } from '../models/investor';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InvestorsService } from '../service/investors.service';
@@ -35,6 +35,8 @@ export class InvestorsComponent implements OnInit {
       company: ['', [Validators.required]],
       user_information: ['', [Validators.required]]
     });
+
+    this.toggleBtnBlockClass();
   }
 
   requestAccess() {
@@ -88,4 +90,20 @@ export class InvestorsComponent implements OnInit {
   navigateToInvestorLogin(){
     this.router.navigate(['/investorLogin']);
   }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.toggleBtnBlockClass();
+  }
+
+  toggleBtnBlockClass() {
+    const myButton = document.getElementById('myButton');
+    if (window.innerWidth < 576) {
+      myButton?.classList.add('btn-block');
+    } else {
+      myButton?.classList.remove('btn-block');
+    }
+  }
+
+
 }

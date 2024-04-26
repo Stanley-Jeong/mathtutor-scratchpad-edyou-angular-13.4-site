@@ -146,12 +146,14 @@
             
               <!-- Submit Button -->
               <div class="form-group row text-left">
+                             
+              
                 <div class="col-12">
                     <!-- <input type="submit" class="btn btn-success btn-block" [disabled]="investorForm.invalid" value="Request Access"
                         style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" /> -->
-                        <button style="height:45px ;" type="submit"
-                        class="btn btn-success sm-btn-block" [disabled]="investorForm.invalid"
-                        style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;"
+                        <button style="height:45px ;" type="submit" id='myButton'
+                        class="btn btn-success" [disabled]="investorForm.invalid"
+                        style="font-size: large !important; font-weight: 900; padding: .5rem 1.5rem !important; background-color: #008ec2 !important;"
                         >
                         <img class="" style="width : 24px; color:white;" *ngIf="loading"
                           src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="signIn"
