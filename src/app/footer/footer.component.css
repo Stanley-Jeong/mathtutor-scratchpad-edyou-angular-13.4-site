@@ -2,3 +2,10 @@ a{
     cursor: pointer;
 }
 
+.collapsed{
+    height: 0;
+}
+
+.collapsed li{
+    display: none;
+}

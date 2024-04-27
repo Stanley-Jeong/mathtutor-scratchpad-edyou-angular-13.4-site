@@ -1170,7 +1170,7 @@ body .is-layout-grid>* {
 
 .elementor-nav-menu {
     position: relative;
-    z-index: 2
+    z-index: 1;
 }
 
 .elementor-nav-menu:after {
@@ -1441,7 +1441,7 @@ ul.elementor-nav-menu--dropdown a:hover {
 
 @media (max-width:1024px) {
     .elementor-nav-menu--dropdown-tablet .elementor-nav-menu--main {
-        display: none
+        display: none;
     }
 }
 

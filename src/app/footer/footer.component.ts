@@ -69,4 +69,19 @@ export class FooterComponent implements OnInit {
   navigateToMain(){
     this.router.navigate(['/main']);
   }
+
+  toggleHeight(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const parentLi = target.closest('li');
+  
+    if (parentLi) {
+      const subMenu = parentLi.querySelector('.sub-menu') as HTMLElement;
+      if (subMenu) {
+        subMenu.classList.toggle('collapsed');
+      }
+    }
+  }
+  
+  
+  
 }

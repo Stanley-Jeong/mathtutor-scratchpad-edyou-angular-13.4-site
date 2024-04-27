@@ -639,13 +639,14 @@
                                                 class="elementor-nav-menu--dropdown elementor-nav-menu__container"
                                                 aria-hidden="true">
                                                 <ul id="menu-2-2ce79a36"
-                                                        class="elementor-nav-menu"><li
+                                                        class="elementor-nav-menu">
+                                                        <li (click)="toggleHeight($event)"
                                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22029"><a
                                                                         (click)="navigateToCompany()"
                                                                         class="elementor-item"
                                                                         tabindex="-1">Company</a>
                                                                 <ul
-                                                                        class="sub-menu elementor-nav-menu--dropdown">
+                                                                        class="sub-menu elementor-nav-menu--dropdown collapsed" id="tab-mob">
                                                                         <li
                                                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22181"><a
                                                                                         routerLink="/company" fragment="why-edyou"
@@ -681,13 +682,13 @@
                                                                                         tabindex="-1">Press</a></li>
                                                                 </ul>
                                                         </li>
-                                                        <li
+                                                        <li (click)="toggleHeight($event)"
                                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-19201"><a
                                                                         (click)="navigateToSafety()"
                                                                         class="elementor-item"
                                                                         tabindex="-1">Safety</a>
                                                                 <ul
-                                                                        class="sub-menu elementor-nav-menu--dropdown">
+                                                                        class="sub-menu elementor-nav-menu--dropdown collapsed" id="tab-mob">
                                                                         <li
                                                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22197"><a
                                                                                         routerLink="/safety" fragment="physical-safety"
@@ -715,14 +716,14 @@
                                                                                         Integrity</a></li>
                                                                 </ul>
                                                         </li>
-                                                        <li
+                                                        <li (click)="toggleHeight($event)"
                                                                 class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-19108 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-19142"><a
                                                                         (click)="navigateToLabs()"
                                                                         aria-current="page"
                                                                         class="elementor-item elementor-item-active"
                                                                         tabindex="-1">Labs</a>
                                                                 <ul
-                                                                        class="sub-menu elementor-nav-menu--dropdown">
+                                                                        class="sub-menu elementor-nav-menu--dropdown collapsed" id="tab-mob">
                                                                         <li
                                                                                 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-22192"><a
                                                                                         routerLink="/labs" fragment="research"
