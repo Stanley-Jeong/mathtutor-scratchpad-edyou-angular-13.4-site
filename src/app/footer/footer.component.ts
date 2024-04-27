@@ -69,5 +69,4 @@ export class FooterComponent implements OnInit {
   navigateToMain(){
     this.router.navigate(['/main']);
   }
-
 }
