@@ -61,7 +61,9 @@ export class FooterComponent implements OnInit {
   }
 
   navigateToPrivacy(){
-    this.router.navigate(['/privacy']);
+    this.router.navigate(['/privacy']).then(()=>{
+      window.scrollTo(0,0);
+    });
   }
 
   navigateToMain(){
