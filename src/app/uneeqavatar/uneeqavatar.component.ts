@@ -670,13 +670,19 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
       if (this.scene.connectionState._connectionState['name'] == 'Connected') {
         this.customWelcomeMessge()
-        if (this.user.Firstlogin == true) {
-          this.setVideo(500, 300)
-          console.log('small card pixel')
-        } else if (this.user.Firstlogin == false) {
-          if (window.innerWidth < 480) {
-            this.setVideo(800, 900)
-          }
+        // if (this.user.Firstlogin == true) {
+        //   this.setVideo(600, 400)
+        //   console.log('small card pixel')
+        // } else if (this.user.Firstlogin == false) {
+        //   if (window.innerWidth < 480) {
+        //     this.setVideo(800, 900)
+        //   }
+        // }
+
+        if (this.fullScreen === false) {
+
+        }else{
+          this.setVideo(600, 400)
         }
       }
 
@@ -3341,7 +3347,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // setTimeout(()=>{
       //   this.setVideo(500, 300)
       // })
-      this.setVideo(500, 300)
+      this.setVideo(600, 400)
       console.log('small screen run pixel for avavtar')
       if (window.innerWidth < 480) {
         if (t !== null) {
@@ -3406,7 +3412,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     var t: any = document.querySelector('#sm-video')
     var videoTag: any = document.querySelector('#smVideo')
     // this.setVideo(330, 180)
-    this.setVideo(500, 300)
+    this.setVideo(600, 400)
     if (window.innerWidth < 480) {
       if (t !== null) {
         t.style.width = '80%'
