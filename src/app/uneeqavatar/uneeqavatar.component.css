@@ -1166,8 +1166,8 @@ video {
   position: absolute;
 
   bottom: 1px;
-  /* right: 74px; */
-  right: 20px;
+  right: 10px;
+  /* right: 20px; */
   z-index: 1600000;
   width: 47px;
   height: 32px;

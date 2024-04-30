@@ -176,6 +176,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   hasDisconnected = false;
   isKeyboardOn: boolean = false;
   mathsMininmizeBtn: boolean = false;
+  inputmarginTop: string = 'none';
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService) {
@@ -452,22 +453,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   StartTourGuideSetting() {
-
-    if (localStorage.getItem('screen') === "TestSeries") {
-      console.log('test screen')
-      TestPrepTour()
-    } else if (localStorage.getItem('screen') === "LearningScreen") {
-      console.log('learning screen')
-      LearningTour()
-    } else {
       console.log('normal screen')
-      if (this.user.industryName == "School") {
         tour()
-      } else {
-        noSchoolTour()
-      }
-
-    }
+   
   }
 
 
@@ -2889,7 +2877,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       //  this.borderRadius = '0px 0px 20px 20px'
       this.borderRadius = '0px 0px 9px 9px'
       // this.bottomPositionWidth = '90%'
-      this.bottomPositionWidth = '77.5%'
+      // this.bottomPositionWidth = '77.5%'
+      this.bottomPositionWidth = '79.5%'
       // this.inputWidthSize = '201px';
       this.inputWidthSize = '212px';
       $('#settingId').addClass('showI');
@@ -2920,7 +2909,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.bottomPositionWidth = '100%'
       this.inputWidthSize = '100%'
       this.inputmarginLeft = '0px'
-      this.inputheightSize = '50px !important'
+      this.inputheightSize = '45px !important'
+      this.inputmarginTop = '2px'
       this.inputMarginLeft = '-2px'
       this.bottomPositionheight = '68px'
       this.stopBottomSize = '20%'
