@@ -9,3 +9,16 @@ a{
 .collapsed li{
     display: none;
 }
+
+.elementor-145 .elementor-element.elementor-element-cef0c38 .elementor-nav-menu--main .elementor-item {
+    color: #fff !important;
+    fill: #fff;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.elementor-145 .elementor-element.elementor-element-2ce79a36 .elementor-nav-menu--dropdown a:hover, .elementor-145 .elementor-element.elementor-element-2ce79a36 .elementor-nav-menu--dropdown a.elementor-item-active, .elementor-145 .elementor-element.elementor-element-2ce79a36 .elementor-nav-menu--dropdown a.highlighted {
+ 
+    color: white !important;
+   
+}
