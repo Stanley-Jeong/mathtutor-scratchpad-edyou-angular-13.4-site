@@ -576,11 +576,12 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
             this.backgroundColor = '#003b72';
             console.log(' bg ipad 11 landscape crome', this.backgroundColor)
           } else {
-            //  this.backgroundColor = '#003e70';
-            this.backgroundColor = '#00437e';
+              this.backgroundColor = '#003e70';
+          //  this.backgroundColor = '#00437e';
           }
         } else {
-          this.backgroundColor = '#00437e';
+       //   this.backgroundColor = '#00437e';
+       this.backgroundColor = '#003e70';
         }
       }
       else {
