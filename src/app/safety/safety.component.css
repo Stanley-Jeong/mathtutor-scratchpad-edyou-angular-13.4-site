@@ -43,6 +43,14 @@
     padding:0 10px;
 }
 
+.elementor-19146 .elementor-element.elementor-element-077ac19:not(.elementor-motion-effects-element-type-background), .elementor-19146 .elementor-element.elementor-element-077ac19 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url(https://investor.edyou.com/wp-content/uploads/2023/07/hp-tile-background-ice.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
  .elementor-19146 .elementor-element.elementor-element-1798925 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url("https://investor.edyou.com/wp-content/uploads/2023/09/holding-hands.jpg") !important;
    
