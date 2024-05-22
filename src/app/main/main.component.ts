@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -10,9 +11,13 @@ export class MainComponent implements OnInit {
 
   private ngUnsubscribe = new Subject();
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router,private service :UserService) {
+    this.service.getIp().subscribe((res:any)=>{
+      console.log(res,"my ip----------------------------------------------")
+    })
+    // let id = localStorage.getItem('sessionId') 
+    // console.log(id,'regettttttttttttttttttttttttttttttttttttttttt')
+  }
 
   async ngAfterViewInit() {
     this.navigateAndReplaceClass();
@@ -117,4 +122,40 @@ export class MainComponent implements OnInit {
         window.scrollTo(0, 0);
     });
   }
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event:any){
+    console.log($event);
+    console.log("scrolling");
+    this.service.getIp().subscribe((res:any)=>{
+      console.log(res.ip,"my ip----------------------------------------------")
+      localStorage.setItem("userIp2", JSON.stringify(res.ip));
+    })
+  } 
+
+  
+
+  // @ViewChild('inside')inside!: ElementRef;
+
+  // @HostListener('document:click', ['$event'])
+  // clickout(event: any) {
+  //   if (this.inside.nativeElement.contains(event.target)) {
+  //     console.log('inside')
+  //     this.service.getIp().subscribe((res:any)=>{
+  //       console.log(res.ip,"my ip----------------------------------------------")
+  //       localStorage.setItem("userIp2", JSON.stringify(res.ip));
+  //     })
+  //   } else {
+     
+  //     console.log('outside')
+  //     // this.onCloseHandled()
+  //   }
+  // }
+  @HostListener('window:click', ['$event']) onScrollEvent2($event:any){
+    console.log($event);
+    console.log("clicked");
+    this.service.getIp().subscribe((res:any)=>{
+      console.log(res.ip,"my ip----------------------------------------------")
+      localStorage.setItem("userIp2", JSON.stringify(res.ip));
+    })
+  } 
 }

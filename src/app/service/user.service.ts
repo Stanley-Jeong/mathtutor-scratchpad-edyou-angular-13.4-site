@@ -270,6 +270,10 @@ headerClear(){
     })
   }
 
+  getIp(){
+    return this.http.get('https://api.ipify.org?format=json')
+  }
+
 
 }
 
