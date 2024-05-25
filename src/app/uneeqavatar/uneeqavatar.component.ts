@@ -180,19 +180,19 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService) {
-
+      
   }
 
 
   ngAfterViewInit() {
     // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-
+    
   }
 
 
   ngOnInit(): void {
 
-
+    
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
@@ -232,7 +232,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.avatarFunction()
 
  
-
+    this.ser.getIp().subscribe((res:any)=>{
+      console.log(res.ip,"my ip----------------------------------------------")
+      localStorage.setItem("userIp", JSON.stringify(res.ip));
+    })
    
   }
 
@@ -618,7 +621,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
      
     // local test
-    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3UiLCJhdXRoU2VydmVyIjoiaHR0cHM6Ly9kaC5zb3VsbWFjaGluZXMuY2xvdWQvYXBpL2p3dCIsImF1dGhUb2tlbiI6ImFwaWtleV92MV9lZDdhODEyNy05MmEyLTRhMmEtYmRmYy05YzBhZmY0MThlM2IifQ=='
+    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
     const videoEl: any = document.getElementById('smVideo');
     // create a new scene object
@@ -816,11 +819,18 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   soulMachineMessageHandler() {
-
     this.addSpacebarEventListeners()
+    let sessonId = localStorage.getItem('sessionId')
+      if(sessonId){
+        console.log('session id received----------------',sessonId)
+      }else{
+        console.log('session id not received----------------',sessonId)
+      }
     Scene.prototype.onSceneMessage = (message: any) => {
       var name = message.name
       var body = message.body
+      // console.log(localStorage.getItem('userIp'),'get item--------------------------------------');
+      
       console.warn('body', body)
 
       switch (name) {
@@ -1314,15 +1324,36 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   customWelcomeMessge() {
-    if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
+    let ip = localStorage.getItem('userIp')
+    let ip2 = localStorage.getItem('userIp2')
+    if(ip == ip2){
+      console.log('same ip')
+      
+      if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
-    } else {
+      } else {
+  
+        this.setVariable()
+        const personaInstance = this.persona
+        let text = 'Welcome edYOU'
+        personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+      }
+      
+    }else{
+      console.log('same not ip')
+      if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
-      this.setVariable()
-      const personaInstance = this.persona
-      let text = 'Welcome to edYOU'
-      personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+      } else {
+  
+        this.setVariable()
+        const personaInstance = this.persona
+        let text = 'Welcome to edYOU'
+        personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+      }
     }
+   
+    
+    
   }
 
 
