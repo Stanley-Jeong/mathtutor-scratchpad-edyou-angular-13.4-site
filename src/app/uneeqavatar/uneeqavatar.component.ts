@@ -192,7 +192,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    
+    this.removeSaveDate()
+
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
@@ -618,10 +619,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   async avatarFunction() {
     this.cleanupSessionStorage();
     // for dev
-    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
+    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
      
     // local test
-    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
+    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
     const videoEl: any = document.getElementById('smVideo');
     // create a new scene object
@@ -672,7 +673,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.soulMachineMessageHandler()
 
       if (this.scene.connectionState._connectionState['name'] == 'Connected') {
-        this.customWelcomeMessge()
+
+        setTimeout(()=>{
+          this.customWelcomeMessge()
+        },200)
         // if (this.user.Firstlogin == true) {
         //   this.setVideo(600, 400)
         //   console.log('small card pixel')
@@ -1324,34 +1328,72 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   customWelcomeMessge() {
-    let ip = localStorage.getItem('userIp')
-    let ip2 = localStorage.getItem('userIp2')
-    if(ip == ip2){
-      console.log('same ip')
+    // let ip = localStorage.getItem('userIp')
+    // let ip2 = localStorage.getItem('userIp2')
+    // if(ip == ip2){
+    //   console.log('same ip')
+      
+    //   if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
+
+    //   } else {
+  
+    //     this.setVariable()
+    //     const personaInstance = this.persona
+    //     let text = 'Welcome edYOU'
+    //     personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+    //   }
+      
+    // }else{
+    //   console.log('same not ip')
+    //   if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
+
+    //   } else {
+  
+    //     this.setVariable()
+    //     const personaInstance = this.persona
+    //     let text = 'Welcome to edYOU'
+    //     personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+    //   }
+    // }
+    
+    const savedDate:any = localStorage.getItem('savedDate3');
+    console.log(savedDate)
+    if(savedDate){
       
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
       } else {
-  
+      
         this.setVariable()
         const personaInstance = this.persona
         let text = 'Welcome edYOU'
         personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
       }
-      
+      this.isDateOlderThan3Days(savedDate)
+
+
     }else{
-      console.log('same not ip')
+
+
+      console.log('saDate not found')
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
       } else {
-  
+        
         this.setVariable()
         const personaInstance = this.persona
         let text = 'Welcome to edYOU'
         personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
+        const savedDate2:any = localStorage.getItem('savedDate3');
+        if(savedDate2 == null){
+          let date:any = new Date();
+          let newDate:any = date.setHours(0, 0, 0, 0);
+          console.log(date);
+          localStorage.setItem('savedDate3', date);
+        }
+        
       }
     }
-   
     
     
   }
@@ -4207,6 +4249,45 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   navigateToHelp() {
 
+  }
+
+  // Method to check if the saved date is older than 3 days
+  isDateOlderThan3Days(savedDate: string): boolean {
+    const currentDate = new Date();
+    const saved = new Date(savedDate)
+    const differenceInTime = currentDate.getTime() - saved.getTime();
+    const differenceInDays = Math.floor((differenceInTime) / (1000 * 3600 * 24));
+    // const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24)) ;
+    // console.log(currentDate,'68t878gubjuybyubjbjhvhgbjk=============111111111111 current date')
+    // console.log(saved,'68t878gubjuybyubjbjhvhgbjk============= saved')
+    // console.log(differenceInTime,'68t87ubjuybyubjbjhvhgbjk=============111111111111 differenceInTime')
+    // console.log(differenceInDays,'68t878gubjuybyubjbjhvhgbjk============= day')
+    // console.log(currentDate.getTime(),'68t878gubjuybyubjbjhvhgbjk============= ')
+    // if(differenceInDays >= 604800000){
+    // if(differenceInDays > 7){
+    //   console.log('greater than 6')
+    //   localStorage.removeItem('savedDate');
+     
+    // }else{
+    //   console.log('less than or equal than 6')
+    // }
+    return differenceInDays > 6;
+    
+  }
+
+  removeSaveDate(){
+    let saveDate1:any = localStorage.getItem('savedDate3');
+    const currentDate = new Date();
+    const saved = new Date(saveDate1)
+    const differenceInTime = currentDate.getTime() - saved.getTime();
+    const differenceInDays = Math.floor((differenceInTime) / (1000 * 3600 * 24));
+    if(differenceInDays > 6){
+      console.log('greater than 0')
+      localStorage.removeItem('savedDate3');
+     
+    }else{
+      console.log('less than or equal than 0')
+    }
   }
 
 
