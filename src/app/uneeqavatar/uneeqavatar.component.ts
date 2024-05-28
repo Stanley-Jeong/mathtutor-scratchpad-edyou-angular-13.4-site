@@ -655,6 +655,25 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       $('#avatarLoaders').css('display', 'none')
     // }, 1000)
 
+    if (this.messageForQueueAvatar == true) {
+      // this.onLoadCard('')
+      //  console.log(this.fullScreen,'onLoad--------')
+      if (this.fullScreen == true) {
+        //   console.log(this.fullScreen,'onLoad ------ inner--------')
+        setTimeout(() => {
+          $('#tourIcon').addClass('showI');
+          $('#minimizeAvatar').addClass('showI');
+          $('#maximizeAvatar').removeClass('showI');
+        }, 0)
+
+      } else {
+        $('#tourIcon').removeClass('showI');
+        $('#minimizeAvatar').removeClass('showI');
+        $('#maximizeAvatar').addClass('showI');
+      }
+    }
+    
+    this.messageForQueueAvatar = false
     this._personaId = sessionId
     localStorage.setItem('sessionId', sessionId)
 
@@ -689,24 +708,28 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         if (this.fullScreen === false) {
 
         }else{
-          this.setVideo(600, 400)
+          // this.setVideo(600, 400)
+          this.setVideo(700, 500)
         }
       }
 
       this.customLogger('')
-      // console.log(this.scene)
-      //   if (this.scene.connectionState._connectionState['name'] == 'Disconnected' && !this.hasDisconnected) {
-      // console.log(this.scene.connectionState._connectionState['name'])
-      //  this.scene.disconnect()
-      //     this.scene.close()
-      //     console.warn(' -----------   getting disconnected relaunching avatar -------------------------------------------------------')
-      //     setTimeout(()=>{
-      //       this.avatarFunction()
-      //     },1000)
-      //     this.hasDisconnected = true;
+   
+    this.scene.onDisconnectedEvent.addListener((error: any) => {
+      let states = this.scene.connectionState._connectionState['name']
+      console.log('scene disconnected:', states);
 
-      //     }
+      if (states == "Disconnected") {
 
+       // this.reconnectAvatar()
+       this.messageForQueueAvatar = true
+       console.warn('reconnect ++++++++++++++++++++++++++++++++++++++++')
+       this.avatarFunction()
+      }
+
+
+
+    });
 
 
     }
@@ -748,7 +771,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     }
 
     this.ser.apiLogService(p).subscribe((res: any) => {
-      console.log(res);
+    //  console.log(res);
     });
   }
 
