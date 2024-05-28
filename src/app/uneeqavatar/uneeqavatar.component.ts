@@ -219,7 +219,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.mobileAvatarOnOff = true
     }
 
-
+   
+    
     // remove item on page refresh 
     window.onbeforeunload = function () {
       localStorage.removeItem('Avatar');
@@ -672,7 +673,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         $('#maximizeAvatar').addClass('showI');
       }
     }
-    
+
     this.messageForQueueAvatar = false
     this._personaId = sessionId
     localStorage.setItem('sessionId', sessionId)
@@ -857,7 +858,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       var name = message.name
       var body = message.body
       // console.log(localStorage.getItem('userIp'),'get item--------------------------------------');
-      
+      // console.warn('message',message)
       console.warn('body', body)
 
       switch (name) {
