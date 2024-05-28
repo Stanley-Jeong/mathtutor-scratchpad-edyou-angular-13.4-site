@@ -123,14 +123,14 @@ export class MainComponent implements OnInit {
     });
   }
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event:any){
-    console.log($event);
-    console.log("scrolling");
-    this.service.getIp().subscribe((res:any)=>{
-      console.log(res.ip,"my ip----------------------------------------------")
-      localStorage.setItem("userIp2", JSON.stringify(res.ip));
-    })
-  } 
+  // @HostListener('window:scroll', ['$event']) onScrollEvent($event:any){
+  //   console.log($event);
+  //   console.log("scrolling");
+  //   this.service.getIp().subscribe((res:any)=>{
+  //     console.log(res.ip,"my ip----------------------------------------------")
+  //     localStorage.setItem("userIp2", JSON.stringify(res.ip));
+  //   })
+  // } 
 
   
 
@@ -150,12 +150,12 @@ export class MainComponent implements OnInit {
   //     // this.onCloseHandled()
   //   }
   // }
-  @HostListener('window:click', ['$event']) onScrollEvent2($event:any){
-    console.log($event);
-    console.log("clicked");
-    this.service.getIp().subscribe((res:any)=>{
-      console.log(res.ip,"my ip----------------------------------------------")
-      localStorage.setItem("userIp2", JSON.stringify(res.ip));
-    })
-  } 
+  // @HostListener('window:click', ['$event']) onScrollEvent2($event:any){
+  //   console.log($event);
+  //   console.log("clicked");
+  //   this.service.getIp().subscribe((res:any)=>{
+  //     console.log(res.ip,"my ip----------------------------------------------")
+  //     localStorage.setItem("userIp2", JSON.stringify(res.ip));
+  //   })
+  // } 
 }
