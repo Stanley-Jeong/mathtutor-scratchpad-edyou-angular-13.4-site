@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,9 @@ import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
+import { Router } from "@angular/router";
+import * as Sentry from "@sentry/angular-ivy";
+
 
 @NgModule({
   declarations: [
@@ -66,7 +69,24 @@ import { InvestorLoginComponent } from './investor-login/investor-login.componen
     }),
    
   ],
-  providers: [],
+  providers: [{
+    provide: ErrorHandler,
+    useValue: Sentry.createErrorHandler({
+      showDialog: false,
+    }),
+  }, {
+    provide: Sentry.TraceService,
+    deps: [Router],
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: () => () => {},
+    deps: [Sentry.TraceService],
+    multi: true,
+  },
+],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(trace: Sentry.TraceService) {}
+}

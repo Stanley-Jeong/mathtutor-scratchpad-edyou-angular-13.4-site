@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@angular/service-worker": "~13.2.0",
+    "@sentry/angular-ivy": "^7.114.0",
     "@soulmachines/smwebsdk": "^15.7.0",
     "aws-sdk": "^2.1497.0",
     "jquery": "^3.7.1",
