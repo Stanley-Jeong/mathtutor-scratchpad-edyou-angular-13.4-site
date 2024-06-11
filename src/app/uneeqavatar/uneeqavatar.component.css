@@ -5244,6 +5244,19 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 }
 
 
+.chat-button {
+  position: absolute;
+  right: 5px;
+  top: 52%;
+  transform: translateY(-50%);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
   #btnOptionCC {
 
     /* width: 360px; */

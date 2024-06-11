@@ -3221,7 +3221,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.bottomPositionheight = '68px'
       this.stopBottomSize = '20%'
       this.stopLeftSize = '5%'
-      this.micWidth = '55'
+      this.micWidth = '50'
       this.micWidthOnly = '50'
       this.micMarginleft = '2'
       this.micHeight = '50'
