@@ -16,3 +16,5 @@ export class InvestorsService {
     return this.http.post(this.baseUrl + 'Production/add_contact_to_investor_access', investor);
   }
 }
+
+
