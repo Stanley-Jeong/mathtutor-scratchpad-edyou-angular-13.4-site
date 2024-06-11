@@ -5470,7 +5470,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
 
   .group-item {
     /* background-color: rgba(255, 255, 255, 0.20); */
-    color: white;
+    /* color: white; */
     padding: 10px;
     border-radius: 6px;
     /* width: 100%; */
