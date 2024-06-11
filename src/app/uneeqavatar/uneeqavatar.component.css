@@ -1433,6 +1433,7 @@ video {
 .box-3 {
   /* width: 55px; */
   height: 100px;
+ 
   /* Set the height as needed */
   margin: 4px;
   /* margin: 0px; */
@@ -1444,6 +1445,7 @@ video {
 .box-3 {
   /* width: 55px; */
   height: 100px;
+  width: 100px;
   /* Set the height as needed */
   margin: 4px;
   /* margin: 0px; */
@@ -2560,7 +2562,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     justify-content: center;
     /* width: 565px; */
     width: 445px;
-
+ margin-left: -48px;
     align-items: center;
     z-index: 1100000;
     bottom: 70px;
@@ -4973,6 +4975,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
 (device-width:1194px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1112px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1134px) and (device-height: 774px) and (orientation:landscape),
+(device-width:1075px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1280px) and (device-height: 800px) and (orientation:landscape) {
   .uneeqAv {
     margin-top: 215px;
@@ -5043,6 +5046,12 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   .Mic:hover {
     border-radius: 13px;
     box-shadow: none
+  }
+
+  .ccBoxNew {
+   width: 580px !important;
+ margin-left: -49px !important;
+
   }
 
   /* .avatar_icon:hover {
