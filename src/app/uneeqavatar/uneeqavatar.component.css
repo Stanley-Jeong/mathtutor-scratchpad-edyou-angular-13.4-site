@@ -136,8 +136,8 @@ math-field {
   width: 560px;
   /* margin-left: -60px; */
   /* margin-left: -175px; */
-  margin-left: -92px;
-  /* margin-right: 45px; */
+  /* margin-left: -92px; */
+  margin-left: -95px;
   align-items: center;
   z-index: 1100000;
   bottom: 70px;
@@ -2546,7 +2546,8 @@ input:checked + .slider:before {
 
 /* ipad pro 11 */
 @media all and (device-width: 834px) and (device-height: 1194px) and (orientation:portrait),
-only screen and (device-width: 834px) and (device-height: 1112px) {
+only screen and (device-width: 834px) and (device-height: 1112px),
+only screen and (device-width: 834px) and (device-height: 1075px) {
 
   .playerOnePPT {
     /* margin-left: 1px;  */
@@ -2562,7 +2563,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     justify-content: center;
     /* width: 565px; */
     width: 445px;
- margin-left: -48px;
+ margin-left: -98px;
     align-items: center;
     z-index: 1100000;
     bottom: 70px;
@@ -3431,6 +3432,9 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     width: 89% !important;
     height: 30px;
   }
+
+
+
 
 }
 
@@ -5049,8 +5053,8 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   }
 
   .ccBoxNew {
-   width: 580px !important;
- margin-left: -49px !important;
+   width: 555px !important;
+ margin-left: -96px !important;
 
   }
 
