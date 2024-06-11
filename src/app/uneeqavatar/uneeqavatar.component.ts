@@ -177,6 +177,21 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   isKeyboardOn: boolean = false;
   mathsMininmizeBtn: boolean = false;
   inputmarginTop: string = 'none';
+  winCrome: any;
+  winEdge: any;
+  iosChromeColor: any;
+  macOSEdgeColor: any;
+  windowsChromeColor: any;
+  macOSSafariColor: any;
+  windowsEdgeColor: any;
+  androidColor: any;
+  windowsFirefoxColor: any;
+  macOSChromeColor: any;
+  iOSsafariColor: any;
+  windowUniversal: any;
+  browserList: any = [];
+  ipadColor: any;
+  dotIndicatorAnimation:boolean = false
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService) {
@@ -197,6 +212,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
+    this.getColorAPI()
    // this.onLoadCard('')
 
     this.user = JSON.parse(localStorage.getItem('user') || '[]')
@@ -492,119 +508,312 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
+  getColorAPI(){
+    let p={
+
+    }
+    this.ser.getColorAPI(p).subscribe({
+      next: (res: any) => {
+      //  console.log(res);
+        this.browserList = res.body;
+        this.findColor();
+        this.checkDeviceAndColor();
+      },
+      error: (err: any) => {
+        this.checkDeviceAndColor();
+      },
+    })
+  }
+
+  findColor() {
+    this.browserList.forEach((item: any) => {
+      // Check each item and assign colors based on conditions
+      switch (Object.keys(item)[0]) {
+        case 'iPad':
+          this.ipadColor = item.iPad;
+          console.log(this.ipadColor);
+          break;
+        case 'iOS_Chrome':
+          this.iosChromeColor = item.iOS_Chrome;
+          break;
+        case 'MacOS_Edge':
+          this.macOSEdgeColor = item.MacOS_Edge;
+          break;
+        case 'Windows_Chrome':
+          this.windowsChromeColor = item.Windows_Chrome;
+          console.log('browserList', this.windowsChromeColor);
+          break;
+        case 'MacOS_Safari':
+          this.macOSSafariColor = item.MacOS_Safari;
+          break;
+        case 'Windows_Edge':
+          this.windowsEdgeColor = item.Windows_Edge;
+          break;
+        case 'Android':
+          this.androidColor = item.Android;
+          break;
+        case 'Windows_Firefox':
+          this.windowsFirefoxColor = item.Windows_Firefox;
+          break;
+        case 'MacOS_Chrome':
+          this.macOSChromeColor = item.MacOS_Chrome;
+          break;
+        case 'windowUniversal':
+          this.windowUniversal = item.windowUniversal;
+          break;
+        case 'iOS_Safari':
+          this.iOSsafariColor = item.iOS_Safari;
+          break;
+        default:
+          // Handle cases where none of the conditions match
+          break;
+      }
+    });
+  }
+
 
   checkDeviceAndColor() {
-
-
     const userAgent = window.navigator.userAgent;
     var innerWidth = window.innerWidth;
     var innerHeight = window.innerHeight;
-    var ipadMiniWidth = 768; // Assume 768px width for iPad Mini
-    var ipadAirWidth = 1024; // Assume 1024px width for iPad Air
-    var ipadProWidth = 1080; // Assume 1080px width for iPad Pro
-    var largeIpadWidth = 1024; // Assume 1024px width for Large iPad
-    var largeIpadHeight = 1366; // Assume 1366px height for Large iPad
+
+    // Key you want to check in local storage
+    const keyToCheck = 'browserList';
+    if (localStorage.hasOwnProperty(keyToCheck)) {
+      // The key is present
+      console.log('The key is present in local storage');
+      //
+      //const userAgent = window.navigator.userAgent;
+      if (userAgent.indexOf('Win') !== -1) {
+        // if (userAgent.indexOf('Chrome') !== -1) {
+        if (userAgent.indexOf('Chrome') !== -1) {
+          //if (userAgent.indexOf('chrome') !== -1 ) {
+          console.log('crome case')
+          //this.backgroundColor = '#003e6f';
+          this.backgroundColor = this.windowsChromeColor
+          console.warn(this.backgroundColor, 'dfdfdfdfddf')
+        } else if (userAgent.indexOf('Firefox') !== -1) {
+          console.log('firefox case')
+          // this.backgroundColor = '#003e6f';
+          this.backgroundColor = this.windowsFirefoxColor
+          // } else if (navigator.userAgent.indexOf('Edge') !== -1) {
+        } else if (userAgent.indexOf("Edg") !== -1) {
+          console.log('edge case')
+          this.backgroundColor = this.windowsEdgeColor
+          // Code for Edge
+        } else {
+          console.log('universal case')
+          // this.backgroundColor = '#003a73';
+          this.backgroundColor = this.windowUniversal
+        }
+      } else if (userAgent.indexOf('Mac') !== -1) {
+        if (userAgent.indexOf('Safari') !== -1 && userAgent.indexOf('Chrome') === -1) {
+          if (innerWidth < 767) {
+            // this.backgroundColor = '#003b71';
+            console.log('mac mobile case')
+            this.backgroundColor = this.iOSsafariColor
+            console.log('bg mobile ')
+          } else if (innerWidth >= 768 && innerWidth <= 1024) {
+
+            //this.backgroundColor = '#003b72';
+            this.backgroundColor = this.ipadColor
+            console.log(' bg ipad portrait', this.backgroundColor)
+          } else if (innerWidth >= 1025 && innerWidth < 2244) {
+            // for landscape
+            if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
+
+              //   this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log(' bg ipad pro landscape safari', this.backgroundColor)
+            } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
+
+              // this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log(' bg ipad 10 landscape safari', this.backgroundColor)
+            } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
+
+              // this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log('bg ipad 9 landscape safari', this.backgroundColor)
+            } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
+
+              //  this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log(' bg ipad 11 landscape safari', this.backgroundColor)
+            } else {
+              console.log('mac safari case')
+              this.backgroundColor = '#003e70';
+            }
+          } else {
+            //  this.backgroundColor = '#003e70';
+            this.backgroundColor = this.macOSSafariColor
+          }
 
 
-    //const userAgent = window.navigator.userAgent;
-    if (userAgent.indexOf('Win') !== -1) {
-      if (userAgent.indexOf('Chrome') !== -1) {
-        // this.backgroundColor = '#003A73';
-        this.backgroundColor = '#003E6F';
-      } else if (userAgent.indexOf('Firefox') !== -1) {
-        this.backgroundColor = '#003e6f';
-      } else {
-        this.backgroundColor = '#003a73';
+
+
+        } else if (userAgent.indexOf('Chrome') !== -1) {
+          //  this.backgroundColor = '#00437e';
+          if (window.innerWidth < 767) {
+            //  this.backgroundColor = '#003b71';
+            this.backgroundColor = this.iosChromeColor
+          } else if (innerWidth >= 768 && innerWidth <= 1024) {
+
+            //  this.backgroundColor = '#003b72';
+            this.backgroundColor = this.ipadColor
+            console.log('bg ipad protrait', this.backgroundColor)
+          } else if (innerWidth >= 1025 && innerWidth < 2244) {
+            // for landscape
+            if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
+
+              // this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log('bg ipad pro landscape crome', this.backgroundColor)
+            } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
+
+              // this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log('bg ipad 10 landscape crome', this.backgroundColor)
+            } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
+
+              //  this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log('bg ipad 9 landscape crome', this.backgroundColor)
+            } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
+
+              // this.backgroundColor = '#003b72';
+              this.backgroundColor = this.ipadColor
+              console.log(' bg ipad 11 landscape crome', this.backgroundColor)
+            } else {
+              // this.backgroundColor = '#003e70';
+              console.log('mac crome case')
+              this.backgroundColor = this.macOSChromeColor
+              // this.backgroundColor = '#00437e';
+            }
+          } else {
+            //  this.backgroundColor = '#00437e';
+            this.backgroundColor = this.macOSChromeColor
+
+          }
+        }
+        else {
+          // this.backgroundColor = '#00437e'; // iOS devices
+          // this.backgroundColor = this.iosChromeColor
+        }
+      } else if (/Android/.test(userAgent) || userAgent.includes("Android")) {
+        //  this.backgroundColor = '#003b73'; // Android devices
+        this.backgroundColor = this.androidColor
       }
-    } else if (userAgent.indexOf('Mac') !== -1) {
-      if (userAgent.indexOf('Safari') !== -1 && userAgent.indexOf('Chrome') === -1) {
-        if (innerWidth < 767) {
-          this.backgroundColor = '#003b71';
-          console.log('bg mobile ')
-        } else if (innerWidth >= 768 && innerWidth <= 1024) {
+    } else {
+      // The key is not present
+      console.log('The key is not present in local storage');
+      //
+      //const userAgent = window.navigator.userAgent;
+      if (userAgent.indexOf('Win') !== -1) {
+        if (userAgent.indexOf('Chrome') !== -1) {
+          // this.backgroundColor = '#003A73';
+          this.backgroundColor = '#003E6F';
+        } else if (userAgent.indexOf('Firefox') !== -1) {
+          this.backgroundColor = '#003e6f';
+        } else if (userAgent.indexOf("Edg") !== -1) {
+          console.log('edge case')
+          this.backgroundColor = '#003b72'
+          // Code for Edge
+        } else {
+          this.backgroundColor = '#003e6f';
+        }
+      } else if (userAgent.indexOf('Mac') !== -1) {
+        if (userAgent.indexOf('Safari') !== -1 && userAgent.indexOf('Chrome') === -1) {
+          if (innerWidth < 767) {
+            this.backgroundColor = '#003b71';
+            console.log('bg mobile ')
+          } else if (innerWidth >= 768 && innerWidth <= 1024) {
 
-          this.backgroundColor = '#003b72';
-          console.log(' bg ipad portrait', this.backgroundColor)
-        } else if (innerWidth >= 1025 && innerWidth < 2244) {
-          // for landscape
-          if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
-
-            // this.backgroundColor = '#013a75';
             this.backgroundColor = '#003b72';
-            console.log(' bg ipad pro landscape safari', this.backgroundColor)
-          } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
+            console.log(' bg ipad portrait', this.backgroundColor)
+          } else if (innerWidth >= 1025 && innerWidth < 2244) {
+            // for landscape
+            if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
 
-            this.backgroundColor = '#003b72';
-            console.log(' bg ipad 10 landscape safari', this.backgroundColor)
-          } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
+              // this.backgroundColor = '#013a75';
+              this.backgroundColor = '#003b72';
+              console.log(' bg ipad pro landscape safari', this.backgroundColor)
+            } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
 
-            this.backgroundColor = '#003b72';
-            console.log('bg ipad 9 landscape safari', this.backgroundColor)
-          } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
+              this.backgroundColor = '#003b72';
+              console.log(' bg ipad 10 landscape safari', this.backgroundColor)
+            } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
 
-            this.backgroundColor = '#003b72';
-            console.log(' bg ipad 11 landscape safari', this.backgroundColor)
+              this.backgroundColor = '#003b72';
+              console.log('bg ipad 9 landscape safari', this.backgroundColor)
+            } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
+
+              this.backgroundColor = '#003b72';
+              console.log(' bg ipad 11 landscape safari', this.backgroundColor)
+            } else {
+              this.backgroundColor = '#003E6F';
+            }
           } else {
             this.backgroundColor = '#003e70';
           }
-        } else {
-          this.backgroundColor = '#003e70';
-        }
 
 
 
 
-      } else if (userAgent.indexOf('Chrome') !== -1) {
-        //  this.backgroundColor = '#00437e';
-        if (window.innerWidth < 767) {
-          this.backgroundColor = '#003b71';
-        } else if (innerWidth >= 768 && innerWidth <= 1024) {
-
-          this.backgroundColor = '#003b72';
-          console.log('bg ipad protrait', this.backgroundColor)
-        } else if (innerWidth >= 1025 && innerWidth < 2244) {
-          // for landscape
-          if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
-
-            this.backgroundColor = '#003b72';
-            console.log('bg ipad pro landscape crome', this.backgroundColor)
-          } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
-
-            this.backgroundColor = '#003b72';
-            console.log('bg ipad 10 landscape crome', this.backgroundColor)
-          } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
-
-            this.backgroundColor = '#003b72';
-            console.log('bg ipad 9 landscape crome', this.backgroundColor)
-          } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
-
-            this.backgroundColor = '#003b72';
-            console.log(' bg ipad 11 landscape crome', this.backgroundColor)
-          } else {
-              this.backgroundColor = '#003e70';
+        } else if (userAgent.indexOf('Chrome') !== -1) {
           //  this.backgroundColor = '#00437e';
+          if (window.innerWidth < 767) {
+            this.backgroundColor = '#003b71';
+          } else if (innerWidth >= 768 && innerWidth <= 1024) {
+
+            this.backgroundColor = '#003b72';
+            console.log('bg ipad protrait', this.backgroundColor)
+          } else if (innerWidth >= 1025 && innerWidth < 2244) {
+            // for landscape
+            if ((innerHeight == 950 || innerHeight == 905) && (innerWidth == 1366)) { //  landsvape ipad 12
+
+              this.backgroundColor = '#003b72';
+              console.log('bg ipad pro landscape crome', this.backgroundColor)
+            } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
+
+              this.backgroundColor = '#003b72';
+              console.log('bg ipad 10 landscape crome', this.backgroundColor)
+            } else if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {  // landsvape ipad 9 
+
+              this.backgroundColor = '#003b72';
+              console.log('bg ipad 9 landscape crome', this.backgroundColor)
+            } else if (innerHeight == 760 && innerWidth == 1194) { // landscape ipad 11
+
+              this.backgroundColor = '#003b72';
+              console.log(' bg ipad 11 landscape crome', this.backgroundColor)
+            } else {
+              //  this.backgroundColor = '#003e70';
+              this.backgroundColor = '#003E6F';
+
+            }
+          } else {
+            this.backgroundColor = '#003E6F';
+            // this.backgroundColor = '#003a73';
           }
+        } else if (userAgent.indexOf('Edg') !== -1) {
+          this.backgroundColor = '#00437e';
+          // Your code for Edge on Mac
         } else {
-       //   this.backgroundColor = '#00437e';
-       this.backgroundColor = '#003e70';
+          this.backgroundColor = '#003E6F'; // iOS devices
         }
+      } else if (/Android/.test(userAgent) || userAgent.includes("Android")) {
+        this.backgroundColor = '#003b73'; // Android devices
       }
-      else {
-        this.backgroundColor = '#00437e'; // iOS devices
-      }
-    } else if (/Android/.test(userAgent) || userAgent.includes("Android")) {
-      this.backgroundColor = '#003b73'; // Android devices
+
+
     }
 
-    // else if (/(iPad|iPhone|iPod)/g.test(navigator.userAgent)) {
-    //   this.backgroundColor = '#003b71'; // iOS devices
-    // } else if (userAgent.match(/iPad/i)) {
-    //   this.backgroundColor = '#003b71'; // iOS devices
-    // }
+
+
+
 
 
   }
-
 
   cleanupSessionStorage() {
     sessionStorage.clear();
@@ -903,7 +1112,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
           if (this.handlingMessgeForMaths == "continue loading" || this.handlingMessgeForMaths == 'continue loading') {
             var m: any = document.getElementById('outputDesc')
-            m.innerHTML = '.';
+            if (m) m.innerHTML = '.';
             this.runLoderGPT = true
             setTimeout(() => {
               this.persona.conversationSend('get response', {}, {});
@@ -933,10 +1142,12 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         if (state == 'speaking') {
           this.runLoderGPT = false
+          this.dotIndicatorAnimation = true
           $('#stopavatarId').removeClass('showI')
         } else if (state == 'animating') {
 
         } else if (state == 'idle') {
+          this.dotIndicatorAnimation = false
           $('#stopavatarId').addClass('showI')
         }
       }
@@ -959,7 +1170,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (this.DescAnswer === 'Let me think a bit.') {
       this.runLoderGPT = true;
       var m: any = document.getElementById('outputDesc')
-      m.innerHTML = '';
+      if (m) m.innerHTML = '';
       let payload = {
         "data": this.userInputText,
         "gptPrompt": "Everything",
@@ -1029,7 +1240,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (this.DescAnswer === 'Let me think') {
       this.runLoderGPT = true;
       var m: any = document.getElementById('outputDesc')
-      m.innerHTML = '';
+      if (m) m.innerHTML = '';
       let payload = {
         "question": this.userInputText,
         // "email": this.user.email,
@@ -1086,10 +1297,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         var d: any = document.getElementById('outputDesc')
         //  $('.avatarspeak-s').scrollTop(0);
         if (this.DescAnswer === 'Let me think a bit.' || this.DescAnswer === 'Let me think') {
-          d.innerHTML = ''
+          if (d) d.innerHTML = ''
         }
         else {
-          d.innerHTML = this.DescAnswer;
+          if (d) d.innerHTML = this.DescAnswer;
           this.isSubtitleAnimationRunning = true
           //   this.subtitleAnimationRun(this.DescAnswer)
           if (localStorage.hasOwnProperty("learningId")) {
@@ -1338,6 +1549,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   stopDigitalPerson() {
     this.isManualScrolling = true
+    this.dotIndicatorAnimation = false
     this.stopAvatarOnClick = !this.stopAvatarOnClick
     this.persona.stopSpeaking()
     this.stopSubtitleAnimation()
@@ -1449,26 +1661,18 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
     this.clearAvatarContentBox()
     var completeText
-    if (this.inputMathsValue !== "") {
-      this.mathInputClear = true
-      this.mathsValue(this.inputMathsValue2)
-      completeText = this.inputMathsValue
-      //  var textSet = 'User: ' + completeText
-      var textSet = completeText
-      this.userInputText = textSet
-    } else {
-      completeText = this.userText.trim();
+    if (this.userText) {
+      const completeText = this.userText.trim();
+
+      if (completeText) {
+          this.userInputText = completeText;
+          console.log('user', this.userInputText);
+          const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
+      }
+  }
       // var  textSet = 'User: ' + completeText
-      var textSet = completeText
-      this.userInputText = textSet
-      console.log('user', this.userInputText)
-    }
-
-
     this.stopSubtitleAnimation()
-    if (completeText.length > 0) {
-      const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });;
-    }
+   
     this.inputMathsValue = ""
     this.userText = ""
 
@@ -1782,6 +1986,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.showMic = true
       this.persona.stopSpeaking()
       this.isvoiceAnimationOn = true
+      this.dotIndicatorAnimation = true
 
 
       this.isMicButtonActive = true;
@@ -1826,6 +2031,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.isMicButtonActive = false;
           this.showMic = false
           this.isvoiceAnimationOn = false
+          this.dotIndicatorAnimation = false
           //  this.recognizer.stopContinuousRecognitionAsync(() => {
           //   this.recognizer.close();
           // })
@@ -1879,6 +2085,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     );
     this.showMic = false
     this.isvoiceAnimationOn = false
+    this.dotIndicatorAnimation = false
     this.isMicButtonActive = false
 
   }
@@ -1887,6 +2094,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stop() {
     this.showMic = false
     this.isvoiceAnimationOn = false
+    this.dotIndicatorAnimation = false
     this.recognizing = false;
     this.isMicButtonActive = false;
     this.recognizer.stopContinuousRecognitionAsync(
@@ -2083,11 +2291,11 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (localStorage.getItem('screen') === "TestSeries") {
         setTimeout(() => {
           var m: any = document.getElementById('outputDesc')
-          m.innerHTML = '';
+          if (m) m.innerHTML = '';
         }, 0)
       } else {
         var d: any = document.getElementById('outputDesc')
-        d.innerHTML = '';
+        if (d) d.innerHTML = '';
       }
       this.normalGPT = true
       this.callOpenAI()
@@ -2103,7 +2311,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (this.DescAnswer === 'Let me think') {
       this.runLoderGPT = true;
       var m: any = document.getElementById('outputDesc')
-      m.innerHTML = '';
+      if (m) m.innerHTML = '';
       this.callOpenAIMathematicsAPI()
       // this.OpenAIMathematicsSoulMAchine()
     } else {
@@ -2984,7 +3192,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPositionWidth = '77.5%'
       this.bottomPositionWidth = '79.5%'
       // this.inputWidthSize = '201px';
-      this.inputWidthSize = '212px';
+      this.inputWidthSize = '265px';
       $('#settingId').addClass('showI');
       this.inputheightSize = '50px'
       this.inputMarginLeft = '3px'
@@ -2992,12 +3200,12 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.stopBottomSize = '75%'
       this.stopLeftSize = '10%'
       // this.micWidth = '50'
-      this.micWidth = '120'
+      this.micWidth = '110'
       // this.micWidthOnly = '50'
       this.micWidthOnly = '120'
       this.micMarginleft = '0'
-      this.micHeight = '50'
-      this.micMarginLeft2 = '0px'
+      this.micHeight = '47'
+      this.micMarginLeft2 = '3px'
     }
 
 
@@ -3038,9 +3246,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
       this.micWidth = '55'
       this.micWidthOnly = '57'
-      this.micMarginleft = '2'
+      this.micMarginleft = '6'
       this.micHeight = '55'
-      this.micMarginLeft2 = '0px'
+      this.micMarginLeft2 = '6px'
       //  } else if (innerHeight == 1024 && innerWidth == 1366) { // landscape ipad pro
     } else if ((innerHeight == 1366 || innerHeight == 1368 || innerHeight == 1000 || innerHeight == 1100 || innerHeight == 1292) && (innerWidth == 1366 || innerWidth == 912 || innerWidth == 1024 || innerWidth == 1500 || innerWidth == 1700)) { // ipad pro 12
       this.stopBottomSize = '20%'
@@ -3088,9 +3296,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.stopLeftSize = '31%'
       this.micWidth = '55'
       this.micWidthOnly = '55'
-      this.micMarginleft = '2'
+      this.micMarginleft = '6'
       this.micHeight = '55'
-      this.micMarginLeft2 = '0px'
+      this.micMarginLeft2 = '6px'
     }
 
 
@@ -3109,10 +3317,12 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         // condition for making small screen avatar card
         this.checkFullScreenB = true
         this.expandOn = true
-
+        $('#bottomBar').removeClass('baseChatBottom');
 
         if (window.screen.width < 480) {
           this.hideAvatarForMobile()
+          $('#bottomBar').addClass('baseChatBottom');
+          $('#mobileDotAni').addClass('showI');
         }
 
         if (this.toggleValue == true) {
@@ -3120,11 +3330,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.mathsChatBar = false
         }
 
+   
         // $('#bottomShadowBox').addClass('bottomboxSizewithSmallBox');
         // $('#bottomShadowBox').removeClass('bottomboxSize');
         console.log('small')
         this.minimizeBoxCardUI()
-
+        $('#box3Main').addClass('showI');
+      
+        
         // $('#stopavatarId').addClass('showI');
         // mic icons
         $('#zoomMic').addClass('microphoneMobile');
@@ -3189,12 +3402,17 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       } else if (this.fullScreen === false) {
         // condition for making big screen avatar card
         this.checkFullScreenB = false
+        $('#bottomBar').addClass('baseChatBottom');
         this.expandOn = false
         // card minimize
         this.maximizeBoxCardUI()
+        $('#box3Main').removeClass('showI');
 
-
-
+        if (window.screen.width < 480) {
+          $('#box3Main').addClass('showI');
+          $('#bottomBar').removeClass('baseChatBottom');
+          $('#mobileDotAni').removeClass('showI');
+        }
         if (this.toggleValue == true) {
           this.normalChatBar = false
           this.mathsChatBar = true

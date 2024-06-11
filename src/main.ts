@@ -12,6 +12,9 @@ Sentry.init({
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration(),
   ],
+  ignoreErrors: ['Cannot read properties of null','Cannot read properties of undefined','Cannot set properties of null',
+  'undefined is not an object','null is not an object','Cannot set properties of null','The object is in an invalid state',
+  'No value accessor for form control with unspecified name attribute', /^Exact Match Message$/],
   // Performance Monitoring
   tracesSampleRate: 1.0, //  Capture 100% of the transactions
   // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled

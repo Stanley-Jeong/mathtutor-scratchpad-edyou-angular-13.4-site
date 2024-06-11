@@ -135,6 +135,10 @@ export class UserService {
     return this.http.post(this.baseUrl + API.mathsONOF, data,{headers: this.headers})
   }
 
+  // OpenAI API call
+  getColorAPI(data: any) {
+    return this.http.post('https://v8awnmd5cd.execute-api.us-west-2.amazonaws.com/Development/bg_color_get_and_update', data)
+  }
 
 
  

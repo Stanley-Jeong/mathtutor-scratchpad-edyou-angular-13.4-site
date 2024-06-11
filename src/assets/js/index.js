@@ -146,7 +146,7 @@ export function tour() {
     
             },
             {
-                content: "It will close the interaction screen and take you to Home page. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/interaction+popup.png'  style='width:290px' alt=''>",
+                content: "It will close the interaction screen and take you to Home page.",
                 title: "Exit Button",
                 target: "#cross1",
                 // order: "8",

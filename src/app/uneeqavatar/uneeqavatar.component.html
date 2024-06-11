@@ -10,8 +10,8 @@
     <div class="commonstyle" id="tourSetting">
       <!--  -->
       <span class="setttingMain" >
-        <span class="ToolSetting">Setting</span>
-        <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/interaction/group-2477@2x.png">
+        <!-- <span class="ToolSetting">Setting</span> -->
+        <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/newsetting.png">
       </span>
     </div>
   </div>
@@ -289,7 +289,7 @@
       <div class="dropBoxNew showI" id="dropDownSetting">
 
         <div class="d"
-          style="width: 360px; background-color: black; color: white;border-radius: 8px ; margin-left: 50px; margin-top: 40px;">
+          style="width: 310px; background-color: black; color: white;border-radius: 8px ; margin-left: 50px; margin-top: 40px;">
 
           <button class="accordions" (click)="clickFunction('panel1')" #popup2>
             <div class="row">
@@ -358,65 +358,104 @@
       </div>
 
       <!-- -- chat box , mic ------ -->
-      <div class="bottomboxSize " [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight"
-        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius">
+      <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight"
+        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius"  >
 
         <div class="container">
           <div class="d-flex justify-content-center centerDiv">
+            <!-- <div class="box-3">
+              <span class="setttingMain" >
+                <span class="ToolSetting">Setting</span>
+                <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/interaction/group-2477@2x.png">
+              </span>
+            </div> -->
             <div class="box-1" id="boxForInput" style="z-index: 21000000">
               <ng-container >
                 <!-- <input type="text" #input1 style="width: 60px;">
                 <input type="text" #input2 style="width: 60px;"> 
                 <button (click)="setVideo(input1.value, input2.value)">send</button>  -->
+               
+                  <div class="input-container">
                 <input type="text" 
                   [style.width]="inputWidthSize" 
                   id="textTourBox"  
                   [style.margin-top]="inputmarginTop" 
                   [style.height]="inputheightSize" 
-                  class="group-item text-white" 
-                  onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()" 
+                  class="group-item" 
+                  onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()" 
                   [(ngModel)]="userText" 
                   placeholder="Type here or push mic to talk" 
-                  style="font-size: medium !important; padding-left: 10px !important;">
-
+                  style="font-size: medium !important; padding-left: 26px !important;">
+                  
+                  <img class="chat-button" id="sendId1"  style="width: 50px;height: 45px; background-color: white;" (click)="sendTextToAvatar()" src="../../assets/send-03.svg">
+                  </div>
 
               </ng-container>
          
             </div>
-            <div class="box-2" (click)="sendTextToAvatar()" id="btnSearch">
+            <!-- <div class="box-2" (click)="sendTextToAvatar()" id="btnSearch">
               <img alt="" id="sendId1"  [style.width.px]="micWidth" [style.height.px]="micHeight" src="../../assets/interaction/group-2472.svg" />
-              <!-- <img alt="" id="sendId" class="newIconSize"
-                  src="../../../../assets/interaction/muteMic.svg" /> --> 
+          
                  
-            </div>
+            </div> -->
 
-            <img   id="minimiseMathBTN" class="showI miniBTN"  (click)="mathEventHit('')"
-            src="../../assets/interaction/Minimize_icon1.svg" />   
+            <!-- <img   id="minimiseMathBTN" class=" miniBTN"  (click)="mathEventHit('')"
+            src="../../assets/interaction/Minimize_icon1.svg" />    -->
 
-            <!-- (click)="toggleUserMicrophone()"   onclickMic-->
-            <div class="box-3" >
+            <!-- (click)="toggleUserMicrophone()"  box-3  onclickMic-->
+            <div class="box-2" >
               <div class="di">
-                <!-- <img alt="" id="voiceId" class="newIconSize"
-                  [src]="isMicrophoneOn ? '../../../../assets/interaction/muteMic.svg' : '../../../../assets/interaction/orange_mic.png'" />  -->        
+               
                 <span >
                
                   <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"  (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth" [style.height.px]="micHeight"  [style.margin-left]="micMarginLeft2" 
-                  src="../../assets/interaction/muteMic.svg" />
+                  src="../../assets/mute.png" />
     
-                          
-                <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/interaction/ezgif.com-resize.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" 
-                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" > -->
-                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/Mic GIF.gif" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micNewOrange.png" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
                   [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" >
                 </span>
 
               </div>
 
             </div>
+            <div class="box-3" id="box3Main" style="margin-left: 10px;">
+              <img *ngIf="!dotIndicatorAnimation" style="    position: relative; 
+              margin-left: 3px;
+              margin-top: 10px;" src="../../assets/dotIndicator.svg">
+              <div id="bars" style="margin-top: 15px;" *ngIf="dotIndicatorAnimation" >
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+               
+              
+              </div>
+            </div>
+
+          
           </div>
 
 
-
+          <div class="testtt showI" id="mobileDotAni" style="    position: absolute;
+          right: 3%;
+          width: 60px;
+          margin-top: -145px;">
+            <img *ngIf="!dotIndicatorAnimation" style="    position: relative; 
+            margin-left: 0px;
+            margin-top: 5px;" src="../../assets/dotIndicator.svg">
+            <div id="bars" style="margin-top: 5px;" *ngIf="dotIndicatorAnimation" >
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+             
+            
+            </div>
+          </div>
         </div>
       </div>
 
