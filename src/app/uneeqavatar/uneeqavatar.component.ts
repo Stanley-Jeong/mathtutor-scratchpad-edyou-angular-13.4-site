@@ -1961,103 +1961,212 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
    * Mic speak to text function
    * getting text and sending to uneeq function 
    */
-  onclickMic() {
-    this.checkMicPosition()
+  // onclickMic() {
+  //   this.checkMicPosition()
+  //   if (this.isMicButtonActive === true) {
+  //     this.stop();
+  //     this.isMicButtonActive = false;
+  //     this.isSubtitleAnimationRunning = false;
+  //   }
+  //   else {
+  //     this.recognizerSetup()
+  //     if (this.voiceText) {
+  //       this.voiceText = ""
+  //       // this.uneeq.stopSpeaking()
+  //       this.persona.stopSpeaking()
+  //       this.stopSubtitleAnimation()
+  //     }
+
+  //     this.showMic = true
+  //     this.persona.stopSpeaking()
+  //     this.isvoiceAnimationOn = true
+  //     this.dotIndicatorAnimation = true
+
+
+  //     this.isMicButtonActive = true;
+
+  //     const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
+  //     const speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.serviceRegion);
+  //     speechConfig.speechRecognitionLanguage = this.language;
+  //     this.recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig)
+
+  //     //  console.log(this.recognizer)
+  //     this.recognizer.recognizing = (s: any, e: any) => {
+  //        console.log(`RECOGNIZING: Text=${e.result.text}`);
+  //        this.userInputText  = e.result.text
+  //     };
+
+
+  //     this.recognizer.recognized = (s: any, e: any) => {
+  //       if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
+  //         //  console.log(`RECOGNIZED: Text=${e.result.text}`);
+  //         console.log('final', e.result.text);
+  //         this.voiceText = e.result.text;
+  //         this.userInputText = this.voiceText
+  //         this.checkButton()
+  //         this.UserQuestion_Display = ""
+  //         //  this.uneeq.sendTranscript(this.voiceText)
+  //         this.clearAvatarContentBox()
+  //         this.persona.conversationSend(this.voiceText, {}, {});
+  //         this.disableMicButton = true
+  //         this.hideOptionOnlyFOrMobile()
+  //         // this.recognizer.close();
+  //         //this.recognizer.AudioConfig.turnOff()
+  //         if (this.voiceText) {
+  //           this.stop()
+
+  //         }
+  //       } else if (e.result.reason === sdk.ResultReason.NoMatch) {
+
+  //         const noMatchDetail = sdk.NoMatchDetails.fromResult(e.result);
+  //         console.log("No speech recognized." + " | NoMatchReason: " + sdk.NoMatchReason[noMatchDetail.reason]);
+  //         // this.recognizer.AudioConfig.turnOff()
+  //         // this.recognizer.close();
+  //         this.isMicButtonActive = false;
+  //         this.showMic = false
+  //         this.isvoiceAnimationOn = false
+  //         this.dotIndicatorAnimation = false
+  //         //  this.recognizer.stopContinuousRecognitionAsync(() => {
+  //         //   this.recognizer.close();
+  //         // })
+  //         // Perform actions when no speech is recognized.
+  //       } else {
+  //         console.log(`ERROR: ${e.errorDetails}`);
+  //       }
+  //     };
+  //     this.recognizer.canceled = (s: any, e: any) => {
+  //       console.log(`CANCELED: Reason=${e.reason}`);
+  //       if (e.reason == sdk.CancellationReason.Error) {
+  //         console.log(`"CANCELED: ErrorCode=${e.errorCode}`);
+  //         console.log(`"CANCELED: ErrorDetails=${e.errorDetails}`);
+  //       }
+
+  //       this.recognizer.stopContinuousRecognitionAsync();
+  //     };
+
+  //     this.recognizer.speechEndDetected = (s: any, e: any) => {
+  //       //   console.log(`(speechEndDetected) SessionId: ${e.sessionId}`);
+  //       this.recognizer.close();
+  //       this.recognizer = undefined;
+  //     };
+  //     this.recognizer.sessionStopped = (s: any, e: any) => {
+  //       //  console.log("\n    Session stopped event.");
+  //       this.recognizer.stopContinuousRecognitionAsync();
+  //       // Perform actions when speech ends, such as stopping the recognition or handling the final result.
+  //     };
+  //     this.recognizer.startContinuousRecognitionAsync();
+  //     // }
+  //   }
+  // }
+
+  async onclickMic() {
+    this.checkMicPosition();
     if (this.isMicButtonActive === true) {
       this.stop();
       this.isMicButtonActive = false;
       this.isSubtitleAnimationRunning = false;
-    }
-    else {
-      this.recognizerSetup()
+    } else {
+      this.recognizerSetup();
       if (this.voiceText) {
-        this.voiceText = ""
-        // this.uneeq.stopSpeaking()
-        this.persona.stopSpeaking()
-        this.stopSubtitleAnimation()
+        this.voiceText = "";
+        this.persona.stopSpeaking();
+        this.stopSubtitleAnimation();
       }
-
-      this.showMic = true
-      this.persona.stopSpeaking()
-      this.isvoiceAnimationOn = true
-      this.dotIndicatorAnimation = true
-
-
+  
+      this.showMic = true;
+      this.persona.stopSpeaking();
+      this.isvoiceAnimationOn = true;
+  
       this.isMicButtonActive = true;
-
-      const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
+  
+      const getAudioConfig = async () => {
+        try {
+          // Request permission to access the microphone
+          await navigator.mediaDevices.getUserMedia({ audio: true });
+          console.log('Microphone access granted.');
+  
+          // Enumerate audio input devices
+          const devices = await navigator.mediaDevices.enumerateDevices();
+          const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
+          let selectedDeviceId = null;
+  
+          // Find AirPods or another specific device if desired
+          audioInputDevices.forEach((device: MediaDeviceInfo) => {
+            console.log("Device name: ${device.label}, id: ${device.deviceId}");
+            if (device.label.includes("AirPods")) { // Adjust condition as necessary
+              selectedDeviceId = device.deviceId;
+            }
+          });
+  
+          if (selectedDeviceId) {
+            console.log("Selected device: ${selectedDeviceId}");
+            return sdk.AudioConfig.fromMicrophoneInput(selectedDeviceId);
+          } else {
+            console.log('Using default microphone.');
+            return sdk.AudioConfig.fromDefaultMicrophoneInput();
+          }
+        } catch (err) {
+          console.error('Microphone access denied or error:', err);
+          throw err; // Ensure the error is propagated
+        }
+      };
+  
+      const audioConfig = await getAudioConfig();
       const speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.serviceRegion);
       speechConfig.speechRecognitionLanguage = this.language;
-      this.recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig)
-
-      //  console.log(this.recognizer)
+      this.recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
+  
       this.recognizer.recognizing = (s: any, e: any) => {
-         console.log(`RECOGNIZING: Text=${e.result.text}`);
-         this.userInputText  = e.result.text
+        this.userInputText = e.result.text;
       };
-
-
+  
       this.recognizer.recognized = (s: any, e: any) => {
         if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
-          //  console.log(`RECOGNIZED: Text=${e.result.text}`);
           console.log('final', e.result.text);
           this.voiceText = e.result.text;
-          this.userInputText = this.voiceText
-          this.checkButton()
-          this.UserQuestion_Display = ""
-          //  this.uneeq.sendTranscript(this.voiceText)
-          this.clearAvatarContentBox()
+          this.userInputText = this.voiceText;
+          this.checkButton();
+          this.UserQuestion_Display = "";
+          this.clearAvatarContentBox();
           this.persona.conversationSend(this.voiceText, {}, {});
-          this.disableMicButton = true
-          this.hideOptionOnlyFOrMobile()
-          // this.recognizer.close();
-          //this.recognizer.AudioConfig.turnOff()
+          this.disableMicButton = true;
+          this.hideOptionOnlyFOrMobile();
           if (this.voiceText) {
-            this.stop()
-
+            this.stop();
           }
         } else if (e.result.reason === sdk.ResultReason.NoMatch) {
-
           const noMatchDetail = sdk.NoMatchDetails.fromResult(e.result);
           console.log("No speech recognized." + " | NoMatchReason: " + sdk.NoMatchReason[noMatchDetail.reason]);
-          // this.recognizer.AudioConfig.turnOff()
-          // this.recognizer.close();
           this.isMicButtonActive = false;
-          this.showMic = false
-          this.isvoiceAnimationOn = false
-          this.dotIndicatorAnimation = false
-          //  this.recognizer.stopContinuousRecognitionAsync(() => {
-          //   this.recognizer.close();
-          // })
-          // Perform actions when no speech is recognized.
+          this.showMic = false;
+          this.isvoiceAnimationOn = false;
         } else {
-          console.log(`ERROR: ${e.errorDetails}`);
+         // console.log(ERROR: ${e.errorDetails});
         }
       };
+  
       this.recognizer.canceled = (s: any, e: any) => {
-        console.log(`CANCELED: Reason=${e.reason}`);
-        if (e.reason == sdk.CancellationReason.Error) {
-          console.log(`"CANCELED: ErrorCode=${e.errorCode}`);
-          console.log(`"CANCELED: ErrorDetails=${e.errorDetails}`);
+        console.log("CANCELED: Reason=${e.reason}");
+        if (e.reason === sdk.CancellationReason.Error) {
+          console.log("CANCELED: ErrorCode=${e.errorCode}")
+         // console.log("CANCELED: ErrorDetails=${e.errorDetails});
         }
-
         this.recognizer.stopContinuousRecognitionAsync();
       };
-
+  
       this.recognizer.speechEndDetected = (s: any, e: any) => {
-        //   console.log(`(speechEndDetected) SessionId: ${e.sessionId}`);
         this.recognizer.close();
         this.recognizer = undefined;
       };
+  
       this.recognizer.sessionStopped = (s: any, e: any) => {
-        //  console.log("\n    Session stopped event.");
         this.recognizer.stopContinuousRecognitionAsync();
-        // Perform actions when speech ends, such as stopping the recognition or handling the final result.
       };
+  
       this.recognizer.startContinuousRecognitionAsync();
-      // }
     }
   }
+
 
 
   stopOnClick(){
