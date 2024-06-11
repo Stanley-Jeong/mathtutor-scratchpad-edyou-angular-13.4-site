@@ -136,8 +136,8 @@ math-field {
   width: 560px;
   /* margin-left: -60px; */
   /* margin-left: -175px; */
-  margin-left: -92px;
-  /* margin-right: 45px; */
+  /* margin-left: -92px; */
+  margin-left: -95px;
   align-items: center;
   z-index: 1100000;
   bottom: 70px;
@@ -1433,6 +1433,7 @@ video {
 .box-3 {
   /* width: 55px; */
   height: 100px;
+ 
   /* Set the height as needed */
   margin: 4px;
   /* margin: 0px; */
@@ -1444,6 +1445,7 @@ video {
 .box-3 {
   /* width: 55px; */
   height: 100px;
+  width: 100px;
   /* Set the height as needed */
   margin: 4px;
   /* margin: 0px; */
@@ -2544,7 +2546,8 @@ input:checked + .slider:before {
 
 /* ipad pro 11 */
 @media all and (device-width: 834px) and (device-height: 1194px) and (orientation:portrait),
-only screen and (device-width: 834px) and (device-height: 1112px) {
+only screen and (device-width: 834px) and (device-height: 1112px),
+only screen and (device-width: 834px) and (device-height: 1075px) {
 
   .playerOnePPT {
     /* margin-left: 1px;  */
@@ -2560,7 +2563,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     justify-content: center;
     /* width: 565px; */
     width: 445px;
-
+ margin-left: -98px;
     align-items: center;
     z-index: 1100000;
     bottom: 70px;
@@ -3429,6 +3432,9 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
     width: 89% !important;
     height: 30px;
   }
+
+
+
 
 }
 
@@ -4973,6 +4979,7 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
 (device-width:1194px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1112px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1134px) and (device-height: 774px) and (orientation:landscape),
+(device-width:1075px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1280px) and (device-height: 800px) and (orientation:landscape) {
   .uneeqAv {
     margin-top: 215px;
@@ -5043,6 +5050,12 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
   .Mic:hover {
     border-radius: 13px;
     box-shadow: none
+  }
+
+  .ccBoxNew {
+   width: 555px !important;
+ margin-left: -96px !important;
+
   }
 
   /* .avatar_icon:hover {
@@ -5230,6 +5243,19 @@ only screen and (device-width: 834px) and (device-height: 1112px) {
  
 }
 
+
+.chat-button {
+  position: absolute;
+  right: 5px;
+  top: 52%;
+  transform: translateY(-50%);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
 
   #btnOptionCC {
 
