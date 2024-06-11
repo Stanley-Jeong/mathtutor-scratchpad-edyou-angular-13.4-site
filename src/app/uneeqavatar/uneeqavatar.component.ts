@@ -754,9 +754,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
             this.backgroundColor = '#003e70';
           }
 
-
-
-
         } else if (userAgent.indexOf('Chrome') !== -1) {
           //  this.backgroundColor = '#00437e';
           if (window.innerWidth < 767) {
