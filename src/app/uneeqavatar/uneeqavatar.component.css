@@ -784,6 +784,7 @@ video {
   position: absolute;
   justify-content: center;
   width: 100%;
+  background-color: #003A73;
   /* height: 75px; */
   height: 68px;
   align-items: center;
@@ -5722,8 +5723,7 @@ letter-spacing: 0.2px;
     align-items: center;
     z-index: 1100000;
     bottom: 67px;
-    /* background: rgba(37, 43, 66, 0.70); */
-    -webkit-backdrop-filter: blur(20px);
+   
     backdrop-filter: blur(20px);
     border-radius: 0px 0px 20px 20px;
   }

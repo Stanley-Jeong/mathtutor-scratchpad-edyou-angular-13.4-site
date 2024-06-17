@@ -2576,13 +2576,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.micMarginleft = '0'
       this.micHeight = '50'
       this.micMarginLeft2 = '2px'
+      this.colorBG = this.backgroundColor
     } else {
       this.isMobileNormalTrue = false
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-      // this.borderRadius = '0px 0px 9px 9px'
-          this.borderRadius = '0px 0px 2px 2px'
+       this.borderRadius = '0px 0px 9px 9px'
+       //   this.borderRadius = '0px 0px 2px 2px'
           this.colorBG = this.backgroundColor
       // this.bottomPositionWidth = '90%'
       // this.bottomPositionWidth = '77.5%'
@@ -3454,8 +3455,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-      // this.borderRadius = '0px 0px 9px 9px'
-       this.borderRadius = '0px 0px 2px 2px'
+       this.borderRadius = '0px 0px 9px 9px'
+      // this.borderRadius = '0px 0px 2px 2px'
       // this.bottomPositionWidth = '90%'
       this.bottomPositionWidth = '77.5%'
       // this.inputWidthSize = '201px';
