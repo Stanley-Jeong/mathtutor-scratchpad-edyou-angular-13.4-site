@@ -8,9 +8,9 @@ import { SpeechRecognizer } from 'microsoft-cognitiveservices-speech-sdk';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 declare var $: any;
-//declare var RunTour: any
 import { tour } from '../../assets/js/index.js';
-import { LearningTour, TestPrepTour, noSchoolTour } from '../../assets/js/index.js';
+import { warn } from 'console';
+
 
 //declare var Persona: any; // Declare Persona class if not automatically available
 
@@ -25,38 +25,37 @@ import { LearningTour, TestPrepTour, noSchoolTour } from '../../assets/js/index.
 export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stringRef = String;
   // Set the timeout duration in milliseconds (28 seconds)
-  optionListTestprep: any = ['hello', 'test', 'slove the eauationtest', 'end this text'];
-  timeoutDuration = 29000;
+  @ViewChild('messageContainer') private messageContainer!: ElementRef;
   fullScreen: boolean = false;
   userText: any
   connectionFailureCount = 0;
   elseConditionCount = 0;
   isSpinner: boolean = true
   iconShow: boolean = false
-  contentCard: any;
+  ImageData: any
   unmuteMicrophone: boolean = false
   user: any = [];
   isMobileNormalTrue: boolean = false
   uneeq: any
   showMic: boolean = false
   token: any = '';
-  msgDisplay: any;
-  avatarTextActive: any;
-  isMobileTrue: boolean = false
-  counting: number = 0
-  QuestionListData: any;
+
+
+
+
+
   ccOnOff: boolean = true;
-  videoMuted: boolean = false
-  styleWidthSize: any;
-  stleHeightSize: any
+
+
+
   ischatBoxOpen: boolean = false
   idleTimeout: any;
   messageForQueueAvatar: boolean = false;
   mobileAvatarOnOff: any = false;
   showImage: boolean = false;
   smallSizeImage: boolean = false
-  bigSizeImage: boolean = true
-  avatarHideOnOff: boolean = false
+
+
   stopAvatarOnClick: boolean = false;
   mic: any
   isvoiceAnimationOn: boolean = false;
@@ -69,50 +68,45 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   QuestionccOnOff: boolean = true;
   hideHelpSetting: boolean = true
   checkFullScreenB: any = false
-  accod1: boolean = true;
-  accod2: boolean = false;
+
   CorrectAnswer: any;
-  ImageData: any;
-  linkDisData: any;
-  dashboardTour: any
-  followup: any;
-  followName: any;
+
+
+
+
+
   feedback: boolean = false;
   openFeedbackForm: boolean = false;
   isClick: boolean = false;
-  checkTestSeriespage: any;
+
   expandOn: boolean = false
   @Output() storedErrorCode = new EventEmitter<any>();
   mediaStream: any;
-  audioTrack: any;
+
   pdfShow: any
   //= "https://pollydemo2022.s3.us-west-2.amazonaws.com/Presentation/49b4c467f429f846989cde5dbe9da95ffc.pdf";
   runLoderGPT: boolean = false;
   @ViewChild('childPdf') childPdf: any;
   @ViewChild('child') childMenu: any;
   userSpeakValue: any;
-  pageReload: boolean = true;
+
   recognition: any;
-  isListening = false;
-  voiceActiveSectionDisabled: boolean = true;
-  voiceActiveSectionError: boolean = false;
-  voiceActiveSectionSuccess: boolean = false;
-  voiceActiveSectionListening: boolean = false;
+
   voiceText: any;
-  showGraph = true;
+
   tourGuideValueCheck: any;
-  micToggle: boolean = true;
+
   microphone: MediaStreamAudioSourceNode | any
   //
   recognizer: SpeechRecognizer | any;
   subscriptionKey = '9a9e0a9d5d7e4cebb5deee50ed7aa3db';
   serviceRegion = 'eastus';
   language = 'en-US'; // e.g. 'en-US'
-  recognizer2: any
+
   speechRecognizer: any;
-  spaceBarActive: boolean = false;
+
   isMicButtonActive: boolean = false;
-  lastRecognized: any;
+
   recognizing: boolean = false;
   speechConfig: any;
   //
@@ -135,7 +129,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   disableMicButton: boolean = false;
   UserQuestion_Display: any;
   mathematicsEnabled: boolean = false;
-  avatarAnswerContent: any;
+
   inputMathsValue: any = "";
   scene: any;
   isMicrophoneOn: boolean = false;
@@ -191,70 +185,65 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   windowUniversal: any;
   browserList: any = [];
   ipadColor: any;
-  dotIndicatorAnimation:boolean = false
+  dotIndicatorAnimation: boolean = false
+  storedChatBubbleMessage: any = [];
+  showLoaderMess: boolean = false;
+  colorBG: any;
+  
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService) {
-      
+
   }
 
 
   ngAfterViewInit() {
     // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    
+
   }
 
 
   ngOnInit(): void {
-
     this.removeSaveDate()
-
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
     this.getColorAPI()
-   // this.onLoadCard('')
-
+    // this.onLoadCard('')
     this.user = JSON.parse(localStorage.getItem('user') || '[]')
-    this.token = localStorage.getItem('token') 
+    this.token = localStorage.getItem('token')
     // this.fullScreen = true
     if (this.user.Presentation_View == "PPT with avatar") {
       //  this.startAvatarFunction()
     }
-  
-      this.fullScreen = false
-      this.onLoadCard('id')
-   
-    this.checkDeviceAndColor()
-
+    this.fullScreen = false
+    this.onLoadCard('id')
+    // this.checkDeviceAndColor()
     window.addEventListener('resize', this.resizeFun);
-
     if (window.innerWidth < 480) {
       //hide card
       $('#movableCard').addClass('showI')
       this.mobileAvatarOnOff = true
     }
-
-   
-    
     // remove item on page refresh 
     window.onbeforeunload = function () {
       localStorage.removeItem('Avatar');
       localStorage.removeItem('screen');
-    
+
       localStorage.removeItem('learningId');
       localStorage.removeItem('mathtoggle');
     };
 
-
     this.avatarFunction()
-
- 
-    this.ser.getIp().subscribe((res:any)=>{
-      console.log(res.ip,"my ip----------------------------------------------")
+    this.ser.getIp().subscribe((res: any) => {
+      console.log(res.ip, "my ip----------------------------------------------")
       localStorage.setItem("userIp", JSON.stringify(res.ip));
     })
-   
+
+
+
+    // console.warn('Is GMT',isGMT )
+    // console.warn('Time Zone Offset (in hours from GMT)',offsetHours )
   }
 
 
@@ -272,211 +261,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  clickEvent(event: any) {
-    //    const target = event.target as HTMLElement;
-    // Get the target element by its id
-    const target = document.getElementById('eventTest');
-    if (target) {
-      const rect = target.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      // Define the clickable range (50px to 60px from the right edge of the element)
-      const clickableRangeStart = rect.width - 60; // 60px from the right edge
-      const clickableRangeEnd = rect.width - 20;   // 50px from the right edge
-      const targetE = event.target as HTMLElement;
-
-      if (innerWidth >= 1367 && innerWidth < 1600) {
-        console.log('Clicked within 1367 to 1600');
-        if (x >= clickableRangeStart && x <= clickableRangeEnd) {
-          console.log('Clicked within the clickable range');
-          this.mathEventHit("")
-        } else {
-          // console.log('Clicked without the clickable range');
-        }
-      } else if (innerWidth >= 1601 && innerWidth < 3300) {
-        console.log('Clicked within 1600 to 3300');
-        if (x >= clickableRangeStart && x <= clickableRangeEnd) {
-          console.log('Clicked within the clickable range');
-          this.mathEventHit("")
-        } else {
-          // console.log('Clicked without the clickable range');
-        }
-      } else {
-        this.mathEventHit("")
-      }
-
-
-
-    }
-
-
-  }
-
-  clickCount = 0;
-  mathEventHit(event: any) {
-    console.log('focus---------------on------------------------')
-    this.clickCount++;
-
-
-    if (this.isKeyboardOn === true) {
-      console.log('yes')
-      $('.box-1').css('margin-top', '');
-      $('#textTourBox').css('background', '');
-      $('.box-2').css('margin-top', '');
-      $('#sendId1').css('background', '');
-      $('#minimiseMathBTN').addClass('showI');
-      this.mathsMininmizeBtn = false
-      $('#minimiseMathBTN').css('margin-top', '');
-      $('#stopspeakingID').css('z-index', '1400000');
-    } else {
-
-      // Trigger a click event on the CSS element
-      //var mathFieldPart:any = document.querySelector(".math-field::part(virtual-keyboard-toggle)");
-      // mf.mathVirtualKeyboardPolicy = "manual";
-      // mf.addEventListener("focusin", () =>  mathVirtualKeyboard.show());
-
-
-
-      if (window.innerWidth < 480) {
-        $('.box-1').css('margin-top', '-430px');
-        $('.box-2').css('margin-top', '-430px');
-        this.mathsMininmizeBtn = true
-        $('#minimiseMathBTN').removeClass('showI');
-        $('#minimiseMathBTN').css('margin-top', '-480px');
-        // $('#sendId1').css('background', '#4E576D');
-        $('#stopspeakingID').css('z-index', '1400');
-        $('#textTourBox').css('background', '#4E576D');
-        console.log('no')
-
-      } else if (innerWidth >= 600 && innerWidth <= 1024) {
-
-
-        if ((innerHeight == 810 || innerHeight == 740) && (innerWidth == 1080)) {
-          $('.box-1').css('margin-top', '-650px');
-          $('.box-2').css('margin-top', '-650px');
-          this.mathsMininmizeBtn = true
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-700px');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        } else {
-          $('.box-1').css('margin-top', '-750px');
-          $('.box-2').css('margin-top', '-750px');
-          this.mathsMininmizeBtn = true
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-800px');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        }
-
-      } else if (innerWidth >= 1025 && innerWidth < 1399) {
-        console.log('range 1025 to 1399')
-        $('#minimiseMathBTN').removeClass('showI');
-        if ((innerHeight == 950 || innerHeight == 905 || innerHeight == 1024) && (innerWidth == 1366)) { // ipad pro
-          $('.box-1').css('margin-top', '-720px');
-          $('.box-2').css('margin-top', '-720px');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-770px');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('range 1366 to 1024')
-        } else if ((innerHeight == 746 || innerHeight == 820) && (innerWidth == 1180)) { // ipad 10
-          $('.box-1').css('margin-top', '-600px');
-          $('.box-2').css('margin-top', '-600px');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-650px');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-
-        } else if ((innerHeight == 746 || innerHeight == 834 || innerHeight == 760 || innerHeight == 727) && (innerWidth == 1194)) { // ipad prp 11
-          $('.box-1').css('margin-top', '-650px');
-          $('.box-2').css('margin-top', '-650px');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-700px');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        }
-        else {
-          $('.box-1').css('margin-top', '-700px');
-          $('.box-2').css('margin-top', '-700px');
-          this.mathsMininmizeBtn = true
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-750px');
-          $('#stopspeakingID').css('z-index', '1400');
-          //  $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        }
-      }
-      else if (innerWidth >= 1400 && innerWidth < 1600) {
-
-        this.mathsMininmizeBtn = true
-        if (innerWidth == 1536) {
-          $('.box-1').css('margin-top', '-500px');
-          $('.box-2').css('margin-top', '-500px');
-          $('#minimiseMathBTN').removeClass('showI');
-          $('#minimiseMathBTN').css('margin-top', '-550px');
-          // $('.box-1').css('margin-top', '-500px');
-          // $('.box-2').css('margin-top', '-500px');
-          $('#stopspeakingID').css('z-index', '1400');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        } else if (innerWidth == 1440) {
-          $('.box-1').css('margin-top', '-500px');
-          $('.box-2').css('margin-top', '-500px');
-          $('#minimiseMathBTN').removeClass('showI');
-
-          $('#minimiseMathBTN').css('margin-top', '-550px');
-          // $('.box-1').css('margin-top', '-500px');
-          // $('.box-2').css('margin-top', '-500px');
-          $('#stopspeakingID').css('z-index', '1400');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-        }
-        else {
-          $('.box-1').css('margin-top', '-600px');
-          $('.box-2').css('margin-top', '-600px');
-
-          $('#minimiseMathBTN').css('margin-top', '-650px');
-          // $('.box-1').css('margin-top', '-500px');
-          // $('.box-2').css('margin-top', '-500px');
-          $('#stopspeakingID').css('z-index', '1400');
-          // $('#sendId1').css('background', '#4E576D');
-          $('#textTourBox').css('background', '#4E576D');
-          console.log('no')
-        }
-      } else if (innerWidth >= 1601) {
-        this.mathsMininmizeBtn = true
-        $('.box-1').css('margin-top', '-700px');
-        $('.box-2').css('margin-top', '-700px');
-        $('#minimiseMathBTN').removeClass('showI');
-        $('#minimiseMathBTN').css('margin-top', '-750px');
-        $('#stopspeakingID').css('z-index', '1400');
-        //  $('#sendId1').css('background', '#4E576D');
-        $('#textTourBox').css('background', '#4E576D');
-        console.log('no')
-      }
-
-    }
-    this.isKeyboardOn = !this.isKeyboardOn
-
-
-  }
-
-
-
-
-
   StartTourGuideSetting() {
-      console.log('normal screen')
-        tour()
-   
+    console.log('normal screen')
+    tour()
+
   }
 
 
@@ -508,13 +296,13 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  getColorAPI(){
-    let p={
+  getColorAPI() {
+    let p = {
 
     }
     this.ser.getColorAPI(p).subscribe({
       next: (res: any) => {
-      //  console.log(res);
+        //  console.log(res);
         this.browserList = res.body;
         this.findColor();
         this.checkDeviceAndColor();
@@ -824,7 +612,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.cleanupSessionStorage();
     // for dev
     const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
-     
+
     // local test
     // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
@@ -852,11 +640,11 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   }
 
-  
+
 
   onConnectionSuccess(sessionId: any) {
     // setTimeout(() => {
-      $('#avatarLoaders').css('display', 'none')
+    $('#avatarLoaders').css('display', 'none')
     // }, 1000)
 
     if (this.messageForQueueAvatar == true) {
@@ -897,9 +685,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
       if (this.scene.connectionState._connectionState['name'] == 'Connected') {
 
-        setTimeout(()=>{
+        setTimeout(() => {
           this.customWelcomeMessge()
-        },200)
+        }, 200)
         // if (this.user.Firstlogin == true) {
         //   this.setVideo(600, 400)
         //   console.log('small card pixel')
@@ -911,29 +699,29 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         if (this.fullScreen === false) {
 
-        }else{
+        } else {
           // this.setVideo(600, 400)
           this.setVideo(700, 500)
         }
       }
 
       this.customLogger('')
-   
-    this.scene.onDisconnectedEvent.addListener((error: any) => {
-      let states = this.scene.connectionState._connectionState['name']
-      console.log('scene disconnected:', states);
 
-      if (states == "Disconnected") {
+      this.scene.onDisconnectedEvent.addListener((error: any) => {
+        let states = this.scene.connectionState._connectionState['name']
+        console.log('scene disconnected:', states);
 
-       // this.reconnectAvatar()
-       this.messageForQueueAvatar = true
-       console.warn('reconnect ++++++++++++++++++++++++++++++++++++++++')
-       this.avatarFunction()
-      }
+        if (states == "Disconnected") {
+
+          // this.reconnectAvatar()
+          this.messageForQueueAvatar = true
+          console.warn('reconnect ++++++++++++++++++++++++++++++++++++++++')
+          this.avatarFunction()
+        }
 
 
 
-    });
+      });
 
 
     }
@@ -975,7 +763,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     }
 
     this.ser.apiLogService(p).subscribe((res: any) => {
-    //  console.log(res);
+      //  console.log(res);
     });
   }
 
@@ -1046,17 +834,22 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-
+  getCurrentTime(): string {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    return hours + ':' + minutes;
+  }
 
 
   soulMachineMessageHandler() {
     this.addSpacebarEventListeners()
     let sessonId = localStorage.getItem('sessionId')
-      if(sessonId){
-        console.log('session id received----------------',sessonId)
-      }else{
-        console.log('session id not received----------------',sessonId)
-      }
+    if (sessonId) {
+      console.log('session id received----------------', sessonId)
+    } else {
+      console.log('session id not received----------------', sessonId)
+    }
     Scene.prototype.onSceneMessage = (message: any) => {
       var name = message.name
       var body = message.body
@@ -1081,12 +874,26 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         case 'conversationResult':
 
           let inputUser = body.input['text']
+          let question_time = body.output['context']['public-context']?.question_time
 
           this.userInputText = 'User: ' + inputUser
           if (inputUser == 'get response' || inputUser == 'getting error' || inputUser == 'getting response' || inputUser == 'stop') {
 
           } else {
             this.userInputText = inputUser
+            // if (this.userInputText == 'Welcome edYOU') {
+            //   let time = this.getCurrentTime()
+            //   this.chatBubbleMessage('user', inputUser, time)
+            //   //  this.storedChatBubbleMessage.push({ source: 'user', text: inputUser });
+            // }
+
+            // if (this.userInputText == 'Welcome') {
+
+            // } else {
+
+            //   this.chatBubbleMessage('user', inputUser, question_time)
+            // }
+
           }
 
           // this.userInputText = inputUser
@@ -1094,15 +901,21 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.User_Question = body.output['context']['public-context']?.User_Question
           this.approachesList = body.output['context']['public-context']?.approaches
           this.mathsQuestion = body.output['context']['public-context']?.math_question
+          let avatarTime = body.output['context']['public-context']?.answer_time
           // const userQues: any = document.getElementById('local-transcript')
           // userQues.innerHTML = 'User: ' + inputUser;
           this.handlingMessgeForMaths = body.output['context']['public-context']?.handlingMessge
           // test prep screen function
-          this.testPrepMessgeHandler(body)
+          //  this.testPrepMessgeHandler(body)
           // avatar message display
           this.avatarAnswerMessageHandler()
+          let time = this.getCurrentTime()
+          this.chatBubbleMessage('persona', this.DescAnswer, time)
           // verbal command function
           this.verbalCommandNavigation(this.DescAnswer)
+          if(this.DescAnswer){
+            this.showLoaderMess = false
+          }
 
           if (this.handlingMessgeForMaths == "continue loading" || this.handlingMessgeForMaths == 'continue loading') {
             var m: any = document.getElementById('outputDesc')
@@ -1136,6 +949,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         if (state == 'speaking') {
           this.runLoderGPT = false
+         
           this.dotIndicatorAnimation = true
           $('#stopavatarId').removeClass('showI')
         } else if (state == 'animating') {
@@ -1153,6 +967,40 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   }
 
+
+  scrollToBottom() {
+
+    // const messages:any = document.getElementById('message');
+    // messages.scrollTop = messages.scrollHeight;
+
+    var messageContainer = document.getElementById('message');
+    if (messageContainer) {
+      messageContainer.scrollTo({
+        top: messageContainer.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+
+
+  }
+
+  chatBubbleMessage(source: any, text: any, time: any) {
+
+    if (this.userInputText == 'Welcome') {
+
+    } else {
+    
+      this.storedChatBubbleMessage.push({ source: source, text: text, time: time });
+      //this.scrollToBottom();
+      setTimeout(() => {
+        this.scrollToBottom()
+        //  $('#messageContainer').animate({scrollTop: document.body.scrollHeight},"fast");
+      }, 1000)
+
+      // $(".chatbubbleBox").scrollTop(1000);
+    }
+
+  }
 
   OpenAIMathematicsSoulMachine(body: any) {
     if (this.User_Question != '') {
@@ -1201,7 +1049,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // }
       this.UserQuestion_Display = body.output['context']['public-context']?.User_Question
       let value: any = document.getElementById('user_questionD')
-      value.innerHTML = this.UserQuestion_Display;
+      if (value) value.innerHTML = this.UserQuestion_Display;
 
       // this.User_Question = det.instructions.customData?.User_Question
       // console.log('appraches work and has value')
@@ -1221,7 +1069,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (this.User_Question != '') {
         this.UserQuestion_Display = body.output['context']['public-context']?.User_Question
         let value: any = document.getElementById('user_questionD')
-        value.innerHTML = this.UserQuestion_Display;
+        if (value) value.innerHTML = this.UserQuestion_Display;
       }
 
     }
@@ -1305,7 +1153,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
               if (this.DescAnswer === "Moving to the next slide" || this.DescAnswer === "Moving to the previous slide" ||
                 this.DescAnswer === "Sure, repeating the slide") {
               } else {
-            this.isManualScrolling = false
+                this.isManualScrolling = false
                 if (this.DescAnswer.length >= 140) {
                   this.startScrolling();
                 }
@@ -1339,182 +1187,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   })
 
 
-  /**
-   * test prep logic to display and hide question and options and answer
-   * 
-   * @param body 
-   */
-  testPrepMessgeHandler(body: any) {
-    this.questionList = body.output['context']['public-context']?.Question
-    this.optionList = body.output['context']['public-context']?.options
-    this.CorrectAnswer = body.output['context']['public-context']?.test_prep_response
-    let nextButton = body.output['context']['public-context']?.next_button
-    this.isClick = body.output['context']['public-context']?.click
-    this.total_testseries_len = body.output['context']['public-context']?.total_testPrep_length
-    this.current_testseries_len = body.output['context']['public-context']?.current_testPrep_length
-    let resumeButton = body.output['context']['public-context']?.resume
-
-
-    // if(this.total_testseries_len ==  this.current_testseries_len) {
-    //   $('#parentQuestion').addClass('showI')
-    // }else{
-    //   $('#parentQuestion').removeClass('showI')
-    // }
-
-    if (this.total_testseries_len == this.current_testseries_len) {
-      // Check if the first part of the split text starts with "You have completed the test"
-      const splitText = this.DescAnswer.split(". ");
-      if (splitText[0].startsWith("You have completed the test")) {
-        $('#parentQuestion').addClass('showI')
-      } else {
-        $('#parentQuestion').removeClass('showI')
-      }
-
-
-    }else{
-      $('#parentQuestion').removeClass('showI')
-    }
-
-
-    if (localStorage.getItem('screen') === "TestSeries") {
-      console.warn('------ set time out for descAnswer ----------------')
-      setTimeout(() => {
-        if (window.innerWidth < 500) {
-          console.warn('------ for mobile test series condition run  ----------------')
-          $('#optionMessageMobile').removeClass('showI')
-          $('#optionMessage').addClass('showI')
-
-
-        } else {
-          console.warn('------ for big screen  test series condition run  ----------------')
-          $('#optionMessageMobile').addClass('showI')
-
-          $('#optionMessage').removeClass('showI')
-        }
-      }, 0)
-
-    }
-
-
-     // check TestSereis screen is on
-    if (localStorage.getItem('screen') === "TestSeries") {
-      this.checkOptionColor = body.output['context']['public-context']?.color
-      const position = body.output['context']['public-context']?.position
-      const correctColor = body.output['context']['public-context']?.correctColor
-
-      console.warn('selected option are == >', position, this.checkOptionColor)
-      setTimeout(() => {
-        if (this.checkOptionColor !== 'none') {
-          this.addColorOnOption(this.checkOptionColor, position)
-
-           // run when wrong answer click only 
-          if(correctColor){
-            const correctPosition = body.output['context']['public-context']?.correctPosition
-            this.addColorOnOption(correctColor, correctPosition)
-          }
-        }
-      }, 1200)
-    }
-
-    if (this.questionList != '') {
-      this.accod1 = true
-      $('#accod1').css('display', 'block')
-      $('#accodH1').addClass('active')
-      var aa: any = document.getElementById('QQ')
-      aa.innerHTML = this.questionList;
-      $('#questionDescription').scrollTop(0);
-      //   let checkValueText = det.instructions.customData.PPT
-      //   if (checkValueText == "NEW") {
-      if (this.questionList.length >= 150) {
-        //  console.log('auto scroll start ')
-        //if (backButton == false) {
-        this.isManualScrolling = false
-        this.startScrollingForQuestionTestSeries()
-        //    }
-      }
-      //  } else if (checkValueText == "continue") {
-      ////
-      //   }
-    }
-
-    if (this.optionList.length == 0) {
-      $('#accod1').css('display', 'none')
-      $('#accodH1').removeClass('active')
-    }
-
-    if (this.optionList != '') {
-      this.testPrepList = true
-      setTimeout(() => {
-        var items = this.optionList
-        items.forEach((item: any, i: any) => {
-          let value: any = document.getElementById('colorbtnOption' + i)
-          let valueMobile: any = document.getElementById('colorbtnOptionMobile' + i)
-
-          if (window.innerWidth < 500) {
-            valueMobile.innerHTML = item;
-          } else {
-            value.innerHTML = item;
-          }
-        });
-      }, 0)
-    } else {
-      this.testPrepList = false
-    }
-
-    //  var option = det.instructions.customData.options
-    if (this.CorrectAnswer != '') {
-      setTimeout(() => {
-        this.accod1 = false
-        // $('#accod2').css('display', 'block')
-        // $('#accodH2').addClass('active')
-        $('#accod1').css('display', 'none')
-        $('#accodH1').removeClass('active')
-        var answer: any = document.getElementById('answerD')
-        answer.innerHTML = this.CorrectAnswer;
-
-        $('.answerDescription').scrollTop(0);
-        //  let checkValueText = det.instructions.customData.PPT
-        //  if (checkValueText == "NEW") {
-        //    this.isManualScrolling = false
-        if (this.CorrectAnswer.length >= 150) {
-          //  console.log('auto scroll start ')
-          //     if (backButton == false) {
-          this.isManualScrolling = false
-          this.startScrollingForANswerTestSeries()
-          //   console.log('answer next scrol work')
-          //     }
-        }
-        //  } else if (checkValueText == "continue") {
-
-        //  }
-
-      }, 1400)
-    }
-
-    if (nextButton === true) {
-      this.nextButtonTestseries = nextButton
-    } else {
-      this.nextButtonTestseries = nextButton
-    }
-
-    if (resumeButton == true) {
-
-      this.resumeButtonTestseries = true
-    } else if (resumeButton == false) {
-
-      this.resumeButtonTestseries = false
-    }
-
-  }
-
-
-
-
-
   toggleUserMicrophone() {
-
-
-
     if (this.scene) {
       const active = this.scene.isMicrophoneActive();
       this.scene.setMediaDeviceActive({
@@ -1558,42 +1231,15 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   customWelcomeMessge() {
-    // let ip = localStorage.getItem('userIp')
-    // let ip2 = localStorage.getItem('userIp2')
-    // if(ip == ip2){
-    //   console.log('same ip')
-      
-    //   if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
-    //   } else {
-  
-    //     this.setVariable()
-    //     const personaInstance = this.persona
-    //     let text = 'Welcome edYOU'
-    //     personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
-    //   }
-      
-    // }else{
-    //   console.log('same not ip')
-    //   if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
-
-    //   } else {
-  
-    //     this.setVariable()
-    //     const personaInstance = this.persona
-    //     let text = 'Welcome to edYOU'
-    //     personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
-    //   }
-    // }
-    
-    const savedDate:any = localStorage.getItem('savedDate3');
+    const savedDate: any = localStorage.getItem('savedDate3');
     console.log(savedDate)
-    if(savedDate){
-      
+    if (savedDate) {
+
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
       } else {
-      
+
         this.setVariable()
         const personaInstance = this.persona
         let text = 'Welcome edYOU'
@@ -1602,30 +1248,30 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.isDateOlderThan3Days(savedDate)
 
 
-    }else{
+    } else {
 
 
       console.log('saDate not found')
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
       } else {
-        
+
         this.setVariable()
         const personaInstance = this.persona
         let text = 'Welcome to edYOU'
         personaInstance.conversationSend(text, {}, { /* optionalArgs */ });
-        const savedDate2:any = localStorage.getItem('savedDate3');
-        if(savedDate2 == null){
-          let date:any = new Date();
-          let newDate:any = date.setHours(0, 0, 0, 0);
+        const savedDate2: any = localStorage.getItem('savedDate3');
+        if (savedDate2 == null) {
+          let date: any = new Date();
+          let newDate: any = date.setHours(0, 0, 0, 0);
           console.log(date);
           localStorage.setItem('savedDate3', date);
         }
-        
+
       }
     }
-    
-    
+
+
   }
 
 
@@ -1655,34 +1301,42 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
     this.clearAvatarContentBox()
     var completeText
+    let time = this.getCurrentTime()
     if (this.userText) {
       const completeText = this.userText.trim();
+      this.showLoaderMess = true 
+  
+      this.chatBubbleMessage('user', completeText, time)
 
       if (completeText) {
-          this.userInputText = completeText;
-          console.log('user', this.userInputText);
-          const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
+        this.userInputText = completeText;
+        console.log('user', this.userInputText);
+        const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
       }
-  }
-      // var  textSet = 'User: ' + completeText
+    }
+    // var  textSet = 'User: ' + completeText
     this.stopSubtitleAnimation()
-   
+
     this.inputMathsValue = ""
     this.userText = ""
 
     this.mathInputClear = false
     let value: any = document.getElementById('user_questionD')
-    value.innerHTML = ''
+    if (value) value.innerHTML = ''
     //this.persona.animateToNamedCameraWithOrbitPan('CloseUp', 1, 0, 0, 180, 0);
     //this.setVideo()
   }
 
 
   setVariable() {
+    const timeZoneName = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    console.warn('Time Zone', timeZoneName)
+
     let payload = {
       "email": this.user.email,
+      'timeZone': timeZoneName,
       "display_message": "",
-      "id":"",
+      "id": "",
       "Question": "",
       "options": "",
       "test_prep_response": "",
@@ -1788,142 +1442,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  toggleOnOff() {
-    if ((localStorage.getItem('screen') === "TestSeries") || (localStorage.getItem('screen') === "LearningScreen")) {
-      Swal.fire({
-        title: 'Alert',
-        text: 'Please exit the current module to access Mathematics module',
-        timer: 5000,
-        showConfirmButton: false
-      })
-    } else {
-
-      console.log(this.toggleValue, 'k')
-      if (this.toggleValue == false) {
-        this.MathameticsToggleONOFF(true)
-
-        this.userCCOnOf()
-      } else if (this.toggleValue == true) {
-        this.MathameticsToggleONOFF(false)
-
-        this.userCCOnOf()
-      }
-      this.toggleValue = !this.toggleValue
-    }
-
-
-  }
-
-  /**
-   * maths button on avatar screen logic 
-   * disbaled button on test series and learning module 
-   * @param isChecked 
-   * @returns 
-   */
-  MathameticsToggleONOFF(isChecked: any) {
-    console.log(this.toggleValue, 'k')
-
-    if ((localStorage.getItem('screen') === "TestSeries") || (localStorage.getItem('screen') === "LearningScreen")) {
-      Swal.fire({
-        title: 'Alert',
-        text: 'Please exit the current module to access Mathematics module',
-        timer: 5000,
-        showConfirmButton: false
-      })
-
-    } else {
-      // If the function is already running, don't execute it again
-      if (this.mathematicsEnabled) {
-        console.log('already running')
-        return;
-      }
-      // Set the flag to indicate that the function is running
-      this.mathematicsEnabled = true;
-      var session = localStorage.getItem('sessionId')
-      let payload = {
-        // "email": this.user.email,
-        "currentStatus": isChecked,
-        "sessionId": session,
-      }
-      //  this.uneeq.stopSpeaking()
-      this.ser.mathsOnOFFAPI(payload).subscribe({
-        next: (res: any) => {
-          if (res.statusCode == 200) {
-            this.mathematicsEnabled = false
-            localStorage.setItem("mathtoggle", isChecked);
-            if (isChecked == true) {
-              this.normalChatBar = false
-              this.mathsChatBar = true
-              this.persona.conversationSend('Turn on mathematics module', {}, {});;
-              $('#mathsIndicator').addClass('showI')
-              $('#mathsIndicatorONN').removeClass('showI')
-              // setTimeout(()=>{
-              //   $('.ML__virtual-keyboard-toggle').css('background-color','white')
-              // },3000)
-
-              // this.childMenu.addConditiontoToggle(true)
-            } else if (isChecked == false) {
-              this.mathsChatBar = false
-              this.normalChatBar = true
-              this.persona.conversationSend('Turn off mathematics module', {}, {});;
-              // this.childMenu.addConditiontoToggle(false)
-              $('#MathameticsDisplay').removeClass('showMessage')
-              $('#mathsIndicator').removeClass('showI')
-              $('#mathsIndicatorONN').addClass('showI')
-              $('#mathApproach').removeClass('showMessage')
-            }
-            // var m: any = document.getElementById('snackbarText')
-            // m.innerHTML = res.body
-            // Get the snackbar DIV
-            // var x: any = document.getElementById("snackbar");
-            // x.className = "show";
-            //  setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-          } else {
-            this.mathematicsEnabled = false
-          }
-        },
-        error: (e) => {
-          this.mathematicsEnabled = false
-        }
-      })
-    }
-
-
-
-  }
-
-
-  /**
-   * Function for handling accordion question  on off button 
-   */
-  accordQestionhit() {
-    if (this.accod1 === true) {
-      // If accod1 is true, collapse the accordion panel
-      $('#accod1').css('display', 'none')
-      $('#accodH1').removeClass('active')
-    } else if (this.accod1 === false) {
-      $('#accod1').css('display', 'block')
-      $('#accodH1').addClass('active')
-    }
-    // Toggle the value of accod1
-    this.accod1 = !this.accod1
-  }
-
-  /**
- * Function for handling accordion response  on off button 
- */
-  accordAnswerHit() {
-    if (this.accod2 === true) {
-      // If accod1 is true, collapse the accordion panel
-      $('#accod2').css('display', 'none')
-      $('#accodH2').removeClass('active')
-    } else if (this.accod2 === false) {
-      $('#accod2').css('display', 'block')
-      $('#accodH2').addClass('active')
-    }
-    // Toggle the value of accod1
-    this.accod2 = !this.accod2
-  }
 
 
   recognizerSetup() {
@@ -2072,24 +1590,25 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.persona.stopSpeaking();
         this.stopSubtitleAnimation();
       }
-  
+
       this.showMic = true;
       this.persona.stopSpeaking();
       this.isvoiceAnimationOn = true;
-  
+      this.dotIndicatorAnimation = true
+
       this.isMicButtonActive = true;
-  
+
       const getAudioConfig = async () => {
         try {
           // Request permission to access the microphone
           await navigator.mediaDevices.getUserMedia({ audio: true });
           console.log('Microphone access granted.');
-  
+
           // Enumerate audio input devices
           const devices = await navigator.mediaDevices.enumerateDevices();
           const audioInputDevices = devices.filter(device => device.kind === 'audioinput');
           let selectedDeviceId = null;
-  
+
           // Find AirPods or another specific device if desired
           audioInputDevices.forEach((device: MediaDeviceInfo) => {
             console.log("Device name: ${device.label}, id: ${device.deviceId}");
@@ -2097,7 +1616,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
               selectedDeviceId = device.deviceId;
             }
           });
-  
+
           if (selectedDeviceId) {
             console.log("Selected device: ${selectedDeviceId}");
             return sdk.AudioConfig.fromMicrophoneInput(selectedDeviceId);
@@ -2110,21 +1629,24 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           throw err; // Ensure the error is propagated
         }
       };
-  
+
       const audioConfig = await getAudioConfig();
       const speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.serviceRegion);
       speechConfig.speechRecognitionLanguage = this.language;
       this.recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
-  
+
       this.recognizer.recognizing = (s: any, e: any) => {
         this.userInputText = e.result.text;
       };
-  
+
       this.recognizer.recognized = (s: any, e: any) => {
         if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
           console.log('final', e.result.text);
           this.voiceText = e.result.text;
           this.userInputText = this.voiceText;
+          let time = this.getCurrentTime()
+          this.showLoaderMess = true
+          this.chatBubbleMessage('user', this.voiceText, time)
           this.checkButton();
           this.UserQuestion_Display = "";
           this.clearAvatarContentBox();
@@ -2141,35 +1663,35 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.showMic = false;
           this.isvoiceAnimationOn = false;
         } else {
-         // console.log(ERROR: ${e.errorDetails});
+          // console.log(ERROR: ${e.errorDetails});
         }
       };
-  
+
       this.recognizer.canceled = (s: any, e: any) => {
         console.log("CANCELED: Reason=${e.reason}");
         if (e.reason === sdk.CancellationReason.Error) {
           console.log("CANCELED: ErrorCode=${e.errorCode}")
-         // console.log("CANCELED: ErrorDetails=${e.errorDetails});
+          // console.log("CANCELED: ErrorDetails=${e.errorDetails});
         }
         this.recognizer.stopContinuousRecognitionAsync();
       };
-  
+
       this.recognizer.speechEndDetected = (s: any, e: any) => {
         this.recognizer.close();
         this.recognizer = undefined;
       };
-  
+
       this.recognizer.sessionStopped = (s: any, e: any) => {
         this.recognizer.stopContinuousRecognitionAsync();
       };
-  
+
       this.recognizer.startContinuousRecognitionAsync();
     }
   }
 
 
 
-  stopOnClick(){
+  stopOnClick() {
     this.stop()
   }
 
@@ -2255,6 +1777,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
+
+
   /**
    * Toggle test prep Question card Closed Captions (CC) setting.
    * This function is responsible for toggling the question card Closed Captions setting
@@ -2330,18 +1854,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     }
 
 
-  }
-
-  // uneeq mic start function
-  uneeqStartSpeak() {
-    this.showMic = true
-    this.uneeq.startRecording();
-  }
-
-  // uneeq mic stop function
-  uneeqStopSpeak() {
-    this.showMic = false
-    this.uneeq.stopRecording();
   }
 
 
@@ -2685,135 +2197,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  startScrollingForQuestionTestSeries() {  /// start auto scrolling animation for test series Question 
-    const lineHeight = 150;
-    const scrollSpeed = 23000; // Total time for the scrolling animation (in milliseconds)
-    const delayBetweenMovements = 0; // Time to wait between each 20% movement (in milliseconds)
-    const totalMovements = 30; // Number of times to move down by 20%
-    let animationInProgress = false;
-    var scroll = $('#questionDescription');
 
-    let isEventHandled = false;
-    scroll.on('click mouseenter touchstart touchend', () => {
-      if (!isEventHandled) {
-        //  console.log('detect scroll inside function running')
-        // this.isManualScrolling = true
-        this.stopAutoscrollFun()
-
-        // Set the flag to true to indicate that the event has been handled
-        isEventHandled = true;
-        console.log('++++++++++++++++++ scroll manual detect ++++++++++++++++++++++++++')
-      }
-    });
-
-
-    const scrollToPositionQues = (position: any) => {
-      if (isEventHandled == true) {
-        console.log('Manual scrolling detected. Stopping the automatic scrolling.');
-        return
-      }
-
-      if (!scroll.length) {
-        //   console.log('Scroll element with id "outputDesc" not found. Cannot start auto-scrolling.');
-        return; // Exit the function if the scroll element is not found
-      }
-      // if (this.isManualScrolling) {
-      //   console.log('Manual scrolling detected. Stopping the automatic scrolling.');
-      //   // If manual scrolling is detected, stop the automatic scrolling
-      //   return;
-      // }
-
-      const newScrollTop = position * lineHeight;
-      animationInProgress = true;
-      scroll.animate({ scrollTop: newScrollTop }, scrollSpeed, function () {
-        // Wait for the specified delay before triggering the next movement
-        if (position < totalMovements && scroll.scrollTop() + scroll.innerHeight() < scroll[0].scrollHeight) {
-          scrollToPositionQues(position + 1); // Move down by another 20%
-          //   console.warn('========>', position + 1)
-        } else {
-          // Scrolling reached the bottom or the total number of movements, stop the animation
-          //   console.warn('========> Scrolling animation stopped');
-          scroll.stop()
-          // scroll.off('scroll'); // Remove the scroll event listener when the animation stops
-          animationInProgress = false;
-        }
-        // }, delayBetweenMovements);
-      });
-    }
-    setTimeout(function () {
-      const t = 1
-      scrollToPositionQues(t); // Start scrolling from the second position (20%)
-      // console.log('run for Questions')
-    }, 5000);
-
-  }
-
-  startScrollingForANswerTestSeries() {  /// start auto scrolling animation for test series response 
-
-    const lineHeight = 150;
-    const scrollSpeed = 23000; // Total time for the scrolling animation (in milliseconds)
-    const delayBetweenMovements = 0; // Time to wait between each 20% movement (in milliseconds)
-    const totalMovements = 30; // Number of times to move down by 20%
-    let animationInProgress = false;
-
-    var scroll = $('#answerDescription');
-
-    let isEventHandled = false;
-    scroll.on('click mouseenter touchstart touchend', () => {
-      if (!isEventHandled) {
-        //  console.log('detect scroll inside function running')
-        // this.isManualScrolling = true
-        this.stopAutoscrollFun()
-
-        // Set the flag to true to indicate that the event has been handled
-        isEventHandled = true;
-        console.log('++++++++++++++++++ scroll manual detect ++++++++++++++++++++++++++')
-
-      }
-    });
-
-    const scrollToPositionQues = (position: any) => {
-      if (isEventHandled == true) {
-        console.log('Manual scrolling detected. Stopping the automatic scrolling.');
-        return
-      }
-
-      if (!scroll.length) {
-        //  console.log('Scroll element with id "outputDesc" not found. Cannot start auto-scrolling.');
-        return; // Exit the function if the scroll element is not found
-      }
-
-      if (this.isManualScrolling) {
-        // console.log('Manual scrolling detected. Stopping the automatic scrolling.');
-        // If manual scrolling is detected, stop the automatic scrolling
-        return;
-      }
-
-      const newScrollTop = position * lineHeight;
-      animationInProgress = true;
-      scroll.animate({ scrollTop: newScrollTop }, scrollSpeed, function () {
-        // Wait for the specified delay before triggering the next movement
-
-        if (position < totalMovements && scroll.scrollTop() + scroll.innerHeight() < scroll[0].scrollHeight) {
-          scrollToPositionQues(position + 1); // Move down by another 20%
-          //   console.warn('========>', position + 1)
-        } else {
-          // Scrolling reached the bottom or the total number of movements, stop the animation
-          //     console.warn('========> Scrolling animation stopped');
-          scroll.stop()
-          // scroll.off('scroll'); // Remove the scroll event listener when the animation stops
-          animationInProgress = false;
-        }
-        // }, delayBetweenMovements);
-      });
-    }
-    setTimeout(function () {
-      const t = 1
-      scrollToPositionQues(t); // Start scrolling from the second position (20%)
-      // console.log('run for Questions')
-    }, 5000);
-
-  }
 
 
 
@@ -2892,16 +2276,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
  * @param {any} msg - The verbal command message
  */
   verbalCommandNavigation(msg: any) {
-
     switch (msg) {
-      case 'Closing the quiz.':
-        setTimeout(() => {
-          //  this.router.navigate(['/user/testseries']);
-          this._location.back();
-          this.oncrossTest();
-
-        }, 2000);
-        break;
 
       case 'Sure, hiding myself.':
         this.oncrossTest();
@@ -2926,30 +2301,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.onLoadCard('');
         break;
 
-      case 'Opening the dashboard.':
-        this.router.navigate(['/user/dashboard']);
-        this.oncrossTest();
-        break;
 
-      case 'Opening the home page.':
-        this.router.navigate(['/user/dashboard']);
-        this.oncrossTest();
-        break;
-
-      case 'Ok, going to the profile page.':
-        this.profile();
-        this.oncrossTest();
-        break;
-
-      case 'Sure, opening the test series.':
-        this.router.navigate(['/user/testseries']);
-        this.oncrossTest();
-        break;
-      case 'Sure, opening the Test Prep.':
-
-        this.router.navigate(['/user/testseries']);
-        this.oncrossTest();
-        break;
 
       case 'Sure, turning on your subtitles.':
         this.UserccOnOff = false;
@@ -2971,68 +2323,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.avatarCCOnOf();
         break;
 
-      case 'Showing the question.':
-        // this.QuestionccOnOff = false;
-        // this.QuestionCCOnOf();
-        break;
 
-      case 'Hiding the question.':
-        // if (localStorage.getItem('screen') !== 'LearningScreen' ) {
-        // this.QuestionccOnOff = true;
-        // this.QuestionCCOnOf();
-        // }
-        break;
-
-      case 'Opening the learning module':
-
-        this.router.navigate(['/user/course']);
-        this.oncrossTest();
-
-        break;
-
-      case 'Moving to the next slide':
-        setTimeout(() => {
-          this.childPdf.nextPage();
-          var scroll = $('#outputDesc');
-          scroll.stop();
-
-          $('.avatarspeak-s').scrollTop(0);
-        }, 2200)
-
-        break;
-
-      case 'Moving to the previous slide':
-        setTimeout(() => {
-          this.childPdf.prevPage()
-          var scroll = $('#outputDesc');
-          scroll.stop();
-
-          $('.avatarspeak-s').scrollTop(0);
-        }, 2200)
-
-        break;
-
-      case 'Sure, repeating the slide':
-        setTimeout(() => {
-          this.childPdf.refreshCurrentSlide()
-          console.log('rrrrrkrkrkrkrkrk')
-        }, 2600)
-
-        break;
-
-      case 'Closing the module':
-        setTimeout(() => {
-          this.exitpresentationFun()
-        }, 1200)
-        break;
-
-      case 'Sure, turning on the mathematics module.':
-        // this.onLoadCard("id")
-        // this.runMathToggleFromParent()
-
-        break;
-
-      
     }
 
   }
@@ -3290,7 +2581,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-      this.borderRadius = '0px 0px 9px 9px'
+      // this.borderRadius = '0px 0px 9px 9px'
+          this.borderRadius = '0px 0px 2px 2px'
+          this.colorBG = this.backgroundColor
       // this.bottomPositionWidth = '90%'
       // this.bottomPositionWidth = '77.5%'
       this.bottomPositionWidth = '79.5%'
@@ -3306,7 +2599,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.micWidth = '110'
       // this.micWidthOnly = '50'
       this.micWidthOnly = '120'
-      this.micMarginleft = '0'
+      this.micMarginleft = '3'
       this.micHeight = '47'
       this.micMarginLeft2 = '3px'
     }
@@ -3412,6 +2705,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.renderer.addClass(div1, 'showI');
   }
 
+
+
   // card expand button function  
   onLoadCard(id: any) {
 
@@ -3433,14 +2728,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.mathsChatBar = false
         }
 
-   
+
         // $('#bottomShadowBox').addClass('bottomboxSizewithSmallBox');
         // $('#bottomShadowBox').removeClass('bottomboxSize');
         console.log('small')
         this.minimizeBoxCardUI()
         $('#box3Main').addClass('showI');
-      
-        
+
+
         // $('#stopavatarId').addClass('showI');
         // mic icons
         $('#zoomMic').addClass('microphoneMobile');
@@ -3505,6 +2800,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       } else if (this.fullScreen === false) {
         // condition for making big screen avatar card
         this.checkFullScreenB = false
+     
         $('#bottomBar').addClass('baseChatBottom');
         this.expandOn = false
         // card minimize
@@ -3608,6 +2904,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // condition for making big screen avatar card
       console.warn('viewport width', window.innerWidth
         , 'viewport height', window.innerHeight)
+        const width = window.screen.width
+        const height = window.screen.height 
       var t: any = document.querySelector('#sm-video')
       var videoTag: any = document.querySelector('#smVideo')
       // console.log('canvas',t)
@@ -3615,7 +2913,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         t.style.width = '100%'
         if (window.innerWidth < 480) {
           //  this.setVideo(600, 650)
-          this.setVideo(800, 900)
+          this.setVideo(700, 600)
           console.log('when the fulldcreen variable false mobile')
           // t.style.height = '440px'
           t.style.width = '80%'
@@ -3630,16 +2928,17 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         } else if (innerWidth >= 600 && innerWidth <= 1024) {
           t.style.width = '80%'
-          console.log(' 600 and less then 1024')
+          // console.log(' 600 and less then 1024')
           $(t).css('margin-left', '0px')
           $(t).css('margin-left', '0px')
+          //  $(videoTag).css('margin-left', '0px')
           console.log('its a 768 and 1024')
           this.setVideo(750, 500)
 
         } else if (innerWidth >= 1025 && innerWidth < 2290) {
           t.style.width = '80%'
           console.log("full screen avatar for laptop below 2244")
-
+          // $(videoTag).css('margin-left', '-140px')
 
           // for landscape
 
@@ -3647,12 +2946,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           if ((innerHeight >= 900 && innerHeight <= 1024) && (innerWidth == 1366)) { //  landsvape ipad 12
             t.style.width = '90%'
             console.log('landscape ipad 12')
+            //   $(videoTag).css('margin-left', '0px')
             $(t).css('margin-left', '0px')
-
+ //  $(videoTag).css('margin-left', '0px')
             this.setVideo(700, 250)
             //} else if ((innerHeight == 746 || innerHeight == 820 || innerHeight == 701) && (innerWidth == 1180)) {  // landsvape ipad  10 
           } else if ((innerHeight >= 700 && innerHeight <= 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
             t.style.width = '90%'
+            $(videoTag).css('margin-left', '0px')
             console.log('landscape ipad 10')
             $(t).css('margin-left', '0px')
             console.log('landscape one with ipad')
@@ -3661,6 +2962,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
             // } else if ((innerHeight == 810 || innerHeight == 740 || innerHeight == 695) && (innerWidth == 1080)) {  // landsvape ipad 9 
           } else if ((innerHeight >= 680 && innerHeight <= 810) && (innerWidth == 1080)) {  // landsvape ipad 9 
             t.style.width = '90%'
+            $(videoTag).css('margin-left', '0px')
             $(t).css('margin-left', '0px')
             console.log('landscape one with ipad 9')
             this.setVideo(650, 250)
@@ -3670,46 +2972,36 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           } else if ((innerHeight >= 700 && innerHeight <= 834) && (innerWidth == 1194)) {  // landscape ipad 11
             t.style.width = '90%'
             console.log('landscape ipad 11')
+         //   $(videoTag).css('margin-left', '0px')
             $(t).css('margin-left', '0px')
+           //  $(videoTag).css('margin-left', '0px')
             this.setVideo(700, 250)
 
-          } else {
+          }else if((innerHeight >= 1100 && innerHeight <= 1500) && (innerWidth == 1024)) { // landscape ipad 11
+            console.log('----- ipad 12 inside ---------------')
+          
+          }else if((height >= 1150 && height <= 1450) && (width == 1024)) { 
+            console.log('----- ipad 12 inside ---------------')
+            t.style.width = '90%'
+            console.log('landscape ipad 12')
+            $(videoTag).css('margin-left', '0px !impotant' )
             $(t).css('margin-left', '0px')
-            const width = window.screen.width
-            const height = window.screen.height - 200
-            this.setVideo(width, height)
+            this.setVideo(900, 550)
+          
+          }  else {
+            $(t).css('margin-left', '0px')
+            //  $(videoTag).css('margin-left', '-140px')
+            let width = window.screen.width
+            let height = window.screen.height -200
+
             // this.setVideo(900, 390)
             console.warn('big screen')
+            console.log('========', width, height)
+           
+              this.setVideo(width, height)
+            
           }
 
-
-
-          // } else if (window.screen.height == 1080 && window.screen.width == 810) {
-          //   t.style.width = '80%'
-          //   $(t).css('margin-left', '0px')
-          //   this.setVideo(550, 250)
-          // }
-          // else if (window.screen.height == 1366 && window.screen.width == 1024) {
-          //   console.log('ipad pro portrait')
-          //   t.style.width = '80%'
-          //   $(t).css('margin-left', '0px')
-          //   this.setVideo(850, 550)
-          // }
-
-          // else if (window.screen.height == 1180 && window.screen.width == 820) {
-          //   t.style.width = '80%'
-          //   $(t).css('margin-left', '0px')
-          //   this.setVideo(750, 500)
-          //   $(t).css('margin-left', '0px')
-          // } else if (window.screen.height == 820 && window.screen.width == 1180) { // landscape
-          //   $(t).css('margin-left', '0px')
-          //   this.setVideo(500, 300)
-          //   $(t).css('margin-left', '0px')
-          // } else if (window.screen.height == 1024 && window.screen.width == 768) {
-          //   this.setVideo(750, 500)
-          //   $(t).css('margin-left', '0px')
-
-          // }
 
         }
         else if (innerWidth >= 2300) {
@@ -3719,40 +3011,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           const width = window.screen.width
           const height = window.screen.height - 200
           this.setVideo(width, height)
-          console.warn('big screen')
+          console.warn('big screen for 2300')
 
         }
-        // else {
 
-
-
-        //   if (window.innerWidth < 480) {
-        //     this.setVideo(600, 650)
-        //     console.log('else condi at 480')
-        //     // t.style.height = '440px'
-        //     t.style.width = '80%'
-        //     $('#message').css('width', '')
-        //     $(t).css('margin-left', '0px')
-        //     $(videoTag).css('margin-left', '0px')
-        //     videoTag.style.width = '100%'
-        //     videoTag.style.height = '100%'
-        //     // $(t).css('margin-left', '-60px')
-        //     $('#sidebar').addClass(' sidebar_small')
-
-
-        //   } else {
-        //     console.log('ele consition where set on screen grater then 480')
-        //       t.style.width = '80%'
-        //       // t.style.height = '100%'
-        //       $(t).css('margin-left', '0px')
-        //       $(videoTag).css('margin-left', '0px')
-        //       videoTag.style.width = '100%'
-        //       videoTag.style.height = '100%'
-        //       this.setVideo(window.screen.width, window.screen.height)
-        //     }
-
-
-        // }
       }
 
     } else {
@@ -3789,37 +3051,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           videoTag.style.height = '100%'
         }
       }
-
-
-      // if (window.innerWidth < 480) {
-      //   if (t !== null) {
-      //     t.style.width = '80%'
-
-      //     $(t).css('margin-left', '-60px')
-      //     $(videoTag).css('margin-left', '0px')
-      //     videoTag.style.width = '100%'
-      //     videoTag.style.height = '100%'
-      //   }
-
-      // } else {
-      //   if (t !== null) {
-      //     t.style.width = '80%'
-
-      //     $(t).css('margin-left', '0px')
-      //     $(videoTag).css('margin-left', '0px')
-      //     videoTag.style.width = '100%'
-      //     videoTag.style.height = '100%'
-      //   }
-      // }
-
-      //console.log('canvas', 'else consition')
-
     }
-
-    // 600 , 650 for mobile
-    //  600 , 450  for ipad pro , ipad 
-
-    //330 , 180 for small card view
   }
 
 
@@ -4088,88 +3320,11 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
- 
-
-
-  // exit test series page button function
-  exitTestSeries() {
-    //  this.uneeq.sendTranscript('stop')
-    var testprepId = localStorage.getItem('testprepId')
-    let payload = {
-      "id": testprepId,
-      // "email": this.user.email,
-      // "SessionID": this.sessionId,
-      // "token": this.token,
-      // "lastlogin": this.user.lastlogin,
-      "trigger": "stop"
-    }
-    // Calling the startTestSeries API with the payload
-    this.persona.stopSpeaking()
-    // this.ser.startTestSeries(payload).subscribe((res: any) => {
-    //   // this.router.navigate(['/user/testseries']);
-    //   this._location.back();
-    //   this.oncrossTest()
-    // })
-    //  this.persona.conversationSend('stop', { }, { })
-
-
-    setTimeout(() => {
-      if (this.user.industryName == "School") {
-        this.notSchool = "school"
-      }
-    }, 3000)
-
-    setTimeout(() => {
-
-      $('#hambergerBar').addClass('showI');
-    }, 3000)
 
 
 
 
-  }
 
-
-  /**
-  * Function to handle the exit of a presentation
-  * This function is called when the user wants to exit the presentation.
-  */
-  exitpresentationFun() {
-    var learningid = localStorage.getItem('learningId')
-    let exitpayload = {
-      "learning_status": false,
-      "time": this.user.lastlogin,
-      // "email": this.user.email,
-      "id": learningid,
-
-    }
-    localStorage.removeItem("learningId");
-    this.persona.stopSpeaking()
-    // this.uneeq.stopSpeaking();
-    this.childPdf.clearPdfViewer()
-    this.ser.IndexLearningNo = 1
-    this.ser.stopPresentation(exitpayload).subscribe((res: any): any => {
-      if (res.statusCode == 200) {
-        if (this.user.industryName == "School") {
-          this.notSchool = "school"
-        } setTimeout(() => {
-          $('#hambergerBar').addClass('showI');
-        }, 1000)
-
-        this.oncrossTest()
-        this._location.back();
-        // this.router.navigate(['user/learning'])
-      } else {
-        this.oncrossTest()
-        this._location.back();
-        // this.router.navigate(['user/learning'])
-      }
-    })
-
-
-
-    this.persona.conversationSend('stop', {}, {})
-  }
 
 
   /**
@@ -4228,9 +3383,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   oncrossTest() {
     this.pdfShow = ""
     console.log('true')
-// this.optionList = []
-// this.CorrectAnswer = ""
-// this.questionList = ""
+    // this.optionList = []
+    // this.CorrectAnswer = ""
+    // this.questionList = ""
 
     this.expandOn = true
     this.mobileAvatarOnOff = false
@@ -4299,7 +3454,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-      this.borderRadius = '0px 0px 9px 9px'
+      // this.borderRadius = '0px 0px 9px 9px'
+       this.borderRadius = '0px 0px 2px 2px'
       // this.bottomPositionWidth = '90%'
       this.bottomPositionWidth = '77.5%'
       // this.inputWidthSize = '201px';
@@ -4343,7 +3499,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     $('#sm-video').removeClass('uneeqAv')
     $('#sm-video').addClass('uneeqAvatar')
     $('#message').removeClass('showMessage')
-  //  $('#message').addClass('hideMessage')
+    //  $('#message').addClass('hideMessage')
     $('#movableCard').removeClass('full_screen')
     $('#movableCard-main').removeClass('full_screen')
     $('#stopIcon').removeClass('bottomleft-large')
@@ -4399,99 +3555,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  /**
- * Display instructions for the Normal screen
- * This function is responsible for showing instructions related to the normal screen.
- * @returns {void} - This function doesn't return anything.
- */
-  InstructionNormal() {
-    var session = localStorage.getItem('sessionId')
-    let data = {
-      "sessionId": session,
-      // "email": this.user.email,
-      "message": `Following are a few instructions to interact with me.
-      <ol type="1">
-      <li>Click the microphone button or press the spacebar once to speak.</li>
-      <li>You can also text me by clicking the button on the bottom right.</li>
-      <li>Click the pause button on bottom left to interrupt me while I am speaking.</li>
-      <li>For closed captions, click on the CC button on bottom left.</li>
-      <li>To minimise or maximise, click on the top right square corner button.</li>
-      <li>You can ask me about edYOU and questions related to the medical field. I can also quiz you on a medical topic.</li>
-      <li>Click on the menu icon to enable the mathematics module for a better learning experience.</li>
-      <li>Navigate to the menu and modify the speech speed of the AI by adjusting the speed settings.</li>
-      </ol>`
-    }
-    this.ser.uneeqPromptBox(data).subscribe(res => {
-
-    })
-  }
 
 
-  /**
-   * Display instructions for the test series
-   * This function is responsible for showing instructions related to the test series.
-   * @returns {void} - This function doesn't return anything.
-   */
-  InstructionTestSeries() {
-    var session = localStorage.getItem('sessionId')
-    let data = {
-      "sessionId": session,
-      // "email": this.user.email,
-      "message": ` 
-      Following are a few instructions to interact with me.
-      <ol type="1">
-      <li>Click the microphone button or press the spacebar once to speak.</li>
-      <li>You can also text me by clicking the button on the bottom right.</li>
-      <li>Click the pause button on bottom left to interrupt me while I am speaking.</li>
-      <li>For closed captions, click on the CC button on bottom left.</li>
-      <li>To answer a question you can simply click, say or text an option.</li>
-      
-      <li>Say or text “Yes” or “Sure” after the answer is given to move to the next question.</li>
-      <li>Say or text “Repeat” to repeat the question.</li>
-      <li>Say or text “Stop” or click on the cross button to exit the test.</li>
-
-      <li>Navigate to the menu and modify the speech speed of the AI by adjusting the speed settings.</li>
-      </ol> `
-    }
-    this.ser.uneeqPromptBox(data).subscribe(res => {
-
-    })
-
-
-  }
-
-  /**
- * Display instructions for the learning
- * This function is responsible for showing instructions related to the learning module.
- * @returns {void} - This function doesn't return anything.
- */
-  InstructionLearning() {
-    var session = localStorage.getItem('sessionId')
-    let data = {
-      "sessionId": session,
-      // "email": this.user.email,
-      "message": ` 
-      Following are a few instructions to interact with me.
-      <ol type="1">
-      <li>Click the microphone button or press the spacebar once to speak.</li>
-      <li>You can also text me by clicking the button on the bottom right.</li>
-      <li>To move to the next slide, please click on the Next button or say/type - Next.</li>
-      <li>To move to the previous slide, please click on the Previous button or say/type - Previous.</li>
-      <li>If you wish to repeat the current slide, please click on the Repeat button or say/type - Repeat</li>
-      <li>To close the presentation, please click on the Close button or say/type - Close.</li>
-      <li>Click the pause button on bottom left to interrupt me while I am speaking.</li>
-      <li>For closed captions, click on the CC button on bottom left.</li>
-   
-      <li>Navigate to the menu and modify the speech speed of the AI by adjusting the speed settings.</li>
- 
-      </ol> `
-    }
-    this.ser.uneeqPromptBox(data).subscribe(res => {
-
-    })
-
-
-  }
 
 
   // function to open feedback form
@@ -4512,20 +3577,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-  // @ViewChild('popupSetting')popup!: ElementRef;
 
-  // @HostListener('document:click',['$event'])
-  // clickout(event:any){
-  //   if(this.popup.nativeElement.contains(event.target)){
-  //     console.log('inside')
-  //   }else{
-  //   //  this.isMenuOpen = false
-  //    // this.isDropDownSetting = true
-  //     this.dropSetting()
-  //     console.log('outside')
-  //     // this.onCloseHandled()
-  //   }
-  // }
 
 
   refreshSlidePPT() {
@@ -4568,27 +3620,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.isDropDownSetting = true;
       this.dropSetting();
     }
-
-    // if (this.isKeyboardOn === true) {
-    //   console.log('on click')
-    //   $('.box-1').css('margin-top', '0px');
-    //   $('#textTourBox').css('background', '');
-    //   this.isKeyboardOn  = false
-    // }
-
-
-
     var target = $(event.target);
 
-    // var isBoxVisible = $('.box-1').css('margin-top') === '-500px'; // Check if box is visible
-    // if (!target.closest('.box-1').length && isBoxVisible  && !target.closest('.ML__keyboard').length && !target.closest('.MLK__backdrop').length && !target.closest('.MLK__layer').length) {
-    var marginTop = $('.box-1').css('margin-top');
-    var isBoxVisible = marginTop === '-430px' || marginTop === '-500px' || marginTop === '-550px' || marginTop === '-600px' || marginTop === '-720px' || marginTop === '-650px' || marginTop === '-700px' || marginTop === '-750px';
-    if (!target.closest('.box-1').length && isBoxVisible && !target.closest('.MLK__backdrop').length && !target.closest('.MLK__layer').length) {
-      console.warn('click event -------------')
-      this.mathEventHit('');
-
-    }
   }
 
 
@@ -4612,25 +3645,25 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     // if(differenceInDays > 7){
     //   console.log('greater than 6')
     //   localStorage.removeItem('savedDate');
-     
+
     // }else{
     //   console.log('less than or equal than 6')
     // }
     return differenceInDays > 6;
-    
+
   }
 
-  removeSaveDate(){
-    let saveDate1:any = localStorage.getItem('savedDate3');
+  removeSaveDate() {
+    let saveDate1: any = localStorage.getItem('savedDate3');
     const currentDate = new Date();
     const saved = new Date(saveDate1)
     const differenceInTime = currentDate.getTime() - saved.getTime();
     const differenceInDays = Math.floor((differenceInTime) / (1000 * 3600 * 24));
-    if(differenceInDays > 6){
+    if (differenceInDays > 6) {
       console.log('greater than 0')
       localStorage.removeItem('savedDate3');
-     
-    }else{
+
+    } else {
       console.log('less than or equal than 0')
     }
   }

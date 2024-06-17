@@ -4,6 +4,11 @@
   width: 380px;
 }
 
+#smVideo{
+  margin-left: 0px ;
+ 
+}
+
 ::placeholder {
   color: black !important;
   opacity: 1;
@@ -46,8 +51,125 @@
 }
 
 
+/* chat bubble  */
+
+.chat-container { 
+  max-width: 600px; 
+  margin: 24px auto; 
+  position: relative;
+  z-index: 10000000;
+  /* background-color: #fff;  */
+  border-radius: 8px; 
+  overflow: hidden; 
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  */
+} 
+
+.message-container { 
+  display: flex; 
+  flex-direction: column; 
+} 
+
+.message { 
+  padding: 10px; 
+  margin: 10px; 
+  border-radius: 5px; 
+  max-width: 80%; 
+  word-wrap: break-word; 
+  /* display: flex;  */
+  align-items: center; 
+} 
+
+.sender-message { 
+  border-radius: 8px;
+  background: #FFF;
+  overflow-y: auto;
+  line-height: 10px;
+  max-height: 160px;
+  backdrop-filter: blur(7.5px);
+  color: #000; 
+  align-self: flex-start; 
+} 
+
+.receiver-message { 
+  border-radius: 8px;
+  background: #2A7CC7;
+  
+  backdrop-filter: blur(7.5px);
+  color: #fff; 
+  align-self: flex-end; 
+} 
+
+.sender-timer{ 
+  position: relative;
+  font-size: 15px;
+  left: 15px;
+  top: 10px;
+  color: white; 
+  align-self: flex-start; 
+}
 
 
+.receiver-timer {
+  color: #fff;
+  position: relative;
+  font-size: 15px;
+  top: 10px;
+  right: 15px;
+  align-self: flex-end;
+}
+
+
+
+.receviedSpan {
+  color: #FFF;
+  padding: 3px;
+/* paragraph */
+font-family: "DM Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px; /* 168.75% */
+letter-spacing: 0.2px;
+}
+
+.senderSpan{
+  color: #000;
+  /* padding: 3px; */
+/* paragraph */
+font-family: "DM Sans";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px; /* 168.75% */
+/* letter-spacing: 0.2px; */
+}
+
+.avatar { 
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+} 
+
+.message input { 
+  width: calc(100% - 20px); 
+  padding: 8px; 
+  margin: 10px; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+} 
+
+.message button { 
+  padding: 8px; 
+  margin: 10px; 
+  background-color: #4CAF50; 
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+} 
+
+/* chat bubble  */
 
 
 :host math-field::part(virtual-keyboard-toggle) {
@@ -92,14 +214,7 @@ math-field {
 }
 
 
-.panelBoxOption {
-  padding: 0 15px;
-  margin-top: 2px;
-  display: none;
-  color: black;
-  border-radius: 12px;
-  overflow: hidden;
-}
+
 
 #INFOComm {
   height: 360px;
@@ -154,26 +269,6 @@ math-field {
   opacity: .0.5 !important;
 }
 
-.btnn {
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border: 0px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
-
-
-}
 
 
 .settingHeading {
@@ -182,23 +277,12 @@ math-field {
   margin-left: 8px;
   font-family: DM Sans;
   font-weight: 400;
-  line-height: 27px;
+  line-height: 30px;
   letter-spacing: 0.20px;
   word-wrap: break-word
 }
 
-.exitPresentBtn {
-  display: flex;
-  background-size: 20px 20px;
-  top: -15px;
-  /* right: -10px; */
-  right: -24px;
-  /* right: 0px; */
-  cursor: pointer;
-  position: fixed;
-  margin: 30px;
-  z-index: 600;
-}
+
 
 .edyouLoaderWhite {
   width: 50px;
@@ -243,17 +327,8 @@ math-field {
   margin-top: -28px;
 }
 
-.feedbackstyle {
-  cursor: pointer;
-  margin-top: -2px;
-  margin-left: -5px;
-}
 
-.exittestPRep {
-  width: 40px;
-  cursor: pointer;
-  z-index: 110000;
-}
+
 
 /* .avatarGPTLoader{
   width: 30px;
@@ -283,110 +358,11 @@ math-field {
   margin-top: 80px;
 }
 
-.nextButTestseries {
-  /* margin-left: 15px; */
-  margin-right: 10px;
-  float: right;
-  display: flex;
-  flex-direction: row;
-  z-index: 1400000;
-  /* width: 120px; */
-  color: black;
-  bottom: 700px;
-  backdrop-filter: blur(2px);
-  -webkit-overflow-scrolling: touch;
-  /* Add this property */
-}
 
 
-.text-button {
-  display: block;
-  background: rgba(255, 255, 255, 0.30);
-  border: none;
-  backdrop-filter: blur(20px);
-  text-align: center;
-  color: white;
-  font-weight: 400;
-  margin-left: 3px;
-  margin-bottom: 5px;
-  width: 90px;
-  height: 40px;
-  border-radius: 5px;
-  margin: 10px auto;
-  font-family: 'DM Sans Regular', sans-serif;
-  line-height: 40px;
-}
-
-.list-button {
-  display: block;
-  /* background-color: #fff;
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.6); */
-  text-align: center;
-  color: white;
-  /* color: rgb(15, 15, 15); */
-  font-weight: 400;
-  cursor: pointer;
-  /* width: 40%; */
-  width: 90%;
-  border-radius: 5px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  /* margin: 15px auto; */
-  /* font-family: 'Intelo-SemiBold', sans-serif; */
-  font-family: 'DM Sans Regular', sans-serif;
-  line-height: 40px;
-}
-
-.apprachbutton {
-  display: block;
-  background-color: #fff;
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  color: black;
-
-  font-weight: 400;
-  cursor: pointer;
-  width: 90%;
-  /* height: 40px; */
-  border-radius: 5px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  font-family: 'DM Sans Regular', sans-serif;
-  line-height: 40px;
-}
-
-.methods {
-  color: white;
-  position: relative;
-  margin-left: 25px;
-}
-
-.bottomleft {
-  position: absolute;
-  bottom: 82px;
-  left: 35px;
-  z-index: 100;
-  width: 35px;
-  height: 35px;
-  font-size: 18px;
-}
 
 
-.cc_subtitle {
-  position: absolute;
-  /* bottom: 97px; */
-  bottom: 64px;
-  /* left: 48px; */
-  left: 35px;
-  z-index: 1100000;
-  width: 42px;
 
-  font-size: 18px;
-  border-radius: 21%;
-  cursor: pointer;
-}
 
 
 
@@ -395,17 +371,6 @@ math-field {
   width: 200px;
 }
 
-
-.feedbackrules {
-  position: absolute;
-  /* bottom: 235px; */
-  bottom: 191px;
-  left: 50px;
-  z-index: 100;
-  width: 47px;
-  height: 47px;
-  font-size: 18px;
-}
 
 .cc_icon {
   width: 47px;
@@ -491,16 +456,7 @@ math-field {
   z-index: 10000;
 }
 
-.bottomleft-large {
-  position: absolute;
-  /* bottom: 43px; */
-  bottom: 15px;
-  /* bottom: 90px; */
-  left: 47px;
-  z-index: 100;
-  width: 47px;
-  height: 47px;
-}
+
 
 .bottomStopSpeaking {
   position: absolute;
@@ -998,6 +954,25 @@ video {
 }
 
 
+.chatbubbleBox {
+  margin-right: 25px;
+
+  height: 500px;
+  float: right;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 550px;
+  color: white;
+
+  bottom: 700px;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.chatbubbleBox::-webkit-scrollbar { 
+  width: 0;  /* Remove scrollbar space */
+
+}
 /* .playerThree {
   margin-right: 20px;
   float: right;
@@ -1844,7 +1819,7 @@ input:checked + .slider:before {
   bottom: 80px;
   left: 5px;
   /* right: 20px; */
-  z-index: 1100000;
+  z-index: 11000000;
   font-size: 17px;
 
 }
@@ -2015,70 +1990,10 @@ input:checked + .slider:before {
 
 }
 
-/* feedback tooltip */
-.feedbackrules .feedback {
-  visibility: hidden;
-  width: 90px;
-  font-size: 13px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  top: 5px;
-  left: 109%;
-  position: absolute;
-  z-index: 1;
-}
 
-.feedbackrules:hover .feedback {
-  visibility: visible;
-}
 
-.feedbackrules .feedback::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent;
-}
 
-/* cc */
-.cc_subtitle .cc {
-  visibility: hidden;
-  width: 50px;
-  font-size: 13px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  top: 5px;
-  left: 90%;
-  position: absolute;
-  z-index: 10000;
-}
 
-.cc_subtitle:hover .cc {
-  visibility: visible;
-}
-
-.cc_subtitle .cc::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: 100%;
-  /* To the left of the tooltip */
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent black transparent transparent;
-
-}
 
 /* info */
 .rules .info {
@@ -2232,13 +2147,9 @@ input:checked + .slider:before {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
+
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -2267,6 +2178,23 @@ input:checked + .slider:before {
     border-radius: 10px;
     margin-left: -30px;
   } */
+
+  .chatbubbleBox{
+    margin-right: 0;
+    height: 550px;
+    float: none;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 550px;
+    float: none;
+    margin: auto;
+    /* position: absolute;
+    left: 0;
+    right: 0; */
+    color: white;
+    bottom: 700px;
+  }
+
   #btnOptionCC {
     width: 370px !important;
   }
@@ -2496,13 +2424,9 @@ input:checked + .slider:before {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
+ 
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -2548,6 +2472,25 @@ input:checked + .slider:before {
 @media all and (device-width: 834px) and (device-height: 1194px) and (orientation:portrait),
 only screen and (device-width: 834px) and (device-height: 1112px),
 only screen and (device-width: 834px) and (device-height: 1075px) {
+
+
+  
+  .chatbubbleBox{
+    margin-right: 0;
+    height: 550px;
+    float: none;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 550px;
+    float: none;
+    margin: auto;
+    /* position: absolute;
+    left: 0;
+    right: 0; */
+    color: white;
+    bottom: 700px;
+  }
+
 
   .playerOnePPT {
     /* margin-left: 1px;  */
@@ -2734,13 +2677,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -2824,11 +2761,34 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     box-shadow: none
   }
 
+
+
   /* .avatar_icon:hover {
     border-radius: 10px;
     background-color: #ececec;
     box-shadow: none
   } */
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+
+  }
+
 
 }
 
@@ -2871,6 +2831,20 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* ipad mini or ipad */
 /* @media all and (min-width: 1024px) and (min-height: 768px) and (orientation:landscape) { */
 @media all and (min-width: 1024px) and (max-height: 768px) and (orientation:landscape) {
+
+  /* #smVideo{
+    margin-left: -150px ;
+   
+  } */
+
+  .chat-container{
+    max-width: 450px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 10000000;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
   .playerOnePPT {
     margin-left: 1px;
@@ -3007,13 +2981,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -3049,12 +3018,30 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* ipad mini or ipad */
 @media all and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation:portrait) {
 
+  
   /* .uneeqAvatar {
     width: 85%;
     margin-top: 20px;
     border-radius: 10px;
     margin-left: -50px;
 } */
+
+/* bubble chat */
+
+.chatbubbleBox{
+  margin-right: 25px;
+  height: 500px;
+  /* background: rebeccapurple; */
+  float: right;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 700px;
+  color: white;
+  bottom: 700px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* bubble chat */
 
   #btnOptionCC {
     width: 345px;
@@ -3309,13 +3296,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -3357,6 +3338,25 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* Media query for devices with a width between 1024px and 1366px, and portrait orientation */
 /* @media all and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) { */
 @media all and (device-width: 1024px) and (device-width: 1366px) and (orientation: portrait) {
+
+
+  .chatbubbleBox{
+    margin-right: 0;
+    height: 760px;
+    float: none;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 650px;
+    float: none;
+    margin: auto;
+    /* position: absolute;
+    left: 0;
+    right: 0; */
+    color: white;
+    bottom: 700px;
+  }
+
+
 
   #btnOptionCC {
     width: 420px;
@@ -3521,13 +3521,9 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
+ 
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -3632,13 +3628,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -3833,13 +3824,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4012,13 +3998,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
+
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4061,6 +4042,23 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 10px;
     margin-left: -30px;
 } */
+
+  .chatbubbleBox{
+    margin-right: 0;
+    height: 700px;
+    float: none;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 650px;
+    float: none;
+    margin: auto;
+    /* position: absolute;
+    left: 0;
+    right: 0; */
+    color: white;
+    bottom: 700px;
+  }
+
 
   #btnOptionCC {
     width: 465px;
@@ -4245,13 +4243,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4307,13 +4299,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4524,13 +4510,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4729,13 +4709,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4935,13 +4909,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     visibility: hidden;
   }
 
-  .cc_subtitle:hover .cc {
-    visibility: hidden;
-  }
 
-  .feedbackrules:hover .feedback {
-    visibility: hidden;
-  }
 
   .bottomChat:hover .typeinput {
     visibility: hidden;
@@ -4977,10 +4945,37 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* /landscape/ nexus 10 , ipad air , ipad pro 11 */
 @media all and (device-width:1180px) and (device-height: 820px) and (orientation:landscape),
 (device-width:1194px) and (device-height: 834px) and (orientation:landscape),
+(device-width:1106px) and (device-height: 820px) and (orientation:landscape),
 (device-width:1112px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1134px) and (device-height: 774px) and (orientation:landscape),
 (device-width:1075px) and (device-height: 834px) and (orientation:landscape),
 (device-width:1280px) and (device-height: 800px) and (orientation:landscape) {
+
+  /* #smVideo{
+    margin-left: -110px !important;
+   
+  } */
+
+  .chatbubbleBox {
+    margin-right: 0px;
+    height: 600px;
+    float: right;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 550px;
+    color: white;
+    bottom: 700px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chat-container {
+  max-width: 450px;
+  margin: 27px auto;
+  position: relative;
+  z-index: 10000000;
+  border-radius: 8px;
+  overflow: hidden;
+}
   .uneeqAv {
     margin-top: 215px;
   }
@@ -5058,6 +5053,27 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
   }
 
+  .speakingsss:hover .min {
+    visibility: hidden !important;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden !important;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden !important;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden !important;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden !important;
+
+  }
+
   /* .avatar_icon:hover {
     border-radius: 10px;
     background-color: #ececec;
@@ -5071,6 +5087,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 @media all and (min-width:1366px) and (min-height: 1024px) and (orientation:landscape),
 (device-width:1368px) and (device-height: 912px) and (orientation:landscape) {
 
+  
   .playerOnePPT {
     margin-left: 1px;
     /* width:  880px; */
@@ -5132,7 +5149,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
   .box-1 {
     /* width: 500px; */
-    width: 560px;
+    /* width: 560px; */
+    width: 630px;
     height: 100px;
     /* margin: 4px; */
     margin: 3px;
@@ -5166,13 +5184,68 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     box-shadow: none
   }
 
+  /* #smVideo {
+    margin-left: -110px !important;
+} */
+
+.chatbubbleBox {
+
+  height: 700px;
+
+}
+
+.speakingsss:hover .min {
+  visibility: hidden;
+}
+
+.speakingsss:hover .max {
+  visibility: hidden;
+}
+
+.miccc:hover .mic2 {
+  visibility: hidden;
+}
+
+.setttingMain:hover .ToolSetting {
+  visibility: hidden;
+}
+
+.bottomChat:hover .tooltipAvatar {
+  visibility: hidden;
+
+}
+
+
   /* / */
 
 }
 
 
 
+@media all and (device-width: 1192px) and (device-height: 1024px) and (orientation: landscape) {
 
+  .speakingsss:hover .min {
+    visibility: hidden !important;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden !important;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden !important;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden !important;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden !important;
+
+  }
+
+}
 
 
 
@@ -5235,6 +5308,92 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 /* max-device-width: 480px */
 @media only screen and (max-width: 480px) {
+
+/* bubble chat */
+
+.chat-container { 
+  max-width: 400px; 
+  margin: 12px auto; 
+  position: relative;
+  z-index: 10000000;
+  /* background-color: #fff;  */
+  border-radius: 8px; 
+  overflow: hidden; 
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  */
+} 
+
+.chatbubbleBox {
+  margin-right: auto;
+  margin-left: auto;
+  height: 340px;
+  float: none;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 350px;
+  color: white;
+  bottom: 700px;
+  
+
+}
+
+.sender-message{
+  border-radius: 8px;
+  background: #FFF;
+  overflow-y: auto;
+  line-height: 14px;
+  max-height: 140px;
+  -webkit-backdrop-filter: blur(7.5px);
+  backdrop-filter: blur(7.5px);
+  color: #000;
+  align-self: flex-start;
+}
+
+
+.receviedSpan {
+  color: #FFF;
+  padding: 3px;
+/* paragraph */
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px; /* 168.75% */
+letter-spacing: 0.2px;
+}
+
+.senderSpan{
+  color: #000;
+  padding: 3px;
+/* paragraph */
+font-family: "DM Sans";
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px; /* 168.75% */
+letter-spacing: 0.2px;
+}
+
+.sender-timer{ 
+  position: relative;
+  font-size: 13px;
+  left: 15px;
+  top: 10px;
+  color: white; 
+  align-self: flex-start; 
+}
+
+
+.receiver-timer {
+  color: #fff;
+  position: relative;
+  font-size: 13px;
+  top: 10px;
+  right: 15px;
+  align-self: flex-end;
+}
+
+
+/* bubble chat  */
 
   /* For browsers that support the ::placeholder pseudo-element */
 #textTourBox::placeholder {
@@ -5773,59 +5932,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-  .bottomleft {
-    position: absolute;
-    bottom: 19px;
-    /* left: 31px; */
-    left: 20px;
 
-    z-index: 100;
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
-  }
-
-  .bottomleft-large {
-    position: absolute;
-    /* bottom: 63px; */
-    bottom: 17px;
-    /* left: 38px; */
-    left: 25px;
-    z-index: 100;
-    width: 45px;
-    height: 45px;
-  }
-
-
-
-  .cc_subtitle {
-    position: absolute;
-    /* bottom: 109px; */
-    bottom: 59px;
-
-    /* left: 25px; */
-
-    left: 15px;
-    z-index: 100;
-    /* width: 35px;
-      height: 35px; */
-    /* font-size: 18px; */
-  }
-
-
-
-  .feedbackrules {
-    position: absolute;
-    /* bottom: 231px; */
-    /* bottom: 179px; */
-    bottom: 180px;
-    left: 28px;
-    /* left: 40px; */
-    z-index: 100;
-    width: 46px;
-    height: 46px;
-    font-size: 18px;
-  }
 
   .QuestionCard {
     position: flex;
@@ -6039,38 +6146,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-
-  .bottomleft-large {
-    position: absolute;
-    /* bottom: 43px; */
-    bottom: 25px;
-    left: 40px;
-    z-index: 100;
-    width: 40px;
-    height: 40px;
-  }
-
-
-  .cc_subtitle {
-    position: absolute;
-    /* bottom: 86px; */
-    bottom: 66px;
-    left: 26px;
-    z-index: 100;
-  }
-
-
-
-  .feedbackrules {
-    position: absolute;
-    /* bottom: 200px; */
-    bottom: 171px;
-    left: 40px;
-    z-index: 100;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
 
   .mobile_chat {
     position: fixed;
@@ -6527,6 +6602,17 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 @media only screen and (device-width: 3200px) and (device-height: 1800px) {
 
+  /* #smVideo{
+    margin-left: 0px !important;
+   
+  } */
+
+  .box-1{
+    width: 1000px !important;
+    height: 100px;
+    margin: 3px;
+    float: left;
+}
 
   .playerOnePPT {
     margin-left: 1px;
@@ -6540,6 +6626,18 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 }
 
 @media only screen and (device-width: 2240px) and (device-height: 1260px) {
+
+  /* #smVideo{
+    margin-left: 0px  !important;
+   
+  } */
+
+  .box-1{
+    width: 700px !important;
+    height: 100px;
+    margin: 3px;
+    float: left;
+}
 
 
   .playerOnePPT {
@@ -6556,6 +6654,10 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 @media only screen and (min-width: 2560px) and (min-height: 1440px) {
 
+  /* #smVideo{
+    margin-left: 0px !important ;
+   
+  } */
 
   .playerOnePPT {
     margin-left: 1px;
@@ -6586,6 +6688,19 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 /* IMac pro 21 inch  */
 @media only screen and (device-width: 2048px) and (device-height: 1152px) {
+
+  /* #smVideo{
+    margin-left: 0px !important;
+   
+  } */
+
+  .box-1{
+    width: 700px !important;
+    height: 100px;
+    margin: 3px;
+    float: left;
+}
+
 
   .playerOnePPT {
     margin-left: 1px;
@@ -6642,6 +6757,11 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 }
 
 @media only screen and (min-width: 2200px) {
+
+  /* #smVideo{
+    margin-left: 0px !important;
+   
+  } */
   .playerOnePPT {
     margin-left: 1px;
     margin-top: -20px;
@@ -6715,6 +6835,11 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
 @media only screen and (min-width: 2900px) {
+/* 
+  #smVideo{
+    margin-left: 0px ;
+   
+  } */
   .playerOnePPT {
     margin-left: 1px;
     margin-top: -20px;
@@ -6969,8 +7094,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   font-size: 13px;
   padding: 2px 0px;
   border-radius: 7px;
-  bottom: 13px;
-  right: 108%;
+  bottom: 15px;
+  left: 108%;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -6984,7 +7109,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   content: " ";
   position: absolute;
   top: 50%;
-  left: 100%;
+  transform: rotate(180deg); 
+  right: 100%;
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;

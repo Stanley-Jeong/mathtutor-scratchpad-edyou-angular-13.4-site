@@ -239,7 +239,7 @@ header {background-color:white; display:table; width:calc(100% - 233px); positio
 .text-butRed:hover {color:#e12813; background-color:#fff;}
 
 /* .fixed-mic {position:fixed; right:20px; bottom:2px; z-index:2; } */
-.fixed-mic {position:fixed; right:10px; bottom:2px; z-index:2; }
+.fixed-mic {position:fixed; right:10px; bottom:0px; z-index:2; }
 
 .active-mic {position:fixed; right:30px; bottom:10px; z-index:2; background-color:#0079a5; display:block; border-radius:1000px; width:55px; height:55px; padding:10px; background-image:url(../images/mic.png); background-size:35px auto; background-repeat:no-repeat; background-position:center center;}
 

@@ -1,16 +1,9 @@
 
-
-
-
-
-
 <div class="fixed-mic " id="movableCard-main">
-  <!-- <a  (click)="micFunction(this)" id="micOff" class="active-mic off-mic">&nbsp;</a> -->
   <div class="bottomright" id="settingId" style="z-index: 99999999;">
     <div class="commonstyle" id="tourSetting">
-      <!--  -->
       <span class="setttingMain" >
-        <!-- <span class="ToolSetting">Setting</span> -->
+        <span class="ToolSetting">Setting</span>
         <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/newsetting.png">
       </span>
     </div>
@@ -29,12 +22,10 @@
         <span>
           <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon"
             src="../../assets/interaction/hannahMiniMize.png">
-          <!-- <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
-            src="../../../../assets/interaction/hannah12.png"> -->
+
             <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
             src="../../assets/interaction/hannahFinal2.png">
-          <!-- <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon chat_icon"
-            src="../../../../assets/interaction/hannahHide1.png"> -->
+       
         </span>
       </div>
     </div>
@@ -51,8 +42,6 @@
 
   <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;" [style.background-color]="backgroundColor" >
  
- 
-
     <div id="avatarLoaders"  style="margin-top:50px">
       <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
         <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
@@ -83,22 +72,6 @@
          <img id="cross1"  [src]="isMobileNormalTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" style="width: 30px; height: 30px;">
           <span class="min" style="font-style: normal;">Minimize</span>
         </span>
-      </div>
-
-      <div class="exitPresentBtn showI" id="exitpresentation" style="position: absolute;">
-        <!-- <img src="../../assets/interaction/x-circle.svg" (click)="exitpresentationFun()"
-        
-          style="width: 30px; height: 30px;"> -->
-          <img  [src]="isMobileTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" (click)="exitpresentationFun()"
-        
-          style="width: 30px; height: 30px;">
-      </div>
-
-      <div class="exitPresentBtn showI" id="exitExam" style="position: absolute;">
-        <!-- <img src="../../../../assets/interaction/x-circle.svg" (click)="exitTestSeries()"
-          style="width: 30px; height: 30px;"> -->
-          <img [src]="isMobileTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" (click)="exitTestSeries()"
-          style="width: 30px; height: 30px;">
       </div>
 
     </ng-container>
@@ -200,13 +173,7 @@
       <div class="playerOne  hideMessage fontss" id="MathameticsDisplay" style="margin-top: 10px;">
         <div class="">
 
-          <div class="" style="display: flex; justify-content: center;">
-            <!-- background: #e5f0ee; -->
-            <div class="list-button  fontss" style=" width: 100%; cursor: default; padding:5px ; line-height: 25px;">
-              <span style="display: flex; margin-left: 10px;font-size: 24px;">Question</span>
-              <p id="user_questionD" class="userQuesClass"> &nbsp; </p>
-            </div>
-          </div>
+    
         </div>
       </div>
       <!-- -----testing---- -->
@@ -217,55 +184,60 @@
 
       <ng-container *ngIf="DescAnswer != ''">
 
-        <!-- <div class="playerThree  hideMessage " id="message" style="margin-top: 38px;"> -->
-        <div class="playerThree hideMessage " id="message" style="margin-top: 8px;">
-          <div class="descptionContent">
+        <div   class="chatbubbleBox   hideMessage" id="message" style="margin-top: 8px;">
+        
+         
+          <!-- <div class="chat-container"> 
+            <div class="message-container"> 
+              <span class="receiver-timer">3:33</span> 
+                <div class="message receiver-message">     
+                  <span class="receviedSpan"> Hi! How can I help you today? </span> 
+               </div> 
+              
+               <span class="sender-timer">3:33</span> 
+                <div class="message sender-message"> 
+                   <span class="senderSpan">I have a question about your products. </span> 
+                </div> 
+            </div>  -->
+        
 
-            <div class="avatarspeak-s scrollbar spaceInText" id="outputDesc" style="color: white;">
-
-            </div>
-            <br>
-
-            <!-- <img *ngIf="runLoderGPT" src="../../../../assets/threedot.gif" style="width: 100px;"> -->
-            <div *ngIf="normalGPT" class="di" style="display: flex; justify-content: center;">
-              <img  src="../../assets/interaction/edyou-throbber-v2-100-white.gif" style="width: 50px;">
-            </div>
-            <div *ngIf="runLoderGPT" class="di" style="display: flex; justify-content: center;">
-              <img  src="../../assets/interaction/edyou-throbber-v2-100-white.gif" class="edyouLoaderWhite"
-                >
-            </div>
-
-
-
-          </div>
-          <!-- ngIf="refreshBtnPPT" -->
-          <div class="refreshbtnPPT" id="refreshTG" *ngIf="refreshBtnPPT" (click)="refreshSlidePPT()">
-            <img class="" src="../../assets/interaction/refresh-ccw-01.svg" style="width: 20px;cursor: pointer;">
-          </div>
-
-          <div class="hideMessage" id="mathApproach" style="margin-top: 4px;">
-            <div class="row mt-2">
-              <span class="methods">Methods</span>
-              <ng-container *ngFor="let list of approachesList ; let i = index">
-                <div class="apprachbutton btn-ripple" id="colorApproachOption{{i}}" style="padding:3px;"
-                  (click)="selectMathsListOption(list,i)">{{list}}
-                </div>
-
+            <!-- //3 points -->
+              <div #messageContainer   class="chat-container"> 
+            <div  class="message-container" *ngFor="let chat of storedChatBubbleMessage"> 
+              <ng-container *ngIf="chat.source === 'user'">
+              <span class="receiver-timer">{{chat.time}}</span> 
+                <div class="message  receiver-message">     
+                  <span class="receviedSpan scrollbar"> {{chat.text}} </span> 
+               </div> 
               </ng-container>
 
+             
+                
+              <ng-container *ngIf="chat.source === 'persona'">
+      
+               <span class="sender-timer">{{chat.time}}</span> 
+                <div class="message scrollbar sender-message"> 
+                   <span class="senderSpan">{{chat.text}} </span> 
+                </div> 
+                </ng-container>
             </div>
-          </div>
+
+            <ng-container *ngIf="showLoaderMess" >
+              <div class="loader"> <img src="../../assets/threedot.gif" style="width: 80px;
+                height: 50px;margin-left: 10px;
+                background-color: white;"></div>
+            
+              </ng-container>
+              
+
         </div>
-
-
-
-
+</div>
       </ng-container>
       <!-- -->
 
    
 
-      <div class="hideMessage" id="userCC">
+      <!-- <div class="hideMessage" id="userCC">
         <div class="bottomboxSize">
           <div class="container">
             <div class=" d-flex justify-content-center">
@@ -273,9 +245,7 @@
 
                 <div class="avatarspeak-s" id="local-transcript">
                   You: {{userInputText}}
-                  <!-- <input type="text" #input1 style="width: 60px;">
-                  <input type="text" #input2 style="width: 60px;"> 
-                  <button (click)="setVideo(input1.value, input2.value)">send</button> -->
+            
                 </div>
 
               </div>
@@ -283,7 +253,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
       <!-- -- setting--- -->
       <div class="dropBoxNew showI" id="dropDownSetting">
@@ -293,7 +263,7 @@
 
           <button class="accordions" (click)="clickFunction('panel1')" #popup2>
             <div class="row">
-              <img alt="" style="width: 20px;" class="ml-3" src="../../assets/interaction/cc.svg" /> &nbsp;
+              <img alt="" style="width: 20px; border-radius: 0px;" class="ml-3" src="../../assets/interaction/cc.svg" /> &nbsp;
               <span class="settingHeading">Captions</span>
             </div> <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;"
                 alt="" src="../../assets/interaction/chevron-right.svg" /></span>
@@ -303,32 +273,20 @@
             <div class="oneLine" >
               
               <label >
-                <input (click)="userCCOnOf()" type="checkbox"  name="" id=""  class="check1" [(ngModel)]="UserccOnOff" >
+                <input (click)="avatarCCOnOf()" type="checkbox"  name="" id=""  class="check1" [(ngModel)]="UserccOnOff" >
                 <span></span>
               </label>
               <!-- <p>User CC</p> -->
-              <p class="commonBox">User CC</p>
-            </div>
-            <!-- <br> -->
-            <div class="oneLine" >
-              
-              <label >
-                <input (click)="avatarCCOnOf()" type="checkbox" name="" id=""  class="check1"  [(ngModel)]="ccOnOff" >
-                <span></span>
-              </label>
-              <!-- <p>AI Being CC</p> -->
-              <p class="commonBox">AI Being CC</p>
+              <p class="commonBox">Chat CC</p>
             </div>
            
-
           </div>
 
           
           <div  style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
           </div>
-
-
-          <button class="accordions"   (click)="StartTourGuideSetting()">
+        
+          <button class="accordions"   (click)="StartTourGuideSetting()" #popup2>
             <div class="row" >
               <img style="width: 20px;" class="ml-3" src="../../assets/interaction/map-02.svg" /> &nbsp;
               <span class="settingHeading" >Tour Guide</span>
@@ -359,22 +317,14 @@
 
       <!-- -- chat box , mic ------ -->
       <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight"
-        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius"  >
+        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius"  [style.background-color]="colorBG" >
 
         <div class="container">
           <div class="d-flex justify-content-center centerDiv">
-            <!-- <div class="box-3">
-              <span class="setttingMain" >
-                <span class="ToolSetting">Setting</span>
-                <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/interaction/group-2477@2x.png">
-              </span>
-            </div> -->
+         
             <div class="box-1" id="boxForInput" style="z-index: 21000000">
               <ng-container >
-                <!-- <input type="text" #input1 style="width: 60px;">
-                <input type="text" #input2 style="width: 60px;"> 
-                <button (click)="setVideo(input1.value, input2.value)">send</button>  -->
-               
+              
                   <div class="input-container">
                 <input type="text" 
                   [style.width]="inputWidthSize" 
@@ -393,16 +343,7 @@
               </ng-container>
          
             </div>
-            <!-- <div class="box-2" (click)="sendTextToAvatar()" id="btnSearch">
-              <img alt="" id="sendId1"  [style.width.px]="micWidth" [style.height.px]="micHeight" src="../../assets/interaction/group-2472.svg" />
-          
-                 
-            </div> -->
-
-            <!-- <img   id="minimiseMathBTN" class=" miniBTN"  (click)="mathEventHit('')"
-            src="../../assets/interaction/Minimize_icon1.svg" />    -->
-
-            <!-- (click)="toggleUserMicrophone()"  box-3  onclickMic-->
+       
             <div class="box-2" >
               <div class="di">
                
@@ -418,7 +359,7 @@
               </div>
 
             </div>
-            <div class="box-3" id="box3Main" style="margin-left: 10px;">
+            <div class="box-3" id="box3Main" style="margin-left: 10px; cursor: default;">
               <img *ngIf="!dotIndicatorAnimation" style="    position: relative; 
               margin-left: 3px;
               margin-top: 10px;" src="../../assets/dotIndicator.svg">
