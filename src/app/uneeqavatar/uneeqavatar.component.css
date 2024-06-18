@@ -106,7 +106,7 @@
   position: relative;
   font-size: 15px;
   /* left: 15px; */
-  left: 8px;
+  left: 19px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
@@ -118,7 +118,7 @@
   position: relative;
   font-size: 15px;
   top: 10px;
-  right: 8px;
+  right: 25px;
   /* right: 15px; */
   align-self: flex-end;
 }
@@ -2339,31 +2339,34 @@ input:checked + .slider:before {
   }
 
   .speakingsss:hover .min {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .stopavatar:hover .stop {
     visibility: hidden;
   }
 
-
+  .setttingMain:hover .ToolSetting {
+    visibility: visible !important;
+  
+  }
 
  
 
   .bottomChat:hover .typeinput {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .bottomright:hover .mic {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .tooltipoff:hover .tooltiptext {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   /* 
@@ -2662,11 +2665,11 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     box-shadow: none
   } */
   .speakingsss:hover .min {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .miccc:hover .mic2 {
@@ -2674,8 +2677,9 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
   .setttingMain:hover .ToolSetting {
-    visibility: hidden;
+    visibility: hidden !important;
   }
+
 
   .bottomChat:hover .tooltipAvatar {
     visibility: hidden;
@@ -2817,26 +2821,29 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
   .bottomChat:hover .tooltipAvatar {
-    visibility: hidden;
+    visibility: hidden !important; 
   }
 
   .speakingsss:hover .min {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .stopavatar:hover .stop {
-    visibility: hidden;
+    visibility: hidden !important;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: visible !important;
+  
   }
 
 
-
-
   .bottomChat:hover .typeinput {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .bottomright:hover .mic {
@@ -2844,7 +2851,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
   .tooltipoff:hover .tooltiptext {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   /* .cc_icon:hover,
@@ -3413,15 +3420,15 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
   .bottomChat:hover .tooltipAvatar {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .min {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .stopavatar:hover .stop {
@@ -4010,19 +4017,19 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 @media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:portrait) {
 
   .rules:hover .info {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .bottomChat:hover .tooltipAvatar {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .min {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .stopavatar:hover .stop {
@@ -4799,19 +4806,19 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 }
 
 .speakingsss:hover .min {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .speakingsss:hover .max {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .miccc:hover .mic2 {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .setttingMain:hover .ToolSetting {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .bottomChat:hover .tooltipAvatar {
@@ -4948,7 +4955,7 @@ letter-spacing: 0.2px;
   position: relative;
   font-size: 13px;
   /* left: 15px; */
-  left: 8px;
+  left: 22px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
@@ -4961,7 +4968,7 @@ letter-spacing: 0.2px;
   font-size: 13px;
   top: 10px;
   /* right: 15px; */
-  right: 8px;
+  right: 24px;
   align-self: flex-end;
 }
 
