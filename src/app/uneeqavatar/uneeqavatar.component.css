@@ -6023,14 +6023,14 @@ letter-spacing: 0.2px;
 
 
 /* IMac pro 21 inch  */
-@media only screen and (device-width: 1292px) and (device-height: 1024px),
-(device-width: 1366px) and (device-height: 1024px),
+@media only screen and (device-width: 1292px) and (device-height: 1024px) and (orientation: landscape),
+(device-width: 1366px) and (device-height: 1024px) and (orientation: landscape),
 (device-width: 1010px) and (device-height: 810px) and (orientation: landscape)  {
 
 
 
   .bottomChat:hover .tooltipAvatar {
-    visibility: hidden;
+    visibility: hidden !important;
   }
 
   .speakingsss:hover .min {
