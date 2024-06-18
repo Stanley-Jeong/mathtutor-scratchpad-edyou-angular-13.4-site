@@ -37,6 +37,7 @@
 
 
 
+
 /* For browsers that support the ::placeholder pseudo-element */
 #textTourBox::placeholder {
   color: black !important; /* Change the color to white */
@@ -75,12 +76,12 @@
   border-radius: 5px; 
   max-width: 80%; 
   word-wrap: break-word; 
-  /* display: flex;  */
+ 
   align-items: center; 
 } 
 
 .sender-message { 
-  border-radius: 8px;
+  border-radius: 21px;
   background: #FFF;
   overflow-y: auto;
   line-height: 10px;
@@ -91,7 +92,7 @@
 } 
 
 .receiver-message { 
-  border-radius: 8px;
+  border-radius: 21px;
   background: #2A7CC7;
   
   backdrop-filter: blur(7.5px);
@@ -99,10 +100,13 @@
   align-self: flex-end; 
 } 
 
+
+
 .sender-timer{ 
   position: relative;
   font-size: 15px;
-  left: 15px;
+  /* left: 15px; */
+  left: 8px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
@@ -114,7 +118,8 @@
   position: relative;
   font-size: 15px;
   top: 10px;
-  right: 15px;
+  right: 8px;
+  /* right: 15px; */
   align-self: flex-end;
 }
 
@@ -520,30 +525,7 @@ video {
   height: 100%
 }
 
-.barrr {
-  position: fixed;
-  z-index: 5;
 
-  bottom: 50px;
-  margin: 30px;
-  background-color: #fff;
-  border-radius: 1000px;
-  box-shadow: 0px 0px 10px 0px #ccc;
-  padding: 5px;
-  width: 400px;
-
-}
-
-.bottomChat-voice {
-  position: absolute;
-
-  bottom: 23px;
-  right: 115px;
-  z-index: 1100000;
-  width: 32px;
-  height: 32px;
-  font-size: 17px;
-}
 
 
 
@@ -706,28 +688,9 @@ video {
 
 }
 
-.unselectable {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Chrome/Safari/Opera */
-  -khtml-user-select: none;
-  /* Konqueror */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version */
-}
 
 
-.userQuesClass {
-  margin: 4px 4px 4px 4px;
-  padding: 4px;
-  font-size: 17px;
-  margin-left: 10px;
-}
+
 
 
 .imgTest {
@@ -768,16 +731,6 @@ video {
   overflow-y: auto;
 }
 
-.snakbarCard {
-  position: absolute;
-  justify-content: center;
-  left: 40%;
-  right: 80px;
-  width: 310px;
-  align-items: center;
-  z-index: 1100000;
-  bottom: 60px;
-}
 
 
 .bottomboxSize {
@@ -901,17 +854,6 @@ video {
   color: black;
 }
 
-.playerOnePPT {
-  margin-left: 10px;
-  margin-top: -25px;
-  float: left;
-  z-index: 1400000;
-
-  /* width: 650px; */
-  width: 750px;
-  color: black;
-}
-
 
 .playerOne {
   /* margin-left: 15px; */
@@ -1028,7 +970,7 @@ video {
 
 
 .scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
 
   backdrop-filter: blur(6px);
   border-radius: 5px;
@@ -1865,6 +1807,10 @@ input:checked + .slider:before {
   border-color: transparent transparent transparent black;
 }
 
+
+
+
+
 /* **********type input*** */
 .bottomChat .typeinput {
   position: absolute;
@@ -2270,21 +2216,7 @@ input:checked + .slider:before {
     border-radius: 6px 0 0 6px;
   }
 
-  .secondBoxoption {
-    width: 300px !important;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
+
 
   .box-1 {
     width: 450px;
@@ -2329,14 +2261,7 @@ input:checked + .slider:before {
     border-radius: 8px;
   }
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
-
+ 
   .QuestionCard {
     position: flex;
     margin-right: 30px;
@@ -2493,14 +2418,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    margin-top: 0px;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
+
 
   .ccBoxNew {
     position: absolute;
@@ -2578,22 +2496,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
   #btnOptionCC {
     width: 375px !important;
-  }
-
-  .secondBoxoption {
-    width: 230px !important;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
   }
 
 
@@ -2721,16 +2623,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 750px;
-    float: left;
-    margin-top: -10px;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-
   .ccBoxNew {
     position: absolute;
     justify-content: center;
@@ -2802,23 +2694,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-  .secondBoxoption {
-    width: 230px;
-    margin-left: 6px;
-    display: flex;
-    line-height: 15px;
-    font-size: 11px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
 }
 
 
@@ -2847,15 +2722,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     overflow: hidden;
 }
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 650px;
-    margin-top: 5px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
+
 
   #btnOptionCC {
     width: 320px;
@@ -2876,23 +2743,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 6px 0 0 6px;
   }
 
-  .secondBoxoption {
-    width: 250px;
-    margin-left: 6px;
-    line-height: 15px;
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    text-align: left;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
 
 
   
@@ -3088,22 +2938,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 6px 0 0 6px;
   }
 
-  .secondBoxoption {
-    width: 270px;
-    margin-left: 6px;
-    display: flex;
-    
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
 
 
   .box-1 {
@@ -3131,13 +2965,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
+
 
   .QuestionCard {
 
@@ -3263,21 +3091,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 6px 0 0 6px;
   }
 
-  .secondBoxoption {
-    width: 250px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
 
 
 
@@ -3448,13 +3261,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* nexus 7  */
 @media all and (device-width: 600px) and (device-height: 960px) and (orientation:portrait) {
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
 
   .playerOne {
     margin-left: 15px;
@@ -3560,14 +3366,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* ipad mini 6 or ipad */
 @media all and (device-width: 774px) and (device-height: 1133px) and (orientation:portrait) {
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
-
+ 
   .Qimage {
     margin-top: 6px;
     height: 270px;
@@ -3680,21 +3479,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 360px;
   }
 
-  .secondBoxoption {
-    width: 280px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
+
 
   .rectangle-parent {
     padding: 15px;
@@ -3732,13 +3517,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 8px;
   }
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 100%;
-    float: left;
-    z-index: 1400000;
-    padding: 5px;
-  }
 
   .QuestionCard {
 
@@ -3862,38 +3640,14 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 /* // surface pro 7 */
 @media all and (device-width: 912px) and (device-height: 1368px) and (orientation:portrait) {
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 100%;
-    margin-top: 0px;
-    float: left;
-    z-index: 1400000;
-    padding: 5px;
-  }
-
+ 
 
   #btnOptionCC {
     width: 390px;
 }
 
 
-.secondBoxoption {
-  width: 300px;
-  margin-left: 6px;
-  display: flex;
-  line-height: 15px;
-  font-size: 11px;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.30);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  min-height: 55px;
-  padding-left: 10px;
-  color: white;
-  padding-right: 28px;
-  text-align: left;
-  border-radius: 0 7px 7px 0;
-}
+
   .rectangle-parent {
     padding: 15px;
     margin-left: -15px;
@@ -4083,31 +3837,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     float: left;
   }
 
-  .secondBoxoption {
-    width: 350px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    text-align: left;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
-
-
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    margin-top: 0px;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
 
   .QuestionCard {
 
@@ -4375,21 +4104,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 330px;
   }
 
-  .secondBoxoption {
-    width: 240px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
 
 
   .rectangle-parent {
@@ -4412,13 +4126,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     height: 30px;
   }
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
+ 
 
   .playerOne {
     margin-left: 15px;
@@ -4570,22 +4278,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 330px;
   }
 
-  .secondBoxoption {
-    width: 240px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
-
+ 
 
   .rectangle-parent {
     padding: 15px;
@@ -4611,13 +4304,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 80% !important;
   }
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
 
   .playerOne {
     margin-left: 15px;
@@ -4750,14 +4436,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 (device-width:1104px) and (device-height: 884px) and (orientation:landscape),
 (device-width:1076px) and (device-height: 768px) and (orientation:landscape) {
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 680px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
 
   .ccBoxNew {
     position: absolute;
@@ -4779,21 +4457,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
 
-  .secondBoxoption {
-    width: 260px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
 
   .box-1 {
     width: 450px;
@@ -4841,14 +4504,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* //landscape nexus 7 */
 @media all and (device-width:960px) and (device-height: 600px) and (orientation:landscape) {
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 550px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
 
   .playerOne {
     margin-left: 15px;
@@ -5008,34 +4663,12 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
 
-  .playerOnePPT {
-    margin-left: 1px;
-    width: 730px;
-    float: left;
-    margin-top: 3px;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-
   #btnOptionCC {
     width: 365px !important;
   }
 
 
 
-  .secondBoxoption {
-    width: 270px !important;
-    line-height: 15px;
-    font-size: 11px;
-  }
-
-  .ExplainTestBox {
-    display: flex;
-    justify-content: right;
-    width: 94% !important;
-    height: 30px;
-  }
 
   /* .cc_icon:hover,
   .chat_icon:hover {
@@ -5089,17 +4722,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 (device-width:1368px) and (device-height: 912px) and (orientation:landscape) {
 
   
-  .playerOnePPT {
-    margin-left: 1px;
-    /* width:  880px; */
-    margin-top: 5px;
-    width: 820px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-
   .rectangle-parent {
     padding: 15px;
     margin-left: -15px;
@@ -5117,25 +4739,6 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
   #btnOptionCC {
     width: 370px;
-}
-
-
-  .secondBoxoption{
-    width: 267px !important;
-    margin-left: 6px;
-    display: flex;
-    line-height: 15px;
-    font-size: 11px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
 }
 
 
@@ -5257,24 +4860,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 370px !important;
   }
 
-  .secondBoxoption {
-    /* width: 240px !important; */
-    width: 267px !important;
-    margin-left: 6px;
-    display: flex;
-    line-height: 15px;
-    font-size: 11px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
+ 
 
 }
 
@@ -5286,23 +4872,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 330px !important;
   }
 
-  .secondBoxoption {
-    width: 240px !important;
-    margin-left: 6px;
-    display: flex;
-    line-height: 15px;
-    font-size: 11px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
+
 }
 
 
@@ -5338,11 +4908,11 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 }
 
 .sender-message{
-  border-radius: 8px;
+  border-radius: 21px;
   background: #FFF;
   overflow-y: auto;
   line-height: 14px;
-  max-height: 140px;
+  max-height: 135px;
   -webkit-backdrop-filter: blur(7.5px);
   backdrop-filter: blur(7.5px);
   color: #000;
@@ -5377,7 +4947,8 @@ letter-spacing: 0.2px;
 .sender-timer{ 
   position: relative;
   font-size: 13px;
-  left: 15px;
+  /* left: 15px; */
+  left: 8px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
@@ -5389,7 +4960,8 @@ letter-spacing: 0.2px;
   position: relative;
   font-size: 13px;
   top: 10px;
-  right: 15px;
+  /* right: 15px; */
+  right: 8px;
   align-self: flex-end;
 }
 
@@ -5579,24 +5151,6 @@ letter-spacing: 0.2px;
 
 
 
-
-  .secondBoxoption {
-    /* width: 290px; */
-    width: 76%;
-    margin-left: 6px;
-    display: flex;
-    font-size: 10px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 25px;
-    padding-left: 10px;
-    color: white;
-    text-align: left;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
 
 
   .exitPresentBtn {
@@ -5883,14 +5437,6 @@ letter-spacing: 0.2px;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   }
 
-  .playerOnePPT {
-    /* margin-left: 1px;  */
-    width: 95%;
-    margin-top: 0px;
-    /* float: left;  */
-    z-index: 1400000;
-    padding: 5px;
-  }
 
 
   .exitIcon {
@@ -6253,39 +5799,13 @@ letter-spacing: 0.2px;
 
 /* // laptop screen 14 inch*/
 @media only screen and (min-width: 1400px) and (max-height: 900px) {
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -30px;
-    /* width:  920px; */
-    width: 830px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
+
 
   #btnOptionCC {
     width: 420px !important;
   }
 
 
-  .secondBoxoption {
-    width: 330px !important;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    line-height: 15px;
-    font-size: 11px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
 
   .rectangle-parent {
     padding: 15px;
@@ -6319,42 +5839,12 @@ letter-spacing: 0.2px;
     height: 30px;
   }
 
-  .secondBoxoption {
-    width: 325px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    line-height: 15px;
-    font-size: 11px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
-
-
 
 }
 
 
 /* 15 inch screen  */
 @media only screen and (device-width: 1366px) and (device-height: 768px) {
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -30px;
-    /* width:  860px; */
-    width: 780px;
-    /* width: 100%; */
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
 
 
   .avatarspeak {
@@ -6375,24 +5865,6 @@ letter-spacing: 0.2px;
 
   #btnOptionCC {
     width: 380px;
-  }
-
-  .secondBoxoption {
-    width: 315px;
-    margin-left: 6px;
-    display: flex;
-    line-height: 15px;
-    font-size: 11px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    text-align: left;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
   }
 
 
@@ -6466,83 +5938,16 @@ letter-spacing: 0.2px;
 }
 
 
-
-
-
-/* Mac pro 16 inch */
-@media only screen and (min-width: 1536px) and (min-height: 960px) {
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -30px;
-    width: 860px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-}
-
-
-/* Media query for screens with width up to 1512px and height up to 982px   henrey screen*/
-/* @media screen and (max-width: 1512px) and (max-height: 982px) {
-
-  #btnOptionCC {
-    width: 330px;
-}
-
-  .secondBoxoption {
-    width: 240px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    text-align: left;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-}
-} */
-
-
  /* // surface book 13.5 */
 @media only screen and (min-width: 3000px) and (max-height: 2000px) {
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -30px;
-    /* width:  920px; */
-    width: 830px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
+
 
   #btnOptionCC {
     width: 420px !important;
   }
 
 
-  .secondBoxoption {
-    width: 330px !important;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    line-height: 15px;
-    font-size: 11px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
+
 
   .rectangle-parent {
     padding: 15px;
@@ -6576,28 +5981,7 @@ letter-spacing: 0.2px;
     height: 30px;
   }
 
-  .secondBoxoption {
-    width: 325px;
-    margin-left: 6px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    line-height: 15px;
-    font-size: 11px;
-    text-align: left;
-    color: white;
-    padding-right: 28px;
-    border-radius: 0 7px 7px 0;
-  }
-
-
-
 }
-
 
 
 @media only screen and (device-width: 3200px) and (device-height: 1800px) {
@@ -6614,15 +5998,7 @@ letter-spacing: 0.2px;
     float: left;
 }
 
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
-    width: 1500px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
+
 }
 
 @media only screen and (device-width: 2240px) and (device-height: 1260px) {
@@ -6640,51 +6016,53 @@ letter-spacing: 0.2px;
 }
 
 
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
-    width: 1200px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-}
-
-
-@media only screen and (min-width: 2560px) and (min-height: 1440px) {
-
-  /* #smVideo{
-    margin-left: 0px !important ;
-   
-  } */
-
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
-    width: 1400px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
-
-}
-
-
-
-/* IMac  27 inch retina 4k  */
-/* @media only screen and (min-width: 5120px) and (min-height: 2880px) {
-  .playerOnePPT{
-    margin-left: 1px; 
-    width:  1500px;
-    float: left; 
-    z-index: 1400000;
  
-    padding: 5px;
-  }
-} */
+}
 
+
+
+
+/* IMac pro 21 inch  */
+@media only screen and (device-width: 1292px) and (device-height: 1024px),
+(device-width: 1366px) and (device-height: 1024px),
+(device-width: 1010px) and (device-height: 810px) and (orientation: landscape)  {
+
+
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+  }
+
+  .speakingsss:hover .min {
+    visibility: hidden !important;
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden !important;
+  }
+
+  .stopavatar:hover .stop {
+    visibility: hidden;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: visible !important;
+  
+  }
+
+
+  .bottomChat:hover .typeinput {
+    visibility: hidden;
+  }
+
+  .bottomright:hover .mic {
+    visibility: hidden;
+  }
+
+  .tooltipoff:hover .tooltiptext {
+    visibility: hidden;
+  }
+}
 
 /* IMac pro 21 inch  */
 @media only screen and (device-width: 2048px) and (device-height: 1152px) {
@@ -6702,39 +6080,11 @@ letter-spacing: 0.2px;
 }
 
 
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
-    width: 1100px;
-    float: left;
-    z-index: 1400000;
-    /* width: 690px; */
-    padding: 5px;
-  }
 
 
   #btnOptionCC {
     width: 490px;
   }
-
-  .secondBoxoption {
-    width: 390px !important;
-    margin-left: 6px;
-    line-height: 15px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
-
 
   .spaceInText{
     font-size: 16px;
@@ -6758,42 +6108,12 @@ letter-spacing: 0.2px;
 
 @media only screen and (min-width: 2200px) {
 
-  /* #smVideo{
-    margin-left: 0px !important;
-   
-  } */
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
- 
-    float: left;
-    z-index: 1400000;
-    width: 1100px !important;
-    padding: 5px;
-  }
-
 
   #btnOptionCC {
     width: 550px !important;
   }
 
-  .secondBoxoption {
-    width: 450px !important;
-    margin-left: 6px;
-    line-height: 15px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
+
 
   .rectangle-parent {
     padding: 15px;
@@ -6834,44 +6154,16 @@ letter-spacing: 0.2px;
 }
 
 
+
+
 @media only screen and (min-width: 2900px) {
-/* 
-  #smVideo{
-    margin-left: 0px ;
-   
-  } */
-  .playerOnePPT {
-    margin-left: 1px;
-    margin-top: -20px;
- 
-    float: left;
-    z-index: 1400000;
-    width: 1500px !important;
-    padding: 5px;
-  }
 
 
   #btnOptionCC {
     width: 700px !important;
   }
 
-  .secondBoxoption {
-    width: 600px !important;
-    margin-left: 6px;
-    line-height: 15px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.30);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    min-height: 55px;
-    padding-left: 10px;
-    color: white;
-    padding-right: 28px;
-    text-align: left;
-    border-radius: 0 7px 7px 0;
-  }
+ 
 
   .rectangle-parent {
     padding: 15px;
@@ -7116,6 +6408,11 @@ letter-spacing: 0.2px;
   border-style: solid;
   border-color: transparent transparent transparent black;
 }
+
+/* 
+
+
+
 
 /* mic */
 .miccc.mic2 {

@@ -835,10 +835,21 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   getCurrentTime(): string {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    return hours + ':' + minutes;
+    // const now = new Date();
+    // const hours = now.getHours().toString().padStart(2, '0');
+    // const minutes = now.getMinutes().toString().padStart(2, '0');
+    // return hours + ':' + minutes;
+
+  
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      const hoursStr = hours.toString()
+      return hoursStr + ':' + minutes + ' ' + ampm;
+    
   }
 
 
@@ -2582,7 +2593,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-       this.borderRadius = '0px 0px 9px 9px'
+       this.borderRadius = '9px'
        //   this.borderRadius = '0px 0px 2px 2px'
           this.colorBG = this.backgroundColor
       // this.bottomPositionWidth = '90%'
@@ -3455,7 +3466,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // this.bottomPosition = 67
       this.bottomPosition = 12
       //  this.borderRadius = '0px 0px 20px 20px'
-       this.borderRadius = '0px 0px 9px 9px'
+       this.borderRadius = '9px'
       // this.borderRadius = '0px 0px 2px 2px'
       // this.bottomPositionWidth = '90%'
       this.bottomPositionWidth = '77.5%'

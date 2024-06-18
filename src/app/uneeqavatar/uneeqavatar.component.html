@@ -1,16 +1,12 @@
-
 <div class="fixed-mic " id="movableCard-main">
   <div class="bottomright" id="settingId" style="z-index: 99999999;">
     <div class="commonstyle" id="tourSetting">
-      <span class="setttingMain" >
+      <span class="setttingMain">
         <span class="ToolSetting">Setting</span>
         <img class="setting" #popup id="settingId1" (click)="dropSetting()" src="../../assets/newsetting.png">
       </span>
     </div>
   </div>
-
-
-
 
 
   <!-- // avatar hide button feature  -->
@@ -23,35 +19,35 @@
           <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon"
             src="../../assets/interaction/hannahMiniMize.png">
 
-            <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
+          <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
             src="../../assets/interaction/hannahFinal2.png">
-       
+
         </span>
       </div>
     </div>
   </div>
 
-  
+
   <!-- // chat input box  -->
   <div class="centerDiv" id="centerDiv">
     <div class="" id="chat-bar" style="z-index: 1100000;">
 
-
     </div>
   </div>
 
-  <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;" [style.background-color]="backgroundColor" >
- 
-    <div id="avatarLoaders"  style="margin-top:50px">
+  <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;"
+    [style.background-color]="backgroundColor">
+    <div id="avatarLoaders" style="margin-top:50px">
       <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
         <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
       </div>
       <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
-        {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a moment.
+        {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a
+        moment.
       </p>
     </div>
- 
- 
+
+
     <ng-container *ngIf="!messageForQueueAvatar">
       <!-- speakingsss_large   // its use when the card open in full screen on open -->
       <div class="speakingsss " id="cross" style="position: absolute;" (click)="onLoadCard('sm-video')">
@@ -67,9 +63,11 @@
         </span>
 
 
-        <span style="margin-top: -10px;"  style="position: absolute;" id="minimizeAvatar">
+        <span style="margin-top: -10px;" style="position: absolute;" id="minimizeAvatar">
           <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
-         <img id="cross1"  [src]="isMobileNormalTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'" style="width: 30px; height: 30px;">
+          <img id="cross1"
+            [src]="isMobileNormalTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'"
+            style="width: 30px; height: 30px;">
           <span class="min" style="font-style: normal;">Minimize</span>
         </span>
       </div>
@@ -82,9 +80,9 @@
     </div>
 
     <div class="rightDiv zz">
-     
+
       <!-- height: 30px; -->
-      <div  id="hambergerBar" class="notSchool" style="height: 45px;"></div>
+      <div id="hambergerBar" class="notSchool" style="height: 45px;"></div>
 
     </div>
 
@@ -92,27 +90,24 @@
     <!-- // hand stop avatar voice  -->
     <!-- <div class="div" id="stopTourGuide"> -->
     <div class="stopavatar showI" id="stopavatarId">
-      <div class="bottomStopSpeaking pausebtn" id="stopspeakingID" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
-        [style.left]="stopLeftSize">
+      <div class="bottomStopSpeaking pausebtn" id="stopspeakingID" style="z-index: 1400000;"
+        [style.bottom]="stopBottomSize" [style.left]="stopLeftSize">
         <!-- <span class="stop">Stop the AI Being while speaking</span> -->
         <img src="../../assets/interaction/stopspeaking.svg" *ngIf="!unmuteMicrophone" onkeyup="event.preventDefault()"
-          (click)="stopDigitalPerson()" class="stopIcon"> 
-
-          <!-- <img src="../../../../assets/interaction/unmuteSpeaking.png" *ngIf="unmuteMicrophone" onkeyup="event.preventDefault()"
-          (click)="muteDigitalPerson()" class="stopIcon mt-2"> -->
+          (click)="stopDigitalPerson()" class="stopIcon">
       </div>
-    <!-- </div> -->
+
     </div>
 
 
-        <!-- // hand unmute avatar voice  -->
-        <div class="stopavatar"  *ngIf="unmuteMicrophone" >
-          <div class="bottomStopSpeaking pausebtn" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
-            [style.left]="stopLeftSize">
-              <img src="../../assets/interaction/unmuteSpeaking.png"onkeyup="event.preventDefault()"
-              (click)="muteDigitalPerson()" class="stopIcon mt-2">
-          </div>
-        </div>
+    <!-- // hand unmute avatar voice  -->
+    <div class="stopavatar" *ngIf="unmuteMicrophone">
+      <div class="bottomStopSpeaking pausebtn" style="z-index: 1400000;" [style.bottom]="stopBottomSize"
+        [style.left]="stopLeftSize">
+        <img src="../../assets/interaction/unmuteSpeaking.png" onkeyup="event.preventDefault()"
+          (click)="muteDigitalPerson()" class="stopIcon mt-2">
+      </div>
+    </div>
 
 
 
@@ -133,7 +128,7 @@
       <div class="g" style="display: flex; justify-content: center;">
         <!-- <div class="uneeqAvatar" id="sm-video">  [muted]="videoMuted" [autoplay]="autoplayTue"-->
         <div class="uneeqAvatar" id="sm-video">
-          <video id="smVideo" width="100%" height="100%"  autoplay playsinline></video>
+          <video id="smVideo" width="100%" height="100%" autoplay playsinline></video>
         </div>
         <!-- <video src="../../assets/images/mov_bbb.mp4" preload="auto" autoplay muted style=" width: 100%; height: 100%;"></video> -->
 
@@ -142,51 +137,27 @@
 
 
     <div class="peerVideo">
-      <!-- 
- // text field -->
       <div class="QuestionCard fontss hideMessage" id="textDisplay" style="margin-top: 21px;">
         <div class="avatarspeak-s fontss" id="descpText">
         </div>
       </div>
-      <!-- 
- // end text field -->
-
-
-      <!-- Image display area -->
-
-     
-
 
       <div class="playerOne  hideMessage fontss" id="ImageDisplay" style="margin-top: 21px;">
         <div class="" style="height:330px;">
           <img class="ImageAspectRatio Qimage" [src]="ImageData"
             style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
-            <!-- Want to work -->
-          <img class="ImageAspectRatio " src="../../assets/nb.jpg"  
+          <!-- Want to work -->
+          <img class="ImageAspectRatio " src="../../assets/nb.jpg"
             style="height: 330px; max-width: 480px;  box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
-            <!-- Finding -->
+          <!-- Finding -->
         </div>
       </div>
-
-      <!-- -----testing---- -->
-
-      <div class="playerOne  hideMessage fontss" id="MathameticsDisplay" style="margin-top: 10px;">
-        <div class="">
-
-    
-        </div>
-      </div>
-      <!-- -----testing---- -->
-
-
-
 
 
       <ng-container *ngIf="DescAnswer != ''">
+        <div class="chatbubbleBox   hideMessage" id="message" style="margin-top: 8px;">
 
-        <div   class="chatbubbleBox   hideMessage" id="message" style="margin-top: 8px;">
-        
-         
+
           <!-- <div class="chat-container"> 
             <div class="message-container"> 
               <span class="receiver-timer">3:33</span> 
@@ -199,42 +170,55 @@
                    <span class="senderSpan">I have a question about your products. </span> 
                 </div> 
             </div>  -->
-        
 
-            <!-- //3 points -->
-              <div #messageContainer   class="chat-container"> 
-            <div  class="message-container" *ngFor="let chat of storedChatBubbleMessage"> 
+
+          <!-- //3 points -->
+          <div #messageContainer class="chat-container">
+            <div class="message-container" *ngFor="let chat of storedChatBubbleMessage">
               <ng-container *ngIf="chat.source === 'user'">
-              <span class="receiver-timer">{{chat.time}}</span> 
-                <div class="message  receiver-message">     
-                  <span class="receviedSpan scrollbar"> {{chat.text}} </span> 
-               </div> 
+                <span class="receiver-timer">{{chat.time}}</span>
+                <div class="message  receiver-message">
+                  <span class="receviedSpan scrollbar"> {{chat.text}} </span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="align-self: flex-end;
+                z-index: 100;
+                margin-right: 6px;
+                margin-top: -25px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <path d="M8 0.5L17 17.5L0.5 12.5L8 0.5Z" fill="#2A7CC7"/>
+                  </svg>
               </ng-container>
 
-             
-                
+
+
               <ng-container *ngIf="chat.source === 'persona'">
-      
-               <span class="sender-timer">{{chat.time}}</span> 
-                <div class="message scrollbar sender-message"> 
-                   <span class="senderSpan">{{chat.text}} </span> 
-                </div> 
-                </ng-container>
+
+                <span class="sender-timer">{{chat.time}}</span>
+              
+                <div class="message scrollbar sender-message">
+                  <span class="senderSpan">{{chat.text}} </span>
+               
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="    z-index: 100;
+                margin-top: -25px;
+                margin-left: 6px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white"/>
+                  </svg>
+              </ng-container>
+              
             </div>
 
-            <ng-container *ngIf="showLoaderMess" >
+            <ng-container *ngIf="showLoaderMess">
               <div class="loader"> <img src="../../assets/threedot.gif" style="width: 50px;
                 height: 50px;margin-left: 10px;
                 background-color: white;"></div>
-            
-              </ng-container>
-              
+
+            </ng-container>
+          </div>
         </div>
-</div>
       </ng-container>
       <!-- -->
 
-   
+
 
       <!-- <div class="hideMessage" id="userCC">
         <div class="bottomboxSize">
@@ -262,51 +246,39 @@
 
           <button class="accordions" (click)="clickFunction('panel1')" #popup2>
             <div class="row">
-              <img alt="" style="width: 20px; border-radius: 0px;" class="ml-3" src="../../assets/interaction/cc.svg" /> &nbsp;
+              <img alt="" style="width: 20px; border-radius: 0px;" class="ml-3" src="../../assets/interaction/cc.svg" />
+              &nbsp;
               <span class="settingHeading">Captions</span>
             </div> <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;"
                 alt="" src="../../assets/interaction/chevron-right.svg" /></span>
           </button>
           <div class="panels " id="panel1">
-            
-            <div class="oneLine" >
-              
-              <label >
-                <input (click)="avatarCCOnOf()" type="checkbox"  name="" id=""  class="check1" [(ngModel)]="UserccOnOff" >
+
+            <div class="oneLine">
+
+              <label>
+                <input (click)="avatarCCOnOf()" type="checkbox" name="" id="" class="check1" [(ngModel)]="UserccOnOff">
                 <span></span>
               </label>
               <!-- <p>User CC</p> -->
               <p class="commonBox">Chat CC</p>
             </div>
-           
+
           </div>
 
-          
-          <div  style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
+
+          <div
+            style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
           </div>
-        
-          <button class="accordions"   (click)="StartTourGuideSetting()" #popup2>
-            <div class="row" >
+
+          <button class="accordions" (click)="StartTourGuideSetting()" #popup2>
+            <div class="row">
               <img style="width: 20px;" class="ml-3" src="../../assets/interaction/map-02.svg" /> &nbsp;
-              <span class="settingHeading" >Tour Guide</span>
+              <span class="settingHeading">Tour Guide</span>
             </div>
             <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;" alt=""
                 src="../../assets/interaction/chevron-right.svg" /></span>
           </button>
-
-          <!-- <div *ngIf="hideHelpSetting" style="width: 80%; height: 0.5px; border: 0.5px white solid ; margin-left: 18px; margin-right: 10px;margin-top: 5px;">
-          </div> -->
-
-
-          <!-- <button class="accordions" *ngIf="hideHelpSetting" (click)="naviagtionTOHelp()">
-            <div class="row" >
-              <img style="width: 20px;" class="ml-3" src="../../assets/interaction/help-circle.svg" /> &nbsp;
-              <span class="settingHeading" >Help</span>
-            </div>
-            <span style="display: flex; justify-content: right; margin-top: -25px;"><img style="width: 20px;" alt=""
-                src="../../assets/interaction/chevron-right.svg" /></span>
-          </button> -->
-
 
         </div>
 
@@ -315,66 +287,67 @@
       </div>
 
       <!-- -- chat box , mic ------ -->
-      <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.background-color]="backgroundColor" [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight"
-        [style.width]="bottomPositionWidth" [style.border-radius]="borderRadius" >
+      <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.background-color]="backgroundColor"
+        [style.bottom.px]="bottomPosition" [style.height]="bottomPositionheight" [style.width]="bottomPositionWidth"
+        [style.border-radius]="borderRadius">
 
         <div class="container">
           <div class="d-flex justify-content-center centerDiv">
-         
+
             <div class="box-1" id="boxForInput" style="z-index: 21000000">
-              <ng-container >
-              
-                  <div class="input-container">
-                <input type="text" 
-                  [style.width]="inputWidthSize" 
-                  id="textTourBox"  
-                  [style.margin-top]="inputmarginTop" 
-                  [style.height]="inputheightSize" 
-                  class="group-item" 
-                  onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()" 
-                  [(ngModel)]="userText" 
-                  placeholder="Type here or push mic to talk" 
-                  style="font-size: medium !important; padding-left: 26px !important;">
-                  
-                  <img class="chat-button" id="sendId1"  style="width: 50px;height: 45px; background-color: white;" (click)="sendTextToAvatar()" src="../../assets/send-03.svg">
-                  </div>
+              <ng-container>
+
+                <div class="input-container">
+                  <input type="text" [style.width]="inputWidthSize" id="textTourBox" [style.margin-top]="inputmarginTop"
+                    [style.height]="inputheightSize" class="group-item"
+                    onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()"
+                    [(ngModel)]="userText" placeholder="Type here or push mic to talk"
+                    style="font-size: medium !important; padding-left: 26px !important;">
+
+                  <img class="chat-button" id="sendId1" style="width: 50px;height: 45px; background-color: white;"
+                    (click)="sendTextToAvatar()" src="../../assets/send-03.svg">
+                </div>
 
               </ng-container>
-         
+
             </div>
-       
-            <div class="box-2" >
+
+            <div class="box-2">
               <div class="di">
-               
-                <span >
-               
-                  <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"  (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth" [style.height.px]="micHeight"  [style.margin-left]="micMarginLeft2" 
-                  src="../../assets/mute.png" />
-    
-                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micNewOrange.png" [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
-                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft" >
+
+                <span>
+
+                  <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"
+                    (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth"
+                    [style.height.px]="micHeight" [style.margin-left]="micMarginLeft2" src="../../assets/mute.png" />
+
+                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micNewOrange.png"
+                    [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                    [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft">
                 </span>
 
               </div>
 
             </div>
             <div class="box-3" id="box3Main" style="margin-left: 10px; cursor: default;">
+             
               <img *ngIf="!dotIndicatorAnimation" style="    position: relative; 
               margin-left: 3px;
               margin-top: 10px;" src="../../assets/dotIndicator.svg">
-              <div id="bars" style="margin-top: 15px;" *ngIf="dotIndicatorAnimation" >
+              <div id="bars" style="margin-top: 15px;" *ngIf="dotIndicatorAnimation">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
-               
-              
+
+
               </div>
+          
             </div>
 
-          
+
           </div>
 
 
@@ -385,15 +358,15 @@
             <img *ngIf="!dotIndicatorAnimation" style="    position: relative; 
             margin-left: 0px;
             margin-top: 5px;" src="../../assets/dotIndicator.svg">
-            <div id="bars" style="margin-top: 5px;" *ngIf="dotIndicatorAnimation" >
+            <div id="bars" style="margin-top: 5px;" *ngIf="dotIndicatorAnimation">
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
-             
-            
+
+
             </div>
           </div>
         </div>
