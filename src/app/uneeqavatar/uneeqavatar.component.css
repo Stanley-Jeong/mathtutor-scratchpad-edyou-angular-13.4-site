@@ -55,7 +55,7 @@
 /* chat bubble  */
 
 .chat-container { 
-  max-width: 600px; 
+  max-width: 500px; 
   margin: 24px auto; 
   position: relative;
   z-index: 10000000;
@@ -71,10 +71,13 @@
 } 
 
 .message { 
-  padding: 10px; 
+  /* padding: 10px;  */
+  padding: 15px;
   margin: 10px; 
   border-radius: 5px; 
-  max-width: 80%; 
+  /* width: 70%; */
+  width: 74%;
+  /* max-width: 80%;  */
   word-wrap: break-word; 
  
   align-items: center; 
@@ -94,7 +97,7 @@
 .receiver-message { 
   border-radius: 21px;
   background: #2A7CC7;
-  
+  line-height: 10px;
   backdrop-filter: blur(7.5px);
   color: #fff; 
   align-self: flex-end; 
@@ -106,7 +109,8 @@
   position: relative;
   font-size: 15px;
   /* left: 15px; */
-  left: 19px;
+  /* left: 19px; */
+  left: 24px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
@@ -133,7 +137,7 @@ font-family: "DM Sans";
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 27px; /* 168.75% */
+line-height: 22px; /* 168.75% */
 letter-spacing: 0.2px;
 }
 
@@ -145,7 +149,7 @@ font-family: "DM Sans";
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 27px; /* 168.75% */
+line-height: 22px; /* 168.75% */
 /* letter-spacing: 0.2px; */
 }
 
@@ -736,8 +740,8 @@ video {
 .bottomboxSize {
   position: absolute;
   justify-content: center;
-  width: 100%;
-  background-color: #003A73;
+  /* width: 100%;
+  background-color: #003A73; */
   /* height: 75px; */
   height: 68px;
   align-items: center;
@@ -898,7 +902,7 @@ video {
 
 
 .chatbubbleBox {
-  margin-right: 25px;
+  margin-right: 20px;
 
   height: 500px;
   float: right;
@@ -4625,14 +4629,14 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     float: right;
     overflow-y: auto;
     z-index: 1400000;
-    width: 550px;
+    width: 500px;
     color: white;
     bottom: 700px;
     -webkit-overflow-scrolling: touch;
 }
 
 .chat-container {
-  max-width: 450px;
+  max-width: 400px;
   margin: 27px auto;
   position: relative;
   z-index: 10000000;
@@ -4929,13 +4933,13 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 .receviedSpan {
   color: #FFF;
-  padding: 3px;
+  /* padding: 3px; */
 /* paragraph */
 font-family: "DM Sans";
 font-size: 13px;
 font-style: normal;
 font-weight: 400;
-line-height: 27px; /* 168.75% */
+line-height: 21.5px; /* 168.75% */
 letter-spacing: 0.2px;
 }
 
@@ -4947,7 +4951,7 @@ font-family: "DM Sans";
 font-size: 13px;
 font-style: normal;
 font-weight: 400;
-line-height: 27px; /* 168.75% */
+line-height: 21.5px; /* 168.75% */
 letter-spacing: 0.2px;
 }
 
@@ -4955,7 +4959,7 @@ letter-spacing: 0.2px;
   position: relative;
   font-size: 13px;
   /* left: 15px; */
-  left: 22px;
+  left: 27px;
   top: 10px;
   color: white; 
   align-self: flex-start; 
