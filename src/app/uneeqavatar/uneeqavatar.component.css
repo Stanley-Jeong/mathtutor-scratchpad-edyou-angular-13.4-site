@@ -2712,6 +2712,22 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
         } 
       } */
 
+      @media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+
+        .chatbubbleBox{
+          margin-right: 20px;
+          height: 500px;
+          float: right;
+          overflow-y: auto;
+          z-index: 1400000;
+          width: 400px;
+          color: white;
+          bottom: 700px;
+          -webkit-overflow-scrolling: touch;
+      }
+
+      }
+
 /* ipad mini or ipad */
 /* @media all and (min-width: 1024px) and (min-height: 768px) and (orientation:landscape) { */
 @media all and (min-width: 1024px) and (max-height: 768px) and (orientation:landscape) {
@@ -2902,6 +2918,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   bottom: 700px;
   -webkit-overflow-scrolling: touch;
 }
+
+
 
 /* bubble chat */
 
@@ -4467,6 +4485,17 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     width: 330px;
   }
 
+  .chatbubbleBox {
+    margin-right: 20px;
+    height: 500px;
+    float: right;
+    overflow-y: auto;
+    z-index: 1400000;
+    width: 350px;
+    color: white;
+    bottom: 700px;
+    -webkit-overflow-scrolling: touch;
+}
 
 
   .box-1 {
@@ -4945,7 +4974,7 @@ letter-spacing: 0.2px;
 
 .senderSpan{
   color: #000;
-  padding: 3px;
+  /* padding: 3px; */
 /* paragraph */
 font-family: "DM Sans";
 font-size: 13px;
