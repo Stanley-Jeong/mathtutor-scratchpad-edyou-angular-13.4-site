@@ -701,7 +701,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         } else {
           // this.setVideo(600, 400)
-          this.setVideo(700, 500)
+          // this.setVideo(700, 500)
+          this.setVideo(700, 480)
         }
       }
 
@@ -1310,16 +1311,18 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
     //var textSet: any = document.getElementById('local-transcript')
 
-    this.clearAvatarContentBox()
+  
     var completeText
     let time = this.getCurrentTime()
     if (this.userText) {
+      this.clearAvatarContentBox()
       const completeText = this.userText.trim();
       this.showLoaderMess = true 
   
       this.chatBubbleMessage('user', completeText, time)
 
       if (completeText) {
+        
         this.userInputText = completeText;
         console.log('user', this.userInputText);
         const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });

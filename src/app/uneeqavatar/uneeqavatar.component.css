@@ -748,7 +748,7 @@ video {
   z-index: 1100000;
   bottom: -1px;
   /* background: rgba(37, 43, 66, 0.70); */
-  backdrop-filter: blur(20px)
+  /* backdrop-filter: blur(20px) */
 }
 
 
