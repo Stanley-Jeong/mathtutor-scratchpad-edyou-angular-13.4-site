@@ -5373,7 +5373,8 @@ letter-spacing: 0.2px;
     width: 100%;
     margin-top: -42px;
     position: absolute;
-    bottom: 60px;
+    /* bottom: 60px; */
+    bottom: 70px;
   }
 
   /* .containerss {
