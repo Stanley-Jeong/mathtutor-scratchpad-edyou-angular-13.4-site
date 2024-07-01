@@ -5,6 +5,7 @@ import { InvestorsService } from '../service/investors.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
+import { ColorChangeService } from '../service/color-change.service';
 
 @Component({
   selector: 'app-investors',
@@ -17,11 +18,11 @@ export class InvestorsComponent implements OnInit {
   successMessage: string = '';
   loading: boolean = false; // Track loading state
   successMessageVisible: boolean = false;
-
+  scrollKey: any;
   constructor(
     private formBuilder: FormBuilder,
     private investorsService: InvestorsService,
-    private router: Router
+    private router: Router,private service : ColorChangeService
   ) { }
 
   ngOnInit(): void {
@@ -103,6 +104,10 @@ export class InvestorsComponent implements OnInit {
     } else {
       myButton?.classList.remove('btn-block');
     }
+  }
+
+  ngOnDestroy(): void {
+    this.service.saveScrollPosition(this.scrollKey, window.scrollY);
   }
 
 

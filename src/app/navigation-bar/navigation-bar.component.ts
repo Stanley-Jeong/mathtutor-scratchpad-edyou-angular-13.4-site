@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ColorChangeService } from '../service/color-change.service';
 declare var jQuery: any;
 
 @Component({
@@ -26,10 +27,10 @@ declare var jQuery: any;
     ])
   ]
 })
-export class NavigationBarComponent implements OnInit {
-
+export class NavigationBarComponent implements OnInit ,OnDestroy {
+  scrollKey: any;
   constructor(
-    private router: Router
+    private router: Router,private service : ColorChangeService
   ){}
 
   isVisible:boolean = false;
@@ -126,4 +127,9 @@ export class NavigationBarComponent implements OnInit {
       targetDiv.style.maxHeight = '0';
     }
   }
+
+  ngOnDestroy(): void {
+    this.service.saveScrollPosition(this.scrollKey, window.scrollY);
+  }
+  
 }

@@ -1,17 +1,18 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { UserService } from '../service/user.service';
+import { ColorChangeService } from '../service/color-change.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit,OnDestroy {
 
   private ngUnsubscribe = new Subject();
-
-  constructor(private router: Router,private service :UserService) {
+  scrollKey: any;
+  constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService) {
     this.service.getIp().subscribe((res:any)=>{
       console.log(res,"my ip----------------------------------------------")
     })
@@ -33,6 +34,7 @@ export class MainComponent implements OnInit {
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this.service2.saveScrollPosition(this.scrollKey, window.scrollY);
   }
 
   async navigateAndReplaceClass() {

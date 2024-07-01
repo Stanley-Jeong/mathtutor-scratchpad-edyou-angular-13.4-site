@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ColorChangeService } from '../service/color-change.service';
 
 @Component({
   selector: 'app-company',
@@ -9,11 +10,11 @@ import { Subject } from 'rxjs';
 })
 export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
   private ngUnsubscribe = new Subject();
-
+  scrollKey: any;
   constructor(
-    private router: Router) {
+    private router: Router,private service : ColorChangeService) {
       
-    }
+  }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,8 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this.service.saveScrollPosition(this.scrollKey, window.scrollY);
+
   }
 
   async navigateAndReplaceClass() {

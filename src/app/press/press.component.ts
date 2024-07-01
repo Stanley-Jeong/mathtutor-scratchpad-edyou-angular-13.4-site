@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ColorChangeService } from '../service/color-change.service';
 
 @Component({
   selector: 'app-press',
@@ -10,9 +11,10 @@ import { Subject } from 'rxjs';
 export class PressComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private ngUnsubscribe = new Subject();
+  scrollKey: any;
 
   constructor(
-    private router: Router
+    private router: Router,private service : ColorChangeService
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class PressComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this.service.saveScrollPosition(this.scrollKey, window.scrollY);
   }
 
   async navigateAndReplaceClass() {

@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ColorChangeService } from '../service/color-change.service';
 
 @Component({
   selector: 'app-safety',
@@ -10,11 +11,13 @@ import { Subject } from 'rxjs';
 export class SafetyComponent implements AfterViewInit, OnDestroy {
 
   private ngUnsubscribe = new Subject();
+  scrollKey: any;
 
   constructor(
-    private router: Router,
+    private router: Router,private service : ColorChangeService
     
   ) { }
+
 
   async ngAfterViewInit() {
     await this.navigateAndReplaceClass();
@@ -23,6 +26,7 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this.service.saveScrollPosition(this.scrollKey, window.scrollY);
   }
 
   async navigateAndReplaceClass() {

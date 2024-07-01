@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, NgZone, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 import Swal from 'sweetalert2';
 import { Persona, Scene } from '@soulmachines/smwebsdk'
@@ -192,7 +192,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
-    private ser: UserService) {
+    private ser: UserService,private route: ActivatedRoute) {
 
   }
 
@@ -2336,6 +2336,683 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.ccOnOff = true;
         this.avatarCCOnOf();
         break;
+        case 'Opening the company page.':
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+          this.router.navigate(['/company']);
+        break;  
+        case 'Opening the pay it forward page':
+          // this.onLoadCard("id")
+          // this.runMathToggleFromParent()
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+          this.router.navigate(['/pay-it-forward']);
+    
+        break;  
+        case 'Opening the press page':
+          this.router.navigate(['/press']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening the safety page':
+          this.router.navigate(['/safety']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening lab page':
+          this.router.navigate(['/labs']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening the blog page':
+          this.router.navigate(['/blog']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening the Investor page':
+          this.router.navigate(['/investors']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break; 
+        case 'Opening the support area':
+          window.scrollTo(0, document.body.scrollHeight);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break; 
+        case 'Opening team page':
+          this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;
+        case 'Opening the FAQ':
+          this.router.navigate(['/company'], { fragment: 'faq' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;  
+        case 'Opening the edYOU lab':
+          this.router.navigate(['/labs']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break; 
+        case 'Opening intellectual property':
+          this.router.navigate(['/labs'], { fragment: 'ip' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+          
+        break;   
+        case 'Opening the request access page':
+           this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;   
+
+        case 'Opening physical safety':
+          this.router.navigate(['/safety'], { fragment: 'physical-safety' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+          
+    
+        break;   
+
+        case 'Opening emotional wellbeing':
+          this.router.navigate(['/safety'], { fragment: 'emotional-wellbeing' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;   
+
+        case 'Opening ongoing human oversight':
+          this.router.navigate(['/safety'], { fragment: 'ongoing-human-oversight' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break
+        case 'Opening research':
+          this.router.navigate(['/labs'], { fragment: 'research' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;   
+        case 'Opening Conversational AI Beings':
+          this.router.navigate(['/labs'], { fragment: 'cab' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;  
+        case 'Opening Personalized AI':
+          this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;  
+        case 'Opening Proprietary Ingestion Engine':
+          this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening Intelligent Curation Engine':
+          this.router.navigate(['/labs'], { fragment: 'ice' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'Opening academic integrity':
+          this.router.navigate(['/academic-integrity']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break; 
+        case 'Owain Yeoman is the Chief Commercial Officer for edYOU technologies, where he advances education by facilitating partnerships between edYOU and academic institutions. He previously built an acclaimed acting career over 20 years, starring in shows like “The Mentalist” and films including “Troy”.':
+          this.router.navigate(['/company'], { fragment: 'oy' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'To request access from our Investor Area, please fill out the form https://edyou.com/investor-access/. We will reach out to you shortly with additional information.':
+           this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;   
+
+        case 'With a dual doctorate including a PhD in education, Dr. Everest has dedicated his life to making a difference in the world. Using just a $1,500 loan, Dr. Everest founded Residents Medical, a company that quickly skyrocketed to success, generating high seven figure revenues in its first year alone. Driven by his desire to revolutionize education, Dr. Everest went on to found edYOU Technologies.':
+          this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        case 'edYOU is a patented learning and wellness platform that helps individuals and institutions alike. We help humans learn more and help humans increase their overall health by providing conversational help to improve mental and physical wellness. My AI beings and I are available around the clock to help you learn and feel better. With edYOU, we are your support system 24/7 in real-time.':
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+          this.router.navigate(['/company']);
+        break; 
+        case 'edYOU is creating a better future by revolutionizing learning, empowering individuals and enterprise, and boosting wellness, by driving innovation through our artificial intelligence platform, while paying it forward.':
+          this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;   
+        case 'The mission of edYOU is to continue growth as a research-backed, world leader in personalized AI, focused on wellness and transforming how individuals and enterprise learn. Our patented, safe technology, delivered through humanlike AI Being, enables humans to unleash their full potential through self-improvement in an augmented real-time, conversational experience.':
+          this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        
+        case 'At edYOU Labs, the future of learning and wellness takes shape. Our team pushes boundaries in AI and wellness to create the next generation of personalized  experiences. Come explore the possibilities! edYOU Labs develops breakthroughs that reimagine the role of AI in learning and mental health.':
+          this.router.navigate(['/labs']);
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+
+        case 'The Proprietary Ingestion Engine (PIE) is the frontline of our cutting-edge learning and wellness platform. PIE intelligently processes massive amounts of data, structuring and filtering information to enable personalized education experiences. PIE combines machine learning with human insight to ingest data from diverse global sources.':
+          this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+        break;  
+        
+        case 'The Personalized AI (PAI) module is the brainpower behind edYOU’s groundbreaking approach to learning. PAI enables truly customized conversations and content tailored to each individual user. Through edYOU’s proprietary EDNLP natural language processing technology, PAI understands learners’ unique contexts, interests, and knowledge. It fosters an engaging dialogue where users feel heard and understood at a personal level.':
+          this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;  
+
+        case "Some of edYOU's clients are the Hospital Corporations of America,  California Northstate University College of Medicine, Sierra Canyon School, and Residents Medical.":
+          this.router.navigate(['/main'], { fragment: 'cp' }).then(() => {
+           
+            const fragment = this.route.snapshot.fragment;
+            if (fragment) {
+              setTimeout(() => {
+                const element = document.getElementById(fragment);
+                if (element) {
+                  const elementTop = element.getBoundingClientRect().top;
+                  const viewportHeight = window.innerHeight;
+        
+                  // Scroll the element into view
+                  element.scrollIntoView({ behavior: 'smooth' });
+        
+                  // Additional check to ensure element is visible if it is just outside the view
+                  if (elementTop < 0 || elementTop > viewportHeight) {
+                    window.scrollBy({
+                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+              }, 100); 
+            }
+          });
+          if(this.fullScreen == false){
+            this.onLoadCard('')
+          }
+    
+        break;  
+
 
 
     }
@@ -3466,28 +4143,29 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.micHeight = '50'
       this.micMarginLeft2 = '2px'
     } else {
-      // this.bottomPosition = 67
-      this.bottomPosition = 12
-      //  this.borderRadius = '0px 0px 20px 20px'
-       this.borderRadius = '9px'
-      // this.borderRadius = '0px 0px 2px 2px'
-      // this.bottomPositionWidth = '90%'
-      this.bottomPositionWidth = '77.5%'
-      // this.inputWidthSize = '201px';
-      this.inputWidthSize = '204px';
-      $('#settingId').addClass('showI');
-      this.inputheightSize = '50px'
-      this.micMarginLeft2 = '0px'
-      this.inputMarginLeft = '3px'
-      this.bottomPositionheight = '60px'
-      this.stopBottomSize = '75%'
-      this.stopLeftSize = '10%'
-      this.micWidth = '50'
+      // // this.bottomPosition = 67
+      // this.bottomPosition = 12
+      // //  this.borderRadius = '0px 0px 20px 20px'
+      //  this.borderRadius = '9px'
+      // // this.borderRadius = '0px 0px 2px 2px'
+      // // this.bottomPositionWidth = '90%'
+      // this.bottomPositionWidth = '77.5%'
+      // // this.inputWidthSize = '201px';
+      // this.inputWidthSize = '204px';
+      // $('#settingId').addClass('showI');
+      // this.inputheightSize = '50px'
+      // this.micMarginLeft2 = '0px'
+      // this.inputMarginLeft = '3px'
+      // this.bottomPositionheight = '60px'
+      // this.stopBottomSize = '75%'
+      // this.stopLeftSize = '10%'
+      // this.micWidth = '50'
 
-      this.micWidthOnly = '50'
-      this.micMarginleft = '0'
-      this.micHeight = '50'
-      this.micMarginLeft2 = '0px'
+      // this.micWidthOnly = '50'
+      // this.micMarginleft = '0'
+      // this.micHeight = '50'
+      // this.micMarginLeft2 = '0px'
+      this.minimizeBoxCardUI()
     }
 
 
