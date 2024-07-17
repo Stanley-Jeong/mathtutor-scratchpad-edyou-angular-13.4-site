@@ -255,7 +255,7 @@ header {background-color:white; display:table; width:calc(100% - 233px); positio
 
 
 /* //mobile */
-.mobile_speaking {display:block; border:0px solid #fff; box-shadow:0px 0px 5px 0px #ccc; width:290px; height: 230px; border-radius:1px; margin:0px 55px 0px 10px; }
+.mobile_speaking {display:block; border:0px solid #fff; width:290px; height: 230px; border-radius:1px; margin:0px 55px 0px 10px; }
 /* .mobile_speaking {display:block; border:0px solid #fff; box-shadow:0px 0px 5px 0px #ccc; width:320px; height: 230px; border-radius:1px;  margin:0px 20px 65px 20px; } */
 
 .speaking-lady img {display:block; width:100%; border-radius:10px;}

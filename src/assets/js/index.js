@@ -121,9 +121,8 @@ export function tour() {
                 target: "#tourSetting",
                 order: "2",
                 // content: "You can turn on/off captions, restart tour guide as well as access help page from the settings option. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/settings.png'  style='width:290px' alt=''>", 
-                content: "You can turn on/off captions, restart tour guide.",
-    
-                title: "Settings",
+                content: "When you click on this button, It will close & open chat section on your the interaction screen.",
+                title: "Chat on/off",
                 group: "",
                 targetPadding: 25,
                 dialogPlacement: 'top',
@@ -134,7 +133,7 @@ export function tour() {
     
                 order: "3",
                 // order: "4",
-                content: "You can interrupt AI being while speaking by clicking this button. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/Stop+speaking.png'  style='width:280px; padding:10px ; background:grey' alt=''>",
+                content: "You can interrupt AI being while speaking by clicking this button. <br><img src='https://pollydemo2022.s3.us-west-2.amazonaws.com/icons/stop+speaking.png'  style='width:80px; margin-left:110px; padding:5px ; alt=''>",
                 title: "Stop Speaking Button",
                 group: "",
                 position: {
