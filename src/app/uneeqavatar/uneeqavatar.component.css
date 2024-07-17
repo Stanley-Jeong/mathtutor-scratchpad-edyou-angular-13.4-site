@@ -16,7 +16,9 @@
 }
 
 .input-container {
-  position: relative;
+  position: relative; 
+  background: white;
+  border-radius: 8px;
   /* width: 560px; */
 }
 
@@ -51,6 +53,16 @@
   /* Add white background */
 }
 
+.stopHandIconSmallScreen{
+  position: absolute;
+  cursor: pointer;
+  bottom: 75px;
+  right: 92px;
+  z-index: 1100000;
+  /* width: 33px;
+  height: 33px; */
+  font-size: 17px;
+}
 
 /* chat bubble  */
 
@@ -71,33 +83,36 @@
 } 
 
 .message { 
-  /* padding: 10px;  */
-  padding: 15px;
-  margin: 10px; 
+  /* padding: 15px; */
+  /* padding: 10px 10px 13px 10px; */
+  padding: 11px;
+  margin: 10px;   
   border-radius: 5px; 
-  /* width: 70%; */
   width: 74%;
-  /* max-width: 80%;  */
   word-wrap: break-word; 
- 
   align-items: center; 
 } 
 
 .sender-message { 
-  border-radius: 21px;
+  /* border-radius: 21px; */
+  border-radius: 8px;
   background: #FFF;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   line-height: 10px;
-  max-height: 160px;
+  /* max-height: 155px; */
   backdrop-filter: blur(7.5px);
   color: #000; 
   align-self: flex-start; 
 } 
 
 .receiver-message { 
-  border-radius: 21px;
-  background: #2A7CC7;
+  /* border-radius: 21px; */
+  border-radius: 8px;
+  /* background: #2A7CC7; */
+  background-color: #1367B4;
   line-height: 10px;
+  /* overflow-y: auto; */
+  /* max-height: 150px; */
   backdrop-filter: blur(7.5px);
   color: #fff; 
   align-self: flex-end; 
@@ -132,25 +147,47 @@
 .receviedSpan {
   color: #FFF;
   padding: 3px;
-/* paragraph */
 font-family: "DM Sans";
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 22px; /* 168.75% */
+line-height: 22px; 
 letter-spacing: 0.2px;
+/* max-height: 140px;
+padding: 5px; */
+max-height: 98px;
+padding: 5px 8px 10px 8px;
+/* padding: 9px; */
+overflow-y: auto;
+width: 100%;
 }
 
 .senderSpan{
   color: #000;
-  /* padding: 3px; */
-/* paragraph */
 font-family: "DM Sans";
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 22px; /* 168.75% */
-/* letter-spacing: 0.2px; */
+/* max-height: 140px; */
+max-height: 98px;
+/* padding: 9px; */
+padding: 5px 8px 10px 8px;
+overflow-y: auto;
+width: 100%;
+}
+
+.tourDivCss{
+
+  display: flex;
+  background-size: 20px 20px;
+  top: -15px;
+  /* right: 25px; */
+  right: -30px;
+  cursor: pointer;
+  position: absolute;
+  margin: 30px;
+
 }
 
 .avatar { 
@@ -223,7 +260,11 @@ math-field {
 }
 
 
-
+.stopIConsmallscreenImg {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
 
 #INFOComm {
   height: 360px;
@@ -403,9 +444,9 @@ math-field {
 
 .setting {
   position: relative;
-  width: 30px;
-  height: 30px;
-  top: 10px;
+  width: 55px;
+  height: 55px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .chat_icon {
@@ -545,7 +586,8 @@ video {
   height: 30px; /*before editing it was 20px edited to use in the edyou website*/
   background-size: 20px 20px;
   /* right: 10px; */
-  right: -16px;
+  /* right: -16px; */
+  left: 10px;
   cursor: pointer;
   position: fixed;
   margin: 30px;
@@ -674,16 +716,9 @@ video {
 }
 
 .uneeqAv {
-  /* width: 100%; */
   margin-top: -42px;
   position: absolute;
-  /* bottom: 0; */
-  bottom: 80px;
-  /* margin-top: -40px; */
-  /* position: fixed; */
-  /* bottom: -7px; */
-
-  /* margin-top: -7px; */
+  bottom: 0px;
 }
 
 .uneeqLearning {
@@ -740,8 +775,7 @@ video {
 .bottomboxSize {
   position: absolute;
   justify-content: center;
-  /* width: 100%;
-  background-color: #003A73; */
+  width: 100%;
   /* height: 75px; */
   height: 68px;
   align-items: center;
@@ -915,11 +949,55 @@ video {
   -webkit-overflow-scrolling: touch;
 }
 
-
-.chatbubbleBox::-webkit-scrollbar { 
-  width: 0;  /* Remove scrollbar space */
+.scrollbarchat {
+  /* width: 4px; */
+  overflow-y: auto;
 
 }
+
+.scrollbarchat::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 5px;
+  /* background: white  */
+  background: #E5E5E5;
+}
+
+.scrollbarchat::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #1367B4 !important
+}
+
+.scrollbarchatUser {
+  /* width: 4px; */
+  overflow-y: auto;
+  z-index: 110;
+
+}
+
+.scrollbarchatUser::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 5px;
+  /* background: #1367B4  */
+  background: #104D85 50%;
+}
+
+.scrollbarchatUser::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: white
+}
+
+.chatbubbleBox::-webkit-scrollbar { 
+  width: 0px;  /* Remove scrollbar space */
+
+}
+
+
+.stopIConImg {
+  position: relative;
+  width: 55px;
+  height: 55px;
+}
+
 /* .playerThree {
   margin-right: 20px;
   float: right;
@@ -1107,14 +1185,35 @@ video {
 
 .bottomright {
   position: absolute;
-
-  /* right: 15px; */
-  bottom: 1px;
-    left: 50px;
-  /* right: 1px; */
+  bottom: 15px;
+  /* right: 30px; */
+  right: 10px;
   z-index: 1100000;
-  width: 33px;
+  /* width: 33px; */
+  /* width: 50px; */
+  /* height: 33px; */
+  font-size: 17px;
+}
+
+.muteVoiceIcon{
+  position: absolute;
+  bottom: 15px;
+  cursor: pointer;
+  left: 43px;
+  z-index: 1100000;
+  /* width: 33px;
   height: 33px;
+  font-size: 17px; */
+}
+
+.stopHandIcon{
+  position: absolute;
+  cursor: pointer;
+  bottom: 80px;
+  right: 12px;
+  z-index: 1100000;
+  /* width: 33px;
+  height: 33px; */
   font-size: 17px;
 }
 
@@ -1319,7 +1418,7 @@ video {
 
   /* background-color: rgba(255, 255, 255, 0.20); */
   background-color: #FFF;
-  border-radius: 45px !important;
+  /* border-radius: 45px !important; */
   color: black;
   padding: 10px;
   border-radius: 6px;
@@ -2056,7 +2155,7 @@ input:checked + .slider:before {
   padding: 2px 0px;
   border-radius: 7px;
   bottom: -8px;
-  right: 108%;
+  left: 108%;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -2070,12 +2169,50 @@ input:checked + .slider:before {
   content: " ";
   position: absolute;
   top: 50%;
-  left: 100%;
+/* 
+  right: 100%; */
+  transform: rotate(180deg);
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent black;
 }
+
+/* min */
+.muteButton .muteTooltip {
+  position: absolute;
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  bottom: 10px;
+  left: 130%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.muteButton:hover .muteTooltip {
+  visibility: visible !important;
+
+}
+
+.muteButton .muteTooltip::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+
+  right: 100%;
+  transform: rotate(180deg);
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
 
 @media only screen and (max-width: 1200px) {
   .rules:hover .info {
@@ -2098,7 +2235,38 @@ input:checked + .slider:before {
     visibility: hidden;
   }
 
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden;
+  }
+  .speakingsss:hover .min {
+    visibility: hidden;
+  }
 
+  .tourDivCss:hover .GuidedTour{
+    visibility: hidden;
+   
+  }
+  .muteButton:hover .muteTooltip{
+    visibility: hidden !important;
+   
+  }
+
+  .speakingsss:hover .max {
+    visibility: hidden;
+  }
+
+  .miccc:hover .mic2 {
+    visibility: hidden;
+  }
+
+  .setttingMain:hover .ToolSetting {
+    visibility: hidden;
+  }
+
+  .bottomChat:hover .tooltipAvatar {
+    visibility: hidden;
+
+  }
 
 
 
@@ -2117,7 +2285,28 @@ input:checked + .slider:before {
 
 }
 
+@media all and (device-width: 820px) and (device-height: 1106px) and (orientation:portrait) {
 
+  .box-1{
+    width: 400px;
+    height: 100px;
+    margin: 2px;
+    float: left;
+}
+
+.chatbubbleBox{
+  margin-right: 90px;
+  height: 400px;
+  float: right;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 550px;
+  color: white;
+  bottom: 700px;
+  -webkit-overflow-scrolling: touch;
+}
+
+}
 
 
 /* ipad air */
@@ -2139,11 +2328,8 @@ input:checked + .slider:before {
     width: 550px;
     float: none;
     margin: auto;
-    /* position: absolute;
-    left: 0;
-    right: 0; */
     color: white;
-    bottom: 700px;
+    /* bottom: 700px; */
   }
 
   #btnOptionCC {
@@ -2421,9 +2607,8 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     left: 0;
     right: 0; */
     color: white;
-    bottom: 700px;
+    /* bottom: 700px; */
   }
-
 
 
 
@@ -2463,7 +2648,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
   .box-1 {
-    width: 450px;
+    width: 420px;
     height: 100px;
     /* margin: 4px; */
     margin: 3px;
@@ -2716,15 +2901,14 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
         .chatbubbleBox{
           margin-right: 20px;
-          height: 500px;
+          height: 450px;
           float: right;
           overflow-y: auto;
           z-index: 1400000;
           width: 400px;
           color: white;
-          bottom: 700px;
           -webkit-overflow-scrolling: touch;
-      }
+        }
 
       }
 
@@ -2845,11 +3029,11 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   }
 
   .speakingsss:hover .min {
-    visibility: hidden !important;
+    visibility: hidden ;
   }
 
   .speakingsss:hover .max {
-    visibility: hidden !important;
+    visibility: hidden ;
   }
 
   .stopavatar:hover .stop {
@@ -2907,18 +3091,20 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* bubble chat */
 
 .chatbubbleBox{
-  margin-right: 25px;
-  height: 500px;
-  /* background: rebeccapurple; */
-  float: right;
+  margin-right: 0;
+  height: 550px;
+  float: none;
   overflow-y: auto;
   z-index: 1400000;
-  width: 700px;
+  width: 550px;
+  float: none;
+  margin: auto;
+  /* position: absolute;
+  left: 0;
+  right: 0; */
   color: white;
-  bottom: 700px;
-  -webkit-overflow-scrolling: touch;
+  /* bottom: 700px; */
 }
-
 
 
 /* bubble chat */
@@ -2970,7 +3156,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 
   .box-1 {
-    width: 450px;
+    width: 420px;
     height: 100px;
     /* margin: 4px; */
     margin: 3px;
@@ -3172,6 +3358,16 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 }
 
+@media only screen and (device-width: 768px)and (device-height: 1024px) and (orientation: portrait) {
+
+  .box-1{
+    width: 350px;
+    height: 100px;
+    margin: 3px;
+    float: left;
+}
+}
+
 
 /* ----------------------------------- */
 
@@ -3182,22 +3378,19 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* @media all and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) { */
 @media all and (device-width: 1024px) and (device-width: 1366px) and (orientation: portrait) {
 
-
   .chatbubbleBox{
     margin-right: 0;
-    height: 760px;
+    height: 690px;
     float: none;
     overflow-y: auto;
     z-index: 1400000;
     width: 650px;
     float: none;
     margin: auto;
-    /* position: absolute;
-    left: 0;
-    right: 0; */
     color: white;
-    bottom: 700px;
+    /* bottom: 700px; */
   }
+  
 
 
 
@@ -3826,22 +4019,18 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     border-radius: 10px;
     margin-left: -30px;
 } */
-
-  .chatbubbleBox{
-    margin-right: 0;
-    height: 700px;
-    float: none;
-    overflow-y: auto;
-    z-index: 1400000;
-    width: 650px;
-    float: none;
-    margin: auto;
-    /* position: absolute;
-    left: 0;
-    right: 0; */
-    color: white;
-    bottom: 700px;
-  }
+.chatbubbleBox{
+  margin-right: 0;
+  height: 690px;
+  float: none;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 650px;
+  float: none;
+  margin: auto;
+  color: white;
+  /* bottom: 700px; */
+}
 
 
   #btnOptionCC {
@@ -4493,7 +4682,7 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
     z-index: 1400000;
     width: 350px;
     color: white;
-    bottom: 700px;
+    /* bottom: 700px; */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -4638,6 +4827,37 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 }
 
+
+@media all and (device-width:834px)  and (orientation:landscape)
+{
+  .learningchatBOx{
+    /* position: relative;
+    bottom: 230px; */
+
+    position: fixed;
+    right: 15px;
+    bottom: 290px;
+}
+
+:host math-field::part(virtual-keyboard-toggle) {
+  z-index: 21000000000;
+  margin-top: -13px;
+}
+
+.chatbubbleBox {
+  margin-right: 20px;
+  height: 400px;
+  float: right;
+  overflow-y: auto;
+  z-index: 1400000;
+  width: 400px;
+  color: white;
+  -webkit-overflow-scrolling: touch;
+}
+
+}
+
+
 /* /landscape/ nexus 10 , ipad air , ipad pro 11 */
 @media all and (device-width:1180px) and (device-height: 820px) and (orientation:landscape),
 (device-width:1194px) and (device-height: 834px) and (orientation:landscape),
@@ -4654,13 +4874,13 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
   .chatbubbleBox {
     margin-right: 0px;
-    height: 600px;
+    height: 550px;
     float: right;
     overflow-y: auto;
     z-index: 1400000;
-    width: 500px;
+    width: 450px;
     color: white;
-    bottom: 700px;
+    /* bottom: 700px; */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -4920,6 +5140,20 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 /* max-device-width: 480px */
 @media only screen and (max-width: 480px) {
 
+  .baseChatBottom{
+    left: 10px;
+}
+
+  .tourDivCss{
+    display: flex;
+    background-size: 20px 20px;
+    top: -15px;
+    right: -20px;
+    cursor: pointer;
+    position: absolute;
+    margin: 30px;
+
+  }
 /* bubble chat */
 
 .chat-container { 
@@ -4933,31 +5167,68 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  */
 } 
 
+.stopIConImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.commonstyle {
+  cursor: pointer;
+  width: 50px;
+  margin-top: -28px;
+}
+
+.stopHandIconSmallScreen {
+  position: absolute;
+  cursor: pointer;
+  bottom: 68px;
+  right: 68px;
+  z-index: 1100000;
+  /* width: 33px;
+  height: 33px; */
+  font-size: 17px;
+}
+
+
 .chatbubbleBox {
   margin-right: auto;
   margin-left: auto;
-  height: 340px;
+  height: 300px;
   float: none;
   overflow-y: auto;
   z-index: 1400000;
-  width: 350px;
+  width: 340px;
   color: white;
-  bottom: 700px;
+  /* bottom: 700px; */
   
 
 }
 
+
 .sender-message{
-  border-radius: 21px;
+  border-radius: 8px;
   background: #FFF;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   line-height: 14px;
-  max-height: 135px;
+  /* max-height: 135px; */
   -webkit-backdrop-filter: blur(7.5px);
   backdrop-filter: blur(7.5px);
   color: #000;
   align-self: flex-start;
 }
+
+.receiver-message { 
+  border-radius: 8px;
+  background-color: #1367B4;
+  line-height: 14px;
+  /* overflow-y: auto; */
+  /* max-height: 135px; */
+  backdrop-filter: blur(7.5px);
+  color: #fff; 
+  align-self: flex-end; 
+} 
+
 
 
 .receviedSpan {
@@ -4968,8 +5239,12 @@ font-family: "DM Sans";
 font-size: 13px;
 font-style: normal;
 font-weight: 400;
-line-height: 21.5px; /* 168.75% */
+line-height: 20px;
 letter-spacing: 0.2px;
+max-height: 90px;
+padding: 5px;
+overflow-y: auto;
+width: 100%;
 }
 
 .senderSpan{
@@ -4980,9 +5255,14 @@ font-family: "DM Sans";
 font-size: 13px;
 font-style: normal;
 font-weight: 400;
-line-height: 21.5px; /* 168.75% */
+line-height: 20px;
 letter-spacing: 0.2px;
+max-height: 90px;
+padding: 5px;
+overflow-y: auto;
+width: 100%;
 }
+
 
 .sender-timer{ 
   position: relative;
@@ -5159,6 +5439,13 @@ letter-spacing: 0.2px;
     z-index: 600;
   }
 
+  .setting {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+
   .ccBoxNew {
     position: absolute;
     justify-content: center;
@@ -5215,7 +5502,7 @@ letter-spacing: 0.2px;
     width: 30px;
     height: 30px;
     background-size: 20px 20px;
-    left: 10px;
+    left: 3px;
     cursor: pointer;
     position: fixed;
     margin: 30px;
@@ -5252,7 +5539,7 @@ letter-spacing: 0.2px;
     /* background-color: rgba(255, 255, 255, 0.20); */
     /* color: white; */
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 8px;
     /* width: 100%; */
     height: 46px;
   }
@@ -5294,6 +5581,7 @@ letter-spacing: 0.2px;
   }
 
 
+
   .bottomboxSize {
     position: absolute;
     justify-content: center;
@@ -5301,11 +5589,9 @@ letter-spacing: 0.2px;
     height: 55px;
     align-items: center;
     z-index: 1100000;
-    /* bottom: 0px; */
-    /* background: rgba(37, 43, 66, 0.70); */
-
-    /* backdrop-filter: blur(20px); */
   }
+
+  /* start for small card avatar box input --- */
 
   /* start for small card avatar box input --- */
 
@@ -5317,11 +5603,11 @@ letter-spacing: 0.2px;
     align-items: center;
     z-index: 1100000;
     bottom: 67px;
-   
+    background: rgba(37, 43, 66, 0.70);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-radius: 0px 0px 20px 20px;
   }
-
 
 
 
@@ -5373,8 +5659,7 @@ letter-spacing: 0.2px;
     width: 100%;
     margin-top: -42px;
     position: absolute;
-    /* bottom: 60px; */
-    bottom: 70px;
+    bottom: -10px;
   }
 
   /* .containerss {
@@ -5423,21 +5708,31 @@ letter-spacing: 0.2px;
 
   .bottomright {
     position: absolute;
-    top: 34px;
-    right: 15px !important;
-    left: auto;
+    bottom: 70px;
+    left: 29px;
     z-index: 1100000;
-    width: 33px;
-    height: 33px;
-    font-size: 17px;
-  }
+}
+
+.muteVoiceIcon {
+  position: absolute;
+  bottom: 117px;
+  left: 29px;
+  z-index: 1100000;
+}
+
+.stopHandIcon{
+  position: absolute;
+  cursor: pointer;
+  bottom: 171px;
+  right: 0;
+  left: 29px;
+  z-index: 1100000;
+}
 
   .bottomChat {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
-    /* bottom: -4px;
-    right: 16px; */
+    bottom: -10px;
+    right: -13px;
     z-index: 1100000;
     /* width: 32px;
     height: 32px; */
@@ -6328,7 +6623,7 @@ letter-spacing: 0.2px;
   padding: 2px 0px;
   border-radius: 7px;
   bottom: -8px;
-  right: 108%;
+  left: 108%;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -6342,7 +6637,9 @@ letter-spacing: 0.2px;
   content: " ";
   position: absolute;
   top: 50%;
-  left: 100%;
+
+  right: 100%;
+  transform: rotate(180deg);
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
@@ -6417,18 +6714,19 @@ letter-spacing: 0.2px;
 }
 
 /* setting */
+/* setting */
 .setttingMain .ToolSetting {
   position: absolute;
   visibility: hidden;
-  width: 70px;
+  width: 80px;
   background-color: black;
   color: white;
   text-align: center;
   font-size: 13px;
   padding: 2px 0px;
   border-radius: 7px;
-  bottom: 15px;
-  left: 108%;
+  bottom: 13px;
+  right: 125%;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -6438,12 +6736,44 @@ letter-spacing: 0.2px;
 
 }
 
+
+.tourDivCss .GuidedTour{
+  position: absolute;
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  padding: 2px 0px;
+  border-radius: 7px;
+  bottom: -8px;
+  right: 108%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.tourDivCss:hover .GuidedTour{
+  visibility: visible;
+  z-index: 1000;
+}
+
+.tourDivCss .GuidedTour::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
 .setttingMain .ToolSetting::after {
   content: " ";
   position: absolute;
   top: 50%;
-  transform: rotate(180deg); 
-  right: 100%;
+  left: 100%;
   margin-top: -5px;
   border-width: 5px;
   border-style: solid;
@@ -6495,6 +6825,16 @@ letter-spacing: 0.2px;
     visibility: hidden;
   }
 
+  .tourDivCss:hover .GuidedTour{
+    visibility: hidden;
+   
+  }
+  .muteButton:hover .muteTooltip{
+    visibility: hidden !important;
+   
+  }
+
+
   .speakingsss:hover .max {
     visibility: hidden;
   }
@@ -6532,7 +6872,7 @@ letter-spacing: 0.2px;
     float: right;
     overflow-y: auto;
     z-index: 1400000;
-    width: 500px;
+    width: 450px;
     color: white;
     /* bottom: 700px; */
     -webkit-overflow-scrolling: touch;
@@ -6544,6 +6884,15 @@ letter-spacing: 0.2px;
 @media only screen and (min-device-width: 768px)and (max-device-width: 1024px) and (orientation: portrait) {
   .speakingsss:hover .min {
     visibility: hidden;
+  }
+
+  .tourDivCss:hover .GuidedTour{
+    visibility: hidden;
+   
+  }
+  .muteButton:hover .muteTooltip{
+    visibility: hidden !important;
+   
   }
 
   .speakingsss:hover .max {
@@ -6562,6 +6911,7 @@ letter-spacing: 0.2px;
     visibility: hidden;
 
   }
+
 }
 
 

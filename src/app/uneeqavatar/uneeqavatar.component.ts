@@ -189,10 +189,17 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   storedChatBubbleMessage: any = [];
   showLoaderMess: boolean = false;
   colorBG: any;
-  
+  muteVoiceAvatar: boolean = false
+  bubblewindowOnOff: boolean = true;
+  blurEffect: boolean = false;
+  box2MarginLeft: any;
+  focusInput: any;
+  mainClassBottomsize: any;
+  stopIconWidthPosition: any;
+  stopIconHeightPosition: any;
 
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
-    private ser: UserService,private route: ActivatedRoute) {
+    private ser: UserService, private route: ActivatedRoute) {
 
   }
 
@@ -222,8 +229,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     window.addEventListener('resize', this.resizeFun);
     if (window.innerWidth < 480) {
       //hide card
-      $('#movableCard').addClass('showI')
-      this.mobileAvatarOnOff = true
+    //  $('#movableCard').addClass('showI')
+     // this.mobileAvatarOnOff = true
     }
     // remove item on page refresh 
     window.onbeforeunload = function () {
@@ -245,6 +252,18 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     // console.warn('Is GMT',isGMT )
     // console.warn('Time Zone Offset (in hours from GMT)',offsetHours )
   }
+
+
+
+  onFocus(inputId: string) {
+    // console.log('focus-------------------------------')
+    this.focusInput = inputId;
+  }
+
+  onBlur() {
+    this.focusInput = '';
+  }
+
 
 
   startTours() {
@@ -841,16 +860,16 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     // const minutes = now.getMinutes().toString().padStart(2, '0');
     // return hours + ':' + minutes;
 
-  
-      const now = new Date();
-      let hours = now.getHours();
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' should be '12'
-      const hoursStr = hours.toString()
-      return hoursStr + ':' + minutes + ' ' + ampm;
-    
+
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const hoursStr = hours.toString()
+    return hoursStr + ':' + minutes + ' ' + ampm;
+
   }
 
 
@@ -888,7 +907,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           let inputUser = body.input['text']
           let question_time = body.output['context']['public-context']?.question_time
 
-          this.userInputText = 'User: ' + inputUser
+        //  this.userInputText = 'User: ' + inputUser
           if (inputUser == 'get response' || inputUser == 'getting error' || inputUser == 'getting response' || inputUser == 'stop') {
 
           } else {
@@ -925,7 +944,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           this.chatBubbleMessage('persona', this.DescAnswer, time)
           // verbal command function
           this.verbalCommandNavigation(this.DescAnswer)
-          if(this.DescAnswer){
+          if (this.DescAnswer) {
             this.showLoaderMess = false
           }
 
@@ -961,14 +980,17 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
         if (state == 'speaking') {
           this.runLoderGPT = false
-         
+
           this.dotIndicatorAnimation = true
           $('#stopavatarId').removeClass('showI')
         } else if (state == 'animating') {
 
         } else if (state == 'idle') {
           this.dotIndicatorAnimation = false
-          $('#stopavatarId').addClass('showI')
+      
+            $('#stopavatarId').addClass('showI')
+        
+        
         }
       }
 
@@ -985,7 +1007,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     // const messages:any = document.getElementById('message');
     // messages.scrollTop = messages.scrollHeight;
 
-    var messageContainer = document.getElementById('message');
+    var messageContainer = document.getElementById('chatbubblemessage');
     if (messageContainer) {
       messageContainer.scrollTo({
         top: messageContainer.scrollHeight,
@@ -1001,7 +1023,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (this.userInputText == 'Welcome') {
 
     } else {
-    
+
       this.storedChatBubbleMessage.push({ source: source, text: text, time: time });
       //this.scrollToBottom();
       setTimeout(() => {
@@ -1241,6 +1263,19 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     videoEl.muted = false;
   }
 
+  muteunmuteVoice() {
+    this.muteVoiceAvatar = !this.muteVoiceAvatar
+
+    //  if (videoVoice) {
+
+    //     videoVoice.muted = !videoVoice.muted
+
+    //     console.log('muted', videoVoice.muted)
+    // }
+    const videoEl: any = document.getElementById('smVideo');
+    if (videoEl) videoEl.muted = this.muteVoiceAvatar
+
+  }
 
   customWelcomeMessge() {
 
@@ -1311,18 +1346,18 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
     //var textSet: any = document.getElementById('local-transcript')
 
-  
+
     var completeText
     let time = this.getCurrentTime()
     if (this.userText) {
       this.clearAvatarContentBox()
       const completeText = this.userText.trim();
-      this.showLoaderMess = true 
-  
+      this.showLoaderMess = true
+
       this.chatBubbleMessage('user', completeText, time)
 
       if (completeText) {
-        
+
         this.userInputText = completeText;
         console.log('user', this.userInputText);
         const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
@@ -1827,6 +1862,48 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     localStorage.setItem('cc', JSON.stringify(this.ccOnOff))
   }
 
+  /**
+* Toggle chat bubble  for the avatar.
+*/
+  chatBubbleFun() {
+    const message22 = this.elementRef.nativeElement.querySelector('#chatbubblemessage');
+    const normalMessage = this.elementRef.nativeElement.querySelector('#message');
+    const screen = localStorage.getItem('screen');
+
+
+    if (screen == "TestSeries" || screen == "LearningScreen") {
+
+      if (this.bubblewindowOnOff == true) {
+        console.log('----if learning  ------', ' if', this.bubblewindowOnOff)
+        this.renderer.removeClass(message22, 'showMessage');
+        $('#chatbubblemessage').css('margin-top', '8px')
+        $('#chatbubblemessage').removeClass('learningchatBOx');
+        this.blurEffect = false
+      } else if (this.bubblewindowOnOff == false) {
+        console.log('----if learning  ------', 'else if', this.bubblewindowOnOff)
+        this.renderer.addClass(message22, 'showMessage');
+        $('#chatbubblemessage').addClass('learningchatBOx');
+        this.blurEffect = true
+      }
+
+    }
+    else {
+      console.log('----else ------')
+      if (this.bubblewindowOnOff == true) {
+        console.log('----if learning  ------', ' if', this.bubblewindowOnOff)
+        this.renderer.removeClass(message22, 'showMessage');
+      } else if (this.bubblewindowOnOff == false) {
+        console.log('----if learning  ------', 'else if', this.bubblewindowOnOff)
+        this.renderer.addClass(message22, 'showMessage');
+      }
+      this.blurEffect = false
+    }
+    console.log(this.bubblewindowOnOff, 'fffbb')
+    // this.ccOnOff = !this.ccOnOff
+    this.bubblewindowOnOff = !this.bubblewindowOnOff
+    console.log(this.bubblewindowOnOff, 'fffbb')
+    localStorage.setItem('cc', JSON.stringify(this.ccOnOff))
+  }
 
   checkHideCondition() {
     const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
@@ -1849,12 +1926,12 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
  */
   hideMethod() {
 
-    if (window.screen.width < 480) {
-      const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
-      this.renderer.removeClass(div1, 'showI');
-      this.fullScreen = true
-      this.onLoadCard('')
-    } else {
+    // if (window.screen.width < 480) {
+    //   const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
+    //   this.renderer.removeClass(div1, 'showI');
+    //   this.fullScreen = true
+    //   this.onLoadCard('')
+    // } else {
       const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
       const div2 = this.elementRef.nativeElement.querySelector('#centerDiv');
       if (this.mobileAvatarOnOff === true) {
@@ -1865,7 +1942,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.renderer.addClass(div2, 'showI');
       }
       this.mobileAvatarOnOff = !this.mobileAvatarOnOff
-    }
+   // }
 
 
   }
@@ -2336,682 +2413,682 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.ccOnOff = true;
         this.avatarCCOnOf();
         break;
-        case 'Opening the company page.':
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-          this.router.navigate(['/company']);
-        break;  
-        case 'Opening the pay it forward page':
-          // this.onLoadCard("id")
-          // this.runMathToggleFromParent()
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-          this.router.navigate(['/pay-it-forward']);
-    
-        break;  
-        case 'Opening the press page':
-          this.router.navigate(['/press']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening the safety page':
-          this.router.navigate(['/safety']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening lab page':
-          this.router.navigate(['/labs']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening the blog page':
-          this.router.navigate(['/blog']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening the Investor page':
-          this.router.navigate(['/investors']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break; 
-        case 'Opening the support area':
-          window.scrollTo(0, document.body.scrollHeight);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break; 
-        case 'Opening team page':
-          this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
+      case 'Opening the company page.':
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        this.router.navigate(['/company']);
         break;
-        case 'Opening the FAQ':
-          this.router.navigate(['/company'], { fragment: 'faq' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;  
-        case 'Opening the edYOU lab':
-          this.router.navigate(['/labs']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break; 
-        case 'Opening intellectual property':
-          this.router.navigate(['/labs'], { fragment: 'ip' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-          
-        break;   
-        case 'Opening the request access page':
-           this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;   
+      case 'Opening the pay it forward page':
+        // this.onLoadCard("id")
+        // this.runMathToggleFromParent()
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        this.router.navigate(['/pay-it-forward']);
 
-        case 'Opening physical safety':
-          this.router.navigate(['/safety'], { fragment: 'physical-safety' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-          
-    
-        break;   
+        break;
+      case 'Opening the press page':
+        this.router.navigate(['/press']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening the safety page':
+        this.router.navigate(['/safety']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening lab page':
+        this.router.navigate(['/labs']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening the blog page':
+        this.router.navigate(['/blog']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening the Investor page':
+        this.router.navigate(['/investors']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening the support area':
+        window.scrollTo(0, document.body.scrollHeight);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
 
-        case 'Opening emotional wellbeing':
-          this.router.navigate(['/safety'], { fragment: 'emotional-wellbeing' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;   
+        break;
+      case 'Opening team page':
+        this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
 
-        case 'Opening ongoing human oversight':
-          this.router.navigate(['/safety'], { fragment: 'ongoing-human-oversight' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
                 }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
+              }
+            }, 100);
           }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening the FAQ':
+        this.router.navigate(['/company'], { fragment: 'faq' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening the edYOU lab':
+        this.router.navigate(['/labs']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening intellectual property':
+        this.router.navigate(['/labs'], { fragment: 'ip' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening the request access page':
+        this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+
+      case 'Opening physical safety':
+        this.router.navigate(['/safety'], { fragment: 'physical-safety' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+
+        break;
+
+      case 'Opening emotional wellbeing':
+        this.router.navigate(['/safety'], { fragment: 'emotional-wellbeing' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+
+      case 'Opening ongoing human oversight':
+        this.router.navigate(['/safety'], { fragment: 'ongoing-human-oversight' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
         break
-        case 'Opening research':
-          this.router.navigate(['/labs'], { fragment: 'research' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;   
-        case 'Opening Conversational AI Beings':
-          this.router.navigate(['/labs'], { fragment: 'cab' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;  
-        case 'Opening Personalized AI':
-          this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;  
-        case 'Opening Proprietary Ingestion Engine':
-          this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening Intelligent Curation Engine':
-          this.router.navigate(['/labs'], { fragment: 'ice' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'Opening academic integrity':
-          this.router.navigate(['/academic-integrity']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break; 
-        case 'Owain Yeoman is the Chief Commercial Officer for edYOU technologies, where he advances education by facilitating partnerships between edYOU and academic institutions. He previously built an acclaimed acting career over 20 years, starring in shows like “The Mentalist” and films including “Troy”.':
-          this.router.navigate(['/company'], { fragment: 'oy' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'To request access from our Investor Area, please fill out the form https://edyou.com/investor-access/. We will reach out to you shortly with additional information.':
-           this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;   
+      case 'Opening research':
+        this.router.navigate(['/labs'], { fragment: 'research' }).then(() => {
 
-        case 'With a dual doctorate including a PhD in education, Dr. Everest has dedicated his life to making a difference in the world. Using just a $1,500 loan, Dr. Everest founded Residents Medical, a company that quickly skyrocketed to success, generating high seven figure revenues in its first year alone. Driven by his desire to revolutionize education, Dr. Everest went on to found edYOU Technologies.':
-          this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        case 'edYOU is a patented learning and wellness platform that helps individuals and institutions alike. We help humans learn more and help humans increase their overall health by providing conversational help to improve mental and physical wellness. My AI beings and I are available around the clock to help you learn and feel better. With edYOU, we are your support system 24/7 in real-time.':
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-          this.router.navigate(['/company']);
-        break; 
-        case 'edYOU is creating a better future by revolutionizing learning, empowering individuals and enterprise, and boosting wellness, by driving innovation through our artificial intelligence platform, while paying it forward.':
-          this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
 
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
 
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
                 }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
+              }
+            }, 100);
           }
-        break;   
-        case 'The mission of edYOU is to continue growth as a research-backed, world leader in personalized AI, focused on wellness and transforming how individuals and enterprise learn. Our patented, safe technology, delivered through humanlike AI Being, enables humans to unleash their full potential through self-improvement in an augmented real-time, conversational experience.':
-          this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        
-        case 'At edYOU Labs, the future of learning and wellness takes shape. Our team pushes boundaries in AI and wellness to create the next generation of personalized  experiences. Come explore the possibilities! edYOU Labs develops breakthroughs that reimagine the role of AI in learning and mental health.':
-          this.router.navigate(['/labs']);
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening Conversational AI Beings':
+        this.router.navigate(['/labs'], { fragment: 'cab' }).then(() => {
 
-        case 'The Proprietary Ingestion Engine (PIE) is the frontline of our cutting-edge learning and wellness platform. PIE intelligently processes massive amounts of data, structuring and filtering information to enable personalized education experiences. PIE combines machine learning with human insight to ingest data from diverse global sources.':
-          this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-        break;  
-        
-        case 'The Personalized AI (PAI) module is the brainpower behind edYOU’s groundbreaking approach to learning. PAI enables truly customized conversations and content tailored to each individual user. Through edYOU’s proprietary EDNLP natural language processing technology, PAI understands learners’ unique contexts, interests, and knowledge. It fosters an engaging dialogue where users feel heard and understood at a personal level.':
-          this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
-          }
-    
-        break;  
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
 
-        case "Some of edYOU's clients are the Hospital Corporations of America,  California Northstate University College of Medicine, Sierra Canyon School, and Residents Medical.":
-          this.router.navigate(['/main'], { fragment: 'cp' }).then(() => {
-           
-            const fragment = this.route.snapshot.fragment;
-            if (fragment) {
-              setTimeout(() => {
-                const element = document.getElementById(fragment);
-                if (element) {
-                  const elementTop = element.getBoundingClientRect().top;
-                  const viewportHeight = window.innerHeight;
-        
-                  // Scroll the element into view
-                  element.scrollIntoView({ behavior: 'smooth' });
-        
-                  // Additional check to ensure element is visible if it is just outside the view
-                  if (elementTop < 0 || elementTop > viewportHeight) {
-                    window.scrollBy({
-                      top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
-                      behavior: 'smooth'
-                    });
-                  }
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
                 }
-              }, 100); 
-            }
-          });
-          if(this.fullScreen == false){
-            this.onLoadCard('')
+              }
+            }, 100);
           }
-    
-        break;  
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening Personalized AI':
+        this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Opening Proprietary Ingestion Engine':
+        this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening Intelligent Curation Engine':
+        this.router.navigate(['/labs'], { fragment: 'ice' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'Opening academic integrity':
+        this.router.navigate(['/academic-integrity']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+      case 'Owain Yeoman is the Chief Commercial Officer for edYOU technologies, where he advances education by facilitating partnerships between edYOU and academic institutions. He previously built an acclaimed acting career over 20 years, starring in shows like “The Mentalist” and films including “Troy”.':
+        this.router.navigate(['/company'], { fragment: 'oy' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'To request access from our Investor Area, please fill out the form https://edyou.com/investor-access/. We will reach out to you shortly with additional information.':
+        this.router.navigate(['/investors'], { fragment: 'signin' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+
+      case 'With a dual doctorate including a PhD in education, Dr. Everest has dedicated his life to making a difference in the world. Using just a $1,500 loan, Dr. Everest founded Residents Medical, a company that quickly skyrocketed to success, generating high seven figure revenues in its first year alone. Driven by his desire to revolutionize education, Dr. Everest went on to found edYOU Technologies.':
+        this.router.navigate(['/company'], { fragment: 'team' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'edYOU is a patented learning and wellness platform that helps individuals and institutions alike. We help humans learn more and help humans increase their overall health by providing conversational help to improve mental and physical wellness. My AI beings and I are available around the clock to help you learn and feel better. With edYOU, we are your support system 24/7 in real-time.':
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        this.router.navigate(['/company']);
+        break;
+      case 'edYOU is creating a better future by revolutionizing learning, empowering individuals and enterprise, and boosting wellness, by driving innovation through our artificial intelligence platform, while paying it forward.':
+        this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+      case 'The mission of edYOU is to continue growth as a research-backed, world leader in personalized AI, focused on wellness and transforming how individuals and enterprise learn. Our patented, safe technology, delivered through humanlike AI Being, enables humans to unleash their full potential through self-improvement in an augmented real-time, conversational experience.':
+        this.router.navigate(['/company'], { fragment: 'vision' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+
+      case 'At edYOU Labs, the future of learning and wellness takes shape. Our team pushes boundaries in AI and wellness to create the next generation of personalized  experiences. Come explore the possibilities! edYOU Labs develops breakthroughs that reimagine the role of AI in learning and mental health.':
+        this.router.navigate(['/labs']);
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+
+      case 'The Proprietary Ingestion Engine (PIE) is the frontline of our cutting-edge learning and wellness platform. PIE intelligently processes massive amounts of data, structuring and filtering information to enable personalized education experiences. PIE combines machine learning with human insight to ingest data from diverse global sources.':
+        this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+        break;
+
+      case 'The Personalized AI (PAI) module is the brainpower behind edYOU’s groundbreaking approach to learning. PAI enables truly customized conversations and content tailored to each individual user. Through edYOU’s proprietary EDNLP natural language processing technology, PAI understands learners’ unique contexts, interests, and knowledge. It fosters an engaging dialogue where users feel heard and understood at a personal level.':
+        this.router.navigate(['/labs'], { fragment: 'pai' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
+
+      case "Some of edYOU's clients are the Hospital Corporations of America,  California Northstate University College of Medicine, Sierra Canyon School, and Residents Medical.":
+        this.router.navigate(['/main'], { fragment: 'cp' }).then(() => {
+
+          const fragment = this.route.snapshot.fragment;
+          if (fragment) {
+            setTimeout(() => {
+              const element = document.getElementById(fragment);
+              if (element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+
+                // Scroll the element into view
+                element.scrollIntoView({ behavior: 'smooth' });
+
+                // Additional check to ensure element is visible if it is just outside the view
+                if (elementTop < 0 || elementTop > viewportHeight) {
+                  window.scrollBy({
+                    top: elementTop < 0 ? elementTop : elementTop - viewportHeight + element.offsetHeight,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }, 100);
+          }
+        });
+        if (this.fullScreen == false) {
+          this.onLoadCard('')
+        }
+
+        break;
 
 
 
@@ -3100,7 +3177,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (localStorage.getItem('AvatResCC') === "false") {
         //   console.log('its landscape mode normal one' , )
         //  console.log('its landscape ==>  its on full screen')
-        avatarCanvas.style.height = '220px'
+        avatarCanvas.style.height = '250px'
         $('#message').css('width', '350px')
       }
     }
@@ -3249,53 +3326,56 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (windowWidth < 480) {
       this.isMobileNormalTrue = true
       this.bottomPositionWidth = '81.5%'
-      this.inputWidthSize = '160px';
+      this.inputWidthSize = '210px';
       this.bottomPosition = 0
       // this.borderRadius = '0px 0px 20px 20px'
       this.borderRadius = '0px 0px 3px 3px'
       $('#settingId').addClass('showI');
       // this.inputmarginLeft = '35px'
-      this.inputheightSize = '50px'
+      this.inputheightSize = '48px'
       this.bottomPositionheight = '60px'
       // this.stopBottomSize = '70%'
       this.inputMarginLeft = '-2px'
       // this.stopLeftSize = '8%'
       this.stopBottomSize = '75%'
       this.stopLeftSize = '10%'
-      this.micWidth = '50'
-      this.micWidthOnly = '50'
+      this.micWidth = '48'
+      this.micWidthOnly = '48'
       this.micMarginleft = '0'
-      this.micHeight = '50'
+      this.micHeight = '48'
       this.micMarginLeft2 = '2px'
-      this.colorBG = this.backgroundColor
+      this.box2MarginLeft = '4px'
+      this.mainClassBottomsize = 2
     } else {
       this.isMobileNormalTrue = false
       // this.bottomPosition = 67
-      this.bottomPosition = 12
+      this.bottomPosition = 10
       //  this.borderRadius = '0px 0px 20px 20px'
-       this.borderRadius = '9px'
-       //   this.borderRadius = '0px 0px 2px 2px'
-          this.colorBG = this.backgroundColor
+      this.borderRadius = '0px 0px 9px 9px'
       // this.bottomPositionWidth = '90%'
-      // this.bottomPositionWidth = '77.5%'
-      this.bottomPositionWidth = '79.5%'
+      // this.bottomPositionWidth = '77.5%' 
+       this.bottomPositionWidth = '79%'
       // this.inputWidthSize = '201px';
-      this.inputWidthSize = '265px';
+      this.inputWidthSize = '250px';
       $('#settingId').addClass('showI');
-      this.inputheightSize = '50px'
+      this.inputheightSize = '48px'
       this.inputMarginLeft = '3px'
       this.bottomPositionheight = '60px'
       this.stopBottomSize = '75%'
       this.stopLeftSize = '10%'
-      // this.micWidth = '50'
-      this.micWidth = '110'
-      // this.micWidthOnly = '50'
-      this.micWidthOnly = '120'
-      this.micMarginleft = '3'
-      this.micHeight = '47'
-      this.micMarginLeft2 = '3px'
+      this.micWidth = '48'
+      this.micWidthOnly = '48'
+      this.micMarginleft = '0'
+      this.micHeight = '48'
+      this.micMarginLeft2 = '0px'
+      this.box2MarginLeft = '6px'
+      // stopicon
+      //this.stopIconRightPosition = '116'
+      // this.stopIconBottomPosition = '95'
+      this.mainClassBottomsize = 2
+      this.stopIconWidthPosition = '50'
+      this.stopIconHeightPosition = '50'
     }
-
 
 
 
@@ -3304,57 +3384,29 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   maximizeBoxCardUI() {
     if (window.screen.width < 480) {
 
-      this.bottomPosition = 0
+      this.bottomPosition = 7
       this.borderRadius = '0px 0px 0px 0px'
       this.bottomPositionWidth = '100%'
       this.inputWidthSize = '100%'
       this.inputmarginLeft = '0px'
-      this.inputheightSize = '45px !important'
-      this.inputmarginTop = '2px'
+      this.inputheightSize = '50px'
       this.inputMarginLeft = '-2px'
-      this.bottomPositionheight = '68px'
+      this.bottomPositionheight = '55px'
       this.stopBottomSize = '20%'
       this.stopLeftSize = '5%'
       this.micWidth = '50'
       this.micWidthOnly = '50'
-      this.micMarginleft = '2'
+      this.micMarginleft = '0'
       this.micHeight = '50'
       this.micMarginLeft2 = '0px'
-    } else if ((innerHeight == 1180 || innerHeight == 1194 || innerHeight == 1112 || innerHeight == 1024 || innerHeight == 1106 || innerHeight == 1138 || innerHeight == 1120 || innerHeight == 1010 || innerHeight == 1061) && (innerWidth == 820 || innerWidth == 834 || innerWidth == 768 || innerWidth == 712 || innerWidth == 810)) { //ipad air , 10 , 9 , ipad pro 11
-      this.stopBottomSize = '20%'
-      this.stopLeftSize = '20%'
-      this.bottomPosition = 0
-      this.borderRadius = '0px 0px 0px 0px'
-      this.bottomPositionWidth = '100%'
-      this.inputWidthSize = '100%'
+      this.box2MarginLeft = '3px'
+      this.stopIconWidthPosition = '40'
+      this.stopIconHeightPosition = '40'
+      this.mainClassBottomsize = 0
+    }
 
-      this.inputmarginLeft = '0px'
-      this.inputheightSize = '55px !important'
-      this.bottomPositionheight = '68px'
 
-      this.micWidth = '55'
-      this.micWidthOnly = '57'
-      this.micMarginleft = '6'
-      this.micHeight = '55'
-      this.micMarginLeft2 = '6px'
-      //  } else if (innerHeight == 1024 && innerWidth == 1366) { // landscape ipad pro
-    } else if ((innerHeight == 1366 || innerHeight == 1368 || innerHeight == 1000 || innerHeight == 1100 || innerHeight == 1292) && (innerWidth == 1366 || innerWidth == 912 || innerWidth == 1024 || innerWidth == 1500 || innerWidth == 1700)) { // ipad pro 12
-      this.stopBottomSize = '20%'
-      this.stopLeftSize = '20%'
-      this.bottomPosition = 0
-      this.borderRadius = '0px 0px 0px 0px'
-      this.bottomPositionWidth = '100%'
-      this.inputWidthSize = '100%'
-
-      this.inputmarginLeft = '0px'
-      this.inputheightSize = '55px !important'
-      this.bottomPositionheight = '68px'
-
-      this.micWidth = '60'
-      this.micWidthOnly = '57'
-      this.micMarginleft = '2'
-      this.micHeight = '55'
-    } else if (innerHeight == 1152 && innerWidth == 2048) {
+    else if (innerHeight == 1152 && innerWidth == 2048) {
       this.stopBottomSize = '30%'
       this.stopLeftSize = '65%'
       this.bottomPosition = 0
@@ -3363,38 +3415,44 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.inputWidthSize = '100%'
 
       this.inputmarginLeft = '0px'
-      this.inputheightSize = '55px !important'
+      this.inputheightSize = '60px'
       this.bottomPositionheight = '68px'
 
-      this.micWidth = '55'
-      this.micWidthOnly = '55'
-      this.micMarginleft = '2'
-      this.micHeight = '55'
+      this.micWidth = '60'
+      this.micWidthOnly = '57'
+      this.micMarginleft = '0'
+      this.micHeight = '60'
 
     } else {
-      this.bottomPosition = 0
+      this.bottomPosition = 15
       this.borderRadius = '0px 0px 0px 0px'
       this.bottomPositionWidth = '100%'
       this.inputWidthSize = '100%'
       this.inputmarginLeft = '0px'
       this.inputheightSize = '55px !important'
 
-      this.bottomPositionheight = '68px'
+      this.bottomPositionheight = '58px'
       this.stopBottomSize = '35%'
       this.stopLeftSize = '31%'
       this.micWidth = '55'
       this.micWidthOnly = '55'
-      this.micMarginleft = '6'
+      this.micMarginleft = '0'
       this.micHeight = '55'
-      this.micMarginLeft2 = '6px'
+      this.micMarginLeft2 = '0px'
+      this.box2MarginLeft = '9px'
+      // this.stopIconRightPosition = '30'
+      // this.stopIconBottomPosition = '125'
+      this.mainClassBottomsize = 0
+      this.stopIconWidthPosition = '60'
+      this.stopIconHeightPosition = '60'
     }
 
 
   }
 
   hideAvatarForMobile() {
-    const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
-    this.renderer.addClass(div1, 'showI');
+    // const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
+    // this.renderer.addClass(div1, 'showI');
   }
 
 
@@ -3410,7 +3468,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         $('#bottomBar').removeClass('baseChatBottom');
 
         if (window.screen.width < 480) {
-          this.hideAvatarForMobile()
+        //  this.hideAvatarForMobile()
           $('#bottomBar').addClass('baseChatBottom');
           $('#mobileDotAni').addClass('showI');
         }
@@ -3426,9 +3484,15 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         console.log('small')
         this.minimizeBoxCardUI()
         $('#box3Main').addClass('showI');
+        $('#muteVoiceId').addClass('showI');
 
-
+        $('#tourIcon').addClass('showI');
         // $('#stopavatarId').addClass('showI');
+        //
+        $('#stopavatarId').addClass('stopHandIconSmallScreen');
+        $('#stopavatarId').removeClass('stopHandIcon');
+        $('#stopSoundId').addClass('stopIConsmallscreenImg');
+        $('#stopSoundId').removeClass('stopIConImg');
         // mic icons
         $('#zoomMic').addClass('microphoneMobile');
         $('#zoomMic').removeClass('microphoneOn');
@@ -3477,7 +3541,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         $('#ruleSeries').addClass('showI')
         $('#feedback').addClass('showI')
         $('#audioMicBut').css('background-color', '#d9e9fd')
-
+        $('#chatbubblemessage').removeClass('showMessage')
         $('#messDescription').addClass('hideMessage')
         this.changeAvatarSize()
         this.ischatBoxOpen = false
@@ -3492,13 +3556,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       } else if (this.fullScreen === false) {
         // condition for making big screen avatar card
         this.checkFullScreenB = false
-     
+
         $('#bottomBar').addClass('baseChatBottom');
         this.expandOn = false
         // card minimize
         this.maximizeBoxCardUI()
         $('#box3Main').removeClass('showI');
-
+        $('#muteVoiceId').removeClass('showI');
+        $('#tourIcon').removeClass('showI');
         if (window.screen.width < 480) {
           $('#box3Main').addClass('showI');
           $('#bottomBar').removeClass('baseChatBottom');
@@ -3516,7 +3581,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         $('#zoomMic').removeClass('microphoneMobile');
         // $('#sendId').addClass('newIconSize');
         // $('#sendId').removeClass('newIconSizeMobile');
-
+        $('#stopavatarId').removeClass('stopHandIconSmallScreen');
+        $('#stopavatarId').addClass('stopHandIcon');
+        $('#stopSoundId').removeClass('stopIConsmallscreenImg');
+        $('#stopSoundId').addClass('stopIConImg');
         // $('#voiceId').addClass('newIconSize');
         // $('#voiceId').removeClass('newIconSizeMobile');
         // end mic icons
@@ -3566,7 +3634,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         this.iconShow = true
         this.changeAvatarSize()
         if (this.ccOnOff == true) {
-          $('#message').addClass('showMessage')
+          // $('#message').addClass('showMessage')
+          console.log('cc check bubble ')
+          this.checkBubbleOpen()
         }
       }
     }, 0)
@@ -3587,6 +3657,21 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
+  checkBubbleOpen() {
+    if (localStorage.hasOwnProperty("mathtoggle")) {
+      let toggle = JSON.parse(localStorage.getItem('mathtoggle') || 'undefined')
+      if (toggle == true) {
+        $('#message').addClass('showMessage')
+        $('#chatbubblemessage').removeClass('showMessage')
+      } else {
+        $('#chatbubblemessage').addClass('showMessage')
+      }
+    } else {
+      console.log('else case chat bubble ')
+      $('#chatbubblemessage').addClass('showMessage')
+    }
+  }
+
 
   /**
  * Function to change the size of the avatar
@@ -3596,8 +3681,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // condition for making big screen avatar card
       console.warn('viewport width', window.innerWidth
         , 'viewport height', window.innerHeight)
-        const width = window.screen.width
-        const height = window.screen.height 
+      const width = window.screen.width
+      const height = window.screen.height
       var t: any = document.querySelector('#sm-video')
       var videoTag: any = document.querySelector('#smVideo')
       // console.log('canvas',t)
@@ -3605,7 +3690,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
         t.style.width = '100%'
         if (window.innerWidth < 480) {
           //  this.setVideo(600, 650)
-          this.setVideo(700, 600)
+          // this.setVideo(700, 600)
+          this.setVideo(600, 700)
           console.log('when the fulldcreen variable false mobile')
           // t.style.height = '440px'
           t.style.width = '80%'
@@ -3640,7 +3726,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
             console.log('landscape ipad 12')
             //   $(videoTag).css('margin-left', '0px')
             $(t).css('margin-left', '0px')
- //  $(videoTag).css('margin-left', '0px')
+            //  $(videoTag).css('margin-left', '0px')
             this.setVideo(700, 250)
             //} else if ((innerHeight == 746 || innerHeight == 820 || innerHeight == 701) && (innerWidth == 1180)) {  // landsvape ipad  10 
           } else if ((innerHeight >= 700 && innerHeight <= 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
@@ -3664,34 +3750,35 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           } else if ((innerHeight >= 700 && innerHeight <= 834) && (innerWidth == 1194)) {  // landscape ipad 11
             t.style.width = '90%'
             console.log('landscape ipad 11')
-         //   $(videoTag).css('margin-left', '0px')
+            //   $(videoTag).css('margin-left', '0px')
             $(t).css('margin-left', '0px')
-           //  $(videoTag).css('margin-left', '0px')
+            //  $(videoTag).css('margin-left', '0px')
             this.setVideo(700, 250)
 
-          }else if((innerHeight >= 1100 && innerHeight <= 1500) && (innerWidth == 1024)) { // landscape ipad 11
+          } else if ((innerHeight >= 1100 && innerHeight <= 1500) && (innerWidth == 1024)) { // landscape ipad 11
             console.log('----- ipad 12 inside ---------------')
-          
-          }else if((height >= 1150 && height <= 1450) && (width == 1024)) { 
+
+          } else if ((height >= 1150 && height <= 1450) && (width == 1024)) {
             console.log('----- ipad 12 inside ---------------')
             t.style.width = '90%'
             console.log('landscape ipad 12')
-            $(videoTag).css('margin-left', '0px !impotant' )
+            $(videoTag).css('margin-left', '0px !impotant')
             $(t).css('margin-left', '0px')
             this.setVideo(900, 550)
-          
-          }  else {
+
+          } else {
             $(t).css('margin-left', '0px')
             //  $(videoTag).css('margin-left', '-140px')
             let width = window.screen.width
-            let height = window.screen.height -200
+            // let height = window.screen.height - 200
+            let height = window.screen.height - 60
 
             // this.setVideo(900, 390)
             console.warn('big screen')
             console.log('========', width, height)
-           
-              this.setVideo(width, height)
-            
+
+            this.setVideo(width, height)
+
           }
 
 
@@ -4066,7 +4153,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
-
   /**
  * Function called when the test or learning is crossed or closed
  * This function is triggered when the user crosses or closes the test.
@@ -4082,11 +4168,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.expandOn = true
     this.mobileAvatarOnOff = false
     this.refreshBtnPPT = false
-
-    if (window.screen.width < 480) {
-      this.mobileAvatarOnOff = true
-      this.hideAvatarForMobile()
-    }
+this.bubblewindowOnOff = true
+    // if (window.screen.width < 480) {
+    // this.mobileAvatarOnOff = true
+    // this.hideAvatarForMobile()
+    $('#chat-widget-minimized').css('display', 'block');
+    $('#chat-widget-container').css('z-index', '11000');
+    $('#chat-widget-container').css('height', '84px');
+    //  }
 
     var videoTag: any = document.querySelector('#smVideo')
     $(videoTag).css('margin-left', '0px')
@@ -4098,10 +4187,16 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     localStorage.setItem('AvatResCC', 'true')
     this.ser.updatePDFLinkData("");
     //  $('#hambergerBar').addClass('showI');
+    $('#stopavatarId').addClass('stopHandIconSmallScreen');
+    $('#stopavatarId').removeClass('stopHandIcon');
+    $('#stopSoundId').addClass('stopIConsmallscreenImg');
+    $('#stopSoundId').removeClass('stopIConImg');
+    //
     $('#sidebarAvatar').css('display', 'none');
     $('#hambergerBar').addClass('showI');
     $('#pptPageLoad').addClass('hideMessage')
-
+    $('#chatbubblemessage').css('margin-top', '8px')
+    $('#chatbubblemessage').removeClass('learningchatBOx');
     // chat btn 
     // $('#sendId').removeClass('newIconSize')
     // $('#sendId').addClass('newIconSizeMobile ')
@@ -4118,12 +4213,14 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     $('#QuestionDisplay').css('margin-top', '21px')
     // $('#pdfDataSet').css('margin-top', '15px')
     $('#pdfDataSet').css('margin-top', '25px')
-
+    $('#muteVoiceId').addClass('showI');
+    $('#box3Main').addClass('showI');
+    $('#mobileDotAni').addClass('showI');
 
 
     if (window.screen.width < 480) {
       this.bottomPositionWidth = '81.5%'
-      this.inputWidthSize = '160px';
+      this.inputWidthSize = '210px';
       this.bottomPosition = 0
       this.micMarginLeft2 = '2px'
       //  this.borderRadius = '0px 0px 20px 20px'
@@ -4143,29 +4240,27 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.micHeight = '50'
       this.micMarginLeft2 = '2px'
     } else {
-      // // this.bottomPosition = 67
-      // this.bottomPosition = 12
-      // //  this.borderRadius = '0px 0px 20px 20px'
-      //  this.borderRadius = '9px'
-      // // this.borderRadius = '0px 0px 2px 2px'
-      // // this.bottomPositionWidth = '90%'
-      // this.bottomPositionWidth = '77.5%'
-      // // this.inputWidthSize = '201px';
-      // this.inputWidthSize = '204px';
-      // $('#settingId').addClass('showI');
-      // this.inputheightSize = '50px'
-      // this.micMarginLeft2 = '0px'
-      // this.inputMarginLeft = '3px'
-      // this.bottomPositionheight = '60px'
-      // this.stopBottomSize = '75%'
-      // this.stopLeftSize = '10%'
-      // this.micWidth = '50'
+      // this.bottomPosition = 67
+      this.bottomPosition = 12
+      //  this.borderRadius = '0px 0px 20px 20px'
+      this.borderRadius = '0px 0px 9px 9px'
+      // this.bottomPositionWidth = '90%'
+      this.bottomPositionWidth = '77.5%'
+      // this.inputWidthSize = '201px';
+      this.inputWidthSize = '220px';
+      $('#settingId').addClass('showI');
+      this.inputheightSize = '50px'
+      this.micMarginLeft2 = '0px'
+      this.inputMarginLeft = '3px'
+      this.bottomPositionheight = '60px'
+      this.stopBottomSize = '75%'
+      this.stopLeftSize = '10%'
+      this.micWidth = '50'
 
-      // this.micWidthOnly = '50'
-      // this.micMarginleft = '0'
-      // this.micHeight = '50'
-      // this.micMarginLeft2 = '0px'
-      this.minimizeBoxCardUI()
+      this.micWidthOnly = '50'
+      this.micMarginleft = '0'
+      this.micHeight = '50'
+      this.micMarginLeft2 = '0px'
     }
 
 
@@ -4178,6 +4273,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     // end mic icons
 
     // card minimize
+
+    $('#tourIcon').addClass('showI');
+    $('#tourIcon').css('z-index', '1');
     $('#minimizeAvatar').addClass('showI');
     $('#maximizeAvatar').removeClass('showI');
 
@@ -4192,6 +4290,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     $('#sm-video').removeClass('uneeqAv')
     $('#sm-video').addClass('uneeqAvatar')
     $('#message').removeClass('showMessage')
+    $('#chatbubblemessage').removeClass('showMessage')
     //  $('#message').addClass('hideMessage')
     $('#movableCard').removeClass('full_screen')
     $('#movableCard-main').removeClass('full_screen')
@@ -4212,7 +4311,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     $('#exitExam').addClass('showI')
     $('#exitpresentation').addClass('showI')
     $('#downloadpdf').addClass('showI')
-
     $('#userCC').removeClass('showMessage')
     $('#cross').removeClass('speakingsss_large')
     $('#openOnTestOnly').addClass('showI')
@@ -4223,7 +4321,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     $('#QuestionDisplay').addClass('hideMessage')
     $('#optionMessage').addClass('hideMessage')
     //mathematice
-
     this.ischatBoxOpen = false
     this.iconShow = false
     this.defaultExitMessage()
@@ -4232,7 +4329,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   }
-
 
   // default message 
   defaultExitMessage() {
@@ -4362,7 +4458,13 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
 
+  @HostListener('document:keydown.enter', ['$event'])
+  onEnterPress(event: KeyboardEvent) { 
 
+    this.sendTextToAvatar() 
+  
+  
+  }
 
 
 }

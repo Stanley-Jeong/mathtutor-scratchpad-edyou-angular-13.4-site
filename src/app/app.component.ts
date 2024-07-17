@@ -1,5 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
+import { CacheCleanerService } from './service/cache-cleaner.service';
+import { SwUpdate } from '@angular/service-worker';
 
 declare var jQuery: any;
 
@@ -14,16 +16,9 @@ export class AppComponent implements OnInit{
   colorLogo = "https://edyouwebsite.s3.us-west-2.amazonaws.com/edyou-logo-horiz-empower-color.png";
   container = ".global-nav-container";
 
-  ngOnInit(): void {
-    this.initializeScrollListener();
-    if(this.router.url.includes("main")){
-      this.router.navigate(['/company']);
-      setTimeout("",20)
-      this.router.navigate(['/main']);
-    }
-  }
-   
-  constructor(private router: Router) {
+
+  constructor(private router:Router,
+    private cacheCleanerService: CacheCleanerService, private swUpdate: SwUpdate) {
 
     // Subscribe to NavigationStart event
     this.router.events.subscribe(event => {
@@ -42,6 +37,29 @@ export class AppComponent implements OnInit{
       this.highlightActiveLinkAndRemoveArrow();
     });
   }
+
+
+  ngOnInit(): void {
+    this.initializeScrollListener();
+    if(this.router.url.includes("main")){
+      this.router.navigate(['/company']);
+      setTimeout("",20)
+      this.router.navigate(['/main']);
+    }
+
+    if (this.swUpdate.isEnabled) { console.log(this.swUpdate.isEnabled)
+      this.swUpdate.available.subscribe(() => {
+        this.swUpdate.activateUpdate().then(() => {
+          this.cacheCleanerService.clearCache();
+          document.location.reload();
+        });
+      });
+    }else{
+      console.log(this.swUpdate.isEnabled)
+    }
+  }
+   
+
   
 
   highlightActiveLinkAndRemoveArrow(){
