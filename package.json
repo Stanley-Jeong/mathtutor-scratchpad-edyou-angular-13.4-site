@@ -5,14 +5,17 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:development": " ng build --configuration development",
-    "build:production": " ng build --configuration production",
+    "build:development": " ng build --configuration development --outputHashing=all",
+    "build:production": " ng build --configuration production --outputHashing=all",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run calender:serve-ssr",
     "serve:ssr": "node dist/calender/server/main.js",
     "build:ssr": "ng build && ng run calender:server",
     "prerender": "ng run calender:prerender"
+  },
+  "netlify": {
+  "functions": "netlify/functions"
   },
   "private": true,
   "dependencies": {
