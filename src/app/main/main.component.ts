@@ -1,8 +1,10 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { UserService } from '../service/user.service';
 import { ColorChangeService } from '../service/color-change.service';
+import { isPlatformBrowser } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,7 +14,10 @@ export class MainComponent implements OnInit,OnDestroy {
 
   private ngUnsubscribe = new Subject();
   scrollKey: any;
-  constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService) {
+  private isBrowser: boolean;
+  constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
+  private titleService: Title, private metaService: Meta) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     this.service.getIp().subscribe((res:any)=>{
       console.log(res,"my ip----------------------------------------------")
     })
@@ -23,18 +28,22 @@ export class MainComponent implements OnInit,OnDestroy {
   async ngAfterViewInit() {
     this.navigateAndReplaceClass();
     // Autoplay the video by triggering a play event
+    if (this.isBrowser) {
     const videoIframe= document.getElementById('widget2') as HTMLIFrameElement;
     if (videoIframe) {
       console.log('hey');
       videoIframe.contentWindow?.postMessage('{"event":"command","func":"mute","args":""}', '*');
       videoIframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     }
+    }
   }
 
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    if (this.isBrowser) {
     this.service2.saveScrollPosition(this.scrollKey, window.scrollY);
+    }
   }
 
   async navigateAndReplaceClass() {
@@ -45,39 +54,41 @@ export class MainComponent implements OnInit,OnDestroy {
   private replaceClass(className: string, newClassName: string): void {
     const elements = document.querySelectorAll("." + className);
     elements.forEach(element => {
-      
       element.classList.remove(className);
-      // element.className = newClassName; // Directly assign empty string
     });
   }
 
   ngOnInit(): void {
+    this.setTitle('Home Page - Developing AI technology solutions for learning and wellness');
+    this.setMetaDescription('Home page description')
     const image1 = document.getElementById('image1') as HTMLImageElement;
     const image2 = document.getElementById('image2') as HTMLImageElement;
     const image3 = document.getElementById('image3') as HTMLImageElement;
     const images: HTMLImageElement[] = [image1, image2, image3];
-
     this.startImageRotation(images);
+  }
+  setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+  setMetaDescription(description: string) {
+    this.metaService.updateTag({ name: 'description', content: description });
   }
 
   startImageRotation(images: HTMLImageElement[]): void {
     let currentImageIndex = 0;
-
-    // Start the animation
     this.fadeIn(images[currentImageIndex]);
-
     setInterval(() => {
       this.fadeOut(images[currentImageIndex]);
-      currentImageIndex = (currentImageIndex + 1) % images.length; // This ensures looping
+      currentImageIndex = (currentImageIndex + 1) % images.length; 
       this.fadeIn(images[currentImageIndex]);
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
   }
 
   fadeIn(imageElement: HTMLImageElement): void {
     imageElement.classList.add('fade-in');
     setTimeout(() => {
       this.fadeOut(imageElement);
-    }, 5000); // Fade out after 5 seconds
+    }, 5000); 
   }
 
   fadeOut(imageElement: HTMLImageElement): void {
@@ -85,12 +96,12 @@ export class MainComponent implements OnInit,OnDestroy {
     imageElement.classList.add('fade-out');
     setTimeout(() => {
       imageElement.classList.remove('fade-out');
-    }, 2000); // Remove fade-out class after animation completes
+    }, 2000); 
   }
 
   navigateToSafety() {
     this.router.navigate(['/safety']).then(()=> {
-      // window.location.reload();
+      
     })
   }    
   navigateToMain(){
@@ -99,7 +110,6 @@ export class MainComponent implements OnInit,OnDestroy {
 
   navigateToLabs() {
     this.router.navigate(['/labs']).then(()=> {
-      // window.location.reload();
     })
   }
 
@@ -108,56 +118,27 @@ export class MainComponent implements OnInit,OnDestroy {
   }
 
   navigateToEdyousAi(){
+    if (this.isBrowser) {
     this.router.navigate(['/how-edyous-ai-is-reimagining-the-future-of-personalized-learning']).then(() => {
       window.scrollTo(0, 0);
     });
   }
+  }
 
   navigateToRevolutionizingEducation(){
+    if (this.isBrowser) {
     this.router.navigate(['/revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap']).then(() => {
       window.scrollTo(0, 0);
     });
   }
+  }
 
   navigateToPayItForward() {
+    if (this.isBrowser) {
     this.router.navigate(['/pay-it-forward']).then(()=> {
         window.scrollTo(0, 0);
     });
   }
+  }
 
-  // @HostListener('window:scroll', ['$event']) onScrollEvent($event:any){
-  //   console.log($event);
-  //   console.log("scrolling");
-  //   this.service.getIp().subscribe((res:any)=>{
-  //     console.log(res.ip,"my ip----------------------------------------------")
-  //     localStorage.setItem("userIp2", JSON.stringify(res.ip));
-  //   })
-  // } 
-
-  
-
-  // @ViewChild('inside')inside!: ElementRef;
-
-  // @HostListener('document:click', ['$event'])
-  // clickout(event: any) {
-  //   if (this.inside.nativeElement.contains(event.target)) {
-  //     console.log('inside')
-  //     this.service.getIp().subscribe((res:any)=>{
-  //       console.log(res.ip,"my ip----------------------------------------------")
-  //       localStorage.setItem("userIp2", JSON.stringify(res.ip));
-  //     })
-  //   } else {
-     
-  //     console.log('outside')
-  //     // this.onCloseHandled()
-  //   }
-  // }
-  // @HostListener('window:click', ['$event']) onScrollEvent2($event:any){
-  //   console.log($event);
-  //   console.log("clicked");
-  //   this.service.getIp().subscribe((res:any)=>{
-  //     console.log(res.ip,"my ip----------------------------------------------")
-  //     localStorage.setItem("userIp2", JSON.stringify(res.ip));
-  //   })
-  // } 
 }

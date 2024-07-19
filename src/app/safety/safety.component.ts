@@ -1,7 +1,9 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ColorChangeService } from '../service/color-change.service';
+import { isPlatformBrowser } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-safety',
@@ -12,45 +14,45 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
 
   private ngUnsubscribe = new Subject();
   scrollKey: any;
-
-  constructor(
-    private router: Router,private service : ColorChangeService
-    
-  ) { }
-
+  private isBrowser: boolean;
+  constructor(private router: Router,private service : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
+  private titleService: Title, private metaService: Meta) { 
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+  ngOnInit(): void {
+    this.setTitle('Safety Page - Safety of Use');
+    this.setMetaDescription('Safety Page - Description')
+  }
+  setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+  setMetaDescription(description: string) {
+    this.metaService.updateTag({ name: 'description', content: description });
+  }
 
   async ngAfterViewInit() {
     await this.navigateAndReplaceClass();
   }
 
   ngOnDestroy(): void {
-    // this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    if (this.isBrowser) {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);
+    }
   }
 
   async navigateAndReplaceClass() {
-    await this.router.navigateByUrl(this.router.url); // Trigger navigation event
+    await this.router.navigateByUrl(this.router.url); 
     this.replaceClass("elementor-invisible", "");
   }
 
   private replaceClass(className: string, newClassName: string): void {
+    if(this.isBrowser) {
     const elements = document.querySelectorAll("." + className);
     elements.forEach(element => {
-      
       element.classList.remove(className);
-      // element.className = newClassName; // Directly assign empty string
     });
-
-
-
-    // //addtional
-    // const elementsLight = document.querySelectorAll("." + "light");
-    // elementsLight.forEach(element => {
-      
-    //   element.classList.remove("light");
-    //   // element.className = newClassName; // Directly assign empty string
-    // });
+    }
   }
   
 

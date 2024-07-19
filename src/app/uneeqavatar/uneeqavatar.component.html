@@ -147,8 +147,6 @@
           <img class="ImageAspectRatio Qimage" [src]="ImageData"
             style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
           <!-- Want to work -->
-          <img class="ImageAspectRatio " src="../../assets/nb.jpg"
-            style="height: 330px; max-width: 480px;  box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
           <!-- Finding -->
         </div>
       </div>
@@ -303,7 +301,7 @@ margin-left: 7px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
                 <div class="input-container">
                   <input type="text" [style.width]="inputWidthSize" id="textTourBox" [style.margin-top]="inputmarginTop"
                     [style.height]="inputheightSize" class="group-item"
-                    onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()"
+                    (keydown)="clickSendId1($event)"
                     [(ngModel)]="userText" placeholder="Type here or push mic to talk"
                     style="font-size: medium !important; padding-left: 26px !important;">
 

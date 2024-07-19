@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Investor } from '../models/investor';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InvestorsService } from '../service/investors.service';
@@ -6,6 +6,8 @@ import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
+import { isPlatformBrowser } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-investors',
@@ -16,28 +18,37 @@ export class InvestorsComponent implements OnInit {
 
   investorForm: FormGroup = new FormGroup({});
   successMessage: string = '';
-  loading: boolean = false; // Track loading state
+  loading: boolean = false; 
   successMessageVisible: boolean = false;
   scrollKey: any;
+  private isBrowser: boolean;
   constructor(
     private formBuilder: FormBuilder,
     private investorsService: InvestorsService,
-    private router: Router,private service : ColorChangeService
-  ) { }
+    private titleService: Title, private metaService: Meta,
+    private router: Router,private service : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object
+  ) {this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit(): void {
+    this.setTitle('Investor Page - Investor of Use');
+    this.setMetaDescription('Investor Page - Description');
     this.investorForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
       )]],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
-      phone: ['', [Validators.required, Validators.pattern(/^\d+$/)]], // Only allow numeric characters
+      phone: ['', [Validators.required, Validators.pattern(/^\d+$/)]], 
       company: ['', [Validators.required]],
       user_information: ['', [Validators.required]]
     });
-
     this.toggleBtnBlockClass();
+  }
+  setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
+  setMetaDescription(description: string) {
+    this.metaService.updateTag({ name: 'description', content: description });
   }
 
   requestAccess() {
@@ -47,17 +58,13 @@ export class InvestorsComponent implements OnInit {
       this.investorsService.requestAccess(investor)
         .pipe(
           catchError(error => {
-            console.log("Error submitting form:", error);
             this.successMessage = 'Error! Requesting access failed';
             this.showSuccessMessage();
-            // You can return a new error with more context if needed
             return of(new Error('Form submission failed'));
           })
         )
         .subscribe(
           response => {
-            console.log(response)
-            console.log(response.statusCode);
             if (response && response.statusCode === 200) {
               this.successMessage = '✔️ '+ response.body;
               this.showSuccessMessage();
@@ -65,14 +72,11 @@ export class InvestorsComponent implements OnInit {
             } else {
               this.successMessage = 'Error! Requesting access failed';
               this.showSuccessMessage();
-              console.log("Error submitting form.");
             }
             this.loading = false;
           }
         );
     } else {
-      // Handle invalid form submission
-      console.log("Invalid form submission.");
     }
   }
 
@@ -80,7 +84,7 @@ export class InvestorsComponent implements OnInit {
     this.successMessageVisible = true;
     setTimeout(() => {
       this.successMessageVisible = false;
-    }, 5000); // 10 seconds
+    }, 5000); 
   }
 
   // Helper function to check if a form control has an error
@@ -91,23 +95,26 @@ export class InvestorsComponent implements OnInit {
   navigateToInvestorLogin(){
     this.router.navigate(['/investorLogin']);
   }
-
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.toggleBtnBlockClass();
   }
 
   toggleBtnBlockClass() {
+    if (this.isBrowser) {
     const myButton = document.getElementById('myButton');
     if (window.innerWidth < 576) {
       myButton?.classList.add('btn-block');
     } else {
       myButton?.classList.remove('btn-block');
     }
+    }
   }
 
   ngOnDestroy(): void {
+    if (this.isBrowser) {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);
+    }
   }
 
 

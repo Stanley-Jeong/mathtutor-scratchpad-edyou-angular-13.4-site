@@ -91,8 +91,6 @@
   --flex-grow: var(--container-widget-flex-grow)
 }
 
-
-/*! elementor - v3.19.0 - 07-02-2024 */
 .elementor-widget-divider {
   --divider-border-style: none;
   --divider-border-width: 1px;

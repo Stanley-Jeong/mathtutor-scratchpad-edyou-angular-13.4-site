@@ -7,13 +7,10 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
-
 
 .elementor-21997 .elementor-element.elementor-element-6dbb8b7a {
   --display: flex;
@@ -1108,20 +1105,18 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
 
 /* Start custom CSS for icon-list, class: .elementor-element-1eff9f48 */
 .elementor-21997 .elementor-element.elementor-element-1eff9f48
-
 /* End custom CSS */
+
 /* Start custom CSS for text-editor, class: .elementor-element-474e55df */
 .elementor-21997 .elementor-element.elementor-element-474e55df a {
   color: white;
   text-decoration: underline;
 }
-
 /* End custom CSS */
 /* Start custom CSS for text-editor, class: .elementor-element-65876dfb */
 .elementor-21997 .elementor-element.elementor-element-65876dfb {
   max-width: 40ch !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for text-editor, class: .elementor-element-117a7bd1 */
 .elementor-21997 .elementor-element.elementor-element-117a7bd1 {
@@ -1133,67 +1128,54 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
 .elementor-21997 .elementor-element.elementor-element-3fd6b4bd {
   max-width: 40ch !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for text-editor, class: .elementor-element-53e2fdd7 */
 .elementor-21997 .elementor-element.elementor-element-53e2fdd7 {
   max-width: 40ch !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for text-editor, class: .elementor-element-47a353b0 */
 .elementor-21997 .elementor-element.elementor-element-47a353b0 {
   max-width: 40ch !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for text-editor, class: .elementor-element-4d3274ae */
 .elementor-21997 .elementor-element.elementor-element-4d3274ae {
   max-width: 40ch !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for menu-anchor, class: .elementor-element-4e1e2f8b */
 .elementor-21997 .elementor-element.elementor-element-4e1e2f8b {
   scroll-margin-block-start: 6rem;
 }
-
 /* End custom CSS */
 /* Start custom CSS for container, class: .elementor-element-1144d2fa */
 .elementor-21997 .elementor-element.elementor-element-1144d2fa {
   align-content: space-between !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for container, class: .elementor-element-350da434 */
 .elementor-21997 .elementor-element.elementor-element-350da434 {
   align-content: space-between !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for container, class: .elementor-element-1963bf99 */
 .elementor-21997 .elementor-element.elementor-element-1963bf99 {
   align-content: space-between !important;
 }
-
 /* End custom CSS */
 /* Start custom CSS for ae-post-blocks-adv, class: .elementor-element-b003200 */
 .elementor-21997 .elementor-element.elementor-element-b003200 a {
   color: white;
 }
-
 /* End custom CSS */
-
 /* app.component.css */
-
 .video-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Set the height to fill the entire viewport */
+  height: 100vh; 
 }
-
 .video {
-  /* position: absolute; */
   top: 0;
   left: 0;
 }
@@ -1207,7 +1189,7 @@ body:not(.rtl) .elementor-21997 .elementor-element.elementor-element-1eff9f48 .e
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
 }
 

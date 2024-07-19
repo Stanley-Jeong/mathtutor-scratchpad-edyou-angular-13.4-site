@@ -1,12 +1,10 @@
 @import '../../assets/css/blogPages-19804.css';
 
 /* for the background */
-
 .elementor-19804 .elementor-element.elementor-element-cceb5ac:not(.elementor-motion-effects-element-type-background),
 .elementor-19804 .elementor-element.elementor-element-cceb5ac>.elementor-motion-effects-container>.elementor-motion-effects-layer {
   background-image: url("https://investor.edyou.com/wp-content/uploads/2023/08/lighbulb-colorful-smoke.jpg");
 }
-
 /* end for the background */
 
 .elementor-heading-title {

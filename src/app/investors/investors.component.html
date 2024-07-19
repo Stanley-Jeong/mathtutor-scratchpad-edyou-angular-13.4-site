@@ -12,7 +12,6 @@
             data-id="0016494" data-element_type="widget" data-widget_type="heading.default">
             <div class="elementor-widget-container">
               <style>
-                /*! elementor - v3.19.0 - 07-02-2024 */
                 .elementor-heading-title {
                   padding: 0;
                   margin: 0;
@@ -60,19 +59,6 @@
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
-          <!-- <div
-            class="elementor-element elementor-element-1b7f741 elementor-invisible elementor-widget elementor-widget-video"
-            data-id="1b7f741" data-element_type="widget"
-            data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/youtu.be\/KUyivhfPWCM&quot;,&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}"
-            data-widget_type="video.default">
-            <div class="elementor-widget-container">
-              <style>
-              </style>
-              <div class="elementor-wrapper elementor-open-inline">
-                <div class="elementor-video"></div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
       <div
@@ -118,7 +104,6 @@
                          placeholder="Last Name" [ngClass]="{ 'is-invalid': hasError('lastname', 'required') }" />
                 </div>
               </div>
-            
               <!-- Email and Phone -->
               <div class="form-group row">
                 <div class="col-sm-6 pr-sm-1">
@@ -130,27 +115,20 @@
                          [ngClass]="{ 'is-invalid': hasError('phone', 'required') || hasError('phone', 'pattern') }" />
                 </div>
               </div>
-            
               <!-- Company Name -->
               <div class="form-group">
                 <input type="text" name="company-name" formControlName="company" class="form-control"
                        placeholder="Company Name" [ngClass]="{ 'is-invalid': hasError('company', 'required') }" />
               </div>
-            
               <!-- User Information -->
               <div class="form-group">
                 <textarea class="form-control textArea12" formControlName="user_information" id rows="4"
                           placeholder="Tell us about yourself."
                           [ngClass]="{ 'is-invalid': hasError('user_information', 'required') }"></textarea>
               </div>
-            
               <!-- Submit Button -->
               <div class="form-group row text-left">
-                             
-              
                 <div class="col-12">
-                    <!-- <input type="submit" class="btn btn-success btn-block" [disabled]="investorForm.invalid" value="Request Access"
-                        style="font-size: medium !important; padding: .75rem 1.5rem !important; background-color: #008ec2 !important;" /> -->
                         <button style="height:45px ;" type="submit" id='myButton'
                         class="btn btn-success" [disabled]="investorForm.invalid"
                         style="font-size: large !important; font-weight: 900; padding: .5rem 1.5rem !important; background-color: #008ec2 !important;"
@@ -158,18 +136,12 @@
                         <img class="" style="width : 24px; color:white;" *ngIf="loading"
                           src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="signIn"
                           *ngIf="!loading">Request Access</span></button>                        
-                        <!-- <img class="" style="width : 24px; color:white;"
-												src="../../assets/images/Rolling-1s-200px (2).gif"> -->
                 </div>
-                <!-- <div *ngIf="loading" class="spinner-border text-primary mt-2" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div> -->
                 <span *ngIf="successMessageVisible" style="color: #ffffff;" class="p-2" role="alert">
                     {{successMessage}}
                 </span>
             </div>            
             </form>
-            
           </div>
         </div>
       </div>

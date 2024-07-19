@@ -1,48 +1,6 @@
-/* .elementor-heading-title {
-    padding: 0;
-    margin: 0;
-    line-height: 1
-}
-
-.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit
-}
-
-.elementor-widget-heading .elementor-heading-title.elementor-size-small {
-    font-size: 15px
-}
-
-.elementor-widget-heading .elementor-heading-title.elementor-size-medium {
-    font-size: 19px
-}
-
-.elementor-widget-heading .elementor-heading-title.elementor-size-large {
-    font-size: 29px
-}
-
-.elementor-widget-heading .elementor-heading-title.elementor-size-xl {
-    font-size: 39px
-}
-
-.elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
-    font-size: 59px
-} */
-
-/* :host {
-    color: white;
-  }
-  
-  Optionally, you can target specific elements within the component
-  h1, h2, h3, p, span {
-    color: white;
-  } */
-
 .givesspace{
     padding:0 10px;
 }
-
 .elementor-19146 .elementor-element.elementor-element-077ac19:not(.elementor-motion-effects-element-type-background), .elementor-19146 .elementor-element.elementor-element-077ac19 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url(https://investor.edyou.com/wp-content/uploads/2023/07/hp-tile-background-ice.jpg);
     background-position: center center;
@@ -50,12 +8,10 @@
     background-size: cover;
 }
 
-
- .elementor-19146 .elementor-element.elementor-element-1798925 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+.elementor-19146 .elementor-element.elementor-element-1798925 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url("https://investor.edyou.com/wp-content/uploads/2023/09/holding-hands.jpg") !important;
    
 }
-
 
 .elementor-19146 .elementor-element.elementor-element-ffe970a > .elementor-motion-effects-container > .elementor-motion-effects-layer {
     background-image: url("https://investor.edyou.com/wp-content/uploads/2023/09/security-admin-at-computer-1.jpg") !important;

@@ -904,7 +904,7 @@ video {
 .chatbubbleBox {
   margin-right: 20px;
 
-  height: 400px;
+  height: 500px;
   float: right;
   overflow-y: auto;
   z-index: 1400000;
@@ -6521,25 +6521,6 @@ letter-spacing: 0.2px;
     margin-right: 10px;
   }
 }
-
-
-/* live chat screen */
-@media screen and (device-width: 1280px) and (device-height: 551px) {
-
-  .chatbubbleBox {
-    margin-right: 20px;
-    height: 360px;
-    float: right;
-    overflow-y: auto;
-    z-index: 1400000;
-    width: 500px;
-    color: white;
-    /* bottom: 700px; */
-    -webkit-overflow-scrolling: touch;
-}
-
-}
-
 
 @media only screen and (min-device-width: 768px)and (max-device-width: 1024px) and (orientation: portrait) {
   .speakingsss:hover .min {

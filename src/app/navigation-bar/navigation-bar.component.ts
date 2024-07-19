@@ -1,9 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
+import { isPlatformBrowser } from '@angular/common';
 declare var jQuery: any;
-
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
@@ -29,32 +29,23 @@ declare var jQuery: any;
 })
 export class NavigationBarComponent implements OnInit ,OnDestroy {
   scrollKey: any;
+  private isBrowser: boolean;
   constructor(
-    private router: Router,private service : ColorChangeService
-  ){}
+    private router: Router,private service : ColorChangeService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ){this.isBrowser = isPlatformBrowser(this.platformId);}
 
   isVisible:boolean = false;
 
-  ngOnInit(): void {
-  }
-
-    // jQuery('.back-btn').on('click', function() {
-    //   window.history.back();
-    //   return false;
-    // });
-
-
+  ngOnInit(): void {}
 
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {
-      // window.location.reload();
     })
   }  
   
   navigateToPayItForward() {
-    this.router.navigate(['/pay-it-forward']).then(()=> {
-        // window.location.reload();
-      })
+    this.router.navigate(['/pay-it-forward']).then(()=> {})
   }
 
   navigateToPress(){
@@ -75,7 +66,6 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   
   navigateToSafety() {
     this.router.navigate(['/safety']).then(()=> {
-      // window.location.reload();
     })
   }    
   navigateToMain(){
@@ -84,52 +74,34 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
 
   navigateToLabs() {
     this.router.navigate(['/labs']).then(()=> {
-      // window.location.reload();
     })
   }
 
-  // showNavigation(){
-  //   this.isVisible=true;
-
-  //   const targetDiv = document.getElementById('targetDiv');
-
-  //   // Modify the CSS properties based on visibility state
-  //   if (targetDiv) {
-  //     // alert("working fine..........................................................................");
-  //     targetDiv.style.display = 'block'; // Make the div visible
-  //     targetDiv.style.position = 'fixed'; // Set position to fixed to overlay all elements
-  //     targetDiv.style.top = '0'; // Position from the top of the viewport
-  //     targetDiv.style.left = '0'; // Position from the left of the viewport
-  //     targetDiv.style.width = '100%'; // Cover the entire width
-  //     targetDiv.style.height = '100%'; // Cover the entire height
-  //     targetDiv.style.overflow ='hidden';
-  //     targetDiv.style.zIndex = '5';
-  //     targetDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent black background
-  //     // Add any other CSS properties as needed
-  //   }
-  // }
 
   showNavigation(){
+    if(this.isBrowser) {
     const targetDiv = document.getElementById('targetDiv');
     if(targetDiv){
-      // targetDiv.style.transition = 'height 0.3s ease';
-      // targetDiv.style.height = 'auto';
       targetDiv.style.minHeight='100vh';
       targetDiv.style.maxHeight = '100vh';
+    }
     }
   }
 
   hideNavigation(){
+    if(this.isBrowser) {
     const targetDiv = document.getElementById('targetDiv');
     if(targetDiv){
-      // targetDiv.style.height = '0';
       targetDiv.style.minHeight ='0';
       targetDiv.style.maxHeight = '0';
     }
   }
+  }
 
   ngOnDestroy(): void {
+    if (this.isBrowser) {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);
+    }
   }
   
 }

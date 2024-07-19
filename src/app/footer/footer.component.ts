@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,36 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  private isBrowser: boolean;
+  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+   }
 
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   navigateToCompany() {
-    this.router.navigate(['/company']).then(()=> {
-      // window.location.reload();
-    })
+    this.router.navigate(['/company']).then(()=> {})
   }  
 
   navigateToSafety() {
-    this.router.navigate(['/safety']).then(()=> {
-      // window.location.reload();
-    })
+    this.router.navigate(['/safety']).then(()=> {})
   }    
 
   navigateToLabs() {
-    this.router.navigate(['/labs']).then(()=> {
-        // window.location.reload();
-      })
+    this.router.navigate(['/labs']).then(()=> {})
   }
   
   navigateToPayItForward() {
-    this.router.navigate(['/pay-it-forward']).then(()=> {
-        // window.location.reload();
-      })
+    this.router.navigate(['/pay-it-forward']).then(()=> {})
   }
 
   navigateToPress(){
@@ -61,9 +53,11 @@ export class FooterComponent implements OnInit {
   }
 
   navigateToPrivacy(){
+    if (this.isBrowser) {
     this.router.navigate(['/privacy']).then(()=>{
       window.scrollTo(0,0);
     });
+  }
   }
 
   navigateToMain(){
@@ -73,7 +67,6 @@ export class FooterComponent implements OnInit {
   toggleHeight(event: MouseEvent) {
     const target = event.target as HTMLElement;
     const parentLi = target.closest('li');
-  
     if (parentLi) {
       const subMenu = parentLi.querySelector('.sub-menu') as HTMLElement;
       if (subMenu) {

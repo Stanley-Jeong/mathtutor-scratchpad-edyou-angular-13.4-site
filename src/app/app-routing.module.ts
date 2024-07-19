@@ -23,9 +23,6 @@ const routes: Routes = [
   {path:'main', component: MainComponent},
   {path: 'company', component: CompanyComponent},
   { path: 'company#mission-vision', component: CompanyComponent },
-
-
-
   {path: 'pay-it-forward', component:PayItForwardComponent},
   {path: 'press', component:PressComponent},
   {path: 'safety', component: SafetyComponent },
@@ -38,12 +35,13 @@ const routes: Routes = [
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent}
-
  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
