@@ -14,9 +14,6 @@
     "build:ssr": "ng build && ng run calender:server",
     "prerender": "ng run calender:prerender"
   },
-  "netlify": {
-  "functions": "netlify/functions"
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.4.0",
