@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-calendar-dev-955cf-authRole",
+      "UnauthRoleArn": "arn:aws:iam::994546969703:role/amplify-calendar-dev-955cf-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::994546969703:role/amplify-calendar-dev-955cf-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-calendar-dev-955cf-deployment",
+      "UnauthRoleName": "amplify-calendar-dev-955cf-unauthRole",
+      "StackName": "amplify-calendar-dev-955cf",
+      "StackId": "arn:aws:cloudformation:us-west-2:994546969703:stack/amplify-calendar-dev-955cf/450c57a0-4666-11ef-93ad-0ab8920820e1",
+      "AmplifyAppId": "d7y03ur4ld0ii"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d7y03ur4ld0ii",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
