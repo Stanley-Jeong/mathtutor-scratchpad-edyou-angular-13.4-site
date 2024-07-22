@@ -21,8 +21,8 @@ export class PressComponent implements OnInit, AfterViewInit, OnDestroy {
   ) { this.isBrowser = isPlatformBrowser(this.platformId);}
 
   ngOnInit(): void {
-    this.setTitle('Press Page - Press of Use');
-    this.setMetaDescription('Press Page - Description')
+    this.setTitle('edYOU Press - News and Announcements');
+    this.setMetaDescription('Stay updated with the latest news, announcements, and media coverage of edYOU’s impact in the field of educational technology.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

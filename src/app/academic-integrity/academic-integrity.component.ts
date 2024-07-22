@@ -17,8 +17,8 @@ export class AcademicIntegrityComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setTitle('Academic Integrity Page - Academic Integrity of Use');
-    this.setMetaDescription('Academic Integrity Page - Description')
+    this.setTitle('Academic Integrity - Upholding Standards with edYOU');
+    this.setMetaDescription('See how edYOU upholds academic integrity, ensuring honesty and ethical behavior in all educational activities.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

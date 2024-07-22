@@ -20,8 +20,8 @@ export class LabsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setTitle('Labs Page - Labs of Use');
-    this.setMetaDescription('Labs Page - Description')
+    this.setTitle('Research at edYOU - Advancing Educational Technology');
+    this.setMetaDescription('Explore the research initiatives at edYOU, driving advancements in educational technology and improving learning outcomes.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

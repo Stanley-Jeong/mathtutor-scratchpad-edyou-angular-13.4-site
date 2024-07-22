@@ -30,8 +30,8 @@ export class InvestorsComponent implements OnInit {
   ) {this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit(): void {
-    this.setTitle('Investor Page - Investor of Use');
-    this.setMetaDescription('Investor Page - Description');
+    this.setTitle('Investor Area - Invest in the Future of Education with edYOU');
+    this.setMetaDescription('Learn about investment opportunities with edYOU and join us in transforming education through innovative technology.');
     this.investorForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email, Validators.pattern(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/

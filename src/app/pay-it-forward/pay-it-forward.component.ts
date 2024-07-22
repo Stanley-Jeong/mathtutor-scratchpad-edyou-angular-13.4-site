@@ -17,8 +17,8 @@ export class PayItForwardComponent implements OnInit ,OnDestroy {
    }
 
   ngOnInit(): void {
-    this.setTitle('Pay It Forwards Page - Company of Use');
-    this.setMetaDescription('Pay It Forwards Page - Description')
+    this.setTitle('Pay It Forward - edYOU’s Commitment to Education');
+    this.setMetaDescription('Discover edYOU’s Pay It Forward initiative, supporting educational growth and community development through innovative programs.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

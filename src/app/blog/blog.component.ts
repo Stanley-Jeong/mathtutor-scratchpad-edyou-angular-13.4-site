@@ -20,8 +20,8 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
   ) { this.isBrowser = isPlatformBrowser(this.platformId);}
 
   ngOnInit(): void {
-    this.setTitle('Blog Page - Blog of Use');
-    this.setMetaDescription('Blog Page - Description')
+    this.setTitle('edYOU Blog - Insights and Innovations in Education');
+    this.setMetaDescription('Stay informed with the edYOU blog, featuring insights, trends, and innovations in educational technology and practices.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

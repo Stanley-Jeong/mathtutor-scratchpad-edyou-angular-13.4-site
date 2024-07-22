@@ -20,8 +20,8 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
   ngOnInit(): void {
-    this.setTitle('Safety Page - Safety of Use');
-    this.setMetaDescription('Safety Page - Description')
+    this.setTitle('edYOU Safety - edYOU’s Commitment to a Secure Learning Environment');
+    this.setMetaDescription('Learn about edYOU’s measures to ensure physical safety and a secure learning environment for all users.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
