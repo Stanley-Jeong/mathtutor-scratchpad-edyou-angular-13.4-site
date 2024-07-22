@@ -1731,7 +1731,6 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.recognizer.recognizing = (s: any, e: any) => {
         this.userInputText = e.result.text;
       };
-
       this.recognizer.recognized = (s: any, e: any) => {
         if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
           console.log('final', e.result.text);
