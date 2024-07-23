@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import {Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { CacheCleanerService } from './service/cache-cleaner.service';
-import { SwUpdate } from '@angular/service-worker';
+// import { SwUpdate } from '@angular/service-worker';
 
 declare var jQuery: any;
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   private isBrowser: boolean;
 
   constructor(private router:Router, @Inject(PLATFORM_ID) private platformId: Object,
-    private cacheCleanerService: CacheCleanerService, private swUpdate: SwUpdate) {
+    private cacheCleanerService: CacheCleanerService) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
@@ -46,16 +46,16 @@ export class AppComponent implements OnInit{
       this.router.navigate(['/main']);
     }
 
-    if (this.swUpdate.isEnabled) { console.log(this.swUpdate.isEnabled)
-      this.swUpdate.available.subscribe(() => {
-        this.swUpdate.activateUpdate().then(() => {
-          this.cacheCleanerService.clearCache();
-          document.location.reload();
-        });
-      });
-    }else{
-      console.log(this.swUpdate.isEnabled)
-    }
+    // if (this.swUpdate.isEnabled) { console.log(this.swUpdate.isEnabled)
+    //   this.swUpdate.available.subscribe(() => {
+    //     this.swUpdate.activateUpdate().then(() => {
+    //       this.cacheCleanerService.clearCache();
+    //       document.location.reload();
+    //     });
+    //   });
+    // }else{
+    //   console.log(this.swUpdate.isEnabled)
+    // }
   }
    
 

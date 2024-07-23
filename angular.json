@@ -44,9 +44,7 @@
             
               "./node_modules/jquery/dist/jquery.min.js",
               "src/assets/scripts/appear.js"
-            ],
-            "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            ]
           },
           "configurations": {
             "nova": {

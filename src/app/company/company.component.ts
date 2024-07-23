@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, OnDestroy, OnInit, Inject, PLATFORM_ID, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
@@ -12,13 +12,24 @@ import { Meta, Title } from '@angular/platform-browser';
 export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
   private ngUnsubscribe = new Subject();
   scrollKey: any;
+  private mySubscription: Subscription;
   private isBrowser: boolean;
   constructor(private router: Router,private service : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
   private titleService: Title, private metaService: Meta) {
     this.isBrowser = isPlatformBrowser(this.platformId);
+    this.mySubscription = new Observable((observer:any) => {
+      // Some observable logic
+      console.log(this.router.url)
+    }).subscribe((data: any) => {
+      // Handle data
+      console.log(this.router.url)
+    });
   }
-
+  ngDoCheck(): void {
+    // console.log(this.router.url)
+  }
   ngOnInit(): void {
+    // console.log(this.router.url)
     this.setTitle('Company Page - Company of Use');
     this.setMetaDescription('Company Page - Description')
   }

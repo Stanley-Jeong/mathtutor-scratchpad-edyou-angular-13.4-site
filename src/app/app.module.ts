@@ -4,8 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser'
 
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+// import { ServiceWorkerModule } from '@angular/service-worker';
+// import { environment } from '../environments/environment';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
@@ -56,10 +56,10 @@ import * as Sentry from "@sentry/angular-ivy";
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
+    // ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: environment.production,
+    //   registrationStrategy: 'registerWhenStable:30000'
+    // }),
   ],
   providers: [{
     provide: ErrorHandler,
