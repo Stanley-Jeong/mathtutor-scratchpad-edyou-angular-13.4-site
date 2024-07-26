@@ -11,8 +11,8 @@ export class TermsComponent implements OnInit {
   constructor(private titleService: Title, private metaService: Meta) { }
 
   ngOnInit(): void {
-    this.setTitle('Terms Page - Terms of Use');
-    this.setMetaDescription('Terms Page - Description')
+    this.setTitle('edYOU Terms of Use | Educational Technology Platform');
+    this.setMetaDescription("Read the Terms of Use for edYOU's educational technology platform. Understand your rights, responsibilities, and the guidelines for using our services to enhance your learning experience.")
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

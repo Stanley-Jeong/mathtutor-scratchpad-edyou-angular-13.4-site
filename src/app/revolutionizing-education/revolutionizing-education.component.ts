@@ -18,8 +18,8 @@ export class RevolutionizingEducationComponent implements OnInit,OnDestroy {
   ) {this.isBrowser = isPlatformBrowser(this.platformId); }
 
   ngOnInit(): void {
-    this.setTitle('Revolutionizing Education Page - Revolutionizing Education of Use');
-    this.setMetaDescription('Revolutionizing Education Page - Description')
+    this.setTitle('Revolutionizing Education with edYOU | Bridging the Post-Pandemic Learning Gap');
+    this.setMetaDescription('Discover how edYOU is addressing the post-pandemic learning gap with innovative technology, personalized AI assistance, and seamless integration to help students thrive.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

@@ -18,8 +18,8 @@ export class EdyousAiComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setTitle('AI is Reimagining the Future of Personalized Learning Page - of Use');
-    this.setMetaDescription('AI is Reimagining the Future of Personalized Learning Page - Description')
+    this.setTitle("How edYOU's AI is Reimagining Personalized Learning");
+    this.setMetaDescription('Explore how edYOU’s AI technology is transforming personalized learning, offering tailored educational experiences to meet individual student needs.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

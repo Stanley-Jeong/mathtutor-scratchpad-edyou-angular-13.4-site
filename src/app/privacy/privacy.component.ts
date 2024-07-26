@@ -17,8 +17,8 @@ export class PrivacyComponent implements OnInit ,OnDestroy{
   }
 
   ngOnInit(): void {
-    this.setTitle('Privacy Policy Page - Privacy Policy of Use');
-    this.setMetaDescription('Privacy Policy Page - Description')
+    this.setTitle('edYOU Privacy Policy | Protecting Your Data');
+    this.setMetaDescription('Learn about edYOU’s commitment to protecting your privacy and how we handle and safeguard your personal information.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

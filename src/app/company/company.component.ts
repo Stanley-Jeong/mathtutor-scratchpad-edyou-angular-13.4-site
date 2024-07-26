@@ -30,8 +30,8 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
   }
   ngOnInit(): void {
     // console.log(this.router.url)
-    this.setTitle('Company Page - Company of Use');
-    this.setMetaDescription('Company Page - Description')
+    this.setTitle('About edYOU - Innovators in Educational Technology');
+    this.setMetaDescription('Learn about edYOU, our journey, vision, and the team dedicated to transforming education through cutting-edge technology and innovative solutions.')
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

@@ -59,8 +59,8 @@ export class MainComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setTitle('Home Page - Developing AI technology solutions for learning and wellness');
-    this.setMetaDescription('Home page description')
+    this.setTitle('edYOU - Transforming Education with AI');
+    this.setMetaDescription('Discover edYOU, a groundbreaking AI platform that revolutionizes learning through personalized, engaging, and innovative educational experiences.')
     const image1 = document.getElementById('image1') as HTMLImageElement;
     const image2 = document.getElementById('image2') as HTMLImageElement;
     const image3 = document.getElementById('image3') as HTMLImageElement;
