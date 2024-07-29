@@ -4549,15 +4549,17 @@ this.bubblewindowOnOff = true
 
   clickout(event: any) {
     // $('.box-1').css('margin-top', '0px');
+console.log("Atif------ ",this.popup, this.popup2, event?.target)
+    if(this.popup != undefined && this.popup2 != undefined){
+      const isClickInsideMenu = this.popup?.nativeElement?.contains(event?.target);
+      const isClickInsideCaptionButton = this.popup2?.nativeElement?.contains(event?.target);
 
-    const isClickInsideMenu = this.popup.nativeElement.contains(event.target);
-    const isClickInsideCaptionButton = this.popup2.nativeElement.contains(event.target);
-
-    if (!isClickInsideMenu && !isClickInsideCaptionButton) {
-      this.isDropDownSetting = true;
-      this.dropSetting();
+      if (!isClickInsideMenu && !isClickInsideCaptionButton) {
+        this.isDropDownSetting = true;
+        this.dropSetting();
+      }
+      var target = $(event.target);
     }
-    var target = $(event.target);
 
   }
 
