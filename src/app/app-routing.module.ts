@@ -34,8 +34,8 @@ const routes: Routes = [
   {path: 'privacy', component:PrivacyComponent},
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
-  {path:'investorLogin', component:InvestorLoginComponent}
- 
+  {path:'investorLogin', component:InvestorLoginComponent},
+  {path: '**', redirectTo: '/main'}
 ];
 
 @NgModule({
