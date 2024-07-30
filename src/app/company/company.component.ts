@@ -85,4 +85,9 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
     }
     }
   }
+  scrollToId(id: string) {
+    // console.log("element id : ", id);
+    this.service.scrollToElementById(id);
+  }
+  
 }

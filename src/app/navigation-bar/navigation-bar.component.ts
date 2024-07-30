@@ -98,6 +98,11 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   }
   }
 
+  // scrollToId(id: string) {
+  //   console.log("element id : ", id);
+  //   this.service.scrollToElementById(id);
+  // }
+
   ngOnDestroy(): void {
     if (this.isBrowser) {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);

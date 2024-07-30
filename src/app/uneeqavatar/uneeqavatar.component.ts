@@ -11,6 +11,7 @@ declare var $: any;
 declare var tour: any;
 // import { tour } from '../../assets/js/index.js';
 import { warn } from 'console';
+import { ColorChangeService } from '../service/color-change.service';
 // import { tour } from 'src/assets/js';
 
 
@@ -201,7 +202,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stopIconHeightPosition: any;
   private platformBrowser;
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
-    private ser: UserService, private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: any) {
+    private ser: UserService, private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: any,
+  private service: ColorChangeService) {
       this.platformBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -4549,7 +4551,10 @@ this.bubblewindowOnOff = true
 
   clickout(event: any) {
     // $('.box-1').css('margin-top', '0px');
-console.log("Atif------ ",this.popup, this.popup2, event?.target)
+console.log("Atif------ ",this.popup, this.popup2, event?.target);
+    if(event?.target?.getAttribute('fragment') != null){
+      this.scrollToId(event?.target?.getAttribute('fragment'))
+    }
     if(this.popup != undefined && this.popup2 != undefined){
       const isClickInsideMenu = this.popup?.nativeElement?.contains(event?.target);
       const isClickInsideCaptionButton = this.popup2?.nativeElement?.contains(event?.target);
@@ -4563,6 +4568,10 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target)
 
   }
 
+  scrollToId(id: string) {
+    console.log("element id : ", id);
+    this.service.scrollToElementById(id);
+  }
 
   navigateToHelp() {
 

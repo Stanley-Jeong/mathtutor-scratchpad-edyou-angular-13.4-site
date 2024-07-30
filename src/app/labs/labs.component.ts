@@ -55,4 +55,9 @@ export class LabsComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  scrollToId(id: string) {
+    console.log("element id : ", id);
+    this.service.scrollToElementById(id);
+  }
+
 }
