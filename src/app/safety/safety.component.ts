@@ -54,6 +54,9 @@ export class SafetyComponent implements AfterViewInit, OnDestroy {
     });
     }
   }
-  
+  scrollToId(id: string) {
+    console.log("element id : ", id);
+    this.service.scrollToElementById(id);
+  }
 
 }

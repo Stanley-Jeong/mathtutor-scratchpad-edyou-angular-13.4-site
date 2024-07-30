@@ -38,7 +38,7 @@
                                     style="list-style-type: none;">
                                     <li
                                         class="elementor-icon-list-item elementor-inline-item">
-                                        <a routerLink="/company"
+                                        <a routerLink="/company" (click)="scrollToId('why-edu')"
                                             fragment="why-edu">
                                             <span
                                                 class="elementor-icon-list-text">Why
@@ -47,7 +47,7 @@
                                     </li>
                                     <li
                                         class="elementor-icon-list-item elementor-inline-item">
-                                        <a routerLink="/company"
+                                        <a routerLink="/company" (click)="scrollToId('mission_vision')"
                                             fragment="mission-vision">
 
                                             <span
@@ -56,7 +56,7 @@
                                     </li>
                                     <li
                                         class="elementor-icon-list-item elementor-inline-item">
-                                        <a routerLink="/company"
+                                        <a routerLink="/company" (click)="scrollToId('team')"
                                             fragment="team">
 
                                             <span
@@ -65,7 +65,7 @@
                                     </li>
                                     <li
                                         class="elementor-icon-list-item elementor-inline-item">
-                                        <a routerLink="/company" fragment="faq">
+                                        <a routerLink="/company" fragment="faq" (click)="scrollToId('faq')">
 
                                             <span
                                                 class="elementor-icon-list-text">FAQ</span>
@@ -408,7 +408,7 @@
                 id="mission-vision"
                 data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
                 data-core-v316-plus="true" id="vision">
-                <div class="e-con-inner">
+                <div class="e-con-inner" id="mission_vision">
                     <div
                         class="has_ae_slider elementor-element elementor-element-1da70fda e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
                         data-id="1da70fda" data-element_type="container"
