@@ -643,10 +643,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   async avatarFunction() {
     this.cleanupSessionStorage();
     // for dev
-    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
+    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
 
     // local test
-    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
+    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
     if(this.platformBrowser){
     const videoEl: any = document.getElementById('smVideo');
