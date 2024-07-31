@@ -710,6 +710,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       console.info('started video with state:', videoState)
 
       if (videoState && videoState.audio == false) {
+        this.muteFun();
         this.unmuteMicrophone = true
       }
       this.ser.updateSharedData(this.persona);
@@ -4625,6 +4626,30 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
     this.sendTextToAvatar() 
   
   
+  }
+
+  muteFun() {
+    // this.isSwal = true;
+    // this.type = 'welcome';
+    // this.swalFireData = {title: "Welcome",text: 'Please click the button below to get started.',confirmButtonText: "Start ",showConfirmButton: true,confirmButtonColor: '#2a7cc7',allowOutsideClick: false};
+    // this.payload = '' 
+
+    console.log('mute function call state ++++++')
+
+    Swal.fire({
+      title: "Welcome",
+      text: 'Please click the button below to get started.',
+      confirmButtonText: "Start ",
+      showConfirmButton: true,
+      confirmButtonColor: '#2a7cc7',
+      allowOutsideClick: false,
+    }).then((result) => {
+      // let p = {
+      //   name: 'Avatar start speaking.',
+      // }
+      // this.customLogger(p)
+      this.muteDigitalPerson()
+    });
   }
 
 
