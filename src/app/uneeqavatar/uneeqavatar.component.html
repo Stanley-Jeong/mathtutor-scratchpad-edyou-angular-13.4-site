@@ -5,7 +5,7 @@
     <div class="commonstyle" id="tourSetting">
       <span class="setttingMain">
         <span class="ToolSetting">Chat on/off</span>
-        <img class="setting" (click)="chatBubbleFun()"
+        <img class="setting" (click)="chatBubbleFun()" alt="bubbleCrossIcon"
           [src]="bubblewindowOnOff ? '../../../../assets/bubbleCrossIcon.png' : '../../../../assets/newChatIcon.png'">
       </span>
 
@@ -14,7 +14,7 @@
 
   <!-- stop speaking -->
   <div class="stopHandIconSmallScreen showI"  id="stopavatarId" style="z-index: 99999999;">
-    <img class="stopIConImg" id="stopSoundId" (click)="stopDigitalPerson()"
+    <img class="stopIConImg" id="stopSoundId" (click)="stopDigitalPerson()" alt="stopSpeakingRed"
       src="../../../../assets/stopSpeakingRed.png">
 
   </div>  
@@ -27,7 +27,7 @@
   <div class="muteVoiceIcon" id="muteVoiceId" style="z-index: 999999999" (click)="muteunmuteVoice()">
     <span class="muteButton">
       <span class="muteTooltip">Mute button</span>
-      <img class="setting"
+      <img class="setting" alt="redMute"
         [src]="muteVoiceAvatar ? '../../../../assets/redMute.png' : '../../../../assets/unmuteicon.png'">
     </span>
   </div>
@@ -41,10 +41,10 @@
         <span class="tooltipAvatar">Hide Hannah</span>
         <span class="tooltipAvatar" *ngIf="mobileAvatarOnOff">Show Hannah</span>
         <span>
-          <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon"
+          <img class="" *ngIf="!mobileAvatarOnOff" class="avatar_icon chat_icon" alt="hannahMiniMize"
             src="../../assets/interaction/hannahMiniMize.png">
 
-          <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon"
+          <img class="" *ngIf="mobileAvatarOnOff" class="avatar_icon imgSet chat_icon" alt="hannahFinal2"
             src="../../assets/interaction/hannahFinal2.png">
 
         </span>
@@ -64,7 +64,7 @@
     [style.background-color]="backgroundColor">
     <div id="avatarLoaders" style="margin-top:50px">
       <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
-        <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
+        <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
       </div>
       <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
         {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a
@@ -97,13 +97,13 @@
         </span> -->
         <span style="margin-top: -10px;" style=" position: absolute;" class="" id="minimizeAvatar">
           <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
-          <img id="cross1" src='../../../../assets/interaction/arrow-left.svg' style="width: 30px; height: 30px;">
+          <img id="cross1" alt="arrow" src='../../../../assets/interaction/arrow-left.svg' style="width: 30px; height: 30px;">
           <span class="min" style="font-style: normal;">Minimize</span>
         </span>
       </div>
 
       <div class="tourDivCss " id="tourIcon" style="position: absolute;">
-        <img src="../../../../assets/interaction/map-02.svg" (click)="StartTourGuideSetting()"
+        <img src="../../../../assets/interaction/map-02.svg" alt="map" (click)="StartTourGuideSetting()"
           style="width: 30px; height: 30px;">
         <span class="GuidedTour">Guided Tour</span>
       </div>
@@ -129,7 +129,7 @@
     <!-- // queue message for avatar  -->
     <div *ngIf='messageForQueueAvatar' style="margin-top:50px">
       <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
-        <img src="../../assets/images/Rolling.gif" style="width: 50px; height:50px ">
+        <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
       </div>
       <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
         Sorry, I am busy in serving others.<br> Give me a moment I will be right back.
@@ -159,7 +159,7 @@
 
       <div class="playerOne  hideMessage fontss" id="ImageDisplay" style="margin-top: 21px;">
         <div class="" style="height:330px;">
-          <img class="ImageAspectRatio Qimage" [src]="ImageData"
+          <img class="ImageAspectRatio Qimage" alt="playerOne" [src]="ImageData"
             style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
           <!-- Want to work -->
           <!-- Finding -->
@@ -237,7 +237,7 @@
               </div>
   
               <ng-container *ngIf="showLoaderMess">
-                <div class="loaders"> <img src="../../assets/threedot.gif" style="width: 50px;
+                <div class="loaders"> <img alt="threedot" src="../../assets/threedot.gif" style="width: 50px;
           height: 50px;margin-left: 10px; border-radius: 15px;
           background-color: white;"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" style="     z-index: 100;
@@ -295,7 +295,7 @@
                   </ng-container>
 
            
-                  <img class="chat-button" id="sendId1" style="width: 50px;height: 45px; background-color: white;"
+                  <img alt="send" class="chat-button" id="sendId1" style="width: 50px;height: 45px; background-color: white;"
                     (click)="sendTextToAvatar()"
                     [src]="focusInput == 'inputActive' ? '../../assets/newSend.svg' : '../../assets/send-03.svg'">
 
@@ -307,14 +307,14 @@
             <div class="box-2" [style.margin-left]="box2MarginLeft">
               <div class="di">
                 <span>
-                  <img alt="" id="voiceId" *ngIf="isvoiceAnimationOn == false"
+                  <img alt="micBlank" id="voiceId" *ngIf="isvoiceAnimationOn == false"
                     (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth"
                     [style.height.px]="micHeight" [style.margin-left]="micMarginLeft2" style="max-width: none;"
                     src="../../assets/micBlank.png" />
                   <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micOrange.png"
                     [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
                     [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft"> -->
-                  <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/newMicGIff.gif" style="max-width: none;"
+                  <img alt="newMicGIff" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/newMicGIff.gif" style="max-width: none;"
                     [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
                     [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft">
                 </span>
@@ -326,7 +326,7 @@
             <div class="box-3" id="box3Main" style="margin-left: 5px; cursor: default;">
               <img *ngIf="!dotIndicatorAnimation" style="    position: relative; width: 65px; 
             margin-left: 3px; 
-            margin-top: 14px;" src="../../assets/dotIndicator.svg">
+            margin-top: 14px;" src="../../assets/dotIndicator.svg" alt="dotIndicator">
               <div id="bars" style="margin-top: 15px;    width: 60px;" *ngIf="dotIndicatorAnimation">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -343,7 +343,7 @@
         right: 5%;
         width: 60px;
         margin-top: -145px;">
-            <img *ngIf="!dotIndicatorAnimation" class="indicatorForMobile" src="../../assets/dotIndicator.svg">
+            <img *ngIf="!dotIndicatorAnimation" alt="dotIndicator" class="indicatorForMobile" src="../../assets/dotIndicator.svg">
             <div id="bars" class="animationIndictor" *ngIf="dotIndicatorAnimation">
               <div class="bar"></div>
               <div class="bar"></div>
