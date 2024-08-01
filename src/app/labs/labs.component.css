@@ -9,7 +9,7 @@
 
 .elementor-widget-video .elementor-wrapper iframe,
 .elementor-widget-video .elementor-wrapper video {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   display: flex;
   border: none;
