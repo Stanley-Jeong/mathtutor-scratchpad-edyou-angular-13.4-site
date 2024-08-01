@@ -19,8 +19,8 @@ import { InvestorLoginComponent } from './investor-login/investor-login.componen
 
 const routes: Routes = [
 
-  {path:'', redirectTo:'/main', pathMatch:'full'},
-  {path:'main', component: MainComponent},
+  {path:'', redirectTo:'/', pathMatch:'full'},
+  {path:'', component: MainComponent},
   {path: 'company', component: CompanyComponent},
   { path: 'company#mission-vision', component: CompanyComponent },
   {path: 'pay-it-forward', component:PayItForwardComponent},
@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},
-  {path: '**', redirectTo: '/main'}
+  {path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
