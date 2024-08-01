@@ -253,7 +253,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.ser.getIp().subscribe((res: any) => {
       console.log(res.ip, "my ip----------------------------------------------")
       if(this.platformBrowser){
-      localStorage.setItem("userIp", JSON.stringify(res.ip));
+      localStorage.setItem("userIp", res.ip);
       }
     })
 
@@ -1326,6 +1326,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
 
       } else {
+        // let curTime = body.output['context']['public-context']?.Time
+        // let userIP = body.output['context']['public-context']?.IP_address
+        // // this.persona.conversationSend('', { 'Time': curTime, 'IP_address': userIP }, {  });
 
         this.setVariable()
         const personaInstance = this.persona
@@ -1423,36 +1426,33 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   setVariable() {
     const timeZoneName = Intl.DateTimeFormat().resolvedOptions().timeZone;
     console.warn('Time Zone', timeZoneName)
-
+    let getip = localStorage.getItem("userIp");
     let payload = {
+      "IP_address":getip,
+      "Time":this.getCurrentTimeInGMT(),
       "email": this.user.email,
       'timeZone': timeZoneName,
       "display_message": "",
       "id": "",
-      "Question": "",
-      "options": "",
-      "test_prep_response": "",
-      "click": "",
-      "next_button": "",
-      "back_button": "",
-      "color": "",
-      "position": "",
-      "current_testPrep_length": "",
       "autoScroll": "",
-      "total_testPrep_length": "",
       "resume": false,
-      "handlingMessge": "",
-      "approaches": [],
-      "User_Question": "",
-      "math_Question": ""
-
+      "handlingMessge": ""
     }
 
     console.log(payload)
     this.persona.conversationSetVariables(payload)
   }
 
-
+getCurrentTimeInGMT() {
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  const month = String(now.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const day = String(now.getUTCDate()).padStart(2, '0');
+  const hour = String(now.getUTCHours()).padStart(2, '0');
+  const minute = String(now.getUTCMinutes()).padStart(2, '0');
+  const second = String(now.getUTCSeconds()).padStart(2, '0');
+  return `${year}-${month}-${day},${hour}:${minute}:${second}`;
+}
 
 
   setVideo(videoWidth: any, videoHeight: any) {

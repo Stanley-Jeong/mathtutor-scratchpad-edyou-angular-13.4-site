@@ -13,7 +13,9 @@
   width: 100%;
   display: flex;
   border: none;
-  background-color: #000
+  background-color: #000;
+  max-width: var(--content-width);
+  border-radius:0.5rem;
 }
 
 @supports not (aspect-ratio:1/1) {
@@ -235,4 +237,9 @@
 .e-con>.elementor-widget-divider {
   width: var(--container-widget-width, 100%);
   --flex-grow: var(--container-widget-flex-grow)
+}
+@media(max-width:767px){
+  .padInMobile {
+    padding:0 15px
+  }
 }
