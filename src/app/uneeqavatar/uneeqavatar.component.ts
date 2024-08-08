@@ -201,6 +201,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stopIconWidthPosition: any;
   stopIconHeightPosition: any;
   private platformBrowser;
+  hideMaximizeArrow: boolean = false;
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService, private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: any,
   private service: ColorChangeService) {
@@ -646,7 +647,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
 
     // local test
-    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
+    //const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
     if(this.platformBrowser){
     const videoEl: any = document.getElementById('smVideo');
@@ -680,6 +681,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if(this.platformBrowser){
     // setTimeout(() => {
     $('#avatarLoaders').css('display', 'none')
+    this.hideMaximizeArrow = true
+ 
     // }, 1000)
 
     if (this.messageForQueueAvatar == true) {
@@ -2007,29 +2010,12 @@ getCurrentTimeInGMT() {
   reset() {
     clearTimeout(this.idleTimeout);
     this.idleTimeout = setTimeout(() => {
-      this.idleAvatarMessgePrompt()
+     // this.idleAvatarMessgePrompt()
       //  }, 10000)
     }, 5 * 60 * 1000)
   }
 
 
-  /**
- * Prompt a message from the idle user.
- * This function is responsible for triggering a message or prompt from the avatar
- * when the user is in an idle state.
- */
-  idleAvatarMessgePrompt() {
-    if(this.platformBrowser){
-    var session = localStorage.getItem('sessionId')
-    this.hideOptionTempraryFormobile = true
-    let data = {
-      "sessionId": session,
-      "message": "Are you there?",
-      // "email": this.user.email
-    }
-    }
-    // this.ser.uneeqPromptBox(data).subscribe(res => { })
-  }
 
 
 
@@ -2083,45 +2069,9 @@ getCurrentTimeInGMT() {
     }
   }
 
-  /**
- * Function to add color to an option at a specific position
- * @param {any} color - The color to be added to the option
- * @param {number} position - The position of the option to which the color should be added
- */
+
   addColorOnOption(color: any, position: number) {
-    if(this.platformBrowser){
-    let buttonId: any
-    let buttonId2: any
-    if (window.innerWidth < 500) {
-      buttonId = `#colorbtnOptionMobile` + position;
-      buttonId2 = `#startColorMobile` + position;
-    } else {
-      buttonId = `#colorbtnOption` + position;
-      buttonId2 = `#startColor` + position;
-    }
-    //  const buttonId = `#colorbtnOption` + position;
-    // const buttonId2 = `#startColor` + position;
-    const colorbtnOption: any = this.elementRef.nativeElement.querySelector(buttonId);
-    const colorbtnOption2: any = this.elementRef.nativeElement.querySelector(buttonId2);
-
-    if (color == 'green') {
-      this.renderer.setStyle(colorbtnOption, 'background', 'green');
-      this.renderer.setStyle(colorbtnOption, 'color', '#fff');
-      this.renderer.setStyle(colorbtnOption, 'border', '2px solid green');
-      this.renderer.setStyle(colorbtnOption2, 'background', 'green');
-      this.renderer.setStyle(colorbtnOption2, 'color', '#fff');
-      this.renderer.setStyle(colorbtnOption2, 'border', '2px solid green');
-    } else {
-      this.renderer.setStyle(colorbtnOption, 'background', '#d31010');
-      this.renderer.setStyle(colorbtnOption, 'color', '#fff');
-      this.renderer.setStyle(colorbtnOption, 'border', '2px solid #d31010');
-      this.renderer.setStyle(colorbtnOption2, 'background', '#d31010');
-      this.renderer.setStyle(colorbtnOption2, 'color', '#fff');
-      this.renderer.setStyle(colorbtnOption2, 'border', '2px solid #d31010');
-    }
-    }
-
-
+   
   }
 
   /**
@@ -2129,39 +2079,11 @@ getCurrentTimeInGMT() {
 * @param {number} index - The position of the option to which the color should be added
 */
   addColorToApproach(index: any) {
-    const DivId = `#colorApproachOption` + index;
-    const colorOption = this.elementRef.nativeElement.querySelector(DivId);
-    this.renderer.setStyle(colorOption, 'background', '#2A7CC7');
-    this.renderer.setStyle(colorOption, 'color', 'white');
-    this.renderer.setStyle(colorOption, 'border', '2px solid #2A7CC7');
+
   }
 
 
-  /**
- * Function to handle the live session for avatar
- */
-  sessionLiveForAvatar() {
-    if(this.platformBrowser){
-    $('#avatarLoaders').css('display', 'none')
-    $('#chat-widget-minimized').css('display', 'none');
-    $('#chat-widget-container').css('height', '4px');
-    this.isSpinner = false
-    //  this.checkConnectionSpeed()
-    this.avatarsizechangeonCall()
-    // this.setVideo(window.screen.width, window.screen.height)
 
-    // Add key listeners on spacebar for start and stop recording
-    this.addPTTKeyListeners();
-    localStorage.setItem('sessionId', this.uneeq.sessionId)
-    let zoomPayload = {
-      "sessionID": this.uneeq.sessionId,
-      // "email": this.user.email,
-      // token: this.token,
-    }
-    // this.ser.zoomSetting(zoomPayload).subscribe((res: any) => {
-    // })
-    }
-  }
 
 
   /**
@@ -4009,131 +3931,6 @@ getCurrentTimeInGMT() {
 
 
 
-  avatarsizechangeonCall() {
-    if(this.platformBrowser) {
-    // setTimeout(() => {
-    var t: any = document.querySelector('#sm-video video')
-    // console.log('canvas',t)
-    if (t !== null) {
-      t.style.width = '100%';
-
-      if (window.screen.height == 1180 && window.screen.width == 820) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '680px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1194 && window.screen.width == 834) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '680px'
-        }
-
-      } else if (window.screen.height == 1133 && window.screen.width == 774) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '590px'
-        }
-
-      } else if (window.screen.height == 1024 && window.screen.width == 768) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '590px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1366 && window.screen.width == 1024) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '760px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1138 && window.screen.width == 712) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '600px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 720 && window.screen.width == 540) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '520px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1368 && window.screen.width == 912) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '650px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1280 && window.screen.width == 800) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '640px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height == 1440 && window.screen.width == 2560) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '900px'
-        }
-
-        // console.log('dfdfdfdfdfdfdfddf')
-      }
-      else if (window.screen.height == 960 && window.screen.width == 600) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '520px'
-        }
-
-        // $(t).css('margin-left', '20px')
-      } else if (window.screen.height < 575) {
-        // console.log('its landscape mode normal one')
-        if (this.fullScreen === false) {
-          // console.log('its landscape ==>  its on full screen')
-          t.style.height = '270px'
-        }
-      }
-      else if (window.screen.width < 480) {
-        if (this.user.Firstlogin == true) {
-          t.style.height = '100%'
-          t.style.width = '100%'
-          $('#sidebar').addClass(' sidebar_small')
-        } else if (this.user.Firstlogin == false) {
-          t.style.height = '440px'
-          t.style.width = '100%'
-          $('#sidebar').addClass(' sidebar_small')
-        }
-
-
-      }
-    } else {
-      // var t: any = document.querySelector('#sm-video canvas')
-      // // console.log('canvas',t)
-      if (t !== null) {
-        t.style.width = '100%'
-        t.style.height = '100%'
-      }
-    }
-    }
-  }
 
   // select from the option 
   selectOptionForTest(answer: any) {
@@ -4258,46 +4055,7 @@ getCurrentTimeInGMT() {
    * This function is responsible for determining whether the maths indicator is currently active.
    */
   checkMathsIndicatorActive() {
-    if(this.platformBrowser) {
-    if (localStorage.hasOwnProperty("mathtoggle")) {
-      let toggle = JSON.parse(localStorage.getItem('mathtoggle') || 'undefined')
-      if (toggle == true) {
-        // this.mathsChatBar = true
-        // this.normalChatBar = false
-
-        if (this.toggleValue == true) {
-          this.normalChatBar = true
-          this.mathsChatBar = false
-        }
-        this.mathButtonDisabled = false
-        this.toggleValue = true
-        this.userCCOnOf()
-        // $('#mathApproach').addClass('showMessage')
-        $('#mathsIndicator').addClass('showI')
-        $('#mathsIndicatorONN').removeClass('showI')
-        $('#mathsIndicator').css('cursor', 'pointer')
-        $('#mathsIndicator').addClass('mathsOffClass')
-      } else {
-        this.mathsChatBar = false
-        this.normalChatBar = true
-
-        this.mathButtonDisabled = true
-        this.toggleValue = false
-
-        this.userCCOnOf()
-        $('#mathApproach').removeClass('showMessage')
-        $('#mathsIndicator').removeClass('showI')
-        $('#mathsIndicatorONN').addClass('showI')
-        $('#mathsIndicator').css('cursor', 'pointer')
-        $('#mathsIndicator').addClass('mathsOffClass')
-      }
-    } else {
-      $('#mathsIndicator').removeClass('showI')
-      $('#mathsIndicatorONN').addClass('showI')
-      $('#mathsIndicator').css('cursor', 'pointer')
-      $('#mathsIndicator').addClass('mathsOffClass')
-    }
-    }
+ 
   }
 
 
@@ -4584,20 +4342,7 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
     const saved = new Date(savedDate)
     const differenceInTime = currentDate.getTime() - saved.getTime();
     const differenceInDays = Math.floor((differenceInTime) / (1000 * 3600 * 24));
-    // const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24)) ;
-    // console.log(currentDate,'68t878gubjuybyubjbjhvhgbjk=============111111111111 current date')
-    // console.log(saved,'68t878gubjuybyubjbjhvhgbjk============= saved')
-    // console.log(differenceInTime,'68t87ubjuybyubjbjhvhgbjk=============111111111111 differenceInTime')
-    // console.log(differenceInDays,'68t878gubjuybyubjbjhvhgbjk============= day')
-    // console.log(currentDate.getTime(),'68t878gubjuybyubjbjhvhgbjk============= ')
-    // if(differenceInDays >= 604800000){
-    // if(differenceInDays > 7){
-    //   console.log('greater than 6')
-    //   localStorage.removeItem('savedDate');
-
-    // }else{
-    //   console.log('less than or equal than 6')
-    // }
+ 
     return differenceInDays > 6;
 
   }

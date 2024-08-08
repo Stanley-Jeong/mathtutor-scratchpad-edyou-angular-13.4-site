@@ -75,8 +75,8 @@
 
     <ng-container *ngIf="!messageForQueueAvatar">
       <!-- speakingsss_large   // its use when the card open in full screen on open -->
-      <div class="speakingsss " id="cross" style="position: absolute;" (click)="onLoadCard('sm-video')">
-        <span id="maximizeAvatar">
+      <div class="speakingsss " id="cross" style="position: absolute;" >
+        <span *ngIf="hideMaximizeArrow"  id="maximizeAvatar" (click)="onLoadCard('sm-video')">
           <svg width="23" height="23" fill="#FFFFFF" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round"
             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 3h6v6"></path>
@@ -87,15 +87,7 @@
           <span style="font-style: normal;" class="max">Maximize</span>
         </span>
 
-
-        <!-- <span style="margin-top: -10px;" style="position: absolute;" id="minimizeAvatar">
-       
-          <img id="cross1"
-            [src]="isMobileNormalTrue ? '../../assets/interaction/arrow-left.svg' : '../../assets/interaction/x-circle.svg'"
-            style="width: 30px; height: 30px;">
-          <span class="min" style="font-style: normal;">Minimize</span>
-        </span> -->
-        <span style="margin-top: -10px;" style=" position: absolute;" class="" id="minimizeAvatar">
+        <span style="margin-top: -10px;" style=" position: absolute;" class="" id="minimizeAvatar" (click)="onLoadCard('sm-video')">
           <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
           <img id="cross1" alt="arrow" src='../../../../assets/interaction/arrow-left.svg' style="width: 30px; height: 30px;">
           <span class="min" style="font-style: normal;">Minimize</span>
