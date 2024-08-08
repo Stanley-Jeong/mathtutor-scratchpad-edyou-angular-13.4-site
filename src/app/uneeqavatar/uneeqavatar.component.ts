@@ -722,11 +722,15 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.isvoiceAnimationOn = false
       this.soulMachineMessageHandler()
 
+      // setTimeout(() => {
+      //   this.customWelcomeMessge()
+      // }, 200)
+
       if (this.scene.connectionState._connectionState['name'] == 'Connected') {
 
-        setTimeout(() => {
+       // setTimeout(() => {
           this.customWelcomeMessge()
-        }, 200)
+        //}, 200)
         // if (this.user.Firstlogin == true) {
         //   this.setVideo(600, 400)
         //   console.log('small card pixel')
