@@ -725,7 +725,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // setTimeout(() => {
       //   this.customWelcomeMessge()
       // }, 200)
-
+      console.log('state==',this.scene.connectionState._connectionState['name'])
       if (this.scene.connectionState._connectionState['name'] == 'Connected') {
 
        // setTimeout(() => {
@@ -1302,10 +1302,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   muteDigitalPerson() {
     this.unmuteMicrophone = false;
-    if(this.platformBrowser){
+   // if(this.platformBrowser){
     const videoEl: any = document.getElementById('smVideo');
     videoEl.muted = false;
-    }
+   // }
   }
 
   muteunmuteVoice() {
