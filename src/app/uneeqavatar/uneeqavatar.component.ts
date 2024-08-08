@@ -1325,9 +1325,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
   customWelcomeMessge() {
-    if(this.platformBrowser){
+   // if(this.platformBrowser){
     const savedDate: any = localStorage.getItem('savedDate3');
-    console.log(savedDate)
+    console.log('saveData',savedDate)
     if (savedDate) {
 
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
@@ -1367,7 +1367,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
       }
     }
-    }
+  //  }
 
   }
 
