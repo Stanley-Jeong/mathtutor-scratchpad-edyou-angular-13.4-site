@@ -644,10 +644,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   async avatarFunction() {
     this.cleanupSessionStorage();
     // for dev
-    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
+    // const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLmF6LnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxXzVkZTFmMDY5LTlkYTMtNDNhOS04NTNlLWEyMzU1MjljZjQzOCJ9'
 
     // local test
-    //const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
+    const apiKey = 'eyJzb3VsSWQiOiJkZG5hLWVkeW91LXRlY2hub2xvZ2llcy0tZWR5b3Utd2Vic2l0ZSIsImF1dGhTZXJ2ZXIiOiJodHRwczovL2RoLnNvdWxtYWNoaW5lcy5jbG91ZC9hcGkvand0IiwiYXV0aFRva2VuIjoiYXBpa2V5X3YxX2U4NTdiOGFiLTkxZDEtNDJjZS05ZTgxLTZlN2I3MmI4ZTlmYyJ9'
     console.log('fun start')
     if(this.platformBrowser){
     const videoEl: any = document.getElementById('smVideo');
@@ -914,13 +914,27 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     } else {
       console.log('session id not received----------------', sessonId)
     }
+    let receivedConversationResult = false;
+    const conversationResultTimeout = setTimeout(() => {
+      if (!receivedConversationResult) {
+          this.showPopup('No conversation result received within 4 seconds.');
+       this.avatarFunction()
+      }
+  }, 4000);
+    console.log(Scene,'this is scene for websdk-------------------------')
+    console.log(Scene.prototype,'this is scene for websdk-------------------------')
+    console.log(Scene.prototype.onSceneMessage ,'this is scene for websdk-------------------------')
     Scene.prototype.onSceneMessage = (message: any) => {
       var name = message.name
       var body = message.body
-      // console.log(localStorage.getItem('userIp'),'get item--------------------------------------');
+      console.log( name ,'get item--------------------------------------2');
+      console.log(body,'get item--------------------------------------');
       // console.warn('message',message)
       console.warn('body', body)
-
+      if (name === 'conversationResult') {
+        receivedConversationResult = true;
+        clearTimeout(conversationResultTimeout); // Clear the timeout if conversationResult is received
+      }
       switch (name) {
         case 'state':
           break;
@@ -1036,7 +1050,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   }
-
+  showPopup(message: string) {
+    // Implement your popup logic here
+    alert(message); // Example using alert, replace with your custom popup logic
+}
 
   scrollToBottom() {
 
@@ -1292,6 +1309,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
   stopDigitalPerson() {
+    console.log('stop speaking' ,this.stopAvatarOnClick)
     this.isManualScrolling = true
     this.dotIndicatorAnimation = false
     this.stopAvatarOnClick = !this.stopAvatarOnClick
@@ -4397,6 +4415,7 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
       let p = {
         name: 'Avatar start speaking.',
       }
+      this.customWelcomeMessge()
       this.customLogger(p)
       this.muteDigitalPerson()
     });
