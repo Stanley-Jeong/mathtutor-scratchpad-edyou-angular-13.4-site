@@ -678,7 +678,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   onConnectionSuccess(sessionId: any) {
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     // setTimeout(() => {
     $('#avatarLoaders').css('display', 'none')
     this.hideMaximizeArrow = true
@@ -774,7 +774,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       console.warn('could check ========>', error)
       this.customLogger(error)
     });
-    }
+    // }
   }
 
 
@@ -795,9 +795,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   customLogger(error: any) {
     let ipAddress:any;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     ipAddress = localStorage.getItem('IPAdress');
-    }
+    // }
     let p = {
       state: this.scene.connectionState._connectionState['name'],
       session: this._personaId,
@@ -906,9 +906,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   soulMachineMessageHandler() {
     this.addSpacebarEventListeners();
     let sessonId:any;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     sessonId = localStorage.getItem('sessionId')
-    }
+    // }
     if (sessonId) {
       console.log('session id received----------------', sessonId)
     } else {
@@ -1012,7 +1012,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (body.persona[1] && body.persona[1]["speechState"]) {
         let state = body.persona[1]?.speechState
         console.warn('state', state)
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
           if (state == 'speaking') {
             this.runLoderGPT = false
 
@@ -1027,7 +1027,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
           
           
           }
-        }
+        // }
       }
 
     }
@@ -1074,7 +1074,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
   OpenAIMathematicsSoulMachine(body: any) {
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     if (this.User_Question != '') {
       $('#MathameticsDisplay').addClass('showMessage')
       //  this.UserQuestion_Display = body.output['context']['public-context']?.User_Question
@@ -1145,7 +1145,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       }
 
     }
-    }
+    // }
   }
 
 
@@ -1202,7 +1202,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
    */
   avatarAnswerMessageHandler() {
     this.disableMicButton = false;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     if (this.DescAnswer != '') {
       setTimeout(() => {
         if (this.ccOnOff == true) {
@@ -1254,7 +1254,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       }, 1000)
 
     }
-    }
+    // }
   }
 
 
@@ -1317,10 +1317,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
     //     console.log('muted', videoVoice.muted)
     // }
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     const videoEl: any = document.getElementById('smVideo');
     if (videoEl) videoEl.muted = this.muteVoiceAvatar
-    }
+    // }
 
   }
 
@@ -1374,7 +1374,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   clearAvatarContentBox() {
     this.runLoderGPT = true;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     if ((localStorage.getItem('screen') === "TestSeries")) {
 
     } else {
@@ -1382,7 +1382,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (m) m.innerHTML = '';
 
     }
-    }
+    // }
   }
 
 
@@ -1421,10 +1421,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.userText = ""
 
     this.mathInputClear = false;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     let value: any = document.getElementById('user_questionD')
     if (value) value.innerHTML = ''
-    }
+    // }
     //this.persona.animateToNamedCameraWithOrbitPan('CloseUp', 1, 0, 0, 180, 0);
     //this.setVideo()
   }
@@ -1463,7 +1463,7 @@ getCurrentTimeInGMT() {
 
 
   setVideo(videoWidth: any, videoHeight: any) {
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     const deviceWidth = Math.round(videoWidth * window.devicePixelRatio);
     const deviceHeight = Math.round(videoHeight * window.devicePixelRatio);
     // const deviceWidth = videoWidth
@@ -1471,14 +1471,14 @@ getCurrentTimeInGMT() {
 
     console.log('height', deviceHeight, 'video bound', 'width', deviceWidth)
     this.scene.sendVideoBounds(deviceWidth, deviceHeight);
-    }
+    // }
   }
 
 
   // Add push to talk spacebar key listeners
   addSpacebarEventListeners() {
     // When the user presses down on space bar, tell the digital human to start recording (start listening)
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     document.addEventListener('keydown', (e: any) => {
       const isSpaceBar = e.code === 'Space' && !e.repeat;
       const isNotTextInput = e.target.type !== 'text';
@@ -1497,7 +1497,7 @@ getCurrentTimeInGMT() {
 
       }
     });
-    }
+    // }
   }
 
 
@@ -1554,7 +1554,7 @@ getCurrentTimeInGMT() {
   checkMicPosition() {
 
 
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     setTimeout(() => {
       if (this.fullScreen === true) {
         if ((localStorage.getItem('screen') === "TestSeries") || (localStorage.getItem('screen') === "LearningScreen")) {
@@ -1572,7 +1572,7 @@ getCurrentTimeInGMT() {
         $('#zoomMic').addClass('microphoneOn');
       }
     }, 0)
-    }
+    // }
 
   }
 
@@ -1912,16 +1912,16 @@ getCurrentTimeInGMT() {
       this.renderer.addClass(message22, 'showMessage');
     }
     this.ccOnOff = !this.ccOnOff;
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     localStorage.setItem('cc', JSON.stringify(this.ccOnOff))
-    }
+    // }
   }
 
   /**
 * Toggle chat bubble  for the avatar.
 */
   chatBubbleFun() {
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     const message22 = this.elementRef.nativeElement.querySelector('#chatbubblemessage');
     const normalMessage = this.elementRef.nativeElement.querySelector('#message');
     const screen = localStorage.getItem('screen');
@@ -1959,7 +1959,7 @@ getCurrentTimeInGMT() {
     this.bubblewindowOnOff = !this.bubblewindowOnOff
     console.log(this.bubblewindowOnOff, 'fffbb')
     localStorage.setItem('cc', JSON.stringify(this.ccOnOff))
-    }
+    // }
   }
 
   checkHideCondition() {
@@ -1989,7 +1989,7 @@ getCurrentTimeInGMT() {
     //   this.fullScreen = true
     //   this.onLoadCard('')
     // } else {
-      if(this.platformBrowser){
+      // if(this.platformBrowser){
       const div1 = this.elementRef.nativeElement.querySelector('#movableCard');
       const div2 = this.elementRef.nativeElement.querySelector('#centerDiv');
       if (this.mobileAvatarOnOff === true) {
@@ -2000,7 +2000,7 @@ getCurrentTimeInGMT() {
         this.renderer.addClass(div2, 'showI');
       }
       this.mobileAvatarOnOff = !this.mobileAvatarOnOff
-      }
+      // }
    // }
 
 
@@ -2038,7 +2038,7 @@ getCurrentTimeInGMT() {
       this.DescAnswer == "Give me few seconds to gather my thoughts."
     ) {
       this.normalGPT = true
-      if(this.platformBrowser){
+      // if(this.platformBrowser){
       if (localStorage.getItem('screen') === "TestSeries") {
         setTimeout(() => {
           var m: any = document.getElementById('outputDesc')
@@ -2048,7 +2048,7 @@ getCurrentTimeInGMT() {
         var d: any = document.getElementById('outputDesc')
         if (d) d.innerHTML = '';
       }
-      }
+      // }
       this.normalGPT = true
       this.callOpenAI()
     } else {
@@ -2060,7 +2060,7 @@ getCurrentTimeInGMT() {
 * Function to make a call mathematics  OpenAI API
 */
   OpenAIMathematics() {
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     if (this.DescAnswer === 'Let me think') {
       this.runLoderGPT = true;
       var m: any = document.getElementById('outputDesc')
@@ -2070,7 +2070,7 @@ getCurrentTimeInGMT() {
     } else {
       this.runLoderGPT = false;
     }
-    }
+    // }
   }
 
 
@@ -2097,14 +2097,14 @@ getCurrentTimeInGMT() {
  * @returns {void} - This function does not return any value.
  */
   userAskQuestionDisplayText(msg: any) {  // user question show by mic 
-    if(this.platformBrowser){
+    // if(this.platformBrowser){
     if (this.UserccOnOff == true) {
       $('#userText').removeClass('showI')
     }
     const userQues: any = document.getElementById('local-transcript')
     userQues.innerHTML = 'User: ' + msg;
     this.userSpeakValue = msg;
-    }
+    // }
   }
 
 
@@ -2131,20 +2131,20 @@ getCurrentTimeInGMT() {
     switch (value) {
       case 'ConnectionLost':
         handleSwal('Connection lost!', 'Sorry the connection is lost, please click the button below to refresh.', 'Refresh', () => {
-          if(this.platformBrowser){
+          // if(this.platformBrowser){
             window.location.reload();
-          }
+          // }
         });
         break;
 
       case 'SessionEnded':
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
         if (localStorage.hasOwnProperty('sessionId')) {
           handleSwal('Session expired!', 'Oops! It seems like your session has expired, please log in again..', 'OK', () => {
             this.router.navigate(['/']);
           });
         }
-        }
+        // }
         break;
 
       case 'SessionError':
@@ -2155,7 +2155,7 @@ getCurrentTimeInGMT() {
 
       case 'AvatarUnavailable':
         this.messageForQueueAvatar = true;
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
         const IP = localStorage.getItem('IPAdress');
         const payloadC = {
           // email: this.user.email,
@@ -2164,11 +2164,11 @@ getCurrentTimeInGMT() {
           status: 'Unavailable',
         };
         this.ser.avatarCounter(payloadC).subscribe(() => { });
-        }
+        // }
         this.isSpinner = false;
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
         this.renderer.setStyle(document.getElementById('avatarLoaders'), 'display', 'none');
-        }
+        // }
         break;
 
       case 'AvatarAvailable':
@@ -2184,16 +2184,16 @@ getCurrentTimeInGMT() {
 
         if (this.fullScreen === true) {
           // card minimize
-          if(this.platformBrowser){
+          // if(this.platformBrowser){
           setTimeout(() => {
             $('#minimizeAvatar').addClass('showI');
             $('#maximizeAvatar').removeClass('showI');
           }, 1000)
-          }
+          // }
         }
 
         this.messageForQueueAvatar = false;
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
         var IPP = localStorage.getItem('IPAdress')
         let payloadAvaible = {
           // "email": this.user.email,
@@ -2201,7 +2201,7 @@ getCurrentTimeInGMT() {
           "ip_address": IPP,
           "status": 'Available'
         }
-        }
+        // }
         // this.ser.avatarCounter(payloadAvaible).subscribe(res => { })
 
         break;
@@ -2209,11 +2209,11 @@ getCurrentTimeInGMT() {
       case 'Instructions':
         const message = 'Hi test test, welcome to the world of e-dee-YOU. I am ' + this.avatarName + '. How can I help you?';
         const sentences = message.split('.');
-        if(this.platformBrowser){
+        // if(this.platformBrowser){
         setTimeout(() => {
           localStorage.setItem('Avatar', value);
         }, 2000);
-        }
+        // }
         break;
 
       case 'DeviceError':
@@ -2310,7 +2310,7 @@ getCurrentTimeInGMT() {
   }
 
   displaySubtitles(final: any) {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     var container: any = document.getElementById('local-transcript')
     let delay = 0;
     let index = 0;
@@ -2333,7 +2333,7 @@ getCurrentTimeInGMT() {
       }
     };
     animateSubtitles();
-    }
+    // }
   }
 
 
@@ -2345,7 +2345,7 @@ getCurrentTimeInGMT() {
 
 
   stopAutoscrollFun() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     if (localStorage.hasOwnProperty("learningId")) {
       this.isManualScrolling = true
       var scroll = $('#outputDesc');
@@ -2367,7 +2367,7 @@ getCurrentTimeInGMT() {
       scroll.stop();
       $('#answerDescription').scrollTop(0);
     }
-    }
+    // }
   }
 
   /**
@@ -2467,9 +2467,9 @@ getCurrentTimeInGMT() {
         }
         break;
       case 'Opening the support area':
-        if(this.platformBrowser) {
+        // if(this.platformBrowser) {
         window.scrollTo(0, document.body.scrollHeight);
-        }
+        // }
         if (this.fullScreen == false) {
           this.onLoadCard('')
         }
@@ -2480,7 +2480,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2499,7 +2499,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2512,7 +2512,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2531,7 +2531,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2551,7 +2551,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2570,7 +2570,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2583,7 +2583,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2602,7 +2602,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2616,7 +2616,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2635,7 +2635,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2650,7 +2650,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2669,7 +2669,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2682,7 +2682,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2701,7 +2701,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2713,7 +2713,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2732,7 +2732,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2744,7 +2744,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2763,7 +2763,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2776,7 +2776,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2795,7 +2795,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2808,7 +2808,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2827,7 +2827,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2839,7 +2839,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2858,7 +2858,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2877,7 +2877,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2896,7 +2896,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2908,7 +2908,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2927,7 +2927,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2941,7 +2941,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2960,7 +2960,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -2978,7 +2978,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -2997,7 +2997,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -3009,7 +3009,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -3028,7 +3028,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -3047,7 +3047,7 @@ getCurrentTimeInGMT() {
         this.router.navigate(['/labs'], { fragment: 'pie' }).then(() => {
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -3066,7 +3066,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -3079,7 +3079,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -3098,7 +3098,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -3112,7 +3112,7 @@ getCurrentTimeInGMT() {
 
           const fragment = this.route.snapshot.fragment;
           if (fragment) {
-            if(this.platformBrowser) {
+            // if(this.platformBrowser) {
             setTimeout(() => {
               const element = document.getElementById(fragment);
               if (element) {
@@ -3131,7 +3131,7 @@ getCurrentTimeInGMT() {
                 }
               }
             }, 100);
-            }
+            // }
           }
         });
         if (this.fullScreen == false) {
@@ -3169,7 +3169,7 @@ getCurrentTimeInGMT() {
   // Add push to talk spacebar key listeners
   addPTTKeyListeners() {
     // When the user presses down on space bar, tell the digital human to start recording (start listening)
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     document.addEventListener('keydown', (e: any) => {
       if (e.code === 'Space' && !e.repeat && e.target.type !== 'text') {
         this.uneeq.stopSpeaking()
@@ -3177,7 +3177,7 @@ getCurrentTimeInGMT() {
         this.stopSubtitleAnimation()
       }
     });
-    }
+    // }
   }
 
 
@@ -3185,7 +3185,7 @@ getCurrentTimeInGMT() {
 
   //Function to handle resizing operations
   resizeFun() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     var avatarCanvas: any = document.querySelector('#sm-video canvas');
     const windowWidth = window.innerWidth;
     //this.minimizeBoxCardUI()
@@ -3235,7 +3235,7 @@ getCurrentTimeInGMT() {
       }
     }
 
-    }
+    // }
     // this.minimizeBoxCardUI()
     // this.smallcardSetPosition()
 
@@ -3266,9 +3266,9 @@ getCurrentTimeInGMT() {
 
   loadGraphDataForMaths() {
     this.isgraphLoaded = true;
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     $('#graphButton').removeClass('showMessage')
-    }
+    // }
   }
 
 
@@ -3381,7 +3381,7 @@ getCurrentTimeInGMT() {
 
 
   minimizeBoxCardUI() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     const windowWidth = window.innerWidth;
     if (windowWidth < 480) {
       this.isMobileNormalTrue = true
@@ -3436,13 +3436,13 @@ getCurrentTimeInGMT() {
       this.stopIconWidthPosition = '50'
       this.stopIconHeightPosition = '50'
     }
-    }
+    // }
 
 
   }
 
   maximizeBoxCardUI() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     if (window.screen.width < 480) {
 
       this.bottomPosition = 7
@@ -3508,7 +3508,7 @@ getCurrentTimeInGMT() {
       this.stopIconHeightPosition = '60'
     }
 
-    }
+    // }
   }
 
   hideAvatarForMobile() {
@@ -3520,7 +3520,7 @@ getCurrentTimeInGMT() {
 
   // card expand button function  
   onLoadCard(id: any) {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     setTimeout(() => {
       if (this.fullScreen === true) {
         // condition for making small screen avatar card
@@ -3711,7 +3711,7 @@ getCurrentTimeInGMT() {
       this.fullScreen = !this.fullScreen
       //  console.log('normal condition', this.fullScreen)
     }
-    }
+    // }
 
     // this.fullScreen = !this.fullScreen
     // console.log('normal condition', this.fullScreen)
@@ -3719,7 +3719,7 @@ getCurrentTimeInGMT() {
 
 
   checkBubbleOpen() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     if (localStorage.hasOwnProperty("mathtoggle")) {
       let toggle = JSON.parse(localStorage.getItem('mathtoggle') || 'undefined')
       if (toggle == true) {
@@ -3732,7 +3732,7 @@ getCurrentTimeInGMT() {
       console.log('else case chat bubble ')
       $('#chatbubblemessage').addClass('showMessage')
     }
-    }
+    // }
   }
 
 
@@ -3740,7 +3740,7 @@ getCurrentTimeInGMT() {
  * Function to change the size of the avatar
  */
   changeAvatarSize() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     if (this.fullScreen === false) {
       // condition for making big screen avatar card
       console.warn('viewport width', window.innerWidth
@@ -3895,14 +3895,14 @@ getCurrentTimeInGMT() {
         }
       }
     }
-    }
+    // }
   }
 
 
 
 
   smallcardSetPosition() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     console.log('run when in small card view')
     var t: any = document.querySelector('#sm-video')
     var videoTag: any = document.querySelector('#smVideo')
@@ -3929,7 +3929,7 @@ getCurrentTimeInGMT() {
         videoTag.style.height = '100%'
       }
     }
-    }
+    // }
   }
 
 
@@ -3963,7 +3963,7 @@ getCurrentTimeInGMT() {
 
   //openAI API function call
   callOpenAI() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     var session = localStorage.getItem('sessionId')
     let payloadData = {
       "data": this.userSpeakValue,
@@ -3992,12 +3992,12 @@ getCurrentTimeInGMT() {
       }
 
     })
-    }
+    // }
   }
 
 
   checkButton() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     setTimeout(() => {
       if (this.fullScreen == true) {
         console.log('adding color when true')
@@ -4011,12 +4011,12 @@ getCurrentTimeInGMT() {
         $('.bcolorMic').css('background-color', '#7393c4')
       }
     }, 1)
-    }
+    // }
   }
 
   //openAI API function call
   callOpenAIMathematicsAPI() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     var session = localStorage.getItem('sessionId')
     let payloadData = {
       "data": this.userSpeakValue,
@@ -4043,7 +4043,7 @@ getCurrentTimeInGMT() {
     //     this.disableMicButton = false
     //   }
     // })
-    }
+    // }
   }
 
 
@@ -4069,7 +4069,7 @@ getCurrentTimeInGMT() {
  * @returns {void} - This function doesn't return anything.
  */
   oncrossTest() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     this.pdfShow = ""
     console.log('true')
     // this.optionList = []
@@ -4236,14 +4236,14 @@ this.bubblewindowOnOff = true
     this.iconShow = false
     this.defaultExitMessage()
     this.checkMathsIndicatorActive()
-  }
+  // }
 
 
   }
 
   // default message 
   defaultExitMessage() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     const avatarCanvas: any = document.querySelector('#sm-video canvas')
     if (avatarCanvas !== null) {
       avatarCanvas.style.width = '100%'
@@ -4252,7 +4252,7 @@ this.bubblewindowOnOff = true
     }
     var aa: any = document.getElementById('outputDesc')
     if (aa) aa.innerHTML = 'welcome to the world of edYOU. I am ' + this.avatarName + '. How can I help you?';
-    }
+    // }
   }
 
 
@@ -4288,7 +4288,7 @@ this.bubblewindowOnOff = true
 
   clickFunction(value: any) {
 
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     if (this.ccBox == true) {
       $('#panel1').css('display', 'block')
       // $('#panel2').css('display','none')
@@ -4300,7 +4300,7 @@ this.bubblewindowOnOff = true
 
     this.ccBox = !this.ccBox
     this.isDropDownSetting = false;
-    }
+    // }
   }
 
 
@@ -4352,7 +4352,7 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
   }
 
   removeSaveDate() {
-    if(this.platformBrowser) {
+    // if(this.platformBrowser) {
     let saveDate1: any = localStorage.getItem('savedDate3');
     const currentDate = new Date();
     const saved = new Date(saveDate1)
@@ -4365,7 +4365,7 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
     } else {
       console.log('less than or equal than 0')
     }
-    }
+    // }
   }
 
 
@@ -4393,10 +4393,10 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
       confirmButtonColor: '#2a7cc7',
       allowOutsideClick: false,
     }).then((result) => {
-      // let p = {
-      //   name: 'Avatar start speaking.',
-      // }
-      // this.customLogger(p)
+      let p = {
+        name: 'Avatar start speaking.',
+      }
+      this.customLogger(p)
       this.muteDigitalPerson()
     });
   }
