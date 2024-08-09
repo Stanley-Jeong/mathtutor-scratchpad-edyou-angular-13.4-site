@@ -1331,8 +1331,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     if (savedDate) {
 
       if (this.scene.connectionState._connectionState['name'] == 'Disconnected') {
-
+        console.log('console 1')
       } else {
+        console.log('console 2')
         // let curTime = body.output['context']['public-context']?.Time
         // let userIP = body.output['context']['public-context']?.IP_address
         // // this.persona.conversationSend('', { 'Time': curTime, 'IP_address': userIP }, {  });
