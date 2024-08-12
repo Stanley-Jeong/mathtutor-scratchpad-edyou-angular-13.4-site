@@ -62,6 +62,24 @@
 <link rel=alternate type=application/json+oembed href="https://investor.edyou.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finvestor.edyou.com%2F">
 <link rel=alternate type=text/xml+oembed href="https://investor.edyou.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finvestor.edyou.com%2F&#038;format=xml">
 <script src=./assets/scripts/appear.js></script>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        registrations.forEach((registration) => {
+          registration.unregister();
+        });
+      });
+    }
+</script>
+<script>
+    if ('caches' in window) {
+      caches.keys().then((cacheNames) => {
+        cacheNames.forEach((cacheName) => {
+          caches.delete(cacheName);
+        });
+      });
+    }
+</script>
 <script>window.location.href.indexOf("book-demo/thank-you")>-1&&setTimeout("window.location='/'",5e3)</script>
 <script class=hsq-set-content-id data-content-id=standard-page>var _hsq=_hsq||[];_hsq.push(["setContentType","standard-page"])</script>
 <meta name=generator content="Elementor 3.19.2; features: e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">

@@ -906,7 +906,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     let receivedConversationResult = false;
     const conversationResultTimeout = setTimeout(() => {
       if (!receivedConversationResult) {
-          this.showPopup('No conversation result received within 4 seconds.');
+          // this.showPopup('No conversation result received within 4 seconds.');
       //  this.avatarFunction()
       this.customWelcomeMessge()
       }
@@ -1040,10 +1040,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   }
-  showPopup(message: string) {
-    // Implement your popup logic here
-    alert(message); // Example using alert, replace with your custom popup logic
-}
+  // showPopup(message: string) {
+  //   // Implement your popup logic here
+  //   alert(message); // Example using alert, replace with your custom popup logic
+  // }
 
   scrollToBottom() {
 

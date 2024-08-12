@@ -25,7 +25,6 @@
     "@angular/platform-browser-dynamic": "~13.4.0",
     "@angular/platform-server": "~13.4.0",
     "@angular/router": "~13.4.0",
-    "@angular/service-worker": "~13.4.0",
     "@nguniversal/express-engine": "^13.1.1",
     "@sentry/angular-ivy": "^7.114.0",
     "@soulmachines/smwebsdk": "^15.7.0",
