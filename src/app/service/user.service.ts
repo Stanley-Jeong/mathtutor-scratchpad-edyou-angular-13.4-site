@@ -140,7 +140,7 @@ export class UserService {
 
   // OpenAI API call
   getColorAPI(data: any) {
-    return this.http.post('https://v8awnmd5cd.execute-api.us-west-2.amazonaws.com/Development/bg_color_get_and_update', data)
+    return this.http.post('https://3umx5ofo18.execute-api.us-west-2.amazonaws.com/Production/background_color_website', data)
   }
 
 
@@ -282,6 +282,8 @@ headerClear(){
   getIp(){
     return this.http.get('https://api.ipify.org?format=json')
   }
+
+
 
 
 }

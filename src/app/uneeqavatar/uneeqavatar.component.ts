@@ -42,23 +42,13 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   uneeq: any
   showMic: boolean = false
   token: any = '';
-
-
-
-
-
   ccOnOff: boolean = true;
-
-
-
   ischatBoxOpen: boolean = false
   idleTimeout: any;
   messageForQueueAvatar: boolean = false;
   mobileAvatarOnOff: any = false;
   showImage: boolean = false;
   smallSizeImage: boolean = false
-
-
   stopAvatarOnClick: boolean = false;
   mic: any
   isvoiceAnimationOn: boolean = false;
@@ -71,13 +61,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   QuestionccOnOff: boolean = true;
   hideHelpSetting: boolean = true
   checkFullScreenB: any = false
-
   CorrectAnswer: any;
-
-
-
-
-
   feedback: boolean = false;
   openFeedbackForm: boolean = false;
   isClick: boolean = false;
@@ -216,11 +200,19 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+    window.onbeforeunload = function () {
+      localStorage.removeItem('Avatar');
+      localStorage.removeItem('screen');
+      localStorage.removeItem('browserList');
+      localStorage.removeItem('learningId');
+      localStorage.removeItem('mathtoggle');
+    };
     this.removeSaveDate()
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
     this.getColorAPI()
+    // this.checkcolor()
     // this.onLoadCard('')
     if(this.platformBrowser){
     this.user = JSON.parse(localStorage.getItem('user') || '[]')
@@ -241,13 +233,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
      // this.mobileAvatarOnOff = true
     }
     // remove item on page refresh 
-    window.onbeforeunload = function () {
-      localStorage.removeItem('Avatar');
-      localStorage.removeItem('screen');
-
-      localStorage.removeItem('learningId');
-      localStorage.removeItem('mathtoggle');
-    };
+   
     }
 
     this.avatarFunction()
@@ -259,7 +245,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     })
 
 
-
+   
     // console.warn('Is GMT',isGMT )
     // console.warn('Time Zone Offset (in hours from GMT)',offsetHours )
   }
@@ -334,6 +320,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       next: (res: any) => {
         //  console.log(res);
         this.browserList = res.body;
+        localStorage.setItem("browserList", JSON.stringify(res.body));
         this.findColor();
         this.checkDeviceAndColor();
       },
@@ -344,6 +331,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
   findColor() {
+   
+    // console.log(this.browserList)
     this.browserList.forEach((item: any) => {
       // Check each item and assign colors based on conditions
       switch (Object.keys(item)[0]) {
@@ -918,9 +907,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     const conversationResultTimeout = setTimeout(() => {
       if (!receivedConversationResult) {
           this.showPopup('No conversation result received within 4 seconds.');
-       this.avatarFunction()
+      //  this.avatarFunction()
+      this.customWelcomeMessge()
       }
-  }, 4000);
+  }, 7000);
     console.log(Scene,'this is scene for websdk-------------------------')
     console.log(Scene.prototype,'this is scene for websdk-------------------------')
     console.log(Scene.prototype.onSceneMessage ,'this is scene for websdk-------------------------')
@@ -4420,6 +4410,73 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
       this.muteDigitalPerson()
     });
   }
+
+// Function to get the browser name
+getBrowserName() {
+  var userAgent = navigator.userAgent;
+  var browsers:any = {
+    Chrome: /Chrome/i,
+    Safari: /Safari/i,
+    Firefox: /Firefox/i,
+    IE: /Internet Explorer/i,
+    Edge: /Edge/i,
+    Opera: /Opera|OPR/i
+  };
+
+  for (var key in browsers) {
+    if (browsers[key].test(userAgent)) {
+      return key;
+    }
+  }
+  
+  return "Unknown";
+}
+
+// Function to get the device type
+ getDeviceType() {
+  var userAgent = navigator.userAgent;
+  if (/(iPhone|iPod)/.test(userAgent)) {
+    return "iOS";
+  }else if (/iPad/.test(userAgent)) {
+    return "iPad";
+  } else if (/Android/.test(userAgent)) {
+    return "Android";
+  } else if (/Mac/.test(userAgent)) {
+    return "Mac OS";
+  } else if (/Windows/.test(userAgent)) {
+    return "Windows";
+  } else {
+    return "windowUniversal";
+  }
+}
+  // checkcolor(){
+  //   var browserName = this.getBrowserName();
+  //   var deviceType = this.getDeviceType();  
+  //   // let DeviceInfo = {
+  //   //   browser: browserName,
+  //   //   device: deviceType
+  //   // };
+  //   let device
+  //   if(deviceType == "iPad" || deviceType == "Android" || deviceType == "windowUniversal"){
+  //     device  = deviceType
+  //   }else{
+  //     device  = deviceType +'_' + browserName
+  //   }
+   
+  //   let pay={
+  //     "device":device
+  //   }
+  //   console.log(pay)
+  //   this.ser.change_backgroundcolor(pay).subscribe((res:any)=>{
+  //     console.log(res)
+  //     if(res.statusCode == 200){
+  //       this.backgroundColor = res.body.color
+  //       console.log(this.backgroundColor,'set background color only----------------------------------===============================-------------')
+  //       // this.findColor()
+  //       // this.checkDeviceAndColor()
+  //     }
+  //   })
+  // }
 
 
 }
