@@ -4478,5 +4478,4 @@ getBrowserName() {
   //   })
   // }
 
-
 }
