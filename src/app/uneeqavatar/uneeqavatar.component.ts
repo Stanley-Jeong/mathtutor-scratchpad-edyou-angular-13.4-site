@@ -4405,7 +4405,7 @@ console.log("Atif------ ",this.popup, this.popup2, event?.target);
       let p = {
         name: 'Avatar start speaking.',
       }
-      this.customWelcomeMessge()
+      // this.customWelcomeMessge()
       this.customLogger(p)
       this.muteDigitalPerson()
     });
