@@ -1403,7 +1403,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.persona.stopSpeaking()
     const personaInstance = this.persona
     //let text = this.userText
-
+    this.stop();
     //var textSet: any = document.getElementById('local-transcript')
 
 
@@ -1749,6 +1749,7 @@ getCurrentTimeInGMT() {
 
       this.recognizer.recognizing = (s: any, e: any) => {
         this.userInputText = e.result.text;
+        this.userText = e.result.text
       };
       this.recognizer.recognized = (s: any, e: any) => {
         if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
@@ -1762,6 +1763,7 @@ getCurrentTimeInGMT() {
           this.UserQuestion_Display = "";
           this.clearAvatarContentBox();
           this.persona.conversationSend(this.voiceText, {}, {});
+          this.userText = ""
           this.disableMicButton = true;
           this.hideOptionOnlyFOrMobile();
           if (this.voiceText) {
@@ -1833,9 +1835,16 @@ getCurrentTimeInGMT() {
     this.dotIndicatorAnimation = false
     this.recognizing = false;
     this.isMicButtonActive = false;
-    this.recognizer.stopContinuousRecognitionAsync(
-      this.stopRecognizer.bind(this),
-    )
+    // this.recognizer.stopContinuousRecognitionAsync(
+    //   this.stopRecognizer.bind(this),
+    // )
+    if (this.recognizer) {
+      this.recognizer.stopContinuousRecognitionAsync(
+        this.stopRecognizer.bind(this),
+      )
+    } else {
+      console.error('Recognizer is undefined');
+    }
   }
 
 

@@ -938,7 +938,7 @@ video {
 .chatbubbleBox {
   margin-right: 20px;
 
-  height: 500px;
+  height: 370px;
   float: right;
   overflow-y: auto;
   z-index: 1400000;
