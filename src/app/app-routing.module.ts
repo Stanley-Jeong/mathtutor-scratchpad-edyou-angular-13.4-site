@@ -14,6 +14,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
+import { CoursePageComponent } from './courses-page/course.component'
 
 
 
@@ -35,6 +36,15 @@ const routes: Routes = [
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},
+  {path: 'us-history', component:CoursePageComponent},
+  {path: 'algebra', component:CoursePageComponent},
+  {path: 'english', component:CoursePageComponent},
+  {path: 'leadership', component:CoursePageComponent},
+  {path: 'communications', component:CoursePageComponent},
+  {path: 'entrepreneurship', component:CoursePageComponent},
+  {path: 'artificial-intelligence', component:CoursePageComponent},
+  {path: 'computer-science', component:CoursePageComponent},
+  {path: 'project-management', component:CoursePageComponent},
   {path: '**', redirectTo: '/'}
 ];
 

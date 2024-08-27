@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { interval, Subject, Subscription } from 'rxjs';
 import { UserService } from '../service/user.service';
 import { ColorChangeService } from '../service/color-change.service';
@@ -149,6 +149,27 @@ export class MainComponent implements OnInit,OnDestroy {
     });
   }
   }
+
+  scrollToId(id: string) {
+    // console.log("element id : ", id);
+    this.service2.scrollToElementById(id);
+  }
+
+
+  /* COURSES NAVIGATION */
+  navigateToCoursePage(url: string | UrlTree) {
+    this.router.navigateByUrl(url);
+    // this.router.navigate(['/us-history']);
+  }
+
+
+
+
+
+
+
+
+
 
   // for countdown
 

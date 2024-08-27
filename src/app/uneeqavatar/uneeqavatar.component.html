@@ -35,7 +35,7 @@
 
 
   <!-- // avatar hide button feature  -->
-  <div class="bottomChat " id="mobileAvatarButton">
+  <div class="bottomChat" id="mobileAvatarButton">
     <div class="commonstyle" onkeyup="event.preventDefault()" (click)="hideMethod()">
       <div class="">
         <span class="tooltipAvatar">Hide Hannah</span>
@@ -60,302 +60,302 @@
     </div>
   </div>
 
+
+  <!-- HANNAH CORNER BOX STARTS HERE -->
   <div class="speaking-lady   imgTest" id="movableCard" style="border-radius: 0px;"
-    [style.background-color]="backgroundColor">
-    <div id="avatarLoaders" style="margin-top:50px">
-      <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
-        <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
-      </div>
-      <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
-        {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a
-        moment.
-      </p>
+  [style.background-color]="backgroundColor">
+  <div id="avatarLoaders" style="margin-top:50px">
+    <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
+      <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
+    </div>
+    <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
+      {{avatarName}} is on her way to meet with you.<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Please wait a
+      moment.
+    </p>
+  </div>
+
+
+  <ng-container *ngIf="!messageForQueueAvatar">
+    <!-- speakingsss_large   // its use when the card open in full screen on open -->
+    <div class="speakingsss " id="cross" style="position: absolute;" >
+      <span *ngIf="hideMaximizeArrow"  id="maximizeAvatar" (click)="onLoadCard('sm-video')">
+        <svg width="23" height="23" fill="#FFFFFF" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 3h6v6"></path>
+          <path d="M9 21H3v-6"></path>
+          <path d="m21 3-7 7"></path>
+          <path d="m3 21 7-7"></path>
+        </svg>
+        <span style="font-style: normal;" class="max">Maximize</span>
+      </span>
+
+      <span style="margin-top: -10px;" style=" position: absolute;" class="" id="minimizeAvatar" (click)="onLoadCard('sm-video')">
+        <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
+        <img id="cross1" alt="arrow" src='../../../../assets/interaction/arrow-left.svg' style="width: 30px; height: 30px;">
+        <span class="min" style="font-style: normal;">Minimize</span>
+      </span>
     </div>
 
-
-    <ng-container *ngIf="!messageForQueueAvatar">
-      <!-- speakingsss_large   // its use when the card open in full screen on open -->
-      <div class="speakingsss " id="cross" style="position: absolute;" >
-        <span *ngIf="hideMaximizeArrow"  id="maximizeAvatar" (click)="onLoadCard('sm-video')">
-          <svg width="23" height="23" fill="#FFFFFF" stroke="#fafafa" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 3h6v6"></path>
-            <path d="M9 21H3v-6"></path>
-            <path d="m21 3-7 7"></path>
-            <path d="m3 21 7-7"></path>
-          </svg>
-          <span style="font-style: normal;" class="max">Maximize</span>
-        </span>
-
-        <span style="margin-top: -10px;" style=" position: absolute;" class="" id="minimizeAvatar" (click)="onLoadCard('sm-video')">
-          <!-- <img src="../../../../assets/interaction/x-circle.svg" style="width: 29px; height: 29px;"> -->
-          <img id="cross1" alt="arrow" src='../../../../assets/interaction/arrow-left.svg' style="width: 30px; height: 30px;">
-          <span class="min" style="font-style: normal;">Minimize</span>
-        </span>
-      </div>
-
-      <div class="tourDivCss " id="tourIcon" style="position: absolute;">
-        <img src="../../../../assets/interaction/map-02.svg" alt="map" (click)="StartTourGuideSetting()"
-          style="width: 30px; height: 30px;">
-        <span class="GuidedTour">Guided Tour</span>
-      </div>
-
-    </ng-container>
-
-    <div id="iconShow" class="zz showI"
-      style=" justify-content: left; margin-left: 18px; margin-top: 10px; cursor: pointer">
-
+    <div class="tourDivCss " id="tourIcon" style="position: absolute;">
+      <img src="../../../../assets/interaction/map-02.svg" alt="map" (click)="StartTourGuideSetting()"
+        style="width: 30px; height: 30px;">
+      <span class="GuidedTour">Guided Tour</span>
     </div>
 
-    <div class="rightDiv zz">
+  </ng-container>
 
-      <!-- height: 30px; -->
-      <div id="hambergerBar" class="notSchool" style="height: 45px;"></div>
-
-    </div>
-
-
-  
-
-
-    <!-- // queue message for avatar  -->
-    <div *ngIf='messageForQueueAvatar' style="margin-top:50px">
-      <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
-        <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
-      </div>
-      <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
-        Sorry, I am busy in serving others.<br> Give me a moment I will be right back.
-      </p>
-    </div>
-
-
-
-    <!-- // avatar video card -->
-    <div class="userVideo">
-      <div class="g" style="display: flex; justify-content: center;">
-        <!-- <div class="uneeqAvatar" id="sm-video">  [muted]="videoMuted" [autoplay]="autoplayTue"-->
-        <div class="uneeqAvatar" id="sm-video">
-          <video id="smVideo" width="100%" height="100%" autoplay playsinline></video>
-        </div>
-        <!-- <video src="../../assets/images/mov_bbb.mp4" preload="auto" autoplay muted style=" width: 100%; height: 100%;"></video> -->
-
-      </div>
-    </div>
-
-
-    <div class="peerVideo">
-      <div class="QuestionCard fontss hideMessage" id="textDisplay" style="margin-top: 21px;">
-        <div class="avatarspeak-s fontss" id="descpText">
-        </div>
-      </div>
-
-      <div class="playerOne  hideMessage fontss" id="ImageDisplay" style="margin-top: 21px;">
-        <div class="" style="height:330px;">
-          <img class="ImageAspectRatio Qimage" alt="playerOne" [src]="ImageData"
-            style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
-          <!-- Want to work -->
-          <!-- Finding -->
-        </div>
-      </div>
-
-
-      <!-- <ng-container *ngIf="DescAnswer != ''"> -->
-          <!-- chat bubble start  -->
-          <div class="chatbubbleBox   hideMessage" id="chatbubblemessage" style="margin-top: 8px;">
-            <div #messageContainer class="chat-container">
-              <div class="message-container" *ngFor="let chat of storedChatBubbleMessage; let i = index">
-                <ng-container *ngIf="chat.source === 'user'">
-                  <span class="receiver-timer">{{chat.time}}</span>
-                  <div class="message   receiver-message">
-                    <div class="receviedSpan scrollbarchatUser "> {{chat.text}} </div>
-                  </div>
-                  <!-- <svg xmlns="http://www.w3.org/2000/svg" style="align-self: flex-end;
-                  z-index: 100;
-                  margin-right: 6px;
-                  margin-top: -25px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                    <g filter="url(#filter0_b_8074_5239)">
-                      <path d="M8 0.5L17 17.5L0.5 12.5L8 0.5Z" fill="#1367B4" />
-                    </g>
-                    <defs>
-                      <filter id="filter0_b_8074_5239" x="-14.5" y="-14.5" width="46.5" height="47"
-                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
-                        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_8074_5239" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_8074_5239" result="shape" />
-                      </filter>
-                    </defs>
-                  </svg> --> 
-                  <svg xmlns="http://www.w3.org/2000/svg" style="align-self: flex-end;
-                  z-index: 100;
-                  margin-right: 4px;
-                  margin-top: -24px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                    <g filter="url(#filter0_b_8074_5239)">
-                      <path d="M8 0.5L17 17.5L0.5 12.5L8 0.5Z" fill="#1367B4" />
-                    </g>
-                    <defs>
-                      <filter id="filter0_b_8074_5239" x="-14.5" y="-14.5" width="46.5" height="47"
-                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
-                        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_8074_5239" />
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_8074_5239" result="shape" />
-                      </filter>
-                    </defs>
-                  </svg>
-                </ng-container>
-  
-  
-  
-                <ng-container *ngIf="chat.source === 'persona'">
-                  <span class="sender-timer">{{chat.time}}</span>
-                  <div class="message   sender-message">
-                 
-                      <div class="senderSpan scrollbarchat">{{chat.text}} </div>
-              
-                
-                  </div>
-                  <!-- <svg xmlns="http://www.w3.org/2000/svg" style="    z-index: 100;
-          margin-top: -25px;
-          margin-left: 6px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                    <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
-                  </svg> -->
-                  <svg xmlns="http://www.w3.org/2000/svg" style="    z-index: 100;
-                  margin-top: -24px;
-                  margin-left: 4px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                            <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
-                          </svg>
-                </ng-container>
-              </div>
-  
-              <ng-container *ngIf="showLoaderMess">
-                <div class="loaders"> <img alt="threedot" src="../../assets/threedot.gif" style="width: 50px;
-          height: 50px;margin-left: 10px; border-radius: 15px;
-          background-color: white;"></div>
-                <svg xmlns="http://www.w3.org/2000/svg" style="     z-index: 100;
-  margin-top: -45px;
-  margin-left: 7px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
-                  <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
-                </svg>
-              </ng-container>
-            </div>
-          </div>
-      <!-- </ng-container> -->
-      <!-- -->
-
-
-
-      <!-- <div class="hideMessage" id="userCC">
-        <div class="bottomboxSize">
-          <div class="container">
-            <div class=" d-flex justify-content-center">
-              <div class="ccBoxNew " id="userText">
-
-                <div class="avatarspeak-s" id="local-transcript">
-                  You: {{userInputText}}
-            
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div> -->
-
-  
-
-      <!-- -- chat box , mic ------ -->
-      <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.bottom.px]="bottomPosition"
-        [style.height]="bottomPositionheight" [style.width]="bottomPositionWidth">
-        <div class="container">
-          <div class="d-flex justify-content-center centerDiv">
-            <div class="box-1" id="boxForInput" style="z-index: 21000000">
-              <ng-container>
-                <div class="input-container">
-                  <ng-container *ngIf="normalChatBar">
-                    <!-- <input type="text" #input1 style="width: 60px;">
-                <input type="text" #input2 style="width: 60px;"> 
-                <button (click)="setVideo(input1.value, input2.value)">send</button>  -->
-                <!-- onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()" -->
-                    <input type="text" [style.width]="inputWidthSize" id="textTourBox" [style.height]="inputheightSize"
-                      (focus)="onFocus('inputActive')" (blur)="onBlur()" class="group-item"
-                    
-                      [(ngModel)]="userText" placeholder="Type here or push mic to talk"
-                      style="font-size: medium !important; padding-left: 15px !important; border-color: white;">
-
-                  </ng-container>
-
-           
-                  <img alt="send" class="chat-button" id="sendId1" style="width: 50px;height: 45px; background-color: white;"
-                    (click)="sendTextToAvatar()"
-                    [src]="focusInput == 'inputActive' ? '../../assets/newSend.svg' : '../../assets/send-03.svg'">
-
-                </div>
-              </ng-container>
-            </div>
-
-
-            <div class="box-2" [style.margin-left]="box2MarginLeft">
-              <div class="di">
-                <span>
-                  <img alt="micBlank" id="voiceId" *ngIf="isvoiceAnimationOn == false"
-                    (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth"
-                    [style.height.px]="micHeight" [style.margin-left]="micMarginLeft2" style="max-width: none;"
-                    src="../../assets/micBlank.png" />
-                  <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micOrange.png"
-                    [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
-                    [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft"> -->
-                  <img alt="newMicGIff" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/newMicGIff.gif" style="max-width: none;"
-                    [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
-                    [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft">
-                </span>
-              </div>
-            </div>
-
-      
-
-            <div class="box-3" id="box3Main" style="margin-left: 5px; cursor: default;">
-              <img *ngIf="!dotIndicatorAnimation" style="    position: relative; width: 65px; 
-            margin-left: 3px; 
-            margin-top: 14px;" src="../../assets/dotIndicator.svg" alt="dotIndicator">
-              <div id="bars" style="margin-top: 15px;    width: 60px;" *ngIf="dotIndicatorAnimation">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="testtt showI" id="mobileDotAni" style="    position: absolute;
-        right: 5%;
-        width: 60px;
-        margin-top: -145px;">
-            <img *ngIf="!dotIndicatorAnimation" alt="dotIndicator" class="indicatorForMobile" src="../../assets/dotIndicator.svg">
-            <div id="bars" class="animationIndictor" *ngIf="dotIndicatorAnimation">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-    </div>
+  <div id="iconShow" class="zz showI"
+    style=" justify-content: left; margin-left: 18px; margin-top: 10px; cursor: pointer">
 
   </div>
 
+  <div class="rightDiv zz">
+
+    <!-- height: 30px; -->
+    <div id="hambergerBar" class="notSchool" style="height: 45px;"></div>
+
+  </div>
+
+
+
+
+
+  <!-- // queue message for avatar  -->
+  <div *ngIf='messageForQueueAvatar' style="margin-top:50px">
+    <div id="loader" style="display: flex;justify-content: center; font-size: 18px;">
+      <img src="../../assets/images/Rolling.gif" alt="Rolling" style="width: 50px; height:50px ">
+    </div>
+    <p style="display: flex;justify-content: center; font-size: 16px; color: white;">
+      Sorry, I am busy in serving others.<br> Give me a moment I will be right back.
+    </p>
+  </div>
+
+
+
+  <!-- // avatar video card -->
+  <div class="userVideo">
+    <div class="g" style="display: flex; justify-content: center;">
+      <!-- <div class="uneeqAvatar" id="sm-video">  [muted]="videoMuted" [autoplay]="autoplayTue"-->
+      <div class="uneeqAvatar" id="sm-video">
+        <video id="smVideo" width="100%" height="100%" autoplay playsinline></video>
+      </div>
+      <!-- <video src="../../assets/images/mov_bbb.mp4" preload="auto" autoplay muted style=" width: 100%; height: 100%;"></video> -->
+
+    </div>
+  </div>
+
+
+  <div class="peerVideo">
+    <div class="QuestionCard fontss hideMessage" id="textDisplay" style="margin-top: 21px;">
+      <div class="avatarspeak-s fontss" id="descpText">
+      </div>
+    </div>
+
+    <div class="playerOne  hideMessage fontss" id="ImageDisplay" style="margin-top: 21px;">
+      <div class="" style="height:330px;">
+        <img class="ImageAspectRatio Qimage" alt="playerOne" [src]="ImageData"
+          style=" box-shadow: rgba(239, 221, 221, 0.35) 0px 5px 15px; ">
+        <!-- Want to work -->
+        <!-- Finding -->
+      </div>
+    </div>
+
+
+    <!-- <ng-container *ngIf="DescAnswer != ''"> -->
+        <!-- chat bubble start  -->
+        <div class="chatbubbleBox   hideMessage" id="chatbubblemessage" style="margin-top: 8px;">
+          <div #messageContainer class="chat-container">
+            <div class="message-container" *ngFor="let chat of storedChatBubbleMessage; let i = index">
+              <ng-container *ngIf="chat.source === 'user'">
+                <span class="receiver-timer">{{chat.time}}</span>
+                <div class="message   receiver-message">
+                  <div class="receviedSpan scrollbarchatUser "> {{chat.text}} </div>
+                </div>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" style="align-self: flex-end;
+                z-index: 100;
+                margin-right: 6px;
+                margin-top: -25px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <g filter="url(#filter0_b_8074_5239)">
+                    <path d="M8 0.5L17 17.5L0.5 12.5L8 0.5Z" fill="#1367B4" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_b_8074_5239" x="-14.5" y="-14.5" width="46.5" height="47"
+                      filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+                      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_8074_5239" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_8074_5239" result="shape" />
+                    </filter>
+                  </defs>
+                </svg> --> 
+                <svg xmlns="http://www.w3.org/2000/svg" style="align-self: flex-end;
+                z-index: 100;
+                margin-right: 4px;
+                margin-top: -24px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <g filter="url(#filter0_b_8074_5239)">
+                    <path d="M8 0.5L17 17.5L0.5 12.5L8 0.5Z" fill="#1367B4" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_b_8074_5239" x="-14.5" y="-14.5" width="46.5" height="47"
+                      filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+                      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_8074_5239" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_8074_5239" result="shape" />
+                    </filter>
+                  </defs>
+                </svg>
+              </ng-container>
+
+
+
+              <ng-container *ngIf="chat.source === 'persona'">
+                <span class="sender-timer">{{chat.time}}</span>
+                <div class="message   sender-message">
+               
+                    <div class="senderSpan scrollbarchat">{{chat.text}} </div>
+            
+              
+                </div>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" style="    z-index: 100;
+        margin-top: -25px;
+        margin-left: 6px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                  <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
+                </svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" style="    z-index: 100;
+                margin-top: -24px;
+                margin-left: 4px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                          <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
+                        </svg>
+              </ng-container>
+            </div>
+
+            <ng-container *ngIf="showLoaderMess">
+              <div class="loaders"> <img alt="threedot" src="../../assets/threedot.gif" style="width: 50px;
+        height: 50px;margin-left: 10px; border-radius: 15px;
+        background-color: white;"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="     z-index: 100;
+margin-top: -45px;
+margin-left: 7px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                <path d="M9 0.5L0 17.5L16.5 12.5L9 0.5Z" fill="white" />
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+    <!-- </ng-container> -->
+    <!-- -->
+
+
+
+    <!-- <div class="hideMessage" id="userCC">
+      <div class="bottomboxSize">
+        <div class="container">
+          <div class=" d-flex justify-content-center">
+            <div class="ccBoxNew " id="userText">
+
+              <div class="avatarspeak-s" id="local-transcript">
+                You: {{userInputText}}
+          
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+
+
+    <!-- -- chat box , mic ------ -->
+    <div class="bottomboxSize baseChatBottom" id="bottomBar" [style.bottom.px]="bottomPosition"
+      [style.height]="bottomPositionheight" [style.width]="bottomPositionWidth">
+      <div class="container">
+        <div class="d-flex justify-content-center centerDiv">
+          <div class="box-1" id="boxForInput" style="z-index: 21000000">
+            <ng-container>
+              <div class="input-container">
+                <ng-container *ngIf="normalChatBar">
+                  <!-- <input type="text" #input1 style="width: 60px;">
+              <input type="text" #input2 style="width: 60px;"> 
+              <button (click)="setVideo(input1.value, input2.value)">send</button>  -->
+              <!-- onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()" -->
+                  <input type="text" [style.width]="inputWidthSize" id="textTourBox" [style.height]="inputheightSize"
+                    (focus)="onFocus('inputActive')" (blur)="onBlur()" class="group-item"
+                  
+                    [(ngModel)]="userText" placeholder="Type here or push mic to talk"
+                    style="font-size: medium !important; padding-left: 15px !important; border-color: white;">
+
+                </ng-container>
+
+         
+                <img alt="send" class="chat-button" id="sendId1" style="width: 50px;height: 45px; background-color: white;"
+                  (click)="sendTextToAvatar()"
+                  [src]="focusInput == 'inputActive' ? '../../assets/newSend.svg' : '../../assets/send-03.svg'">
+
+              </div>
+            </ng-container>
+          </div>
+
+
+          <div class="box-2" [style.margin-left]="box2MarginLeft">
+            <div class="di">
+              <span>
+                <img alt="micBlank" id="voiceId" *ngIf="isvoiceAnimationOn == false"
+                  (click)="disableMicButton ? null : onclickMic()" [style.width.px]="micWidth"
+                  [style.height.px]="micHeight" [style.margin-left]="micMarginLeft2" style="max-width: none;"
+                  src="../../assets/micBlank.png" />
+                <!-- <img alt="" *ngIf="isvoiceAnimationOn == true" src="../../assets/micOrange.png"
+                  [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft"> -->
+                <img alt="newMicGIff" *ngIf="isvoiceAnimationOn == true" src="../../../../assets/newMicGIff.gif" style="max-width: none;"
+                  [style.width.px]="micWidthOnly" [style.margin-left]="micMarginLeft2" (click)="stopOnClick()"
+                  [style.height.px]="micHeight" [style.margin-left.px]="micMarginleft">
+              </span>
+            </div>
+          </div>
+
+    
+
+          <div class="box-3" id="box3Main" style="margin-left: 5px; cursor: default;">
+            <img *ngIf="!dotIndicatorAnimation" style="    position: relative; width: 65px; 
+          margin-left: 3px; 
+          margin-top: 14px;" src="../../assets/dotIndicator.svg" alt="dotIndicator">
+            <div id="bars" style="margin-top: 15px;    width: 60px;" *ngIf="dotIndicatorAnimation">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="testtt showI" id="mobileDotAni" style="    position: absolute;
+      right: 5%;
+      width: 60px;
+      margin-top: -145px;">
+          <img *ngIf="!dotIndicatorAnimation" alt="dotIndicator" class="indicatorForMobile" src="../../assets/dotIndicator.svg">
+          <div id="bars" class="animationIndictor" *ngIf="dotIndicatorAnimation">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<!-- HANNAH CORNER BOX ENDS HERE -->
+ 
 
 </div>

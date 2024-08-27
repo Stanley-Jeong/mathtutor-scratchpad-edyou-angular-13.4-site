@@ -1,9 +1,112 @@
-a{
+a {
     cursor: pointer;
 }
-main{
+
+main {
     max-width: 100% !important;
     overflow: hidden;
+}
+
+#video_hero {
+    display: none;
+}
+
+.hero-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+    margin-bottom: 60px;
+    padding-left: 135px;
+    padding-right: 135px;
+    /* background-color: #183152; */
+    /* background-color: #0E233D; */
+    /* border-radius: 18px; */
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 134px;
+}
+
+.right-avatar {
+    max-width: 600px;
+}
+
+.right-avatar a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.right-avatar img {
+    border-radius: 180px;
+}
+
+.right-avatar-button {
+    background-color: #427BC1;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+
+@media (min-width: 1282px)  {
+    .left-header {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 1281px)  {
+    .hero-text {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 1025px)  {
+    .hero-text {
+        font-size: 56px;
+    }
+
+    .courses-cards-container{
+        padding: 0 2em;
+    }
+
+    .info-section {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    
+
+}
+
+@media (max-width: 801px)  { 
+    .hero-banner {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .hero-text {
+        font-size: 48px;
+    }
+
+    .left-header {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .right-avatar img {
+        border-radius: 80px;
+    }
 }
 
 .countdown{
@@ -11,11 +114,12 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
-    width: 80%;
-    margin-left: 135px;
-    margin-right: 135px;
-
+    padding-top: 80px;
+    /* width: 80%; */
+    padding-left: 135px;
+    padding-right: 135px;
+    padding-bottom: 40px;
+    background-color: #0E233D;
 }
 
 .countdowntEXT{
@@ -44,6 +148,13 @@ main{
     border: 0.922px solid #2A7CC7;
     background: rgba(255, 255, 255, 0.04);
 }
+
+@media (max-width: 801px)  { 
+    .day{
+        max-width: 90px;
+    }
+}
+
 .seperator{
    display: flex;
    justify-content: center;
@@ -126,7 +237,107 @@ main{
     font-weight: 700;
     line-height: normal;
     margin-top: -6px;
+    text-align: center;
 }
+
+
+/* PRICING SECTION */
+.pricing-section {
+    background: linear-gradient(to bottom, #081524, #0E233D);
+    text-align: center;
+    padding: 64px 0px 114px 0px;
+}
+
+.pricing-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.pricing-card {
+    background-color: #183152;
+    height: 560px;
+    width: 380px;
+    border-radius: 12px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.silver {
+    background: linear-gradient(135deg, #414141, #737373);
+}
+
+.gold {
+    /* background: linear-gradient(135deg, #796610, #6c6130); */
+    background: linear-gradient(135deg, #796610, #6e5f1b);
+}
+
+.unlimited {
+    background-color: #000;
+    /* border-image: linear-gradient(45deg, #EB5CBD, #2B74F6 100%) 1; */
+    background: linear-gradient(90deg, #121212, #242424);
+}
+
+
+.pricing-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pricing-card-title-left {
+    text-align: left;
+}
+
+.pricing-number {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.pricing-button {
+    background-color: #427BC1;
+    border: none;
+    color: #fff;
+}
+
+.pricing-card-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pricing-card-description-list-items {
+    text-align: left;
+}
+
+
+/* COURSES SECTIONS */
+
+.courses-section {
+    /* background: linear-gradient(to bottom, #081524, #0E233D); */
+    background-color: #0E233D;
+    text-align: center;
+    padding: 64px 0px 114px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.courses-cards-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    margin-top: 30px;
+    max-width: fit-content;
+    margin-bottom: 60px;
+}
+
+
 
 /* popup */
 .overlay{
