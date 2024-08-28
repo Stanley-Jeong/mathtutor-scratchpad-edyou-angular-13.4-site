@@ -17,6 +17,7 @@ export class MainComponent implements OnInit,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
   subjectform!: FormGroup;
+  isHovered:boolean = false
 
   constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
   private titleService: Title, private metaService: Meta,private fb: FormBuilder) {
@@ -164,9 +165,14 @@ export class MainComponent implements OnInit,OnDestroy {
 
 
 
+ 
+  toggleGif(hovered: boolean) {
+    this.isHovered = hovered;
+  }
 
-
-
+  preEnroll(){
+    window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
+  }
 
 
 

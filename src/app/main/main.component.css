@@ -152,6 +152,40 @@ main {
 @media (max-width: 801px)  { 
     .day{
         max-width: 90px;
+        width: 68px;
+        height: 100px;
+    }
+    .countdowntEXT{
+        font-size: 16px;
+    }
+    .countdown{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 80px;
+        /* width: 80%; */
+        padding-left:0px;
+        padding-right: 0px; 
+        padding-bottom: 40px;
+        background-color: #0E233D;
+    }
+    .countdownHeading{
+        text-align: center;
+        font-size: 48px;
+    }
+    .dayNumber{
+        font-size: 40px !important;
+    }
+    .dayText{
+        font-size: 14px !important;
+    }
+    .dot{
+        width: 7px !important;
+        height: 7px !important;
+    }
+    .QuestionText{
+        font-size: 20px !important;
     }
 }
 
@@ -335,6 +369,14 @@ main {
     margin-top: 30px;
     max-width: fit-content;
     margin-bottom: 60px;
+}
+
+.courses-cards-container a img {
+    transition: transform 0.3s ease-in-out;
+}
+  
+.courses-cards-container a img:hover {
+    transform: scale(1.1); /* Adjust the scale value to control the zoom level */
 }
 
 
