@@ -26,3 +26,8 @@ a{
     margin-left: 5vh;
     margin-top: 5vh;
 }
+
+.hamburger-menu {
+    /* To show hamburger menu on desktop size as well */
+    display: block;
+}

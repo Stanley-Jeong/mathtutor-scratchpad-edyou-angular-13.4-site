@@ -19,10 +19,10 @@ export class CompanyComponent implements AfterViewInit, OnDestroy, OnInit {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.mySubscription = new Observable((observer:any) => {
       // Some observable logic
-      console.log(this.router.url)
+      // console.log(this.router.url)
     }).subscribe((data: any) => {
       // Handle data
-      console.log(this.router.url)
+      // console.log(this.router.url)
     });
   }
   ngDoCheck(): void {

@@ -17,7 +17,7 @@
                         <div class="elementor-widget-container">
                             <style>/*! elementor - v3.19.0 - 07-02-2024 */
 .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h1
-                                class="elementor-heading-title elementor-size-default">{{currentCourse}}</h1> 
+                                class="elementor-heading-title elementor-size-default">{{currentCourse.title}}</h1> 
                               </div>
                     </div>
                 </div>
@@ -35,9 +35,9 @@
                         <div class="elementor-widget-container">
                             <img fetchpriority="high" decoding="async"
                                 width="2560" height="1435"
-                                src="./assets/course-banners/us-history-banner.webp"
+                                src="{{currentCourse.image}}"
                                 class="attachment-full size-full wp-image-22094"
-                                alt="pay it forward"
+                                alt="{{currentCourse.id}}"
                                 sizes="(max-width: 2560px) 100vw, 2560px" />
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         data-id="5055114" data-element_type="widget"
                         data-widget_type="text-editor.default">
                         <div class="elementor-widget-container">
-                          <p>Discover the fascinating journey of the United States with our engaging US history course! Designed for learners of all ages, this course brings history to life with captivating stories, interactive lessons, and insights that will leave you eager for more. Whether you're a student, a lifelong learner, or just curious about America's past, this course is tailored to be enjoyable and enlightening for everyone. Dive into history like never before and see how the events of the past shape the world we live in today!</p> 
+                          <p>{{currentCourse.description}}</p> 
                         </div>
                         <div class="subscribe-button-container">
                           <button class="subscribe-button">Subscribe Now</button>
@@ -58,5 +58,4 @@
         <div class="post-tags">
         </div>
     </div>
-
 </main>

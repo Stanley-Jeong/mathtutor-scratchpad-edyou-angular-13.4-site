@@ -23,7 +23,7 @@ export const courses = [
   {
     id: "communications",
     title: "Communications",
-    image: "./assets/course-banners/communications.webp",
+    image: "./assets/course-banners/communications-banner.webp",
     description: `Enhance your ability to connect and influence with our Communications course! Perfect for professionals, students, and anyone looking to improve their interpersonal skills, this course covers the essentials of effective communication in both personal and professional settings. You'll learn to articulate your ideas clearly, listen actively, and adapt your message to different audiences. With practical exercises and real-world scenarios, you'll build confidence in public speaking, negotiation, and digital communication. Unlock the power of clear, persuasive communication and make your voice heard in any situation!`,
     icon: '',
   },

@@ -8,9 +8,17 @@
       <h1 class="hero-text">Hi, I'm Hannah, Your AI tutor and wellness companion.</h1>
     </div>
     <div class="right-avatar">
-      <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
-        <button class="right-avatar-button">Try Courses</button>
-      </a>
+      <!-- PLACEHOLDER VIDEO -->
+      <!-- <iframe class="iframe-video" src="https://www.youtube.com/embed/WVWF8HZmTWY?si=n2rGcdx9cTimtDpC&amp;controls=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+      <!-- <div class="video-container">
+        <video width="700" height="500" controls>
+          <source src="./assets/edyou-gen-video-placeholder.mp4" type="video/mp4">
+        </video>
+      </div> -->
+      <!-- <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
+        <button class="right-avatar-button">Try Course</button>
+      </a> -->
+      <img src="./assets/edyou-gen-video-placeholder.png" alt="edyou-gen-video-placeholder-image">
     </div>
   </div>
 
@@ -54,8 +62,8 @@
     <a (click)="scrollToId('pricing_section_id')">
       <button>Pre-Enroll Now!</button>
     </a>
-    <h6 class="signUptext">Sign up now to receive</h6>
-    <h5 class="offMsg">25% off on your subscription.</h5>
+    <h6 class="signUptext">Sign up before we launch to receive</h6>
+    <h5 class="offMsg">25% off your subscription.</h5>
   </div>
   <br>
 
@@ -149,18 +157,31 @@
   <!-- CONNECT LEARN THRIVE -->
   <div class="info-section">
     <div class="connect-learn-thrive">
-      <h2>Connect</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <h2>Learn</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <h2>Thrive</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="connect-learn-thrive-item">
+        <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon">
+        <div class="clt-text">
+          <h2>Connect</h2>
+          <p>Come together to share knowledge, experiences, and encouragement.</p>
+        </div>
+      </div>
+
+      <div class="connect-learn-thrive-item">
+        <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon">
+        <div class="clt-text">
+          <h2>Learn</h2>
+          <p>Explore new ideas and gain valuable skills to grow.</p>
+        </div>
+      </div>
+
+      <div class="connect-learn-thrive-item">
+        <img src="./assets/connect-learn-thrive-icons/thrive-white.png" alt="connect-icon" class="clt-icon thrive-icon">
+        <div class="clt-text">
+          <h2>Thrive</h2>
+          <p>Flourish and reach your full potential in life.</p>
+        </div>
+      </div>
+      
     </div>
-    <!-- <div class="right-avatar">
-      <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
-        <button class="right-avatar-button">Try Courses</button>
-      </a>
-    </div> -->
   </div>
 
   <!-- Clients & Partners moved to here -->
@@ -236,16 +257,6 @@
                     <div class='gallery-icon landscape'>
                       <img loading="lazy" decoding="async" width="1000"
                         height="1000"
-                        src="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/UAB+1000x1000.png"
-                        class="attachment-full size-full" alt="UAB"
-                        srcset="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/UAB+1000x1000.png 1000w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/UAB+150x150.png 300w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/UAB+150x150.png 150w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/UAB+768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
                         src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
                         class="attachment-full size-full" alt="Residentsmedical"
                         srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
@@ -262,7 +273,10 @@
 
   <!-- PRICING -->
   <div id="pricing_section_id" class="pricing-section">
-    <h2>Pricing</h2>
+    <div class="pricing-title-section">
+      <h2>Pricing</h2>
+      <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge">
+    </div>
     <div class="pricing-cards-container">
 
       <!-- DAY PLAN -->
@@ -270,14 +284,14 @@
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
                 <h4>Silver </h4>
-                <span>7 days free trial</span>
           </div>
           <div class="pricing-card-title-right">
-                <strong class="pricing-number">$39</strong><span>/Day</span>
-              </div>
-            </div>
-            <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
-            <!-- GO TO STRIPE! -->
+            <del>$39</del>
+            <span><strong class="pricing-number">$29.25</strong>/Day</span>
+          </div>
+        </div>
+        <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
+        <!-- GO TO STRIPE! -->
         <div class="pricing-card-description">
           <h5>Includes</h5>
           <ul class="pricing-card-description-list-items">
@@ -293,11 +307,11 @@
       <div class="pricing-card gold">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
-                <h4>Gold </h4>
-                <span>7 days free trial</span>
+              <h4>Gold </h4>
           </div>
           <div class="pricing-card-title-right">
-                <strong class="pricing-number">$139</strong><span>/Week</span>
+            <del>$139</del>
+            <span><strong class="pricing-number">$104.25</strong>/Week</span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
@@ -317,11 +331,11 @@
       <div class="pricing-card unlimited">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
-                <h4>Platinum</h4>
-                <span>7 days free trial</span>
+              <h4>Platinum</h4>
           </div>
           <div class="pricing-card-title-right">
-                <strong class="pricing-number">$249</strong><span>/month</span>
+            <del>$249</del>
+            <span><strong class="pricing-number">$186.75</strong>/month</span>
           </div>
         </div>
         <button class="pricing-button"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>

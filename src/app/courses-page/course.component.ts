@@ -14,31 +14,18 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
 
-  courseUrl: string;
+  courseId: string;
   currentCourse: any;
 
   constructor(private router: Router, private service : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
   private titleService: Title, private metaService: Meta) {
     this.isBrowser = isPlatformBrowser(this.platformId);
-    console.log(this.router.url)
-
-    this.courseUrl = this.router.url
-    this.currentCourse = courses.find((course) => course.id === this.courseUrl)
-    console.log("CURRENT COURSE", this.currentCourse)
+    this.courseId = this.router.url.slice(1)
+    this.currentCourse = courses.find((course) => course.id === this.courseId)
   }
   
 
-
-  ngOnInit(): void {
-    this.setTitle('Pay It Forward - edYOU’s Commitment to Education');
-    this.setMetaDescription('Discover edYOU’s Pay It Forward initiative, supporting educational growth and community development through innovative programs.')
-  }
-  setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
-  }
-  setMetaDescription(description: string) {
-    this.metaService.updateTag({ name: 'description', content: description });
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     if (this.isBrowser) {

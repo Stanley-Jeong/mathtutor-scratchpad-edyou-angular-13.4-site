@@ -31,7 +31,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
   constructor(
-    private router: Router,private service : ColorChangeService,
+    private router: Router, private service : ColorChangeService,
     @Inject(PLATFORM_ID) private platformId: Object
   ){this.isBrowser = isPlatformBrowser(this.platformId);}
 
