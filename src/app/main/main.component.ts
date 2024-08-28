@@ -18,6 +18,8 @@ export class MainComponent implements OnInit,OnDestroy {
   private isBrowser: boolean;
   subjectform!: FormGroup;
   isHovered:boolean = false
+  openSuccessPopup:boolean = false;
+
 
   constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
   private titleService: Title, private metaService: Meta,private fb: FormBuilder) {
@@ -170,11 +172,17 @@ export class MainComponent implements OnInit,OnDestroy {
     this.isHovered = hovered;
   }
 
-  preEnroll(){
-    window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
+ 
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach((field) => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
   }
-
-
 
 
   // for countdown
@@ -190,6 +198,7 @@ export class MainComponent implements OnInit,OnDestroy {
   second:any
   isCountdownOver: boolean = false;
   openForm: boolean = false;
+  isloading: boolean = false;
 
   updateCountdown(): void {
     const now = new Date().getTime();
@@ -223,19 +232,62 @@ export class MainComponent implements OnInit,OnDestroy {
     return unit < 10 ? '0' + unit : unit.toString();
   }
 
-  openform(){
+  // openform(){
+  //   this.openForm = !this.openForm
+  // }
+  choosedPlan:any;
+
+  preEnroll(data:any){
+    // window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
+    // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
     this.openForm = !this.openForm
+    this.choosedPlan = data
+    console.log(data)
   }
+
   closeForm(){
     this.openForm = !this.openForm
+    this.subjectform.reset()
+  }
+  closeSuccessPopup(){
+    this.openSuccessPopup = !this.openSuccessPopup
   }
   submitForm(){
     if(this.subjectform.valid){
       console.log('valid')
+      let pay = {
+        "email":this.subjectform.value.email,
+        "name":this.subjectform.value.firstName + ' ' + this.subjectform.value.lastName
+      }
+      this.isloading = true
+      console.log(pay)
+      this.service.sendwaitlistData(pay).subscribe((res:any)=>{
+        console.log(res)
+        if(res.statusCode == 200){
+          this.isloading = false
+          this.closeForm()
+          if(this.choosedPlan == 'Silver'){
+            // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
+            window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
+          }else if(this.choosedPlan == 'Gold'){
+            window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
+          }else{
+            window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
+          }
+          
+          this.openSuccessPopup = true
+          setTimeout(()=>{
+            this.openSuccessPopup = false
+          },5000)
+          
+        }
+      })
     }else{
       console.log('!valid')
+      this.validateAllFormFields(this.subjectform)
     }
   }
+  
   
   ngOnDestroy(): void {
     // this.ngUnsubscribe.next();

@@ -156,7 +156,7 @@ main {
         height: 100px;
     }
     .countdowntEXT{
-        font-size: 16px;
+        font-size: 15px;
     }
     .countdown{
         display: flex;
@@ -303,18 +303,21 @@ main {
 }
 
 .silver {
-    background: linear-gradient(135deg, #414141, #737373);
+    /* background: linear-gradient(135deg, #414141, #737373); */
+    background-color:var(--incomplete-question, rgba(42, 124, 199, 0.10));
 }
 
 .gold {
     /* background: linear-gradient(135deg, #796610, #6c6130); */
-    background: linear-gradient(135deg, #796610, #6e5f1b);
+    /* background: linear-gradient(135deg, #796610, #6e5f1b); */
+    background-color:var(--incomplete-question, rgba(42, 124, 199, 0.10));
 }
 
 .unlimited {
-    background-color: #000;
+    /* background-color: #000; */
     /* border-image: linear-gradient(45deg, #EB5CBD, #2B74F6 100%) 1; */
-    background: linear-gradient(90deg, #121212, #242424);
+    /* background: linear-gradient(90deg, #121212, #242424); */
+    background-color:var(--incomplete-question, rgba(42, 124, 199, 0.10));
 }
 
 
@@ -422,7 +425,7 @@ main {
     align-items: center;
     justify-content: center;
     margin: 15px;
-    gap: 20px;
+    gap: 15px;
 }
 .waitlistHeading{
     color: var(--secondary-color-2, #3C403D);
@@ -438,7 +441,7 @@ main {
     color: var(--second-text-color, #737373);
     text-align: center;
     font-family: "DM Sans";
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     /* line-height: normal; */
@@ -465,7 +468,8 @@ main {
 
 .inputSection input{
     border: none;
-    color: var(--muted-color, #BDBDBD);
+    /* color: var(--muted-color, #BDBDBD); */
+    color: var(--input-text-color, #333);
     /* background: rgba(0, 0, 0, 0.05); */
     /* paragraph */
     font-family: "DM Sans";
@@ -477,6 +481,7 @@ main {
     background: none;
     height: 100% !important;
 }
+
 .inputSection.reduce-margin {
     margin-bottom: -5px; /* Reduced margin when error is shown */
 }
@@ -516,7 +521,7 @@ main {
 /* success popup */
 
 .successpopup{
-    width: 364px;
+    width: 348px;
     height: 330px;
     flex-shrink: 0;
     border-radius: 24px;
@@ -531,7 +536,7 @@ main {
     color: var(--secondary-color-2, #3C403D);
     text-align: center;
     font-family: "DM Sans";
-    font-size: 24px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
     line-height: 32px; /* 133.333% */
@@ -541,7 +546,7 @@ main {
     color: var(--second-text-color, #737373);
     text-align: center;
     font-family: "DM Sans";
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -564,4 +569,32 @@ main {
     position: relative;
     /* left: 37% */
     margin-top: 10px;
+}
+@media only screen and (max-width: 480px) {
+    .waitlist{
+        width: 90%;
+    }
+    .successpopup{
+        width: 90%;
+    }
+}
+@media only screen and (min-device-width: 360px)and (max-device-width: 360px){
+
+}
+@media only screen and (min-device-width: 375px)and (max-device-width: 375px){
+ 
+}
+@media only screen and (min-device-width: 390px)and (max-device-width: 393px){
+  
+}
+@media only screen and (min-device-width: 412px)and (max-device-width: 412px){}
+@media only screen and (min-device-width: 414px)and (max-device-width: 414px){}
+@media only screen and (min-device-width: 428px)and (max-device-width: 430px){
+    .countdownHeading{
+        text-align: center;
+        font-size: 42px;
+    }
+    .countdowntEXT{
+        width: 87%;
+    }
 }

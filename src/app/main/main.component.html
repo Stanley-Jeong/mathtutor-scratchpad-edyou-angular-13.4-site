@@ -64,7 +64,7 @@
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
       <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
-        <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/communications.png' " width="205px"/>
+        <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " />
       </a>
       <a (click)="navigateToCoursePage('algebra')" class="course-card-image">
         <img src="./assets/course-icons/algebra.png" />
@@ -269,14 +269,14 @@
       <div class="pricing-card silver">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
-                <h4>Silver Plan</h4>
-                <span>1 day access</span>
+                <h4>Silver </h4>
+                <span>7 days free trial</span>
           </div>
           <div class="pricing-card-title-right">
                 <strong class="pricing-number">$39</strong><span>/Day</span>
               </div>
             </div>
-            <button class="pricing-button" (click)=" preEnroll()">Pre-Enroll Now</button>
+            <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
             <!-- GO TO STRIPE! -->
         <div class="pricing-card-description">
           <h5>Includes</h5>
@@ -293,14 +293,14 @@
       <div class="pricing-card gold">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
-                <h4>Gold Plan</h4>
+                <h4>Gold </h4>
                 <span>7 days free trial</span>
           </div>
           <div class="pricing-card-title-right">
                 <strong class="pricing-number">$139</strong><span>/Week</span>
           </div>
         </div>
-        <button class="pricing-button">Pre-Enroll Now</button>
+        <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
           <h5>Includes</h5>
           <ul class="pricing-card-description-list-items">
@@ -317,14 +317,14 @@
       <div class="pricing-card unlimited">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
-                <h4>Unlimited</h4>
-                <span>For the month</span>
+                <h4>Platinum</h4>
+                <span>7 days free trial</span>
           </div>
           <div class="pricing-card-title-right">
                 <strong class="pricing-number">$249</strong><span>/month</span>
           </div>
         </div>
-        <button class="pricing-button">Pre-Enroll Now</button>
+        <button class="pricing-button"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
           <h5>Includes</h5>
           <ul class="pricing-card-description-list-items">
@@ -1510,13 +1510,13 @@
  <div class="overlay" *ngIf="openForm" ></div>
 <div class="waitlist" *ngIf="openForm">
     <div class="margin1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" (click)="closeForm()" stroke-linejoin="round"/>
+      <svg xmlns="http://www.w3.org/2000/svg" (click)="closeForm()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round"/>
       </svg>
       <div class="margin2">
           <div>
-            <h1 class="waitlistHeading">Join The Waitlist</h1>
-            <h6 class="waitlistText">Please fill the details to join waitlist</h6>
+            <h1 class="waitlistHeading">Pre-Enroll Now</h1>
+            <h6 class="waitlistText">Please fill the details</h6>
           </div>
           <form class="form" [formGroup]="subjectform">  
 
@@ -1529,7 +1529,7 @@
               </div> 
               <div *ngIf="subjectform.get('firstName')?.touched && subjectform.get('firstName')?.invalid" class="error-message">
                 <span *ngIf="subjectform.get('firstName')?.errors?.['required']">First Name is required.</span>
-                <!-- Add more validations if necessary -->
+               
               </div>
             </div>
 
@@ -1542,7 +1542,7 @@
           </div> 
           <div *ngIf="subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid" class="error-message">
             <span *ngIf="subjectform.get('lastName')?.errors?.['required']">Last Name is required.</span>
-            <!-- Add more validations if necessary -->
+         
           </div>
         </div>
 
@@ -1560,20 +1560,23 @@
         </div>
         
         </form>
-        <button (click)="submitForm()">Join</button>
+        <!-- <button (click)="submitForm()">Proceed</button> -->
+        <button (click)="submitForm()"><img class="" style="width : 24px; color:white;" *ngIf="isloading"
+          src="../../assets/Rolling-1s-200px (2).gif"><span *ngIf="!isloading">Proceed</span></button>
           
       </div>
     </div>
 </div> 
-
-<!-- <div class="successpopup">
+<div class="overlay"  *ngIf="openSuccessPopup" ></div>
+<div class="successpopup" *ngIf="openSuccessPopup">
   <div class="margin1">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="closeSuccessPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="margin3">
       <h1 class="Thanks">Thank you!</h1>
-      <h6 class="thanksText">Thank you for joining the waitlist, Your request has been submitted succesfully</h6>
+      <h1 class="thanksText">Please proceed for payment in the other tab.</h1>
+      <!-- <h6 class="thanksText">Thank you for joining the waitlist, Your request has been submitted succesfully</h6> -->
       <div class="imae">
         <img class="successImg" src="../../assets/Asset 1@4x.png">
       </div>
@@ -1581,4 +1584,4 @@
    
     
   </div>
-</div> -->
+</div>
