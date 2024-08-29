@@ -34,7 +34,7 @@ main {
 .connect-learn-thrive {
     /* width: 1140px; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
 }
 
@@ -530,7 +530,7 @@ del {
 }
 
 .inputSection input{
-    border: none;
+    border: none !important;
     /* color: var(--muted-color, #BDBDBD); */
     color: var(--input-text-color, #333);
     /* background: rgba(0, 0, 0, 0.05); */
@@ -640,18 +640,15 @@ del {
     .successpopup{
         width: 90%;
     }
+    .connect-learn-thrive{
+        flex-wrap: wrap;
+    }
 }
-@media only screen and (min-device-width: 360px)and (max-device-width: 360px){
-
-}
-@media only screen and (min-device-width: 375px)and (max-device-width: 375px){
- 
-}
-@media only screen and (min-device-width: 390px)and (max-device-width: 393px){
-  
-}
+/* @media only screen and (min-device-width: 360px)and (max-device-width: 360px){}
+@media only screen and (min-device-width: 375px)and (max-device-width: 375px){}
+@media only screen and (min-device-width: 390px)and (max-device-width: 393px){}
 @media only screen and (min-device-width: 412px)and (max-device-width: 412px){}
-@media only screen and (min-device-width: 414px)and (max-device-width: 414px){}
+@media only screen and (min-device-width: 414px)and (max-device-width: 414px){} */
 @media only screen and (min-device-width: 428px)and (max-device-width: 430px){
     .countdownHeading{
         text-align: center;
@@ -661,3 +658,9 @@ del {
         width: 87%;
     }
 }
+@media only screen and (min-device-width: 768px)and (max-device-width: 1024px){
+    .connect-learn-thrive{
+        flex-wrap: wrap;
+    }
+}
+
