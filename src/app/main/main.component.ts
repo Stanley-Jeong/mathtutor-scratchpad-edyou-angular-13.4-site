@@ -13,6 +13,59 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 })
 export class MainComponent implements OnInit,OnDestroy {
 
+
+  public iteCourses = [
+    {
+      title: 'Cardiology'
+    },
+    {
+      title: 'Endocrinology'
+    },
+    {
+      title: 'Gastroenterology'
+    },
+    {
+      title: 'General Internal Medicine'
+    },
+    {
+      title: 'Geriatric Medicine'
+    },
+    {
+      title: 'Hematology and Oncology'
+    },
+    {
+      title: 'Infectious Diseases'
+    },
+    {
+      title: 'Nephrology'
+    },
+    {
+      title: 'Neurology'
+    },
+    {
+      title: 'Pulmonary and Critical Care Medicine'
+    },
+    {
+      title: 'Rheumatology'
+    },
+  ]
+
+  public washingtonManualInspiredCourses = [
+    {
+      title: 'Toxicology'
+    },
+    {
+      title: 'Neurology'
+    },
+    {
+      title: 'Sexually Transmitted Diseases'
+    },
+    {
+      title: 'Heart Failure'
+    },
+  ] 
+
+
   private ngUnsubscribe = new Subject();
   scrollKey: any;
   private isBrowser: boolean;

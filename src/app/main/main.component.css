@@ -11,6 +11,10 @@ main {
     display: none;
 }
 
+/* .page-content {
+    display: none;
+} */
+
 .hero-banner {
     display: flex;
     justify-content: center;
@@ -32,24 +36,32 @@ main {
 }
 
 .connect-learn-thrive {
-    /* width: 1140px; */
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: center;
 }
 
 .connect-learn-thrive-item {
     display: flex;
     flex-direction: column;
-    gap: 40px;
     margin: 20px;
-    align-items: flex-start;
-    justify-content: flex-end;
+    min-width: 300px;
     max-width: 380px;
+}
+
+.clt-header-text {
+    margin-bottom: 2px;
 }
 
 .clt-icon {
     width: 60px;
+}
+
+.connect-icon {
+    margin-bottom: 32px;
+}
+
+.learn-icon {
+    margin-bottom: 20px;
 }
 
 .thrive-icon {
@@ -60,7 +72,6 @@ main {
 .right-avatar {
     max-width: 600px;
     margin-bottom: 20px;
-    /* background-color: teal; */
     padding: 0 20px;
 }
 
@@ -94,8 +105,14 @@ main {
 
 @media (min-width: 1282px)  {
     .left-header {
-        padding-left: 40px;
+        padding-left: 10px;
         padding-right: 40px;
+        width: 50%;
+    }
+
+    .courses-cards-container{
+        padding: 0 2em;
+        max-width: 1280px;
     }
 }
 
@@ -111,7 +128,7 @@ main {
     }
 
     .courses-cards-container{
-        padding: 0 2em;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .info-section {
@@ -123,6 +140,13 @@ main {
         width: 400px;
     }
 
+    .connect-learn-thrive{
+        flex-wrap: wrap;
+    }
+
+    .connect-learn-thrive-item {
+        max-width: 800px;
+    }
 }
 
 @media (max-width: 801px)  { 
@@ -146,6 +170,13 @@ main {
 
     .right-avatar img {
         border-radius: 80px;
+    }
+
+    .connect-learn-thrive{
+        flex-wrap: wrap;
+    }
+    .connect-learn-thrive-item {
+        max-width: 400px;
     }
 }
 
@@ -304,15 +335,26 @@ main {
     line-height: normal;
 }
 .offMsg{
-    color: var(--disabled-element-color, #8EC2F2);
+    /* color: var(--disabled-element-color, #8EC2F2); */
+    color: #97172f;
+    /* background: linear-gradient(180deg, #D02D50, #6A1729);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    background-image: linear-gradient(to top, #D02D50, #7e1e33);
+    color: transparent;
+    background-clip: text;
     font-family: "DM Sans";
-    font-size: 30px;
+    font-size: 44px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     margin-top: -6px;
     text-align: center;
 }
+
+
+/* CLIENTS AND SERVICES SECTION */
 
 
 /* PRICING SECTION */
@@ -354,6 +396,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    position: relative;
+}
+
+.pre-launch-special-ribbon {
+    width: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .silver {
@@ -381,6 +431,8 @@ main {
 }
 
 .pricing-card-title-left {
+    padding-top: 26px;
+    padding-bottom: 0;
     text-align: left;
 }
 
@@ -391,7 +443,7 @@ main {
 }
 
 .pricing-number {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -411,8 +463,22 @@ main {
     text-align: left;
 }
 
-del {
-    font-size: 26px;
+.strikethrough {
+    color: #a4122d;
+    /* color: #681222; */
+    text-decoration:line-through;
+}
+
+.strikethrough-text {
+    font-size: 24px;
+    color: #fff;
+}
+
+.billed-annually-text {
+    position: absolute;
+    bottom: 14px;
+    right: 20px;
+    font-size: 14px;
 }
 
 /* COURSES SECTIONS */
@@ -431,9 +497,10 @@ del {
 .courses-cards-container {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 30px;
-    max-width: fit-content;
+    width: 80%;
     margin-bottom: 60px;
 }
 
@@ -445,6 +512,35 @@ del {
     transform: scale(1.1); /* Adjust the scale value to control the zoom level */
 }
 
+.course-card {
+    background-color: #1B2C43;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    padding: 0 10px;
+}
+
+.coming-soon-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+}
+
+.course-card .course-image-placeholder {
+    width: 60%;
+    height: 60%;
+    background-color: #293f5d;
+    border-radius: 16px;
+}
+
+.course-card span {
+    user-select: none;
+}
 
 
 /* popup */
@@ -640,9 +736,6 @@ del {
     .successpopup{
         width: 90%;
     }
-    .connect-learn-thrive{
-        flex-wrap: wrap;
-    }
 }
 /* @media only screen and (min-device-width: 360px)and (max-device-width: 360px){}
 @media only screen and (min-device-width: 375px)and (max-device-width: 375px){}
@@ -656,11 +749,6 @@ del {
     }
     .countdowntEXT{
         width: 87%;
-    }
-}
-@media only screen and (min-device-width: 768px)and (max-device-width: 1024px){
-    .connect-learn-thrive{
-        flex-wrap: wrap;
     }
 }
 

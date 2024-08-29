@@ -100,94 +100,56 @@
       </a>
     </div>
 
-    <!-- <h3>ITE</h3>
+    <h5>Internal Medicine In-Training Service Exam (ITE)</h5>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')">
-        <img src="./assets/course-icons/us-history.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('algebra')">
-        <img src="./assets/course-icons/algebra.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('english')">
-        <img src="./assets/course-icons/english.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('leadership')">
-        <img src="./assets/course-icons/leadership.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('communications')">
-        <img src="./assets/course-icons/communications.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')">
-        <img src="./assets/course-icons/entrepreneurship.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('computer-science')">
-        <img src="./assets/course-icons/computer-science.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('project-management')">
-        <img src="./assets/course-icons/pm.png" width="205px"/>
-      </a>
+      <div class="course-card" *ngFor="let course of iteCourses">
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
+         <div class="course-image-placeholder"></div>
+          <span>{{course.title}}</span>
+      </div>
     </div>
 
-    <h3>Washington Manual Inspired</h3>
+    <h5>Washington Manual Inspired</h5>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')">
-        <img src="./assets/course-icons/us-history.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('algebra')">
-        <img src="./assets/course-icons/algebra.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('english')">
-        <img src="./assets/course-icons/english.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('leadership')">
-        <img src="./assets/course-icons/leadership.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('communications')">
-        <img src="./assets/course-icons/communications.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')">
-        <img src="./assets/course-icons/entrepreneurship.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('computer-science')">
-        <img src="./assets/course-icons/computer-science.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('project-management')">
-        <img src="./assets/course-icons/pm.png" width="205px"/>
-      </a>
-    </div> -->
+      <div class="course-card" *ngFor="let course of washingtonManualInspiredCourses">
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
+        <div class="course-image-placeholder"></div>
+         <span>{{course.title}}</span>
+     </div>
+    </div>
   </div>
 
   <!-- CONNECT LEARN THRIVE -->
   <div class="info-section">
     <div class="connect-learn-thrive">
       <div class="connect-learn-thrive-item">
-        <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon">
+        <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon connect-icon">
         <div class="clt-text">
-          <h2>Connect</h2>
-          <p>Come together to share knowledge, experiences, and encouragement.</p>
+          <h2 class="clt-header-text">Connect</h2>
+          <p>with your real-time AI conversational, personal learning and wellness companions.</p>
         </div>
       </div>
 
       <div class="connect-learn-thrive-item">
-        <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon">
+        <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon learn-icon">
         <div class="clt-text">
-          <h2>Learn</h2>
-          <p>Explore new ideas and gain valuable skills to grow.</p>
+          <h2 class="clt-header-text">Learn</h2>
+          <p>by listening and asking questions from your AI companions. Strengthen your knowledge with our endless test questions.</p>
         </div>
       </div>
 
       <div class="connect-learn-thrive-item">
         <img src="./assets/connect-learn-thrive-icons/thrive-white.png" alt="connect-icon" class="clt-icon thrive-icon">
         <div class="clt-text">
-          <h2>Thrive</h2>
-          <p>Flourish and reach your full potential in life.</p>
+          <h2 class="clt-header-text">Thrive</h2>
+          <p>by having your personal learning and wellness companion help you with your confidence and feeling better while learning.</p>
         </div>
       </div>
       
     </div>
   </div>
 
-  <!-- Clients & Partners moved to here -->
+  <!-- Clients and Partners moved to here -->
   <div data-elementor-type="wp-page" data-elementor-id="20"
     class="elementor elementor-20"
     data-elementor-post-type="page">
@@ -213,8 +175,28 @@
             data-widget_type="image-gallery.default">
             <div class="elementor-widget-container">
               <div class="elementor-image-gallery">
+                <!-- Clients and Partners GRID -->
                 <div id='gallery-1'
-                  class='gallery galleryid-20 gallery-columns-4 gallery-size-full'>
+                  class='gallery galleryid-20 gallery-columns-3 gallery-size-full'>
+                  <figure class='gallery-item'>
+                    <div class='gallery-icon landscape'>
+                      <img loading="lazy" decoding="async" width="1000"
+                        height="1000"
+                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
+                        class="attachment-full size-full" alt="Residentsmedical"
+                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
+                        sizes="(max-width: 1000px) 100vw, 1000px" />
+                    </div>
+                  </figure>
+                  <figure class='gallery-item'>
+                    <div class='gallery-icon landscape'>
+                      <img loading="lazy" decoding="async" width="1000"
+                        height="1000"
+                        src="./assets/ef-everest-family-foundation-logo-white-square.png"
+                        class="attachment-full size-full" alt="everest-family-foundation"
+                        sizes="(max-width: 1000px) 100vw, 1000px" />
+                    </div>
+                  </figure>
                   <figure class='gallery-item'>
                     <div class='gallery-icon landscape'>
                       <img loading="lazy" decoding="async" width="1000"
@@ -256,16 +238,6 @@
                         sizes="(max-width: 1000px) 100vw, 1000px" />
                     </div>
                   </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
-                        class="attachment-full size-full" alt="Residentsmedical"
-                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
                 </div>
               </div>
             </div>
@@ -278,18 +250,22 @@
   <div id="pricing_section_id" class="pricing-section">
     <div class="pricing-title-section">
       <h2>Pricing</h2>
-      <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge">
+      <!-- <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge"> -->
     </div>
     <div class="pricing-cards-container">
 
       <!-- DAY PLAN -->
       <div class="pricing-card silver">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
                 <h4>Silver </h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$39</del>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$39</span>
+            </span>
             <span><strong class="pricing-number">$29.25</strong>/Day</span>
           </div>
         </div>
@@ -308,12 +284,16 @@
 
       <!-- WEEK PLAN -->
       <div class="pricing-card gold">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
               <h4>Gold </h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$139</del>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$139</span>
+            </span>
             <span><strong class="pricing-number">$104.25</strong>/Week</span>
           </div>
         </div>
@@ -325,6 +305,7 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
+            <li>Full Data Analytics</li>
             <li>Gaming for prizes</li>
           </ul>
         </div>
@@ -332,12 +313,16 @@
 
       <!-- UNLIMITED PLAN -->
       <div class="pricing-card unlimited">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
               <h4>Platinum</h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$249</del>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$249</span>
+            </span>
             <span><strong class="pricing-number">$186.75</strong>/month</span>
           </div>
         </div>
@@ -349,11 +334,12 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
-            <li>Gaming for prizes</li>
             <li>Full Data Analytics</li>
+            <li>Gaming for prizes</li>
             <li>Certificates of Completion</li>
           </ul>
         </div>
+        <small class="billed-annually-text">*Billed Annually</small>
       </div>
 
 
@@ -362,7 +348,7 @@
   </div>
 
 
-<!-- VIDEO HERO -->
+<!-- ORIGINAL VIDEO HERO #video_hero id hidden in CSS -->
 <div data-id="271f7372" data-element_type="container"
     data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/youtu.be\/SGfU2RVXvnw&quot;,&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_range&quot;:&quot;viewport&quot;,&quot;background_play_on_mobile&quot;:&quot;yes&quot;,&quot;content_width&quot;:&quot;boxed&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}"
     data-core-v316-plus="true"
@@ -422,8 +408,8 @@
   </div>
 
 
-  <div class="page-content">
 
+  <div class="page-content">
     <div data-elementor-type="wp-page" data-elementor-id="20"
       class="elementor elementor-20"
       data-elementor-post-type="page">
