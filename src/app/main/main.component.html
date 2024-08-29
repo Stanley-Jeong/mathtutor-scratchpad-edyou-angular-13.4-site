@@ -71,28 +71,31 @@
   <div class="courses-section">
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
-        <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " />
+      <!-- navigateToCoursePage('us-history') -->
+      <a (click)="openModal(1)" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
+        <img src="./assets/course-icons/us-history.png" />
+        <!-- <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " /> -->
       </a>
-      <a (click)="navigateToCoursePage('algebra')" class="course-card-image">
+      <!-- navigateToCoursePage('algebra')   -->
+      <a   (click)="openModal(2)" class="course-card-image">
         <img src="./assets/course-icons/algebra.png" />
       </a>
-      <a (click)="navigateToCoursePage('english')" class="course-card-image">
+      <a (click)="openModal(3)" class="course-card-image">
         <img src="./assets/course-icons/english.png" />
       </a>
-      <a (click)="navigateToCoursePage('leadership')" class="course-card-image">
+      <a (click)="openModal(4)" class="course-card-image">
         <img src="./assets/course-icons/leadership.png" />
       </a>
-      <a (click)="navigateToCoursePage('communications')" class="course-card-image">
+      <a (click)="openModal(5)" class="course-card-image">
         <img src="./assets/course-icons/communications.png" />
       </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')" class="course-card-image">
+      <a (click)="openModal(6)" class="course-card-image">
         <img src="./assets/course-icons/entrepreneurship.png" />
       </a>
-      <a (click)="navigateToCoursePage('computer-science')" class="course-card-image">
+      <a (click)="openModal(8)" class="course-card-image">
         <img src="./assets/course-icons/computer-science.png" />
       </a>
-      <a (click)="navigateToCoursePage('project-management')" class="course-card-image">
+      <a (click)="openModal(9)" class="course-card-image">
         <img src="./assets/course-icons/pm.png" />
       </a>
     </div>
@@ -1597,5 +1600,48 @@
     </div>
    
     
+  </div>
+</div>
+<div class="modal" [ngClass]="{'show': isModalOpen}">
+  <div class="modal-content">
+    <span class="close-btn" (click)="closeModal()">&times;</span>
+    <div class="modaldetail">
+    <p>{{ modalContent.title }}</p>
+    <img src= "{{modalContent.image}}"alt="Engaging US history course" style=" width: 98%; height: 29%;" width="600" height="400">
+   <div class="mds"> <p class="modaldescription">{{ modalContent.description }}</p></div>
+   
+  </div>
+ <div style=" margin-top:43%;  position: fixed;
+
+ margin-left: 9%;">
+  <div class= "modalgobackbutton">
+
+      <a style="background-color: #092A4B; border: 1px solid
+;"
+        class="elementor-button elementor-button-link elementor-size-sm"
+        [routerLink]="['/']" fragment="course"(click)="navigateTocourse()">
+        <span class="elementor-button-content-wrapper">
+          <span class="elementor-button-text fontbutton">Go to main page</span>
+        </span>
+      </a>
+
+  
+</div>
+  <div class="modalbutton">
+    <div class="elementor-widget-container">
+      <div class="elementor-button-wrapper">
+        
+        <a
+          class="elementor-button elementor-button-link elementor-size-sm"
+          (click)="  navigateToLogin()">
+          <span class="elementor-button-content-wrapper">
+            <span class="elementor-button-text fontbutton">Subscribe now</span>
+          </span>
+        </a>
+      </div>
+    </div>
+   </div>
+
+   </div>
   </div>
 </div>

@@ -664,3 +664,249 @@ del {
     }
 }
 
+a{
+    cursor: pointer;
+}
+main{
+    max-width: 100% !important;
+    overflow: hidden;
+}
+.container-course{
+    margin-top: 30px;
+    width: 1039px;
+}
+.container-course img{
+
+width: 205px;
+height: 160px;
+top: 436px;
+left: 693px;
+padding: 16px 23px 14.41px 23px;
+gap: 0px;
+border-radius: 12px 0px 0px 0px;
+opacity: 0px;
+}
+.course-button{
+    width: Fixed (210px)px;
+height: Fixed (56px)px;
+top: 655px;
+margin-left: 50%;
+padding: 8px 28px 8px 28px;
+gap: 10px;
+border-radius: 12px 0px 0px 0px;
+opacity: 0px;
+
+}
+.modal {
+    display: none;
+    position: fixed;
+
+    z-index: 9999;
+    left: 0;
+    top: -30px;
+    left: 0;
+  
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+   /* Black background with opacity */
+  
+
+  }
+  .container-cors{
+
+  }
+  .modal.show {
+    display: block;
+  }
+  .course-text
+  {
+    width: 395px;
+height: 52px;
+top: 141px;
+left: 486px;
+gap: 0px;
+opacity: 0px;
+font-family: DM Sans;
+font-size: 40px;
+font-weight: 600;
+line-height: 52.08px;
+text-align: center;
+margin-left:40%
+  }
+  .enterprenurimg{
+    margin-left:  105px;
+  
+  }
+  .modal-content {
+    width: 70%;
+    height: 76%;
+    max-height: 676px;
+    position: fixed;
+    top: 80px;
+    left: 15%;
+    
+gap: 0px;
+
+background: #07223C;
+/* border-radius: 24px 0px 0px 0px; */
+opacity: 0px;
+
+  
+  }
+  
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left:97%
+  }
+  .modalimg{
+   
+  }
+  .modalbutton{
+    margin-top: -22%;
+    
+    margin-left: 244%;
+    
+   
+    width: 272px;
+top: 1000px;
+left: 665px;
+padding: 8px 28px 8px 28px;
+gap: 10px;
+border-radius: 12px 0px 0px 0px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+
+}
+.modalgobackbutton{
+  margin-top: -112px;
+  margin-left: 144%;
+width:96%;
+}
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modaldetail
+  {margin-left:2%
+
+  }
+  .modaldescription{
+    width:98%;
+    height: 224px;
+    top: 776px;
+    left: 40px;
+    gap: 0px;
+    font-size: 18px;
+    opacity: 0px;
+    
+}
+
+
+@media all and (min-width: 390px) and (max-width: 490px) {
+  /* Styles for iPhone X/XS/11 Pro */
+  .container-course{
+    margin-top: 30px;
+    width: 441px;
+    /* margin-left: 43px; */
+}
+.container-cors{
+  margin-left:0%;
+}
+.container-course img{
+  width: 185px;
+  height: 115px;
+}
+.course-text{
+  font-size: 30px;
+  margin-left:-1%
+
+}
+.explcourse{
+  width: 276px;
+
+}
+.course-button{
+  margin-left:0%;
+}
+.enterprenurimg{
+  margin-left:  0px;
+
+}
+.pmimg{
+  margin-left:23%
+}
+.modal-content {
+  width: 92%;
+  height: 749px;
+  max-height: max-content;
+  position: fixed;
+  top: 80px;
+  left: 4%;
+}
+.close-btn{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 94%;
+}
+.modalgobackbutton{
+  margin-top: 511px;
+  margin-left: 3%;
+  width: 74%;
+
+}
+.modalbutton{
+  margin-top: -19%;
+  margin-left: 51%;
+  
+ 
+ 
+
+}
+.fontbutton{
+  font-size: 12px;
+}
+.modaldescription{
+  font-size: 14px;
+}
+.mds{
+  width: 98%;
+  height: 84%;
+}
+}
+@media (min-width: 390px) {
+ 
+
+.container-cors{
+margin-left:-5%;
+}
+
+
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait) {
+ 
+
+.course-text{
+  font-size: 30px;
+  margin-left:-1%
+
+}
+.container-course img {
+  width: 151px;
+
+
+}
+.container-course  {
+  margin-top: 30px;
+  width: 139%;
+}}
