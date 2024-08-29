@@ -199,6 +199,7 @@ export class MainComponent implements OnInit,OnDestroy {
   isCountdownOver: boolean = false;
   openForm: boolean = false;
   isloading: boolean = false;
+  sendEmail:any;
 
   updateCountdown(): void {
     const now = new Date().getTime();
@@ -259,6 +260,7 @@ export class MainComponent implements OnInit,OnDestroy {
         "email":this.subjectform.value.email,
         "name":this.subjectform.value.firstName + ' ' + this.subjectform.value.lastName
       }
+      this.sendEmail = this.subjectform.value.email
       this.isloading = true
       console.log(pay)
       this.service.sendwaitlistData(pay).subscribe((res:any)=>{
@@ -268,11 +270,24 @@ export class MainComponent implements OnInit,OnDestroy {
           this.closeForm()
           if(this.choosedPlan == 'Silver'){
             // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
-            window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
+            // window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
+            const email = encodeURIComponent(this.sendEmail); // Encode the email
+            console.log(email)
+            const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
+            window.open(platinumUrl, '_blank');
           }else if(this.choosedPlan == 'Gold'){
-            window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
+            // window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
+            const email = encodeURIComponent(this.sendEmail); // Encode the email
+            console.log(email)
+            const platinumUrl = `https://buy.stripe.com/test_00g5lT4Md9eW8ow5km?prefilled_email=${email}&client_reference_id=gold`;
+            window.open(platinumUrl, '_blank');
           }else{
-            window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
+
+            // window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
+            const email = encodeURIComponent(this.sendEmail); // Encode the email
+            console.log(email)
+            const platinumUrl = `https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn?prefilled_email=${email}&client_reference_id=platinum`;
+            window.open(platinumUrl, '_blank');
           }
           
           this.openSuccessPopup = true
