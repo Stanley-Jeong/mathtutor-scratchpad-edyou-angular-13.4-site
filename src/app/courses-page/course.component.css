@@ -82,3 +82,13 @@
 .dot.active {
   background-color: #717171;
 }
+@media only screen and (max-width: 480px) {
+  .main-button{
+    width: 45%;
+    font-size: 14px;
+  }
+  .subscribe-button{
+    width: 45%;
+    font-size: 14px;
+  }
+}
