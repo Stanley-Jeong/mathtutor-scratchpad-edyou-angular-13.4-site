@@ -72,30 +72,30 @@
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
       <!-- navigateToCoursePage('us-history') -->
-      <a (click)="openModal(1)" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
+      <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
         <img src="./assets/course-icons/us-history.png" />
         <!-- <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " /> -->
       </a>
       <!-- navigateToCoursePage('algebra')   -->
-      <a   (click)="openModal(2)" class="course-card-image">
+      <a   (click)="navigateToCoursePage('algebra')" class="course-card-image">
         <img src="./assets/course-icons/algebra.png" />
       </a>
-      <a (click)="openModal(3)" class="course-card-image">
+      <a (click)="navigateToCoursePage('english')" class="course-card-image">
         <img src="./assets/course-icons/english.png" />
       </a>
-      <a (click)="openModal(4)" class="course-card-image">
+      <a (click)="navigateToCoursePage('leadership')" class="course-card-image">
         <img src="./assets/course-icons/leadership.png" />
       </a>
-      <a (click)="openModal(5)" class="course-card-image">
+      <a (click)="navigateToCoursePage('communications')" class="course-card-image">
         <img src="./assets/course-icons/communications.png" />
       </a>
-      <a (click)="openModal(6)" class="course-card-image">
+      <a (click)="navigateToCoursePage('entrepreneurship')" class="course-card-image">
         <img src="./assets/course-icons/entrepreneurship.png" />
       </a>
-      <a (click)="openModal(8)" class="course-card-image">
+      <a (click)="navigateToCoursePage('computer-science')" class="course-card-image">
         <img src="./assets/course-icons/computer-science.png" />
       </a>
-      <a (click)="openModal(9)" class="course-card-image">
+      <a (click)="navigateToCoursePage('project-management')" class="course-card-image">
         <img src="./assets/course-icons/pm.png" />
       </a>
     </div>
@@ -104,7 +104,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of iteCourses">
         <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
-         <div class="course-image-placeholder"></div>
+         <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
           <span>{{course.title}}</span>
       </div>
     </div>
@@ -113,7 +113,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of washingtonManualInspiredCourses">
         <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
-        <div class="course-image-placeholder"></div>
+        <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
          <span>{{course.title}}</span>
      </div>
     </div>
@@ -266,7 +266,7 @@
             <span class="strikethrough">
               <span class="strikethrough-text">$39</span>
             </span>
-            <span><strong class="pricing-number">$29.25</strong>/Day</span>
+            <span><strong class="pricing-number">$29.25</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
@@ -294,7 +294,7 @@
             <span class="strikethrough">
               <span class="strikethrough-text">$139</span>
             </span>
-            <span><strong class="pricing-number">$104.25</strong>/Week</span>
+            <span><strong class="pricing-number">$104.25</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
@@ -305,8 +305,8 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
-            <li>Full Data Analytics</li>
-            <li>Gaming for prizes</li>
+            <li>Conversation history</li>
+            <li>Gamification</li>
           </ul>
         </div>
       </div>
@@ -334,8 +334,8 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
-            <li>Full Data Analytics</li>
-            <li>Gaming for prizes</li>
+            <li>Conversation history</li>
+            <li>Gamification</li>
             <li>Certificates of Completion</li>
           </ul>
         </div>
@@ -349,7 +349,7 @@
 
 
 <!-- ORIGINAL VIDEO HERO #video_hero id hidden in CSS -->
-<div data-id="271f7372" data-element_type="container"
+<div data-id="271f7372" data-element_type="container" 
     data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/youtu.be\/SGfU2RVXvnw&quot;,&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_range&quot;:&quot;viewport&quot;,&quot;background_play_on_mobile&quot;:&quot;yes&quot;,&quot;content_width&quot;:&quot;boxed&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}"
     data-core-v316-plus="true"
     class="has_ae_slider elementor-element elementor-element-271f7372 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent" id="video_hero">
@@ -445,27 +445,12 @@
               data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}"
               data-widget_type="text-editor.default">
               <div class="elementor-widget-container">
-                <p style="font-family: 'DM Sans', sans-serif;">At edYOU, we
-                  believe the
-                  future of learning and wellness should be personalized,
-                  engaging,
-                  empowering, and available 24/7 in real-time. We are a
-                  groundbreaking AI
-                  platform that transforms learning into an adventure of joyful
-                  discovery, tailored to each person&#8217;s unique needs,
-                  interests, and
-                  goals.</p>
-                <p style="font-family: 'DM Sans', sans-serif;">Our patented
-                  conversational technology enables warm, supportive
-                  relationships, where
-                  our users feel truly understood and encouraged to explore.
-                  Through
-                  cutting-edge advances in natural language processing and
-                  software
-                  intelligence, we foster an environment where learning and
-                  improving
-                  mental health comes naturally through dialogue, expertise, and
-                  mentorship.</p>
+                <p style="font-family: 'DM Sans', sans-serif;">
+                  At edYOU, we believe the future of learning and wellness should be personalized, engaging, empowering, and available 24/7 in real-time. Our simple message is: Connect, Learn, and Thrive on our platform. We are a groundbreaking AI and Machine Learning company with a patented platform powered by our neural threading intelligence, mimicking how the human brain thinks and responds. Our platform is a lifelong learning companion that transforms education and wellness into an adventure of joyful discovery, tailored to your unique needs, interests, and goals.
+                </p>
+                <p style="font-family: 'DM Sans', sans-serif;">
+                  Our patented conversational technology creates warm, supportive learning and wellness companions, making our users feel truly understood and encouraged to explore. Through cutting-edge patents on our Machine Learning, Neural Network processing, and software intelligence, we foster an environment where learning and mental health improvement come naturally through dialogue, expertise, and mentorship, all while keeping your data secure, for you to review and monitor your improvements.edYOU is here to help you achieve your learning and wellness goals.
+                </p>
               </div>
             </div>
           </div>
@@ -1588,6 +1573,28 @@
     
   </div>
 </div>
+
+<div class="overlay" *ngIf="openErrorPopup"  ></div>
+<div class="errormsgcontainer" *ngIf="openErrorPopup">
+  <div class="margin1">
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="closeErrorPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="margin4">
+      <h1 class="errorTop">You have already subscribed for a package</h1>
+      <div class="errorbottom">
+        <h5 class="errorbottomText1">For any query, please contact</h5>
+        <h5 class="errorbottomText2">support@edyou.com</h5>
+      </div>
+      
+    </div>
+   
+    
+  </div>
+</div>
+
+
+
 <div class="modal" [ngClass]="{'show': isModalOpen}">
   <div class="modal-content">
     <span class="close-btn" (click)="closeModal()">&times;</span>
