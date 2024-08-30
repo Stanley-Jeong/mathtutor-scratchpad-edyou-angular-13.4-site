@@ -1607,7 +1607,16 @@
     <span class="close-btn" (click)="closeModal()">&times;</span>
     <div class="modaldetail">
     <p>{{ modalContent.title }}</p>
-    <img src= "{{modalContent.image}}"alt="Engaging US history course" style=" width: 98%; height: 29%;" width="600" height="400">
+    <div class="carousel-container">
+      <div class="carousel-wrapper" [ngStyle]="{'transform': 'translateX(-' + currentIndex * 100 + '%)'}">
+        <div class="carousel-slide" *ngFor="let image of modalContent.images">
+          <img [src]="image.src" [alt]="image.alt" class="carousel-image">
+        </div>
+      </div>
+      <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
+      <button class="carousel-button next" (click)="nextSlide()">&#10095;</button>
+    </div>
+    <!-- <img src= "{{modalContent.image}}"alt="Engaging US history course" style=" width: 98%; height: 29%;" width="600" height="400"> -->
    <div class="mds"> <p class="modaldescription">{{ modalContent.description }}</p></div>
    
   </div>
