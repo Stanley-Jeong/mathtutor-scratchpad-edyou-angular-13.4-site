@@ -71,10 +71,13 @@
   <div class="courses-section">
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
+      <!-- navigateToCoursePage('us-history') -->
       <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
-        <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " />
+        <img src="./assets/course-icons/us-history.png" />
+        <!-- <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " /> -->
       </a>
-      <a (click)="navigateToCoursePage('algebra')" class="course-card-image">
+      <!-- navigateToCoursePage('algebra')   -->
+      <a   (click)="navigateToCoursePage('algebra')" class="course-card-image">
         <img src="./assets/course-icons/algebra.png" />
       </a>
       <a (click)="navigateToCoursePage('english')" class="course-card-image">
@@ -97,94 +100,56 @@
       </a>
     </div>
 
-    <!-- <h3>ITE</h3>
+    <h5>Internal Medicine In-Training Service Exam (ITE)</h5>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')">
-        <img src="./assets/course-icons/us-history.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('algebra')">
-        <img src="./assets/course-icons/algebra.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('english')">
-        <img src="./assets/course-icons/english.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('leadership')">
-        <img src="./assets/course-icons/leadership.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('communications')">
-        <img src="./assets/course-icons/communications.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')">
-        <img src="./assets/course-icons/entrepreneurship.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('computer-science')">
-        <img src="./assets/course-icons/computer-science.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('project-management')">
-        <img src="./assets/course-icons/pm.png" width="205px"/>
-      </a>
+      <div class="course-card" *ngFor="let course of iteCourses">
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
+         <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
+          <span>{{course.title}}</span>
+      </div>
     </div>
 
-    <h3>Washington Manual Inspired</h3>
+    <h5>Washington Manual Inspired</h5>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')">
-        <img src="./assets/course-icons/us-history.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('algebra')">
-        <img src="./assets/course-icons/algebra.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('english')">
-        <img src="./assets/course-icons/english.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('leadership')">
-        <img src="./assets/course-icons/leadership.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('communications')">
-        <img src="./assets/course-icons/communications.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')">
-        <img src="./assets/course-icons/entrepreneurship.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('computer-science')">
-        <img src="./assets/course-icons/computer-science.png" width="205px"/>
-      </a>
-      <a (click)="navigateToCoursePage('project-management')">
-        <img src="./assets/course-icons/pm.png" width="205px"/>
-      </a>
-    </div> -->
+      <div class="course-card" *ngFor="let course of washingtonManualInspiredCourses">
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
+        <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
+         <span>{{course.title}}</span>
+     </div>
+    </div>
   </div>
 
   <!-- CONNECT LEARN THRIVE -->
   <div class="info-section">
     <div class="connect-learn-thrive">
       <div class="connect-learn-thrive-item">
-        <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon">
+        <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon connect-icon">
         <div class="clt-text">
-          <h2>Connect</h2>
-          <p>Come together to share knowledge, experiences, and encouragement.</p>
+          <h2 class="clt-header-text">Connect</h2>
+          <p>with your real-time AI conversational, personal learning and wellness companions.</p>
         </div>
       </div>
 
       <div class="connect-learn-thrive-item">
-        <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon">
+        <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon learn-icon">
         <div class="clt-text">
-          <h2>Learn</h2>
-          <p>Explore new ideas and gain valuable skills to grow.</p>
+          <h2 class="clt-header-text">Learn</h2>
+          <p>by listening and asking questions from your AI companions. Strengthen your knowledge with our endless test questions.</p>
         </div>
       </div>
 
       <div class="connect-learn-thrive-item">
         <img src="./assets/connect-learn-thrive-icons/thrive-white.png" alt="connect-icon" class="clt-icon thrive-icon">
         <div class="clt-text">
-          <h2>Thrive</h2>
-          <p>Flourish and reach your full potential in life.</p>
+          <h2 class="clt-header-text">Thrive</h2>
+          <p>by having your personal learning and wellness companion help you with your confidence and feeling better while learning.</p>
         </div>
       </div>
       
     </div>
   </div>
 
-  <!-- Clients & Partners moved to here -->
+  <!-- Clients and Partners moved to here -->
   <div data-elementor-type="wp-page" data-elementor-id="20"
     class="elementor elementor-20"
     data-elementor-post-type="page">
@@ -210,8 +175,28 @@
             data-widget_type="image-gallery.default">
             <div class="elementor-widget-container">
               <div class="elementor-image-gallery">
+                <!-- Clients and Partners GRID -->
                 <div id='gallery-1'
-                  class='gallery galleryid-20 gallery-columns-4 gallery-size-full'>
+                  class='gallery galleryid-20 gallery-columns-3 gallery-size-full'>
+                  <figure class='gallery-item'>
+                    <div class='gallery-icon landscape'>
+                      <img loading="lazy" decoding="async" width="1000"
+                        height="1000"
+                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
+                        class="attachment-full size-full" alt="Residentsmedical"
+                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
+                        sizes="(max-width: 1000px) 100vw, 1000px" />
+                    </div>
+                  </figure>
+                  <figure class='gallery-item'>
+                    <div class='gallery-icon landscape'>
+                      <img loading="lazy" decoding="async" width="1000"
+                        height="1000"
+                        src="./assets/ef-everest-family-foundation-logo-white-square.png"
+                        class="attachment-full size-full" alt="everest-family-foundation"
+                        sizes="(max-width: 1000px) 100vw, 1000px" />
+                    </div>
+                  </figure>
                   <figure class='gallery-item'>
                     <div class='gallery-icon landscape'>
                       <img loading="lazy" decoding="async" width="1000"
@@ -253,16 +238,6 @@
                         sizes="(max-width: 1000px) 100vw, 1000px" />
                     </div>
                   </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
-                        class="attachment-full size-full" alt="Residentsmedical"
-                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
                 </div>
               </div>
             </div>
@@ -275,19 +250,23 @@
   <div id="pricing_section_id" class="pricing-section">
     <div class="pricing-title-section">
       <h2>Pricing</h2>
-      <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge">
+      <!-- <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge"> -->
     </div>
     <div class="pricing-cards-container">
 
       <!-- DAY PLAN -->
       <div class="pricing-card silver">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
                 <h4>Silver </h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$39</del>
-            <span><strong class="pricing-number">$29.25</strong>/Day</span>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$39</span>
+            </span>
+            <span><strong class="pricing-number">$29.25</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
@@ -305,13 +284,17 @@
 
       <!-- WEEK PLAN -->
       <div class="pricing-card gold">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
               <h4>Gold </h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$139</del>
-            <span><strong class="pricing-number">$104.25</strong>/Week</span>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$139</span>
+            </span>
+            <span><strong class="pricing-number">$104.25</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
@@ -322,19 +305,24 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
-            <li>Gaming for prizes</li>
+            <li>Conversation history</li>
+            <li>Gamification</li>
           </ul>
         </div>
       </div>
 
       <!-- UNLIMITED PLAN -->
       <div class="pricing-card unlimited">
+        <!-- PRE-LAUNCH RIBBON -->
+        <img class="pre-launch-special-ribbon" src="./assets/pricing-section/pre-launch-special-ribbon.png" alt="pre-launch-special-ribbon">
         <div class="pricing-card-title">
           <div class="pricing-card-title-left">
               <h4>Platinum</h4>
           </div>
           <div class="pricing-card-title-right">
-            <del>$249</del>
+            <span class="strikethrough">
+              <span class="strikethrough-text">$249</span>
+            </span>
             <span><strong class="pricing-number">$186.75</strong>/month</span>
           </div>
         </div>
@@ -346,11 +334,12 @@
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
-            <li>Gaming for prizes</li>
-            <li>Full Data Analytics</li>
+            <li>Conversation history</li>
+            <li>Gamification</li>
             <li>Certificates of Completion</li>
           </ul>
         </div>
+        <small class="billed-annually-text">*Billed Annually</small>
       </div>
 
 
@@ -359,8 +348,8 @@
   </div>
 
 
-<!-- VIDEO HERO -->
-<div data-id="271f7372" data-element_type="container"
+<!-- ORIGINAL VIDEO HERO #video_hero id hidden in CSS -->
+<div data-id="271f7372" data-element_type="container" 
     data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/youtu.be\/SGfU2RVXvnw&quot;,&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_range&quot;:&quot;viewport&quot;,&quot;background_play_on_mobile&quot;:&quot;yes&quot;,&quot;content_width&quot;:&quot;boxed&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}"
     data-core-v316-plus="true"
     class="has_ae_slider elementor-element elementor-element-271f7372 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent" id="video_hero">
@@ -419,8 +408,8 @@
   </div>
 
 
-  <div class="page-content">
 
+  <div class="page-content">
     <div data-elementor-type="wp-page" data-elementor-id="20"
       class="elementor elementor-20"
       data-elementor-post-type="page">
@@ -456,27 +445,12 @@
               data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}"
               data-widget_type="text-editor.default">
               <div class="elementor-widget-container">
-                <p style="font-family: 'DM Sans', sans-serif;">At edYOU, we
-                  believe the
-                  future of learning and wellness should be personalized,
-                  engaging,
-                  empowering, and available 24/7 in real-time. We are a
-                  groundbreaking AI
-                  platform that transforms learning into an adventure of joyful
-                  discovery, tailored to each person&#8217;s unique needs,
-                  interests, and
-                  goals.</p>
-                <p style="font-family: 'DM Sans', sans-serif;">Our patented
-                  conversational technology enables warm, supportive
-                  relationships, where
-                  our users feel truly understood and encouraged to explore.
-                  Through
-                  cutting-edge advances in natural language processing and
-                  software
-                  intelligence, we foster an environment where learning and
-                  improving
-                  mental health comes naturally through dialogue, expertise, and
-                  mentorship.</p>
+                <p style="font-family: 'DM Sans', sans-serif;">
+                  At edYOU, we believe the future of learning and wellness should be personalized, engaging, empowering, and available 24/7 in real-time. Our simple message is: Connect, Learn, and Thrive on our platform. We are a groundbreaking AI and Machine Learning company with a patented platform powered by our neural threading intelligence, mimicking how the human brain thinks and responds. Our platform is a lifelong learning companion that transforms education and wellness into an adventure of joyful discovery, tailored to your unique needs, interests, and goals.
+                </p>
+                <p style="font-family: 'DM Sans', sans-serif;">
+                  Our patented conversational technology creates warm, supportive learning and wellness companions, making our users feel truly understood and encouraged to explore. Through cutting-edge patents on our Machine Learning, Neural Network processing, and software intelligence, we foster an environment where learning and mental health improvement come naturally through dialogue, expertise, and mentorship, all while keeping your data secure, for you to review and monitor your improvements.edYOU is here to help you achieve your learning and wellness goals.
+                </p>
               </div>
             </div>
           </div>
@@ -1599,6 +1573,28 @@
     
   </div>
 </div>
+
+<div class="overlay" *ngIf="openErrorPopup"  ></div>
+<div class="errormsgcontainer" *ngIf="openErrorPopup">
+  <div class="margin1">
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="closeErrorPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="margin4">
+      <h1 class="errorTop">You have already subscribed for a package</h1>
+      <div class="errorbottom">
+        <h5 class="errorbottomText1">For any query, please contact</h5>
+        <h5 class="errorbottomText2">support@edyou.com</h5>
+      </div>
+      
+    </div>
+   
+    
+  </div>
+</div>
+
+
+
 <div class="modal" [ngClass]="{'show': isModalOpen}">
   <div class="modal-content">
     <span class="close-btn" (click)="closeModal()">&times;</span>

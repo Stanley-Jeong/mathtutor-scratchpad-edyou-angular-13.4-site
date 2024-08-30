@@ -1,7 +1,15 @@
 .subscribe-button-container {
   display: flex;
   justify-content: flex-end;
+  gap: 20px;
 }
+.main-button{
+  background-color: #092A4B;
+  border: 1px solid #2A7CC7;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 
 .subscribe-button {
   background-color: #2A7CC7;

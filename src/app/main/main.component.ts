@@ -13,13 +13,81 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 })
 export class MainComponent implements OnInit,OnDestroy {
 
+
+  public iteCourses = [
+    {
+      title: 'Cardiology',
+      image:'../../assets/course-icons/Frame 3.png'
+    },
+    {
+      title: 'Endocrinology',
+      image:'../../assets/course-icons/Frame 20.png'
+    },
+    {
+      title: 'Gastroenterology',
+      image:'../../assets/course-icons/Frame 21.png'
+    },
+    {
+      title: 'General Internal Medicine',
+      image:'../../assets/course-icons/Frame 14.png'
+    },
+    {
+      title: 'Geriatric Medicine',
+      image:'../../assets/course-icons/Frame 19.png'
+    },
+    {
+      title: 'Hematology and Oncology',
+      image:'../../assets/course-icons/Hematology and Oncology.png'
+    },
+    {
+      title: 'Infectious Diseases',
+      image:'../../assets/course-icons/Frame 22.png'
+    },
+    {
+      title: 'Nephrology',
+      image:'../../assets/course-icons/Frame 13.png'
+    },
+    {
+      title: 'Neurology',
+      image:'../../assets/course-icons/Framen.png'
+    },
+    {
+      title: 'Pulmonary and Critical Care Medicine',
+      image:'../../assets/course-icons/Pulmonary & Critical Care Medicine.png'
+    },
+    {
+      title: 'Rheumatology',
+      image:'../../assets/course-icons/Framer.png'
+    },
+  ]
+
+  public washingtonManualInspiredCourses = [
+    {
+      title: 'Toxicology',
+      image:'../../assets/course-icons/Framet.png'
+    },
+    {
+      title: 'Neurology',
+      image:'../../assets/course-icons/Framen.png'
+    },
+    {
+      title: 'Sexually Transmitted Diseases',
+      image:'../../assets/course-icons/Frame s.png'
+    },
+    {
+      title: 'Heart Failure',
+      image:'../../assets/course-icons/Frame 14 h.png'
+    },
+  ] 
+
+
   private ngUnsubscribe = new Subject();
   scrollKey: any;
   private isBrowser: boolean;
   subjectform!: FormGroup;
   isHovered:boolean = false
   openSuccessPopup:boolean = false;
-
+  openErrorPopup:boolean = false;
  
   isModalOpen = false;
   modalContent = {
@@ -343,10 +411,15 @@ export class MainComponent implements OnInit,OnDestroy {
   closeForm(){
     this.openForm = !this.openForm
     this.subjectform.reset()
+    this.isloading = false
   }
   closeSuccessPopup(){
     this.openSuccessPopup = !this.openSuccessPopup
   }
+  closeErrorPopup(){
+    this.openErrorPopup = !this.openErrorPopup
+  }
+
   submitForm(){
     if(this.subjectform.valid){
       console.log('valid')
@@ -385,10 +458,13 @@ export class MainComponent implements OnInit,OnDestroy {
           }
           
           this.openSuccessPopup = true
-          setTimeout(()=>{
-            this.openSuccessPopup = false
-          },5000)
+          // setTimeout(()=>{
+          //   this.openSuccessPopup = false
+          // },5000)
           
+        }else if(res.statusCode == 201){
+          this.openErrorPopup = true
+          this.closeForm()
         }
       })
     }else{
@@ -410,3 +486,4 @@ export class MainComponent implements OnInit,OnDestroy {
     }
   }
 }
+

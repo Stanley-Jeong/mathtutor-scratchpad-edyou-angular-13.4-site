@@ -19,7 +19,7 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
   currentCourse: any;
 
   constructor(private router: Router, private service : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
-  private titleService: Title, private metaService: Meta) {
+  private titleService: Title, private metaService: Meta,) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.courseId = this.router.url.slice(1)
     this.currentCourse = courses.find((course) => course.id === this.courseId)
@@ -53,4 +53,18 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
     const offset = -this.currentIndex * 100;
     document.querySelector('.carousel-wrapper')?.setAttribute('style', `transform: translateX(${offset}%)`);
   }
+  goTo_mainPage(){
+    this.router.navigate(['/']).then(()=> {
+      window.scrollTo(0, 0);
+    });
+  }
+
+  gotoPreenroll(id: string){
+    this.router.navigate(['/']).then(()=> {
+      window.scrollTo(0, 0);
+      this.service.scrollToElementById(id)
+    });
+  }
+  
+
 }
