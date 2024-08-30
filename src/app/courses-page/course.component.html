@@ -33,12 +33,29 @@
                         data-id="25d3b74" data-element_type="widget"
                         data-widget_type="image.default">
                         <div class="elementor-widget-container">
-                            <img fetchpriority="high" decoding="async"
+                            <!-- <img fetchpriority="high" decoding="async"
                                 width="2560" height="1435"
                                 src="{{currentCourse.image}}"
                                 class="attachment-full size-full wp-image-22094"
                                 alt="{{currentCourse.id}}"
-                                sizes="(max-width: 2560px) 100vw, 2560px" />
+                                sizes="(max-width: 2560px) 100vw, 2560px" /> -->
+                                <div class="carousel-container">
+                                    <div class="carousel-wrapper" [ngStyle]="{'transform': 'translateX(-' + currentIndex * 100 + '%)'}">
+                                      <div class="carousel-slide" *ngFor="let image of currentCourse.images">
+                                        <img [src]="image.src" [alt]="image.alt" class="carousel-image attachment-full size-full wp-image-22094" sizes="(max-width: 2560px) 100vw, 2560px">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
+                                    <button class="carousel-button next" (click)="nextSlide()">&#10095;</button>
+                                    <div class="carousel-dots">
+                                        <span 
+                                          *ngFor="let image of currentCourse.images; let i = index"
+                                          class="dot"
+                                          [ngClass]="{'active': i === currentIndex}"
+                                          (click)="goToSlide(i)"
+                                        ></span>
+                                      </div>
+                                  </div>
                         </div>
                     </div>
                     <div
@@ -51,6 +68,7 @@
                         <div class="subscribe-button-container">
                             <button class="main-button" (click)="goTo_mainPage()">Go to main page</button>
                           <button class="subscribe-button" (click)="gotoPreenroll('pricing_section_id')">Pre-Enroll Now</button>
+                          <!-- <button class="subscribe-button">Pre-Enroll Now</button> -->
                         </div>
                     </div>
                 </div>

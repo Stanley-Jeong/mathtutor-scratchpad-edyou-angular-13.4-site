@@ -2,13 +2,19 @@ export const courses = [
   {
     id: "us-history",
     title: "US History",
-    image: "./assets/course-banners/us-history-banner.webp",
+    images : [
+      { src: '../assets/us-history-banner.webp', alt: 'Slide 1' },
+      { src: '../assets/algebra-course.webp', alt: 'Slide 2' },
+      { src: '../assets/PMM.webp', alt: 'Slide 3' }
+    ],
+   // image: "./assets/course-banners/us-history-banner.webp",
     description: `Discover the fascinating journey of the United States with our engaging US history course! Designed for learners of all ages, this course brings history to life with captivating stories, interactive lessons, and insights that will leave you eager for more. Whether you're a student, a lifelong learner, or just curious about America's past, this course is tailored to be enjoyable and enlightening for everyone. Dive into history like never before and see how the events of the past shape the world we live in today!`,
     icon: '',
   },
   {
     id: "english",
     title: "Introduction to English",
+    
     image: "./assets/course-banners/english-banner.webp",
     description: `Master the art of communication with our comprehensive English course! Whether you're a beginner or looking to refine your skills, this course is designed to help you excel in reading, writing, speaking, and understanding English. Through engaging lessons, interactive activities, and personalized feedback, you'll build confidence and fluency in one of the world's most essential languages. Perfect for students, professionals, or anyone eager to improve their English, this course will empower you to express yourself clearly and effectively in any situation. Start your journey to English proficiency today!`,
     icon: '',

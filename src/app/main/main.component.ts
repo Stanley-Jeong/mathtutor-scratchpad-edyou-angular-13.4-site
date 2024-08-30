@@ -86,17 +86,14 @@ export class MainComponent implements OnInit,OnDestroy {
   private isBrowser: boolean;
   subjectform!: FormGroup;
   isHovered:boolean = false
+  isalgebra:boolean = false
   openSuccessPopup:boolean = false;
   openErrorPopup:boolean = false;
  
   isModalOpen = false;
   modalContent = {
     title: '',
-    images : [
-      { src: '', alt: 'Slide 1' },
-      { src: '', alt: 'Slide 2' },
-      { src: '', alt: 'Slide 3' }
-    ],
+    image: '',
     description: ''
   };
   constructor(private router: Router,private service :UserService ,private service2 : ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
@@ -249,6 +246,9 @@ export class MainComponent implements OnInit,OnDestroy {
   toggleGif(hovered: boolean) {
     this.isHovered = hovered;
   }
+  togglealgebra(hovered: boolean){
+    this.isalgebra = hovered
+  }
 
  
   validateAllFormFields(formGroup: FormGroup) {
@@ -343,95 +343,72 @@ export class MainComponent implements OnInit,OnDestroy {
       case 1:
         this.modalContent = {
           title: 'US History',
-          images : [
-            { src: '../assets/history-course.png', alt: 'Slide 1' },
-            { src: '../assets/algebra-course.webp', alt: 'Slide 2' },
-            { src: '../assets/PMM.webp', alt: 'Slide 3' }
-          ],
-         // image: '../assets/history-course.png',
+          image: '../assets/history-course.png',
           description: "Discover the fascinating journey of the United States with our engaging US history course! Designed for learners of all ages, this course brings history to life with captivating stories, interactive lessons, and insights that will leave you eager for more. Whether you're a student, a lifelong learner, or just curious about America's past, this course is tailored to be enjoyable and enlightening for everyone. Dive into history like never before and see how the events of the past shape the world we live in today!"
         };
         break;
       case 2:
         this.modalContent = {
           title: 'Algebra',
-          images : [
-            { src: '../assets/algebra-course.webp', alt: 'Slide 1' },
-            { src: 'https://via.placeholder.com/800x400?text=Slide+2', alt: 'Slide 2' },
-            { src: 'https://via.placeholder.com/800x400?text=Slide+3', alt: 'Slide 3' }
-          ],
-        //  image: '../assets/algebra-course.webp',
+          image: '../assets/algebra-course.webp',
           description: "Unlock the power of mathematics with our engaging Algebra course! Whether you're just beginning or looking to strengthen your skills, this course breaks down complex concepts into easy-to-understand lessons. You'll explore everything from equations and inequalities to functions and graphing, all with step-by-step guidance and practical examples. Ideal for students at any level, this course will help you build a strong foundation in algebra, boosting your confidence and problem-solving abilities. Dive into the world of algebra and discover how fun and rewarding math can be!"
         };
         break;
-        // case 3:
-        // this.modalContent = {
-        //   title: 'Introduction to English',
-        //   image: '../assets/english-course.webp',
-        //   description: "Master the art of communication with our comprehensive English course! Whether you're a beginner or looking to refine your skills, this course is designed to help you excel in reading, writing, speaking, and understanding English. Through engaging lessons, interactive activities, and personalized feedback, you'll build confidence and fluency in one of the world's most essential languages. Perfect for students, professionals, or anyone eager to improve their English, this course will empower you to express yourself clearly and effectively in any situation. Start your journey to English proficiency today!"
-        // };
-        // break;
-        // case 4:
-        //   this.modalContent = {
-        //     title: 'Leadership',
-        //     image: '../assets/leadership-course.jpg',
-        //     description: "Leadership Unlock your potential with our transformative leadership course! Whether you're a seasoned leader or just starting your journey, this course is designed to inspire and equip you with the skills and confidence to lead with impact. Through practical exercises, real-world examples, and expert guidance, you'll learn to motivate, influence, and drive positive change in any environment. Discover your unique leadership style and take charge of your future with the tools and insights you need to succeed. Lead with purpose, and make a difference today!"
-        //   };
-        //   break;
-        //   case 5:
-        //     this.modalContent = {
-        //       title: 'Communications',
-        //       image: '../assets/communication-cors.webp',
-        //       description: "Communications Enhance your ability to connect and influence with our Communications course! Perfect for professionals, students, and anyone looking to improve their interpersonal skills, this course covers the essentials of effective communication in both personal and professional settings. You'll learn to articulate your ideas clearly, listen actively, and adapt your message to different audiences. With practical exercises and real-world scenarios, you'll build confidence in public speaking, negotiation, and digital communication. Unlock the power of clear, persuasive communication and make your voice heard in any situation!"
-        //     };
-        //     break; case 6:
-        //     this.modalContent = {
-        //       title: 'Entrepreneurship',
-        //       image: '../assets/enterp.png',
-        //       description: "No content"
-        //     };
-        //     break; case 7:
-        //     this.modalContent = {
-        //       title: 'Artificial Intelligence',
-        //       image: '../assets/ail.png',
-        //       description: 'No content.'
-        //     };
-        //     break; case 8:
-        //     this.modalContent = {
-        //       title: 'Computer Science',
-        //       image: '../assets/cs.png',
-        //       description: 'No content.'
-        //     };
-        //     break; case 9:
-        //     this.modalContent = {
-        //       title: 'Project Management',
-        //       image: '../assets/PMM.webp',
-        //       description: "Project Management Elevate your career with our dynamic Project Management course! Designed for aspiring and experienced project managers alike, this course equips you with the tools, techniques, and strategies to lead projects to success. From planning and execution to monitoring and closing, you'll learn to manage resources, meet deadlines, and deliver results with confidence. Through real-world case studies and hands-on practice, you'll gain the skills needed to navigate challenges and drive your projects forward. Whether you're managing small teams or large-scale initiatives, this course will help you achieve your goals and excel in the world of project management."
-        //     };
-        //     break;
+        case 3:
+        this.modalContent = {
+          title: 'Introduction to English',
+          image: '../assets/english-course.webp',
+          description: "Master the art of communication with our comprehensive English course! Whether you're a beginner or looking to refine your skills, this course is designed to help you excel in reading, writing, speaking, and understanding English. Through engaging lessons, interactive activities, and personalized feedback, you'll build confidence and fluency in one of the world's most essential languages. Perfect for students, professionals, or anyone eager to improve their English, this course will empower you to express yourself clearly and effectively in any situation. Start your journey to English proficiency today!"
+        };
+        break;
+        case 4:
+          this.modalContent = {
+            title: 'Leadership',
+            image: '../assets/leadership-course.jpg',
+            description: "Leadership Unlock your potential with our transformative leadership course! Whether you're a seasoned leader or just starting your journey, this course is designed to inspire and equip you with the skills and confidence to lead with impact. Through practical exercises, real-world examples, and expert guidance, you'll learn to motivate, influence, and drive positive change in any environment. Discover your unique leadership style and take charge of your future with the tools and insights you need to succeed. Lead with purpose, and make a difference today!"
+          };
+          break;
+          case 5:
+            this.modalContent = {
+              title: 'Communications',
+              image: '../assets/communication-cors.webp',
+              description: "Communications Enhance your ability to connect and influence with our Communications course! Perfect for professionals, students, and anyone looking to improve their interpersonal skills, this course covers the essentials of effective communication in both personal and professional settings. You'll learn to articulate your ideas clearly, listen actively, and adapt your message to different audiences. With practical exercises and real-world scenarios, you'll build confidence in public speaking, negotiation, and digital communication. Unlock the power of clear, persuasive communication and make your voice heard in any situation!"
+            };
+            break; case 6:
+            this.modalContent = {
+              title: 'Entrepreneurship',
+              image: '../assets/math-course.png',
+              description: "No content"
+            };
+            break; case 7:
+            this.modalContent = {
+              title: 'Artificial Intelligence',
+              image: '../assets/math-course.png',
+              description: 'No content.'
+            };
+            break; case 8:
+            this.modalContent = {
+              title: 'Computer Science',
+              image: '../assets/math-course.png',
+              description: 'No content.'
+            };
+            break; case 9:
+            this.modalContent = {
+              title: 'Project Management',
+              image: '../assets/PMM.webp',
+              description: "Project Management Elevate your career with our dynamic Project Management course! Designed for aspiring and experienced project managers alike, this course equips you with the tools, techniques, and strategies to lead projects to success. From planning and execution to monitoring and closing, you'll learn to manage resources, meet deadlines, and deliver results with confidence. Through real-world case studies and hands-on practice, you'll gain the skills needed to navigate challenges and drive your projects forward. Whether you're managing small teams or large-scale initiatives, this course will help you achieve your goals and excel in the world of project management."
+            };
+            break;
       // Add more cases as needed
       default:
         this.modalContent = {
           title: 'Default Title',
-          images : [
-            { src: '../assets/history-course.png', alt: 'Slide 1' },
-            { src: 'https://via.placeholder.com/800x400?text=Slide+2', alt: 'Slide 2' },
-            { src: 'https://via.placeholder.com/800x400?text=Slide+3', alt: 'Slide 3' }
-          ],
+          image: '../assets/default-course.png',
           description: 'Default description for the course.'
         };
     }
   }
 
-  currentIndex = 0;
-
-  prevSlide() {
-    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.modalContent.images.length - 1;
-  }
-
-  nextSlide() {
-    this.currentIndex = (this.currentIndex < this.modalContent.images.length - 1) ? this.currentIndex + 1 : 0;
-  }
   closeModal(): void {
     this.isModalOpen = false;
   }
