@@ -71,31 +71,28 @@
   <div class="courses-section">
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
-      <!-- navigateToCoursePage('us-history') -->
-      <a (click)="openModal(1)" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
-        <img src="./assets/course-icons/us-history.png" />
-        <!-- <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " /> -->
+      <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
+        <img [src] ="isHovered ? '../../assets/course-icons/Frame 25.png' : './assets/course-icons/us-history.png' " />
       </a>
-      <!-- navigateToCoursePage('algebra')   -->
-      <a   (click)="openModal(2)" class="course-card-image">
+      <a (click)="navigateToCoursePage('algebra')" class="course-card-image">
         <img src="./assets/course-icons/algebra.png" />
       </a>
-      <a (click)="openModal(3)" class="course-card-image">
+      <a (click)="navigateToCoursePage('english')" class="course-card-image">
         <img src="./assets/course-icons/english.png" />
       </a>
-      <a (click)="openModal(4)" class="course-card-image">
+      <a (click)="navigateToCoursePage('leadership')" class="course-card-image">
         <img src="./assets/course-icons/leadership.png" />
       </a>
-      <a (click)="openModal(5)" class="course-card-image">
+      <a (click)="navigateToCoursePage('communications')" class="course-card-image">
         <img src="./assets/course-icons/communications.png" />
       </a>
-      <a (click)="openModal(6)" class="course-card-image">
+      <a (click)="navigateToCoursePage('entrepreneurship')" class="course-card-image">
         <img src="./assets/course-icons/entrepreneurship.png" />
       </a>
-      <a (click)="openModal(8)" class="course-card-image">
+      <a (click)="navigateToCoursePage('computer-science')" class="course-card-image">
         <img src="./assets/course-icons/computer-science.png" />
       </a>
-      <a (click)="openModal(9)" class="course-card-image">
+      <a (click)="navigateToCoursePage('project-management')" class="course-card-image">
         <img src="./assets/course-icons/pm.png" />
       </a>
     </div>
@@ -1607,16 +1604,7 @@
     <span class="close-btn" (click)="closeModal()">&times;</span>
     <div class="modaldetail">
     <p>{{ modalContent.title }}</p>
-    <div class="carousel-container">
-      <div class="carousel-wrapper" [ngStyle]="{'transform': 'translateX(-' + currentIndex * 100 + '%)'}">
-        <div class="carousel-slide" *ngFor="let image of modalContent.images">
-          <img [src]="image.src" [alt]="image.alt" class="carousel-image">
-        </div>
-      </div>
-      <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
-      <button class="carousel-button next" (click)="nextSlide()">&#10095;</button>
-    </div>
-    <!-- <img src= "{{modalContent.image}}"alt="Engaging US history course" style=" width: 98%; height: 29%;" width="600" height="400"> -->
+    <img src= "{{modalContent.image}}"alt="Engaging US history course" style=" width: 98%; height: 29%;" width="600" height="400">
    <div class="mds"> <p class="modaldescription">{{ modalContent.description }}</p></div>
    
   </div>

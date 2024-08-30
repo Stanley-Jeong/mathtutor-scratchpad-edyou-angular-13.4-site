@@ -26,12 +26,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
 import { Router } from "@angular/router";
 import * as Sentry from "@sentry/angular-ivy";
+import { CommonModule } from '@angular/common';
+import { CoursePageComponent } from './courses-page/course.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
+    CoursePageComponent,
     FooterComponent,
     MainComponent,
     UneeqavatarComponent,
@@ -56,6 +59,7 @@ import * as Sentry from "@sentry/angular-ivy";
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    CommonModule ,
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'

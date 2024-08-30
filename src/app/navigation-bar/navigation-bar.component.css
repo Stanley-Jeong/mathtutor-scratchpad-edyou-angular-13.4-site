@@ -31,3 +31,8 @@ a{
     /* To show hamburger menu on desktop size as well */
     display: block;
 }
+.lappyUi{
+    width:40%;
+    margin-left:60%;
+    margin-top:2%
+}

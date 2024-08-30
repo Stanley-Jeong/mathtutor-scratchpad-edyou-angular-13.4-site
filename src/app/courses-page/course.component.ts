@@ -5,6 +5,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { courses } from '../courses-data';
 
+
 @Component({
   selector: 'course-template',
   templateUrl: './course.component.html',
@@ -22,6 +23,7 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.courseId = this.router.url.slice(1)
     this.currentCourse = courses.find((course) => course.id === this.courseId)
+    console.log(this.currentCourse)
   }
   
 
@@ -32,5 +34,23 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);
     }
   }
+  currentIndex = 0;
 
+  prevSlide() {
+    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.currentCourse.images.length - 1;
+    this.updateSlidePosition();
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex < this.currentCourse.images.length - 1) ? this.currentIndex + 1 : 0;
+    this.updateSlidePosition();
+  }
+  goToSlide(index: number) {
+    this.currentIndex = index;
+    this.updateSlidePosition();
+  }
+  private updateSlidePosition() {
+    const offset = -this.currentIndex * 100;
+    document.querySelector('.carousel-wrapper')?.setAttribute('style', `transform: translateX(${offset}%)`);
+  }
 }
