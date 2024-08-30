@@ -85,7 +85,9 @@ export class MainComponent implements OnInit,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
   subjectform!: FormGroup;
-  isHovered:boolean = false
+  // isHovered:boolean = false
+  isHovered: { [key: string]: boolean } = {};
+
   isalgebra:boolean = false
   openSuccessPopup:boolean = false;
   openErrorPopup:boolean = false;
@@ -109,6 +111,17 @@ export class MainComponent implements OnInit,OnDestroy {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
+
+    this.isHovered = {
+      'us-history': false,
+      'algebra': false,
+      'english': false,
+      'leadership': false,
+      'communications': false,
+      'entrepreneurship': false,
+      'computer-science': false,
+      'project-management': false,
+    };
     
   }
   
@@ -243,9 +256,14 @@ export class MainComponent implements OnInit,OnDestroy {
 
 
  
-  toggleGif(hovered: boolean) {
-    this.isHovered = hovered;
+  // toggleGif(hovered: boolean) {
+  //   this.isHovered = hovered;
+  // }
+
+  toggleGif(course: string, hovered: boolean) {
+    this.isHovered[course] = hovered;
   }
+  
   togglealgebra(hovered: boolean){
     this.isalgebra = hovered
   }

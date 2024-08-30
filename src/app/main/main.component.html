@@ -71,31 +71,32 @@
   <div class="courses-section">
     <h2>Our Courses</h2>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')" data-hover="us-history" (mouseenter)="toggleGif(true)" (mouseleave)="toggleGif(false)">
-        <img [src] ="isHovered ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png' " />
+      <a (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)" (mouseleave)="toggleGif('us-history', false)">
+        <img [src]="isHovered['us-history'] ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png'" />
       </a>
-      <a (click)="navigateToCoursePage('algebra')" class="course-card-image">
-        <img src="./assets/course-icons/algebra.png" />
+      <a (click)="navigateToCoursePage('algebra')" (mouseenter)="toggleGif('algebra', true)" (mouseleave)="toggleGif('algebra', false)">
+        <img [src]="isHovered['algebra'] ? '../../assets/course-icons/hover 2.png' : './assets/course-icons/algebra.png'" />
       </a>
-      <a (click)="navigateToCoursePage('english')" class="course-card-image">
-        <img src="./assets/course-icons/english.png" />
+      <a (click)="navigateToCoursePage('english')" (mouseenter)="toggleGif('english', true)" (mouseleave)="toggleGif('english', false)">
+        <img [src]="isHovered['english'] ? '../../assets/course-icons/hover 3.png' : './assets/course-icons/english.png'" />
       </a>
-      <a (click)="navigateToCoursePage('leadership')" class="course-card-image">
-        <img src="./assets/course-icons/leadership.png" />
+      <a (click)="navigateToCoursePage('leadership')" (mouseenter)="toggleGif('leadership', true)" (mouseleave)="toggleGif('leadership', false)">
+        <img [src]="isHovered['leadership'] ? '../../assets/course-icons/hover 4.png' : './assets/course-icons/leadership.png'" />
       </a>
-      <a (click)="navigateToCoursePage('communications')" class="course-card-image">
-        <img src="./assets/course-icons/communications.png" />
+      <a (click)="navigateToCoursePage('communications')" (mouseenter)="toggleGif('communications', true)" (mouseleave)="toggleGif('communications', false)">
+        <img [src]="isHovered['communications'] ? '../../assets/course-icons/hover 5.png' : './assets/course-icons/communications.png'" />
       </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')" class="course-card-image">
-        <img src="./assets/course-icons/entrepreneurship.png" />
+      <a (click)="navigateToCoursePage('entrepreneurship')" (mouseenter)="toggleGif('entrepreneurship', true)" (mouseleave)="toggleGif('entrepreneurship', false)">
+        <img [src]="isHovered['entrepreneurship'] ? '../../assets/course-icons/hover 6.png' : './assets/course-icons/entrepreneurship.png'" />
       </a>
-      <a (click)="navigateToCoursePage('computer-science')" class="course-card-image">
-        <img src="./assets/course-icons/computer-science.png" />
+      <a (click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
+        <img [src]="isHovered['computer-science'] ? '../../assets/course-icons/hover 7.png' : './assets/course-icons/computer-science.png'" />
       </a>
-      <a (click)="navigateToCoursePage('project-management')" class="course-card-image">
-        <img src="./assets/course-icons/pm.png" />
+      <a (click)="navigateToCoursePage('project-management')" (mouseenter)="toggleGif('project-management', true)" (mouseleave)="toggleGif('project-management', false)">
+        <img [src]="isHovered['project-management'] ? '../../assets/course-icons/hover 8.png' : './assets/course-icons/pm.png'" />
       </a>
     </div>
+  
 
     <h5>Internal Medicine In-Training Service Exam (ITE)</h5>
     <div class="courses-cards-container">
