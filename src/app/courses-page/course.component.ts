@@ -70,4 +70,7 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
     const offset = -this.currentIndex * 100;
     document.querySelector('.carousel-wrapper')?.setAttribute('style', `transform: translateX(${offset}%)`);
   }
+ 
+  
+
 }
