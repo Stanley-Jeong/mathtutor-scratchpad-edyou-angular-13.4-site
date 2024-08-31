@@ -30,6 +30,7 @@ declare var jQuery: any;
 export class NavigationBarComponent implements OnInit ,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
+  screenSize: string ='large';
   constructor(
     private router: Router, private service : ColorChangeService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -37,7 +38,15 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
 
   isVisible:boolean = false;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const width = window.innerWidth;
+    console.log(width)
+    if (width < 1024) {
+      this.screenSize = 'small'; // Mobile
+    } else {
+      this.screenSize = 'large'; // Desktop
+    }
+  }
 
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {

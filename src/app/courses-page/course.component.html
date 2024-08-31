@@ -40,13 +40,13 @@
                                 alt="{{currentCourse.id}}"
                                 sizes="(max-width: 2560px) 100vw, 2560px" /> -->
                                 <div class="carousel-container">
-                                    <div class="carousel-wrapper" [ngStyle]="{'transform': 'translateX(-' + currentIndex * 100 + '%)'}">
+                                    <div class="carousel-wrapper" #carouselWrapper  data-flickity-options='{ "wrapAround": true }'>
                                       <div class="carousel-slide" *ngFor="let image of currentCourse.images">
                                         <img [src]="image.src" [alt]="image.alt" class="carousel-image attachment-full size-full wp-image-22094" sizes="(max-width: 2560px) 100vw, 2560px">
                                       </div>
                                     </div>
-                                    <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
-                                    <button class="carousel-button next" (click)="nextSlide()">&#10095;</button>
+                                    <button class="carousel-button prev"[disabled]="currentIndex === 0" (click)="prevSlide()">&#10094;</button>
+                                    <button class="carousel-button next"  [disabled]="currentIndex === currentCourse.images.length - 1" (click)="nextSlide()">&#10095;</button>
                                     <div class="carousel-dots">
                                         <span 
                                           *ngFor="let image of currentCourse.images; let i = index"

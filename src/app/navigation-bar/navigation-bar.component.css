@@ -6,53 +6,94 @@ a{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     min-height: 0;
     max-height: 0;
     overflow-y:scroll;
     background-color: #F5F5F7;
     transition: min-height 0.5s ease;
     transition: max-height 0.5s ease;
-    display: flex;
-    justify-content: center;
-}
 
-.hamburger-menu-inner-container {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    align-items: flex-start;
 }
 
 .closeButton{
+    position: absolute;
+    right: 0;
+    margin: 5%;
     z-index: 4;
-    margin-top: 4vh;
-    margin-right: 0;
 }
 
 .gives-margin{
-    margin-top: 4vh;
-    margin-left: 0;
+    margin-left: 5vh;
+    margin-top: 5vh;
 }
 
-.hamburger-menu-icon {
+.hamburger-menu {
     /* To show hamburger menu on desktop size as well */
     display: block;
 }
+.mobile {
+    /* Mobile styles here */
+  }
+  .desktop {
+    /* Desktop styles here */
+    #targetDiv {
+         position: fixed; 
+        top: 0;
+        left: 0;
+         width: auto; 
+        min-height: 0;
+        max-height: 0;
+        overflow-y:scroll;
+        background-color: #F5F5F7;
+        transition: min-height 0.5s ease;
+        transition: max-height 0.5s ease;
+    }
+  }
+  .targetDivsmall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    min-height: 0;
+    max-height: 0;
+    overflow-y:scroll;
+    background-color: #F5F5F7;
+    transition: min-height 0.5s ease;
+    transition: max-height 0.5s ease;
+  }
+  .elementor-icon-list-item:not(:has(.elementor-icon-list-icon)) {
+    font-weight: 600;
+    color:rgb(60, 55, 55)
+}
+.elementor-icon-list-item:has(.elementor-icon-list-icon) {
+    line-height: 1rem;
+    color:rgb(60, 55, 55)
+}
+#targetDiv::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
 
+  .targetDivlarge {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 0;
+    max-height: 0;
+    margin-left: 83%;
 
-@media (min-width: 1025px) {
+    overflow-y:scroll;
+    margin-left: 78%;
+    width: 22%;
+    background-color: #F5F5F7;
+    transition: min-height 0.5s ease;
+    transition: max-height 0.5s ease;
+  }
+  @media (min-width: 1025px) {
     .hamburger-menu-inner-container {
         max-width: 1140px;
-    }
-
-    .closeButton{
-        margin-right: 10px;
-    }
-
-    .gives-margin{
-        margin-top: 4vh;
-        margin-left: 10px;
+        justify-content: center;
     }
 }
