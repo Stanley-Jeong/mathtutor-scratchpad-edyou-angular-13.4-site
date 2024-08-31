@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
 declare var jQuery: any;
@@ -39,6 +39,12 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   isVisible:boolean = false;
 
   ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        // Navigation is starting
+        this.hideNavigation()
+      }
+    });
     const width = window.innerWidth;
     console.log(width)
     if (width < 1024) {
