@@ -17,7 +17,6 @@ import { InvestorLoginComponent } from './investor-login/investor-login.componen
 import { CoursePageComponent } from './courses-page/course.component'
 
 
-
 const routes: Routes = [
 
   {path:'', redirectTo:'/', pathMatch:'full'},
@@ -45,6 +44,7 @@ const routes: Routes = [
   {path: 'artificial-intelligence', component:CoursePageComponent},
   {path: 'computer-science', component:CoursePageComponent},
   {path: 'project-management', component:CoursePageComponent},
+  {path: 'latin', component:CoursePageComponent},
   {path: '**', redirectTo: '/'}
 ];
 

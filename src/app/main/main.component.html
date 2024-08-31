@@ -10,23 +10,25 @@
     <div class="right-avatar">
       <!-- PLACEHOLDER VIDEO -->
       <!-- <iframe class="iframe-video" src="https://www.youtube.com/embed/WVWF8HZmTWY?si=n2rGcdx9cTimtDpC&amp;controls=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-      <!-- <div class="video-container">
-        <video width="700" height="500" controls>
+      <div class="video-container">
+        <video controls autoplay muted id="hero-video">
           <source src="./assets/edyou-gen-video-placeholder.mp4" type="video/mp4">
         </video>
-      </div> -->
+        <!-- <video [muted]="'muted'" controls loop autoplay [src]="videoSource"></video> -->
+
+      </div>
       <!-- <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
         <button class="right-avatar-button">Try Course</button>
       </a> -->
-      <img src="./assets/edyou-gen-video-placeholder.png" alt="edyou-gen-video-placeholder-image">
+      <!-- <img src="./assets/edyou-gen-video-placeholder.png" alt="edyou-gen-video-placeholder-image"> -->
     </div>
   </div>
 
   <!-- COUNTDOWN -->
   <div class="countdown">
     <h2 class="countdownHeading">edYOU Technologies</h2>
-    <h6 class="countdowntEXT" >Our conversational learning and wellness platform has been at top schools for years.</h6>
-    <h6 class="countdowntEXT" >On 9/9/24, we are opening up to the world.</h6>
+    <h6 class="countdowntEXT" >Our conversational learning and wellness platform has been at top schools for <strong>years</strong>.</h6>
+    <h6 class="countdowntEXT" >On 9/16/24, we are opening up to the <strong>world</strong>.</h6>
     <div class="countDownday">
         <div class="day">
             <h1 class="dayNumber">{{days}}</h1>
@@ -70,6 +72,8 @@
   <!-- COURSES -->
   <div class="courses-section">
     <h2>Our Courses</h2>
+
+    <h5>Academic</h5>
     <div class="courses-cards-container">
       <a (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)" (mouseleave)="toggleGif('us-history', false)">
         <img [src]="isHovered['us-history'] ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png'" />
@@ -80,6 +84,13 @@
       <a (click)="navigateToCoursePage('english')" (mouseenter)="toggleGif('english', true)" (mouseleave)="toggleGif('english', false)">
         <img [src]="isHovered['english'] ? '../../assets/course-icons/hover 3.png' : './assets/course-icons/english.png'" />
       </a>
+      <a (click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
+        <img [src]="isHovered['computer-science'] ? '../../assets/course-icons/hover 2.png' : './assets/course-icons/computer-science.png'" />
+      </a>
+    </div>
+
+    <h5>Self-Development</h5>
+    <div class="courses-cards-container">
       <a (click)="navigateToCoursePage('leadership')" (mouseenter)="toggleGif('leadership', true)" (mouseleave)="toggleGif('leadership', false)">
         <img [src]="isHovered['leadership'] ? '../../assets/course-icons/hover 4.png' : './assets/course-icons/leadership.png'" />
       </a>
@@ -89,29 +100,35 @@
       <a (click)="navigateToCoursePage('entrepreneurship')" (mouseenter)="toggleGif('entrepreneurship', true)" (mouseleave)="toggleGif('entrepreneurship', false)">
         <img [src]="isHovered['entrepreneurship'] ? '../../assets/course-icons/hover 3.png' : './assets/course-icons/entrepreneurship.png'" />
       </a>
-      <a (click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
-        <img [src]="isHovered['computer-science'] ? '../../assets/course-icons/hover 2.png' : './assets/course-icons/computer-science.png'" />
-      </a>
       <a (click)="navigateToCoursePage('project-management')" (mouseenter)="toggleGif('project-management', true)" (mouseleave)="toggleGif('project-management', false)">
         <img [src]="isHovered['project-management'] ? '../../assets/course-icons/hover 8.png' : './assets/course-icons/pm.png'" />
       </a>
     </div>
   
 
-    <h5>Internal Medicine In-Training Service Exam (ITE)</h5>
+    <h4>edYOU Medicine (ITE Inspired)</h4>
+    <h5>Psychiatry (PRITE)</h5>
+    <span>3 placeholders here</span>
+    <h5>Surgery (ABSITE)</h5>
+    <span>placeholders TBD</span>
+
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of iteCourses">
-        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
-         <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-post-launch-ribbon-blue.png" alt="coming-soon-ribbon">
+         <div class="course-image-placeholder">
+          <img [src]="course.image" alt="" style="margin-top: 10px;">
+        </div>
           <span>{{course.title}}</span>
       </div>
     </div>
 
-    <h5>Washington Manual Inspired</h5>
+    <h5>Internal Medicine</h5>
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of washingtonManualInspiredCourses">
-        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
-        <div class="course-image-placeholder"><img [src]="course.image" alt="" style="margin-top: 10px;" ></div>
+        <img class="coming-soon-ribbon" src="./assets/course-icons/coming-post-launch-ribbon-blue.png" alt="coming-soon-ribbon">
+        <div class="course-image-placeholder">
+          <img [src]="course.image" alt="" style="margin-top: 10px;">
+        </div>
          <span>{{course.title}}</span>
      </div>
     </div>
@@ -444,10 +461,10 @@
               data-widget_type="text-editor.default">
               <div class="elementor-widget-container">
                 <p style="font-family: 'DM Sans', sans-serif;">
-                  At edYOU, we believe the future of learning and wellness should be personalized, engaging, empowering, and available 24/7 in real-time. Our simple message is: Connect, Learn and Thrive, on our platform at the same time. We are a groundbreaking AI, Machine Learning with our patented platform that is patented with our neural threading intelligence. We mimic how a human brain thinks and responds. Our platform is a life long learning companion that transforms learning and wellness combined into an adventure of joyful discovery, tailored to your unique needs, interests, and goals.
+                  At edYOU, we believe the future of learning and wellness should be personalized, engaging, empowering, and available 24/7 in real-time. Our simple message is: Connect, Learn, and Thrive on our platform. We are a groundbreaking AI and Machine Learning company with a patented platform powered by our neural threading intelligence, mimicking how the human brain thinks and responds. Our platform is a lifelong learning companion that transforms education and wellness into an adventure of joyful discovery, tailored to your unique needs, interests, and goals.
                 </p>
                 <p style="font-family: 'DM Sans', sans-serif;">
-                  Our patented conversational technology enables warm, supportive learning and wellness companions where our users feel truly understood and encouraged to explore. Through cutting-edge patents on our Machine Learning and Neural Network processing and software intelligence, we foster an environment where learning and improving mental health comes naturally through dialogue, expertise, and mentorship while having your data in your hands to help improve your learning and wellness goals.
+                  Our patented conversational technology creates warm, supportive learning and wellness companions, making our users feel truly understood and encouraged to explore. Through cutting-edge patents on our Machine Learning, Neural Network processing, and software intelligence, we foster an environment where learning and mental health improvement come naturally through dialogue, expertise, and mentorship, all while keeping your data secure, for you to review and monitor your improvements. edYOU is here to help you achieve your learning and wellness goals.
                 </p>
               </div>
             </div>
@@ -657,6 +674,117 @@
                 data-pagination_scroll_top_offset="0">
 
                 <div class="ae-post-collection">
+
+                  <!-- START August 2024 article, Transforming Education with edYOU Conversational AI: A Case Study of Sierra Canyon School -->
+
+                  <article class="ae-post-item ae-post-item-89a8b3a">
+                    <div class="ae-post-item-inner">
+                      <div class="ae_data elementor elementor-20689">
+                        <div data-elementor-type="wp-post"
+                          data-elementor-id="20689"
+                          class="elementor elementor-20689"
+                          data-elementor-post-type="ae_global_templates">
+                          <div
+                            class="has_ae_slider elementor-element elementor-element-c2c2327 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
+                            data-id="c2c2327" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
+                            data-core-v316-plus="true">
+                            <div class="e-con-inner">
+                              <div
+                                class="has_ae_slider elementor-element elementor-element-5e306d7 e-con-full e-flex ae-bg-gallery-type-default e-con e-parent"
+                                data-id="5e306d7" data-element_type="container"
+                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}"
+                                data-core-v316-plus="true">
+                                <div
+                                  class="elementor-element elementor-element-5b8c26b elementor-widget elementor-widget-ae-post-meta"
+                                  data-id="5b8c26b" data-element_type="widget"
+                                  data-settings="{&quot;layout_mode&quot;:&quot;horizontal&quot;}"
+                                  data-widget_type="ae-post-meta.default">
+                                  <div class="elementor-widget-container">
+                                    <div
+                                      class="ae-post-meta-list-wrapper ae-pm-layout-horizontal ae-pm-layout-tablet- ae-pm-layout-mobile-">
+                                      <div
+                                        class="ae-post-meta-item-wrapper ae-post-date-09-03-2023">
+                                        <span
+                                          class="ae-element-post-date-label">
+                                        </span>
+                                        <span class="ae-element-post-date"
+                                          title="10:31 PM" rel="date">
+                                          <span
+                                            class="ae-post-date-09-03-2023">August 1,
+                                            2024</span></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="has_ae_slider elementor-element elementor-element-92cd045 e-con-full e-flex ae-bg-gallery-type-default e-con e-parent"
+                                data-id="92cd045" data-element_type="container"
+                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}"
+                                data-core-v316-plus="true">
+                                <div
+                                  class="elementor-element elementor-element-3fdd045 elementor-widget elementor-widget-text-editor"
+                                  data-id="3fdd045" data-element_type="widget"
+                                  data-widget_type="text-editor.default">
+                                  <div class="elementor-widget-container">
+                                    Transforming Education with edYOU Conversational AI: A Case Study of Sierra Canyon School</div>
+                                </div>
+                              </div>
+                              <div
+                                class="has_ae_slider elementor-element elementor-element-c349076 e-con-full e-flex ae-bg-gallery-type-default e-con e-parent"
+                                data-id="c349076" data-element_type="container"
+                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}"
+                                data-core-v316-plus="true">
+                                <div
+                                  class="elementor-element elementor-element-9e8c2e2 elementor-widget elementor-widget-button"
+                                  data-id="9e8c2e2" data-element_type="widget"
+                                  data-widget_type="button.default">
+                                  <div class="elementor-widget-container">
+                                    <div class="elementor-button-wrapper">
+                                      <a
+                                        class="elementor-button elementor-button-link elementor-size-sm"
+                                        href="../../assets/transforming-education-edyou-white-paper-1.0.pdf"
+                                        target="_blank" rel="nofollow">
+                                        <span
+                                          class="elementor-button-content-wrapper">
+                                          <span
+                                            class="elementor-button-text">Read
+                                            paper →</span>
+                                        </span>
+
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="has_ae_slider elementor-element elementor-element-da30c6f light e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
+                            data-id="da30c6f" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
+                            data-core-v316-plus="true">
+                            <div class="e-con-inner">
+                              <div
+                                class="elementor-element elementor-element-3ac3817 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+                                data-id="3ac3817" data-element_type="widget"
+                                data-widget_type="divider.default">
+                                <div class="elementor-widget-container">
+                                  <div class="elementor-divider">
+                                    <span class="elementor-divider-separator">
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- END Article August 2024 -->
 
                   <article class="ae-post-item ae-post-item-89a8b3a">
                     <div class="ae-post-item-inner">

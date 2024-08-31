@@ -13,7 +13,6 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 })
 export class MainComponent implements OnInit,OnDestroy {
 
-
   public iteCourses = [
     {
       title: 'Cardiology',
@@ -152,6 +151,8 @@ export class MainComponent implements OnInit,OnDestroy {
       element.classList.remove(className);
     });
   }
+
+  public videoSource = "./assets/edyou-gen-video-placeholder.mp4"
 
   ngOnInit(): void {
     this.setTitle('edYOU - Transforming Education with AI');

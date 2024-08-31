@@ -81,7 +81,13 @@ main {
 }
 
 .video-container {
-    
+    width: clamp(20em, 80vw, 30em);
+    /* width: 30em; */
+    /* min-height: 500px; */
+}
+
+#hero-video {
+    border-radius: 40px;
 }
 
 .right-avatar a {
@@ -514,6 +520,7 @@ main {
 
 .course-card {
     background-color: #1B2C43;
+    /* background-color: #293f5d; */
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -540,6 +547,8 @@ main {
 
 .course-card span {
     user-select: none;
+    /* font-size: 2vw; */
+    /* font-size: 1.6vmin; */
 }
 
 

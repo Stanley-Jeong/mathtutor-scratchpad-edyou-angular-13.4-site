@@ -13,21 +13,46 @@ a{
     background-color: #F5F5F7;
     transition: min-height 0.5s ease;
     transition: max-height 0.5s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.hamburger-menu-inner-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: flex-start;
 }
 
 .closeButton{
-    position: absolute;
-    right: 0;
-    margin: 4%;
     z-index: 4;
+    margin-top: 4vh;
+    margin-right: 0;
 }
 
 .gives-margin{
-    margin-left: 5vh;
-    margin-top: 5vh;
+    margin-top: 4vh;
+    margin-left: 0;
 }
 
-.hamburger-menu {
+.hamburger-menu-icon {
     /* To show hamburger menu on desktop size as well */
     display: block;
+}
+
+
+@media (min-width: 1025px) {
+    .hamburger-menu-inner-container {
+        max-width: 1140px;
+    }
+
+    .closeButton{
+        margin-right: 10px;
+    }
+
+    .gives-margin{
+        margin-top: 4vh;
+        margin-left: 10px;
+    }
 }
