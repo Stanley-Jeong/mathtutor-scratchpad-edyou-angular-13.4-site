@@ -979,7 +979,14 @@ width:96%;
 }
 
 
-@media all and (min-width: 390px) and (max-width: 490px) {
+@media all and (min-width: 390px) and (max-width: 490px) { 
+
+    .mobileFonts{
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
   /* Styles for iPhone X/XS/11 Pro */
   .container-course{
     margin-top: 30px;

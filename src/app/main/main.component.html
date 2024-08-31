@@ -116,7 +116,7 @@
          <div class="course-image-placeholder" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
           <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : 10}">
         </div>
-          <span>{{course.title}}</span>
+          <span class="mobileFonts"> {{course.title}}</span>
       </div>
     </div>
 
@@ -127,7 +127,7 @@
          <div class="course-image-placeholder special-style" >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Behavioral/Social Sciences' || course.title === 'Issues in Practice') ? 29 : 22}">
         </div>
-          <span>{{course.title}}</span>
+          <span class="mobileFonts">{{course.title}}</span>
       </div>
     </div>
 
@@ -138,7 +138,7 @@
          <div class="course-image-placeholder special-style" >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Radiology' || course.title === 'Outcomes Ethics') ? 29 : 22}">
         </div>
-          <span>{{course.title}}</span>
+          <span class="mobileFonts">{{course.title}}</span>
       </div>
     </div>
 
@@ -152,7 +152,7 @@
         >
           <img [src]="course.image" alt="" style="margin-top: 10px;">
         </div>
-         <span>{{course.title}}</span>
+         <span class="mobileFonts">{{course.title}}</span>
      </div>
     </div>
   </div>
