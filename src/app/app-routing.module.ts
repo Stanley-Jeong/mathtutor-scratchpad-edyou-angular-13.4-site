@@ -15,6 +15,7 @@ import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
 import { CoursePageComponent } from './courses-page/course.component'
+import { SuccessPaymentComponent } from './success-payment/success-payment.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'investors', component: InvestorsComponent},
   {path: 'terms', component:TermsComponent},
   {path: 'privacy', component:PrivacyComponent},
+  {path: 'paymentsuccess', component:SuccessPaymentComponent},
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},

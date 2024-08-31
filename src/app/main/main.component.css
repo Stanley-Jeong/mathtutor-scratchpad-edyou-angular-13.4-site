@@ -33,6 +33,12 @@ main {
     height: 58% !important;
   }
 
+  .sizeImage{
+    width: 60px;
+    height: 60px;
+    margin-top: 22px;
+  }
+
 .info-section {
     display: flex;
     justify-content: center;
