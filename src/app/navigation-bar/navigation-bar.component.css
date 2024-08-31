@@ -62,10 +62,10 @@ a{
     transition: min-height 0.5s ease;
     transition: max-height 0.5s ease;
   }
-  .elementor-icon-list-item:not(:has(.elementor-icon-list-icon)) {
+  /* .elementor-icon-list-item:not(:has(.elementor-icon-list-icon)) {
     font-weight: 600;
     color:rgb(60, 55, 55)
-}
+} */
 .elementor-icon-list-item:has(.elementor-icon-list-icon) {
     line-height: 1rem;
     color:rgb(60, 55, 55)
