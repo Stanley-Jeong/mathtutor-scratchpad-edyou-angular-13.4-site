@@ -56,11 +56,13 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
   prevSlide() {
     this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.currentCourse.images.length - 1;
     this.updateSlidePosition();
+    this.updateButtonStates();
   }
 
   nextSlide() {
     this.currentIndex = (this.currentIndex < this.currentCourse.images.length - 1) ? this.currentIndex + 1 : 0;
     this.updateSlidePosition();
+    this.updateButtonStates();
   }
   goToSlide(index: number) {
     this.currentIndex = index;
@@ -71,6 +73,19 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
     document.querySelector('.carousel-wrapper')?.setAttribute('style', `transform: translateX(${offset}%)`);
   }
  
-  
+  updateButtonStates() {
+    // Get the buttons
+    const prevButton = document.querySelector('.carousel-button.prev') as HTMLButtonElement;
+    const nextButton = document.querySelector('.carousel-button.next') as HTMLButtonElement;
 
+    // Disable or enable buttons based on the current index
+    if (prevButton) {
+      prevButton.disabled = this.currentIndex === 0;
+    }
+    if (nextButton) {
+      nextButton.disabled = this.currentIndex === this.currentCourse.length - 1;
+    }
+  }
 }
+
+
