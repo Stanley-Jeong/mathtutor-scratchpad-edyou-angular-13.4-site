@@ -464,20 +464,23 @@ export class MainComponent implements OnInit,OnDestroy {
             const email = encodeURIComponent(this.sendEmail); // Encode the email
             console.log(email)
             const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
-            window.open(platinumUrl, '_blank');
+           // window.open(platinumUrl, '_blank');
+            window.location.href = platinumUrl
           }else if(this.choosedPlan == 'Gold'){
             // window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
             const email = encodeURIComponent(this.sendEmail); // Encode the email
             console.log(email)
             const platinumUrl = `https://buy.stripe.com/test_00g5lT4Md9eW8ow5km?prefilled_email=${email}&client_reference_id=gold`;
-            window.open(platinumUrl, '_blank');
+           // window.open(platinumUrl, '_blank');
+           window.location.href = platinumUrl
           }else{
 
             // window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
             const email = encodeURIComponent(this.sendEmail); // Encode the email
             console.log(email)
             const platinumUrl = `https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn?prefilled_email=${email}&client_reference_id=platinum`;
-            window.open(platinumUrl, '_blank');
+           // window.open(platinumUrl, '_blank');
+           window.location.href = platinumUrl
           }
           
           this.openSuccessPopup = true

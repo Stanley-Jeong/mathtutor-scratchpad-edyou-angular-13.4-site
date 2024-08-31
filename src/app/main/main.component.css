@@ -28,6 +28,11 @@ main {
     /* border-radius: 18px; */
 }
 
+.special-style {
+    margin-top: 18px !important;
+    height: 58% !important;
+  }
+
 .info-section {
     display: flex;
     justify-content: center;
