@@ -97,3 +97,23 @@ a{
         justify-content: center;
     }
 }
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles for iPad in portrait mode */
+
+  .targetDivlarge{
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-height: 0;
+      max-height: 0;
+      margin-left: 83%;
+      overflow-y: scroll;
+      margin-left: 65%;
+      width: 35%;
+      background-color: #F5F5F7;
+      transition: min-height 0.5s ease;
+      transition: max-height 0.5s ease;
+  }
+}
