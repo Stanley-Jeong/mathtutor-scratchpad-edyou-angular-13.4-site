@@ -152,8 +152,14 @@
                                                                         target="_blank">
                                                                         <span
                                                                                 class="elementor-screen-only">Twitter</span>
-                                                                        <i
-                                                                                class="fab fa-twitter"></i>
+                                                                        <!-- <i
+                                                                                class="fab fa-twitter"></i> -->
+                                                                                <!-- <i class="fa-brands fa-x-twitter"></i> -->
+                                                                                <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="image-container">
+                                                                                        <img *ngIf="!isHovered" [src]="defaultImage" alt="Default Logo" class="x-logo">
+                                                                                        <img *ngIf="isHovered" [src]="hoverImage" alt="Hover Logo" class="x-logo">
+                                                                                      </div>
+                                                                                <!-- <img src="../assets/icons/twitter.png" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" alt="X Logo" class="x-logo"> -->
                                                                 </a>
                                                         </span>
                                                         <span
@@ -841,8 +847,10 @@
                                                                 target="_blank">
                                                                 <span
                                                                         class="elementor-screen-only">Twitter</span>
-                                                                <i
-                                                                        class="fab fa-twitter"></i>
+                                                                        <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="image-container">
+                                                                                <img *ngIf="!isHovered" [src]="defaultImage" alt="Default Logo" class="x-logo">
+                                                                                <img *ngIf="isHovered" [src]="hoverImage" alt="Hover Logo" class="x-logo">
+                                                                              </div>
                                                         </a>
                                                 </span>
                                                 <span

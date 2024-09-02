@@ -143,6 +143,7 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private service: UserService, private service2: ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
     private titleService: Title, private metaService: Meta, private fb: FormBuilder) {
     this.isBrowser = isPlatformBrowser(this.platformId);
+    console.log(this.isBrowser,this.platformId)
     this.service.getIp().subscribe((res: any) => {
       console.log(res, "my ip----------------------------------------------")
     })

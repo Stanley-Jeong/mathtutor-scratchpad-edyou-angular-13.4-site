@@ -22,3 +22,12 @@ a{
     color: white !important;
    
 }
+.x-logo {
+    width: 80%; /* Adjust size as needed */
+  height:auto; /* Adjust size as needed */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    margin-top: -44%;
+  }
+/* .x-logo:hover {
+    content: url('../assets/icons/twitter-white.png');
+  } */

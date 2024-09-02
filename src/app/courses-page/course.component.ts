@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ import { courses } from '../courses-data';
 export class CoursePageComponent implements OnInit ,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
-
+  @ViewChild('carouselWrapper') carouselWrapper!: ElementRef;
   courseId: string;
   currentCourse: any;
 
@@ -70,7 +70,17 @@ export class CoursePageComponent implements OnInit ,OnDestroy {
   }
   private updateSlidePosition() {
     const offset = -this.currentIndex * 100;
-    document.querySelector('.carousel-wrapper')?.setAttribute('style', `transform: translateX(${offset}%)`);
+    this.carouselWrapper.nativeElement.style.transition = 'none'; // Disable transition during snap
+    this.carouselWrapper.nativeElement.style.transform = `translateX(${offset}%)`;
+
+    // Force reflow to ensure transition works after update
+    this.carouselWrapper.nativeElement.offsetWidth;
+
+    // Enable transition after a delay
+    setTimeout(() => {
+      this.carouselWrapper.nativeElement.style.transition = 'transform 0.5s ease-in-out';
+    }, 20);
+  
   }
  
   updateButtonStates() {

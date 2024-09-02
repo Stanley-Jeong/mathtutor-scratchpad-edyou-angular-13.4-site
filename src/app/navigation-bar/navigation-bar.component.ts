@@ -3,6 +3,7 @@ import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
+import { filter } from 'rxjs';
 declare var jQuery: any;
 @Component({
   selector: 'app-navigation-bar',
