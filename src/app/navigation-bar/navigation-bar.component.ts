@@ -1,8 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
+import { filter } from 'rxjs';
 declare var jQuery: any;
 @Component({
   selector: 'app-navigation-bar',
@@ -31,6 +32,8 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   scrollKey: any;
   private isBrowser: boolean;
   screenSize: string ='large';
+  isSafetyState = false; 
+  currentUrl: string ='url';
   constructor(
     private router: Router, private service : ColorChangeService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -42,9 +45,23 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         // Navigation is starting
+        this.currentUrl = this.router.url;
+       // console.log('Current URL before navigation starts:', this.currentUrl);
+        this.hideNavigation()
+      }
+      if (event instanceof NavigationEnd) {
+        // Navigation is starting
+        this.currentUrl = this.router.url;
+     
+          // Check if the URL contains '/safety'
+          this.isSafetyState = this.router.url.includes('/safety');
+          
+        
+     //   console.log('Current URL before navigation starts:', this.currentUrl,this.isSafetyState);
         this.hideNavigation()
       }
     });
+ 
     const width = window.innerWidth;
     console.log(width)
     if (width < 1024) {
