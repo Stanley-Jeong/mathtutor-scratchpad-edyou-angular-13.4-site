@@ -28,6 +28,17 @@ main {
     /* border-radius: 18px; */
 }
 
+.special-style {
+    margin-top: 18px !important;
+    height: 58% !important;
+  }
+
+  .sizeImage{
+    width: 60px;
+    height: 60px;
+    margin-top: 22px;
+  }
+
 .info-section {
     display: flex;
     justify-content: center;
@@ -968,7 +979,14 @@ width:96%;
 }
 
 
-@media all and (min-width: 390px) and (max-width: 490px) {
+@media all and (min-width: 390px) and (max-width: 490px) { 
+
+    .mobileFonts{
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
   /* Styles for iPhone X/XS/11 Pro */
   .container-course{
     margin-top: 30px;

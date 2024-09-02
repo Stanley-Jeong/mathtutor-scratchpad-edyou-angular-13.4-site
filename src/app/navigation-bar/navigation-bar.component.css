@@ -76,7 +76,10 @@ ul {
     transition: min-height 0.5s ease;
     transition: max-height 0.5s ease;
   }
-
+  /* .elementor-icon-list-item:not(:has(.elementor-icon-list-icon)) {
+    font-weight: 600;
+    color:rgb(60, 55, 55)
+} */
 .elementor-icon-list-item:has(.elementor-icon-list-icon) {
     line-height: 1rem;
     color:rgb(25, 25, 56)
@@ -108,8 +111,23 @@ ul {
         justify-content: center;
     }
 }
-.elementor-20065 .elementor-element.elementor-element-2b19ce79 .elementor-icon-list-item:not(:last-child):after {
-    content: "";
-    border-color: #ddd;
-}
 
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles for iPad in portrait mode */
+
+  .targetDivlarge{
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-height: 0;
+      max-height: 0;
+      margin-left: 83%;
+      overflow-y: scroll;
+      margin-left: 65%;
+      width: 35%;
+      background-color: #F5F5F7;
+      transition: min-height 0.5s ease;
+      transition: max-height 0.5s ease;
+  }
+}
