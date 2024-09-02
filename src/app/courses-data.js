@@ -40,7 +40,7 @@ export const courses = [
       { src: '../assets/course-banners/course-slides/computer-science-2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/computer-science-3.png', alt: 'Slide 3' },
     ],
-    description: `Unlock the power of mathematics with our engaging Algebra course! Whether you're just beginning or looking to strengthen your skills, this course breaks down complex concepts into easy-to-understand lessons. You'll explore everything from equations and inequalities to functions and graphing, all with step-by-step guidance and practical examples. Ideal for students at any level, this course will help you build a strong foundation in algebra, boosting your confidence and problem-solving abilities. Dive into the world of algebra and discover how fun and rewarding math can be!`,
+    description: `Dive into the fascinating world of Computer Science, where you'll explore the inner workings of computers, learn the art of programming, and discover how technology shapes our daily lives. From understanding hardware and software to mastering algorithms and data structures, this course provides a comprehensive foundation for anyone curious about the digital world. Whether you're aiming to solve complex problems, innovate, or embark on a tech career, this course equips you with the essential knowledge to start your journey in Computer Science.`,
     icon: '',
   }, 
   {
@@ -62,7 +62,7 @@ export const courses = [
       { src: '../assets/course-banners/course-slides/leadership-2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/leadership-3.png', alt: 'Slide 3' },
     ],
-    description: `Unlock the power of mathematics with our engaging Algebra course! Whether you're just beginning or looking to strengthen your skills, this course breaks down complex concepts into easy-to-understand lessons. You'll explore everything from equations and inequalities to functions and graphing, all with step-by-step guidance and practical examples. Ideal for students at any level, this course will help you build a strong foundation in algebra, boosting your confidence and problem-solving abilities. Dive into the world of algebra and discover how fun and rewarding math can be!`,
+    description: `Discover the essence of leadership and learn how to inspire and guide others towards a common goal. This course covers essential traits like honesty, empathy, and communication skills, and explores different leadership styles, the importance of emotional intelligence, and the power of leading by example. Whether you're stepping into a leadership role or seeking to refine your skills, this course provides the knowledge and tools to become an effective and impactful leader in any situation.`,
     icon: '',
   },
   {
@@ -84,7 +84,7 @@ export const courses = [
       { src: '../assets/course-banners/course-slides/entrepreneurship-2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/entrepreneurship-3.png', alt: 'Slide 3' },
     ],
-    description: `Unlock the power of mathematics with our engaging Algebra course! Whether you're just beginning or looking to strengthen your skills, this course breaks down complex concepts into easy-to-understand lessons. You'll explore everything from equations and inequalities to functions and graphing, all with step-by-step guidance and practical examples. Ideal for students at any level, this course will help you build a strong foundation in algebra, boosting your confidence and problem-solving abilities. Dive into the world of algebra and discover how fun and rewarding math can be!`,
+    description: `Unleash your entrepreneurial potential in this hands-on course that guides you from idea to successful business launch. Learn to identify market needs, develop innovative solutions, and navigate the challenges of entrepreneurship. You'll gain essential skills in market research, business planning, branding, and financial management, while also mastering the art of spotting opportunities and assembling a winning team. Whether you're launching a new venture or honing your entrepreneurial mindset, this course equips you with the tools to turn your vision into reality. Start building your future today!`,
     icon: '',
   },
   {
