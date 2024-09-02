@@ -66,9 +66,10 @@ a{
     font-weight: 600;
     color:rgb(60, 55, 55)
 } */
+
 .elementor-icon-list-item:has(.elementor-icon-list-icon) {
     line-height: 1rem;
-    color:rgb(60, 55, 55)
+    color:rgb(25, 25, 56)
 }
 #targetDiv::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
