@@ -45,8 +45,8 @@
                                         <img [src]="image.src" [alt]="image.alt" class="carousel-image attachment-full size-full wp-image-22094" sizes="(max-width: 2560px) 100vw, 2560px">
                                       </div>
                                     </div>
-                                    <button class="carousel-button prev"[disabled]="currentIndex === 0" (click)="prevSlide()">&#10094;</button>
-                                    <button class="carousel-button next"  [disabled]="currentIndex === currentCourse.images.length - 1" (click)="nextSlide()">&#10095;</button>
+                                    <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
+                                    <button class="carousel-button next"  (click)="nextSlide()">&#10095;</button>
                                     <div class="carousel-dots">
                                         <span 
                                           *ngFor="let image of currentCourse.images; let i = index"

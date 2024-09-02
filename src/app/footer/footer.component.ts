@@ -15,7 +15,17 @@ export class FooterComponent implements OnInit {
    }
 
   ngOnInit(): void {}
+  defaultImage: string = '../assets/icons/twitter.png'; // Path to your default image
+  hoverImage: string = '../assets/icons/twitter-white.png'; // Path to your hover image
+  isHovered: boolean = false;
 
+  onMouseOver(): void {
+    this.isHovered = true;
+  }
+
+  onMouseOut(): void {
+    this.isHovered = false;
+  }
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {})
   }  
