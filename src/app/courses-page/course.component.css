@@ -33,7 +33,11 @@
 .carousel-slide {
   min-width: 100%;
   box-sizing: border-box;
-  transition: transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease;
+}
+.carousel-slide.active {
+  opacity: 1;
+  position: relative;
 }
 
 .carousel-image {
@@ -96,4 +100,13 @@
     width: 45%;
     font-size: 14px;
   }
+  .elementor-heading-title   {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+}
+
+.active, .accordion:hover {
+  background-color: rgb(15 10 10 / 60%);
 }
