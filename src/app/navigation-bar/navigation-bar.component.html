@@ -213,7 +213,8 @@
                 <div class="elementor-widget-container">
                     <div class="elementor-icon-wrapper">
                         <div class="elementor-icon">
-                            <i aria-hidden="true" class="fas fa-bars" (click)="showNavigation()"></i>
+                            <i aria-hidden="true" [ngClass]="{'safety': isSafetyState}" class="fas fa-bars"  (click)="showNavigation()"></i>
+                            <!-- <i aria-hidden="true" class="fas fa-bars" (click)="showNavigation()"></i> -->
                         </div>
                     </div>
                 </div>

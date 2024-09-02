@@ -1,5 +1,5 @@
 a{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #targetDiv {
@@ -15,12 +15,26 @@ a{
     transition: max-height 0.5s ease;
 
 }
-
+.safety {
+    color:#13487C; /* Color when in "safety" state */
+  }
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    border-bottom: 1px solid #BFBFBF;
+    padding: 1px 0;
+  }
+  li:last-child {
+    border-bottom: none;
+}
 .closeButton{
     position: absolute;
     right: 0;
     margin: 5%;
     z-index: 4;
+    cursor: pointer;
 }
 
 .gives-margin{
@@ -66,7 +80,6 @@ a{
     font-weight: 600;
     color:rgb(60, 55, 55)
 } */
-
 .elementor-icon-list-item:has(.elementor-icon-list-icon) {
     line-height: 1rem;
     color:rgb(25, 25, 56)
