@@ -14,9 +14,9 @@ export const courses = [
     id: "algebra",
     title: "Algebra",
     images : [
-      { src: '../assets/course-banners/course-slides/algebra-1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/algebra-2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/algebra-3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/algebra-1.jpg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/algebra-2.jpg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/algebra3.jpg', alt: 'Slide 3' },
     ],
     description: `Unlock the power of mathematics with our engaging Algebra course! Whether you're just beginning or looking to strengthen your skills, this course breaks down complex concepts into easy-to-understand lessons. You'll explore everything from equations and inequalities to functions and graphing, all with step-by-step guidance and practical examples. Ideal for students at any level, this course will help you build a strong foundation in algebra, boosting your confidence and problem-solving abilities. Dive into the world of algebra and discover how fun and rewarding math can be!`,
     icon: '',
@@ -38,7 +38,7 @@ export const courses = [
     images : [
       { src: '../assets/course-banners/course-slides/computer-science-1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/computer-science-2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/computer-science-3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/computer-3.jpg', alt: 'Slide 3' },
     ],
     description: `Dive into the fascinating world of Computer Science, where you'll explore the inner workings of computers, learn the art of programming, and discover how technology shapes our daily lives. From understanding hardware and software to mastering algorithms and data structures, this course provides a comprehensive foundation for anyone curious about the digital world. Whether you're aiming to solve complex problems, innovate, or embark on a tech career, this course equips you with the essential knowledge to start your journey in Computer Science.`,
     icon: '',
@@ -93,7 +93,7 @@ export const courses = [
     images : [
       { src: '../assets/course-banners/course-slides/project-management-1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/project-management-2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/project-management-3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/pm3.jpg', alt: 'Slide 3' },
     ],
     description: `Elevate your career with our dynamic Project Management course! Designed for aspiring and experienced project managers alike, this course equips you with the tools, techniques, and strategies to lead projects to success. From planning and execution to monitoring and closing, you'll learn to manage resources, meet deadlines, and deliver results with confidence. Through real-world case studies and hands-on practice, you'll gain the skills needed to navigate challenges and drive your projects forward. Whether you're managing small teams or large-scale initiatives, this course will help you achieve your goals and excel in the world of project management.`,
     icon: '',
