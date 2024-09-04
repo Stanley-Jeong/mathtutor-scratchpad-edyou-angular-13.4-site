@@ -284,7 +284,8 @@ headerClear(){
   }
 
   sendwaitlistData(data:any){
-    return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
+   return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added',data)
+    //return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
   }
 
 
