@@ -12,7 +12,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit, OnDestroy {
-
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   public iteCourses = [
     {
       title: 'Cardiology',
@@ -170,18 +170,41 @@ export class MainComponent implements OnInit, OnDestroy {
 
 
   async ngAfterViewInit() {
+
+    //kanx video changes 
+    const video = this.heroVideo.nativeElement;
+   
+    // Set volume to 0
+    video.volume = 0;
+    video.muted = true;
+    
+    video.play().catch(error => {
+      console.error('Video playback failed:', error);
+    });
+    video.addEventListener('volumechange', () => {
+      this.handleVolumeChange(video);
+    });
     this.navigateAndReplaceClass();
     // Autoplay the video by triggering a play event
-    if (this.isBrowser) {
-      const videoIframe = document.getElementById('widget2') as HTMLIFrameElement;
-      if (videoIframe) {
-        console.log('hey');
-        videoIframe.contentWindow?.postMessage('{"event":"command","func":"mute","args":""}', '*');
-        videoIframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      }
-    }
+    
+    // if (this.isBrowser) {
+    //   const videoIframe = document.getElementById('widget2') as HTMLIFrameElement;
+    //   if (videoIframe) {
+    //     console.log('hey');
+    //     videoIframe.contentWindow?.postMessage('{"event":"command","func":"mute","args":""}', '*');
+    //     videoIframe.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    //   }
+    // }
   }
-
+  handleVolumeChange(video: HTMLVideoElement) {
+    // Check if the video is muted
+    if (video.muted) {
+      video.volume = 0;
+    //  console.log('Video is muted');
+    } else {
+      video.volume = 1;
+   //   console.log(`Video volume is set to ${video.volume}`);
+    }}
 
 
   async navigateAndReplaceClass() {
@@ -330,7 +353,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription | undefined;
   public countdownText: string = '';
-  private targetDate: Date = new Date('2024-09-09T08:00:00')
+  private targetDate: Date = new Date('2024-09-16T08:00:00')
   // private targetDate: Date = new Date(new Date().setHours(17, 0, 0, 0));
 
   days: any
@@ -343,8 +366,18 @@ export class MainComponent implements OnInit, OnDestroy {
   sendEmail: any;
 
   updateCountdown(): void {
+    
     const now = new Date().getTime();
-    const distance = this.targetDate.getTime() - now;
+    const nowUTC = new Date();
+
+    // PST offset in milliseconds (UTC-8 hours)
+    const timezoneOffset = -8 * 60 * 60 * 1000;
+  
+    // Convert current time to PST
+    const nowPST = new Date(nowUTC.getTime() + timezoneOffset);
+  
+    // Calculate the distance between now (in PST) and the target date (assumed to be in PST)
+    const distance = this.targetDate.getTime() - nowPST.getTime();
 
     if (distance < 0) {
       this.countdownText = 'Countdown is over!';
@@ -356,6 +389,7 @@ export class MainComponent implements OnInit, OnDestroy {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //  console.log(minutes)
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       const formattedDays = this.formatTimeUnit(days);
       const formattedHours = this.formatTimeUnit(hours);
@@ -384,7 +418,7 @@ export class MainComponent implements OnInit, OnDestroy {
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
     this.openForm = !this.openForm
     this.choosedPlan = data
-    console.log(data)
+   // console.log(data)
   }
   navigateToLogin() {
 

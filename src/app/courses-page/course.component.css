@@ -129,7 +129,7 @@
     width: 100%;
 }
 } */
-@media screen and (min-width: 1026px) and (max-width: 1400px) {
+@media screen and (min-width: 1026px) and (max-width: 1600px) {
   .e-con-inner {
     flex-wrap: var(--flex-wrap);
     justify-content: var(--justify-content);
