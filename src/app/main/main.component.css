@@ -170,6 +170,7 @@ main {
     .video-container{
       
         margin-left: -6%;
+        width:80%;
     }
     .hero-banner {
         display: flex;
@@ -989,6 +990,11 @@ width:96%;
         font-size: 14px;
         line-height: 20px;
     }
+    .video-container {
+        /* margin-left: -6%; */
+        margin-left: 0%;
+        width: 100%;
+    }
 
 
   /* Styles for iPhone X/XS/11 Pro */
@@ -1065,14 +1071,19 @@ width:96%;
 }
 @media (min-width: 390px) {
  
-
+    .video-container {
+       
+        width: 100%;
+        margin-left: 0%;
+    }
+}
 .container-cors{
 margin-left:-5%;
 }
 
 
 
-}
+
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait) {
  
