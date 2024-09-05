@@ -27,8 +27,8 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Frame 21.png'
     },
     {
-      title: 'General Internal Medicine',
-      image: '../../assets/course-icons/Frame 14.png'
+      title: 'Intro to Internal Medicine',
+      image: '../../assets/course-icons/Internal Medicine.png'
     },
     {
       title: 'Geriatric Medicine',
@@ -47,7 +47,7 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Frame 13.png'
     },
     {
-      title: 'Neurology',
+      title: 'Intro to Neurology',
       image: '../../assets/course-icons/Framen.png'
     },
     {
@@ -56,6 +56,38 @@ export class MainComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Rheumatology',
+      image: '../../assets/course-icons/Framer.png'
+    },
+    {
+      title: 'Intro to Family Medicine',
+      image: '../../assets/course-icons/Family Medicine.png'
+    },
+    {
+      title: 'Intro to Surgery',
+      image: '../../assets/course-icons/Surgery.png'
+    },
+    {
+      title: 'Intro to Obstetrics/Gynaecology',
+      image: '../../assets/course-icons/gyno.png'
+    },
+    {
+      title: 'Intro to  Paediatrics',
+      image: '../../assets/course-icons/Pediatrics.png'
+    },
+    {
+      title: 'Intro to Psychiatry',
+      image: '../../assets/course-icons/Psychiatry.png'
+    },
+    {
+      title: 'USMLE Step 1',
+      image: '../../assets/course-icons/Framer.png'
+    },
+    {
+      title: 'USMLE Step 2',
+      image: '../../assets/course-icons/Framer.png'
+    },
+    {
+      title: 'USMLE Step 3',
       image: '../../assets/course-icons/Framer.png'
     },
   ]
@@ -121,6 +153,76 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Issues in Practice.png'
     },
   ]
+
+  public  AcademicUpcomingCourses = [
+    {
+      title: 'Latin',
+      image: '../../assets/course-icons/Latin.png'
+    },
+    {
+      title: 'Mathematics',
+      image: '../../assets/course-icons/Math2.png'
+    },
+    {
+      title: 'Biology',
+      image: '../../assets/course-icons/Bio.png'
+    },
+    {
+      title: 'Poetry',
+      image: '../../assets/course-icons/Poetry.png'
+    },
+    {
+      title: 'Writing',
+      image: '../../assets/course-icons/Writing.png'
+    },
+    {
+      title: 'Word Problems',
+      image: '../../assets/course-icons/Word Problems.png'
+    },
+    {
+      title: 'Pre-Algebra',
+      image: '../../assets/course-icons/Pre-Algebra.png'
+    },
+    {
+      title: 'Politics',
+      image: '../../assets/course-icons/Politics.png'
+    },
+    // {
+    //   title: 'Test prep',
+    //   image: '../../assets/course-icons/Issues in Practice.png'
+    // },
+  ] 
+  public  skillForLifeUpcomingCourses = [
+    {
+      title: 'Interview Prep',
+      image: '../../assets/course-icons/Interview Prep.png'
+    },
+    {
+      title: 'Bully Help',
+      image: '../../assets/course-icons/Bully Help.png'
+    },
+    {
+      title: 'Accent Reduction',
+      image: '../../assets/course-icons/Accent Reduction.png'
+    },
+    {
+      title: 'Conflict Resolution',
+      image: '../../assets/course-icons/Conflict Resolution.png'
+    },
+    {
+      title: 'Time Management',
+      image: '../../assets/course-icons/Time Management.png'
+    },
+    {
+      title: 'Self-Care',
+      image: '../../assets/course-icons/Self-Care.png'
+    },
+    {
+      title: 'Pre-Algebra',
+      image: '../../assets/course-icons/Pre-Algebra.png'
+    },
+    
+  ] 
 
 
   private ngUnsubscribe = new Subject();

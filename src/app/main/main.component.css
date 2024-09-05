@@ -982,6 +982,9 @@ width:96%;
     opacity: 0px;
     
 }
+.mobileFonts{
+    font-size: 20px;
+}
 
 
 @media all and (min-width: 390px) and (max-width: 490px) { 
@@ -1109,5 +1112,7 @@ margin-left:-5%;
 }
 .course-card span {
     
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
 }
