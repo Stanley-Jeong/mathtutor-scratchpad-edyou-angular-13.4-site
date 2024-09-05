@@ -31,3 +31,14 @@ a{
 /* .x-logo:hover {
     content: url('../assets/icons/twitter-white.png');
   } */
+  .elementor-145 .elementor-element.elementor-element-293d8c11 {
+    --width: 40%;
+  
+    margin-left: -25%;
+}
+@media (max-width: 900px) {
+    .elementor-145 .elementor-element.elementor-element-293d8c11 {
+        --width: 100%;
+        margin-left: 0%;
+    }
+}

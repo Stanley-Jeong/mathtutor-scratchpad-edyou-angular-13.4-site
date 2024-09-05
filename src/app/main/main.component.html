@@ -103,6 +103,7 @@
       <a (click)="navigateToCoursePage('project-management')" (mouseenter)="toggleGif('project-management', true)" (mouseleave)="toggleGif('project-management', false)">
         <img [src]="isHovered['project-management'] ? '../../assets/course-icons/hover 8.png' : './assets/course-icons/pm.png'" />
       </a>
+      
     </div>
   
 
@@ -310,7 +311,7 @@
         <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
         <!-- GO TO STRIPE! -->
         <div class="pricing-card-description">
-          <h5>Includes</h5>
+          <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
             <li>1-Day access</li>
             <li>Learning Module</li>
@@ -337,7 +338,7 @@
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
-          <h5>Includes</h5>
+          <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
             <li>7-Day access</li>
             <li>Learning Module</li>
@@ -366,7 +367,7 @@
         </div>
         <button class="pricing-button"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
-          <h5>Includes</h5>
+          <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
             <li>Full month access</li>
             <li>Learning Module</li>

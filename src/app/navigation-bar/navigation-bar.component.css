@@ -131,3 +131,9 @@ ul {
       transition: max-height 0.5s ease;
   }
 }
+.x-logo {
+  width: 80%; /* Adjust size as needed */
+height:auto; /* Adjust size as needed */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  margin-top: -44%;
+}
