@@ -71,7 +71,7 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/gyno.png'
     },
     {
-      title: 'Intro to  Paediatrics',
+      title: 'Intro to  Pediatrics',
       image: '../../assets/course-icons/Pediatrics.png'
     },
     {
