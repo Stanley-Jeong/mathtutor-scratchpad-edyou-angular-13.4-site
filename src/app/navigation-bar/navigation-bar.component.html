@@ -430,7 +430,12 @@
                         <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-grow elementor-repeater-item-915468d"
                             href="https://twitter.com/edYOU_Tech" target="_blank">
                             <span class="elementor-screen-only">Twitter</span>
-                            <i class="fab fa-twitter"></i> </a>
+                            <!-- <i class="fab fa-twitter"></i> </a> -->
+                            <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="image-container">
+                                <img *ngIf="!isHovered" [src]="defaultImage" alt="Default Logo" class="x-logo">
+                                <img *ngIf="isHovered" [src]="hoverImage" alt="Hover Logo" class="x-logo">
+                              </div>
+                              </a>
                     </span>
                     <span class="elementor-grid-item">
                         <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-grow elementor-repeater-item-0dd8f77"
@@ -662,7 +667,10 @@
                         <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-grow elementor-repeater-item-915468d"
                             href="https://twitter.com/edYOU_Tech" target="_blank">
                             <span class="elementor-screen-only">Twitter</span>
-                            <i class="fab fa-twitter"></i> </a>
+                            <div (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" class="image-container">
+                                <img *ngIf="!isHovered" [src]="defaultImage" alt="Default Logo" class="x-logo">
+                                <img *ngIf="isHovered" [src]="hoverImage" alt="Hover Logo" class="x-logo">
+                              </div> </a>
                     </span>
                     <span class="elementor-grid-item">
                         <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-grow elementor-repeater-item-0dd8f77"
