@@ -132,7 +132,8 @@
       <div class="course-card" *ngFor="let course of iteCourses">
         <img class="coming-soon-ribbon" src="../../assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon">
          <div class="course-image-placeholder" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
-          <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : 10}">
+          <!-- <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : 10}"> -->
+          <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : (course.image === '../../assets/course-icons/USMLE.png') ? 20 : 10}"> 
         </div>
           <span class="mobileFonts"> {{course.title}}</span>
       </div>

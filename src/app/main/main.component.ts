@@ -80,15 +80,15 @@ export class MainComponent implements OnInit, OnDestroy {
     },
     {
       title: 'USMLE Step 1',
-      image: '../../assets/course-icons/Framer.png'
+      image: '../../assets/course-icons/USMLE.png'
     },
     {
       title: 'USMLE Step 2',
-      image: '../../assets/course-icons/Framer.png'
+      image: '../../assets/course-icons/USMLE.png'
     },
     {
       title: 'USMLE Step 3',
-      image: '../../assets/course-icons/Framer.png'
+      image: '../../assets/course-icons/USMLE.png'
     },
   ]
 
@@ -218,8 +218,8 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Self-Care.png'
     },
     {
-      title: 'Pre-Algebra',
-      image: '../../assets/course-icons/Pre-Algebra.png'
+      title: 'Test prep',
+      image: '../../assets/course-icons/Test prep.png'
     },
     
   ] 
