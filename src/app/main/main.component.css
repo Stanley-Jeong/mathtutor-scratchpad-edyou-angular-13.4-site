@@ -68,16 +68,22 @@ main {
 }
 
 .connect-icon {
-    margin-bottom: 32px;
+   
+    margin-bottom: 19px;
+    margin-top: 12px;
 }
+
 
 .learn-icon {
     margin-bottom: 20px;
 }
 
 .thrive-icon {
-    width: 50px;
+  
+    width: 39px;
     margin-right: 10px;
+    margin-bottom: 22px;
+
 }
 
 .right-avatar {
@@ -92,7 +98,9 @@ main {
 }
 
 .video-container {
-    width: clamp(20em, 80vw, 30em);
+    /* width: clamp(20em, 80vw, 30em); */
+    width: clamp(10em, 80vw, 20em);
+    /* width: 30em; */
     /* width: 30em; */
     /* min-height: 500px; */
 }
@@ -525,7 +533,15 @@ main {
     width: 80%;
     margin-bottom: 60px;
 }
-
+.courses-cards-container1 {
+    display: grid;
+    gap: 20px;
+    /* grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+    width: 80%;
+    margin-bottom: 60px;
+}
 .courses-cards-container a img {
     transition: transform 0.3s ease-in-out;
 }

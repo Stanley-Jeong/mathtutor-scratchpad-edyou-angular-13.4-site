@@ -40,8 +40,8 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   ){this.isBrowser = isPlatformBrowser(this.platformId);}
 
   isVisible:boolean = false;
-  defaultImage: string = '../assets/icons/twitter.png'; // Path to your default image
-  hoverImage: string = '../assets/icons/twitter-white.png'; // Path to your hover image
+  defaultImage: string = '../assets/icons/twitter-grey.png'; // Path to your default image
+  hoverImage: string = '../assets/icons/twitter-blue.png'; // Path to your hover image
   isHovered: boolean = false;
   ngOnInit(): void {
     this.router.events.subscribe(event => {
