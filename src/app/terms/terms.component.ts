@@ -14,6 +14,7 @@ export class TermsComponent implements OnInit {
     this.setTitle('edYOU Terms of Use | Educational Technology Platform');
     this.setMetaDescription("Read the Terms of Use for edYOU's educational technology platform. Understand your rights, responsibilities, and the guidelines for using our services to enhance your learning experience.")
   }
+  
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);
   }
