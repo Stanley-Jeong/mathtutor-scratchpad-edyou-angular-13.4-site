@@ -40,7 +40,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   ){this.isBrowser = isPlatformBrowser(this.platformId);}
 
   isVisible:boolean = false;
-
+  defaultImage: string = '../assets/icons/twitter.png'; // Path to your default image
+  hoverImage: string = '../assets/icons/twitter-white.png'; // Path to your hover image
+  isHovered: boolean = false;
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
@@ -70,7 +72,13 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       this.screenSize = 'large'; // Desktop
     }
   }
+  onMouseOver(): void {
+    this.isHovered = true;
+  }
 
+  onMouseOut(): void {
+    this.isHovered = false;
+  }
   navigateToCompany() {
     this.router.navigate(['/company']).then(()=> {
     })
