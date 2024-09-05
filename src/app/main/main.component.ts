@@ -195,7 +195,7 @@ export class MainComponent implements OnInit, OnDestroy {
   public  skillForLifeUpcomingCourses = [
     {
       title: 'Interview Prep',
-      image: '../../assets/course-icons/Interview Prep.png'
+      image: '../../assets/course-icons/Interview prep.png'
     },
     {
       title: 'Bully Help',
