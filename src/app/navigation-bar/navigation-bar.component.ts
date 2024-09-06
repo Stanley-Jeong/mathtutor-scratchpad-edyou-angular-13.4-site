@@ -58,7 +58,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
           // Check if the URL contains '/safety'
        if(this.router.url.includes('/safety')||this.router.url.includes('/terms')||this.router.url.includes('/privacy')){
         this.isSafetyState = true;
-        console.log('u')
+      //  console.log('u')
           }else{
             this.isSafetyState = false;
           }
