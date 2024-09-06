@@ -57,6 +57,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
      
           // Check if the URL contains '/safety'
           this.isSafetyState = this.router.url.includes('/safety');
+          this.isSafetyState = this.router.url.includes('/terms');
           
         
      //   console.log('Current URL before navigation starts:', this.currentUrl,this.isSafetyState);
