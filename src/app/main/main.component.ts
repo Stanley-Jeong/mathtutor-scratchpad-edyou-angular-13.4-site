@@ -455,7 +455,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription | undefined;
   public countdownText: string = '';
-  private targetDate: Date = new Date('2024-09-16T08:00:00')
+  private targetDate: Date = new Date('2024-10-01T08:00:00')
   // private targetDate: Date = new Date(new Date().setHours(17, 0, 0, 0));
 
   days: any
