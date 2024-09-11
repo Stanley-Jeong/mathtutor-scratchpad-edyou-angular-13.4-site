@@ -6,7 +6,85 @@ main {
     max-width: 100% !important;
     overflow: hidden;
 }
+.countdownHeadingTop{
+    text-align: center;
+    font-size: 48px;
+  
+    font-family: DM Sans;
+font-size: 48px;
+font-weight: 500;
+line-height: 62.5px;
 
+
+}
+.countdownHeadingTopSubheading{
+font-family: DM Sans;
+font-size: 30px;
+font-weight: 500;
+line-height: 31.25px;
+text-align: center;
+font-family: DM Sans;
+
+width: 845px;
+margin-left: 16%;
+
+}
+.countdownHeadingDownSubheading{
+    margin-top:2%;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 31.25px;
+    text-align: center;
+    font-family: DM Sans;
+    width: 845px;
+    margin-left: -2%;
+}
+.scCard{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 80px;
+    padding-left: 212px;
+    padding-right: 135px;
+    padding-bottom: 40px;
+    background-color: #0E233D;
+}
+.scCardText{
+    margin-left:3%;
+    margin-top: 1%;
+}
+.scButton{
+    width: 210px;
+height:56px;
+top: 176px;
+left: 416px;
+padding: 8px 28px 8px 28px;
+gap: 10px;
+radius:12px;
+opacity: 0px;
+background: #FFFFFF;
+font-family: DM Sans;
+font-size: 18px;
+font-weight: 600;
+line-height: 16px;
+letter-spacing: 0.20000000298023224px;
+text-align: center;
+color: #2A7CC7;
+border: none;
+
+}
+.scButton:hover{
+
+}
+.scLogoimg{
+    width: 182px;
+height: 183px;
+top: 64px;
+left: 189px;
+gap: 0px;
+opacity: 0px;
+
+
+}
 #video_hero {
     display: none;
 }
@@ -16,13 +94,24 @@ main {
 } */
 
 .hero-banner {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 140px;
     margin-bottom: 60px;
     padding-left: 135px;
     padding-right: 135px;
+    */
+    align-items: flex-start;
+    margin-top: 98px;
+    margin-bottom: 60px;
+    padding-left: 135px;
+    padding-right: 135px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    display: flex;
     /* background-color: #183152; */
     /* background-color: #0E233D; */
     /* border-radius: 18px; */
@@ -90,6 +179,12 @@ main {
     max-width: 600px;
     margin-bottom: 20px;
     padding: 0 20px;
+ 
+        max-width: 869px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      
+    
 }
 
 .iframe-video {
@@ -99,7 +194,8 @@ main {
 
 .video-container {
     /* width: clamp(20em, 80vw, 30em); */
-    width: clamp(10em, 80vw, 20em);
+    /* width: clamp(10em, 80vw, 20em); */
+    margin-top:3%;
     /* width: 30em; */
     /* width: 30em; */
     /* min-height: 500px; */
@@ -132,7 +228,7 @@ main {
     .left-header {
         padding-left: 10px;
         padding-right: 40px;
-        width: 50%;
+        width: 100%;
     }
 
     .courses-cards-container{
@@ -177,17 +273,17 @@ main {
 @media (max-width: 1180px)  { 
     .video-container{
       
-        margin-left: -6%;
+        margin-left:9%;
         width:80%;
     }
-    .hero-banner {
+    /* .hero-banner {
         display: flex;
         flex-direction: column-reverse;
         margin-left: 0;
         margin-right: 0;
         padding-left: 0px;
         padding-right: 0px;
-    }
+    } */
 
     .hero-text {
         font-size: 48px;
@@ -220,17 +316,24 @@ main {
     padding-left: 135px;
     padding-right: 135px;
     padding-bottom: 40px;
-    background-color: #0E233D;
+    
+   
 }
 
 .countdowntEXT{
     color: #FFF;
     text-align: center;
     font-family: "DM Sans";
-    font-size: 18px;
+    font-size: 36px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: DM Sans;
+font-size: 36px;
+font-weight: 600;
+line-height: 46.87px;
+text-align: center;
+
 }
 .countDownday{
     /* border: 1px solid black; */
@@ -241,8 +344,8 @@ main {
     gap: 10px;
 }
 .day{
-    width: 130px;
-    height: 150px;
+    width: 104.05px;
+    height: 119px;
     display: flex;
     flex-direction: column;
     border-radius: 11.059px;
@@ -307,7 +410,7 @@ main {
     color: #FFF;
     text-align: center;
     font-family: Impact;
-    font-size: 82.946px;
+    font-size: 66.946px;
     font-style: normal;
     font-weight: 400;
     margin-top: 5px;
@@ -391,7 +494,7 @@ main {
 .pricing-section {
     background: linear-gradient(to bottom, #081524, #0E233D);
     text-align: center;
-    padding: 64px 0px 114px 0px;
+    padding: 64px 0px 20px 0px;
 }
 
 .pricing-cards-container {
@@ -419,8 +522,8 @@ main {
 
 .pricing-card {
     background-color: #183152;
-    height: 560px;
-    width: 380px;
+    height: 538px;
+    width: 408px;
     border-radius: 12px;
     padding: 2em;
     display: flex;
@@ -477,10 +580,22 @@ main {
     font-weight: bold;
 }
 
+.pricing-buttonvdo {
+    background-color: #427BC1;
+    border: none;
+    color: #fff;
+    width: 210px;
+    height: 56px;
+
+}
 .pricing-button {
     background-color: #427BC1;
     border: none;
     color: #fff;
+    width: 352px;
+    height: 56px;
+    margin-left: -14px;
+
 }
 
 .pricing-card-description {
@@ -1015,8 +1130,11 @@ width:96%;
     }
     .video-container {
         /* margin-left: -6%; */
-        margin-left: 0%;
-        width: 100%;
+      
+                margin-left: 35%;
+                width: 37%;
+            
+        
     }
 
 
@@ -1092,12 +1210,55 @@ width:96%;
   height: 84%;
 }
 }
-@media (min-width: 390px) {
+@media all and  (min-width: 375px)and (max-width:700px) {
  
     .video-container {
        
-        width: 100%;
-        margin-left: 0%;
+        margin-left: 1%;
+        width: 95%;
+    
+    }
+    .right-avatar {
+        max-width: 400px;
+    }
+    .hero-banner {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .countdownHeadingTop {
+        text-align: center;
+        font-size: 48px;
+        font-family: DM Sans;
+        font-size: 45px;
+        font-weight: 600;
+        line-height: 62.5px;
+    }
+    .countdownHeadingTopSubheading {
+        font-family: DM Sans;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 31.25px;
+        text-align: center;
+        font-family: DM Sans;
+        width: 382px;
+        margin-left: 2px;
+        /* margin-left: 16%; */
+    }
+    .countdownHeadingDownSubheading {
+        margin-top: 2%;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 31.25px;
+        text-align: center;
+        font-family: DM Sans;
+        width: 385px;
+        margin-left: -21%;
     }
 }
 .container-cors{
@@ -1110,11 +1271,43 @@ margin-left:-5%;
     .hero-text{
         text-align: center;
     }
+    
+    .hero-banner {
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 140px;
+        margin-bottom: 60px;
+        padding-left: 135px;
+        padding-right: 135px;
+        */
+        align-items: flex-start;
+        margin-top: 98px;
+        margin-bottom: 60px;
+        padding-left: 135px;
+        padding-right: 135px;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        display: flex;
+        /* background-color: #183152; */
+        /* background-color: #0E233D; */
+        /* border-radius: 18px; */
+    }
+    .countdownHeadingDownSubheading[_ngcontent-serverApp-c49] {
+        margin-top: 2%;
+        font-size: 26px;
+        width: 759px;
+        margin-left: -2%;}
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait) {
  
-
+    .countdownHeadingTopSubheading{
+     
+        width: 705px;
+        margin-left: 0%;}
 .course-text{
   font-size: 30px;
   margin-left:-1%
@@ -1128,7 +1321,8 @@ margin-left:-5%;
 .container-course  {
   margin-top: 30px;
   width: 139%;
-}}
+}
+}
 .course-card .course-image-placeholder{
     font-size: 15px;
     margin-top: 21px;
@@ -1161,3 +1355,40 @@ margin-left:-5%;
         width: 95%;
     }
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1186px) and (orientation: landscape) {
+ 
+    .countdownHeadingTopSubheading{
+     
+        width: 705px;
+        margin-left:0px;
+      }}
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1186px) and (orientation: landscape) {
+ 
+        .countdownHeadingTopSubheading{
+         
+            width: 705px;
+            margin-left:0px;
+          }}
+      @media only screen and (min-device-width:1024px) and  (max-device-width:1296px)and (orientation: landscape){
+        .countdownHeadingTopSubheading{
+     
+            width: 790px;
+            margin-left:10%;
+          }
+      }
+      @media only screen and (min-device-width:2240px)  {
+        .countdownHeadingTopSubheading{
+     
+           
+            margin-left:29%;
+          
+          }
+        }
+        @media only screen and (min-device-width:3200px)  {
+            .countdownHeadingTopSubheading{
+         
+               
+                margin-left:36%;
+                
+              }
+            }

@@ -111,7 +111,7 @@ export class MainComponent implements OnInit, OnDestroy {
     },
   ]
 
-
+ 
   public SurgeryCourses = [
     {
       title: 'Patient Care',
@@ -644,7 +644,7 @@ export class MainComponent implements OnInit, OnDestroy {
             // window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
             const email = encodeURIComponent(this.sendEmail); // Encode the email
             console.log(email)
-            //const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
+           // const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
               //prod
              const platinumUrl = `https://buy.stripe.com/4gw02Q79M4qT70A9AA?prefilled_email=${email}&client_reference_id=silver`;
             // window.open(platinumUrl, '_blank');

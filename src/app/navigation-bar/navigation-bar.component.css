@@ -1,7 +1,9 @@
 a{
   cursor: pointer;
 }
-
+.e-con-inner{
+  max-height:85.8px;
+}
 #targetDiv {
     position: fixed;
     top: 0;
@@ -136,4 +138,16 @@ ul {
 height:auto; /* Adjust size as needed */
   transition: opacity 0.3s ease; /* Smooth transition */
   margin-top: -44%;
+}
+@media all and  (min-width: 375px)and (max-width:600px) {
+.scLogoimg{
+width:80%;
+margin-left:-23%
+}
+.mobileShow{
+  margin-top:-75px;
+}
+.e-con-inner{
+  max-height:72.8px;
+}
 }

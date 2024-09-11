@@ -5,69 +5,48 @@
 
   <div class="hero-banner">
     <div class="left-header">
-      <h1 class="hero-text">Hi, I'm Hannah, Your study buddy and wellness companion.</h1>
+      <h2 class="countdownHeadingTop">Welcome to edYOU</h2>
+      <h4 class="countdownHeadingTopSubheading">Personalized, conversational AI tutors to enhance your knowledge across a diverse range of subjects.</h4>
     </div>
     <div class="right-avatar">
       <!-- PLACEHOLDER VIDEO -->
       <!-- <iframe class="iframe-video" src="https://www.youtube.com/embed/WVWF8HZmTWY?si=n2rGcdx9cTimtDpC&amp;controls=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
       <div class="video-container">
-        <video controls  #heroVideo autoplay  id="hero-video">
-          <source src="./assets/edyou-gen-video-placeholder.mp4" type="video/mp4">
+        <video controls  #heroVideo autoplay loop id="hero-video">
+          <source src="https://edyouwebsite.s3.us-west-2.amazonaws.com/edyouVideo/Hannah's+Generic_1.mp4" type="video/mp4">
         </video>
         <!-- <video [muted]="'muted'" controls loop autoplay [src]="videoSource"></video> -->
 
       </div>
+      <div class="left-header">
+       
+        <h4 class="countdownHeadingDownSubheading">For educators. For Students. For life long learners. For You!</h4>
+
+      </div>
+      <a (click)="scrollToId('pricing_section_id')">
+        <button class="pricing-buttonvdo"style="margin-top:2%">Pre-Enroll Now</button>
+      </a>
       <!-- <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
         <button class="right-avatar-button">Try Course</button>
       </a> -->
       <!-- <img src="./assets/edyou-gen-video-placeholder.png" alt="edyou-gen-video-placeholder-image"> -->
     </div>
   </div>
-
-  <!-- COUNTDOWN -->
-  <div class="countdown">
-    <h2 class="countdownHeading">edYOU Technologies</h2>
-    <h6 class="countdowntEXT" >Our conversational learning and wellness platform has been at top schools for <strong>years</strong>.</h6>
-    <h6 class="countdowntEXT" >On 10/01/24, we are opening up to the <strong>world</strong>.</h6>
-    <div class="countDownday">
-        <div class="day">
-            <h1 class="dayNumber">{{days}}</h1>
-            <h6 class="dayText">Days</h6>
-        </div>
-        <div class="seperator">
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div class="day">
-          <h1 class="dayNumber">{{hour}}</h1>
-            <h6 class="dayText">Hours</h6>
-        </div>
-        <div class="seperator">
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div class="day">
-          <h1 class="dayNumber">{{miniute}}</h1>
-            <h6 class="dayText">Minutes</h6>
-        </div>
-        <div class="seperator">
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div class="day">
-          <h1 class="dayNumber">{{second}}</h1> 
-            <h6 class="dayText">Seconds</h6>
-        </div>
-    </div>
-    <h5 class="QuestionText">Ready to connect, learn, and thrive?</h5>
-    <!-- <button (click)="openform()">Join The Waitlist!</button> -->
-    <a (click)="scrollToId('pricing_section_id')">
-      <button>Pre-Enroll Now!</button>
-    </a>
-    <h6 class="signUptext">Sign up before we launch to receive</h6>
-    <h5 class="offMsg">25% off your subscription.</h5>
+<!-- SC -->
+<!-- <div class="scCard">
+  <div class="scLogoimg" >
+    <img  src ="../assets/icons/sclogo.png" alt=""   >
   </div>
-  <br>
+     <div class= "scCardText">
+  <h4 class="countdownHeading">Are you a Sierra Canyon student?</h4>
+  <h6 class="countdowntEXT" >If you are a Sierra Canyon School student, please click the below button.</h6>
+  <a >
+    <button class="scButton">Click here</button>
+  </a>
+</div>
+</div>
+<br> -->
+ 
 
   <!-- COURSES -->
   <div class="courses-section">
@@ -205,106 +184,8 @@
       
     </div>
   </div>
-
-  <!-- Clients and Partners moved to here -->
-  <div data-elementor-type="wp-page" data-elementor-id="20"
-    class="elementor elementor-20"
-    data-elementor-post-type="page">
-    <div
-        class="has_ae_slider elementor-element elementor-element-be2a739 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
-        data-id="be2a739" data-element_type="container"
-        data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}"
-        data-core-v316-plus="true" id="cp">
-        <div class="e-con-inner">
-          <div
-            class="elementor-element elementor-element-1853e61 elementor-widget elementor-widget-heading"
-            data-id="1853e61" data-element_type="widget"
-            data-widget_type="heading.default">
-            <div class="elementor-widget-container">
-              <h2 class="elementor-heading-title elementor-size-default">Clients
-                and
-                Partners</h2>
-            </div>
-          </div>
-          <div
-            class="elementor-element elementor-element-88a655b gallery-spacing-custom elementor-widget elementor-widget-image-gallery"
-            data-id="88a655b" data-element_type="widget"
-            data-widget_type="image-gallery.default">
-            <div class="elementor-widget-container">
-              <div class="elementor-image-gallery">
-                <!-- Clients and Partners GRID -->
-                <div id='gallery-1'
-                  class='gallery galleryid-20 gallery-columns-3 gallery-size-full'>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
-                        class="attachment-full size-full" alt="Residentsmedical"
-                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="./assets/ef-everest-family-foundation-logo-white-square.png"
-                        class="attachment-full size-full" alt="everest-family-foundation"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000" 
-                        src="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+1000x1000.png"
-                        class="attachment-full size-full custompartnerImg" alt="ASCP"
-                        srcset="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+1000x1000.png 1000w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+300x300.png 300w,https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+150x150.png 150w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon.png"
-                        class="attachment-full size-full" alt="Sierra"
-                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate.png"
-                        class="attachment-full size-full" alt="California"
-                        srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                  <figure class='gallery-item'>
-                    <div class='gallery-icon landscape'>
-                      <img loading="lazy" decoding="async" width="1000"
-                        height="1000"
-                        src="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+1000x1000.png"
-                        class="attachment-full size-full" alt="HCA"
-                        srcset="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+1000x1000.png 1000w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+300x300.png 300w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+150x150.png 150w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+768x768.png 768w"
-                        sizes="(max-width: 1000px) 100vw, 1000px" />
-                    </div>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- PRICING -->
-  <div id="pricing_section_id" class="pricing-section">
+   <!-- PRICING -->
+   <div id="pricing_section_id" class="pricing-section">
     <div class="pricing-title-section">
       <h2>Pricing</h2>
       <!-- <img class="pre-launch-special-badge" src="./assets/pricing-section/pre-launch-special-badge.png" alt="pre-launch-special-badge"> -->
@@ -321,9 +202,9 @@
           </div>
           <div class="pricing-card-title-right">
             <span class="strikethrough">
-              <span class="strikethrough-text">$39</span>
+              <span class="strikethrough-text">$26</span>
             </span>
-            <span><strong class="pricing-number">$29.25</strong></span>
+            <span><strong class="pricing-number">$19.99</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
@@ -349,9 +230,9 @@
           </div>
           <div class="pricing-card-title-right">
             <span class="strikethrough">
-              <span class="strikethrough-text">$139</span>
+              <span class="strikethrough-text">$99</span>
             </span>
-            <span><strong class="pricing-number">$104.25</strong></span>
+            <span><strong class="pricing-number">$74.99</strong></span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
@@ -378,9 +259,9 @@
           </div>
           <div class="pricing-card-title-right">
             <span class="strikethrough">
-              <span class="strikethrough-text">$249</span>
+              <span class="strikethrough-text">$265</span>
             </span>
-            <span><strong class="pricing-number">$186.75</strong>/month</span>
+            <span><strong class="pricing-number">$199.99</strong>/month</span>
           </div>
         </div>
         <button class="pricing-button"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>
@@ -402,8 +283,98 @@
 
 
     </div>
+    <div class="countdown">
+    
+    
+      <h6 class="countdowntEXT" >Deadline for pre-launch discount</h6>
+    
+      <div class="countDownday">
+          <div class="day">
+              <h1 class="dayNumber">{{days}}</h1>
+              <h6 class="dayText">Days</h6>
+          </div>
+          <div class="seperator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="day">
+            <h1 class="dayNumber">{{hour}}</h1>
+              <h6 class="dayText">Hours</h6>
+          </div>
+          <div class="seperator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="day">
+            <h1 class="dayNumber">{{miniute}}</h1>
+              <h6 class="dayText">Minutes</h6>
+          </div>
+          <div class="seperator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="day">
+            <h1 class="dayNumber">{{second}}</h1> 
+              <h6 class="dayText">Seconds</h6>
+          </div>
+      </div>
+      <!-- <h5 class="QuestionText">Ready to connect, learn, and thrive?</h5> -->
+      <!-- <button (click)="openform()">Join The Waitlist!</button> -->
+      <!-- <a (click)="scrollToId('pricing_section_id')">
+        <button>Pre-Enroll Now!</button>
+      </a> -->
+      <!-- <h6 class="signUptext">Sign up before we launch to receive</h6>
+      <h5 class="offMsg">25% off your subscription.</h5> -->
+    </div>
   </div>
 
+ <!-- COUNTDOWN -->
+ <!-- <div class="countdown">
+    
+  <h2 class="countdownHeading">edYOU Technologies</h2>
+  <h6 class="countdowntEXT" >Our conversational learning and wellness platform has been at top schools for <strong>years</strong>.</h6>
+  <h6 class="countdowntEXT" >On 10/01/24, we are opening up to the <strong>world</strong>.</h6>
+  <div class="countDownday">
+      <div class="day">
+          <h1 class="dayNumber">{{days}}</h1>
+          <h6 class="dayText">Days</h6>
+      </div>
+      <div class="seperator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="day">
+        <h1 class="dayNumber">{{hour}}</h1>
+          <h6 class="dayText">Hours</h6>
+      </div>
+      <div class="seperator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="day">
+        <h1 class="dayNumber">{{miniute}}</h1>
+          <h6 class="dayText">Minutes</h6>
+      </div>
+      <div class="seperator">
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="day">
+        <h1 class="dayNumber">{{second}}</h1> 
+          <h6 class="dayText">Seconds</h6>
+      </div>
+  </div>
+  <h5 class="QuestionText">Ready to connect, learn, and thrive?</h5>
+  <!-- <button (click)="openform()">Join The Waitlist!</button> -->
+  <!-- <a (click)="scrollToId('pricing_section_id')">
+    <button>Pre-Enroll Now!</button>
+  </a>
+  <h6 class="signUptext">Sign up before we launch to receive</h6>
+  <h5 class="offMsg">25% off your subscription.</h5> -->
+<!-- </div> --> 
+ 
+
+ 
 
 <!-- ORIGINAL VIDEO HERO #video_hero id hidden in CSS -->
 <div data-id="271f7372" data-element_type="container" 
@@ -1660,7 +1631,102 @@
     <div class="post-tags">
     </div>
   </div>
-
+ <!-- Clients and Partners moved to here -->
+ <div data-elementor-type="wp-page" data-elementor-id="20"
+ class="elementor elementor-20"
+ data-elementor-post-type="page">
+ <div
+     class="has_ae_slider elementor-element elementor-element-be2a739 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
+     data-id="be2a739" data-element_type="container"
+     data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}"
+     data-core-v316-plus="true" id="cp">
+     <div class="e-con-inner">
+       <div
+         class="elementor-element elementor-element-1853e61 elementor-widget elementor-widget-heading"
+         data-id="1853e61" data-element_type="widget"
+         data-widget_type="heading.default">
+         <div class="elementor-widget-container">
+           <h2 class="elementor-heading-title elementor-size-default">Clients
+             and
+             Partners</h2>
+         </div>
+       </div>
+       <div
+         class="elementor-element elementor-element-88a655b gallery-spacing-custom elementor-widget elementor-widget-image-gallery"
+         data-id="88a655b" data-element_type="widget"
+         data-widget_type="image-gallery.default">
+         <div class="elementor-widget-container">
+           <div class="elementor-image-gallery">
+             <!-- Clients and Partners GRID -->
+             <div id='gallery-1'
+               class='gallery galleryid-20 gallery-columns-3 gallery-size-full'>
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000"
+                     src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png"
+                     class="attachment-full size-full" alt="Residentsmedical"
+                     srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-residentsmedical-768x768.png 768w"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000"
+                     src="./assets/ef-everest-family-foundation-logo-white-square.png"
+                     class="attachment-full size-full" alt="everest-family-foundation"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000" 
+                     src="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+1000x1000.png"
+                     class="attachment-full size-full custompartnerImg" alt="ASCP"
+                     srcset="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+1000x1000.png 1000w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+300x300.png 300w,https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+150x150.png 150w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/ASCP+768x768.png 768w"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000"
+                     src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon.png"
+                     class="attachment-full size-full" alt="Sierra"
+                     srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-sierra-canyon-768x768.png 768w"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+               
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000"
+                     src="https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate.png"
+                     class="attachment-full size-full" alt="California"
+                     srcset="https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate.png 1000w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-300x300.png 300w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-150x150.png 150w, https://investor.edyou.com/wp-content/uploads/2023/09/logo-california-northstate-768x768.png 768w"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+               <figure class='gallery-item'>
+                 <div class='gallery-icon landscape'>
+                   <img loading="lazy" decoding="async" width="1000"
+                     height="1000"
+                     src="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+1000x1000.png"
+                     class="attachment-full size-full" alt="HCA"
+                     srcset="https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+1000x1000.png 1000w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+300x300.png 300w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+150x150.png 150w, https://pollydemo2022.s3.us-west-2.amazonaws.com/newU4A/HCA+768x768.png 768w"
+                     sizes="(max-width: 1000px) 100vw, 1000px" />
+                 </div>
+               </figure>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </main>
 
  <div class="overlay" *ngIf="openForm" ></div>
