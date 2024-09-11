@@ -22,6 +22,7 @@ import { ScRedirectGuard } from './sc-redirect.guard';
 
 const routes: Routes = [
 
+  
   {path:'', redirectTo:'/', pathMatch:'full'},
   {path:'', component: MainComponent},
   {path: 'company', component: CompanyComponent},
