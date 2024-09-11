@@ -88,6 +88,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     this.router.navigate(['/company']).then(()=> {
     })
   }  
+  navigateToSC() {
+    window.location.href="https://sc.edyou.com"
+  }  
   
   navigateToPayItForward() {
     this.router.navigate(['/pay-it-forward']).then(()=> {})
