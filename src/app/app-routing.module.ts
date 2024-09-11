@@ -22,7 +22,7 @@ import { ScRedirectGuard } from './sc-redirect.guard';
 
 const routes: Routes = [
 
-  
+
   {path:'', redirectTo:'/', pathMatch:'full'},
   {path:'', component: MainComponent},
   {path: 'company', component: CompanyComponent},
@@ -30,7 +30,8 @@ const routes: Routes = [
   {path: 'pay-it-forward', component:PayItForwardComponent},
   {path: 'press', component:PressComponent},
   {path: 'safety',  component:SafetyComponent},
-  {path: 'sc', component: ScComponent ,canActivate: [ScRedirectGuard]},
+  {path: 'sc', component: ScComponent },
+  //{path: 'sc', component: ScComponent ,canActivate: [ScRedirectGuard]},
   {path: 'academic-integrity', component:AcademicIntegrityComponent},
   {path: 'labs', component: LabsComponent},
   {path: 'blog', component: BlogComponent},

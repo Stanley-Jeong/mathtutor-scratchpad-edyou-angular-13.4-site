@@ -9,7 +9,7 @@ export class ScRedirectGuard implements CanActivate {
 
   canActivate(): boolean {
     window.location.href = 'https://sc.edyou.com';  // Redirect to the external URL
-    return false;  // Prevent the route from activating
+    return true;  // Prevent the route from activating
   }
   
 }
