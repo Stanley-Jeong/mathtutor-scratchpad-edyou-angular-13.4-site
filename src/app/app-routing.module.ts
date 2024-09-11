@@ -16,6 +16,8 @@ import { RevolutionizingEducationComponent } from './revolutionizing-education/r
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
 import { CoursePageComponent } from './courses-page/course.component'
 import { SuccessPaymentComponent } from './success-payment/success-payment.component';
+import { ScComponent } from './sc/sc.component';
+import { ScRedirectGuard } from './sc-redirect.guard';
 
 
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   { path: 'company#mission-vision', component: CompanyComponent },
   {path: 'pay-it-forward', component:PayItForwardComponent},
   {path: 'press', component:PressComponent},
-  {path: 'safety', component: SafetyComponent },
+  {path: 'safety', component:ScComponent, canActivate: [ScRedirectGuard] },
+  {path: 'sc', component: ScComponent },
   {path: 'academic-integrity', component:AcademicIntegrityComponent},
   {path: 'labs', component: LabsComponent},
   {path: 'blog', component: BlogComponent},
