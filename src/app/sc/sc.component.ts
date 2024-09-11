@@ -10,8 +10,8 @@ export class ScComponent implements OnInit {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.cdr.detach(); 
-    window.location.href = 'https://sc.edyou.com/';
+    //this.cdr.detach(); 
+   // window.location.href = 'https://sc.edyou.com/';
   }
 
 }
