@@ -673,9 +673,9 @@ export class MainComponent implements OnInit, OnDestroy {
           }
 
           this.openSuccessPopup = true
-          // setTimeout(()=>{
-          //   this.openSuccessPopup = false
-          // },5000)
+          setTimeout(()=>{
+            this.openSuccessPopup = false
+          },2000)
 
         } else if (res.statusCode == 201) {
           this.openErrorPopup = true

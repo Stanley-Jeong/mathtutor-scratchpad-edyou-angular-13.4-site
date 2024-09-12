@@ -18,6 +18,8 @@ import { CoursePageComponent } from './courses-page/course.component'
 import { SuccessPaymentComponent } from './success-payment/success-payment.component';
 import { ScComponent } from './sc/sc.component';
 import { ScRedirectGuard } from './sc-redirect.guard';
+import { SuccesspaymentComponent } from './successpayment/successpayment.component';
+import { FailedpaymentComponent } from './failedpayment/failedpayment.component';
 
 
 const routes: Routes = [
@@ -52,7 +54,9 @@ const routes: Routes = [
   {path: 'computer-science', component:CoursePageComponent},
   {path: 'project-management', component:CoursePageComponent},
   {path: 'latin', component:CoursePageComponent},
-  {path: '**', redirectTo: '/'}
+  {path: 'sc/payment-success', component:SuccesspaymentComponent},
+  {path: 'sc/payment-failed', component:FailedpaymentComponent},
+  {path: '**', redirectTo: '/'},
 ];
 
 @NgModule({

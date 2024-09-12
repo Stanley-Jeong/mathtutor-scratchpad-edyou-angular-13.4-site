@@ -1,23 +1,238 @@
-<!-- <div class="" id="avatarLoaders">
-    <div class="mainLoader">
-    </div>
-    <div class="mainLoad">
-      <img src="../../assets/images/Rolling-1s-200px (2).gif" style="height: 70px; width: 70px;">
+<!-- 
+ <header class="header">
   
+  <div class="header-main">
+    <div class="logoss">
+      <img src="../../assets/edyou-logo-horiz-empower-white-png.png" alt="medYOU Logo" />
     </div>
-  </div>  -->
+   
+  </div>
+</header> -->
 
 
-  <!-- <div class="v">
-    <div class="m d-flex justify-content-center"></div>
-    <div class="loader"></div>
-  </div> -->
+<!-- banner -->
 
-  
-  <div class="container">
-    <div class="centered-div">
-      <!-- Your content here -->
-      <div class="loader"></div>
+<div  >
+<div class="mainBanner">
+  <div class="container d-flex justify-content-center">
+    <div class="logo">
+      <img class="scLogo" src="../../assets/scIcon.png" alt="Logo">
+    </div>
+    <div class="headingH1 mt-2">
+      Welcome Sierra Canyon Students
     </div>
   </div>
-  
+
+  <div class="d d-flex justify-content-center">
+    <div class="videoBox " >
+      <video controls #heroVideo autoplay loop id="hero-video">
+        <source src="https://edyouwebsite.s3.us-west-2.amazonaws.com/scSchoolVideo/scvideo2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="countdown">
+
+  <span class="subHeading">Welcome to the world of edYOU</span>
+
+  <div class="boxCard">
+
+    <span>edYOU is your personalized learning companion with Al tutors available 24/7. Our platform helps you excel in your studies by offering interactive learning support, and real-time progress tracking. Start exploring now with an exclusive SC 14-day free trial!</span>
+  </div>
+</div>
+
+
+<div class="courses-section">
+  <span class="courseHeading">Explore Courses</span>
+  <br>
+  <div class="courses-cards-container">
+    <a (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)"
+      (mouseleave)="toggleGif('us-history', false)">
+      <img
+        [src]="isHovered['us-history'] ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png'" />
+    </a>
+    <a (click)="navigateToCoursePage('algebra')" (mouseenter)="toggleGif('algebra', true)"
+      (mouseleave)="toggleGif('algebra', false)">
+      <img
+        [src]="isHovered['algebra'] ? '../../assets/course-icons/hover 2.png' : '../../assets/course-icons/algebra.png'" />
+    </a>
+    <a (click)="navigateToCoursePage('Biology')" (mouseenter)="toggleGif('Biology', true)"
+      (mouseleave)="toggleGif('Biology', false)">
+      <img
+        [src]="isHovered['Biology'] ? '../../assets/course-icons/hover 3.png' : '../../assets/course-icons/Biology.png'" />
+    </a>
+    <a (click)="navigateToCoursePage('latin')" (mouseenter)="toggleGif('latin', true)"
+      (mouseleave)="toggleGif('latin', false)">
+      <img
+        [src]="isHovered['latin'] ? '../../assets/course-icons/hover 3.png' : '../../assets/course-icons/latin1.png'" />
+    </a>
+    <a (click)="navigateToCoursePage('Pre-Algebra')" (mouseenter)="toggleGif('Pre-Algebra', true)"
+      (mouseleave)="toggleGif('Pre-Algebra', false)">
+      <img
+        [src]="isHovered['Pre-Algebra'] ? '../../assets/course-icons/hover 3.png' : '../../assets/course-icons/Pre-algebra1.png'" />
+    </a>
+
+  </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <button class="courseBtn" (click)="scrollToPricing()">Pre-Enroll</button>
+  </div>
+
+</div>
+<!-- AI being -->
+<div class="ai-card-container">
+  <div class="ai-row">
+    <div class="ai-header">
+      <h2>Meet  our  Conversational</h2>
+      <h1>AI Beings</h1>
+    </div>
+    <div class="ai-images">
+
+      <img src="../../assets/updatedAiBeings.png" alt="AI Being 3" class="ai-img" />
+    </div>
+  </div>
+  <br>
+  <div class="ai-description">
+    <p>We are a safe, reliable and trustworthy AI platform where humans and AI beings collaborate to achieve great
+      things together. Our infinitely adaptable, specialized AI will augment and enhance the capabilities of humans just
+      like you.</p>
+    <p>Whether it’s improving learning, providing wellness guidance, or institutional and business training, the
+      possibilities are endless and edYOU is enabling, encouraging and supporting you to do and be more.</p>
+  </div>
+</div>
+
+<!-- pricing -->
+
+
+<div id="pricing_section_id" class="pricing-section">
+  <div class="pricing-title-section">
+    <h2>Pricing</h2>
+
+  </div>
+  <div class="pricing-cards-container">
+
+
+
+    <!-- UNLIMITED PLAN -->
+    <div class="pricing-card unlimited">
+      <div class="pricing-card-title">
+        <div class="pricing-card-title-left">
+          <h4>Trailblazers</h4>
+          <span class="subtrailHeading">14 days free trial</span>
+        </div>
+        <div class="pricing-card-title-right">
+          <!-- <del>$249</del> -->
+          <span><strong class="pricing-number">$199</strong>/month</span>
+        </div>
+      </div>
+      <button class="pricing-button" (click)="ModalOpen()">
+        <img class="" style="width : 24px; color:white;" *ngIf="isLoading3"
+          src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit mobileFont" *ngIf="!isLoading3">Pre-EnroIl
+          Now</span></button>
+      <div class="pricing-card-description">
+        <h5>Includes:</h5>
+        <ul class="pricing-card-description-list-items">
+          <li>Full month access</li>
+          <li>Learning Module</li>
+          <li>Testing Module</li>
+          <li>Wellness Companion</li>
+           <li>Conversation history</li>
+          <li>Gamification</li>
+
+          <li>Certificates of Completion</li>
+        </ul>
+
+      </div>
+      <!-- <small class="billed-annually-text">*Billed Annually</small> -->
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+<div class="overlay" *ngIf="openForm"></div>
+<div class="waitlist" *ngIf="openForm">
+  <div class="margin1">
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="closeForm()" width="24" class="cross" height="24"
+      viewBox="0 0 24 24" fill="none">
+      <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="margin2">
+      <div>
+        <h1 class="waitlistHeading">Pre-Enroll Now</h1>
+        <h6 class="waitlistText">Please fill in the below details</h6>
+        <!-- <h6 class=" redtext">*You will be charged a test payment to verify your card, which will be refunded within 2-3 days following card verification.</h6> -->
+       
+      </div>
+      <form class="form" [formGroup]="subjectform">  
+
+        <div>
+          <div class="inputSection" [ngClass]="{'reduce-margin': subjectform.get('firstName')?.touched && subjectform.get('firstName')?.invalid}">
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" name="" id="" placeholder="First Name" formControlName="firstName">
+          </div> 
+          <div *ngIf="subjectform.get('firstName')?.touched && subjectform.get('firstName')?.invalid" class="error-message">
+            <span *ngIf="subjectform.get('firstName')?.errors?.['required']">First Name is required.</span>
+           
+          </div>
+        </div>
+
+    <div>
+      <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('firstName')?.touched && subjectform.get('firstName')?.invalid}">
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="text" name="" id="" placeholder="Last Name"  formControlName="lastName">
+      </div> 
+      <div *ngIf="subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid" class="error-message">
+        <span *ngIf="subjectform.get('lastName')?.errors?.['required']">Last Name is required.</span>
+     
+      </div>
+    </div>
+
+    <div>
+      <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid}">
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="25" height="24" viewBox="0 0 25 24" fill="none">
+          <path d="M2.10645 7L10.2714 12.7154C10.9325 13.1783 11.2631 13.4097 11.6227 13.4993C11.9403 13.5785 12.2726 13.5785 12.5902 13.4993C12.9498 13.4097 13.2804 13.1783 13.9415 12.7154L22.1064 7M6.90645 20H17.3064C18.9866 20 19.8267 20 20.4684 19.673C21.0329 19.3854 21.4918 18.9265 21.7795 18.362C22.1064 17.7202 22.1064 16.8802 22.1064 15.2V8.8C22.1064 7.11984 22.1064 6.27976 21.7795 5.63803C21.4918 5.07354 21.0329 4.6146 20.4684 4.32698C19.8267 4 18.9866 4 17.3064 4H6.90645C5.22629 4 4.38621 4 3.74447 4.32698C3.17999 4.6146 2.72105 5.07354 2.43343 5.63803C2.10645 6.27976 2.10645 7.11984 2.10645 8.8V15.2C2.10645 16.8802 2.10645 17.7202 2.43343 18.362C2.72105 18.9265 3.17999 19.3854 3.74447 19.673C4.38621 20 5.22629 20 6.90645 20Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="text" name="" id="" placeholder="Email" formControlName="email">
+      </div> 
+      <div *ngIf="subjectform.get('email')?.touched && subjectform.get('email')?.invalid" class="error-message">
+        <span *ngIf="subjectform.get('email')?.errors?.['required']">Email is required.</span>
+        <span *ngIf="subjectform.get('email')?.errors?.['email']">Enter a valid email address.</span>
+      </div>
+    </div>
+
+    <div>
+    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('email')?.touched && subjectform.get('email')?.invalid}">
+      <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24"
+        fill="none">
+        <path
+          d="M9 9H9.01M15 15H15.01M16 8L8 16M17.9012 4.99851C18.1071 5.49653 18.5024 5.8924 19.0001 6.09907L20.7452 6.82198C21.2433 7.02828 21.639 7.42399 21.8453 7.92206C22.0516 8.42012 22.0516 8.97974 21.8453 9.47781L21.1229 11.2218C20.9165 11.7201 20.9162 12.2803 21.1236 12.7783L21.8447 14.5218C21.9469 14.7685 21.9996 15.0329 21.9996 15.2999C21.9997 15.567 21.9471 15.8314 21.8449 16.0781C21.7427 16.3249 21.5929 16.549 21.4041 16.7378C21.2152 16.9266 20.991 17.0764 20.7443 17.1785L19.0004 17.9009C18.5023 18.1068 18.1065 18.5021 17.8998 18.9998L17.1769 20.745C16.9706 21.2431 16.575 21.6388 16.0769 21.8451C15.5789 22.0514 15.0193 22.0514 14.5212 21.8451L12.7773 21.1227C12.2792 20.9169 11.7198 20.9173 11.2221 21.1239L9.47689 21.8458C8.97912 22.0516 8.42001 22.0514 7.92237 21.8453C7.42473 21.6391 7.02925 21.2439 6.82281 20.7464L6.09972 19.0006C5.8938 18.5026 5.49854 18.1067 5.00085 17.9L3.25566 17.1771C2.75783 16.9709 2.36226 16.5754 2.15588 16.0777C1.94951 15.5799 1.94923 15.0205 2.1551 14.5225L2.87746 12.7786C3.08325 12.2805 3.08283 11.7211 2.8763 11.2233L2.15497 9.47678C2.0527 9.2301 2.00004 8.96568 2 8.69863C1.99996 8.43159 2.05253 8.16715 2.15472 7.92043C2.25691 7.67372 2.40671 7.44955 2.59557 7.26075C2.78442 7.07195 3.00862 6.92222 3.25537 6.8201L4.9993 6.09772C5.49687 5.89197 5.89248 5.4972 6.0993 5.00006L6.82218 3.25481C7.02848 2.75674 7.42418 2.36103 7.92222 2.15473C8.42027 1.94842 8.97987 1.94842 9.47792 2.15473L11.2218 2.87712C11.7199 3.08291 12.2793 3.08249 12.7771 2.87595L14.523 2.15585C15.021 1.94966 15.5804 1.9497 16.0784 2.15597C16.5763 2.36223 16.972 2.75783 17.1783 3.25576L17.9014 5.00153L17.9012 4.99851ZM9.5 9C9.5 9.27614 9.27614 9.5 9 9.5C8.72386 9.5 8.5 9.27614 8.5 9C8.5 8.72386 8.72386 8.5 9 8.5C9.27614 8.5 9.5 8.72386 9.5 9ZM15.5 15C15.5 15.2761 15.2761 15.5 15 15.5C14.7239 15.5 14.5 15.2761 14.5 15C14.5 14.7239 14.7239 14.5 15 14.5C15.2761 14.5 15.5 14.7239 15.5 15Z"
+          stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <input type="text" name="promocode" id="" placeholder="Promo code" formControlName="promocode">
+    </div>
+</div>
+<h6 class="redtext">
+  <span style="color: #E74040;">*</span>You will be charged a test payment to verify your card, which will be refunded within 2-3 days following card verification.
+</h6>
+    </form>
+
+      <!-- <button (click)="submitForm()">Proceed</button> -->
+      <button (click)="submitForm()"><img class="" style="width : 24px; color:white;" *ngIf="isloading"
+          src="../../assets/Rolling-1s-200px (2).gif"><span style="color: white;"
+          *ngIf="!isloading">Proceed</span></button>
+
+    </div>
+      <span class="errorMessage " *ngIf="error.length > 0">{{error}}</span>
+  </div>
+
+</div>
+</div>

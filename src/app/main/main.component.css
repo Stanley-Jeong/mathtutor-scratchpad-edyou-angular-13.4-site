@@ -1392,3 +1392,10 @@ margin-left:-5%;
                 
               }
             }
+            @media only screen and (min-device-width :2048px) {
+                .countdownHeadingTopSubheading{
+             
+                   
+                    margin-left:26%;
+                  
+                  }}

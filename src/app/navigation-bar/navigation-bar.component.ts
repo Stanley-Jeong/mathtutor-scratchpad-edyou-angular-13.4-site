@@ -34,6 +34,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   screenSize: string ='large';
   isSafetyState = false; 
   currentUrl: string ='url';
+  isScPage: boolean =false;
+  sc: boolean= false;
+
   constructor(
     private router: Router, private service : ColorChangeService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -44,6 +47,13 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   hoverImage: string = '../assets/icons/twitter-blue.png'; // Path to your hover image
   isHovered: boolean = false;
   ngOnInit(): void {
+    const width = window.innerWidth;
+    if (width < 1024) {
+      this.screenSize = 'small'; // Mobile
+    } else {
+      this.screenSize = 'large'; // Desktop
+    }
+  
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         // Navigation is starting
@@ -62,20 +72,33 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
           }else{
             this.isSafetyState = false;
           }
-          
+          if(this.router.url.includes('/sc')){
+             this.isScPage =true;
+           if(this.screenSize == 'small')  {
+          this.sc = true;  
+           }else{
+            this.sc = false;
+           }
+          }else{
+            if(this.screenSize == 'small')  {
+              this.sc = false;  
+               }
+            this.isScPage =false;
+            this.sc = false;
+          }
         
      //   console.log('Current URL before navigation starts:', this.currentUrl,this.isSafetyState);
         this.hideNavigation()
       }
     });
  
-    const width = window.innerWidth;
-    console.log(width)
-    if (width < 1024) {
-      this.screenSize = 'small'; // Mobile
-    } else {
-      this.screenSize = 'large'; // Desktop
-    }
+  
+    // console.log(width)
+    // if (width < 1024) {
+    //   this.screenSize = 'small'; // Mobile
+    // } else {
+    //   this.screenSize = 'large'; // Desktop
+    // }
   }
   onMouseOver(): void {
     this.isHovered = true;
@@ -89,7 +112,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     })
   }  
   navigateToSC() {
-    window.location.href="https://sc.edyou.com"
+    this.router.navigate(['/sc']);
   }  
   
   navigateToPayItForward() {

@@ -28,6 +28,8 @@ import { Router } from "@angular/router";
 import * as Sentry from "@sentry/angular-ivy";
 import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
+import { ScComponent } from './sc/sc.component';
+
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { CoursePageComponent } from './courses-page/course.component';
     EdyousAiComponent,
     RevolutionizingEducationComponent,
     InvestorLoginComponent,
+    ScComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -60,6 +63,8 @@ import { CoursePageComponent } from './courses-page/course.component';
     HttpClientModule,
     AppRoutingModule,
     CommonModule ,
+    FormsModule,
+    ReactiveFormsModule,
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'
