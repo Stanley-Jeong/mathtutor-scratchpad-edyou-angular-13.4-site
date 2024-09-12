@@ -14,7 +14,7 @@ export class FailedpaymentComponent implements OnInit {
   }
   navigateTOPricing(){
     //this.router.navigate(['/pricing'])
-    this.router.navigate(['/sc']);
+    this.router.navigate(['/SC']);
   }
 
 }

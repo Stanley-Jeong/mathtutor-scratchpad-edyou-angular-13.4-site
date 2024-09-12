@@ -112,7 +112,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     })
   }  
   navigateToSC() {
-    this.router.navigate(['/sc']);
+    this.router.navigate(['/SC']);
   }  
   
   navigateToPayItForward() {
