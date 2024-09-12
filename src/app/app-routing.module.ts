@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'pay-it-forward', component:PayItForwardComponent},
   {path: 'press', component:PressComponent},
   {path: 'safety',  component:SafetyComponent},
-  {path: 'sc', component: ScComponent },
+  {path: 'SC', component: ScComponent },
   //{path: 'sc', component: ScComponent ,canActivate: [ScRedirectGuard]},
   {path: 'academic-integrity', component:AcademicIntegrityComponent},
   {path: 'labs', component: LabsComponent},
