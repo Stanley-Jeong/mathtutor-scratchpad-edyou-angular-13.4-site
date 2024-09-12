@@ -10,6 +10,7 @@ import { UserService } from '../service/user.service';
 })
 export class ScComponent implements OnInit {
 
+  
   isHovered: { [key: string]: boolean } = {};
   isalgebra: boolean = false
   openForm: boolean = false;
