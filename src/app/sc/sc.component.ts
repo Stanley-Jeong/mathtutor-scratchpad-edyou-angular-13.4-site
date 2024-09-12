@@ -10,7 +10,7 @@ import { UserService } from '../service/user.service';
 })
 export class ScComponent implements OnInit {
 
-  
+
   isHovered: { [key: string]: boolean } = {};
   isalgebra: boolean = false
   openForm: boolean = false;
@@ -156,7 +156,7 @@ export class ScComponent implements OnInit {
 
         if (res.statusCode == 200) {
           this.planAPI(this.subjectform.value.email) 
-
+this.error = ""
       
         }if (res.statusCode == 201) {
           this.error = res.body
