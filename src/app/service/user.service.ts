@@ -1,6 +1,6 @@
 import { HttpClient,HttpErrorResponse,HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Subject, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { API } from '../service/restapi';
 import { isPlatformBrowser } from '@angular/common';
@@ -314,4 +314,104 @@ headerClear(){
       });
       return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/stripe/getInvoice', data, { headers: headers })
     }
+    private popupState = new Subject<boolean>();
+    popupState$ = this.popupState.asObservable();
+  
+    private loggedIn = new BehaviorSubject<boolean>(false);
+    loggedIn$ = this.loggedIn.asObservable();
+  
+    showPopup() {
+      this.popupState.next(true);
+    }
+  
+    hidePopup() {
+      this.popupState.next(false);
+    }
+  
+    login() {
+      this.loggedIn.next(true);
+    }
+  
+    logout() {
+      this.loggedIn.next(false);
+    }
+    signIn(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+        // 'x-api-key': 'nO3iMjSWCK8gR08y3jEPd4rGcSGSLz4YakPJsYWA',
+        'Content-Type': 'application/json'
+      });
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/login', data, { headers: headers })
+    }
+  
+  
+  
+   
+  
+    getTenant(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+        'x-api-key': 'nO3iMjSWCK8gR08y3jEPd4rGcSGSLz4YakPJsYWA',
+        'Content-Type': 'application/json'
+      });
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/default/get_Tenant_List', data, { headers: headers })
+    }
+  
+    verifyOTP(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Verify_OTP', data, { headers: headers })
+    }
+  
+    forgotAPI(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post(  'https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/forgot_Password_edyou_website', data, { headers: headers })
+    }
+  
+  
+  
+    ResetPassword(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/set_Password_edyou_website' , data, { headers: headers })
+    }
+  
+    getProfileAPI(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post(  'https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Profile/getProfile', data, { headers: headers })
+    }
+  
+    updateProfileAPI(data: any) {
+      // Set headers
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Profile/updateProfile' , data, { headers: headers })
+    }
+  
+  
+  
+    checkSession(data:any){
+        // Set headers
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+        return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_session', data, { headers: headers })
+      }
+  
 }

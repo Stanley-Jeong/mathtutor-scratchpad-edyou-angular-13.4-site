@@ -1,0 +1,388 @@
+<div class="overlay" *ngIf="isOverlayActive"></div>
+
+<div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- login  form-->
+    <div class="modal-content" *ngIf="signInForm" style="    margin-top: 100px;">
+      <div class="modal-body">
+        <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
+
+        <!-- sign in form -->
+        <div class="innerBox">
+
+
+          <span class="heading">Please Sign in</span>
+
+          <span class="subHeading mt-1">Log in to complete your purchase.</span>
+
+          <form class="mt-3" [formGroup]="form">
+
+
+            <div class="input-container">
+              
+              <input class="input-field" formControlName="email" name="email" type="text" placeholder="Email">
+              <span style=" z-index: 333333333;">
+                <img src="../../assets/public/icon-email.svg">
+              </span>
+            </div>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="label__error border__error">
+              <div *ngIf="email.errors?.['required']">
+                Email is required
+              </div>
+              <div *ngIf="email.errors?.['pattern']">
+                Invalid Email
+
+              </div>
+            </div>
+
+            <div class="input-container">
+              <span class="input-group-text fondo-icon">
+                <img src="../../assets/public/icon-password.svg">
+              </span>
+              <input class="input-field" type="password" [type]="show?'text':'password'" formControlName="password"
+                name="password" placeholder="Password">
+              <div class="input-group-prepend-login">
+                <span class="input-group-text fondo-icon" (click)="hideShow()">
+                  <i [ngClass]="show?'fas fa-eye':'fas fa-eye-slash'"></i>
+                </span>
+
+              </div>
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="label__error border__error">
+              <div *ngIf="password.errors?.['required']">
+                Password is required
+              </div>
+
+            </div>
+
+            <a class="forget" style="cursor: pointer; margin-top: -1px;" (click)="forgetFun()">Forgot Password?</a>
+
+            <button class="btn mt-2" (click)="login()"><img class="" style="width : 24px; color:white;"
+                *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                *ngIf="!isLoading">Sign
+                In</span></button>
+
+          </form>
+          <br>
+          <span class="signup">Don't Have Account? <span style=" color: #46A6FF; cursor: pointer;;"
+              (click)="signUpFun()">&nbsp; Sign Up </span></span>
+        </div>
+        <span class="errorMessage mb-1" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+      </div>
+    </div>
+
+    <!-- sign Up  form-->
+    <div class="modal-content" *ngIf="signUpForm" style="    margin-top: 40px;">
+      <div class="modal-body">
+        <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
+        <!-- sign up form -->
+        <div class="innerBox">
+
+          <ng-container *ngIf="!isSignUpFormSubmit">
+            <span class="heading">Let's Get Started</span>
+
+            <span class="subHeading mt-1">Sign up to complete your purchase.</span>
+
+            <form class="mt-3" [formGroup]="signUpform">
+
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/userIcon.svg">
+                </span>
+                <input class="input-field" formControlName="f_name" name="f_name" type="text" placeholder="First name">
+              </div>
+              <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="label__error border__error">
+                <div *ngIf="fname.errors?.['required']">
+                  First name is required
+                </div>
+  
+              </div>
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/userIcon.svg">
+                </span>
+                <input class="input-field" formControlName="l_name" name="l_name" type="text" placeholder="Last name">
+              </div>
+              <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="label__error border__error">
+                <div *ngIf="lname.errors?.['required']">
+                  Last name is required
+                </div>
+  
+              </div>
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/public/icon-email.svg">
+                </span>
+                <input class="input-field" formControlName="email" name="email" type="text" placeholder="Email">
+              </div>
+              <div *ngIf="emails.invalid && (emails.dirty || emails.touched)" class="label__error border__error">
+                <div *ngIf="emails.errors?.['required']">
+                  Email is required
+                </div>
+                <div *ngIf="emails.errors?.['pattern']">
+                  Invalid Email
+
+                </div>
+              </div>
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/school.svg">
+                </span>
+
+                <input class="input-field" formControlName="date" name="date" type="text" onfocus="(this.type='date')"
+                  onblur="(this.type='text')" placeholder="DOB">
+
+              </div>
+              <div *ngIf="date.invalid && (date.dirty || date.touched)" class="label__error border__error">
+                <div *ngIf="date.errors?.['required']">
+                  Date is required
+                </div>
+  
+              </div>
+
+              <div class="input-container" >
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/public/icon-password.svg">
+                </span>
+                <input class="input-field" type="password" [type]="show?'text':'password'" formControlName="password"
+                  name="password" placeholder="Password">
+                <div class="input-group-prepend-login">
+                  <span class="input-group-text fondo-icon" (click)="hideShow()">
+                    <i [ngClass]="show?'fas fa-eye':'fas fa-eye-slash'"></i>
+                  </span>
+
+                </div>
+
+              </div>
+              <div *ngIf="passwordF.invalid && (passwordF.dirty || passwordF.touched)" class="label__error border__error">
+                <div *ngIf="passwordF.errors?.['required']">
+                  Password is required
+                </div>
+  
+              </div>
+
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/school.svg">
+                </span>
+                <!-- <input class="input-field" formControlName="school" name="school" type="text" placeholder="School"> -->
+                <select class="form-control input-field" name="school" formControlName="school" style="    margin-top: -0px;
+    border: none;">
+                  <option value="">Select option
+                  </option>
+                  <option value="Sierra Canyon">Sierra Canyon</option>
+                  <option value="UAB">UAB</option>
+                  <option value="HCA">HCA</option>
+                  <option value="ASCP">ASCP</option>
+                  <option value="Others">Others</option>
+
+                </select>
+
+
+              </div>
+              <div style="margin-top: -30px;" *ngIf="school.invalid && (school.dirty || school.touched)" class="label__error border__error">
+                <div *ngIf="school.errors?.['required']">
+                  School is required
+                </div>
+  
+              </div>
+
+         
+
+
+              <button class="btn " (click)="signUp()"><img class="" style="width : 24px; color:white;"
+                  *ngIf="isLoading2" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                  *ngIf="!isLoading2">Sign
+                  up</span></button>
+
+            </form>
+            <br>
+            <span class="signup">Already Have Account? <span style=" color: #46A6FF; cursor: pointer;;"
+                (click)="signInFun()">&nbsp; Sign in</span></span>
+
+            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}}</span>
+          </ng-container>
+
+          <ng-container *ngIf="isSignUpFormSubmit">
+            <span class="heading">Enter OTP</span>
+
+            <span class="subHeading mt-1">Please enter one time password sent to {{signUpform.value.email}}</span>
+
+            <div class="otp-field mt-3">
+              <form [formGroup]="otpForm" class="otp-field mt-3">
+                <input type="text" maxlength="1" formControlName="otp1" />
+                <input type="text" maxlength="1" formControlName="otp2" />
+                <input class="space" type="text" maxlength="1" formControlName="otp3" />
+                <input type="text" maxlength="1" formControlName="otp4" />
+                <input type="text" maxlength="1" formControlName="otp5" />
+                <input type="text" maxlength="1" formControlName="otp6" />
+              </form>
+            </div>
+
+            <br>
+            <button class="btn" (click)="otpVerify(false)"><img class="" style="width : 24px; color:white;"
+                *ngIf="isLoading2" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                *ngIf="!isLoading2">Submit</span></button>
+
+            <span class="signup mt-4"> <span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
+                Back</span></span>
+
+            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}}</span>
+            <span class="errorMessage mt-2" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- forget  form-->
+    <div class="modal-content" *ngIf="forgetInForm" style="    margin-top: 100px;">
+      <div class="modal-body">
+        <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
+
+
+        <!-- forget form -->
+        <div class="innerBox">
+
+          <ng-container *ngIf="!isForgetSubmitTrue">
+            <span class="heading">Forgot Password</span>
+
+            <span class="subHeading mt-2">Please enter your email and we’ll send you the reset the password link</span>
+
+            <form class="mt-4" [formGroup]="forgetForm">
+
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/public/icon-email.svg">
+                </span>
+                <input class="input-field" formControlName="email" name="email" type="text" placeholder="Email">
+              </div>
+
+
+              <button class="btn" (click)="forgetSubmit()"> <img class="" style="width : 24px; color:white;"
+                  *ngIf="forgetLoader" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                  *ngIf="!forgetLoader">Continue</span></button>
+
+            </form>
+            <br>
+            <span class="signup">Back to<span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
+                Sign in </span></span>
+
+          </ng-container>
+
+          <ng-container *ngIf="isForgetFormSubmit">
+            <span class="heading">Enter OTP</span>
+
+            <span class="subHeading mt-1">Please enter one time password sent to {{forgetForm.value.email}}</span>
+
+            <div class="otp-field mt-3">
+              <form [formGroup]="otpForm" class="otp-field mt-3">
+                <input type="text" maxlength="1" formControlName="otp1" />
+                <input type="text" maxlength="1" formControlName="otp2" />
+                <input class="space" type="text" maxlength="1" formControlName="otp3" />
+                <input type="text" maxlength="1" formControlName="otp4" />
+                <input type="text" maxlength="1" formControlName="otp5" />
+                <input type="text" maxlength="1" formControlName="otp6" />
+              </form>
+            </div>
+
+            <br>
+            <button class="btn" (click)="otpVerify(true)"><img class="" style="width : 24px; color:white;"
+                *ngIf="isLoading2" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                *ngIf="!isLoading2">Verify</span></button>
+
+            <span class="signup mt-4"> <span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
+                Back</span></span>
+
+            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}}</span>
+            <span class="errorMessage mt-2" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+          </ng-container>
+
+          <!-- <ng-container *ngIf="isForgetSubmitTrue">
+
+            <div class="d d-flex justify-content-center">
+              <img src="../../assets/success.png" class="successImg">
+            </div>
+            <br>
+            <span class="heading">Link Sent</span>
+
+            <span class="subHeading mt-1">We have sent you the reset password link to {{this.forgetForm.value.email}}</span>
+
+            <br>
+            <span class="signup">Back to<span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
+                Sign in </span></span>
+          </ng-container> -->
+
+          <ng-container *ngIf="resetPasswordActive">
+            <span class="heading">Reset Password</span>
+
+            <span class="subHeading mt-2">Please Change your password</span>
+
+            <form class="mt-4" [formGroup]="restPasswordForm">
+
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/public/icon-email.svg">
+                </span>
+                <input class="input-field" formControlName="newPassword" name="newPassword" type="text"
+                  placeholder="New password">
+
+              </div>
+              <div *ngIf="newPassword.invalid &&  newPassword.touched" class="label__error border__error">
+                <div *ngIf="newPassword.errors?.['required']">
+                  Password is required
+                </div>
+                <div *ngIf="newPassword.errors?.['minlength']">
+                  Minimum 8 characters is required
+                </div>
+              </div>
+
+              <div class="input-container">
+                <span class="input-group-text fondo-icon">
+                  <img src="../../assets/public/icon-email.svg">
+                </span>
+                <input class="input-field" formControlName="confirmPassword" name="confirmPassword" type="text"
+                  placeholder="Confirm password">
+              </div>
+              <div *ngIf="confirmPassword.invalid &&  confirmPassword.touched" class="label__error border__error">
+                <div *ngIf="confirmPassword.errors?.['required']">
+                  Password is required
+                </div>
+                <div *ngIf="confirmPassword.errors?.['minlength']">
+                  Minimum 8 characters is required
+                </div>
+              </div>
+
+              <div class="label__error" *ngIf="restPasswordForm.errors?.['failedToMatch']">
+                Password and Confirm password does not match
+              </div>
+
+
+              <button class="btn" (click)="resetPassword()"> <img class="" style="width : 24px; color:white;"
+                  *ngIf="resetLoader" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                  *ngIf="!resetLoader">Reset</span></button>
+
+            </form>
+            <br>
+            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}}</span>
+            <!-- <span class="signup">Back to<span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
+                Sign in </span></span> -->
+
+          </ng-container>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

@@ -4,6 +4,7 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
+import { UserService } from '../service/user.service';
 declare var jQuery: any;
 @Component({
   selector: 'app-navigation-bar',
@@ -36,9 +37,10 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   currentUrl: string ='url';
   isScPage: boolean =false;
   sc: boolean= false;
-
+  isLoggedIn: boolean = false;
+  userName: any;
   constructor(
-    private router: Router, private service : ColorChangeService,
+    private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
   ){this.isBrowser = isPlatformBrowser(this.platformId);}
 
@@ -179,5 +181,32 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     this.service.saveScrollPosition(this.scrollKey, window.scrollY);
     }
   }
+  openLoginPopup(event: any) {
+    event.stopPropagation();
+  this.userservice.showPopup();
+  }
+  logOut(){
+    this.router.navigate(['/main']);
+    localStorage.removeItem('LoginState');
+    localStorage.removeItem('user');
+    this.userservice.logout()
+    // window.location.reload();
   
+
+  }
+
+  navigateToPricing() {
+    this.router.navigate(['/pricing'])
+  }
+  navigateToProfile(){
+   // this.menuToggle()
+    this.router.navigate(['/profile']);
+  }
+  menuToggle() {
+    const toggleMenu: any = document.querySelector("#menuId");
+    toggleMenu.classList.toggle("active");
+
+    console.log('hit menu')
+  }
+
 }

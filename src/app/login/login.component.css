@@ -1,0 +1,366 @@
+body {
+    height: 100vh;
+    text-align: center;
+  }
+  
+  
+  .label__error {
+    text-align: start;
+    color: #ff1e5a;
+    font-weight: normal;
+    margin-top: -15px;
+    font-size: 14px;
+    font-family: 'DM Sans Regular', sans-serif;
+  }
+  
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(12px);
+    z-index: 999;
+    /* Ensure it's behind the popup but above other content */
+  
+  }
+  
+  .modal-dialog {
+    max-width: 429px;
+    height: 533px;
+    margin: 1.75rem auto;
+  }
+  
+  .innerBox {
+    /* padding: 2rem; */
+    padding: 1.5rem;
+  }
+  
+  .custom-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    font-size: 16px; /* Adjust as necessary */
+  }
+  
+  
+  /*Trigger Button*/
+  .login-trigger {
+    font-weight: bold;
+    color: #fff;
+    border-radius: 24px;
+    background: #FFF;
+  
+    padding: 15px 30px;
+  
+    position: relative;
+    top: 50%;
+  }
+  
+  /*Modal*/
+  h4 {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .close {
+    color: black;
+    transform: scale(1.2)
+  }
+  
+  .modal-content {
+    font-weight: bold;
+    height: auto;
+    border-radius: 24px;
+    background: #FFF;
+    z-index: 9999;
+  
+  
+  
+  }
+  
+  .form-control {
+    margin: 1em 0;
+  }
+  
+  .form-control:hover,
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #fff;
+  }
+  
+  .username,
+  .password {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #eee;
+    padding-left: 0;
+    font-weight: normal;
+    background: transparent;
+  }
+  
+  .form-control::-webkit-input-placeholder {
+    color: #eee;
+  }
+  
+  .form-control:focus::-webkit-input-placeholder {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .login {
+    padding: 6px 20px;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid #FAB87F;
+    color: #FAB87F;
+    font-weight: bold;
+    transition: all .5s;
+    margin-top: 1em;
+  }
+  
+  .login:hover {
+    background: #FAB87F;
+    color: #fff;
+  }
+  
+  .heading {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    /* 100% */
+    letter-spacing: -0.5px;
+  }
+  
+  .subHeading {
+    display: flex;
+    justify-content: center;
+    color: var(--second-text-color, #737373);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    /* 177.778% */
+    letter-spacing: -0.5px;
+  }
+  
+  .input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    padding-left: 2px !important;
+    border-radius: 0px !important;
+    background: rgba(0, 0, 0, 0.05);
+    height: 39px !important;
+  
+  }
+  
+  .input-field:focus {
+    border: 2px solid dodgerblue;
+  }
+  
+  .successMessage{
+    color: green;
+    display: flex;
+    margin-bottom: -40px;
+    justify-content: center;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+  }
+  
+  .errorMessage{
+    color: red;
+    display: flex;
+    margin-bottom: -20px;
+    justify-content: center;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+  }
+  
+  .is-invalid {
+    border: 1px solid red;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    border-radius: 5px;
+    background: #2A7CC7;
+    color: white;
+    padding: 9px 20px;
+    border: none;
+    cursor: pointer;
+    height: 45px;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  .btnSubmit{
+    color: var(--light-text-color, #FFF);
+  /* btn-text */
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 200% */
+  letter-spacing: 0.2px;
+  }
+  
+  .forget {
+    display: flex;
+    /* width: 170.973px; */
+    font-family: "DM Sans";
+    font-size: 12px;
+    float: right;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    color: #2A7CC7 !important;
+    height: 25px;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    flex-shrink: 0;
+  }
+  
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    /* outline: none; */
+    height: 42px !important;
+    border: none;
+    color: #495057;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    /* border: 1px solid #ced4da; */
+    border-radius: 0px;
+  }
+  
+  .signup {
+    display: flex;
+    justify-content: center;
+    color: #737373;
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+  }
+  
+  .successImg {
+    width: 116px;
+   
+    height: 116px;
+    flex-shrink: 0;
+  }
+  
+  
+  /* otp design */
+  .otp-field {
+    display: flex;
+    margin-left: -10px;
+  }
+  .otp-field input {
+    width: 50px;
+    font-size: 32px;
+    padding: 10px !important;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    color: black;
+    outline: none;
+    transition: all 0.1s;
+  }
+  .otp-field input:focus {
+    border: 2px solid #a527ff;
+    box-shadow: 0 0 2px 2px #a527ff6a;
+  }
+  
+  .space {
+    margin-right: 1rem !important;
+  }
+  
+    /*  */
+  
+  @media only screen and (max-width: 600px) {
+  
+    .modal-dialog {
+      max-width: 370px;
+      height: 500px;
+      margin: 1.75rem auto;
+  }
+  
+  }
+  
+  .input-container1 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .input-container1 .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+  }
+  
+  .input-container1 input {
+    padding-left: 35px; /* Adjust to leave space for the icon */
+    padding-right: 10px;
+    height: 36px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+  

@@ -29,6 +29,7 @@ import * as Sentry from "@sentry/angular-ivy";
 import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -54,6 +55,7 @@ import { ScComponent } from './sc/sc.component';
     RevolutionizingEducationComponent,
     InvestorLoginComponent,
     ScComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

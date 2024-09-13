@@ -213,7 +213,9 @@
             <div class="elementor-element elementor-element-43a78293 hamburger-menu elementor-hidden-desktop elementor-view-default elementor-widget elementor-widget-icon"
             data-id="43a78293" data-element_type="widget" data-widget_type="icon.default">
             <div class="elementor-widget-container">
+                
                 <div class="elementor-icon-wrapper">
+                   
                     <div class="elementor-icon">
                         <div class="scLogoimg"   >
                             <img  *ngIf="!isScPage" (click)="navigateToSC()" src ="../assets/icons/Button.png" alt=""   style="height:32px; margin-top: -13px;">
@@ -238,6 +240,41 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row"*ngIf="isScPage">
+                <div  *ngIf="isLoggedIn" class="has_ae_slider elementor-element elementor-element-116a01ad e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
+                data-id="116a01ad" data-element_type="container"
+                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                <div class="action">
+                    <div class="profile" (click)="menuToggle()">
+                      <img src="../../assets/images/holder.png" />
+                    </div>
+                    <div class="menu">
+                      <h3>{{userName}}</h3>
+                      <ul>
+                        <li>
+                          <!-- <img src="./assets/icons/user.png" /> -->
+                          <a class="" (click)="navigateToProfile()">My profile</a>
+                        </li>
+                        <li>
+                          <!-- <img src="./assets/icons/edit.png" /> -->
+                          <a (click)="logOut()">Logout</a>
+                        </li>
+          
+                      </ul>
+                    </div>
+                  </div>
+    
+                <button (click)="navigateToPricing()" class="loginBtn" style="background-color: #2DC071; width: 110px;"> <span>Start Free</span></button>
+                </div>
+
+                
+              <div  *ngIf="!isLoggedIn" style="margin-right: 20px;">
+              <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+          <!-- </ng-container> -->
+  </div>
+  
+       
             </div>
         </div>
     </div>

@@ -151,3 +151,36 @@ margin-left:-23%
   max-height:72.8px;
 }
 }
+.loginBtn {
+  display: flex;
+  width: 84px;
+  border: none;
+  height: 32px;
+  margin-top: 21px;
+  border-radius: 4px;
+  padding: 8px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.loginBtn span {
+  color: var(--Primary-White, #FFF);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  /* 114.286% */
+  letter-spacing: 0.2px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: -18px;
+}
