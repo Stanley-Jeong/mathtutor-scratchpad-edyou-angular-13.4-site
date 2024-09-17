@@ -1,6 +1,11 @@
 a{
   cursor: pointer;
 }
+.scLogoimg{
+  
+ 
+  margin-right:-26px;
+  }
 .e-con-inner{
   max-height:85.8px;
 }
@@ -144,6 +149,16 @@ height:auto; /* Adjust size as needed */
 width:80%;
 margin-left:-23%
 }
+.scLogoimg {
+  width: 126%;
+  margin-left: -48%;
+}
+.scLogoimgMobile
+{
+  padding-right : 9px;
+}
+
+
 .mobileShow{
   margin-top:-75px;
 }

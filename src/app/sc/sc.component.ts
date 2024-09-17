@@ -191,7 +191,7 @@ this.validateAllFormFields(this.subjectform);
     let payload = {
       "email": email,
       "prod_id": "prod_QofbY9vz5uizFD",
-      "plan": "Trailblazer",
+      "plan": "Trailblazers",
       "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
       "mode": "setup",
       "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
