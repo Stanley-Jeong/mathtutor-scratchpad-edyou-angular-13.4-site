@@ -42,8 +42,8 @@
   .account-details .text-wrapper-2 {
     position: absolute;
     height: 20px;
-    top: 242px;
-    left: 49px;
+    top: 289px;
+    left: 71px;
     font-family: "DM Sans 18pt-Bold", Helvetica;
     font-weight: 700;
     color: rgba(142, 194, 242, 1);
@@ -1427,3 +1427,36 @@
     }
   
   }
+  
+
+
+.select-profile-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+ 
+  cursor: pointer;
+}
+.buttonProfile{
+  margin-top: 28px; width: 98px;height: 32px; left: 89px;
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  width: 130px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 28px;
+  position: absolute;
+  top: 211px;
+  left: 32px;
+  /* background-color: #2a7bc633; */
+  border-radius: 6px;
+  overflow: hidden;
+  top: 244px;
+  left: 70px;
+  
+}

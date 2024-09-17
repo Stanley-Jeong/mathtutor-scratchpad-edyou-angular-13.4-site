@@ -146,5 +146,27 @@ console.log(" this.userDetails", this.userDetails)
 
   }
 
+  url: any = '';
+  onSelectFile(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
 
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => {
+        // called once readAsDataURL is completed
+        if (event.target){
+        this.url = event.target.result;
+        console.log(this.url);
+        }
+      };
+    }
+  }
+  public delete() {
+    this.url = null;
+  }
+
+  checkUserSubscription(){
+    
+  }
 }

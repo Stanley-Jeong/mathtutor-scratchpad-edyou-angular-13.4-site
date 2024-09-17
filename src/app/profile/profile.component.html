@@ -3,10 +3,29 @@
 
         <div class="frame">
             <p class="text-wrapper">Joined on 20 Aug 2023</p>
-            <div class="text-wrapper-2">{{this.userDetails.name}}</div>
+            
             <!-- <div class="text-wrapper-3">Carnegie Vanguard High School.</div> -->
             <!-- <div class="text-wrapper-4">(Grade 6)</div> -->
-            <img class="image" src="../../assets/images/holder.png" />
+            <!-- <img class="image" src="../../assets/images/holder.png" /> -->
+            <!-- <img [src]="url ? url : '../../assets/images/holder.png'" /> -->
+            <div class="image">
+                <label class="hoverable" for="fileInput">
+                  <img [src]="url ? url : '../../assets/images/holder.png'" />
+                 
+                 
+                </label>
+                <br />
+                <input
+                  id="fileInput"
+                  type="file"
+                  [(ngModel)]="url"
+                  class="select-profile-picture"
+                  (change)="onSelectFile($event)"
+                />
+              
+              </div>
+              <br /><button class="buttonProfile"  *ngIf="url" (click)="delete()">delete</button>
+              <div class="text-wrapper-2">{{this.userDetails.name}}</div>
         </div>
         <div class="frame-2">
             <div class="text-wrapper-5">Limited</div>
