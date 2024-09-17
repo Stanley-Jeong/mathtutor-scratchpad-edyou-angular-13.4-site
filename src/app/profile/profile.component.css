@@ -1,0 +1,1429 @@
+.account-details {
+    background-color: #092a4b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .account-details .div {
+    background-color: #092a4b;
+    width: 1366px;
+    height: 768px;
+    position: relative;
+  }
+  
+  .account-details .frame {
+    width: 289px;
+    /* height: 618px; */
+    height: 680px;
+    top: 118px;
+    left: 74px;
+    position: absolute;
+    background-color: rgba(42, 124, 199, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+  .account-details .text-wrapper {
+    position: absolute;
+    height: 20px;
+    top: 558px;
+    left: 56px;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .text-wrapper-2 {
+    position: absolute;
+    height: 20px;
+    top: 242px;
+    left: 49px;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: rgba(142, 194, 242, 1);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .text-wrapper-3 {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    top: 279px;
+    left: 49px;
+    font-family: "DM Sans 18pt-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+  }
+  
+  .account-details .text-wrapper-4 {
+    position: absolute;
+    height: 20px;
+    top: 340px;
+    left: 52px;
+    font-family: "DM Sans 18pt-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .image {
+    position: absolute;
+    width: 186px;
+    height: 186px;
+    top: 36px;
+    left: 52px;
+  }
+  
+  .account-details .frame-2 {
+    width: 419px;
+    height: 294px;
+    top: 123px;
+    left: 404px;
+    position: absolute;
+    background-color: rgba(42, 124, 199, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+  .account-details .text-wrapper-5 {
+    position: absolute;
+    top: 77px;
+    left: 32px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .text-wrapper-6 {
+    top: 156px;
+    font-weight: 600;
+    color: #fb6c6c;
+    font-size: 20px;
+    position: absolute;
+    left: 32px;
+    font-family: "DM Sans", Helvetica;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .element-month {
+    position: absolute;
+    height: 47px;
+    top: 77px;
+    left: 248px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .span {
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 0;
+  }
+  
+  .account-details .text-wrapper-7 {
+    font-weight: 600;
+    font-size: 36px;
+  }
+  
+  .account-details .button {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    width: 171px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 28px;
+    position: absolute;
+    top: 211px;
+    left: 32px;
+    background-color: #2a7bc633;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .account-details .button-2 {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    width: fit-content;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .account-details .button-wrapper {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    width: 171px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 28px;
+    position: absolute;
+    top: 211px;
+    left: 216px;
+    background-color: rgba(42, 124, 199, 1);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .account-details .text-wrapper-8 {
+    height: 18px;
+    top: 110px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    left: 32px;
+    font-family: "DM Sans", Helvetica;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .text-wrapper-9 {
+    position: absolute;
+    height: 20px;
+    top: 31px;
+    cursor: pointer;
+    left: 32px;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .frame-3 {
+    width: 857px;
+    /* height: 295px; */
+    height: 355px;
+    top: 441px;
+    left: 404px;
+    position: absolute;
+    background-color: rgba(42, 124, 199, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+  .account-details .form-input-email {
+    top: 224px;
+    left: 32px;
+    position: absolute;
+    width: 282px;
+    height: 44px;
+  }
+  
+  .account-details .overlap-group {
+    position: relative;
+    width: 280px;
+    height: 44px;
+    background-color: #ffffffb2;
+    border-radius: 6px;
+  }
+  
+  .account-details .img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    left: 16px;
+  }
+  
+  .account-details .text-wrapper-10 {
+    position: absolute;
+    height: 27px;
+    top: 8px;
+    left: 53px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    letter-spacing: 0.20000000298023224px;
+    line-height: 27px;
+    white-space: nowrap;
+    font-style: normal;
+  }
+  
+  .account-details .form-input-password {
+    top: 155px;
+    left: 324px;
+    position: absolute;
+    width: 282px;
+    height: 44px;
+  }
+  
+  .account-details .chevron-down {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    left: 239px;
+  }
+  
+  .account-details .overlap-wrapper {
+    position: absolute;
+    width: 282px;
+    height: 44px;
+    top: 222px;
+    left: 324px;
+  }
+  
+  .account-details .overlap-group-wrapper {
+    top: 155px;
+    position: absolute;
+    width: 282px;
+    height: 44px;
+    left: 32px;
+  }
+  
+  .account-details .label-email {
+    position: absolute;
+    width: 109px;
+    height: 25px;
+    top: 9px;
+    left: 53px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    letter-spacing: 0.20000000298023224px;
+    line-height: 27px;
+    white-space: nowrap;
+    font-style: normal;
+  }
+  
+  .account-details .div-wrapper {
+    top: 99px;
+    position: absolute;
+    width: 282px;
+    height: 44px;
+    left: 32px;
+  }
+  
+  .account-details .line {
+    position: absolute;
+    width: 158px;
+    height: 2px;
+    top: 68px;
+    left: 31px;
+  }
+  
+  .account-details  .line2 {
+    position: absolute;
+    width: 158px;
+    height: 2px;
+    top: 68px;
+    left: 231px;
+  }
+  
+  .account-details .button-3 {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    width: 105px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 28px;
+    position: absolute;
+    top: 20px;
+    left: 728px;
+    background-color: rgba(42, 124, 199, 1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .account-details .button-4 {
+    all: unset;
+    box-sizing: border-box;
+    font-size: 18px;
+    position: relative;
+    width: fit-content;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .account-details .text-wrapper-11 {
+    position: absolute;
+    height: 20px;
+    cursor: pointer;
+    top: 31px;
+    left: 231px;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .frame-4 {
+    width: 419px;
+    height: 294px;
+    top: 123px;
+    left: 842px;
+    position: absolute;
+    background-color: rgba(42, 124, 199, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  
+  .account-details .group {
+    top: 84px;
+    position: absolute;
+    width: 351px;
+    height: 42px;
+    left: 32px;
+  }
+  
+  .account-details .text-wrapper-12 {
+    position: absolute;
+    top: 0;
+    left: 56px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .text-wrapper-13 {
+    position: absolute;
+    height: 18px;
+    top: 24px;
+    left: 56px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .text-wrapper-14 {
+    position: absolute;
+    height: 18px;
+    top: 24px;
+    left: 291px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .text-wrapper-15 {
+    position: absolute;
+    height: 21px;
+    top: 0;
+    left: 312px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .img-2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 1px;
+    left: 0;
+  }
+  
+  .account-details .group-2 {
+    top: 150px;
+    position: absolute;
+    width: 351px;
+    height: 42px;
+    left: 32px;
+  }
+  
+  .account-details .group-3 {
+    top: 216px;
+    position: absolute;
+    width: 351px;
+    height: 42px;
+    left: 32px;
+  }
+  
+  .account-details .text-wrapper-16 {
+    position: absolute;
+    height: 21px;
+    top: 0;
+    left: 315px;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .account-details .overlay {
+    position: fixed;
+    width: 1366px;
+    height: 86px;
+    top: 0;
+    left: 0;
+    background-color: #00000033;
+  }
+  
+  .account-details .link {
+    position: absolute;
+    width: 100px;
+    height: 46px;
+    top: 20px;
+    left: 73px;
+  
+    background-image: url(../../assets/edyou-logo-horiz-empower-white-png.png);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .account-details .nav-list {
+    position: absolute;
+    width: 554px;
+    height: 20px;
+    top: 33px;
+    left: 569px;
+  }
+  
+  .account-details .item {
+    position: absolute;
+    width: 106px;
+    height: 20px;
+    top: 0;
+    left: 14px;
+  }
+  
+  .account-details .link-2 {
+    position: relative;
+    width: 94px;
+    height: 20px;
+  }
+  
+  .account-details .text-wrapper-17 {
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    top: -2px;
+    left: 0;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .symbol {
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    top: 0;
+    left: 85px;
+    font-family: "Font Awesome 5 Free-Solid", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 15.8px;
+    white-space: nowrap;
+  }
+  
+  .account-details .link-wrapper {
+    width: 94px;
+    left: 120px;
+    position: absolute;
+    height: 20px;
+    top: 0;
+  }
+  
+  .account-details .link-3 {
+    position: relative;
+    width: 70px;
+    height: 20px;
+    left: 12px;
+  }
+  
+  .account-details .text-wrapper-18 {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    top: -2px;
+    left: 0;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .symbol-2 {
+    left: 60px;
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    top: 0;
+    font-family: "Font Awesome 5 Free-Solid", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 15.8px;
+    white-space: nowrap;
+  }
+  
+  .account-details .item-2 {
+    width: 81px;
+    left: 214px;
+    position: absolute;
+    height: 20px;
+    top: 0;
+  }
+  
+  .account-details .link-4 {
+    position: relative;
+    width: 57px;
+    height: 20px;
+    left: 12px;
+  }
+  
+  .account-details .text-wrapper-19 {
+    position: absolute;
+    width: 37px;
+    height: 20px;
+    top: -2px;
+    left: 0;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .symbol-3 {
+    left: 47px;
+    position: absolute;
+    width: 10px;
+    height: 16px;
+    top: 0;
+    font-family: "Font Awesome 5 Free-Solid", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 15.8px;
+    white-space: nowrap;
+  }
+  
+  .account-details .item-3 {
+    width: 57px;
+    left: 383px;
+    position: absolute;
+    height: 20px;
+    top: 0;
+  }
+  
+  .account-details .link-5 {
+    position: relative;
+    width: 33px;
+    height: 20px;
+    left: 12px;
+  }
+  
+  .account-details .text-wrapper-20 {
+    position: absolute;
+    width: 33px;
+    height: 20px;
+    top: -2px;
+    left: 0;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .item-4 {
+    width: 57px;
+    left: 317px;
+    position: absolute;
+    height: 20px;
+    top: 0;
+  }
+  
+  .account-details .text-wrapper-21 {
+    position: absolute;
+    height: 20px;
+    top: -2px;
+    left: -21px;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .item-5 {
+    width: 115px;
+    left: 439px;
+    position: absolute;
+    height: 20px;
+    top: 0;
+  }
+  
+  .account-details .link-6 {
+    position: relative;
+    width: 103px;
+    height: 20px;
+    left: 12px;
+  }
+  
+  .account-details .text-wrapper-22 {
+    position: absolute;
+    width: 103px;
+    height: 20px;
+    top: -2px;
+    left: 0;
+    font-family: "DM Sans 18pt-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 15.8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .account-details .button-5 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 110px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 28px;
+    position: absolute;
+    top: 27px;
+    left: 1218px;
+    background-color: rgba(42, 124, 199, 1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .account-details .button-6 {
+    all: unset;
+    box-sizing: border-box;
+    margin-top: -1px;
+    margin-left: -9.5px;
+    margin-right: -9.5px;
+    font-size: 14px;
+    position: relative;
+    width: fit-content;
+    font-family: "DM Sans", Helvetica;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    letter-spacing: 0.2px;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .account-details .image-2 {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    top: 25px;
+    left: 1158px;
+    object-fit: cover;
+  }
+  
+  
+  
+  
+  .input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    /* outline: none; */
+    height: 45px !important;
+    border: none;
+    color: #495057;
+    text-align: center;
+    background: white;
+    white-space: nowrap;
+    /* border: 1px solid #ced4da; */
+    border-radius: 0px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    padding-left: 2px !important;
+    border-radius: 0px !important;
+    background: white;
+    height: 45px !important;
+  
+  }
+  
+  
+  .tab-content {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+  
+  }
+  
+  .active-tab {
+    /* background-color: #ccc; */
+  }
+  
+  .active-content {
+    display: block;
+  }
+  
+  
+  
+  .custom-btn {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    width: 145px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(42, 124, 199, 1);
+    border-radius: 6px;
+    margin-left: 15px; /* Replace 'left: 15px;' with margin for better control */
+  }
+  
+  .cancel-btn {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    width: 145px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 26, 26, 0.60);
+  
+  
+    border-radius: 6px;
+    margin-left: 4px; /* Replace 'left: 15px;' with margin for better control */
+  }
+  
+  .fontss{
+    font-size: 16px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    .account-details .div {
+      background-color: #092a4b;
+      width: 400px;
+      height: 1372px;
+      position: relative;
+    }
+  
+    .account-details .image {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      top: 17px;
+      left: 17px;
+    }
+  
+    .account-details .text-wrapper-2 {
+      position: absolute;
+      height: 20px;
+      top: 24px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Bold", Helvetica;
+      font-weight: 700;
+      color: rgba(142, 194, 242, 1);
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .text-wrapper-3 {
+      position: absolute;
+      width: 200px;
+      height: 40px;
+      top: 52px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+    }
+  
+    .account-details .text-wrapper-4 {
+      position: absolute;
+      height: 20px;
+      top: 105px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .text-wrapper {
+      position: absolute;
+      height: 20px;
+      top: 140px;
+      left: 16px;
+      font-family: "DM Sans 18pt-Bold", Helvetica;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .button-wrapper {
+      width: 139px;
+      height: 40px;
+      top: 211px;
+      left: 200px;
+  
+    }
+  
+    .account-details .button {
+      width: 139px;
+      top: 211px;
+      left: 32px;
+  
+    }
+  
+    .account-details .element-month {
+      left: 208px;
+    }
+  
+    .account-details .group {
+      left: 15px;
+    }
+  
+    .account-details .group-2 {
+      left: 15px;
+    }
+  
+    .account-details .group-3 {
+      left: 15px;
+    }
+  
+    .account-details .frame {
+      width: 370px;
+      height: 179px;
+      top: 118px;
+      left: 15px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-2 {
+      width: 370px;
+      height: 294px;
+      top: 320px;
+      left: 15px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-4 {
+      width: 370px;
+      height: 474px;
+      top: 640px;
+      left: 15px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-3 {
+      width: 370px;
+      height: 455px;
+      top: 960px;
+      left: 15px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    /* inputs */
+    .account-details .overlap-wrapper {
+      position: absolute;
+      width: 282px;
+      height: 44px;
+      top: 225px;
+      left: 44px;
+    }
+  
+    .account-details .form-input-email {
+      top: 280px;
+      left: 32px;
+      position: absolute;
+      width: 282px;
+      height: 44px;
+    }
+  
+  
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait),
+  (device-width: 1024px) and (device-height: 11366px) and (orientation: portrait) {
+  
+  
+    .account-details .div {
+      background-color: #092a4b;
+      width: 400px;
+      height: 1372px;
+      position: relative;
+    }
+  
+    .account-details .image {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      top: 17px;
+      left: 17px;
+    }
+  
+    .account-details .text-wrapper-2 {
+      position: absolute;
+      height: 20px;
+      top: 24px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Bold", Helvetica;
+      font-weight: 700;
+      color: rgba(142, 194, 242, 1);
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .text-wrapper-3 {
+      position: absolute;
+      width: 200px;
+      height: 40px;
+      top: 52px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+    }
+  
+    .account-details .text-wrapper-4 {
+      position: absolute;
+      height: 20px;
+      top: 105px;
+      left: 150px;
+      font-family: "DM Sans 18pt-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .text-wrapper {
+      position: absolute;
+      height: 20px;
+      top: 140px;
+      left: 16px;
+      font-family: "DM Sans 18pt-Bold", Helvetica;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  
+    .account-details .button-wrapper {
+      width: 230px;
+      height: 40px;
+      top: 211px;
+      left: 280px;
+  
+    }
+  
+    .account-details .button {
+      width: 230px;
+      top: 211px;
+      left: 32px;
+  
+    }
+  
+    .account-details .element-month {
+      left: 380px;
+    }
+  
+    .account-details .group {
+      left: 15px;
+    }
+  
+    .account-details .group-2 {
+      left: 15px;
+    }
+  
+    .account-details .group-3 {
+      left: 15px;
+    }
+  
+    .account-details .frame {
+      width: 570px;
+      height: 179px;
+      top: 118px;
+      left: -90px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-2 {
+      width: 570px;
+      height: 294px;
+      top: 320px;
+      left: -90px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-4 {
+      width: 570px;
+      height: 334px;
+      top: 640px;
+      left: -90px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-3 {
+      width: 570px;
+      height: 320px;
+      top: 1000px;
+      left: -90px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+  
+    .account-details .overlap-wrapper {
+      position: absolute;
+      width: 282px;
+      height: 44px;
+      top: 225px;
+      left: 44px;
+    }
+  
+    .account-details .form-input-email {
+      top: 280px;
+      left: 32px;
+      position: absolute;
+      width: 282px;
+      height: 44px;
+    }
+  
+    .account-details[_ngcontent-serverApp-c64] .text-wrapper-14[_ngcontent-serverApp-c64] {
+      position: absolute;
+      height: 18px;
+      top: 24px;
+      left: 391px;
+      font-family: "DM Sans", Helvetica;
+      font-weight: 400;
+      /* color: #ffffff; */
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+  
+    .account-details[_ngcontent-serverApp-c64] .text-wrapper-15[_ngcontent-serverApp-c64] {
+      position: absolute;
+      height: 21px;
+      top: 0;
+      left: 391px;
+      font-family: "DM Sans", Helvetica;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: right;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+  
+  
+  }
+  
+  
+  
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+    .account-details .frame {
+      width: 259px;
+      height: 618px;
+      top: 118px;
+      left: 20px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-2 {
+      width: 350px;
+      height: 294px;
+      top: 123px;
+      left: 295px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-4 {
+      width: 340px;
+      height: 294px;
+      top: 123px;
+      left: 660px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+    .account-details .frame-3 {
+      width: 710px;
+      height: 295px;
+      top: 441px;
+      left: 295px;
+      position: absolute;
+      background-color: rgba(42, 124, 199, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+  
+  
+    .account-details .button {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      width: 130px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 28px;
+      position: absolute;
+      top: 211px;
+      left: 32px;
+      background-color: #2a7bc633;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+  
+    .account-details .button-wrapper {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      width: 130px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 28px;
+      position: absolute;
+      top: 211px;
+      left: 180px;
+      background-color: rgba(42, 124, 199, 1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+  
+    .account-details .element-month {
+      position: absolute;
+      height: 47px;
+      top: 77px;
+      left: 210px;
+      font-family: "DM Sans", Helvetica;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 24px;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+  
+    .account-details .span {
+      font-family: "DM Sans", Helvetica;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 20px;
+      letter-spacing: 0;
+  
+    }
+  
+    .account-details .group {
+      top: 84px;
+      position: absolute;
+      width: 250px;
+      /* background: red; */
+      height: 42px;
+      left: 32px;
+    }
+  
+    .account-details .group-2 {
+      top: 150px;
+      position: absolute;
+      width: 250px;
+      height: 42px;
+      left: 32px;
+    }
+  
+    .account-details .group-3 {
+      top: 216px;
+      position: absolute;
+      width: 250px;
+      height: 42px;
+      left: 32px;
+    }
+  
+    .account-details .text-wrapper-14 {
+      position: absolute;
+      height: 18px;
+      top: 24px;
+      left: 240px;
+      font-family: "DM Sans", Helvetica;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 0;
+      line-height: normal;
+  
+  
+  
+    }
+  
+    .account-details .text-wrapper-15 {
+      position: absolute;
+      height: 21px;
+      top: 0;
+      left: 240px;
+      font-family: "DM Sans", Helvetica;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: right;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+  
+  }

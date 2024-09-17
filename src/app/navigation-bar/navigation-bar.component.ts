@@ -39,6 +39,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   sc: boolean= false;
   isLoggedIn: boolean = false;
   userName: any;
+  user: any;
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -55,7 +56,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     } else {
       this.screenSize = 'large'; // Desktop
     }
-  
+    this.user = JSON.parse(localStorage.getItem('user') || '{}')
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         // Navigation is starting
@@ -101,6 +102,10 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     // } else {
     //   this.screenSize = 'large'; // Desktop
     // }
+    
+    this.userservice.loggedIn$.subscribe(state => {
+      this.checkUserLogin()
+    });
   }
   onMouseOver(): void {
     this.isHovered = true;
@@ -186,21 +191,39 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   this.userservice.showPopup();
   }
   logOut(){
-    this.router.navigate(['/main']);
+    this.router.navigate(['/SC']);
     localStorage.removeItem('LoginState');
+    localStorage.removeItem('email');
     localStorage.removeItem('user');
     this.userservice.logout()
     // window.location.reload();
   
 
   }
+  
+  scrollToPricing(): void {
+  console.log(  this.currentUrl)
+  if(this.currentUrl == '/SC/profile'){
+    this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
+   // const element = document.getElementById('pricing_section_id');
+    // if (element) {
+    //   element.scrollIntoView({ behavior: 'smooth' });
+    // }
+  }else{
+    const element = document.getElementById('pricing_section_id');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  }
 
   navigateToPricing() {
-    this.router.navigate(['/pricing'])
+    this.router.navigate(['SC/pricing'])
   }
   navigateToProfile(){
-   // this.menuToggle()
-    this.router.navigate(['/profile']);
+    this.menuToggle()
+    this.sc=true
+    this.router.navigate(['/SC/profile']);
   }
   menuToggle() {
     const toggleMenu: any = document.querySelector("#menuId");
@@ -208,5 +231,32 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
 
     console.log('hit menu')
   }
+  checkUserLogin(){
+    const storedLoginState = localStorage.getItem('LoginState');
 
+    // Parse the JSON string to a boolean value
+    const isLoggedIn = storedLoginState ? JSON.parse(storedLoginState) : false;
+    console.log(typeof(isLoggedIn), 'user check',isLoggedIn)
+    // Check the login state and perform the corresponding action
+    if (isLoggedIn == true) {
+      console.log('true state')
+      this.isLoggedIn = true 
+      if (this.user.f_name && this.user.l_name) {
+        this.userName = this.user.f_name + " " + this.user.l_name
+      } 
+    } else {
+      this.isLoggedIn = false
+      this.user = JSON.parse(localStorage.getItem('user') || '{}')
+      this.userservice.loggedIn$.subscribe(state => {
+  
+        this.isLoggedIn = state;
+        console.log('else state ==',isLoggedIn)
+        
+       // console.log('state login', this.isLoggedIn)
+       if (this.user.f_name && this.user.l_name) {
+        this.userName = this.user.f_name + " " + this.user.l_name
+       }
+      });
+    }
+  }
 }

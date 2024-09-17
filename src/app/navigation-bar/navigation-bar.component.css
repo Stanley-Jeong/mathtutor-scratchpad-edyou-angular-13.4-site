@@ -181,6 +181,144 @@ margin-left:-23%
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+    margin-left: -159px;
     margin-top: -18px;
+}
+
+.prifilePic{
+  margin-top: 5px;
+  margin-left: -25px;
+}
+
+
+ol, ul {
+margin-top: 0;
+margin-bottom: 0rem;
+}
+
+
+/* profile circle css */
+.action {
+  /* position: fixed;
+  top: 20px;
+  right: 30px; */
+  margin-right:-180px;
+  margin-left: -75px;
+}
+
+.action .profile {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu {
+  position: absolute;
+  top: 120px;
+  right: -10px;
+  /* right: 120px; */
+  padding: 10px 20px;
+  background: #fff;
+  width: 200px;
+  box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active {
+  top: 70px;
+  visibility: visible;
+  opacity: 1;
+  /* top: 60px; */
+  visibility: visible;
+  opacity: 1;
+  margin-right: 129px;
+}
+
+
+
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.action .menu h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.5em;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul li {
+  list-style: none;
+  padding: 5px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img {
+  opacity: 1;
+}
+
+.action .menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0e0d0d !important;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: black !important;
+}
+
+
+.hide-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 1025px) {
+  .hide-on-mobile {
+    display: block;
+  }
 }

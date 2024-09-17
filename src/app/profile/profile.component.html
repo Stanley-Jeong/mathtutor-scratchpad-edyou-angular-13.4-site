@@ -1,0 +1,193 @@
+<div class="account-details">
+    <div class="div">
+
+        <div class="frame">
+            <p class="text-wrapper">Joined on 20 Aug 2023</p>
+            <div class="text-wrapper-2">{{this.userDetails.name}}</div>
+            <!-- <div class="text-wrapper-3">Carnegie Vanguard High School.</div> -->
+            <!-- <div class="text-wrapper-4">(Grade 6)</div> -->
+            <img class="image" src="../../assets/images/holder.png" />
+        </div>
+        <div class="frame-2">
+            <div class="text-wrapper-5">Limited</div>
+            <div class="text-wrapper-6">2 Days Left</div>
+            <p class="element-month">
+                <span class="span">$</span>
+                <span class="text-wrapper-7">75</span>
+                <span class="span">/Month</span>
+            </p>
+            <button class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
+            <div class="text-wrapper-8">7 days free trial</div>
+            <div class="text-wrapper-9">Membership Detail</div>
+        </div>
+
+        <div class="frame-3">
+            <div id="tabContents">
+                <div id="accountDetails" class="tab-content" [class.active-content]="activeTab === 'accountDetails'">
+
+
+
+                
+                    <form class="mt-3" [formGroup]="editProfileForm">
+                    <div class="container">
+                        <br>
+                        <div class="row mt-2">
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input type="text"  *ngIf="!edit" class="form-control fontss" formControlName="first_name" name="first_name" [attr.disabled]="true" placeholder="First name">
+                                    <input type="text"  *ngIf="edit" class="form-control fontss" formControlName="first_name" name="first_name" placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input type="text"  *ngIf="!edit" class="form-control fontss"  formControlName="last_name" name="last_name" [attr.disabled]="true" placeholder="Last name">
+                                    <input type="text"  *ngIf="edit" class="form-control fontss" formControlName="last_name" name="last_name" placeholder="Last name">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control fontss"  [attr.disabled]="true" formControlName="editEmail" name="editEmail" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input class="input-field fontss" *ngIf="!edit" [attr.disabled]="true"  formControlName="dob" name="dob" type="text"
+                                     placeholder="DOB">
+                                    <input class="input-field fontss" *ngIf="edit" formControlName="dob" name="dob" type="text" onfocus="(this.type='date')"
+                                    onblur="(this.type='text')" placeholder="DOB">
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="col-md-5">
+                                <div class="mb-3">
+                                    <select class="form-control fontss"  *ngIf="!edit" name="school" [attr.disabled]="true" formControlName="school">
+                                        <option value=" ">Select option
+                                        </option>
+                                        <option value="Sierra Canyon">Sierra Canyon</option>
+                                        <option value="UAB">UAB</option>
+                                        <option value="HCA">HCA</option>
+                                        <option value="ASCP">ASCP</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <select class="form-control fontss"  *ngIf="edit" name="school" formControlName="school">
+                                        <option value="">Select option
+                                        </option>
+                                        <option value="Sierra Canyon">Sierra Canyon</option>
+                                        <option value="UAB">UAB</option>
+                                        <option value="HCA">HCA</option>
+                                        <option value="ASCP">ASCP</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div> -->
+
+                            <div class="col-md-5"></div>
+                            <br>
+                            <div class="d"  >
+                                <!-- <div class="row">
+                                    <button class="changePassBtn"><button class="button-2">Save</button></button>
+                                    <button class="changePassBtn"><button class="button-2">Cancel</button></button>
+                                </div> -->
+                              
+                                <div class="row " *ngIf="edit">
+                                    <div class="col-6">
+                                        <button class="custom-btn" (click)="updateProfile()">
+                                            <img class="" style="width : 24px; color:white;"
+                  *ngIf="isLoading2" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+                  *ngIf="!isLoading2">Save</span></button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="cancel-btn" (click)="editUser()">Cancel</button>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                          
+                        </div>
+                    </div>
+</form>
+
+
+                </div>
+
+                <!-- <div id="changePassword" class="tab-content" [class.active-content]="activeTab === 'changePassword'">
+                    <br>
+                    <div class="container">
+                        <br>
+                        <div class="row mt-2">
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" formControlName="f_name" name="f_name" placeholder="New Password">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="input2" placeholder="Confirm Password">
+                                </div>
+                            </div>
+
+                            <br><br>
+
+                            <button class="custom-btn"><button class="button-2">Submit</button></button>
+
+
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+            <img *ngIf="activeTab === 'accountDetails'" class="line" src="../../assets/line-1.svg" />
+            <!-- <img *ngIf="activeTab === 'changePassword'" class="line2" src="../../assets/line-1.svg" /> -->
+            <button class="button-3" (click)="editUser()"><button class="button-4">Edit</button></button>
+            <div class="text-wrapper-9" [class.active-tab]="activeTab === 'accountDetails'"
+                (click)="setActiveTab('accountDetails')">Account Details</div>
+            <!-- <div class="text-wrapper-11" [class.active-tab]="activeTab === 'changePassword'"
+                (click)="setActiveTab('changePassword')">Change Password</div> -->
+        </div>
+
+
+        <div class="frame-4">
+            <!-- {{ userDetails.orderHistory | json }}
+            <div class="group" *ngFor="let order of  userOrderFull.orderHistory" >
+                
+                <p><strong>Plan:</strong> {{ order.plan }}</p>
+                <p><strong>Price ID:</strong> {{ order.price_id }}</p>
+                <p><strong>Created At:</strong> {{ order.created_at }}</p>
+                <p><strong>Price Amount:</strong> {{ order.price_amount }}</p>
+                <p><strong>Expires At:</strong> {{ order.expire_at }}</p>
+                <p><strong>Enroll Status:</strong> {{ order.sc_enroll }}</p>
+                <p><strong>Product ID:</strong> {{ order.prod_id }}</p>
+              </div> -->
+            <div class="group"*ngFor="let order of  userOrderFull.orderHistory" >
+                <div class="text-wrapper-12">{{ order.plan }}</div>
+                <div class="text-wrapper-13">{{ order.created_at }}</div>
+                <!-- <div class="text-wrapper-14">{{ order.price_id }}</div> -->
+                <div class="text-wrapper-15">{{ order.price_amount }}</div>
+                <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
+            </div>
+            <!-- <div class="group-2">
+                <div class="text-wrapper-12">Unlimited Plan</div>
+                <div class="text-wrapper-13">20 Aug 2024</div>
+                <div class="text-wrapper-14">Debited</div>
+                <div class="text-wrapper-15">$119</div>
+                <img class="img-2" src="../../assets/info-circle-1.svg" />
+            </div>
+            <div class="group-3">
+                <div class="text-wrapper-12">Limited Plan</div>
+                <div class="text-wrapper-13">10 Oct 2023</div>
+                <div class="text-wrapper-14">Debited</div>
+                <div class="text-wrapper-16">$75</div>
+                <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
+            </div> -->
+            <div class="text-wrapper-9">Order History</div>
+        </div>
+
+    </div>
+</div>
+<br><br>

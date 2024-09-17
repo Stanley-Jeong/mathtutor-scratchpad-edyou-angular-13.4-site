@@ -19,15 +19,19 @@ export class ScComponent implements OnInit {
   isLoading3: boolean = false;
   isloaderpricing:boolean = false;
   error: any = "";
+  storedLogin : any;
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
 
   constructor(private router: Router, private service: UserService) { }
 
   ngOnInit(): void {
+
+    //  this.storedLogin = localStorage.getItem('user');;
+    // console.log('state',this.storedLogin)
   }
 
   async ngAfterViewInit() {
-
+    this.storedLogin = localStorage.getItem('user');;
     //kanx video changes 
     const video = this.heroVideo.nativeElement;
    
@@ -53,6 +57,7 @@ export class ScComponent implements OnInit {
     //   }
     // }
   }
+ 
   handleVolumeChange(video: HTMLVideoElement) {
     // Check if the video is muted
     if (video.muted) {
@@ -117,8 +122,16 @@ export class ScComponent implements OnInit {
   ModalOpen() {
     // window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
+  
+    this.storedLogin = localStorage.getItem('user');
+    // console.log('state',this.storedLogin)
+    console.log("modal",this.storedLogin)
+    if(this.storedLogin){
+      this.buyPackage();
+      console.log("modal","his.storedLogin")
+    }else{
     this.openForm = !this.openForm
-
+    }
   }
 
 
@@ -191,7 +204,7 @@ this.validateAllFormFields(this.subjectform);
     let payload = {
       "email": email,
       "prod_id": "prod_QofbY9vz5uizFD",
-      "plan": "Trailblazer",
+      "plan": "Trailblazers",
       "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
       "mode": "setup",
       "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
@@ -211,5 +224,34 @@ this.validateAllFormFields(this.subjectform);
       }
     })
 
+  }
+  buyPackage(){
+  var   x :any;
+     x   = localStorage.getItem('email');
+   
+    console.log('email',x)
+    this.isloaderpricing = true;
+    let payload = {
+      "email": x,
+      "prod_id": "prod_QofbY9vz5uizFD",
+      "plan": "Trailblazers",
+      "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+      "mode": "setup",
+      "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+      "price_amount": "199"
+    }
+    this.service.scSchool(payload).subscribe((res: any) => {
+      
+     
+      if (res.statusCode == 303) {
+       
+       
+        window.location.href = res.headers.Location;
+     
+       
+     
+        this.isloading =false;
+      }
+    })
   }
 }

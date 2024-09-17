@@ -283,6 +283,7 @@ export class LoginComponent implements OnInit {
           if (res.statusCode == 200) {
             this.isLoading2 = false
             this.otpForm.reset()
+            this.closePopup()
             this.signUpform.reset()
   
             this.showMessage = res.message

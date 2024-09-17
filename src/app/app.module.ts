@@ -1,11 +1,8 @@
-import {APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser'
-
-// import { ServiceWorkerModule } from '@angular/service-worker';
-// import { environment } from '../environments/environment';
+import { BrowserModule } from '@angular/platform-browser';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
@@ -24,14 +21,18 @@ import { EdyousAiComponent } from './edyous-ai/edyous-ai.component';
 import { RevolutionizingEducationComponent } from './revolutionizing-education/revolutionizing-education.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InvestorLoginComponent } from './investor-login/investor-login.component';
-import { Router } from "@angular/router";
+import { ExtraOptions, Router, RouterModule } from "@angular/router"; // <-- Add RouterModule
 import * as Sentry from "@sentry/angular-ivy";
 import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
-
+const routerOptions: ExtraOptions = {
+  anchorScrolling: 'enabled', // Enable fragment scrolling
+  scrollPositionRestoration: 'enabled', // Restore scroll position on navigation
+};
 
 @NgModule({
   declarations: [
@@ -56,40 +57,41 @@ import { LoginComponent } from './login/login.component';
     InvestorLoginComponent,
     ScComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    CommonModule,
     AppRoutingModule,
-    CommonModule ,
-    FormsModule,
-    ReactiveFormsModule,
+    RouterModule.forRoot([], routerOptions), // <-- Add RouterModule with routerOptions
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'
     // }),
   ],
-  providers: [{
-    provide: ErrorHandler,
-    useValue: Sentry.createErrorHandler({
-      showDialog: false,
-    }),
-  }, {
-    provide: Sentry.TraceService,
-    deps: [Router],
-  },
-  {
-    provide: APP_INITIALIZER,
-    useFactory: () => () => {},
-    deps: [Sentry.TraceService],
-    multi: true,
-  },
-],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useValue: Sentry.createErrorHandler({
+        showDialog: false,
+      }),
+    },
+    {
+      provide: Sentry.TraceService,
+      deps: [Router],
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: () => () => {},
+      deps: [Sentry.TraceService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(trace: Sentry.TraceService) {}
 }

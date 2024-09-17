@@ -284,19 +284,19 @@ headerClear(){
   }
 
   sendwaitlistData(data:any){
-   return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added',data)
-   // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
+  // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added',data)
+    return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
   }
 //scnewtab
 
   scSchool(data:any){
-    // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
-     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc',data)
+    return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
+    // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc',data)
       
      }
      sendwaitlistDataSc(data:any){
-      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added_SC',data)
-   //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added_SC',data)
+     // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added_SC',data)
+   return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added_SC',data)
      }
      signUp(data: any) {
       // Set headers
@@ -413,5 +413,12 @@ headerClear(){
         });
         return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_session', data, { headers: headers })
       }
-  
+      cancelSubscription(data:any){
+        // Set headers
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+        return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/cancel_subscription', data, { headers: headers })
+      }
+      
 }

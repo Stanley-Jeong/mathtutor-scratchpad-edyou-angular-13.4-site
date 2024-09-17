@@ -20,6 +20,7 @@ import { ScComponent } from './sc/sc.component';
 import { ScRedirectGuard } from './sc-redirect.guard';
 import { SuccesspaymentComponent } from './successpayment/successpayment.component';
 import { FailedpaymentComponent } from './failedpayment/failedpayment.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'safety',  component:SafetyComponent},
   {path: 'SC', component: ScComponent },
   { path: 'sc', redirectTo: 'SC', pathMatch: 'full' },
+  {path: 'SC/profile', component:ProfileComponent},
   //{path: 'sc', component: ScComponent ,canActivate: [ScRedirectGuard]},
   {path: 'academic-integrity', component:AcademicIntegrityComponent},
   {path: 'labs', component: LabsComponent},
@@ -55,6 +57,7 @@ const routes: Routes = [
   {path: 'computer-science', component:CoursePageComponent},
   {path: 'project-management', component:CoursePageComponent},
   {path: 'latin', component:CoursePageComponent},
+
   {path: 'sc/payment-success', component:SuccesspaymentComponent},
   {path: 'sc/payment-failed', component:FailedpaymentComponent},
   {path: '**', redirectTo: '/'},
