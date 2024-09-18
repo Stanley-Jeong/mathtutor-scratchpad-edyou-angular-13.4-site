@@ -218,8 +218,10 @@
                    
                     <div class="elementor-icon">
                         <div class="scLogoimg"   >
-                            <img  *ngIf="!isScPage" (click)="navigateToSC()" src ="../assets/icons/Button.png" alt=""   style="height:32px; margin-top: -13px;">
-                          </div>
+                            <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                            <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
+                            <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
+                        </div>
                         <!-- <a >
                             <button class="pricing-button"style="margin-top:2%">Pre-enroll now</button>
                           </a> -->
@@ -235,7 +237,7 @@
                     <div class="elementor-icon-wrapper">
                         <div class="elementor-icon">
                          
-                            <i aria-hidden="true" [ngClass]="{'safety': isSafetyState}"  class="fas fa-bars"  (click)="showNavigation()"></i>
+                            <i aria-hidden="true" [ngClass]="{'safety': isSafetyState}" style="margin-top:18px"  class="fas fa-bars"  (click)="showNavigation()"></i>
                             <!-- <i aria-hidden="true" class="fas fa-bars" (click)="showNavigation()"></i> -->
                         </div>
                     </div>
