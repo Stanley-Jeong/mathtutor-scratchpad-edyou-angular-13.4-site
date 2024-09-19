@@ -8,6 +8,7 @@ a{
   right: 30px; */
   margin-right:-180px;
   margin-left: -240px;
+  margin-top: 5px;
 }
 
 .buttonProfile{
@@ -381,9 +382,12 @@ margin-bottom: 0rem;
     margin-left: 68px;
     margin-right: -25px;
   }
-  .row{
+  /* .row{
     margin-top:-7px;
-  }
+  } */
+   .merginMobile{
+    margin-top: -68%;
+   }
   .action .menu.active{
     top: 76px;
     margin-right: 76px;
