@@ -40,6 +40,10 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   isLoggedIn: boolean = false;
   userName: any;
   user: any;
+ 
+  userOrderFull: any;
+  userDetails: any;
+  buttonName: any;
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -226,6 +230,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     this.router.navigate(['/SC/profile']);
   }
   menuToggle() {
+    this.getProfileDetail()
     const toggleMenu: any = document.querySelector("#menuId");
     toggleMenu.classList.toggle("active");
 
@@ -239,13 +244,30 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     console.log(typeof(isLoggedIn), 'user check',isLoggedIn)
     // Check the login state and perform the corresponding action
     if (isLoggedIn == true) {
+      this.getProfileDetail
+      this.menuToggle
+//  let  x :any = this.userservice.buttonName;
+//  console.log(x,'navitem')
+//  if(x.orderHistory.length>0){
+//   this.buttonName = "Learn"
+
+// }else {
+//     this.buttonName = "Startfree"
+// }
+//  this.userObj = res.user;
+// this.shared.SharedData(this.userObj);
+
+console.log(" this.userDetails", this.userDetails)
+
       console.log('true state')
       this.isLoggedIn = true 
       if (this.user.f_name && this.user.l_name) {
         this.userName = this.user.f_name + " " + this.user.l_name
       } 
+    
     } else {
       this.isLoggedIn = false
+      this.logOut
       this.user = JSON.parse(localStorage.getItem('user') || '{}')
       this.userservice.loggedIn$.subscribe(state => {
   
@@ -259,4 +281,72 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       });
     }
   }
+  
+  getProfileDetail() {
+    let createToken = {
+      // token: this.token,
+     email: this.user.email,
+    };
+    this.userservice.getProfileAPI(createToken).subscribe((res: any) => {
+      if (res.statusCode == 200) {
+     
+        this.userOrderFull= res;
+        this.userDetails = res;
+        let plan = res.plan 
+        let lengthofOrder = res.orderHistory.length
+        if(lengthofOrder > 0){
+      
+          this.checkIfExpired(plan.expire_at)
+        }else {
+            this.buttonName = "Startfree"
+        }
+       
+        
+          // Determine the case based on the order history length
+          // switch (lengthofOrder) {
+          //   case lengthofOrder > 0:
+          //     this.checkIfExpired(plan.expire_at)
+          //    // this.buttonName = 'Learn';
+          //     break;
+          //   case lengthofOrder = 0:
+          //     this.buttonName = 'Startfree';
+
+          //     break;
+          //     // case lengthofOrder >= 0 and :
+          //     //   this.buttonName = 'Startfree';
+          //       // break;
+          //   default:
+          //     this.buttonName = 'Unknown'; // Default case (optional)
+          // }
+        //  this.userObj = res.user;
+        // this.shared.SharedData(this.userObj);
+     
+console.log(" this.userDetails", this.userDetails)
+      }else{
+        
+      }
+    })
+  
+  }
+  linkToedyouUser(){
+    console.log(this.user.link,this.user)
+    window.location.href = this.user.link;
+    
+  }
+  checkIfExpired(dateTimeString: string) {
+    // Convert the date-time string into a JavaScript Date object
+    const [datePart, timePart] = dateTimeString.split(',');
+    const formattedDateTime = `${datePart}T${timePart}`;
+    const parsedDate = new Date(formattedDateTime);
+
+    // Get the current date and time
+    const currentDate = new Date();
+console.log(parsedDate,currentDate)    // Compare the dates
+    if (parsedDate < currentDate) {
+      this.buttonName = 'Renew';
+    } else {
+         this.buttonName = "Learn"
+    }
+  }
+
 }

@@ -266,13 +266,15 @@
                       </ul>
                     </div>
                   </div> 
-    
-                <button (click)="scrollToPricing()" class="loginBtn" style="background-color: #2DC071; width: 110px;margin-top: 11px;margin-left: 174px;"> <span>Start Free</span></button>
+                  <button *ngIf="!buttonName && isLoggedIn"(click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Start Free</span></button>
+                <button *ngIf="buttonName =='Startfree' "(click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Start Free</span></button>
+                <button *ngIf="buttonName =='Learn'" (click)="linkToedyouUser()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
+                <button *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Renew Now</span></button>
             
             </div>
 
                 
-              <div  *ngIf="!isLoggedIn" style="margin-right: 20px;">
+              <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;">
               <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
           <!-- </ng-container> -->
   </div>

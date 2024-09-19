@@ -2,7 +2,7 @@
     <div class="div">
 
         <div class="frame">
-            <p class="text-wrapper">Joined on 20 Aug 2023</p>
+            <p class="text-wrapper">Joined on {{userDetails.created_at | date:'dd MMM yyyy'}}</p>
             
             <!-- <div class="text-wrapper-3">Carnegie Vanguard High School.</div> -->
             <!-- <div class="text-wrapper-4">(Grade 6)</div> -->
@@ -28,16 +28,18 @@
               <div class="text-wrapper-2">{{this.userDetails.name}}</div>
         </div>
         <div class="frame-2">
-            <div class="text-wrapper-5">Limited</div>
-            <div class="text-wrapper-6">2 Days Left</div>
+            <div class="text-wrapper-5">Trailblazers</div>
+            <div *ngIf="daysLeft" class="text-wrapper-6">{{daysLeft}} Days left </div>
+            <div *ngIf="!daysLeft" class="text-wrapper-6"> 14 Days left for free trial </div>
             <p class="element-month">
                 <span class="span">$</span>
-                <span class="text-wrapper-7">75</span>
+                <span class="text-wrapper-7">199</span>
                 <span class="span">/Month</span>
             </p>
-            <button class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <button *ngIf="userOrderFull?.orderHistory?.length > 0" class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <button *ngIf="userOrderFull?.orderHistory?.length == 0" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
             <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
-            <div class="text-wrapper-8">7 days free trial</div>
+            <!-- <div class="text-wrapper-8">{{daysLeft}} days left for free trial</div> -->
             <div class="text-wrapper-9">Membership Detail</div>
         </div>
 
@@ -73,9 +75,9 @@
 
                             <div class="col-md-5">
                                 <div class="mb-3">
-                                    <input class="input-field fontss" *ngIf="!edit" [attr.disabled]="true"  formControlName="dob" name="dob" type="text"
+                                    <input class="input-field form-control  fontss" *ngIf="!edit" [attr.disabled]="true"  formControlName="dob" name="dob" type="text"
                                      placeholder="DOB">
-                                    <input class="input-field fontss" *ngIf="edit" formControlName="dob" name="dob" type="text" onfocus="(this.type='date')"
+                                    <input class="input-field  form-control fontss" *ngIf="edit" formControlName="dob" name="dob" type="text" onfocus="(this.type='date')"
                                     onblur="(this.type='text')" placeholder="DOB">
                                 </div>
                             </div>
@@ -183,12 +185,15 @@
                 <p><strong>Enroll Status:</strong> {{ order.sc_enroll }}</p>
                 <p><strong>Product ID:</strong> {{ order.prod_id }}</p>
               </div> -->
-            <div class="group"*ngFor="let order of  userOrderFull.orderHistory" >
+             
+              <div *ngIf="userOrderFull?.orderHistory?.length > 0">
+            <div class="group"  *ngFor="let order of  userOrderFull.orderHistory" >
                 <div class="text-wrapper-12">{{ order.plan }}</div>
-                <div class="text-wrapper-13">{{ order.created_at }}</div>
+                <div class="text-wrapper-13">{{ order.created_at | date:'dd MMM yyyy' }}</div>
                 <!-- <div class="text-wrapper-14">{{ order.price_id }}</div> -->
-                <div class="text-wrapper-15">{{ order.price_amount }}</div>
+                <div class="text-wrapper-15">${{ order.price_amount }}</div>
                 <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
+            </div>
             </div>
             <!-- <div class="group-2">
                 <div class="text-wrapper-12">Unlimited Plan</div>
@@ -204,6 +209,9 @@
                 <div class="text-wrapper-16">$75</div>
                 <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
             </div> -->
+            <div class="group"*ngIf="userOrderFull?.orderHistory?.length == 0">
+                <a style="margin-top:12px">No subscription</a>
+                </div>
             <div class="text-wrapper-9">Order History</div>
         </div>
 

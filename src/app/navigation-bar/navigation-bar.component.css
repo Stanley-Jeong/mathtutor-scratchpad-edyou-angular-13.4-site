@@ -1,6 +1,18 @@
 a{
   cursor: pointer;
 }
+
+.action {
+  /* position: fixed;
+  top: 20px;
+  right: 30px; */
+  margin-right:-180px;
+  margin-left: -240px;
+}
+
+.buttonProfile{
+  background-color: #2DC071; width: 110px;margin-top: 11px;margin-left: 182px;
+}
 .scLogoimg{
   
     margin-top: 13px;
@@ -133,7 +145,8 @@ ul {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   /* Styles for iPad in portrait mode */
-
+  .buttonProfile {
+    margin-right: 70px;}
   .targetDivlarge{
       position: fixed;
       top: 0;
@@ -155,53 +168,19 @@ height:auto; /* Adjust size as needed */
   transition: opacity 0.3s ease; /* Smooth transition */
   margin-top: -44%;
 }
-@media all and  (min-width: 375px)and (max-width:600px) {
-.scLogoimg{
-width:80%;
-margin-left:-23%
-}
-.scLogoimg {
-  width: 126%;
-  margin-left: -48%;
-  margin-top: 13px;
-}
-.scLogoimgMobile
-{
-  padding-right : 9px;
-  height: 28px;
-}
 
-.scLogoimgMobilebutton
-{
-  
-  height: 28px;
-  padding-right: 7px;
-}
-.mobileShow{
-  margin-top:-93px;
-}
-.e-con-inner{
-  max-height:72.8px;
-}
-
-  .scLogoimgMobile{
-      padding-right: 11px;
-      height: 28px;
-      margin-top: -14px;
-  }
-
-}
 .loginBtn {
   display: flex;
-  width: 84px;
+  /* width: 84px; */
   border: none;
   height: 32px;
-  margin-top: 21px;
+  /* margin-top: 21px; */
   border-radius: 4px;
   padding: 8px 28px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
 }
 .loginBtn span {
   color: var(--Primary-White, #FFF);
@@ -221,8 +200,8 @@ margin-left:-23%
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -159px;
-    margin-top: -18px;
+    /* margin-left: -159px; */
+    margin-top: -10px;
 }
 
 .prifilePic{
@@ -236,15 +215,6 @@ margin-top: 0;
 margin-bottom: 0rem;
 }
 
-
-/* profile circle css */
-.action {
-  /* position: fixed;
-  top: 20px;
-  right: 30px; */
-  margin-right:-180px;
-  margin-left: -75px;
-}
 
 .action .profile {
   position: relative;
@@ -286,7 +256,8 @@ margin-bottom: 0rem;
   /* top: 60px; */
   visibility: visible;
   opacity: 1;
-  margin-right: 129px;
+  margin-right: 205px;
+ 
 }
 
 
@@ -356,9 +327,73 @@ margin-bottom: 0rem;
 .hide-on-mobile {
   display: none;
 }
-
-@media only screen and (min-width: 1025px) {
+@media all and  (min-width: 375px)and (max-width:600px) {
+  .scLogoimg{
+  width:80%;
+  margin-left:-23%
+  }
+  .scLogoimg {
+    width: 126%;
+    margin-left: -48%;
+    margin-top: 13px;
+  }
+  .scLogoimgMobile
+  {
+    padding-right : 9px;
+    height: 28px;
+  }
+  
+  .scLogoimgMobilebutton
+  {
+    
+    height: 28px;
+    padding-right: 7px;
+  }
+  .mobileShow{
+    margin-top:-93px;
+  }
+  .e-con-inner{
+    max-height:72.8px;
+  }
+  
+    .scLogoimgMobile{
+        padding-right: 11px;
+        height: 28px;
+        margin-top: -14px;
+    }
+    .action .profile{
+     
+      width: 31px;
+      height: 31px;
+     
+      
+  }
+  .action{
+    margin-right: -81px;
+    margin-left: -73px;
+    margin-top: 26px;
+  }
+  .buttonProfile{
+    background-color: #2DC071;
+    width: 88px;
+    height: 29px;
+    margin-top: 25px;
+    margin-left: 68px;
+    margin-right: -25px;
+  }
+  .row{
+    margin-top:-7px;
+  }
+  .action .menu.active{
+    top: 76px;
+    margin-right: 76px;
+}
+  
+  }
+@media only screen and (min-width: 1024px) {
   .hide-on-mobile {
     display: block;
   }
+  .buttonProfile {
+    margin-right: 70px;}
 }

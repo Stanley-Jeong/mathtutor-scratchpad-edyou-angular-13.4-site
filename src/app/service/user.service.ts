@@ -4,6 +4,7 @@ import { BehaviorSubject, catchError, Subject, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { API } from '../service/restapi';
 import { isPlatformBrowser } from '@angular/common';
+import { userInfo } from 'os';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class UserService {
   token:any 
   headers:any;
   IndexLearningNo: any;
+  buttonvalue: any;
+
+  private buttonValueSubject = new BehaviorSubject<any>('Initial Button Value');
+  buttonValue$ = this.buttonValueSubject.asObservable(); 
 
   private sharedData = new BehaviorSubject({});
   currentSharedData = this.sharedData.asObservable();
@@ -37,6 +42,7 @@ export class UserService {
   private objectValue = new BehaviorSubject(null);
   objvalue = this.objectValue.asObservable();
   private isBrowser;
+
   constructor(
     private http: HttpClient, @Inject(PLATFORM_ID) private platformId: any
     ) {  
@@ -306,7 +312,7 @@ headerClear(){
       });
       return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/default/B2C_Insert_New_User', data, { headers: headers })
     }
-
+    
     getInvoice(data:any){
       // Set headers
       const headers = new HttpHeaders({
@@ -328,8 +334,13 @@ headerClear(){
       this.popupState.next(false);
     }
   
-    login() {
-      this.loggedIn.next(true);
+    login(oH:any) {
+      //this.buttonvalue = localStorage.getItem('user');
+     
+     this.buttonvalue = oH;
+     console.log(oH,'loh')
+     this.buttonValueSubject.next(oH);
+     this.loggedIn.next(true);
     }
   
     logout() {
@@ -344,7 +355,9 @@ headerClear(){
       return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/login', data, { headers: headers })
     }
   
-  
+  buttonName(){
+    return this.buttonName
+  }
   
    
   

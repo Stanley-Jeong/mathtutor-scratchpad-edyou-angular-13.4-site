@@ -3,6 +3,7 @@ import { FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
 // import { FormGroup, FormBuilder } from '@angular/forms'; 
 import Swal from 'sweetalert2';
+import { NavigationStart } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -17,13 +18,26 @@ export class ProfileComponent implements OnInit {
   user: any;
   isLoading2: boolean = false;
   userOrderFull: any;
-  
+  daysLeft:any;
+  expireDaysLeft: number=0;
+  url: any = '';
+  router: any;
+  currentUrl: string ='url';
   constructor(private service:UserService) { }
 
   ngOnInit(): void {
+
+    
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
 
-    this.getProfileDetail()
+    this.getProfileDetail();
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationStart) {
+        // Navigation is starting
+        this.currentUrl = this.router.url;
+        console.log('Current URL before navigation starts:', this.currentUrl);
+        
+      }})
   }
 
   editProfileForm = new FormGroup({
@@ -36,6 +50,7 @@ export class ProfileComponent implements OnInit {
       Validators.required,
       Validators.pattern('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$'),
     ]),
+   
   })
  
   setActiveTab(tabName: string): void {
@@ -61,9 +76,33 @@ export class ProfileComponent implements OnInit {
     this.service.getProfileAPI(createToken).subscribe((res: any) => {
       if (res.statusCode == 200) {
         this.isSpinner = false;
+        if (res != null) {
         this.userOrderFull=res;
+
         this.userDetails = res.data;
-        //  this.userObj = res.user;
+        }
+        const createdAt = new Date(res.plan.created_at.replace(',', 'T'));
+
+        const planDate = new Date(createdAt);
+        const expireAt = new Date(res.plan.expire_at.replace(',', 'T'));
+        
+        planDate.setDate(planDate.getDate() + 14);
+
+// Get the current date
+const currentDate = new Date();
+
+// Calculate the difference in time (milliseconds)
+const timeDifference = planDate.getTime() - currentDate.getTime();
+const expiredIn = expireAt.getTime()-currentDate.getTime();
+this.expireDaysLeft = Math.ceil(expiredIn / (1000 * 60 * 60 * 24));
+// Convert the time difference to days
+ this.daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+if (this.daysLeft > 0) {
+  console.log(`There are days left.`,this.daysLeft);
+} else {
+  console.log("The 14-day period has expired.");
+}
         // this.shared.SharedData(this.userObj);
         this.bindWithSelectedPrfileData(res.data);
 console.log(" this.userDetails", this.userDetails)
@@ -83,7 +122,7 @@ console.log(" this.userDetails", this.userDetails)
     this.editProfileForm.get('dob')?.setValue(selectedProfile.dob);
     this.editProfileForm.get('school')?.setValue(selectedProfile.tenantName);
     this.editProfileForm.get('editEmail')?.setValue(selectedProfile.email);
-
+    this.editProfileForm.get('profilePicture')?.setValue(selectedProfile.profilePicture)
 
   }
 
@@ -100,7 +139,7 @@ console.log(" this.userDetails", this.userDetails)
           'DOB': this.editProfileForm.value.dob,
           'tenantName': this.editProfileForm.value.school,
           'email': this.editProfileForm.value.editEmail,
-
+         'profilePicture':this.url
         //  role: this.user.role,
         };this.isLoading2 = true
         console.log(editProfilePayload);
@@ -133,20 +172,20 @@ console.log(" this.userDetails", this.userDetails)
   cancelSubscription() {
     let data = {
       // token: this.token,
-     email: this.user.email,
+      Subscription_id: this.user.Subscription_id,
     };
     this.service.cancelSubscription(data).subscribe((res: any) => {
       if (res.statusCode == 200) {
-     alert("success")
+     alert("Success")
 
       }else{
-        
+        alert("We are currently not able to process.")
       }
     })
 
   }
 
-  url: any = '';
+
   onSelectFile(event:any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -167,6 +206,23 @@ console.log(" this.userDetails", this.userDetails)
   }
 
   checkUserSubscription(){
-    
+    console.log(this.userOrderFull)
   }
+  Subscription(){
+  
+ console.log(this.currentUrl)
+      if(this.currentUrl == '/SC/profile'){
+        this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
+       // const element = document.getElementById('pricing_section_id');
+        // if (element) {
+        //   element.scrollIntoView({ behavior: 'smooth' });
+        // }
+      }else{
+        const element = document.getElementById('pricing_section_id');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      }
+  
 }
