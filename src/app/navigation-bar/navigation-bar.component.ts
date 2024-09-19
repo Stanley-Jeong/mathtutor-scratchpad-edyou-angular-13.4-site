@@ -44,9 +44,8 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   userOrderFull: any;
   userDetails: any;
   buttonName: any;
-
-  updatedData:any
-
+  isbuttondisabled: boolean =false;
+  updatedData: any;
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -353,8 +352,10 @@ console.log(" this.userDetails", this.userDetails)
 console.log(parsedDate,currentDate)    // Compare the dates
     if (parsedDate < currentDate) {
       this.buttonName = 'Renew';
+     this.isbuttondisabled = true
     } else {
          this.buttonName = "Learn"
+       
     }
   }
 
