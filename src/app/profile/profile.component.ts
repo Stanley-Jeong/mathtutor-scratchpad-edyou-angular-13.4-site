@@ -3,7 +3,8 @@ import { FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
 // import { FormGroup, FormBuilder } from '@angular/forms'; 
 import Swal from 'sweetalert2';
-import { NavigationStart } from '@angular/router';
+import { NavigationEnd, NavigationStart ,Router} from '@angular/router';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -21,9 +22,11 @@ export class ProfileComponent implements OnInit {
   daysLeft:any;
   expireDaysLeft: number=0;
   url: any = '';
-  router: any;
+ 
   currentUrl: string ='url';
-  constructor(private service:UserService) { }
+  buttonName: string = 'startFree';
+  togglecancel: boolean = false;
+  constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
 
@@ -38,6 +41,12 @@ export class ProfileComponent implements OnInit {
         console.log('Current URL before navigation starts:', this.currentUrl);
         
       }})
+      this.router.events.pipe(
+        filter((event) => event instanceof NavigationEnd)
+      ).subscribe(() => {
+        // Manually scroll to the fragment after navigation ends
+        this.scrollToFragment();
+      });
   }
 
   editProfileForm = new FormGroup({
@@ -80,13 +89,14 @@ export class ProfileComponent implements OnInit {
         this.userOrderFull=res;
 
         this.userDetails = res.data;
+        this.checkIfExpired(this.userOrderFull.plan.expire_at)
         }
         const createdAt = new Date(res.plan.created_at.replace(',', 'T'));
 
         const planDate = new Date(createdAt);
         const expireAt = new Date(res.plan.expire_at.replace(',', 'T'));
         
-        planDate.setDate(planDate.getDate() + 14);
+        planDate.setDate(planDate.getDate() + 13);
 
 // Get the current date
 const currentDate = new Date();
@@ -171,12 +181,14 @@ console.log(" this.userDetails", this.userDetails)
   }
   cancelSubscription() {
     let data = {
-      // token: this.token,
-      Subscription_id: this.user.Subscription_id,
+      email:this.user.email,
+     subscription: this.user.Subscription_id,
     };
     this.service.cancelSubscription(data).subscribe((res: any) => {
       if (res.statusCode == 200) {
      alert("Success")
+    this.togglecancel = true
+
 
       }else{
         alert("We are currently not able to process.")
@@ -211,18 +223,35 @@ console.log(" this.userDetails", this.userDetails)
   Subscription(){
   
  console.log(this.currentUrl)
-      if(this.currentUrl == '/SC/profile'){
+     
         this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
        // const element = document.getElementById('pricing_section_id');
         // if (element) {
         //   element.scrollIntoView({ behavior: 'smooth' });
         // }
-      }else{
-        const element = document.getElementById('pricing_section_id');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+  }
+  scrollToFragment() {
+    // Delay to ensure the DOM is updated
+    setTimeout(() => {
+      const element = document.getElementById('pricing_section_id');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
-      }
-  
+    }, 0);
+  }
+  checkIfExpired(dateTimeString: string) {
+    // Convert the date-time string into a JavaScript Date object
+    const [datePart, timePart] = dateTimeString.split(',');
+    const formattedDateTime = `${datePart}T${timePart}`;
+    const parsedDate = new Date(formattedDateTime);
+
+    // Get the current date and time
+    const currentDate = new Date();
+console.log(parsedDate,currentDate)    // Compare the dates
+    if (parsedDate < currentDate) {
+      this.buttonName = 'Renew';
+    } else {
+         this.buttonName = "Cancel"
+    }
+  }
 }

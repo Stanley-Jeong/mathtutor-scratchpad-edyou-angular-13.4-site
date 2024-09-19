@@ -268,8 +268,8 @@
                   </div> 
                   <button *ngIf="!buttonName && isLoggedIn"(click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Start Free</span></button>
                 <button *ngIf="buttonName =='Startfree' "(click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Start Free</span></button>
-                <button *ngIf="buttonName =='Learn'" (click)="linkToedyouUser()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
-                <button *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Renew Now</span></button>
+                <button  *ngIf="buttonName =='Learn'" (click)="linkToedyouUser()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
+                <button  [attr.disabled]="   this.isbuttondisabled  ? true : null" *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
             
             </div>
 

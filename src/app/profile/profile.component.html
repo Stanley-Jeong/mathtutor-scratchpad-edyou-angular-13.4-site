@@ -30,14 +30,15 @@
         <div class="frame-2">
             <div class="text-wrapper-5">Trailblazers</div>
             <div *ngIf="daysLeft" class="text-wrapper-6">{{daysLeft}} Days left </div>
-            <div *ngIf="!daysLeft" class="text-wrapper-6"> 14 Days left for free trial </div>
+            <div *ngIf="!daysLeft" class="text-wrapper-6"> No active plan </div>
             <p class="element-month">
                 <span class="span">$</span>
                 <span class="text-wrapper-7">199</span>
                 <span class="span">/Month</span>
             </p>
-            <button *ngIf="userOrderFull?.orderHistory?.length > 0" class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <button *ngIf=" this.buttonName == 'Cancel'&& !togglecancel" class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
             <button *ngIf="userOrderFull?.orderHistory?.length == 0" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
+            <button *ngIf=" this.buttonName == 'Renew'" class="button" (click)="Subscription()"><button class="button-2">Renew Plan</button></button>
             <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
             <!-- <div class="text-wrapper-8">{{daysLeft}} days left for free trial</div> -->
             <div class="text-wrapper-9">Membership Detail</div>
