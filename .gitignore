@@ -63,3 +63,5 @@ amplifytools.xcconfig
 **.sample
 #amplify-do-not-edit-end
 package-lock.json
+#package-lock.json
+.package-lock.json
