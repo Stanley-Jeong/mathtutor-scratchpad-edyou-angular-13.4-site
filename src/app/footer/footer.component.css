@@ -42,3 +42,120 @@ a{
         margin-left: 0%;
     }
 }
+.formMergin{
+    margin-right: 235px;
+    /* margin-top: 40px; */
+    margin-top: -65px;
+}
+
+.newForm{
+    /* border: 1px solid black; */
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin-top: 110px;
+    gap: 10px;
+}
+.newForm .newformHeading{
+    display: flex;
+    color: #FFF;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px; /* 114.286% */
+    letter-spacing: 0.2px;
+    /* line-height: 20px;  */
+}
+
+.inputcontainer{
+    width: 280px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #FFF;
+}
+.inputcontainer input{
+    border:none;
+    background-color: transparent;
+    color: var(--second-text-color, #737373);
+    /* paragraph */
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 168.75% */
+    letter-spacing: 0.2px;
+}
+.newForm button{
+    display: flex;
+    width: 107px;
+    height: 40px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #2A7CC7;
+    color: var(--light-text-color, #FFF);
+    /* btn-text */
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 200% */
+    letter-spacing: 0.2px;
+    border: none;
+}
+.helpmergin{
+    margin-top: 20px !important; 
+}
+.centeralign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    /* text-align: center; */
+}
+.spacebottom{
+    margin-bottom: 20px;
+}
+.text{
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+}
+/* .elementor-widget-social-icons .elementor-grid {
+    height: 44px;
+    
+} */
+.elementor-nav-menu--layout-horizontal .elementor-nav-menu>li ul, .elementor-nav-menu--layout-horizontal .elementor-nav-menu>li>.scroll-down {
+    top: 53% !important;
+}
+
+.menu-item-has-children:hover .sub-menu {
+    display: none !important; /* Disable opening on hover */
+}
+.sub-menu {
+    display: none;
+    pointer-events: none;
+}
+.sub-menu.active {
+    display: block;
+    pointer-events: none;
+}
+@media (max-width: 600px) {
+    .elementor-widget-social-icons .elementor-grid {
+        height: 44px;
+        /* border: 1px solid black; */
+    }
+    .Helpinghumans{
+        text-align: center;
+    }
+}
