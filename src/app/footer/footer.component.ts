@@ -21,6 +21,7 @@ export class FooterComponent implements OnInit {
   onsuccess:boolean = false
   isDropdownOpen:boolean = false;
   
+  
   constructor(private router: Router,private fb: FormBuilder,private service :UserService, @Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
 
