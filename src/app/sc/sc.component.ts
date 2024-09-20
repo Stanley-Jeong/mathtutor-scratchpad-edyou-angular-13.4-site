@@ -2,7 +2,9 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { FormControl, FormGroup, Validators , AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { Router, UrlTree } from '@angular/router';
 import { UserService } from '../service/user.service';
-
+//import { DatepickerModule } from 'ng2-datepicker';
+import { DatepickerOptions } from 'ng2-datepicker';
+import { DatepickerComponent } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-sc',
@@ -11,7 +13,7 @@ import { UserService } from '../service/user.service';
 })
 export class ScComponent implements OnInit {
 
-
+ // options: DatepickerOptions;
   isHovered: { [key: string]: boolean } = {};
   isalgebra: boolean = false
   openForm: boolean = false;
@@ -21,14 +23,24 @@ export class ScComponent implements OnInit {
   isloaderpricing:boolean = false;
   selectedDate: string | null = null;
   error: any = "";
+  isOpen = false;
+  @ViewChild(DatepickerComponent) datepicker!: DatepickerComponent;
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   openSuccessPopup: boolean = false;
   showParent: boolean = false;
   age: number=0;
   datePickerInstance: any;
+  options: DatepickerOptions;
 
-  constructor(private router: Router, private service: UserService) { }
-
+  constructor(private router: Router, private service: UserService) {  
+    this.options = {
+      // Add your options here
+      minYear: 1900,
+      maxYear: new Date().getFullYear(),
+      // Additional options can go here
+    }; 
+  }
+ 
   ngOnInit(): void {
     this.showParent = false
   
@@ -286,5 +298,10 @@ if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
       // Check if the input date is in the future
       return inputDate >= today ? { futureDate: true } : null;
     };}
+    openDatepicker() {
+      if (this.datepicker) {
+      //  this.datepicker.show(); // This should open the datepicker manually
+      }
+    }
    
 }

@@ -30,6 +30,7 @@ import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
  // Import the datepicker module
+ import { DatepickerModule } from 'ng2-datepicker';
 
 
 
@@ -55,6 +56,7 @@ import { ScComponent } from './sc/sc.component';
     RevolutionizingEducationComponent,
     InvestorLoginComponent,
     ScComponent,
+  
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -66,7 +68,8 @@ import { ScComponent } from './sc/sc.component';
     CommonModule ,
     FormsModule,
     ReactiveFormsModule,
-
+    DatepickerModule ,
+   
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'

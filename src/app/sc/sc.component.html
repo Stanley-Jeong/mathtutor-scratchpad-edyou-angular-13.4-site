@@ -211,19 +211,20 @@
   
     
       <div>
-    <div class="inputSection" >
+    <div class="inputSection"  [ngClass]="{'reduce-marginn': subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid}" >
       <span >
         <img src="../../assets/calendar.png"style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
       </span>
 
-      <input style="margin-left:-4px"class="input-field" formControlName="date" name="date"  (change)="validateAge(date)" type="date" ngxDatepicker 
-       placeholder="Dob">
+      <input style="margin-left: 3px"class="input-field" formControlName="date" name="date"  
+     (change)="validateAge(date)" type="date" 
+       placeholder="Date of birth">
 
     </div>
     <div *ngIf="subjectform.get('date')?.touched && subjectform.get('date')?.invalid" class="error-message">
       <span *ngIf="subjectform.get('date')?.errors?.['required']">Date is required.</span>
       <span *ngIf="subjectform.get('date')?.errors?.['date']">Enter a valid Date.</span>
-      <span *ngIf="date.errors?.['futureDate']">Date cannot be in the future.</span>
+      <span *ngIf="date.errors?.['futureDate']">Date of birth cannot be in the future.</span>
     </div>
     </div>
     <div *ngIf="showParent">
