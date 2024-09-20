@@ -483,8 +483,8 @@
   }
   
   .waitlist {
-    width: 425px;
-    height: 560px;
+    width: 468px;
+    height: 657px;
     flex-shrink: 0;
     border-radius: 24px;
     background: #FFF;
@@ -1038,7 +1038,7 @@
   @media only screen and (max-width: 600px) {
     .waitlist {
       width: 90%;
-      height: 577px;
+      height: 679px;
   }
   }
   

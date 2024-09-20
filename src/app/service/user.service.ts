@@ -295,7 +295,10 @@ headerClear(){
       
      }
      sendwaitlistDataSc(data:any){
-      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added_SC',data)
+      //free users pre-enroll
+      
+      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist/waitlist_sc_new',data)
+     // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added_SC',data)
    //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added_SC',data)
      }
      signUp(data: any) {

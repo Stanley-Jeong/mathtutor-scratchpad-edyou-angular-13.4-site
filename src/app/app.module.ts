@@ -29,6 +29,7 @@ import * as Sentry from "@sentry/angular-ivy";
 import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
+ // Import the datepicker module
 
 
 
@@ -65,6 +66,7 @@ import { ScComponent } from './sc/sc.component';
     CommonModule ,
     FormsModule,
     ReactiveFormsModule,
+
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'

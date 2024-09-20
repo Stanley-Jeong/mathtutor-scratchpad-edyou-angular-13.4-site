@@ -205,12 +205,41 @@
       </div> 
       <div *ngIf="subjectform.get('email')?.touched && subjectform.get('email')?.invalid" class="error-message">
         <span *ngIf="subjectform.get('email')?.errors?.['required']">Email is required.</span>
-        <span *ngIf="subjectform.get('email')?.errors?.['email']">Enter a valid email address.</span>
+        <span *ngIf="subjectform.get('email')?.errors?.['pattern']">Enter a valid email address.</span>
       </div>
     </div>
+  
+    
+      <div>
+    <div class="inputSection" >
+      <span >
+        <img src="../../assets/calendar.png"style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      </span>
 
+      <input style="margin-left:-4px"class="input-field" formControlName="date" name="date"  (change)="validateAge(date)" type="date" ngxDatepicker 
+       placeholder="Dob">
+
+    </div>
+    <div *ngIf="subjectform.get('date')?.touched && subjectform.get('date')?.invalid" class="error-message">
+      <span *ngIf="subjectform.get('date')?.errors?.['required']">Date is required.</span>
+      <span *ngIf="subjectform.get('date')?.errors?.['date']">Enter a valid Date.</span>
+      <span *ngIf="date.errors?.['futureDate']">Date cannot be in the future.</span>
+    </div>
+    </div>
+    <div *ngIf="showParent">
+    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('date')?.touched && subjectform.get('date')?.invalid}">
+      <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="25" height="24" viewBox="0 0 25 24" fill="none">
+        <path d="M2.10645 7L10.2714 12.7154C10.9325 13.1783 11.2631 13.4097 11.6227 13.4993C11.9403 13.5785 12.2726 13.5785 12.5902 13.4993C12.9498 13.4097 13.2804 13.1783 13.9415 12.7154L22.1064 7M6.90645 20H17.3064C18.9866 20 19.8267 20 20.4684 19.673C21.0329 19.3854 21.4918 18.9265 21.7795 18.362C22.1064 17.7202 22.1064 16.8802 22.1064 15.2V8.8C22.1064 7.11984 22.1064 6.27976 21.7795 5.63803C21.4918 5.07354 21.0329 4.6146 20.4684 4.32698C19.8267 4 18.9866 4 17.3064 4H6.90645C5.22629 4 4.38621 4 3.74447 4.32698C3.17999 4.6146 2.72105 5.07354 2.43343 5.63803C2.10645 6.27976 2.10645 7.11984 2.10645 8.8V15.2C2.10645 16.8802 2.10645 17.7202 2.43343 18.362C2.72105 18.9265 3.17999 19.3854 3.74447 19.673C4.38621 20 5.22629 20 6.90645 20Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <input type="text" name="" id="" placeholder="Parent's Email" formControlName="parentEmail">
+    </div> 
+    <div *ngIf="subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid" class="error-message">
+      <span *ngIf="subjectform.get('parentEmail')?.errors?.['required']">Parent's Email is required.</span>
+      <span *ngIf="subjectform.get('parentEmail')?.errors?.['pattern']">Enter a valid Parent's Email address.</span>
+    </div>
+    </div>
     <div>
-    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('email')?.touched && subjectform.get('email')?.invalid}">
+    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid}">
       <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24"
         fill="none">
         <path
@@ -218,11 +247,15 @@
           stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
       <input type="text" name="promocode" id="" placeholder="Promo code" formControlName="promocode">
+
     </div>
+    <div *ngIf="subjectform.get('promocode')?.touched && subjectform.get('promocode')?.invalid" class="error-message">
+      <span *ngIf="subjectform.get('promocode')?.errors?.['required']">Please enter Promo code.</span>
+      </div>
 </div>
-<h6 class="redtext">
+<!-- <h6 class="redtext">
   <span style="color: #E74040;">*</span>You will be charged a test payment to verify your card, which will be refunded within 2-3 days following card verification.
-</h6>
+</h6> -->
     </form>
 
       <!-- <button (click)="submitForm()">Proceed</button> -->
@@ -231,8 +264,26 @@
           *ngIf="!isloading">Proceed</span></button>
 
     </div>
-      <span class="errorMessage " *ngIf="error.length > 0">{{error}}</span>
+      <span class="errorMessage " *ngIf="error.length > 0"> {{error}}</span>
   </div>
 
 </div>
+
+</div>
+<div class="successpopup" *ngIf="openSuccessPopup">
+  <div class="margin1">
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="closeSuccessPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="margin3">
+      <h1 class="Thanks">Thank you!</h1>
+      <h1 class="thanksText">Your request has been submitted succesfully.</h1>
+      <!-- <h6 class="thanksText">Thank you for joining the waitlist, Your request has been submitted succesfully</h6> -->
+      <div class="imae">
+        <img class="successImg" src="../../assets/Asset 1@4x.png">
+      </div>
+    </div>
+   
+    
+  </div>
 </div>
