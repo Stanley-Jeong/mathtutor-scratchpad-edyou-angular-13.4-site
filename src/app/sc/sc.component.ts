@@ -200,7 +200,11 @@ export class ScComponent implements OnInit {
        this.closeForm()
        
        this.openSuccessPopup = true;
-this.error = ""
+       setTimeout(()=>{
+        this.openSuccessPopup = false
+       },3000)
+       
+        this.error = ""
       
         }if (res.statusCode == 201) {
           this.error = res.body
