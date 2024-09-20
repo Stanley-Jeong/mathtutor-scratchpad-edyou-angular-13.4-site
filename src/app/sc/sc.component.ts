@@ -198,9 +198,12 @@ export class ScComponent implements OnInit {
         if (res.statusCode == 200) {
        //   this.planAPI(this.subjectform.value.email) 
        this.closeForm()
-       
        this.openSuccessPopup = true;
-this.error = ""
+      
+       setTimeout(()=>{
+        this.openSuccessPopup = false;
+       },4000)
+        this.error = ""
       
         }if (res.statusCode == 201) {
           this.error = res.body
