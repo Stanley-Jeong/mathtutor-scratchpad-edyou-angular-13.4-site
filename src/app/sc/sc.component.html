@@ -224,7 +224,7 @@
     <div *ngIf="subjectform.get('date')?.touched && subjectform.get('date')?.invalid" class="error-message">
       <span *ngIf="subjectform.get('date')?.errors?.['required']">Date of Birth is required.</span>
       <span *ngIf="subjectform.get('date')?.errors?.['date']">Enter a valid Date.</span>
-      <span *ngIf="date.errors?.['futureDate']">Date  cannot be in the future.</span>
+      <span *ngIf="date.errors?.['futureDate']">Date of Birth cannot be in the future.</span>
     </div>
     </div>
     <div *ngIf="showParent">
