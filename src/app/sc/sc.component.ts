@@ -256,9 +256,9 @@ this.validateAllFormFields(this.subjectform);
   //   })
 
   // }
-  // closeSuccessPopup() {
-  //   this.openSuccessPopup = !this.openSuccessPopup
-  // }
+  closeSuccessPopup() {
+     this.openSuccessPopup = !this.openSuccessPopup
+   }
   validateAge(control: any): { [key: string]: boolean } | null {
     console.log(control,this.subjectform.controls['date'].value)
     
