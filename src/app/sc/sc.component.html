@@ -211,7 +211,7 @@
   
     
       <div>
-    <div class="inputSection"  [ngClass]="{'reduce-marginn': subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid}" >
+    <div class="inputSection"  [ngClass]="{'reduce-marginn': subjectform.get('email')?.touched && subjectform.get('email')?.invalid}" >
       <span >
         <img src="../../assets/calendar.png"style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
       </span>
@@ -234,13 +234,14 @@
       </svg>
       <input type="text" name="" id="" placeholder="Parent's E-mail" formControlName="parentEmail">
     </div> 
-    <div *ngIf="subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid" class="error-message">
+    <div *ngIf="subjectform.get('date')?.touched && subjectform.get('date')?.invalid" class="error-message">
       <span *ngIf="subjectform.get('parentEmail')?.errors?.['required']">Parent's E-mail is required.</span>
       <span *ngIf="subjectform.get('parentEmail')?.errors?.['pattern']">Enter a valid Parent's E-mail address.</span>
     </div>
     </div>
     <div>
-    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid}">
+    <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid} || 
+    (subjectform.get('date')?.touched && subjectform.get('date')?.invalid)">
       <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24"
         fill="none">
         <path
