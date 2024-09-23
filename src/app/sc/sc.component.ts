@@ -189,13 +189,16 @@ export class ScComponent implements OnInit {
       this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
 
         if (res.statusCode == 200) {
-         this.planAPI(this.subjectform.value.email) 
+     //    this.planAPI(this.subjectform.value.email) 
+     this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
+
+     })
        this.closeForm()
-      //  this.openSuccessPopup = true;
+       this.openSuccessPopup = true;
       
-      //  setTimeout(()=>{
-      //   this.openSuccessPopup = false;
-      //  },4000)
+       setTimeout(()=>{
+        this.openSuccessPopup = false;
+       },4000)
         this.error = ""
       
         }if (res.statusCode == 201) {
@@ -226,33 +229,33 @@ this.validateAllFormFields(this.subjectform);
   }
 
 
-  planAPI(email: string) {
-    this.isloaderpricing = true;
-    let payload = {
-      "email": email,
-      "prod_id": "prod_QofbY9vz5uizFD",
-      "plan": "Trailblazers",
-      "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
-      "mode": "setup",
-      "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
-      "price_amount": "199",
-      "belong_to" :"sc"
-    }
-    this.service.scSchool(payload).subscribe((res: any) => {
+  // planAPI(email: string) {
+  //   this.isloaderpricing = true;
+  //   let payload = {
+  //     "email": email,
+  //     "prod_id": "prod_QofbY9vz5uizFD",
+  //     "plan": "Trailblazers",
+  //     "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+  //     "mode": "setup",
+  //     "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+  //     "price_amount": "199",
+  //     "belong_to" :"sc"
+  //   }
+  //   this.service.scSchool(payload).subscribe((res: any) => {
       
      
-      if (res.statusCode == 303) {
-        this.closeForm()
+  //     if (res.statusCode == 303) {
+  //       this.closeForm()
        
-        window.location.href = res.headers.Location;
+  //       window.location.href = res.headers.Location;
      
        
       
-        this.isloading =false;
-      }
-    })
+  //       this.isloading =false;
+  //     }
+  //   })
 
-  }
+  // }
   // closeSuccessPopup() {
   //   this.openSuccessPopup = !this.openSuccessPopup
   // }
