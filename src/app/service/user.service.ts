@@ -284,14 +284,14 @@ headerClear(){
   }
 
   sendwaitlistData(data:any){
-   return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added',data)
-   // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
+  // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist_added',data)
+   return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added',data)
   }
 //scnewtab
 
   scSchool(data:any){
-    // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
-     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc',data)
+     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
+     //return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc',data)
       
      }
      sendwaitlistDataSc(data:any){

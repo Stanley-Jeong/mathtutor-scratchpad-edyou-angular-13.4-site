@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from '../service/user.service';
 
 
@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   isDropdownOpen:boolean = false;
   
   
-  constructor(private router: Router,private fb: FormBuilder,private service :UserService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private router: Router,private route :ActivatedRoute,private fb: FormBuilder,private service :UserService, @Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     this.newsletterForm = this.fb.group({
@@ -30,7 +30,16 @@ export class FooterComponent implements OnInit {
     });
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.fragment.subscribe((fragment: string | null) => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the element
+        }
+      }
+    });
+  }
 
 
   get email() {
@@ -117,7 +126,9 @@ export class FooterComponent implements OnInit {
       const pay = {
         name:"",
         email: this.newsletterForm.value.email,
-      };
+      };// this.router.navigate([], { fragment: 'newsForm' });
+    
+      
       this.service.signupNewsletter(pay).subscribe((res:any)=>{
         console.log(res)
         if(res.statusCode == 200){

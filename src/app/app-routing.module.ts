@@ -41,7 +41,7 @@ const routes: Routes = [
   {path: 'investors', component: InvestorsComponent},
   {path: 'terms', component:TermsComponent},
   {path: 'privacy', component:PrivacyComponent},
-  {path: 'paymentsuccess', component:SuccessPaymentComponent},
+  {path: 'payment-success', component:SuccessPaymentComponent},
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},
