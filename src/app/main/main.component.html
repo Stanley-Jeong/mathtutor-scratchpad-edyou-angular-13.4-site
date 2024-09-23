@@ -232,14 +232,14 @@
             <span class="strikethrough">
               <span class="strikethrough-text">$99</span>
             </span>
-            <span><strong class="pricing-number">$74.99</strong></span>
+            <span><strong class="pricing-number">$74.99</strong>/week</span>
           </div>
         </div>
         <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
           <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
-            <li>7-Day access</li>
+            <li>Full week access</li>
             <li>Learning Module</li>
             <li>Testing Module</li>
             <li>Wellness Companion</li>
@@ -247,6 +247,7 @@
             <li>Gamification</li>
           </ul>
         </div>
+        <img class="bottom-position" src="./assets/banner7.png" alt="pre-launch-special-ribbon">
       </div>
 
       <!-- UNLIMITED PLAN -->
@@ -277,7 +278,8 @@
             <li>Certificates of Completion</li>
           </ul>
         </div>
-        <small class="billed-annually-text">*Billed Annually</small>
+        <img class="bottom-position" src="./assets/banner7.png" alt="pre-launch-special-ribbon">
+        <!-- <small class="billed-annually-text">*Billed Annually</small> -->
       </div>
 
 
@@ -1747,10 +1749,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <input type="text" name="" id="" placeholder="First Name" formControlName="firstName">
+                <input type="text" name="" id="" placeholder="Student's First Name" formControlName="firstName">
               </div> 
               <div *ngIf="subjectform.get('firstName')?.touched && subjectform.get('firstName')?.invalid" class="error-message">
-                <span *ngIf="subjectform.get('firstName')?.errors?.['required']">First Name is required.</span>
+                <span *ngIf="subjectform.get('firstName')?.errors?.['required']">Student's First Name is required.</span>
                
               </div>
             </div>
@@ -1760,10 +1762,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M20 21C20 19.6044 20 18.9067 19.8278 18.3389C19.44 17.0605 18.4395 16.06 17.1611 15.6722C16.5933 15.5 15.8956 15.5 14.5 15.5H9.5C8.10444 15.5 7.40665 15.5 6.83886 15.6722C5.56045 16.06 4.56004 17.0605 4.17224 18.3389C4 18.9067 4 19.6044 4 21M16.5 7.5C16.5 9.98528 14.4853 12 12 12C9.51472 12 7.5 9.98528 7.5 7.5C7.5 5.01472 9.51472 3 12 3C14.4853 3 16.5 5.01472 16.5 7.5Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <input type="text" name="" id="" placeholder="Last Name"  formControlName="lastName">
+            <input type="text" name="" id="" placeholder="Student's Last Name"  formControlName="lastName">
           </div> 
           <div *ngIf="subjectform.get('lastName')?.touched && subjectform.get('lastName')?.invalid" class="error-message">
-            <span *ngIf="subjectform.get('lastName')?.errors?.['required']">Last Name is required.</span>
+            <span *ngIf="subjectform.get('lastName')?.errors?.['required']">Student's Last Name is required.</span>
          
           </div>
         </div>
@@ -1773,10 +1775,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <path d="M2.10645 7L10.2714 12.7154C10.9325 13.1783 11.2631 13.4097 11.6227 13.4993C11.9403 13.5785 12.2726 13.5785 12.5902 13.4993C12.9498 13.4097 13.2804 13.1783 13.9415 12.7154L22.1064 7M6.90645 20H17.3064C18.9866 20 19.8267 20 20.4684 19.673C21.0329 19.3854 21.4918 18.9265 21.7795 18.362C22.1064 17.7202 22.1064 16.8802 22.1064 15.2V8.8C22.1064 7.11984 22.1064 6.27976 21.7795 5.63803C21.4918 5.07354 21.0329 4.6146 20.4684 4.32698C19.8267 4 18.9866 4 17.3064 4H6.90645C5.22629 4 4.38621 4 3.74447 4.32698C3.17999 4.6146 2.72105 5.07354 2.43343 5.63803C2.10645 6.27976 2.10645 7.11984 2.10645 8.8V15.2C2.10645 16.8802 2.10645 17.7202 2.43343 18.362C2.72105 18.9265 3.17999 19.3854 3.74447 19.673C4.38621 20 5.22629 20 6.90645 20Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <input type="text" name="" id="" placeholder="Email" formControlName="email">
+            <input type="text" name="" id="" placeholder="Student's E-mail" formControlName="email">
           </div> 
           <div *ngIf="subjectform.get('email')?.touched && subjectform.get('email')?.invalid" class="error-message">
-            <span *ngIf="subjectform.get('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="subjectform.get('email')?.errors?.['required']">Student's E-mail is required.</span>
             <span *ngIf="subjectform.get('email')?.errors?.['email']">Enter a valid email address.</span>
           </div>
         </div>
@@ -1791,7 +1793,7 @@
 </div> 
 <div class="overlay"  *ngIf="openSuccessPopup" ></div>
 <div class="successpopup" *ngIf="openSuccessPopup">
-  <div class="margin1">
+  <!-- <div class="margin1">
     <svg xmlns="http://www.w3.org/2000/svg" (click)="closeSuccessPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -1799,13 +1801,13 @@
       <h1 class="Thanks">Thank you!</h1>
       <h1 class="thanksText">Please proceed for payment in the other tab.</h1>
       <!-- <h6 class="thanksText">Thank you for joining the waitlist, Your request has been submitted succesfully</h6> -->
-      <div class="imae">
+      <!-- <div class="imae">
         <img class="successImg" src="../../assets/Asset 1@4x.png">
       </div>
     </div>
    
     
-  </div>
+  </div> --> 
 </div>
 
 <div class="overlay" *ngIf="openErrorPopup"  ></div>

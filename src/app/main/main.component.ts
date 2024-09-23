@@ -628,9 +628,9 @@ export class MainComponent implements OnInit, OnDestroy {
     this.subjectform.reset()
     this.isloading = false
   }
-  closeSuccessPopup() {
-    this.openSuccessPopup = !this.openSuccessPopup
-  }
+  // closeSuccessPopup() {
+  //   this.openSuccessPopup = !this.openSuccessPopup
+  // }
   closeErrorPopup() {
     this.openErrorPopup = !this.openErrorPopup
   }
@@ -640,7 +640,8 @@ export class MainComponent implements OnInit, OnDestroy {
       console.log('valid')
       let pay = {
         "email": this.subjectform.value.email,
-        "name": this.subjectform.value.firstName + ' ' + this.subjectform.value.lastName
+        "name": this.subjectform.value.firstName + ' ' + this.subjectform.value.lastName,
+        "plan":this.choosedPlan
       }
       this.sendEmail = this.subjectform.value.email
       this.isloading = true
@@ -648,45 +649,47 @@ export class MainComponent implements OnInit, OnDestroy {
       this.service.sendwaitlistData(pay).subscribe((res: any) => {
         console.log(res)
         if (res.statusCode == 200) {
+          this.planAPI(this.subjectform.value.email,this.choosedPlan) 
           this.isloading = false
-          this.closeForm()
-          if (this.choosedPlan == 'Silver') {
-            // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
-            // window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
-            const email = encodeURIComponent(this.sendEmail); // Encode the email
-            console.log(email)
-           // const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
-              //prod
-             const platinumUrl = `https://buy.stripe.com/4gw02Q79M4qT70A9AA?prefilled_email=${email}&client_reference_id=silver`;
-            // window.open(platinumUrl, '_blank');
-            window.location.href = platinumUrl
-          } else if (this.choosedPlan == 'Gold') {
-            // window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
+          
+          
+          // if (this.choosedPlan == 'Silver') {
+          //   // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
+          //   // window.open('https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI', '_blank');
+          //   const email = encodeURIComponent(this.sendEmail); // Encode the email
+          //   console.log(email)
+          //  // const platinumUrl = `https://buy.stripe.com/test_cN201zdiJ4YGeMUaEI?prefilled_email=${email}&client_reference_id=silver`;
+          //     //prod
+          //    const platinumUrl = `https://buy.stripe.com/4gw02Q79M4qT70A9AA?prefilled_email=${email}&client_reference_id=silver`;
+          //   // window.open(platinumUrl, '_blank');
+          //   window.location.href = platinumUrl
+          // } else if (this.choosedPlan == 'Gold') {
+          //   // window.open('https://buy.stripe.com/test_00g5lT4Md9eW8ow5km', '_blank');
             
 
-            const email = encodeURIComponent(this.sendEmail); // Encode the email
-            console.log(email)
-           // const platinumUrl = `https://buy.stripe.com/test_00g5lT4Md9eW8ow5km?prefilled_email=${email}&client_reference_id=gold`;
-           //prod
-             const platinumUrl = `https://buy.stripe.com/cN27vi0Lo2iLet28wy?prefilled_email=${email}&client_reference_id=gold`;
-            // window.open(platinumUrl, '_blank');
-            window.location.href = platinumUrl
-          } else {
+          //   const email = encodeURIComponent(this.sendEmail); // Encode the email
+          //   console.log(email)
+          //  // const platinumUrl = `https://buy.stripe.com/test_00g5lT4Md9eW8ow5km?prefilled_email=${email}&client_reference_id=gold`;
+          //  //prod
+          //    const platinumUrl = `https://buy.stripe.com/cN27vi0Lo2iLet28wy?prefilled_email=${email}&client_reference_id=gold`;
+          //   // window.open(platinumUrl, '_blank');
+          //   window.location.href = platinumUrl
+          // } else {
 
-            // window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
-            const email = encodeURIComponent(this.sendEmail); // Encode the email
-            console.log(email)
-            //const platinumUrl = `https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn?prefilled_email=${email}&client_reference_id=platinum`;
-          //prod
-             const platinumUrl = `https://buy.stripe.com/4gw4j665I2iLdoYeUV?prefilled_email=${email}&client_reference_id=platinum`;
-            // window.open(platinumUrl, '_blank');
-            window.location.href = platinumUrl
-          }
+          //   // window.open('https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn', '_blank');
+          //   const email = encodeURIComponent(this.sendEmail); // Encode the email
+          //   console.log(email)
+          //   //const platinumUrl = `https://buy.stripe.com/test_7sIdSp6Ul8aSgV25kn?prefilled_email=${email}&client_reference_id=platinum`;
+          // //prod
+          //    const platinumUrl = `https://buy.stripe.com/4gw4j665I2iLdoYeUV?prefilled_email=${email}&client_reference_id=platinum`;
+          //   // window.open(platinumUrl, '_blank');
+          //   window.location.href = platinumUrl
+          // }
 
-          this.openSuccessPopup = true
-          setTimeout(()=>{
-            this.openSuccessPopup = false
-          },2000)
+          // this.openSuccessPopup = true
+          // setTimeout(()=>{
+          //   this.openSuccessPopup = false
+          // },2000)
 
         } else if (res.statusCode == 201) {
           this.openErrorPopup = true
@@ -710,6 +713,71 @@ export class MainComponent implements OnInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+  
+  planAPI(email: string,plan:string) {
+    this.isloading = true;
+    let payload
+    switch (plan) {
+      case 'Silver':
+        plan = 'Silver';
+         payload = {
+          "email": email,
+          "prod_id": "prod_Qkv6YvDQGOW37A",
+          "plan": plan,
+          "price_id": "price_1PtPGkALy7MM11rqHalmXJyc",
+          "mode": "setup",
+          "price": "price_1PtPGkALy7MM11rqHalmXJyc",
+          "price_amount": "39",
+          "belong_to" :"nonsc"
+        }
+        break;
+      case 'Gold':
+        plan = 'Gold';
+       payload = {
+          "email": email,
+          "prod_id": "prod_Qkv5HTR2zZJ9Dd",
+          "plan": plan,
+          "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+          "mode": "setup",
+          "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+          "price_amount": "74.99",
+          "belong_to" :"nonsc"
+        }
+        break;
+      case 'Platinum':
+        plan = 'Platinum';
+        payload = {
+          "email": email,
+          "prod_id": "prod_Qkv9dJRYEDGCDN",
+          "plan": plan,
+          "price_id": "price_1PtPIpALy7MM11rq800rj6vc",
+          "mode": "setup",
+          "price": "price_1PtPIpALy7MM11rq800rj6vc",
+          "price_amount": "199",
+          "belong_to" :"nonsc"
+        }
+        break;
+        default:
+        {}
+       
+        break;
+    }
+ 
+    this.service.scSchool(payload).subscribe((res: any) => {
+      
+     
+      if (res.statusCode == 303) {
+       
+        this.closeForm()
+        window.location.href = res.headers.Location;
+     
+       
+       
+        this.isloading =false;
+      }
+    })
+
   }
 }
 

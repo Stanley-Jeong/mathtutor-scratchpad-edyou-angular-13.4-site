@@ -234,7 +234,7 @@
       </svg>
       <input type="text" name="" id="" placeholder="Parent's E-mail" formControlName="parentEmail">
     </div> 
-    <div *ngIf="subjectform.get('date')?.touched && subjectform.get('date')?.invalid" class="error-message">
+    <div *ngIf="subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid" class="error-message">
       <span *ngIf="subjectform.get('parentEmail')?.errors?.['required']">Parent's E-mail is required.</span>
       <span *ngIf="subjectform.get('parentEmail')?.errors?.['pattern']">Enter a valid Parent's E-mail address.</span>
     </div>
@@ -272,7 +272,7 @@
 </div>
 
 </div>
-<div class="successpopup" *ngIf="openSuccessPopup">
+<!-- <div class="successpopup" *ngIf="openSuccessPopup">
   <div class="margin1">
     <svg xmlns="http://www.w3.org/2000/svg" (click)="closeSuccessPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -281,11 +281,11 @@
       <h1 class="Thanks">Thank you!</h1>
       <h1 class="thanksText">Your request has been submitted succesfully.</h1>
       <!-- <h6 class="thanksText">Thank you for joining the waitlist, Your request has been submitted succesfully</h6> -->
-      <div class="imae">
+      <!-- <div class="imae">
         <img class="successImg" src="../../assets/Asset 1@4x.png">
       </div>
     </div>
    
     
   </div>
-</div>
+</div> --> 
