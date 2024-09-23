@@ -723,7 +723,7 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Silver';
          payload = {
           "email": email,
-          "prod_id": "prod_Qkv6YvDQGOW37A",
+          "prod_id": "prod_QmrFV8irjoWH9E",
           "plan": plan,
           "price_id": "price_1PtPGkALy7MM11rqHalmXJyc",
           "mode": "setup",
@@ -736,7 +736,7 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Gold';
        payload = {
           "email": email,
-          "prod_id": "prod_Qkv5HTR2zZJ9Dd",
+          "prod_id": "prod_QmrFLWOmU2oDzr",
           "plan": plan,
           "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
@@ -749,7 +749,7 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Platinum';
         payload = {
           "email": email,
-          "prod_id": "prod_Qkv9dJRYEDGCDN",
+          "prod_id": "prod_QmrFZUGlrjAclG",
           "plan": plan,
           "price_id": "price_1PtPIpALy7MM11rq800rj6vc",
           "mode": "setup",

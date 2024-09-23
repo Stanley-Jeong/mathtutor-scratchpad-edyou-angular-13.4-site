@@ -59,6 +59,7 @@ const routes: Routes = [
   {path: 'latin', component:CoursePageComponent},
   {path: 'sc/payment-success', component:SuccesspaymentComponent},
   {path: 'newsletter-success', component:NewletterComponent},
+  {path: 'payment-failed', component:FailedpaymentComponent},
   {path: 'sc/payment-failed', component:FailedpaymentComponent},
   {path: 'consentsuccess', component:ConsentsuccessComponent},
   {path: '**', redirectTo: '/'},
