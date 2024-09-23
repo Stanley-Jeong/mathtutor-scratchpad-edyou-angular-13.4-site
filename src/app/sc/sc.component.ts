@@ -242,12 +242,12 @@ this.validateAllFormFields(this.subjectform);
       
      
       if (res.statusCode == 303) {
-       
+        this.closeForm()
        
         window.location.href = res.headers.Location;
      
        
-        this.closeForm()
+      
         this.isloading =false;
       }
     })
