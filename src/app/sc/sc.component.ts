@@ -190,9 +190,9 @@ export class ScComponent implements OnInit {
 
         if (res.statusCode == 200) {
      //    this.planAPI(this.subjectform.value.email) 
-     this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
+    //  this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
 
-     })
+    //  })
        this.closeForm()
        this.openSuccessPopup = true;
       
