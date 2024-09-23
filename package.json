@@ -34,7 +34,6 @@
     "microsoft-cognitiveservices-speech-sdk": "^1.29.0",
     "microsoft-speech-browser-sdk": "0.0.12",
     "moment": "^2.30.1",
-    "ng2-datepicker": "^12.0.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.5",
     "tslib": "^2.3.0",
