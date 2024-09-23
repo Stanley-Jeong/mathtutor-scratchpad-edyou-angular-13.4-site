@@ -3,8 +3,7 @@ import { FormControl, FormGroup, Validators , AbstractControl, ValidationErrors,
 import { Router, UrlTree } from '@angular/router';
 import { UserService } from '../service/user.service';
 //import { DatepickerModule } from 'ng2-datepicker';
-import { DatepickerOptions } from 'ng2-datepicker';
-import { DatepickerComponent } from 'ng2-datepicker';
+
 
 @Component({
   selector: 'app-sc',
@@ -24,21 +23,15 @@ export class ScComponent implements OnInit {
   selectedDate: string | null = null;
   error: any = "";
   isOpen = false;
-  @ViewChild(DatepickerComponent) datepicker!: DatepickerComponent;
+
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   openSuccessPopup: boolean = false;
   showParent: boolean = false;
   age: number=0;
   datePickerInstance: any;
-  options: DatepickerOptions;
-
+  
   constructor(private router: Router, private service: UserService) {  
-    this.options = {
-      // Add your options here
-      minYear: 1900,
-      maxYear: new Date().getFullYear(),
-      // Additional options can go here
-    }; 
+   
   }
  
   ngOnInit(): void {
@@ -302,9 +295,7 @@ if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
       return inputDate >= today ? { futureDate: true } : null;
     };}
     openDatepicker() {
-      if (this.datepicker) {
-      //  this.datepicker.show(); // This should open the datepicker manually
-      }
+     
     }
    
 }
