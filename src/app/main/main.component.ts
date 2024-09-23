@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { Router, UrlTree } from '@angular/router';
-import { interval, Subject, Subscription } from 'rxjs';
+import { ActivatedRoute, NavigationEnd, Router, UrlTree } from '@angular/router';
+import { filter, interval, Subject, Subscription } from 'rxjs';
 import { UserService } from '../service/user.service';
 import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
@@ -243,12 +243,18 @@ export class MainComponent implements OnInit, OnDestroy {
     description: ''
   };
   constructor(private router: Router, private service: UserService, private service2: ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
-    private titleService: Title, private metaService: Meta, private fb: FormBuilder) {
+    private titleService: Title, private metaService: Meta, private fb: FormBuilder ,private route: ActivatedRoute) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     console.log(this.isBrowser,this.platformId)
     this.service.getIp().subscribe((res: any) => {
       console.log(res, "my ip----------------------------------------------")
-    })
+   
+
+    }) 
+
+ 
+
+    
     // let id = localStorage.getItem('sessionId') 
     // console.log(id,'regettttttttttttttttttttttttttttttttttttttttt')
     this.subjectform = this.fb.group({
@@ -269,6 +275,8 @@ export class MainComponent implements OnInit, OnDestroy {
     };
 
   }
+
+
 
 
   async ngAfterViewInit() {
@@ -335,7 +343,10 @@ export class MainComponent implements OnInit, OnDestroy {
     // countdown================
     this.subscription = interval(1000).subscribe(() => {
       this.updateCountdown();
-    });
+    }); 
+
+
+    
   }
   setTitle(newTitle: string) {
     this.titleService.setTitle(newTitle);

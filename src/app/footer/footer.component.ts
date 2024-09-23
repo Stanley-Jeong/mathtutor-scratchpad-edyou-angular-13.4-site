@@ -124,6 +124,7 @@ export class FooterComponent implements OnInit {
           this.isLoading = false
           this.newsletterForm.reset();
           this.onsuccess =true
+          this.router.navigate(['/newsletter-success']);
           setTimeout(()=>{
             this.onsuccess = false
           },3000)

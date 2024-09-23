@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { CompanyComponent } from './company/company.component';
 import { PayItForwardComponent } from './pay-it-forward/pay-it-forward.component';
@@ -20,6 +20,8 @@ import { ScComponent } from './sc/sc.component';
 import { ScRedirectGuard } from './sc-redirect.guard';
 import { SuccesspaymentComponent } from './successpayment/successpayment.component';
 import { FailedpaymentComponent } from './failedpayment/failedpayment.component';
+import { NewletterComponent } from './newletter/newletter.component';
+import { ConsentsuccessComponent } from './consentsuccess/consentsuccess.component';
 
 
 const routes: Routes = [
@@ -56,13 +58,20 @@ const routes: Routes = [
   {path: 'project-management', component:CoursePageComponent},
   {path: 'latin', component:CoursePageComponent},
   {path: 'sc/payment-success', component:SuccesspaymentComponent},
+  {path: 'newsletter-success', component:NewletterComponent},
   {path: 'sc/payment-failed', component:FailedpaymentComponent},
+  {path: 'consentsuccess', component:ConsentsuccessComponent},
   {path: '**', redirectTo: '/'},
+  
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
+    initialNavigation: 'enabledBlocking',
+   
 })],
   exports: [RouterModule]
 })
