@@ -22,6 +22,7 @@ import { SuccesspaymentComponent } from './successpayment/successpayment.compone
 import { FailedpaymentComponent } from './failedpayment/failedpayment.component';
 import { NewletterComponent } from './newletter/newletter.component';
 import { ConsentsuccessComponent } from './consentsuccess/consentsuccess.component';
+import { CourseScComponent } from './course-sc/course-sc.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,11 @@ const routes: Routes = [
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},
   {path: 'us-history', component:CoursePageComponent},
+  {path: 'sc/sc-us-history', component:CourseScComponent},
+  {path: 'sc/sc-algebra', component:CourseScComponent},
+  {path: 'sc/sc-pre-algebra', component:CourseScComponent},
+  {path: 'sc/sc-latin', component:CourseScComponent},
+  {path: 'sc/sc-biology', component:CourseScComponent},
   {path: 'algebra', component:CoursePageComponent},
   {path: 'english', component:CoursePageComponent},
   {path: 'leadership', component:CoursePageComponent},

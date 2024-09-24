@@ -198,7 +198,7 @@
   
   .courses-cards-container a img {
     transition: transform 0.3s ease-in-out; 
-    cursor: default;
+    cursor: pointer;
   }
   
   .courses-cards-container a img:hover {

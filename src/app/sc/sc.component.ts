@@ -111,8 +111,8 @@ export class ScComponent implements OnInit {
 
   /* COURSES NAVIGATION */
   navigateToCoursePage(url: string | UrlTree) {
-//  this.router.navigateByUrl(url);
-    // this.router.navigate(['/us-history']);
+ this.router.navigateByUrl(url);
+ //  this.router.navigate(['sc/sc-us-history']);
   }
 
   // toggleGif(hovered: boolean) {
@@ -120,7 +120,7 @@ export class ScComponent implements OnInit {
   // }
 
   toggleGif(course: string, hovered: boolean) {
-  //  this.isHovered[course] = hovered;
+   this.isHovered[course] = hovered;
   }
 
   togglealgebra(hovered: boolean) {
@@ -190,9 +190,7 @@ export class ScComponent implements OnInit {
 
         if (res.statusCode == 200) {
      //    this.planAPI(this.subjectform.value.email) 
-    //  this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
-
-    //  })
+  
        this.closeForm()
        this.openSuccessPopup = true;
       
