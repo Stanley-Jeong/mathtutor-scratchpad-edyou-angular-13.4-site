@@ -4497,11 +4497,11 @@ getBrowserName() {
     // }
     if (window.innerWidth > 768 && window.innerWidth < 1025 && this.fullScreen == false  ) {
       console.log("condition satisfied")
-      this.myInput.nativeElement.style.paddingRight = '50px';
+      this.myInput.nativeElement.style.paddingRight = '80px';
     }else if(window.innerWidth > 768 && window.innerWidth < 1025 && screen){
-      this.myInput.nativeElement.style.paddingRight = '50px';
+      this.myInput.nativeElement.style.paddingRight = '80px';
     }else if(window.innerWidth < 601){
-      this.myInput.nativeElement.style.paddingRight = '50px';
+      this.myInput.nativeElement.style.paddingRight = '75px';
       console.log('mobile')
     }else{
       console.log("!condition satisfied")
