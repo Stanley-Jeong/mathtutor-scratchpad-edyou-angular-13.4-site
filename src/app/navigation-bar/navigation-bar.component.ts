@@ -45,6 +45,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   userDetails: any;
   buttonName: any;
   isbuttondisabled: boolean =false;
+
+  updatedData:any
+
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -110,6 +113,12 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     
     this.userservice.loggedIn$.subscribe(state => {
       this.checkUserLogin()
+      const storedUserData = localStorage.getItem('user');
+      if (storedUserData) {
+        this.updatedData = JSON.parse(storedUserData);
+        console.log(this.updatedData)
+        this.userName = this.updatedData.f_name + " " + this.updatedData.l_name;
+      }
     });
   }
   onMouseOver(): void {
@@ -247,24 +256,24 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     if (isLoggedIn == true) {
       this.getProfileDetail
       this.menuToggle
-//  let  x :any = this.userservice.buttonName;
-//  console.log(x,'navitem')
-//  if(x.orderHistory.length>0){
-//   this.buttonName = "Learn"
+      //  let  x :any = this.userservice.buttonName;
+      //  console.log(x,'navitem')
+      //  if(x.orderHistory.length>0){
+      //   this.buttonName = "Learn"
 
-// }else {
-//     this.buttonName = "Startfree"
-// }
-//  this.userObj = res.user;
-// this.shared.SharedData(this.userObj);
+      // }else {
+      //     this.buttonName = "Startfree"
+      // }
+      //  this.userObj = res.user;
+      // this.shared.SharedData(this.userObj);
 
-console.log(" this.userDetails", this.userDetails)
+      console.log(" this.userDetails", this.userDetails)
 
       console.log('true state')
       this.isLoggedIn = true 
-      if (this.user.f_name && this.user.l_name) {
-        this.userName = this.user.f_name + " " + this.user.l_name
-      } 
+      // if (this.user.f_name && this.user.l_name) {
+      //   this.userName = this.user.f_name + " " + this.user.l_name
+      // } 
     
     } else {
       this.isLoggedIn = false
@@ -276,9 +285,9 @@ console.log(" this.userDetails", this.userDetails)
         console.log('else state ==',isLoggedIn)
         
        // console.log('state login', this.isLoggedIn)
-       if (this.user.f_name && this.user.l_name) {
-        this.userName = this.user.f_name + " " + this.user.l_name
-       }
+      //  if (this.user.f_name && this.user.l_name) {
+      //   this.userName = this.user.f_name + " " + this.user.l_name
+      //  }
       });
     }
   }

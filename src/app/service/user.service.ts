@@ -19,7 +19,7 @@ export class UserService {
   IndexLearningNo: any;
   buttonvalue: any;
 
-  private buttonValueSubject = new BehaviorSubject<any>('Initial Button Value');
+  public buttonValueSubject = new BehaviorSubject<any>('Initial Button Value');
   buttonValue$ = this.buttonValueSubject.asObservable(); 
 
   private sharedData = new BehaviorSubject({});
@@ -338,8 +338,8 @@ headerClear(){
       //this.buttonvalue = localStorage.getItem('user');
      
      this.buttonvalue = oH;
-     console.log(oH,'loh')
-     this.buttonValueSubject.next(oH);
+     console.log(this.buttonvalue,'loh')
+     this.buttonValueSubject.next(this.buttonvalue);
      this.loggedIn.next(true);
     }
   

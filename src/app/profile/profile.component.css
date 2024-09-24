@@ -424,8 +424,14 @@
     width: 351px;
     height: 42px;
     left: 32px;
+    
   }
-  
+  .account-details .nosubscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35%;
+  }
   .account-details .text-wrapper-12 {
     position: absolute;
     top: 0;
@@ -1025,7 +1031,7 @@
   
     .account-details .frame-4 {
       width: 370px;
-      height: 474px;
+      height: 295px;
       top: 640px;
       left: 15px;
       position: absolute;

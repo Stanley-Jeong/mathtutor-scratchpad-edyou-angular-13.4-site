@@ -197,6 +197,7 @@ export class LoginComponent implements OnInit {
           if (data.statusCode == 200) {
             this.isLoading = false
             this.loggedInDaTa = data;
+            console.log(this.loggedInDaTa)
             localStorage.setItem("user", JSON.stringify(data.body));
             localStorage.setItem("LoginState", JSON.stringify(true));
          

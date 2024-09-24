@@ -1,6 +1,11 @@
 a{
   cursor: pointer;
 }
+.headermain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .action {
   /* position: fixed;
@@ -8,20 +13,49 @@ a{
   right: 30px; */
   margin-right:-180px;
   margin-left: -240px;
+  /* margin-top: 5px; */
 }
 
+
 .buttonProfile{
-  background-color: #2DC071; width: 110px;margin-top: 11px;margin-left: 182px;
+  background-color: #2DC071; 
+  width: 110px;
+  /* margin-top: 11px; */
+  /* margin-left: 182px; */
+  margin-left: 175px;
+  display: flex;
+  /* width: 84px; */
+  border: none;
+  height: 32px;
+  /* margin-top: 21px; */
+  border-radius: 4px;
+  padding: 8px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttonProfile span {
+  color: var(--Primary-White, #FFF);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  /* 114.286% */
+  letter-spacing: 0.2px;
 }
 .scLogoimg{
   
     margin-top: 13px;
 
-  margin-right:-26px;
+  margin-right:86px;
   cursor: pointer;
   }
   .scLogoimgMobilebutton{
-    height:32px; margin-top: -13px;
+    height:32px;
+     margin-top: -13px;
   }
   .scLogoimgMobile{
     padding-right: 11px;
@@ -180,6 +214,7 @@ height:auto; /* Adjust size as needed */
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-left: -175px;
 
 }
 .loginBtn span {
@@ -256,7 +291,8 @@ margin-bottom: 0rem;
   /* top: 60px; */
   visibility: visible;
   opacity: 1;
-  margin-right: 205px;
+  /* margin-right: 205px; */
+  margin-right: 198px;
  
 }
 
@@ -327,8 +363,8 @@ margin-bottom: 0rem;
 .hide-on-mobile {
   display: none;
 }
-@media all and  (min-width: 375px)and (max-width:600px) {
-  .scLogoimg{
+@media only screen and (max-width: 600px) {
+  /* .scLogoimg{
   width:80%;
   margin-left:-23%
   }
@@ -360,8 +396,8 @@ margin-bottom: 0rem;
         padding-right: 11px;
         height: 28px;
         margin-top: -14px;
-    }
-    .action .profile{
+    } */
+    /* .action .profile{
      
       width: 31px;
       height: 31px;
@@ -380,16 +416,45 @@ margin-bottom: 0rem;
     margin-top: 25px;
     margin-left: 68px;
     margin-right: -25px;
-  }
-  .row{
+  } */
+  /* .row{
     margin-top:-7px;
-  }
+  } */
+   /* .merginMobile{
+    margin-top: -68%;
+   }
   .action .menu.active{
     top: 76px;
     margin-right: 76px;
-}
-  
+  } */
+   .scLogoimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+    margin-left: -92px;
+   }
+   .scLogoimgMobile{
+    margin-right: -6px;
+   }
+   .scLogoimgMobilebutton{
+    margin-right: -10px;
+    width: 77%;
+   }
+  .buttonProfile{
+    width: 95px;
+    margin-left: -128px;
   }
+  .action{
+    margin-left: -200px;
+    margin-right: 115px;
+  }
+  .action .profile{
+    height: 40px;
+    width: 40px;
+  }
+  
+}
 @media only screen and (min-width: 1024px) {
   .hide-on-mobile {
     display: block;
