@@ -1,0 +1,151 @@
+.subscribe-button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .main-button{
+    background-color: #092A4B;
+    border: 1px solid #2A7CC7;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  
+  .subscribe-button {
+    background-color: #2A7CC7;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1127px; /* Adjust width as needed */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    /* transition: transform 0.5s ease-in-out; */
+   
+      width: 100%;
+    }
+  
+  
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+    transition: transform 1.5s ease-in-out;
+  }
+  .carousel-slide.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    display: block;
+    /* height: auto; */
+    height: 100%;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  
+    font-size: 24px;
+    transform: translateY(-50%);
+  }
+  /* .carousel-button:disabled {
+    background: #847c7c;
+    cursor: not-allowed;
+    opacity: 0.5;
+  } */
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
+  }
+  
+  .carousel-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #717171;
+  }
+  @media only screen and (max-width: 480px) {
+    .main-button{
+      width: 45%;
+      font-size: 14px;
+    }
+    .subscribe-button{
+      width: 45%;
+      font-size: 14px;
+    }
+    .elementor-heading-title   {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+  }
+  }
+  
+  .active, .accordion:hover {
+    background-color: rgb(15 10 10 / 60%);
+  }
+  /* @media screen and (max-width: 1366px)  {
+  .e-con-inner {
+      flex-wrap: var(--flex-wrap);
+      justify-content: var(--justify-content);
+      align-items: var(--align-items);
+      align-content: var(--align-content);
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-self: auto;
+      width: 100%;
+  }
+  } */
+  @media screen and (min-width: 1026px) and (max-width: 1600px) {
+    .e-con-inner {
+      flex-wrap: var(--flex-wrap);
+      justify-content: var(--justify-content);
+      align-items: var(--align-items);
+      align-content: var(--align-content);
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-self: auto;
+      width: 75%;
+  }
+  
+    .content {
+      font-size: 16px;  /* Larger font size */
+    }
+  }
+  
+  

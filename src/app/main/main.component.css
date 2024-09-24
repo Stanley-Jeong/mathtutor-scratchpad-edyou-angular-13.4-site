@@ -1407,3 +1407,24 @@ margin-left:-5%;
                     margin-left:26%;
                   
                   }}
+                  .faq {
+                    cursor: pointer;
+                    border-top: 1px solid rgba(255, 255, 255, 0.5);
+                    padding: 1rem 0;
+                }
+                .elementor-21997 .elementor-element.elementor-element-73a45f35 {
+                    --display: flex;
+                    --flex-direction: column;
+                    --container-widget-width: 100%;
+                    --container-widget-height: initial;
+                    --container-widget-flex-grow: 0;
+                    --container-widget-align-self: initial;
+                    --background-transition: 0.3s;
+                }
+                .e-con-inner{
+                    display: flex;
+                }
+                .title-faq{
+                    padding: 1rem;
+                }
+                

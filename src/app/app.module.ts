@@ -29,6 +29,7 @@ import * as Sentry from "@sentry/angular-ivy";
 import { CommonModule } from '@angular/common';
 import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
+import { CourseScComponent } from './course-sc/course-sc.component';
  // Import the datepicker module
  
 
@@ -56,7 +57,7 @@ import { ScComponent } from './sc/sc.component';
     RevolutionizingEducationComponent,
     InvestorLoginComponent,
     ScComponent,
-  
+    CourseScComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
