@@ -280,10 +280,10 @@ margin-left: 7px;" width="17" height="18" viewBox="0 0 17 18" fill="none">
               <input type="text" #input2 style="width: 60px;"> 
               <button (click)="setVideo(input1.value, input2.value)">send</button>  -->
               <!-- onkeydown="if (event.keyCode == 13) document.getElementById('sendId1').click()" -->
-                  <input type="text" [style.width]="inputWidthSize" id="textTourBox" [style.height]="inputheightSize"
-                    (focus)="onFocus('inputActive')" (blur)="onBlur()" class="group-item"
+                  <input type="text" #myInput [style.width]="inputWidthSize" id="textTourBox" [style.height]="inputheightSize"
+                    (focus)="onFocus('inputActive')" (blur)="onBlur()"  class="group-item"
                   
-                    [(ngModel)]="userText" placeholder="Type here or push mic to talk"
+                    [(ngModel)]="userText" placeholder="Type here or push mic to talk" (input)="forinputpadding()"
                     style="font-size: medium !important; padding-left: 15px !important; border-color: white;">
 
                 </ng-container>

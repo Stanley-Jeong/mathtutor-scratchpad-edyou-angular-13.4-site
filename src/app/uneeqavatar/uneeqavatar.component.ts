@@ -29,6 +29,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stringRef = String;
   // Set the timeout duration in milliseconds (28 seconds)
   @ViewChild('messageContainer') private messageContainer!: ElementRef;
+  @ViewChild('myInput', { static: false }) myInput!: ElementRef;
   fullScreen: boolean = false;
   userText: any
   connectionFailureCount = 0;
@@ -4487,5 +4488,23 @@ getBrowserName() {
   //     }
   //   })
   // }
-
+  forinputpadding(){
+    const screen = localStorage.getItem('screen')
+    // if(screen){
+    //   console.log(true)
+    // }else{
+    //   console.log(false)
+    // }
+    if (window.innerWidth > 768 && window.innerWidth < 1025 && this.fullScreen == false  ) {
+      console.log("condition satisfied")
+      this.myInput.nativeElement.style.paddingRight = '50px';
+    }else if(window.innerWidth > 768 && window.innerWidth < 1025 && screen){
+      this.myInput.nativeElement.style.paddingRight = '50px';
+    }else if(window.innerWidth < 601){
+      this.myInput.nativeElement.style.paddingRight = '50px';
+      console.log('mobile')
+    }else{
+      console.log("!condition satisfied")
+      this.myInput.nativeElement.style.paddingRight = '10px';
+    }}
 }
