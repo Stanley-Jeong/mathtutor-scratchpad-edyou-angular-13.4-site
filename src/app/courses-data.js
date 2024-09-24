@@ -107,7 +107,7 @@ export const courses = [
       { src: '../assets/course-banners/course-slides/sc-history1.jpg', alt: 'Slide 3' },
     ],
     description: `<strong>Course Overview:</strong><br>
-Discover the rich tapestry of American history with interactive lessons designed to make the past come alive. From the founding of the nation to key moments like the Civil War and the Civil Rights Movement, you’ll explore how the country evolved over time. Each lesson is tailored to your learning level, whether you’re just starting or want to dive deep into a particular era. With the help of your study buddy, you'll understand not just the events, but the motivations, impacts, and the stories behind them.<br><strong>What You’ll Learn:</strong><br>
+Discover the rich tapestry of American history with interactive lessons designed to make the past come alive. From the founding of the nation to key moments like the Civil War and the Civil Rights Movement, you’ll explore how the country evolved over time. Each lesson is tailored to your learning level, whether you’re just starting or want to dive deep into a particular era. With the help of your study buddy, you'll understand not just the events, but the motivations, impacts, and the stories behind them.<br><br><strong>What You’ll Learn:</strong><br>
 <li>Key historical events, figures, and milestones from the American Revolution to modern times.</li>
 <li>The political, economic, and social forces that shaped America’s growth.</li>
 <li>Analyzing primary sources and understanding historical perspectives.</li>`,
@@ -122,7 +122,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/algebra3.jpg', alt: 'Slide 3' },
     ],
     description: `<strong>Course Overview:</strong><br> Algebra is more than just numbers—it's the foundation for logical thinking and problem-solving. Whether you're learning about variables, solving equations, or graphing functions, this course will help you master algebraic concepts step by step. Your study buddy is there to break down complex topics into bite-sized, easy-to-understand lessons. By the end of the course, you’ll not only solve equations but also understand how algebra applies to the real world.
-<br><strong>What You’ll Learn:</strong><br>
+<br><br><strong>What You’ll Learn:</strong><br>
 <li>Understanding and using variables and expressions.</li>
 <li>Solving linear equations, inequalities, and systems of equations.</li>
 <li>Factoring polynomials and solving quadratic equations.</li>
@@ -137,7 +137,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/sc-biology3.jpg', alt: 'Slide 3' },
     ],
     description: `<strong>Course Overview:</strong><br>Dive into the fascinating world of biology, from the microscopic cells that make up all living organisms to the vast ecosystems that sustain life on Earth. This course covers foundational topics like cell structure, genetics, evolution, and ecology. With interactive visuals and hands-on activities, your study buddy ensures that biology is not only understandable but also engaging. You’ll gain a deeper appreciation for the living world around you and how everything is interconnected.
-<br><strong>What You’ll Learn:</strong><br>
+<br><br><strong>What You’ll Learn:</strong><br>
 <li>The structure and function of cells, including DNA and genetics.</li>
 <li>How organisms grow, reproduce, and evolve over time.</li>
 <li>The interdependence of organisms within ecosystems.</li>
@@ -152,7 +152,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/sc-latin3.jpg', alt: 'Slide 3' },
     ],
     description: `<strong>Course Overview:</strong><br> Step into the world of ancient Rome and learn the language that influenced so many modern languages today. In this course, you'll explore Latin vocabulary, grammar, and culture. Whether you’re a beginner or looking to improve your skills, your study buddy tailors each lesson to your level. You’ll learn to translate Latin texts, understand Roman civilization, and see how Latin forms the roots of many English words. Plus, you’ll gain skills that improve your understanding of English grammar and vocabulary.
-<br><strong>What You’ll Learn:</strong><br>
+<br><br><strong>What You’ll Learn:</strong><br>
 <li>Basic and advanced Latin grammar, including declensions and conjugations.</li>
 <li>Building a strong Latin vocabulary to translate ancient texts.</li>
 <li>Roman history, culture, and mythology, and how they shaped Western civilization.</li>
@@ -167,7 +167,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
     ],
     description: `<strong>Course Overview:</strong><br> Pre-Algebra is your gateway to more advanced mathematical concepts. In this course, you’ll build a strong foundation in numbers, variables, and equations, preparing you for success in Algebra and beyond. With your study buddy guiding you through, you’ll learn to solve problems step by step and gain confidence in your math abilities. Each lesson is interactive and personalized, ensuring that concepts click at your own pace.
-<br><strong>What You’ll Learn:</strong><br>
+<br><br><strong>What You’ll Learn:</strong><br>
 <li>Operations with whole numbers, fractions, decimals, and percentages.</li>
 <li>Introduction to variables, expressions, and basic equations.</li>
 <li>Understanding ratios, proportions, and percentages.</li>
