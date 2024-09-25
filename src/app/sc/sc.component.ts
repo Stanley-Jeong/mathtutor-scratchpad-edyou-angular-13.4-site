@@ -23,6 +23,7 @@ export class ScComponent implements OnInit {
   selectedDate: string | null = null;
   error: any = "";
   isOpen = false;
+  newLoader:boolean = false
 
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   openSuccessPopup: boolean = false;
@@ -81,7 +82,7 @@ export class ScComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
     firstName: new FormControl('', Validators.required),
     promocode: new FormControl('',Validators.required),
-    parentEmail: new FormControl('', [Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+    parentEmail: new FormControl('', [Validators.required,Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
     lastName: new FormControl('', Validators.required),
     date: new FormControl('', [Validators.required, this.dateNotInFuture()])
   })
@@ -169,11 +170,11 @@ export class ScComponent implements OnInit {
 
   submitForm() {
     if (this.subjectform.valid) {
-      if(this.showParent){
-        this.subjectform.value.parentEmail
-      }else{
-        this.subjectform.value.parentEmail = ''
-      }
+      // if(this.showParent){
+      //   this.subjectform.value.parentEmail
+      // }else{
+      //   this.subjectform.value.parentEmail = ''
+      // }
      
       let loginPayload = {
         "email": this.subjectform.value.email,
@@ -185,11 +186,12 @@ export class ScComponent implements OnInit {
         "DOB":this.subjectform.value.date
       }
       this.isloading = true
+      console.log(this.showParent)
       console.log(loginPayload)
       this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
 
         if (res.statusCode == 200) {
-     //    this.planAPI(this.subjectform.value.email) 
+        this.planAPI(this.subjectform.value.email) 
   
        this.closeForm()
        this.openSuccessPopup = true;
@@ -220,40 +222,40 @@ export class ScComponent implements OnInit {
 
 
 
-    } else {
-this.validateAllFormFields(this.subjectform);
+    }else {
+      this.validateAllFormFields(this.subjectform);
+
     }
 
   }
 
 
-  // planAPI(email: string) {
-  //   this.isloaderpricing = true;
-  //   let payload = {
-  //     "email": email,
-  //     "prod_id": "prod_QofbY9vz5uizFD",
-  //     "plan": "Trailblazers",
-  //     "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
-  //     "mode": "setup",
-  //     "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
-  //     "price_amount": "199",
-  //     "belong_to" :"sc"
-  //   }
-  //   this.service.scSchool(payload).subscribe((res: any) => {
+  planAPI(email: string) {
+    this.isloaderpricing = true;
+    this.newLoader = true
+    let payload = {
+      "email": email,
+      "prod_id": "prod_QpTSBxSdj6Z0BT",
+      "plan": "Trailblazers",
+      "price_id": "price_1PxoVxALy7MM11rqUZ3kCKxz",
+      "mode": "setup",
+      "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
+      "price_amount": "199.00",
+      "belong_to" :"sc"
+    }
+    this.service.stripe(payload).subscribe((res: any) => {
       
-     
-  //     if (res.statusCode == 303) {
-  //       this.closeForm()
-       
-  //       window.location.href = res.headers.Location;
-     
-       
-      
-  //       this.isloading =false;
-  //     }
-  //   })
+     console.log(res)
+      if (res.statusCode == 303) {
+        this.newLoader = false
+        // this.closeForm()
+        window.location.href = res.headers.Location;
+        this.isloading =false;
+      }
+    })
 
-  // }
+  }
+
   closeSuccessPopup() {
      this.openSuccessPopup = !this.openSuccessPopup
    }
@@ -266,8 +268,8 @@ this.validateAllFormFields(this.subjectform);
     const currentDate = new Date();
     this.age = currentDate.getFullYear() - dob.getFullYear();
     const monthDifference = currentDate.getMonth() - dob.getMonth();
-const dayDifference = currentDate.getDate() - dob.getDate();
-if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+    const dayDifference = currentDate.getDate() - dob.getDate();
+    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
    this.age  = currentDate.getFullYear() - dob.getFullYear();
    this.age = this.age - 1;
 
@@ -276,13 +278,13 @@ if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
     if (this.age < 13) {
       // Require the parent email to be filled in
       this.showParent = true
-      this.subjectform.controls['parentEmail'].setValidators([Validators.required, Validators.email]);
-      this.subjectform.controls['parentEmail'].updateValueAndValidity();
+      // this.subjectform.controls['parentEmail'].setValidators([Validators.required, Validators.email]);
+      // this.subjectform.controls['parentEmail'].updateValueAndValidity();
     } else {
       // If age is 13 or above, remove the parent email validation
       this.showParent = false
-      this.subjectform.controls['parentEmail'].clearValidators();
-      this.subjectform.controls['parentEmail'].updateValueAndValidity();
+      // this.subjectform.controls['parentEmail'].clearValidators();
+      // this.subjectform.controls['parentEmail'].updateValueAndValidity();
     }
 
     return this.age < 13 ? { 'underage': true } : null;

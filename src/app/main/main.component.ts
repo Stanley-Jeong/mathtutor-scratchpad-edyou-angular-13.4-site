@@ -724,11 +724,15 @@ export class MainComponent implements OnInit, OnDestroy {
          payload = {
           "email": email,
           "prod_id": "prod_QmrFV8irjoWH9E",
+          // "prod_id": "prod_Qkv0CvSnYSA23r",
           "plan": plan,
-          "price_id": "price_1PtPGkALy7MM11rqHalmXJyc",
+          "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
+          // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "mode": "setup",
-          "price": "price_1PtPGkALy7MM11rqHalmXJyc",
-          "price_amount": "39",
+          "price": "price_1PxoBRALy7MM11rqkjD1f8DB",
+          // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
+          "price_amount": "19.99",
+          // "price_amount": "39",
           "belong_to" :"nonsc"
         }
         break;
@@ -737,10 +741,13 @@ export class MainComponent implements OnInit, OnDestroy {
        payload = {
           "email": email,
           "prod_id": "prod_QmrFLWOmU2oDzr",
+          // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
           "plan": plan,
-          "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+          "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
+          // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
-          "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+          "price": "price_1Pxo9IALy7MM11rqfEWyUv4i",
+          // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "price_amount": "74.99",
           "belong_to" :"nonsc"
         }
@@ -750,11 +757,15 @@ export class MainComponent implements OnInit, OnDestroy {
         payload = {
           "email": email,
           "prod_id": "prod_QmrFZUGlrjAclG",
+          // "prod_id": "prod_Qkv3dLCQOXIq0z",
           "plan": plan,
-          "price_id": "price_1PtPIpALy7MM11rq800rj6vc",
+          "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
+          // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "mode": "setup",
-          "price": "price_1PtPIpALy7MM11rq800rj6vc",
-          "price_amount": "199",
+          "price": "price_1PxoB0ALy7MM11rqYdsqSzJN",
+          // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
+          "price_amount": "199.99",
+          // price_amount": "199",
           "belong_to" :"nonsc"
         }
         break;
@@ -764,7 +775,7 @@ export class MainComponent implements OnInit, OnDestroy {
         break;
     }
  
-    this.service.scSchool(payload).subscribe((res: any) => {
+    this.service.stripe(payload).subscribe((res: any) => {
       
      
       if (res.statusCode == 303) {
