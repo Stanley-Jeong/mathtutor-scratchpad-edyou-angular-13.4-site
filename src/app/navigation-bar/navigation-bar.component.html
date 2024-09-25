@@ -220,6 +220,11 @@
                         <div class="scLogoimg"   >
                             <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
                             <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
+                            <div  *ngIf="!isLoggedIn" style="">
+                                <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
+                                <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+                                  <!-- </ng-container> -->
+                              </div>
                             <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
                         </div>
                         <!-- <a >
@@ -273,11 +278,7 @@
             
             </div>
 
-            <div  *ngIf="!isLoggedIn" style="">
-              <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
-              <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
-                <!-- </ng-container> -->
-            </div>
+           
   
        
         </div>

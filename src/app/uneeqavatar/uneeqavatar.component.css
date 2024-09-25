@@ -5139,7 +5139,9 @@ only screen and (device-width: 834px) and (device-height: 1075px) {
 
 /* max-device-width: 480px */
 @media only screen and (max-width: 480px) {
-
+  .chat-button {
+    margin-right: -10px;
+  }
   .baseChatBottom{
     left: 10px;
 }
@@ -6882,6 +6884,9 @@ width: 100%;
 
 
 @media only screen and (min-device-width: 768px)and (max-device-width: 1024px) and (orientation: portrait) {
+  .chat-button {
+    margin-right: -5px;
+  }
   .speakingsss:hover .min {
     visibility: hidden;
   }

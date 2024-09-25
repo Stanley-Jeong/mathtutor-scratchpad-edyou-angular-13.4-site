@@ -88,6 +88,7 @@ downloadInvoice() {
 }
 
 navigateToMain() {
-  this.router.navigate(['/SC']);
+  // this.router.navigate(['/SC']);
+  this.router.navigate(['/main']);
 }
 }

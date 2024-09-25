@@ -522,7 +522,7 @@ text-align: center;
 
 .pricing-card {
     background-color: #183152;
-    height: 538px;
+    height: 578px;
     width: 408px;
     border-radius: 12px;
     padding: 2em;
@@ -625,7 +625,12 @@ text-align: center;
     right: 20px;
     font-size: 14px;
 }
-
+.bottom-position{
+position: absolute;
+    bottom: 20px;
+    right: 0px;
+    /* font-size: 14px; */
+}
 /* COURSES SECTIONS */
 
 .courses-section {
@@ -711,15 +716,17 @@ text-align: center;
     backdrop-filter: blur(8px); 
 }
 .waitlist{
-    width: 425px;
-    height: 435px;
-    flex-shrink: 0;
+    /* width: 425px;
+    height: 435px; */
+    /* flex-shrink: 0; */
     border-radius: 24px;
     background: #FFF;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
     z-index: 6;
 }
 .margin1{
@@ -741,6 +748,7 @@ text-align: center;
     justify-content: center;
     margin: 15px;
     gap: 15px;
+    margin-top:-9px;
 }
 .waitlistHeading{
     color: var(--secondary-color-2, #3C403D);
@@ -1399,3 +1407,24 @@ margin-left:-5%;
                     margin-left:26%;
                   
                   }}
+                  .faq {
+                    cursor: pointer;
+                    border-top: 1px solid rgba(255, 255, 255, 0.5);
+                    padding: 1rem 0;
+                }
+                .elementor-21997 .elementor-element.elementor-element-73a45f35 {
+                    --display: flex;
+                    --flex-direction: column;
+                    --container-widget-width: 100%;
+                    --container-widget-height: initial;
+                    --container-widget-flex-grow: 0;
+                    --container-widget-align-self: initial;
+                    --background-transition: 0.3s;
+                }
+                .e-con-inner{
+                    display: flex;
+                }
+                .title-faq{
+                    padding: 1rem;
+                }
+                

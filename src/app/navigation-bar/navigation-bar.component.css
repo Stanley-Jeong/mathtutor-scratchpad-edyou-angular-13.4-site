@@ -52,6 +52,16 @@ a{
 
   margin-right:86px;
   cursor: pointer;
+  margin-top: 1px;
+  /* margin-right: 86px; */
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 12px;
+
   }
   .scLogoimgMobilebutton{
     height:32px;
@@ -214,7 +224,7 @@ height:auto; /* Adjust size as needed */
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-left: -175px;
+  /* margin-left: -175px; */
 
 }
 .loginBtn span {
@@ -432,7 +442,7 @@ margin-bottom: 0rem;
     justify-content: center;
     align-items: center;
     /* gap: 10px; */
-    margin-left: -92px;
+    /* margin-left: -92px; */
    }
    .scLogoimgMobile{
     margin-right: -6px;

@@ -83,7 +83,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
           }else{
             this.isSafetyState = false;
           }
-          if(this.router.url.includes('/SC')){
+          if(this.router.url.includes('/SC')||this.router.url.includes('/sc')){
              this.isScPage =true;
            if(this.screenSize == 'small')  {
           this.sc = true;  
