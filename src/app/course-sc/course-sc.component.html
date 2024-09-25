@@ -1,0 +1,80 @@
+<main id="content"
+    class="site-main post-22064 page type-page status-publish hentry">
+
+    <div class="page-content" style="padding:0 15px;">
+        <div data-elementor-type="wp-page" data-elementor-id="22064"
+            class="elementor elementor-22064" data-elementor-post-type="page">
+            <div
+                class="has_ae_slider elementor-element elementor-element-66325df e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
+                data-id="66325df" data-element_type="container"
+                data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
+                data-core-v316-plus="true">
+                <div class="e-con-inner">
+                    <div
+                        class="elementor-element elementor-element-dcef706 elementor-widget elementor-widget-heading"
+                        data-id="dcef706" data-element_type="widget"
+                        Adata-widget_type="heading.default">
+                        <div class="elementor-widget-container">
+                            <style>/*! elementor - v3.19.0 - 07-02-2024 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h1
+                                class="elementor-heading-title elementor-size-default">{{currentCourse.title}}</h1> 
+                              </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="has_ae_slider elementor-element elementor-element-0a2a186 e-flex e-con-boxed ae-bg-gallery-type-default e-con e-parent"
+                data-id="0a2a186" data-element_type="container"
+                data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}"
+                data-core-v316-plus="true">
+                <div class="e-con-inner">
+                    <div
+                        class="elementor-element elementor-element-25d3b74 elementor-widget elementor-widget-image"
+                        data-id="25d3b74" data-element_type="widget"
+                        data-widget_type="image.default">
+                        <div class="elementor-widget-container">
+                            <!-- <img fetchpriority="high" decoding="async"
+                                width="2560" height="1435"
+                                src="{{currentCourse.image}}"
+                                class="attachment-full size-full wp-image-22094"
+                                alt="{{currentCourse.id}}"
+                                sizes="(max-width: 2560px) 100vw, 2560px" /> -->
+                                <div class="carousel-container">
+                                    <div class="carousel-wrapper" #carouselWrapper  >
+                                      <div class="carousel-slide" *ngFor="let image of currentCourse.images;  let i = index"  [ngClass]="{'active': i === currentIndex}">
+                                        <img [src]="image.src" [alt]="image.alt" class="carousel-image attachment-full size-full wp-image-22094" sizes="(max-width: 2560px) 100vw, 2560px">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-button prev" (click)="prevSlide()">&#10094;</button>
+                                    <button class="carousel-button next"  (click)="nextSlide()">&#10095;</button>
+                                    <div class="carousel-dots">
+                                        <span 
+                                          *ngFor="let image of currentCourse.images; let i = index"
+                                          class="dot"
+                                          [ngClass]="{'active': i === currentIndex}"
+                                          (click)="goToSlide(i)"
+                                        ></span>
+                                      </div>
+                                  </div>
+                        </div>
+                    </div>
+                    <div
+                        class="small-lappy elementor-element elementor-element-5055114 elementor-widget elementor-widget-text-editor"
+                        data-id="5055114" data-element_type="widget"
+                        data-widget_type="text-editor.default">
+                        <div class="elementor-widget-container small-lappy ">
+                            <div [innerHTML]="currentCourse.description"></div>   
+                        </div>
+                        <div class="subscribe-button-container">
+                            <button class="main-button" (click)="goTo_mainPage()">Go to main page</button>
+                          <button class="subscribe-button" (click)="gotoPreenroll('pricing_section_id')">Pre-Enroll Now</button>
+                          <!-- <button class="subscribe-button">Pre-Enroll Now</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-tags">
+        </div>
+    </div>
+</main>

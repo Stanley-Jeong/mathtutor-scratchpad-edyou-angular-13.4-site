@@ -45,7 +45,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   userDetails: any;
   buttonName: any;
   isbuttondisabled: boolean =false;
-  updatedData: any;
+
+  updatedData:any
+
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -81,7 +83,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
           }else{
             this.isSafetyState = false;
           }
-          if(this.router.url.includes('/SC')){
+          if(this.router.url.includes('/SC')||this.router.url.includes('/sc')){
              this.isScPage =true;
            if(this.screenSize == 'small')  {
           this.sc = true;  

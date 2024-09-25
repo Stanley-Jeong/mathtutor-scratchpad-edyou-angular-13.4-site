@@ -220,6 +220,11 @@
                         <div class="scLogoimg"   >
                             <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
                             <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
+                            <div  *ngIf="!isLoggedIn" style="">
+                                <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
+                                <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+                                  <!-- </ng-container> -->
+                              </div>
                             <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
                         </div>
                         <!-- <a >
@@ -243,7 +248,7 @@
                     </div>
                 </div>
             </div>
-            <div class="merginMobile"*ngIf="isScPage" style="display: flex;justify-content: center;align-items: center;">
+            <div class="merginMobile" style="display: flex;justify-content: center;align-items: center;">
                 <div  *ngIf="isLoggedIn" class="has_ae_slider elementor-element elementor-element-116a01ad e-con-full e-flex ae-bg-gallery-type-default e-con e-child"
                 data-id="116a01ad" data-element_type="container" style="display: flex;justify-content: left;align-items: center;margin-left: -20px;"
                 data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
@@ -273,11 +278,7 @@
             
             </div>
 
-            <div  *ngIf="!isLoggedIn" style="">
-              <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
-              <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
-                <!-- </ng-container> -->
-            </div>
+           
   
        
         </div>

@@ -12,7 +12,12 @@ export class InvestorsService {
 
   requestAccess(investor:Investor): Observable<any> {
     return this.http.post(this.baseUrl + 'Production/add_contact_to_investor_access', investor);
-  }
+  } 
+
+
+    consentAPI(data:any): Observable<any> {
+      return this.http.get('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Parental_Consent');
+    } 
 }
 
 

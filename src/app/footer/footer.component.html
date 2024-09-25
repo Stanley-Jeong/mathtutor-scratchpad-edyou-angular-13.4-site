@@ -218,7 +218,7 @@
                                                         <ul id="menu-1-cef0c38"
                                                                 class="elementor-nav-menu"><li
                                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22029"><a
-                                                                                (click)="navigateToCompany()"
+                                                                                (click)="navigateToCompany()" 
                                                                                 class="elementor-item">Company
                                                                                 <span class="sub-arrow"><i class="fas fa-caret-down"></i></span></a>
                                                                         <ul
@@ -490,13 +490,31 @@
                                                         </ul> </nav>
                                         </div>
                                 </div>
+                               
                                 <div
-                                        class="elementor-element elementor-element-4473ba2 elementor-widget elementor-widget-text-editor"
-                                        data-id="4473ba2"
+                                        class="elementor-element elementor-element-4473ba2 elementor-widget elementor-widget-text-editor formMergin"
+                                        data-id="4473ba2" id="newsletter"
                                         data-element_type="widget"
                                         data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">
-                                                <p>Helping humans do more.</p>
+                                        <form [formGroup]="newsletterForm" >
+                                                <div class="newForm" >
+                                                        <h6 class="newformHeading">Sign up for newsletter</h6>
+                                                        <div class="inputcontainer">
+                                                          <input id="emailInput" formControlName="email" type="text" placeholder="Email">
+                                                        </div> 
+                                                        <small *ngIf="email?.invalid && email?.touched && email?.value" class="text" style="color:#E74040;display: flex; ">Invalid email</small>
+                                                        <button [disabled]="isLoading" (click)="newslettersubmit()">
+                                                                <img class="" style="width : 24px; color:white;" *ngIf="isLoading"
+                                                                src="../../assets/Rolling-1s-200px (2).gif"> <span  *ngIf="!isLoading">Submit</span>
+                                                        </button> 
+                                                        <small *ngIf="onsuccess" class="text" style="color:#2DC071;display: flex; ">Success</small>
+                                                  </div>
+                                        </form>
+                                        
+                                        
+                                        <div class="elementor-widget-container helpmergin">
+                                                <p class="Helpinghumans">Helping humans do more.</p>
+
                                         </div>
                                 </div>
                         </div>
@@ -804,8 +822,24 @@
                                 class="elementor-element elementor-element-fc82f61 elementor-widget elementor-widget-text-editor"
                                 data-id="fc82f61" data-element_type="widget"
                                 data-widget_type="text-editor.default">
+                                <form [formGroup]="newsletterForm" >
+                                        <div class="newForm centeralign" >
+                                                <h6 class="newformHeading">Sign up for newsletter</h6>
+                                                <div class="inputcontainer">
+                                                  <input id="emailInput" formControlName="email" type="text" placeholder="Email">
+                                                </div> 
+                                                <small *ngIf="email?.invalid && email?.touched && email?.value" class="text"  style="color:#E74040;">Invalid email</small>
+                                                <button class="spacebottom" [disabled]="isLoading" (click)="newslettersubmit()">
+                                                        <img class="" style="width : 24px; color:white;" *ngIf="isLoading"
+                                                                src="../../assets/Rolling-1s-200px (2).gif"> <span  *ngIf="!isLoading">Submit</span>
+                                                </button> 
+                                                <small *ngIf="onsuccess" class="text"  style="color:#2DC071;display: flex; ">Success</small>
+                                        </div>
+                                </form>
+                                
                                 <div class="elementor-widget-container">
-                                        <p>Helping humans do more.</p> </div>
+                                        <p class="Helpinghumans">Helping humans do more.</p> 
+                                </div>
                         </div>
                         <div
                                 style="text-align: center;"

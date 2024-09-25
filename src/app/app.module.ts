@@ -28,6 +28,9 @@ import { CoursePageComponent } from './courses-page/course.component';
 import { ScComponent } from './sc/sc.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CourseScComponent } from './course-sc/course-sc.component';
+ // Import the datepicker module
+ 
 
 const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled', // Enable fragment scrolling
@@ -58,6 +61,7 @@ const routerOptions: ExtraOptions = {
     ScComponent,
     LoginComponent,
     ProfileComponent,
+    CourseScComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -67,6 +71,11 @@ const routerOptions: ExtraOptions = {
     CommonModule,
     AppRoutingModule,
     RouterModule.forRoot([], routerOptions), // <-- Add RouterModule with routerOptions
+    CommonModule ,
+    FormsModule,
+    ReactiveFormsModule,
+    
+   
     // ServiceWorkerModule.register('ngsw-worker.js', {
     //   enabled: environment.production,
     //   registrationStrategy: 'registerWhenStable:30000'

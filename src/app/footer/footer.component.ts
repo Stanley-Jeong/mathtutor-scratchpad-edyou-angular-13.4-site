@@ -1,6 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router,ActivatedRoute } from '@angular/router';
+import { UserService } from '../service/user.service';
 
 
 @Component({
@@ -10,14 +12,41 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent implements OnInit {
   private isBrowser: boolean;
-  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-   }
+  newsletterForm !: FormGroup;
 
-  ngOnInit(): void {}
   defaultImage: string = '../assets/icons/twitter.png'; // Path to your default image
   hoverImage: string = '../assets/icons/twitter-white.png'; // Path to your hover image
   isHovered: boolean = false;
+  isLoading:boolean = false
+  onsuccess:boolean = false
+  isDropdownOpen:boolean = false;
+  
+  
+  constructor(private router: Router,private route :ActivatedRoute,private fb: FormBuilder,private service :UserService, @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+
+    this.newsletterForm = this.fb.group({
+      email: ['', [Validators.email, this.customEmailValidator]],
+    });
+   }
+
+  ngOnInit(): void {
+    this.route.fragment.subscribe((fragment: string | null) => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the element
+        }
+      }
+    });
+  }
+
+
+  get email() {
+    return this.newsletterForm.get('email');
+  }
+
+  
 
   onMouseOver(): void {
     this.isHovered = true;
@@ -84,7 +113,43 @@ export class FooterComponent implements OnInit {
       }
     }
   }
-  
+
+  customEmailValidator(control: AbstractControl): ValidationErrors | null {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const valid = emailPattern.test(control.value);
+    return valid ? null : { invalidEmail: true };
+  }
+
+  newslettersubmit(){
+    this.isLoading = true
+    if (this.newsletterForm.valid) {
+      const pay = {
+        name:"",
+        email: this.newsletterForm.value.email,
+      };// this.router.navigate([], { fragment: 'newsForm' });
+    
+      
+      this.service.signupNewsletter(pay).subscribe((res:any)=>{
+        console.log(res)
+        if(res.statusCode == 200){
+          this.isLoading = false
+          this.newsletterForm.reset();
+          this.onsuccess =true
+          this.router.navigate(['/newsletter-success']);
+          setTimeout(()=>{
+            this.onsuccess = false
+          },3000)
+        }else{
+          this.isLoading = false
+        }
+      })
+      
+    }else{
+      this.isLoading = false
+      console.log('form not valid')
+      this.newsletterForm.get('email')?.markAsTouched();
+    }
+  }
   
   
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { CompanyComponent } from './company/company.component';
 import { PayItForwardComponent } from './pay-it-forward/pay-it-forward.component';
@@ -21,6 +21,9 @@ import { ScRedirectGuard } from './sc-redirect.guard';
 import { SuccesspaymentComponent } from './successpayment/successpayment.component';
 import { FailedpaymentComponent } from './failedpayment/failedpayment.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NewletterComponent } from './newletter/newletter.component';
+import { ConsentsuccessComponent } from './consentsuccess/consentsuccess.component';
+import { CourseScComponent } from './course-sc/course-sc.component';
 
 
 const routes: Routes = [
@@ -43,11 +46,16 @@ const routes: Routes = [
   {path: 'investors', component: InvestorsComponent},
   {path: 'terms', component:TermsComponent},
   {path: 'privacy', component:PrivacyComponent},
-  {path: 'paymentsuccess', component:SuccessPaymentComponent},
+  {path: 'payment-success', component:SuccessPaymentComponent},
   {path: 'how-edyous-ai-is-reimagining-the-future-of-personalized-learning', component:EdyousAiComponent},
   {path:'revolutionizing-education-with-edyou-bridging-the-post-pandemic-learning-gap', component:RevolutionizingEducationComponent},
   {path:'investorLogin', component:InvestorLoginComponent},
   {path: 'us-history', component:CoursePageComponent},
+  {path: 'sc/sc-us-history', component:CourseScComponent},
+  {path: 'sc/sc-algebra', component:CourseScComponent},
+  {path: 'sc/sc-pre-algebra', component:CourseScComponent},
+  {path: 'sc/sc-latin', component:CourseScComponent},
+  {path: 'sc/sc-biology', component:CourseScComponent},
   {path: 'algebra', component:CoursePageComponent},
   {path: 'english', component:CoursePageComponent},
   {path: 'leadership', component:CoursePageComponent},
@@ -59,13 +67,21 @@ const routes: Routes = [
   {path: 'latin', component:CoursePageComponent},
 
   {path: 'sc/payment-success', component:SuccesspaymentComponent},
+  {path: 'newsletter-success', component:NewletterComponent},
+  {path: 'payment-failed', component:FailedpaymentComponent},
   {path: 'sc/payment-failed', component:FailedpaymentComponent},
+  {path: 'consentsuccess', component:ConsentsuccessComponent},
   {path: '**', redirectTo: '/'},
+  
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
+    initialNavigation: 'enabledBlocking',
+   
 })],
   exports: [RouterModule]
 })
