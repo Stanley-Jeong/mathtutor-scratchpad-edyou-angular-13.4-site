@@ -212,9 +212,11 @@ export class LoginComponent implements OnInit {
             if (this.loggedInDaTa.url.includes('/sc')) {
               console.log('URL contains /sc',this.loggedInDaTa.url);
               this.router.navigate(['/SC']);
+              localStorage.setItem("Login_User", JSON.stringify('SC'));
               // Perform any logic if needed
             } else {
               console.log('URL does not contain /sc');
+              localStorage.setItem("Login_User", JSON.stringify('B2C'));
               this.router.navigate(['/']);
             }
             localStorage.setItem("url", JSON.stringify(data.url));

@@ -217,14 +217,31 @@
                 <div class="elementor-icon-wrapper">
                    
                     <div class="elementor-icon">
-                        <div class="scLogoimg"   >
-                            <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
-                            <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
+                        <div class="scLogoimg" *ngIf="no_user_Loggedin"  >
+                            <span *ngIf="fordesktop == true" style="display: flex; justify-content: center;align-items: center;">
+                                <img  *ngIf="isScPage == false" class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                                <img  *ngIf="isScPage == false" class ="scLogoimgMobilebutton "(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
+                            </span>
+                            <span *ngIf= "forIpad == true"  >
+                                <img  *ngIf="forMobile == true" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/Sc Button 1.5x.png" alt=""   >
+                            </span>
+                            
+                            <!-- <button class="scLogoimgMobilebutton"></button> -->
+                            <div  *ngIf="!isLoggedIn" style="">
+                                <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
+                                <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+                                <!-- </ng-container> -->
+                            </div>
+                            <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
+                        </div>
+                        <div class="scLogoimg" *ngIf="b2cloggin"  >
+                            <!-- <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                            <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   > -->
                              <div  *ngIf="!isLoggedIn" style="">
-              <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
-              <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
-                <!-- </ng-container> -->
-            </div>
+                                <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
+                                <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+                                <!-- </ng-container> -->
+                            </div>
                             <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
                         </div>
                         <!-- <a >
@@ -236,7 +253,7 @@
                 </div>
             </div>
             </div>
-            <div class="elementor-element elementor-element-43a78293 hamburger-menu elementor-hidden-desktop elementor-view-default elementor-widget elementor-widget-icon"
+            <div class="elementor-element elementor-element-43a78293 hamburger-menu elementor-hidden-desktop elementor-view-default elementor-widget elementor-widget-icon hambergarrightLine"
                 data-id="43a78293" data-element_type="widget" data-widget_type="icon.default">
                 <div class="elementor-widget-container mobileShow" [ngStyle]="sc ? {'margin-top': '0px'}:{}"  >
                     <div class="elementor-icon-wrapper" style="display: flex;justify-content: center;align-items: center;">

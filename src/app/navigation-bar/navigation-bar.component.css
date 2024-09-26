@@ -64,7 +64,8 @@ a{
     }
   .scLogoimgMobilebutton{
     height:32px;
-     margin-top: -13px;
+    margin-top: -13px;
+    
   }
   .scLogoimgMobile{
     padding-right: 11px;
@@ -224,6 +225,7 @@ height:auto; /* Adjust size as needed */
   align-items: center;
   gap: 10px;
   /* margin-left: -175px; */
+  background-color:#2A7CC7;
 
 }
 .loginBtn span {
@@ -368,7 +370,9 @@ margin-bottom: 0rem;
   color: black !important;
 }
 
-
+.d-smnone{
+  visibility: visible;
+}
 .hide-on-mobile {
   display: none;
 }
@@ -436,31 +440,51 @@ margin-bottom: 0rem;
     top: 76px;
     margin-right: 76px;
   } */
+   .hambergarrightLine{
+    margin-right: -30px;
+   }
+   .loginBtn {
+      width: 70px;
+      margin-right: -50px;
+      /* margin-right: -5px; */
+      
+
+   }
    .scLogoimg{
     display: flex;
     justify-content: center;
     align-items: center;
     /* gap: 10px; */
-    /* margin-left: -92px; */
+    margin-left: -100px;
+    margin-right: 20px;
    }
    .scLogoimgMobile{
     margin-right: -6px;
    }
    .scLogoimgMobilebutton{
-    margin-right: -10px;
-    width: 77%;
+    /* margin-right: -5px; */
+    /* width: 77%; */
+    margin-top: 0px;
    }
   .buttonProfile{
     width: 95px;
     margin-left: -128px;
   }
   .action{
-    margin-left: -200px;
+    /* margin-left: -200px; */
+    margin-left: -170px;
     margin-right: 115px;
+  }
+  .action .menu.active{
+    margin-right: 130px;
   }
   .action .profile{
     height: 40px;
     width: 40px;
+  }
+  .d-smnone{
+    /* display: none; */
+    visibility: hidden;
   }
   
 }

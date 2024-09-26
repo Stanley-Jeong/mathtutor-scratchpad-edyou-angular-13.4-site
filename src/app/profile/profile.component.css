@@ -919,6 +919,10 @@
       top: 17px;
       left: 17px;
     }
+
+    .account-details .button-3 {
+      left:65%
+    }
   
     .account-details .text-wrapper-2 {
       position: absolute;
