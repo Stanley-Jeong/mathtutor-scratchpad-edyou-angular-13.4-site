@@ -75,9 +75,7 @@
 
   </div>
   <div class="d-flex align-items-center justify-content-center">
-    
-    
-    <button  class="courseBtn" (click)="scrollToPricing()">View Plan</button>
+    <button class="courseBtn" (click)="scrollToPricing()">Subscribe Now</button>
   </div>
 
 </div>
@@ -129,10 +127,10 @@
       </div>
    
     
-      <button  class="pricing-button" (click)="ModalOpen()">
+      <button [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" class="pricing-button" (click)="ModalOpen()">
         <img class="" style="width : 24px; color:white;" *ngIf="isLoading3"
-          src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit mobileFont" *ngIf="!isLoading3">Choose
-          Plan</span></button>
+          src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit mobileFont" *ngIf="!isLoading3">Subscribe Now
+        </span></button>
       <div class="pricing-card-description">
         <h5>Includes:</h5>
         <ul class="pricing-card-description-list-items">
@@ -167,7 +165,7 @@
     </svg>
     <div class="margin2">
       <div>
-        <h1 class="waitlistHeading">Pre-Enroll Now</h1>
+        <h1 class="waitlistHeading">Subscribe Now</h1>
         <h6 class="waitlistText">Please fill in the below details</h6>
         <!-- <h6 class=" redtext">*You will be charged a test payment to verify your card, which will be refunded within 2-3 days following card verification.</h6> -->
        
@@ -231,16 +229,16 @@
       <span *ngIf="date.errors?.['futureDate']">Student's Date of Birth cannot be in the future.</span>
     </div>
     </div>
-    <div *ngIf="showParent">
+    <div>
     <div class="inputSection" [ngClass]="{'reduce-marginn': subjectform.get('date')?.touched && subjectform.get('date')?.invalid}">
       <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 15px;" width="25" height="24" viewBox="0 0 25 24" fill="none">
         <path d="M2.10645 7L10.2714 12.7154C10.9325 13.1783 11.2631 13.4097 11.6227 13.4993C11.9403 13.5785 12.2726 13.5785 12.5902 13.4993C12.9498 13.4097 13.2804 13.1783 13.9415 12.7154L22.1064 7M6.90645 20H17.3064C18.9866 20 19.8267 20 20.4684 19.673C21.0329 19.3854 21.4918 18.9265 21.7795 18.362C22.1064 17.7202 22.1064 16.8802 22.1064 15.2V8.8C22.1064 7.11984 22.1064 6.27976 21.7795 5.63803C21.4918 5.07354 21.0329 4.6146 20.4684 4.32698C19.8267 4 18.9866 4 17.3064 4H6.90645C5.22629 4 4.38621 4 3.74447 4.32698C3.17999 4.6146 2.72105 5.07354 2.43343 5.63803C2.10645 6.27976 2.10645 7.11984 2.10645 8.8V15.2C2.10645 16.8802 2.10645 17.7202 2.43343 18.362C2.72105 18.9265 3.17999 19.3854 3.74447 19.673C4.38621 20 5.22629 20 6.90645 20Z" stroke="#2A7CC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <input type="text" name="" id="" placeholder="Parent's E-mail" formControlName="parentEmail">
+      <input type="text" name="" id="" placeholder="Parent/Guardian's E-mail" formControlName="parentEmail">
     </div> 
     <div *ngIf="subjectform.get('parentEmail')?.touched && subjectform.get('parentEmail')?.invalid" class="error-message">
-      <span *ngIf="subjectform.get('parentEmail')?.errors?.['required']">Parent's E-mail is required.</span>
-      <span *ngIf="subjectform.get('parentEmail')?.errors?.['pattern']">Enter a valid Parent's E-mail address.</span>
+      <span *ngIf="subjectform.get('parentEmail')?.errors?.['required']">Parent/Guardian's E-mail is required.</span>
+      <span *ngIf="subjectform.get('parentEmail')?.errors?.['pattern']">Enter a valid Parent/Guardian E-mail address.</span>
     </div>
     </div>
     <div>
@@ -276,7 +274,9 @@
 </div>
 
 </div>
-<div class="successpopup" *ngIf="openSuccessPopup">
+
+<div class="successpopup" style="display: none;">
+<!-- <div class="successpopup" *ngIf="openSuccessPopup"> -->
   <div class="margin1">
     <svg xmlns="http://www.w3.org/2000/svg" (click)="closeSuccessPopup()" width="24" class="cross" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M17 7L7 17M7 7L17 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -293,3 +293,11 @@
     
   </div>
 </div> 
+
+<!-- loader -->
+<div class="overlay" *ngIf="newLoader"></div>
+<div class="loadercard"  *ngIf="newLoader">
+  <p style="display: flex;align-items: center;color: rgb(71, 70, 70);margin-top: 20px;">
+  <span class="loaderssss"></span> &nbsp; Loading ....
+  </p>
+</div>

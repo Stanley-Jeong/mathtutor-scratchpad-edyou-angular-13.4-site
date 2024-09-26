@@ -1427,4 +1427,8 @@ margin-left:-5%;
                 .title-faq{
                     padding: 1rem;
                 }
-                
+                .disabled-button {
+                    background-color: grey;
+                    color: lightgray;
+                    cursor: not-allowed;
+                  }

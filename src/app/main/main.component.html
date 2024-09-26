@@ -207,7 +207,7 @@
             <span><strong class="pricing-number">$19.99</strong></span>
           </div>
         </div>
-        <button class="pricing-button" (click)=" preEnroll('Silver')">Pre-Enroll Now</button>
+        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}"(click)=" preEnroll('Silver')">Pre-Enroll Now</button>
         <!-- GO TO STRIPE! -->
         <div class="pricing-card-description">
           <h5>Includes:</h5>
@@ -235,7 +235,7 @@
             <span><strong class="pricing-number">$74.99</strong>/week</span>
           </div>
         </div>
-        <button class="pricing-button" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
+        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" (click)=" preEnroll('Gold')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
           <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
@@ -265,7 +265,7 @@
             <span><strong class="pricing-number">$199.99</strong>/month</span>
           </div>
         </div>
-        <button class="pricing-button"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>
+        <button class="pricing-button"[disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}"(click)=" preEnroll('Platinum')">Pre-Enroll Now</button>
         <div class="pricing-card-description">
           <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">

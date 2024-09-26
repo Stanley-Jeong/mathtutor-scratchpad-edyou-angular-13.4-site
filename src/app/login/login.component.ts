@@ -198,6 +198,15 @@ export class LoginComponent implements OnInit {
             this.isLoading = false
             this.loggedInDaTa = data;
             console.log(this.loggedInDaTa)
+            if (this.loggedInDaTa.url.includes('/sc')) {
+              console.log('URL contains /sc',this.loggedInDaTa.url);
+              this.router.navigate(['/SC']);
+              // Perform any logic if needed
+            } else {
+              console.log('URL does not contain /sc');
+              this.router.navigate(['/']);
+            }
+            localStorage.setItem("url", JSON.stringify(data.url));
             localStorage.setItem("user", JSON.stringify(data.body));
             localStorage.setItem("LoginState", JSON.stringify(true));
          
@@ -421,6 +430,17 @@ this.resetLoader = false
     this.show = !this.show
   }
 
-
+  moveFocus(event: KeyboardEvent, nextElement: string) {
+    const target = event.target as HTMLInputElement;
+  
+    // Check if the key entered is a valid digit (0-9)
+    if (target.value.length === 1 && /\d/.test(target.value)) {
+      const nextInput = document.querySelector(`[formControlName="${nextElement}"]`) as HTMLInputElement;
+      
+      if (nextInput) {
+        nextInput.focus(); // Move to the next input
+      }
+    }
+  }
 
 }
