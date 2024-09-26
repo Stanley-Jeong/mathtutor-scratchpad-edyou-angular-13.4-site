@@ -117,7 +117,7 @@
   
               </div>
 
-              <div class="input-container input-signup">
+              <div class="input-container input-signup ">
                 <span class="input-icon">
                   <img src="../../assets/public/icon-email.svg">
                 </span>
@@ -132,20 +132,44 @@
 
                 </div>
               </div>
-              <div class="input-container input-signup">
+
+
+              <!-- parentemail -->
+       
+              <div  *ngIf="showParentb2c" class="input-container input-signup">
+                <span class="input-icon">
+                  <img src="../../assets/public/icon-email.svg">
+                </span>
+                <input style="margin-left:-7px"class="input-field" formControlName="parentEmail" name="parentEmail" type="text" placeholder="Parent's E-mail">
+              </div>
+            
+              <div  *ngIf="parentEmail.invalid && (parentEmail.dirty || parentEmail.touched) && showParentb2c" class="label__error border__error">
+                <div *ngIf="parentEmail.errors?.['required']">
+                  Parent's E-mail is required
+                </div>
+                <div *ngIf="parentEmail.errors?.['pattern']">
+                  Parent's E-mail
+                </div>
+              </div>
+              
+              <!-- parentemailend -->
+              <div class="input-container input-signup" >
                 <span class="input-icon">
                   <img src="../../assets/school.svg">
                 </span>
 
-                <input style="margin-left:-4px"class="input-field" formControlName="date" name="date" type="text" onfocus="(this.type='date')"
-                  onblur="(this.type='text')" placeholder="DOB">
+                <input style="margin-left: -7px; margin-top: 1px"class="input-field" formControlName="date" name="date"  
+     (change)="validateAge(date)" type="date" 
+    >
 
               </div>
               <div *ngIf="date.invalid && (date.dirty || date.touched)" class="label__error border__error">
-                <div *ngIf="date.errors?.['required']">
+                <!-- <div *ngIf="date.errors?.['required']">
                   Date is required
-                </div>
-  
+                </div> -->
+                <div *ngIf="date.errors?.['required']">Student's Date of Birth is required.</div>
+                <div *ngIf="date.errors?.['date']">Enter a valid Date.</div>
+                <div *ngIf="date.errors?.['futureDate']">Student's Date of Birth cannot be in the future.</div>
               </div>
 
               <div class="input-container input-signup" >
@@ -218,7 +242,17 @@
             <span class="subHeading mt-1">Please enter one time password sent to {{signUpform.value.email}}</span>
 
             <div class="otp-field mt-3">
-              <form [formGroup]="otpForm" >
+              <div class="otp-field mt-3">
+                <form [formGroup]="otpForm" class="otp-field mt-3">
+                  <input type="text" maxlength="1" formControlName="otp1" />
+                  <input type="text" maxlength="1" formControlName="otp2" />
+                  <input class="space" type="text" maxlength="1" formControlName="otp3" />
+                  <input type="text" maxlength="1" formControlName="otp4" />
+                  <input type="text" maxlength="1" formControlName="otp5" />
+                  <input type="text" maxlength="1" formControlName="otp6" />
+                </form>
+              </div>
+              <!-- <form [formGroup]="otpForm" >
                 <input type="text" maxlength="1" formControlName="otp1" (keyup)="moveFocus($event, 'otp2')" />
                 <input type="text" maxlength="1" formControlName="otp2" (keyup)="moveFocus($event, 'otp3')" />
                 <input class="space" type="text" maxlength="1" formControlName="otp3" (keyup)="moveFocus($event, 'otp4')" />
@@ -226,7 +260,7 @@
                 <input type="text" maxlength="1" formControlName="otp5" (keyup)="moveFocus($event, 'otp6')" />
                 <input type="text" maxlength="1" formControlName="otp6" />
                 <button type="submit" class="btn btn-primary mt-3">Submit OTP</button>
-              </form>
+              </form> -->
             </div>
 
             <br>

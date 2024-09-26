@@ -2,7 +2,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import * as $ from 'jquery';  // Import jQuery
 import { UserService } from '../service/user.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router, UrlTree } from '@angular/router';
 import { validateConfirmPassword } from '../directives/customValidator.directive';
 @Component({
@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
   forgetLoader: boolean = false;
   resetLoader: boolean = false;
   loggedInDaTa: any;
+  age: number=0;
+  showParent: boolean = false;
+  showParentb2c: boolean = false;
+  schoolname: string = "Sierra Canyon";
 
   constructor(private userserice: UserService, private formBuilder: FormBuilder, private router :Router) { }
 
@@ -55,12 +59,16 @@ export class LoginComponent implements OnInit {
   //signUp
   // form group
   signUpform = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+    email: new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),this.emailDomainValidator()]),
     password: new FormControl('', Validators.required),
     f_name: new FormControl('', Validators.required),
-    date: new FormControl('', Validators.required),
+   // date: new FormControl('', Validators.required),
    // school: new FormControl('', Validators.required),
+   parentEmail: new FormControl('', [Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+
     l_name: new FormControl('', Validators.required),
+    date: new FormControl('', [Validators.required, this.dateNotInFuture()])
+   
   })
 
 
@@ -100,6 +108,9 @@ export class LoginComponent implements OnInit {
     return this.form.controls['email'];
   }
 
+  get parentEmail() {
+    return this.signUpform.controls['parentEmail'];
+  }
   get password() {
     return this.form.controls['password'];
   }
@@ -209,6 +220,8 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("url", JSON.stringify(data.url));
             localStorage.setItem("user", JSON.stringify(data.body));
             localStorage.setItem("LoginState", JSON.stringify(true));
+        //    localStorage.setItem("orderhistory", JSON.stringify(data.orderHistory));
+
          
             //  localStorage.setItem("token", JSON.stringify(data.Token));
             this.userserice.login( this.loggedInDaTa );
@@ -243,18 +256,20 @@ export class LoginComponent implements OnInit {
 
 
   signUp() {
+console.log('signup',this.signUpForm.valueOf)
 
-
-    if (this.signUpform.valid) {
+    if (this.signUpform) {
       let loginPayload = {
         "email": this.signUpform.value.email,
         "f_name": this.signUpform.value.f_name,
         "l_name": this.signUpform.value.l_name,
         "password": this.signUpform.value.password,
         'dob': this.signUpform.value.date,
-        "tenantName": "Sierra Canyon",
-        "purchase": 7,
-        "grade": "Grade 6"
+        "tenantName": this.schoolname,
+        "purchase": 0,
+        "grade": "",
+        "Parent_email":this.signUpform.value.parentEmail, 
+        "Parent_email_Status":this.showParent,
       }
       this.isLoading2 = true
       this.userserice.signUp(loginPayload).subscribe(
@@ -272,6 +287,7 @@ export class LoginComponent implements OnInit {
           }
 
         })
+      console.log('signup',this.signUpForm,loginPayload)
     } else {
       this.validateAllFormFields(this.signUpform);
     }
@@ -442,5 +458,67 @@ this.resetLoader = false
       }
     }
   }
+  emailDomainValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const email = control.value;
+      
+      // Allowed domain pattern
+      const domainPattern = /\b[A-Za-z0-9._%+-]+@(scsstudent\.org|sierracanyonschool\.org|yopmail\.com)\b/;
+      
+      // Check if email matches the allowed domains
+      const isDomainValid = domainPattern.test(email);
+      if(isDomainValid){
+        this.showParentb2c = true;
+        this.signUpform.value.parentEmail.setValidators([Validators.required, Validators.email]);
+        this.signUpform.value.parentEmail.updateValueAndValidity();
+        this.schoolname = "Sierra Canyon"
+      }else{
+      this.showParentb2c = false;
+     // this.signUpform.parentEmail.clearValidators();
+this.schoolname = "B2C"
+      }
+      // Return null if valid, else return error object
+      return isDomainValid ? null : { invalidDomain: true };
+    };
+  }
 
+validateAge(control: any): { [key: string]: boolean } | null {
+  console.log(control,this.signUpform.value.date)
+  
+ 
+  const dob = new Date(this.signUpform.value.date);
+
+  const currentDate = new Date();
+  this.age = currentDate.getFullYear() - dob.getFullYear();
+  const monthDifference = currentDate.getMonth() - dob.getMonth();
+  const dayDifference = currentDate.getDate() - dob.getDate();
+  if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+ this.age  = currentDate.getFullYear() - dob.getFullYear();
+ this.age = this.age - 1;
+
+ }
+  // If less than 13 years, require parent's email
+  if (this.age < 13) {
+    // Require the parent email to be filled in
+    this.showParent = true
+    // this.subjectform.controls['parentEmail'].setValidators([Validators.required, Validators.email]);
+    // this.subjectform.controls['parentEmail'].updateValueAndValidity();
+  } else {
+    // If age is 13 or above, remove the parent email validation
+    this.showParent = false
+    // this.subjectform.controls['parentEmail'].clearValidators();
+    // this.subjectform.controls['parentEmail'].updateValueAndValidity();
+  }
+
+  return this.age < 13 ? { 'underage': true } : null;
+}
+dateNotInFuture(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const inputDate = new Date(control.value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to midnight for comparison
+
+    // Check if the input date is in the future
+    return inputDate >= today ? { futureDate: true } : null;
+  };}
 }

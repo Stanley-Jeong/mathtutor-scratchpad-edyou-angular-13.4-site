@@ -361,3 +361,13 @@ body {
   .input-signup{
 margin-left:3px;
   }
+  .reduce-marginn{
+    margin-top:12px;
+
+  }
+  .mt-3{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+  }

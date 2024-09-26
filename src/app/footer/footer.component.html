@@ -500,7 +500,7 @@
                                                 <div class="newForm" >
                                                         <h6 class="newformHeading">Sign up for newsletter</h6>
                                                         <div class="inputcontainer">
-                                                          <input id="emailInput" formControlName="email" type="text" placeholder="Email">
+                                                          <input id="emailInput1" formControlName="email" type="text" placeholder="Email">
                                                         </div> 
                                                         <small *ngIf="email?.invalid && email?.touched && email?.value" class="text" style="color:#E74040;display: flex; ">Invalid email</small>
                                                         <button [disabled]="isLoading" (click)="newslettersubmit()">
