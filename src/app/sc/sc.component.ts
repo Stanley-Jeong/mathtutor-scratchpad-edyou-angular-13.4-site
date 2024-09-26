@@ -30,6 +30,7 @@ export class ScComponent implements OnInit {
   showParent: boolean = false;
   age: number=0;
   datePickerInstance: any;
+  isScDisabled: boolean =false;
   
   constructor(private router: Router, private service: UserService) {  
    
@@ -40,7 +41,13 @@ export class ScComponent implements OnInit {
     //  this.storedLogin = localStorage.getItem('user');;
     // console.log('state',this.storedLogin)
     this.showParent = false
-  
+    let user = localStorage.getItem('user') 
+    if(user){
+    let sc = localStorage.getItem('url') 
+    //this.router.url.includes('/sc')
+console.log(sc,user,"joker")
+    this.isScDisabled = sc && sc.includes('sc') ? false : true;
+    }
   }
 
   async ngAfterViewInit() {

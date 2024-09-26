@@ -242,6 +242,8 @@ export class MainComponent implements OnInit, OnDestroy {
     image: '',
     description: ''
   };
+ 
+  isScDisabled: boolean =false;
   constructor(private router: Router, private service: UserService, private service2: ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
     private titleService: Title, private metaService: Meta, private fb: FormBuilder ,private route: ActivatedRoute) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -332,6 +334,13 @@ export class MainComponent implements OnInit, OnDestroy {
   public videoSource = "./assets/edyou-gen-video-placeholder.mp4"
 
   ngOnInit(): void {
+    let user = localStorage.getItem('user') 
+    if(user!==null){
+    let sc = localStorage.getItem('url') 
+    //this.router.url.includes('/sc')
+
+    this.isScDisabled = sc && sc.includes('sc') ? true : false;
+    }
     this.setTitle('edYOU - Transforming Education with AI');
     this.setMetaDescription('Discover edYOU, a groundbreaking AI platform that revolutionizes learning through personalized, engaging, and innovative educational experiences.')
     const image1 = document.getElementById('image1') as HTMLImageElement;

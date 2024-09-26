@@ -1060,3 +1060,8 @@
   }
   }
   
+  .disabled-button {
+    background-color: grey;
+    color: lightgray;
+    cursor: not-allowed;
+  }

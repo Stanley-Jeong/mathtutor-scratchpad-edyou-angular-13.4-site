@@ -205,11 +205,12 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   this.userservice.showPopup();
   }
   logOut(){
-    this.router.navigate(['/SC']);
+    this.router.navigate(['/']);
     localStorage.removeItem('LoginState');
     localStorage.removeItem('email');
     localStorage.removeItem('user');
     this.userservice.logout()
+    this.isbuttondisabled = false
     // window.location.reload();
   
 
