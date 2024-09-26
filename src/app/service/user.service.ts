@@ -418,9 +418,16 @@ export class UserService {
   sendwaitlistDataSc(data: any) {
     //free users pre-enroll
 
-    //return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist/waitlist_sc_new', data)
+    // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist/waitlist_sc_new', data)
      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist/waitlist_sc_new',data)
     //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added_SC',data)
+
+    
+  }
+  stripe(data:any){
+    // stripe---
+    // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
+    return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/stripe_checkout_setup',data)
   }
   signUp(data: any) {
     // Set headers
