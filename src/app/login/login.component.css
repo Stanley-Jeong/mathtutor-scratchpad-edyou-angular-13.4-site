@@ -316,11 +316,20 @@ body {
   .space {
     margin-right: 1rem !important;
   }
+  .emailicon{
+    z-index: 333333333;
+    margin-left: -317px;
+    margin-top: 4px;
+  }
   
     /*  */
   
   @media only screen and (max-width: 600px) {
-  
+    .emailicon{
+      z-index: 333333333;
+      margin-left: -258px;
+      margin-top: 4px;
+    }
     .modal-dialog {
       max-width: 370px;
       height: 500px;

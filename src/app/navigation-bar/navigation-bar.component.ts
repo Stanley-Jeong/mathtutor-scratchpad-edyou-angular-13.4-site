@@ -45,8 +45,15 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   userDetails: any;
   buttonName: any;
   isbuttondisabled: boolean =false;
-
   updatedData:any
+
+  scloggedin: boolean =false;
+  b2cloggin: boolean =false;
+  no_user_Loggedin : boolean =false;
+
+  fordesktop : boolean =false;
+  forMobile : boolean =false;
+  forIpad : boolean =false;
 
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
@@ -61,9 +68,11 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     const width = window.innerWidth;
     if (width < 1024) {
       this.screenSize = 'small'; // Mobile
+      
     } else {
       this.screenSize = 'large'; // Desktop
     }
+    
     this.user = JSON.parse(localStorage.getItem('user') || '{}')
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
@@ -72,21 +81,23 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
        // console.log('Current URL before navigation starts:', this.currentUrl);
         this.hideNavigation()
       }
+
       if (event instanceof NavigationEnd) {
         // Navigation is starting
         this.currentUrl = this.router.url;
      
-          // Check if the URL contains '/safety'
-       if(this.router.url.includes('/safety')||this.router.url.includes('/terms')||this.router.url.includes('/privacy')){
-        this.isSafetyState = true;
-      //  console.log('u')
+        // Check if the URL contains '/safety'
+        if(this.router.url.includes('/safety')||this.router.url.includes('/terms')||this.router.url.includes('/privacy')){
+          this.isSafetyState = true;
+          //  console.log('u')
           }else{
             this.isSafetyState = false;
           }
           if(this.router.url.includes('/SC')||this.router.url.includes('/sc')){
              this.isScPage =true;
+             this.forMobile = false
            if(this.screenSize == 'small')  {
-          this.sc = true;  
+              this.sc = true;  
            }else{
             this.sc = false;
            }
@@ -95,12 +106,22 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
               this.sc = false;  
                }
             this.isScPage =false;
+            this.forMobile = true
             this.sc = false;
           }
+
+          // if(width< 601 && this.router.url.includes('/SC')||this.router.url.includes('/sc')){
+          //   this.isScPage = true;
+          //   this.forMobile = false
+          // }else{
+          //   this.isScPage = true;
+          //   this.forMobile = true
+          // }
         
-     //   console.log('Current URL before navigation starts:', this.currentUrl,this.isSafetyState);
-        this.hideNavigation()
-      }
+          //   console.log('Current URL before navigation starts:', this.currentUrl,this.isSafetyState);
+          this.hideNavigation()
+        }
+      this.checkdevice()
     });
  
   
@@ -120,6 +141,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
         this.userName = this.updatedData.f_name + " " + this.updatedData.l_name;
       }
     });
+    
   }
   onMouseOver(): void {
     this.isHovered = true;
@@ -161,7 +183,14 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     })
   }    
   navigateToMain(){
-    this.router.navigate(['/main']);
+    if(this.no_user_Loggedin == true){
+      this.router.navigate(['/main']);
+    }else if(this.b2cloggin == true){
+      this.router.navigate(['/main']);
+    }else if(this.scloggedin == true){
+
+    }
+    
   }
 
   navigateToLabs() {
@@ -209,6 +238,8 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     localStorage.removeItem('LoginState');
     localStorage.removeItem('email');
     localStorage.removeItem('user');
+    localStorage.removeItem('url');
+    localStorage.removeItem('Login_User');
     this.userservice.logout()
     this.isbuttondisabled = false
     // window.location.reload();
@@ -291,6 +322,26 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       //  }
       });
     }
+
+    let loggedin_User = localStorage.getItem('Login_User');
+    console.log(loggedin_User)
+    if(isLoggedIn == true && loggedin_User == '"SC"'){
+      console.log('sc logged in')
+      this.scloggedin = true
+      this.b2cloggin = false
+      this.no_user_Loggedin  =false
+
+    }else if(isLoggedIn == true && loggedin_User == '"B2C"'){
+      console.log('b2c logged in')
+      this.scloggedin = false
+      this.b2cloggin = true
+      this.no_user_Loggedin  =false
+    }else{
+      console.log('!logged in')
+      this.scloggedin = false
+      this.b2cloggin = false
+      this.no_user_Loggedin  = true
+    }
   }
   
   getProfileDetail() {
@@ -361,5 +412,22 @@ console.log(parsedDate,currentDate)    // Compare the dates
        
     }
   }
+
+  checkdevice(){
+    if(window.innerWidth > 767){
+      this.fordesktop = true
+      this.forIpad = false
+    }else{
+      this.fordesktop = false
+      this.forIpad = true
+    }
+    
+  }
+
+  
+  
+  
+
+
 
 }
