@@ -38,6 +38,7 @@ const routes: Routes = [
   {path: 'safety',  component:SafetyComponent},
   {path: 'SC', component: ScComponent },
   { path: 'sc', redirectTo: 'SC', pathMatch: 'full' },
+  {path: 'profile', component:ProfileComponent},
   {path: 'SC/profile', component:ProfileComponent},
   //{path: 'sc', component: ScComponent ,canActivate: [ScRedirectGuard]},
   {path: 'academic-integrity', component:AcademicIntegrityComponent},

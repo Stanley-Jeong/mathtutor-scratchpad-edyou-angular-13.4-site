@@ -32,6 +32,7 @@ export class ScComponent implements OnInit {
   age: number=0;
   datePickerInstance: any;
   isScDisabled: boolean =false;
+  email_id: any
   
   constructor(private router: Router, private service: UserService) {  
    
@@ -43,10 +44,11 @@ export class ScComponent implements OnInit {
     // console.log('state',this.storedLogin)
     this.showParent = false
     let user = localStorage.getItem('user') 
+    this.email_id = localStorage.getItem('user.email') 
     if(user){
     let sc = localStorage.getItem('url') 
     //this.router.url.includes('/sc')
-console.log(sc,user,"joker")
+
     this.isScDisabled = sc && sc.includes('sc') ? false : true;
     }
   }
@@ -155,11 +157,18 @@ console.log(sc,user,"joker")
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
   
     this.storedLogin = localStorage.getItem('user');
-    // console.log('state',this.storedLogin)
-    console.log("modal",this.storedLogin)
+   this.email_id = localStorage.getItem('email');
+    console.log('state',this.storedLogin,this.email_id)
+
+   
     if(this.storedLogin){
    //   this.buyPackage();
-      console.log("modal","his.storedLogin")
+  
+  
+    this.planAPI(this.email_id)
+   
+   
+      
     }else{
     this.openForm = !this.openForm
     }

@@ -54,6 +54,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   fordesktop : boolean =false;
   forMobile : boolean =false;
   forIpad : boolean =false;
+  subscriptionDetailCustomer: any;
 
   constructor(
     private router: Router, private service : ColorChangeService, private userservice : UserService,
@@ -140,8 +141,22 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
         console.log(this.updatedData)
         this.userName = this.updatedData.f_name + " " + this.updatedData.l_name;
       }
-    });
-    
+      
+        //   this.openSuccessPopup = false
+        // },2000)
+      let subscription_exist = localStorage.getItem('subscription');
+      if (subscription_exist) {
+       
+          this.buttonName = "Learn"
+     //    alert(this.buttonName)
+       //this.checkIfExpired(subscription_exist[0])
+      }else{
+        this.buttonName = 'Startfree';
+       // alert(this.buttonName)
+      }
+   
+  })
+    this.getProfileDetail()
   }
   onMouseOver(): void {
     this.isHovered = true;
@@ -188,9 +203,14 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     }else if(this.b2cloggin == true){
       this.router.navigate(['/main']);
     }else if(this.scloggedin == true){
-
+      this.router.navigate(['/sc']);
     }
-    
+   let url1  = localStorage.getItem('url');
+    if(url1 && url1.includes('/sc')){
+     this.router.navigate(['/SC']);
+    }else{
+     this.router.navigate(['/']);
+    }
   }
 
   navigateToLabs() {
@@ -234,12 +254,18 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   this.userservice.showPopup();
   }
   logOut(){
-    this.router.navigate(['/']);
+    if(this.scloggedin == true){
+      this.router.navigate(['/sc']);
+    }else{
+      this.router.navigate(['/']);
+    }
+    
     localStorage.removeItem('LoginState');
     localStorage.removeItem('email');
     localStorage.removeItem('user');
     localStorage.removeItem('url');
     localStorage.removeItem('Login_User');
+    localStorage.removeItem('subscription');
     this.userservice.logout()
     this.isbuttondisabled = false
     // window.location.reload();
@@ -249,13 +275,14 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   
   scrollToPricing(): void {
   console.log(  this.currentUrl)
+ 
   if(this.currentUrl == '/SC/profile'){
     this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
-   // const element = document.getElementById('pricing_section_id');
-    // if (element) {
-    //   element.scrollIntoView({ behavior: 'smooth' });
-    // }
-  }else{
+   const element = document.getElementById('pricing_section_id');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }else if (this.currentUrl == '/profile'){
     const element = document.getElementById('pricing_section_id');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -268,11 +295,19 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   }
   navigateToProfile(){
     this.menuToggle()
-    this.sc=true
-    this.router.navigate(['/SC/profile']);
+   // this.sc=true
+    let url1 
+     url1  = localStorage.getItem('url');
+     if(url1 && url1.includes('/sc')){
+      this.router.navigate(['/SC/profile']);
+     }else{
+      this.router.navigate(['/profile']);
+     }
+ 
+ 
   }
   menuToggle() {
-    this.getProfileDetail()
+
     const toggleMenu: any = document.querySelector("#menuId");
     toggleMenu.classList.toggle("active");
 
@@ -326,9 +361,13 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     let loggedin_User = localStorage.getItem('Login_User');
     console.log(loggedin_User)
     if(isLoggedIn == true && loggedin_User == '"SC"'){
-      console.log('sc logged in')
+     
+      // let subscription_exist =  localStorage.getItem('subscription[0].end_date');
+      // if(subscription_exist)
+      // {this.checkIfExpired(subscription_exist)}
       this.scloggedin = true
       this.b2cloggin = false
+    //  console.log('sc logged in',subscription_exist)
       this.no_user_Loggedin  =false
 
     }else if(isLoggedIn == true && loggedin_User == '"B2C"'){
@@ -336,7 +375,15 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       this.scloggedin = false
       this.b2cloggin = true
       this.no_user_Loggedin  =false
-    }else{
+    }
+      else if (isLoggedIn == true && loggedin_User == '"SC"'){
+        console.log('!logged in')
+        this.scloggedin = true
+        this.b2cloggin = false
+        this.no_user_Loggedin  = true
+      }
+    
+    else{
       console.log('!logged in')
       this.scloggedin = false
       this.b2cloggin = false
@@ -353,37 +400,39 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       if (res.statusCode == 200) {
      
         this.userOrderFull= res;
-        this.userDetails = res;
-        let plan = res.plan 
-        let lengthofOrder = res.orderHistory.length
-        if(lengthofOrder > 0){
-      
-          this.checkIfExpired(plan.expire_at)
-        }else {
-            this.buttonName = "Startfree"
-        }
-       
+        this.userDetails = res.data;
         
-          // Determine the case based on the order history length
-          // switch (lengthofOrder) {
-          //   case lengthofOrder > 0:
-          //     this.checkIfExpired(plan.expire_at)
-          //    // this.buttonName = 'Learn';
-          //     break;
-          //   case lengthofOrder = 0:
-          //     this.buttonName = 'Startfree';
-
-          //     break;
-          //     // case lengthofOrder >= 0 and :
-          //     //   this.buttonName = 'Startfree';
-          //       // break;
-          //   default:
-          //     this.buttonName = 'Unknown'; // Default case (optional)
-          // }
-        //  this.userObj = res.user;
-        // this.shared.SharedData(this.userObj);
      
 console.log(" this.userDetails", this.userDetails)
+let payload ={
+  "request": "get_customer_product",
+ "customer_id": res.data.cus_id
+}
+
+this.userservice.getSubscriptionDetail(payload).subscribe((res: any) => {
+ if(res.statusCode == 200){
+   this.subscriptionDetailCustomer = res.body;
+   console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
+   this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
+
+
+console.log(this.subscriptionDetailCustomer[0].end_date)
+
+}
+const createdAt = new Date(this.subscriptionDetailCustomer[0].activation_date.replace(',', 'T'));
+
+const planDate = new Date(createdAt);
+const expireAt = new Date(this.subscriptionDetailCustomer[0].end_date.replace(',', 'T'));
+
+planDate.setDate(planDate.getDate() + 13);
+console.log(createdAt,expireAt)
+// Get the current date
+const currentDate = new Date();
+
+
+
+console.log(" this.userDetails", this.userDetails)
+} )
       }else{
         
       }
@@ -400,7 +449,7 @@ console.log(" this.userDetails", this.userDetails)
     const [datePart, timePart] = dateTimeString.split(',');
     const formattedDateTime = `${datePart}T${timePart}`;
     const parsedDate = new Date(formattedDateTime);
-
+console.log('button',this.buttonName)
     // Get the current date and time
     const currentDate = new Date();
 console.log(parsedDate,currentDate)    // Compare the dates

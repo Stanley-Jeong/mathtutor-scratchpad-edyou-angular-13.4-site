@@ -219,7 +219,7 @@
                     <div class="elementor-icon">
                         <div class="scLogoimg" *ngIf="no_user_Loggedin"  >
                             <span *ngIf="fordesktop == true" style="display: flex; justify-content: center;align-items: center;">
-                                <img  *ngIf="isScPage == false" class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                                <img  *ngIf="isScPage == false " class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
                                 <img  *ngIf="isScPage == false" class ="scLogoimgMobilebutton "(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
                             </span>
                             <span *ngIf= "forIpad == true"  >
@@ -234,7 +234,17 @@
                             </div>
                             <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
                         </div>
-                        <div class="scLogoimg" *ngIf="b2cloggin"  >
+                        <div class="scLogoimg" *ngIf="b2cloggin && isLoggedIn"   >
+                            <!-- <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                            <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   > -->
+                             <div  *ngIf="!isLoggedIn" style="">
+                                <!-- <div  *ngIf="!isLoggedIn" style="margin-right: 20px; margin-top: 20px;"> -->
+                                <button (click)="openLoginPopup($event)" class="loginBtn" id="loginNavBtn"> <span>Login</span></button>
+                                <!-- </ng-container> -->
+                            </div>
+                            <!-- <img  *ngIf="screenSize ==='small' && !isScPage" (click)="navigateToSC()" src ="../assets/icons/mobilebutton.png" alt=""   style="height:32px; margin-top: -13px;">   -->
+                        </div>
+                        <div class="scLogoimg" *ngIf="scloggedin"  >
                             <!-- <img  *ngIf="!isScPage" class ="scLogoimgMobile" style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
                             <img  *ngIf="!isScPage" class ="scLogoimgMobilebutton"(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   > -->
                              <div  *ngIf="!isLoggedIn" style="">
@@ -288,7 +298,8 @@
                       </ul>
                     </div>
                 </div> 
-                <button *ngIf="!buttonName && isLoggedIn"(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
+                <button *ngIf="!buttonName && this.b2cloggin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
+                <button *ngIf="!buttonName && this.scloggedin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Learn Now</span></button>
                 <button *ngIf="buttonName =='Startfree' "(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
                 <button  *ngIf="buttonName =='Learn'" (click)="linkToedyouUser()" class="buttonProfile" > <span>Learn Now</span></button>
                 <button  [attr.disabled]="   this.isbuttondisabled  ? true : null" *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
@@ -457,13 +468,13 @@
                         <span class="elementor-icon-list-text">Blog</span>
                     </a>
                 </li>
-                <li class="elementor-icon-list-item" (click)="hideNavigation()">
+                <!-- <li class="elementor-icon-list-item" (click)="hideNavigation()">
                     <a (click)="navigateToInvestor()">
 
                         <span class="elementor-icon-list-text">Investor
                             Area</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -694,13 +705,13 @@
                         <span class="elementor-icon-list-text">Blog</span>
                     </a>
                 </li>
-                <li class="elementor-icon-list-item" (click)="hideNavigation()">
+                <!-- <li class="elementor-icon-list-item" (click)="hideNavigation()">
                     <a (click)="navigateToInvestor()">
 
                         <span class="elementor-icon-list-text">Investor
                             Area</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

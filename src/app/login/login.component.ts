@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   age: number=0;
   showParent: boolean = false;
   showParentb2c: boolean = false;
-  schoolname: string = "Sierra Canyon";
+  schoolname: string = "";
 
   constructor(private userserice: UserService, private formBuilder: FormBuilder, private router :Router) { }
 
@@ -45,7 +45,10 @@ export class LoginComponent implements OnInit {
       }
       console.log('login', this.showPopup)
     });
-
+    // this.signUpForm.get('email')?.valueChanges.subscribe(() => {
+    //   this.emailDomainValidator()(this.signUpForm.get('email')!); // Call validator
+    // });
+  
 
   }
 
@@ -64,7 +67,7 @@ export class LoginComponent implements OnInit {
     f_name: new FormControl('', Validators.required),
    // date: new FormControl('', Validators.required),
    // school: new FormControl('', Validators.required),
-   parentEmail: new FormControl('', [Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+   parentEmail: new FormControl(''),
 
     l_name: new FormControl('', Validators.required),
     date: new FormControl('', [Validators.required, this.dateNotInFuture()])
@@ -109,7 +112,7 @@ export class LoginComponent implements OnInit {
   }
 
   get parentEmail() {
-    return this.signUpform.controls['parentEmail'];
+    return this.signUpform.get('parentEmail') as FormControl;
   }
   get password() {
     return this.form.controls['password'];
@@ -208,6 +211,26 @@ export class LoginComponent implements OnInit {
           if (data.statusCode == 200) {
             this.isLoading = false
             this.loggedInDaTa = data;
+            //localStorage.setItem("subscription", JSON.stringify(data));
+            let payload ={
+              "request": "get_customer_product",
+             "customer_id": data.body.cus_id
+            }
+            
+            this.userserice.getSubscriptionDetail(payload).subscribe((res: any) => {
+             if(res.statusCode == 200){
+              localStorage.setItem("subscription", JSON.stringify(res.body));
+              localStorage.setItem("url", JSON.stringify(data.url));
+             localStorage.setItem("user", JSON.stringify(data.body))
+            localStorage.setItem("user", JSON.stringify(data.body));
+            localStorage.setItem("LoginState", JSON.stringify(true));
+            localStorage.setItem("email",data.body.email);
+            }
+          
+            
+            
+           
+            } )
             console.log(this.loggedInDaTa)
             if (this.loggedInDaTa.url.includes('/sc')) {
               console.log('URL contains /sc',this.loggedInDaTa.url);
@@ -219,9 +242,8 @@ export class LoginComponent implements OnInit {
               localStorage.setItem("Login_User", JSON.stringify('B2C'));
               this.router.navigate(['/']);
             }
-            localStorage.setItem("url", JSON.stringify(data.url));
-            localStorage.setItem("user", JSON.stringify(data.body));
-            localStorage.setItem("LoginState", JSON.stringify(true));
+          
+
         //    localStorage.setItem("orderhistory", JSON.stringify(data.orderHistory));
 
          
@@ -259,8 +281,12 @@ export class LoginComponent implements OnInit {
 
   signUp() {
 console.log('signup',this.signUpForm.valueOf)
+console.log('this.schoolname','Form Submitted', this.signUpform.value)
 
-    if (this.signUpform) {
+
+
+    if ( this.signUpform) {
+     // console.log('this.schoolname','Form Submitted', this.signUpform.value)
       let loginPayload = {
         "email": this.signUpform.value.email,
         "f_name": this.signUpform.value.f_name,
@@ -289,7 +315,7 @@ console.log('signup',this.signUpForm.valueOf)
           }
 
         })
-      console.log('signup',this.signUpForm,loginPayload)
+      
     } else {
       this.validateAllFormFields(this.signUpform);
     }
@@ -416,6 +442,12 @@ this.resetLoader = false
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
+  
+      // Skip 'parentEmail' field
+      if (field === 'parentEmail') {
+        return;
+      }
+  
       if (control instanceof FormControl) {
         control.markAsTouched({ onlySelf: true });
       } else if (control instanceof FormGroup) {
@@ -423,7 +455,6 @@ this.resetLoader = false
       }
     });
   }
-
   signUpFun() {
     this.signInForm = false
     this.signUpForm = true
@@ -463,22 +494,38 @@ this.resetLoader = false
   emailDomainValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const email = control.value;
-      
+    //  const parentEmailControl = this.signUpForm.get('parentEmail');
       // Allowed domain pattern
       const domainPattern = /\b[A-Za-z0-9._%+-]+@(scsstudent\.org|sierracanyonschool\.org|yopmail\.com)\b/;
-      
+    
       // Check if email matches the allowed domains
       const isDomainValid = domainPattern.test(email);
+      console.log(isDomainValid)
       if(isDomainValid){
         this.showParentb2c = true;
-        this.signUpform.value.parentEmail.setValidators([Validators.required, Validators.email]);
-        this.signUpform.value.parentEmail.updateValueAndValidity();
+    
         this.schoolname = "Sierra Canyon"
+       // this.signUpform.get('parentEmail')?.setValidators([Validators.required,Validators.email]);
+      // this.signUpform.get('parentEmail')?.updateValueAndValidity();
+      // this.onAddValidationClick()
+        console.log("sc")
+       
       }else{
+        
       this.showParentb2c = false;
-     // this.signUpform.parentEmail.clearValidators();
-this.schoolname = "B2C"
+
+     this.schoolname = "B2C"
+     
+   //  this.signUpform.get('parentEmail')?.setValue('b2c@example.com');
+     //this.onRemoveValidationClick()
+
+     console.log("b2c")
+     // this.signUpform.get('parentEmail')?.clearValidators();
+     //this.signUpform.get('parentEmail')?.updateValueAndValidity();
+   
+         
       }
+     // this.signUpform.get('parentEmail')?.updateValueAndValidity();
       // Return null if valid, else return error object
       return isDomainValid ? null : { invalidDomain: true };
     };
@@ -523,4 +570,30 @@ dateNotInFuture(): ValidatorFn {
     // Check if the input date is in the future
     return inputDate >= today ? { futureDate: true } : null;
   };}
+  toggleParentEmailValidators( valid: boolean) {
+    if ( valid) {
+      // Add validators
+      this.signUpform.get('parentEmail')?.setValidators([Validators.required, Validators.email]);
+    } else {
+      // Remove validators
+      this.signUpform.get('parentEmail')?.clearValidators();
+    }
+    
+    // Always call updateValueAndValidity after changing validators
+    this.signUpform.get('parentEmail')?.updateValueAndValidity();
+  }
+  isFormValid(): boolean {
+    if (!this.signUpform) {
+      return false; // Return false if signUpform is not initialized
+    }
+  
+    const emailValid = this.signUpform.get('email')?.valid || false;
+    const passwordValid = this.signUpform.get('password')?.valid || false;
+    const fNameValid = this.signUpform.get('f_name')?.valid || false;
+    const lNameValid = this.signUpform.get('l_name')?.valid || false;
+    const dateValid = this.signUpform.get('date')?.valid || false;
+  
+    // Consider form valid if all relevant fields are valid, ignoring parentEmail
+    return emailValid && passwordValid && fNameValid && lNameValid && dateValid;
+  }
 }

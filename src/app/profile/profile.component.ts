@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
   currentUrl: string ='url';
   buttonName: string = 'startFree';
   togglecancel: boolean = false;
+  subscriptionDetailCustomer: any;
   constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
@@ -33,7 +34,9 @@ export class ProfileComponent implements OnInit {
     
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
 
+  
     this.getProfileDetail();
+
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
         // Navigation is starting
@@ -84,49 +87,59 @@ export class ProfileComponent implements OnInit {
     };
     this.service.getProfileAPI(createToken).subscribe((res: any) => {
       if (res.statusCode == 200) {
+
+
+
         this.isSpinner = false;
         if (res != null) {
         this.userOrderFull=res;
 
+//res.data.cus_id
         this.userDetails = res.data;
-        this.checkIfExpired(this.userOrderFull.plan.expire_at)
+        this.bindWithSelectedPrfileData( this.userDetails);
+        if(this.userDetails.cus_id){
+          let payload ={
+            "request": "get_customer_product",
+           "customer_id": this.userDetails.cus_id
+         }
+          this.service.getSubscriptionDetail(payload).subscribe((res: any) => {
+            if(res.statusCode == 200){
+              this.subscriptionDetailCustomer = res.body;
+              if(this.subscriptionDetailCustomer.length > 0){
+              //  console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
+                //this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
+              }
+  
+              // console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
+              // this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
+           
+  
+          console.log(this.subscriptionDetailCustomer[0].end_date)
+          
+          }
+     
+  
+  
+          // this.shared.SharedData(this.userObj);
+
+         } )
         }
-        const createdAt = new Date(res.plan.created_at.replace(',', 'T'));
-
-        const planDate = new Date(createdAt);
-        const expireAt = new Date(res.plan.expire_at.replace(',', 'T'));
         
-        planDate.setDate(planDate.getDate() + 13);
-
-// Get the current date
-const currentDate = new Date();
-
-// Calculate the difference in time (milliseconds)
-const timeDifference = planDate.getTime() - currentDate.getTime();
-const expiredIn = expireAt.getTime()-currentDate.getTime();
-this.expireDaysLeft = Math.ceil(expiredIn / (1000 * 60 * 60 * 24));
-// Convert the time difference to days
- this.daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-
-if (this.daysLeft > 0) {
-  console.log(`There are days left.`,this.daysLeft);
-} else {
-  console.log("The 14-day period has expired.");
-}
-        // this.shared.SharedData(this.userObj);
-        this.bindWithSelectedPrfileData(res.data);
-console.log(" this.userDetails", this.userDetails)
-      }else{
+        
+       
+      }}else{
         
       }
+      
     })
     localStorage.setItem('email', this.user.email);
+    
   }
 
 
   bindWithSelectedPrfileData(selectedProfile: any) {
     this.selectedProfileData = selectedProfile;
-    console.log( this.selectedProfileData)
+    console.log( this.selectedProfileData,'edit')
     this.editProfileForm.get('first_name')?.setValue(selectedProfile.f_name);
     this.editProfileForm.get('last_name')?.setValue(selectedProfile.l_name);
     this.editProfileForm.get('dob')?.setValue(selectedProfile.dob);
@@ -223,8 +236,17 @@ console.log(" this.userDetails", this.userDetails)
   Subscription(){
   
  console.log(this.currentUrl)
-     
-        this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
+ let user = localStorage.getItem('url') 
+ if(user!==null){
+  let sc = localStorage.getItem('url') 
+  //this.router.url.includes('/sc')
+
+ if(sc && sc.includes('sc') ){
+  this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
+ }else if(sc)
+ this.router.navigate(['/'], { fragment: 'pricing_section_id' });
+  }
+       
        // const element = document.getElementById('pricing_section_id');
         // if (element) {
         //   element.scrollIntoView({ behavior: 'smooth' });
@@ -240,18 +262,24 @@ console.log(" this.userDetails", this.userDetails)
     }, 0);
   }
   checkIfExpired(dateTimeString: string) {
-    // Convert the date-time string into a JavaScript Date object
-    const [datePart, timePart] = dateTimeString.split(',');
-    const formattedDateTime = `${datePart}T${timePart}`;
-    const parsedDate = new Date(formattedDateTime);
+    // If the input is already in a valid format, you can parse it directly.
+    const parsedDate = new Date(dateTimeString); // Use the input string directly
 
     // Get the current date and time
     const currentDate = new Date();
-console.log(parsedDate,currentDate)    // Compare the dates
-    if (parsedDate < currentDate) {
-      this.buttonName = 'Renew';
-    } else {
-         this.buttonName = "Cancel"
+    
+    console.log(parsedDate, currentDate); // Log parsed date and current date
+
+    // Compare the dates
+    if (isNaN(parsedDate.getTime())) { // Check if parsed date is valid
+        console.error('Invalid date string:', dateTimeString);
+        return;
     }
-  }
+
+    if (parsedDate < currentDate) {
+        this.buttonName = 'Renew';
+    } else {
+        this.buttonName = 'Cancel';
+    }
+}
 }

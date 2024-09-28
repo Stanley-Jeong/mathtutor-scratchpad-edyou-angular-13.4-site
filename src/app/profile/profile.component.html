@@ -28,16 +28,16 @@
               <div class="text-wrapper-2">{{this.userDetails.name}}</div>
         </div>
         <div class="frame-2">
-            <div class="text-wrapper-5">Trailblazers</div>
-            <div *ngIf="daysLeft" class="text-wrapper-6">{{daysLeft}} Days left </div>
-            <div *ngIf="!daysLeft" class="text-wrapper-6"> No active plan </div>
-            <p class="element-month">
+            <div class="text-wrapper-5">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0]?.product_name) ? this.subscriptionDetailCustomer[0].product_name:'No Plan Active'}}</div>
+            <div *ngIf="daysLeft" class="text-wrapper-6">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].duration_days )?this.subscriptionDetailCustomer[0].duration_days :'No active plan'}} Days left </div>
+            <!-- <div *ngIf="!daysLeft" class="text-wrapper-6"> No active plan </div> -->
+            <p class="element-month" *ngIf="this.subscriptionDetailCustomer?.length > 0" >
                 <span class="span">$</span>
-                <span class="text-wrapper-7">199</span>
+                <span class="text-wrapper-7">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].price)? this.subscriptionDetailCustomer[0].price:''}}</span>
                 <span class="span">/Month</span>
             </p>
             <button *ngIf=" this.buttonName == 'Cancel'&& !togglecancel" class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
-            <button *ngIf="userOrderFull?.orderHistory?.length == 0" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
+            <button *ngIf="this.subscriptionDetailCustomer?.length == 0" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
             <button *ngIf=" this.buttonName == 'Renew'" class="button" (click)="Subscription()"><button class="button-2">Renew Plan</button></button>
             <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
             <!-- <div class="text-wrapper-8">{{daysLeft}} days left for free trial</div> -->
@@ -174,7 +174,8 @@
         </div>
 
 
-        <div class="frame-4">
+        <div class="frame-4 ">
+            <div class="text-wrapper-9">Order History</div> 
             <!-- {{ userDetails.orderHistory | json }}
             <div class="group" *ngFor="let order of  userOrderFull.orderHistory" >
                 
@@ -186,14 +187,16 @@
                 <p><strong>Enroll Status:</strong> {{ order.sc_enroll }}</p>
                 <p><strong>Product ID:</strong> {{ order.prod_id }}</p>
               </div> -->
-             
-              <div *ngIf="userOrderFull?.orderHistory?.length > 0">
-            <div class="group"  *ngFor="let order of  userOrderFull.orderHistory" >
-                <div class="text-wrapper-12">{{ order.plan }}</div>
-                <div class="text-wrapper-13">{{ order.created_at | date:'dd MMM yyyy' }}</div>
+             <!-- {{this.subscriptionDetailCustomer|json}} -->
+              <div class="group" *ngIf="this.subscriptionDetailCustomer?.length > 0">
+              <div *ngFor="let order of  this.subscriptionDetailCustomer">
+            <div  >
+                <div class="productname" >{{ order.product_name }}</div>
+                <div class="pricedate" >{{ order.activation_date | date:'dd MMM yyyy' }}</div>
                 <!-- <div class="text-wrapper-14">{{ order.price_id }}</div> -->
-                <div class="text-wrapper-15">${{ order.price_amount }}</div>
-                <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
+                <div class = "price">${{ order.price }}</div>
+                <img class = "imgplan" src="../../assets/arrow-circle-up-right-2.svg" />
+            </div>
             </div>
             </div>
             <!-- <div class="group-2">
@@ -210,10 +213,10 @@
                 <div class="text-wrapper-16">$75</div>
                 <img class="img-2" src="../../assets/arrow-circle-up-right-2.svg" />
             </div> -->
-            <div class=" nosubscribe"*ngIf="userOrderFull?.orderHistory?.length == 0">
+            <div class=" nosubscribe"*ngIf="this.subscriptionDetailCustomer?.length  == 0">
                 <a style="">No subscription</a>
                 </div>
-            <div class="text-wrapper-9">Order History</div>
+            <!-- <div class="text-wrapper-9">Order History</div> -->
         </div>
 
     </div>

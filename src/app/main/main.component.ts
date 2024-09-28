@@ -244,6 +244,8 @@ export class MainComponent implements OnInit, OnDestroy {
   };
  
   isScDisabled: boolean =false;
+  storedLogin: string | null ="s";
+  email_id: any;
   constructor(private router: Router, private service: UserService, private service2: ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
     private titleService: Title, private metaService: Meta, private fb: FormBuilder ,private route: ActivatedRoute) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -538,8 +540,25 @@ export class MainComponent implements OnInit, OnDestroy {
   preEnroll(data: any) {
     // window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
-    this.openForm = !this.openForm
-    this.choosedPlan = data
+    this.storedLogin = localStorage.getItem('user');
+    this.email_id = localStorage.getItem('email');
+     console.log('state',this.storedLogin,this.email_id)
+     this.choosedPlan = data
+ 
+    
+     if(this.storedLogin){
+    //   this.buyPackage();
+   
+    this.planAPI(this.email_id ,this.choosedPlan) 
+     //this.planAPI(this.email_id)
+    
+    
+       
+     }else{
+     this.openForm = !this.openForm
+     }
+   // this.openForm = !this.openForm
+    
    // console.log(data)
   }
   navigateToLogin() {
@@ -732,13 +751,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Silver';
          payload = {
           "email": email,
-          "prod_id": "prod_QmrFV8irjoWH9E",
+          "prod_id": "prod_QvPYwWXIKFLUpK",
+        //  "prod_id": "prod_QmrFV8irjoWH9E",
           // "prod_id": "prod_Qkv0CvSnYSA23r",
           "plan": plan,
-          "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
+          "price_id": "price_1Q3YjZALy7MM11rqpdgvJvyM",
+         // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
           // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "mode": "setup",
-          "price": "price_1PxoBRALy7MM11rqkjD1f8DB",
+          "price": "price_1Q3YjZALy7MM11rqpdgvJvyM",
           // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "price_amount": "19.99",
           // "price_amount": "39",
@@ -749,10 +770,12 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Gold';
        payload = {
           "email": email,
-          "prod_id": "prod_QmrFLWOmU2oDzr",
+          "prod_id": "prod_QvPc1yzCUHcSCv",
+         // "prod_id": "prod_QmrFLWOmU2oDzr",
           // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
           "plan": plan,
-          "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
+          "price_id": "price_1Q3YmqALy7MM11rq84K4saZ2",
+         // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
           // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
           "price": "price_1Pxo9IALy7MM11rqfEWyUv4i",
@@ -761,17 +784,23 @@ export class MainComponent implements OnInit, OnDestroy {
           "belong_to" :"nonsc"
         }
         break;
+        //package updated 27sep2024
+        //platinum - prod_QvPcLe2x2J5JXO - price_1Q3YncALy7MM11rqdQIA8mTi
+      //gold - prod_QvPc1yzCUHcSCv - price_1Q3YmqALy7MM11rq84K4saZ2
+      //silver - prod_QvPYwWXIKFLUpK -price_1Q3YjZALy7MM11rqpdgvJvyM
       case 'Platinum':
         plan = 'Platinum';
         payload = {
           "email": email,
-          "prod_id": "prod_QmrFZUGlrjAclG",
+          "prod_id": "prod_QvPcLe2x2J5JXO",
+         // "prod_id": "prod_QmrFZUGlrjAclG",
           // "prod_id": "prod_Qkv3dLCQOXIq0z",
           "plan": plan,
-          "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
+           "price_id": "price_1Q3YncALy7MM11rqdQIA8mTi",
+         // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
           // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "mode": "setup",
-          "price": "price_1PxoB0ALy7MM11rqYdsqSzJN",
+          "price": "price_1Q3YncALy7MM11rqdQIA8mTi",
           // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "price_amount": "199.99",
           // price_amount": "199",

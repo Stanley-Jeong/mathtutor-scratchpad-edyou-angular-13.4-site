@@ -313,9 +313,9 @@ export class UserService {
     login(oH:any) {
       //this.buttonvalue = localStorage.getItem('user');
      
-     this.buttonvalue = oH;
-     console.log(this.buttonvalue,'loh')
-     this.buttonValueSubject.next(this.buttonvalue);
+     //this.buttonvalue = oH;
+    // console.log(this.buttonvalue,'loh')
+    // this.buttonValueSubject.next(this.buttonvalue);
      this.loggedIn.next(true);
     }
   
@@ -383,7 +383,16 @@ export class UserService {
       });
       return this.http.post(  'https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Profile/getProfile', data, { headers: headers })
     }
+    //subscription details
   
+    getSubscriptionDetail(data:any){
+      const headers = new HttpHeaders({
+      
+        'Content-Type': 'application/json'
+      });
+      return this.http.post(  'https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_subscription_details', data, { headers: headers })
+    }
+    
     updateProfileAPI(data: any) {
       // Set headers
       const headers = new HttpHeaders({
@@ -411,23 +420,23 @@ export class UserService {
       }
       
   scSchool(data: any) {
-    //  return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
-    return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc', data)
+     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/checkout_seesion_sc',data)
+  //  return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/checkout_seesion_sc', data)
 
   }
   sendwaitlistDataSc(data: any) {
     //free users pre-enroll
 
-    // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist/waitlist_sc_new', data)
-     return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist/waitlist_sc_new',data)
+     return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist/waitlist_sc_new', data)
+   //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/Waitlist/waitlist_sc_new',data)
     //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/Waitlist_added_SC',data)
 
     
   }
   stripe(data:any){
     // stripe---
-    // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
-    return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/stripe_checkout_setup',data)
+     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
+ //   return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/stripe_checkout_setup',data)
   }
   signUp(data: any) {
     // Set headers
@@ -447,7 +456,7 @@ export class UserService {
   }
 
   signupNewsletter(data: any) {
-   // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/website/newsletter_subscription', data)
-     return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/website/newsletter_subscription',data)
+    return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/website/newsletter_subscription', data)
+    // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/website/newsletter_subscription',data)
   }
 }

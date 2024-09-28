@@ -120,7 +120,7 @@
                 <span class="input-icon">
                   <img src="../../assets/public/icon-email.svg">
                 </span>
-                <input style="margin-left:-7px"class="input-field" formControlName="email" name="email" type="text" placeholder="Email">
+                <input style="margin-left:-7px"class="input-field" formControlName="email" name="email"  type="text"  placeholder="Email">
               </div>
               <div *ngIf="emails.invalid && (emails.dirty || emails.touched)" class="label__error border__error">
                 <div *ngIf="emails.errors?.['required']">
@@ -240,9 +240,9 @@
 
             <span class="subHeading mt-1">Please enter one time password sent to {{signUpform.value.email}}</span>
 
-            <div class="otp-field mt-3">
-              <div class="otp-field mt-3">
-                <form [formGroup]="otpForm" class="otp-field mt-3">
+            <div class="otp-field mt-31">
+              <div class="otp-field mt-31">
+                <form [formGroup]="otpForm" class="otp-field mt-31">
                   <input type="text" maxlength="1" formControlName="otp1" />
                   <input type="text" maxlength="1" formControlName="otp2" />
                   <input class="space" type="text" maxlength="1" formControlName="otp3" />
@@ -319,8 +319,8 @@
 
             <span class="subHeading mt-1">Please enter one time password sent to {{forgetForm.value.email}}</span>
 
-            <div class="otp-field mt-3">
-              <form [formGroup]="otpForm" class="otp-field mt-3">
+            <div class="otp-field mt-31">
+              <form [formGroup]="otpForm" class="otp-field mt-31">
                 <input type="text" maxlength="1" formControlName="otp1" />
                 <input type="text" maxlength="1" formControlName="otp2" />
                 <input class="space" type="text" maxlength="1" formControlName="otp3" />
