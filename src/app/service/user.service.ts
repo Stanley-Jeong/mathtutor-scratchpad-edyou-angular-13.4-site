@@ -21,6 +21,9 @@ export class UserService {
 
   public buttonValueSubject = new BehaviorSubject<any>('Initial Button Value');
   buttonValue$ = this.buttonValueSubject.asObservable(); 
+  
+  private subscriptionSubject = new BehaviorSubject<any>(null);
+  subscription$ = this.subscriptionSubject.asObservable();
 
   private sharedData = new BehaviorSubject({});
   currentSharedData = this.sharedData.asObservable();
@@ -118,7 +121,10 @@ export class UserService {
     this.objectValue.next(link);
     console.log(link)
   }
-
+setSubscriptionData(data: any) {
+  this.subscriptionSubject.next(data);
+  localStorage.setItem("subscription", JSON.stringify(data));
+}
   updateAudioLinkData(audio: any) {
     this.audioFileData.next(audio);
   }
@@ -310,12 +316,12 @@ export class UserService {
       this.popupState.next(false);
     }
   
-    login(oH:any) {
+    login() {
       //this.buttonvalue = localStorage.getItem('user');
      
-     //this.buttonvalue = oH;
+    
     // console.log(this.buttonvalue,'loh')
-    // this.buttonValueSubject.next(this.buttonvalue);
+   //this.buttonValueSubject.next(this.buttonvalue);
      this.loggedIn.next(true);
     }
   

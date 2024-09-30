@@ -25,19 +25,29 @@
               
               </div>
               <br /><button class="buttonProfile"  *ngIf="url" (click)="delete()">delete</button>
+              <img class="loadercss" style="width : 24px; color:white;"
+                *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
               <div class="text-wrapper-2">{{this.userDetails.name}}</div>
         </div>
         <div class="frame-2">
+            <img class="loadercss" style="width : 24px; color:white;"
+            *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
             <div class="text-wrapper-5">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0]?.product_name) ? this.subscriptionDetailCustomer[0].product_name:'No Plan Active'}}</div>
-            <div *ngIf="daysLeft" class="text-wrapper-6">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].duration_days )?this.subscriptionDetailCustomer[0].duration_days :'No active plan'}} Days left </div>
+            <div  class="text-wrapper-6">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].duration_days ) ? this.subscriptionDetailCustomer[0].duration_days :'0'}} Days left </div>
             <!-- <div *ngIf="!daysLeft" class="text-wrapper-6"> No active plan </div> -->
             <p class="element-month" *ngIf="this.subscriptionDetailCustomer?.length > 0" >
                 <span class="span">$</span>
                 <span class="text-wrapper-7">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].price)? this.subscriptionDetailCustomer[0].price:''}}</span>
-                <span class="span">/Month</span>
+                <span class="span">/{{
+                    (this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0]?.product_name === 'Gold') 
+                      ? 'week' 
+                      : 'month'
+                  }}</span>
             </p>
-            <button *ngIf=" this.buttonName == 'Cancel'&& !togglecancel" class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
-            <button *ngIf="this.subscriptionDetailCustomer?.length == 0" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
+            <button *ngIf=" this.buttonName == 'Cancel' &&  this.subscriptionDetailCustomer[0].is_canceled == false " class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <div *ngIf="this.subscriptionDetailCustomer">
+            <button *ngIf="this.subscriptionDetailCustomer?.length == 0 ||  this.subscriptionDetailCustomer[0].is_canceled == true" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
+            </div>
             <button *ngIf=" this.buttonName == 'Renew'" class="button" (click)="Subscription()"><button class="button-2">Renew Plan</button></button>
             <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
             <!-- <div class="text-wrapper-8">{{daysLeft}} days left for free trial</div> -->
@@ -45,13 +55,15 @@
         </div>
 
         <div class="frame-3">
+            <img class="loadercss" style="width : 24px; color:white;"
+            *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
             <div id="tabContents">
                 <div id="accountDetails" class="tab-content" [class.active-content]="activeTab === 'accountDetails'">
 
 
 
                 
-                    <form class="mt-3" [formGroup]="editProfileForm">
+                    <form  *ngIf="!isLoading" class="mt-3" [formGroup]="editProfileForm">
                     <div class="container">
                         <br>
                         <div class="row mt-2">
@@ -175,6 +187,8 @@
 
 
         <div class="frame-4 ">
+            <img class="loadercss" style="width : 24px; color:white;"
+            *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
             <div class="text-wrapper-9">Order History</div> 
             <!-- {{ userDetails.orderHistory | json }}
             <div class="group" *ngFor="let order of  userOrderFull.orderHistory" >

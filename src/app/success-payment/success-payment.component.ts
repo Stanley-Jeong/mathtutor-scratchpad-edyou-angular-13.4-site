@@ -15,7 +15,15 @@ export class SuccessPaymentComponent implements OnInit {
 
 
   navigateToMain(){
-    this.router.navigate(['/main']);
+    let url1 
+     url1  = localStorage.getItem('url');
+     if(url1 && url1.includes('/sc')){
+      this.router.navigate(['/SC']);
+     }else{
+      this.router.navigate(['/']);
+     }
+ 
+   // this.router.navigate(['/main']);
   }
 
 }

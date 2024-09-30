@@ -137,7 +137,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   public PsychiatryCourses = [
     {
-      title: 'Neurosciences',
+      title: 'Neuroscience',
       image: '../../assets/course-icons/Neurosciences.png'
     },
     {
@@ -145,7 +145,7 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Clinical Neuro.png'
     },
     {
-      title: 'Behavioral/Social Sciences',
+      title: 'Behavioral/Social Science',
       image: '../../assets/course-icons/Behavioral Sciences.png'
     },
     {
@@ -157,27 +157,27 @@ export class MainComponent implements OnInit, OnDestroy {
   public  AcademicUpcomingCourses = [
     {
       title: 'Latin',
-      image: '../../assets/course-icons/Latin.png'
+      image: '../../assets/course-icons/fLatin.png'
     },
     {
       title: 'Mathematics',
-      image: '../../assets/course-icons/Math2.png'
+      image: '../../assets/course-icons/fmath.png'
     },
     {
       title: 'Biology',
-      image: '../../assets/course-icons/Bio.png'
+      image: '../../assets/course-icons/fbio.png'
     },
     {
       title: 'Poetry',
-      image: '../../assets/course-icons/Poetry.png'
+      image: '../../assets/course-icons/fpoetry.png'
     },
     {
       title: 'Writing',
-      image: '../../assets/course-icons/Writing.png'
+      image: '../../assets/course-icons/fwriting.png'
     },
     {
       title: 'Word Problems',
-      image: '../../assets/course-icons/Word Problems.png'
+      image: '../../assets/course-icons/fwordproblem.png'
     },
     {
       title: 'Pre-Algebra',
@@ -246,6 +246,8 @@ export class MainComponent implements OnInit, OnDestroy {
   isScDisabled: boolean =false;
   storedLogin: string | null ="s";
   email_id: any;
+  subscribedbutton: any;
+  newLoader: boolean = false;
   constructor(private router: Router, private service: UserService, private service2: ColorChangeService, @Inject(PLATFORM_ID) private platformId: Object,
     private titleService: Title, private metaService: Meta, private fb: FormBuilder ,private route: ActivatedRoute) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -340,7 +342,17 @@ export class MainComponent implements OnInit, OnDestroy {
     if(user!==null){
     let sc = localStorage.getItem('url') 
     //this.router.url.includes('/sc')
-
+    let subscribed = localStorage.getItem('subscription')
+    if( subscribed){
+      if(subscribed.length > 0){
+        this.subscribedbutton = true
+       // this.subscribedbutton  = truesub
+      }else{
+        this.subscribedbutton = false
+        //this.subscribedbutton  = false
+      }
+    }
+    //this.subscribedbutton  = 
     this.isScDisabled = sc && sc.includes('sc') ? true : false;
     }
     this.setTitle('edYOU - Transforming Education with AI');
@@ -537,7 +549,7 @@ export class MainComponent implements OnInit, OnDestroy {
   // }
   choosedPlan: any;
 
-  preEnroll(data: any) {
+  preEnroll(data: any,event: Event) {
     // window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
     this.storedLogin = localStorage.getItem('user');
@@ -549,13 +561,15 @@ export class MainComponent implements OnInit, OnDestroy {
      if(this.storedLogin){
     //   this.buyPackage();
    
+   this.closeForm
     this.planAPI(this.email_id ,this.choosedPlan) 
      //this.planAPI(this.email_id)
     
     
        
      }else{
-     this.openForm = !this.openForm
+      this.openLoginPopup(event)
+     //this.openForm = !this.openForm
      }
    // this.openForm = !this.openForm
     
@@ -572,6 +586,10 @@ export class MainComponent implements OnInit, OnDestroy {
       });
     }
     this.closeModal()
+  }
+  openLoginPopup(event: any) {
+    event.stopPropagation();
+  this.service.showPopup();
   }
   openModal(caseId: any): void {
     this.isModalOpen = true;
@@ -652,7 +670,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.isModalOpen = false;
   }
   closeForm() {
-    this.openForm = !this.openForm
+    this.openForm = false
     this.subjectform.reset()
     this.isloading = false
   }
@@ -745,6 +763,7 @@ export class MainComponent implements OnInit, OnDestroy {
   
   planAPI(email: string,plan:string) {
     this.isloading = true;
+    this.newLoader = true
     let payload
     switch (plan) {
       case 'Silver':
@@ -763,7 +782,9 @@ export class MainComponent implements OnInit, OnDestroy {
           // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "price_amount": "19.99",
           // "price_amount": "39",
-          "belong_to" :"nonsc"
+          "belong_to" :"nonsc",
+
+          "type":"payment"
         }
         break;
       case 'Gold':
@@ -778,10 +799,13 @@ export class MainComponent implements OnInit, OnDestroy {
          // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
           // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
-          "price": "price_1Pxo9IALy7MM11rqfEWyUv4i",
+          "price": "price_1Q3YmqALy7MM11rq84K4saZ2",
           // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "price_amount": "74.99",
-          "belong_to" :"nonsc"
+          "belong_to" :"nonsc",
+         
+          "type":"subscription"
+          
         }
         break;
         //package updated 27sep2024
@@ -804,7 +828,9 @@ export class MainComponent implements OnInit, OnDestroy {
           // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "price_amount": "199.99",
           // price_amount": "199",
-          "belong_to" :"nonsc"
+          "belong_to" :"nonsc",
+          
+          "type":"subscription"
         }
         break;
         default:
@@ -819,6 +845,7 @@ export class MainComponent implements OnInit, OnDestroy {
       if (res.statusCode == 303) {
        
         this.closeForm()
+        this.newLoader = false
         window.location.href = res.headers.Location;
      
        

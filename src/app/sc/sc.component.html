@@ -127,7 +127,7 @@
       </div>
    
     
-      <button [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" class="pricing-button" (click)="ModalOpen()">
+      <button [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" class="pricing-button" (click)="ModalOpen($event)">
         <img class="" style="width : 24px; color:white;" *ngIf="isLoading3"
           src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit mobileFont" *ngIf="!isLoading3">Subscribe Now
         </span></button>

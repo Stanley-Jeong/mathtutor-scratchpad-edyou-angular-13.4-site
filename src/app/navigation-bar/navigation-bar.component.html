@@ -299,9 +299,9 @@
                     </div>
                 </div> 
                 <button *ngIf="!buttonName && this.b2cloggin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
-                <button *ngIf="!buttonName && this.scloggedin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Learn Now</span></button>
+                <button *ngIf="!buttonName && this.scloggedin" style="background-color:#2A7CC7;" x(click)="linkToedyouUser()" class=" buttonProfile" > <span>Learn Now</span></button>
                 <button *ngIf="buttonName =='Startfree' "(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
-                <button  *ngIf="buttonName =='Learn'" (click)="linkToedyouUser()" class="buttonProfile" > <span>Learn Now</span></button>
+                <button  *ngIf="buttonName =='Learn'" style=" background-color:#2A7CC7;" (click)="linkToedyouUser()" class="buttonProfile" > <span>Learn Now</span></button>
                 <button  [attr.disabled]="   this.isbuttondisabled  ? true : null" *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
             
             </div>

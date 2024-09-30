@@ -1,5 +1,5 @@
 <main id="content" #inside
-  class="site-main post-20 page type-page status-publish hentry">
+  class="site-main post-20 page type-page status-publish hentry" >
 
   <br >
 
@@ -70,7 +70,7 @@
     <div class="courses-cards-container" style="margin-top: -40px;">
       <div class="course-card" *ngFor="let course of AcademicUpcomingCourses">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="course-image-placeholder special-style" >
+         <div  >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"  >
         </div>
           <span class="mobileFonts">{{course.title}}</span>
@@ -96,7 +96,7 @@
     <div class="courses-cards-container" style="margin-top: -40px;">
       <div class="course-card" *ngFor="let course of skillForLifeUpcomingCourses">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="course-image-placeholder special-style" >
+         <div  >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"  >
         </div>
           <span class="mobileFonts">{{course.title}}</span>
@@ -110,7 +110,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of iteCourses">
         <!-- <img class="coming-soon-ribbon" src="../../assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="course-image-placeholder" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
+         <div class="" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
           <!-- <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : 10}"> -->
           <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : (course.image === '../../assets/course-icons/USMLE.png') ? 20 : 10}"> 
         </div>
@@ -122,7 +122,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of PsychiatryCourses">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="course-image-placeholder special-style" >
+         <div  >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Behavioral/Social Sciences' || course.title === 'Issues in Practice') ? 29 : 22}">
         </div>
           <span class="mobileFonts">{{course.title}}</span>
@@ -133,7 +133,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of SurgeryCourses">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="course-image-placeholder special-style" >
+         <div class="" >
           <img class="sizeImage" [src]="course.image" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Radiology' || course.title === 'Outcomes Ethics') ? 29 : 22}">
         </div>
           <span class="mobileFonts">{{course.title}}</span>
@@ -144,7 +144,7 @@
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of washingtonManualInspiredCourses">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-        <div class="course-image-placeholder"  [ngClass]="{
+        <div class=""  [ngClass]="{
           'special-style': course.title === 'Sexually Transmitted Diseases' || course.title === 'Heart Failure'
         }"
         >
@@ -161,8 +161,8 @@
       <div class="connect-learn-thrive-item">
         <img src="./assets/connect-learn-thrive-icons/connect-white.png" alt="connect-icon" class="clt-icon connect-icon">
         <div class="clt-text">
-          <h2 class="clt-header-text">Connect</h2>
-          <p>with your real-time AI conversational, personal learning and wellness companions.</p>
+          <h2 class="clt-header-text" style= "margin-left: 43px;">Connect</h2>
+          <p>With real-time, conversational AI learning and wellness companions.</p>
         </div>
       </div>
 
@@ -170,7 +170,7 @@
         <img src="./assets/connect-learn-thrive-icons/learn-white.png" alt="connect-icon" class="clt-icon learn-icon">
         <div class="clt-text">
           <h2 class="clt-header-text">Learn</h2>
-          <p>by listening and asking questions from your AI companions. Strengthen your knowledge with our endless test questions.</p>
+          <p>Listen and interact with your AI "tutor".  Gamify learning and strengthen knowledge with endless test prep.</p>
         </div>
       </div>
 
@@ -178,7 +178,7 @@
         <img src="./assets/connect-learn-thrive-icons/thrive-white.png" alt="connect-icon" class="clt-icon thrive-icon">
         <div class="clt-text">
           <h2 class="clt-header-text">Thrive</h2>
-          <p>by having your personal learning and wellness companion help you with your confidence and feeling better while learning.</p>
+          <p>With an educational guide who supports your well-being as much as your learning.</p>
         </div>
       </div>
       
@@ -207,7 +207,7 @@
             <span><strong class="pricing-number">$19.99</strong></span>
           </div>
         </div>
-        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}"(click)=" preEnroll('Silver')">Subscribe Now</button>
+        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}"(click)=" preEnroll('Silver',$event)">Subscribe Now</button>
         <!-- GO TO STRIPE! -->
         <div class="pricing-card-description">
           <h5>Includes:</h5>
@@ -235,7 +235,7 @@
             <span><strong class="pricing-number">$74.99</strong>/week</span>
           </div>
         </div>
-        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" (click)=" preEnroll('Gold')">Subscribe Now</button>
+        <button class="pricing-button" [disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}" (click)=" preEnroll('Gold',$event)">Subscribe Now</button>
         <div class="pricing-card-description">
           <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
@@ -265,7 +265,7 @@
             <span><strong class="pricing-number">$199.99</strong>/month</span>
           </div>
         </div>
-        <button class="pricing-button"[disabled]="isScDisabled"  [ngClass]="{'disabled-button': isScDisabled}"(click)=" preEnroll('Platinum')">Subscribe Now</button>
+        <button class="pricing-button"[disabled]="isScDisabled "  [ngClass]="{'disabled-button': isScDisabled  }"(click)=" preEnroll('Platinum',$event)">Subscribe Now</button>
         <div class="pricing-card-description">
           <h5>Includes:</h5>
           <ul class="pricing-card-description-list-items">
@@ -285,7 +285,7 @@
 
 
     </div>
-    <div class="countdown">
+    <!-- <div class="countdown">
     
     
       <h6 class="countdowntEXT" >Deadline for pre-launch discount</h6>
@@ -327,7 +327,7 @@
       </a> -->
       <!-- <h6 class="signUptext">Sign up before we launch to receive</h6>
       <h5 class="offMsg">25% off your subscription.</h5> -->
-    </div>
+    <!-- </div> -->
   </div>
 
  <!-- COUNTDOWN -->
@@ -367,7 +367,7 @@
       </div>
   </div>
   <h5 class="QuestionText">Ready to connect, learn, and thrive?</h5>
-  <!-- <button (click)="openform()">Join The Waitlist!</button> -->
+ <button (click)="openform()">Join The Waitlist!</button> -->
   <!-- <a (click)="scrollToId('pricing_section_id')">
     <button>Pre-Enroll Now!</button>
   </a>
@@ -1739,7 +1739,7 @@
       </svg>
       <div class="margin2">
           <div>
-            <h1 class="waitlistHeading">Pre-Enroll Now</h1>
+            <h1 class="waitlistHeading">Subscribe Now</h1>
             <h6 class="waitlistText">Please fill in the below details</h6>
           </div>
           <form class="form" [formGroup]="subjectform">  
@@ -2799,4 +2799,11 @@ data-core-v316-plus="true" style="display: flex;">
    </div>
   </div>
   
+</div>
+<!-- loader -->
+<div class="overlay" *ngIf="newLoader"></div>
+<div class="loadercard"  *ngIf="newLoader">
+  <p style="display: flex;align-items: center;color: rgb(71, 70, 70);margin-top: 20px;">
+  <span class="loaderssss"></span> &nbsp; Loading ....
+  </p>
 </div>

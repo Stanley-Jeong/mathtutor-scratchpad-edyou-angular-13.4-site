@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   signUpForm: boolean = false
   signInForm: boolean = true
   forgetInForm: boolean = false
+  otpsuccessForm: boolean = false
   isForgetSubmitTrue: boolean = false
   isLoading2: boolean = false;
   showMessage: any;
@@ -33,6 +34,8 @@ export class LoginComponent implements OnInit {
   showParent: boolean = false;
   showParentb2c: boolean = false;
   schoolname: string = "";
+  subscribedata: any;
+  otreverify: boolean = false;
 
   constructor(private userserice: UserService, private formBuilder: FormBuilder, private router :Router) { }
 
@@ -49,7 +52,7 @@ export class LoginComponent implements OnInit {
     //   this.emailDomainValidator()(this.signUpForm.get('email')!); // Call validator
     // });
   
-
+   
   }
 
   // form group
@@ -90,8 +93,8 @@ export class LoginComponent implements OnInit {
 
 
   restPasswordForm =  this.formBuilder.group({
-    newPassword: new FormControl('', [ Validators.required,Validators.minLength(8)]),
-    confirmPassword: new FormControl('', [ Validators.required,Validators.minLength(8)]),
+    newPassword: new FormControl('', [ Validators.required,Validators.minLength(1)]),
+    confirmPassword: new FormControl('', [ Validators.required,Validators.minLength(1)]),
   }, { validator: validateConfirmPassword('newPassword', 'confirmPassword') });
 
 
@@ -166,10 +169,12 @@ export class LoginComponent implements OnInit {
     this.isOverlayActive = false
     this.signInForm = true
     this.forgetInForm = false
+    this.otpsuccessForm =false
     this.signUpForm = false
     this.isForgetFormSubmit = false
     this.isForgetSubmitTrue = false
     this.resetPasswordActive = false
+    this.otreverify = false;
     this.form.reset()
     this.signUpform.reset()
     this.forgetForm.reset()
@@ -211,7 +216,19 @@ export class LoginComponent implements OnInit {
           if (data.statusCode == 200) {
             this.isLoading = false
             this.loggedInDaTa = data;
+            localStorage.setItem("url", JSON.stringify(data.url));
+            localStorage.setItem("user", JSON.stringify(data.body))
+           localStorage.setItem("user", JSON.stringify(data.body));
+           localStorage.setItem("LoginState", JSON.stringify(true));
+           localStorage.setItem("email",data.body.email);
+         
             //localStorage.setItem("subscription", JSON.stringify(data));
+        
+          
+          
+            
+           
+         
             let payload ={
               "request": "get_customer_product",
              "customer_id": data.body.cus_id
@@ -219,18 +236,19 @@ export class LoginComponent implements OnInit {
             
             this.userserice.getSubscriptionDetail(payload).subscribe((res: any) => {
              if(res.statusCode == 200){
-              localStorage.setItem("subscription", JSON.stringify(res.body));
-              localStorage.setItem("url", JSON.stringify(data.url));
-             localStorage.setItem("user", JSON.stringify(data.body))
-            localStorage.setItem("user", JSON.stringify(data.body));
-            localStorage.setItem("LoginState", JSON.stringify(true));
-            localStorage.setItem("email",data.body.email);
+             
+            this.subscribedata = res.body
+            this.userserice.setSubscriptionData(this.subscribedata);
+            localStorage.setItem("subscription", JSON.stringify(this.subscribedata));
+            }else{
+              //localStorage.removeItem("subscription");
+              this.subscribedata = ''
+              console.log('no data')
+              localStorage.removeItem("subscription");
             }
+          } )
           
-            
-            
-           
-            } )
+          //  localStorage.setItem("subscription", JSON.stringify(res.body));
             console.log(this.loggedInDaTa)
             if (this.loggedInDaTa.url.includes('/sc')) {
               console.log('URL contains /sc',this.loggedInDaTa.url);
@@ -248,7 +266,7 @@ export class LoginComponent implements OnInit {
 
          
             //  localStorage.setItem("token", JSON.stringify(data.Token));
-            this.userserice.login( this.loggedInDaTa );
+            this.userserice.login( );
   
             this.closePopup()
           }
@@ -256,9 +274,9 @@ export class LoginComponent implements OnInit {
             this.isLoading = false
 
             this.errorMessage = data.body
-            setTimeout(() => {
-              this.errorMessage = ''
-            },3000)
+
+         //   this.isSignUpFormSubmit = true;
+         
             // If there is an error with the request, display an error message
             // this.statusCodeError(data)
           } else if(data.statusCode == 402) {
@@ -324,6 +342,7 @@ console.log('this.schoolname','Form Submitted', this.signUpform.value)
 
 
   otpVerify(value: any) {
+    
     let emailvalue
     if (value == true) {
       emailvalue = this.forgetForm.value.email
@@ -342,16 +361,22 @@ console.log('this.schoolname','Form Submitted', this.signUpform.value)
       this.isLoading2 = true
       this.userserice.verifyOTP(payload).subscribe((res: any) => {
         if (res.statusCode == 200) {
+         // this.isSignUpFormSubmit = false
+          this.otpsuccessForm = true
           this.isLoading2 = false
-          this.otpForm.reset()
+         
+         
           this.signUpform.reset()
 
           this.showMessage = res.message
           setTimeout(() => {
             this.showMessage = ''
-            localStorage.setItem("user", JSON.stringify(res.body));
+          //  localStorage.setItem("user", JSON.stringify(res.body));
             //localStorage.setItem("token", JSON.stringify(res.Token));
-            this.userserice.login(this.loggedInDaTa );
+            //this.userserice.login();
+            
+            
+        
             this.closePopup()
           }, 3000)
         } else if (res.statusCode == 201) {
@@ -500,7 +525,7 @@ this.resetLoader = false
     
       // Check if email matches the allowed domains
       const isDomainValid = domainPattern.test(email);
-      console.log(isDomainValid)
+      //console.log(isDomainValid)
       if(isDomainValid){
         this.showParentb2c = true;
     
@@ -595,5 +620,79 @@ dateNotInFuture(): ValidatorFn {
   
     // Consider form valid if all relevant fields are valid, ignoring parentEmail
     return emailValid && passwordValid && fNameValid && lNameValid && dateValid;
+  }
+  callapi()
+  {
+    this.otreverify = !this.otreverify;
+   // this.signInForm = false;
+   this.errorMessage = ''
+  
+ }
+  otpReVerify(value: any) {
+    this.errorMessage = ''
+    let emailvalue
+    if (value == true) {
+      emailvalue = this.forgetForm.value.email
+    } else {
+      emailvalue = this.form.value.email
+    }
+    if (this.otpForm.valid) {
+      let payload = {
+        "email": emailvalue,
+        "forgot": value,
+        // email: 'raitest@yopmail.com',
+        "resend": false,
+        "OTP": Object.values(this.otpForm.value).join('')
+      }
+      console.log(payload)
+      this.isLoading2 = true
+      this.userserice.verifyOTP(payload).subscribe((res: any) => {
+        if (res.statusCode == 200) {
+         // this.isSignUpFormSubmit = false
+          this.otpsuccessForm = true
+          this.isLoading2 = false
+         
+         
+          this.signUpform.reset()
+
+          this.showMessage = res.message
+          setTimeout(() => {
+            this.showMessage = ''
+          //  localStorage.setItem("user", JSON.stringify(res.body));
+            //localStorage.setItem("token", JSON.stringify(res.Token));
+            //this.userserice.login();
+            
+            
+        
+            this.closePopup()
+          }, 3000)
+        } else if (res.statusCode == 201) {
+          // reset password
+          this.isLoading2 = false
+          this.otpForm.reset()
+          this.showMessage = res.message
+          setTimeout(() => {
+            this.showMessage = ''
+            this.isForgetFormSubmit = false
+            this.resetPasswordActive = true
+          //  this.closePopup()
+          },2000)
+
+        } else if (res.statusCode == 202) {
+          this.isLoading2 = false
+          this.otpForm.reset()
+          this.signUpform.reset()
+          this.errorMessage = res.message
+          setTimeout(() => {
+            this.errorMessage = ''
+            //  this.signInFun()
+          }, 4000)
+        }
+
+      })
+
+    }
+
+
   }
 }

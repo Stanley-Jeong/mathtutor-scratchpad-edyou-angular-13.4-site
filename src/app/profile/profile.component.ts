@@ -22,15 +22,17 @@ export class ProfileComponent implements OnInit {
   daysLeft:any;
   expireDaysLeft: number=0;
   url: any = '';
- 
+ isLoading:boolean = false;
   currentUrl: string ='url';
   buttonName: string = 'startFree';
   togglecancel: boolean = false;
   subscriptionDetailCustomer: any;
+  subscdata: any;
+  shouldScrollToFragment: boolean = false;
   constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
-
+    this.isLoading = true
     
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
 
@@ -48,10 +50,21 @@ export class ProfileComponent implements OnInit {
         filter((event) => event instanceof NavigationEnd)
       ).subscribe(() => {
         // Manually scroll to the fragment after navigation ends
-        this.scrollToFragment();
+       // this.scrollToFragment();
       });
+     
   }
-
+  ngAfterViewInit() {
+    if (this.shouldScrollToFragment) {
+      this.scrollToFragment();
+    }
+  }
+  scrollToFragment() {
+    const element = document.getElementById('pricing_section_id');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   editProfileForm = new FormGroup({
     first_name: new FormControl('', [Validators.required]),
     last_name: new FormControl(''),
@@ -90,7 +103,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-        this.isSpinner = false;
+         this.isLoading = false;
         if (res != null) {
         this.userOrderFull=res;
 
@@ -107,14 +120,14 @@ export class ProfileComponent implements OnInit {
               this.subscriptionDetailCustomer = res.body;
               if(this.subscriptionDetailCustomer.length > 0){
               //  console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
-                //this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
+                this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
               }
   
               // console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
               // this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
            
   
-          console.log(this.subscriptionDetailCustomer[0].end_date)
+       //   console.log(this.subscriptionDetailCustomer[0].end_date)
           
           }
      
@@ -127,8 +140,10 @@ export class ProfileComponent implements OnInit {
         
         
        
-      }}else{
-        
+      }
+      //this.checkUserSubscription
+    }else{
+      this.isLoading = true
       }
       
     })
@@ -193,14 +208,41 @@ export class ProfileComponent implements OnInit {
       }
   }
   cancelSubscription() {
+ // console.log(this.subscdata)
+// this.checkUserSubscription
+let subscdata = localStorage.getItem('subscription')
+if(subscdata)
+
+ { this.subscdata = JSON.parse(subscdata); }
+ else
+ {
+  this.subscdata = []
+ }
+ console.log(this.subscdata[0].subscription_id)
+ if (this.subscdata && Array.isArray(this.subscdata) && this.subscdata.length > 0) {}
+  console.log('First subscription:', this.subscdata[0]);  // Check the first element
+
     let data = {
-      email:this.user.email,
-     subscription: this.user.Subscription_id,
+      request:"cancel_subscription",
+      subscription_id: this.subscdata[0].subscription_id,
+    // "request": "cancel_subscription",
+ // "subscription_id": "sub_1Q3b40ALy7MM11rqGxkRf3Xq"}
     };
-    this.service.cancelSubscription(data).subscribe((res: any) => {
+    this.service.getSubscriptionDetail(data).subscribe((res: any) => {
       if (res.statusCode == 200) {
      alert("Success")
+     
     this.togglecancel = true
+    let sc = localStorage.getItem('url') 
+    //this.router.url.includes('/sc')
+  
+   if(sc && sc.includes('sc') ){
+    this.router.navigate(['/SC']);
+   
+   }else if(sc){
+   this.router.navigate(['/']);
+  
+    }
 
 
       }else{
@@ -231,36 +273,54 @@ export class ProfileComponent implements OnInit {
   }
 
   checkUserSubscription(){
-    console.log(this.userOrderFull)
+   
+    let storedSubscription = localStorage.getItem('subscription') 
+    console.log(storedSubscription)
+    if (storedSubscription) {
+      this.subscdata = JSON.parse(storedSubscription);
+    } else {
+      this.subscdata = null;  // or assign any default value you prefer
+    }
+  
+    console.log(this.subscdata);  // This will now log the actual parsed subscription data
+  
   }
+
   Subscription(){
   
  console.log(this.currentUrl)
  let user = localStorage.getItem('url') 
- if(user!==null){
+ if(user){
+
   let sc = localStorage.getItem('url') 
   //this.router.url.includes('/sc')
 
  if(sc && sc.includes('sc') ){
+  
   this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
- }else if(sc)
- this.router.navigate(['/'], { fragment: 'pricing_section_id' });
+  this.shouldScrollToFragment = true; 
+  const element = document.getElementById('pricing_section_id');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
   }
-       
-       // const element = document.getElementById('pricing_section_id');
-        // if (element) {
-        //   element.scrollIntoView({ behavior: 'smooth' });
-        // }
-  }
-  scrollToFragment() {
-    // Delay to ensure the DOM is updated
-    setTimeout(() => {
-      const element = document.getElementById('pricing_section_id');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+  //this.scrollToFragment
+ }
+  else if (sc) {
+    this.shouldScrollToFragment = true; 
+      this.router.navigate(['/'], { fragment: 'pricing_section_id' }).then(() => {
+        setTimeout(() => {
+          const element = document.getElementById('pricing_section_id');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
+    }
+    
       }
-    }, 0);
   }
+  
+
   checkIfExpired(dateTimeString: string) {
     // If the input is already in a valid format, you can parse it directly.
     const parsedDate = new Date(dateTimeString); // Use the input string directly

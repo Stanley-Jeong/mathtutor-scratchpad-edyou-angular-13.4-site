@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { FormControl, FormGroup, Validators , AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { Router, UrlTree } from '@angular/router';
 import { UserService } from '../service/user.service';
+import { eventType } from 'aws-sdk/clients/health';
 //import { DatepickerModule } from 'ng2-datepicker';
 
 
@@ -33,6 +34,7 @@ export class ScComponent implements OnInit {
   datePickerInstance: any;
   isScDisabled: boolean =false;
   email_id: any
+  subscribedbutton: boolean = false;
   
   constructor(private router: Router, private service: UserService) {  
    
@@ -45,6 +47,17 @@ export class ScComponent implements OnInit {
     this.showParent = false
     let user = localStorage.getItem('user') 
     this.email_id = localStorage.getItem('user.email') 
+    let subscribed = localStorage.getItem('subscription')
+    // if( subscribed){
+    //   console.log(subscribed)
+    //   if(subscribed.length !== 0){
+    //     this.subscribedbutton = true
+    //    // this.subscribedbutton  = true
+    //   }else{
+    //     this.subscribedbutton = false
+    //     //this.subscribedbutton  = false
+    //   }
+    // }
     if(user){
     let sc = localStorage.getItem('url') 
     //this.router.url.includes('/sc')
@@ -152,7 +165,7 @@ export class ScComponent implements OnInit {
 
   // pricing 
 
-  ModalOpen() {
+  ModalOpen(event:Event) {
     // window.open('https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM', '_blank');
     // window.location.href = 'https://buy.stripe.com/test_5kAdSpdiJcr8awEcMM';
   
@@ -170,10 +183,14 @@ export class ScComponent implements OnInit {
    
       
     }else{
-    this.openForm = !this.openForm
+      this.openLoginPopup(event)
+  //  this.openForm = !this.openForm
     }
   }
-
+  openLoginPopup(event: any) {
+    event.stopPropagation();
+  this.service.showPopup();
+  }
 
   closeModal(): void {
     this.isModalOpen = false;
@@ -270,7 +287,9 @@ export class ScComponent implements OnInit {
       "mode": "setup",
       "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
       "price_amount": "199.00",
-      "belong_to" :"sc"
+      "belong_to" :"sc",
+          
+      "type":"setup"
     }
     this.service.stripe(payload).subscribe((res: any) => {
       

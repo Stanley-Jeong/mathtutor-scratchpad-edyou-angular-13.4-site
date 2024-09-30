@@ -5,6 +5,7 @@ import { ColorChangeService } from '../service/color-change.service';
 import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 import { UserService } from '../service/user.service';
+import { ChangeDetectorRef } from '@angular/core';
 declare var jQuery: any;
 @Component({
   selector: 'app-navigation-bar',
@@ -55,8 +56,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   forMobile : boolean =false;
   forIpad : boolean =false;
   subscriptionDetailCustomer: any;
+  subscriptionDetailinfo: any = [];
 
-  constructor(
+  constructor(private cd:ChangeDetectorRef,
     private router: Router, private service : ColorChangeService, private userservice : UserService,
     @Inject(PLATFORM_ID) private platformId: Object
   ){this.isBrowser = isPlatformBrowser(this.platformId);}
@@ -144,18 +146,14 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       
         //   this.openSuccessPopup = false
         // },2000)
-      let subscription_exist = localStorage.getItem('subscription');
-      if (subscription_exist) {
-       
-          this.buttonName = "Learn"
-     //    alert(this.buttonName)
-       //this.checkIfExpired(subscription_exist[0])
-      }else{
-        this.buttonName = 'Startfree';
-       // alert(this.buttonName)
-      }
-   
+     
+        this.cd.detectChanges();
   })
+  this.userservice.subscription$.subscribe(subscriptionData => {
+    this.subscriptionDetailinfo = subscriptionData || [];
+    this.buttonName = this.subscriptionDetailinfo.length === 0 ? "Startfree" : "Learn";
+    this.cd.detectChanges(); // Update the UI accordingly
+  });
     this.getProfileDetail()
   }
   onMouseOver(): void {
@@ -250,6 +248,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     }
   }
   openLoginPopup(event: any) {
+    console.log(event,'login')
     event.stopPropagation();
   this.userservice.showPopup();
   }
@@ -276,20 +275,39 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   scrollToPricing(): void {
   console.log(  this.currentUrl)
  
-  if(this.currentUrl == '/SC/profile'){
+  if(this.currentUrl == '/SC/profile'|| this.currentUrl == '/SC'){
     this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
+    
    const element = document.getElementById('pricing_section_id');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  }else if (this.currentUrl == '/profile'){
-    const element = document.getElementById('pricing_section_id');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  }else if (this.currentUrl == '/profile'||this.currentUrl == '/'){
+   
+    this.router.navigate(['/'], { fragment: 'pricing_section_id' });
+    // const element = document.getElementById('pricing_section_id');
+    // if (element) {
+    //   element.scrollIntoView({ behavior: 'smooth' });
+    // }
+    setTimeout(() => {
+      const element = document.getElementById('pricing_section_id');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);  // Delay to ensure navigation is complete before scrolling
   }
+//this.scrollToFragment
   }
 
+  scrollToFragment() {
+    // Delay to ensure the DOM is updated
+    setTimeout(() => {
+      const element = document.getElementById('pricing_section_id');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+  }
   navigateToPricing() {
     this.router.navigate(['SC/pricing'])
   }
@@ -323,6 +341,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     if (isLoggedIn == true) {
       this.getProfileDetail
       this.menuToggle
+    
       //  let  x :any = this.userservice.buttonName;
       //  console.log(x,'navitem')
       //  if(x.orderHistory.length>0){
@@ -357,6 +376,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       //  }
       });
     }
+ 
 
     let loggedin_User = localStorage.getItem('Login_User');
     console.log(loggedin_User)
@@ -404,45 +424,32 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
         
      
 console.log(" this.userDetails", this.userDetails)
-let payload ={
-  "request": "get_customer_product",
- "customer_id": res.data.cus_id
-}
 
-this.userservice.getSubscriptionDetail(payload).subscribe((res: any) => {
- if(res.statusCode == 200){
-   this.subscriptionDetailCustomer = res.body;
-   console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
-   this.checkIfExpired(this.subscriptionDetailCustomer[0].end_date)
-
-
-console.log(this.subscriptionDetailCustomer[0].end_date)
-
-}
-const createdAt = new Date(this.subscriptionDetailCustomer[0].activation_date.replace(',', 'T'));
-
-const planDate = new Date(createdAt);
-const expireAt = new Date(this.subscriptionDetailCustomer[0].end_date.replace(',', 'T'));
-
-planDate.setDate(planDate.getDate() + 13);
-console.log(createdAt,expireAt)
-// Get the current date
-const currentDate = new Date();
-
-
-
-console.log(" this.userDetails", this.userDetails)
-} )
       }else{
         
       }
     })
-  
+    this.cd.detectChanges();
   }
   linkToedyouUser(){
-    console.log(this.user.link,this.user)
-    window.location.href = this.user.link;
+    let user  = localStorage.getItem('user');
+    console.log(user)
+    if (user) {
+      // Parse the string back into a JavaScript object
+     let user1 = JSON.parse(user); 
     
+      // Now you can access the 'link' property
+      console.log(user1.link, 'urltomove', this.user);
+     // const userLink: string = user1.link;
+
+      // If you want to navigate, uncomment this:
+      window.location.href = user1.link;
+    }else{
+      window.location.href= 'https://smdev.edyou.com/' 
+    }
+  
+   
+
   }
   checkIfExpired(dateTimeString: string) {
     // Convert the date-time string into a JavaScript Date object

@@ -5,7 +5,7 @@
 
     <!-- login  form-->
     <div class="modal-content" *ngIf="signInForm" style="    margin-top: 100px;">
-      <div class="modal-body">
+      <div class="modal-body"*ngIf="!otreverify">
         <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
 
         <!-- sign in form -->
@@ -47,7 +47,7 @@
                 name="password" placeholder="Password">
               <div class="input-group-prepend-login">
                 <span class="input-group-text1" (click)="hideShow()">
-                  <i style="margin-top:9px" [ngClass]="show?'fas fa-eye':'fas fa-eye-slash'"></i>
+                  <i style="margin-top:9px;margin-left: -19px; " [ngClass]="show?'fas fa-eye':'fas fa-eye-slash'"></i>
                 </span>
 
               </div>
@@ -71,7 +71,51 @@
           <span class="signup">Don't Have Account? <span style=" color: #46A6FF; cursor: pointer;;"
               (click)="signUpFun()">&nbsp; Sign Up </span></span>
         </div>
-        <span class="errorMessage mb-1" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+        <span class="errorMessage mb-1" *ngIf="errorMessage.length > 0">{{errorMessage}} , please click here To<span style=" color: #46A6FF; cursor: pointer;;"
+          (click)="callapi()">&nbsp;  Verify otp </span></span>
+      <!-- //  <span class="errorMessage mt-2"  *ngIf="errorMessage.length > 0" > </span> -->
+      </div>
+      <div class ="modal-body" *ngIf="otreverify">
+      <ng-container >
+        <span class="heading">Enter OTP</span>
+
+        <span class="subHeading mt-1">Please enter one time password sent to {{form.value.email}}</span>
+
+        <div class="otp-field mt-31" >
+          <div class="otp-field mt-31">
+            <form [formGroup]="otpForm" class="otp-fieldR mt-31" style ="justify-content:center;">
+              <input type="text" maxlength="1" formControlName="otp1" (keyup)="moveFocus($event, 'otp2')"/>
+              <input type="text" maxlength="1" formControlName="otp2" (keyup)="moveFocus($event, 'otp3') "/>
+              <input class="space" type="text" maxlength="1" formControlName="otp3" (keyup)="moveFocus($event, 'otp4')" />
+              <input type="text" maxlength="1" formControlName="otp4"(keyup)="moveFocus($event, 'otp5')" />
+              <input type="text" maxlength="1" formControlName="otp5" (keyup)="moveFocus($event, 'otp6')" />
+              <input type="text" maxlength="1" formControlName="otp6" />
+            </form>
+          </div>
+          <!-- <form [formGroup]="otpForm" >
+            <input type="text" maxlength="1" formControlName="otp1" (keyup)="moveFocus($event, 'otp2')" />
+            <input type="text" maxlength="1" formControlName="otp2" (keyup)="moveFocus($event, 'otp3')" />
+            <input class="space" type="text" maxlength="1" formControlName="otp3" (keyup)="moveFocus($event, 'otp4')" />
+            <input type="text" maxlength="1" formControlName="otp4" (keyup)="moveFocus($event, 'otp5')" />
+            <input type="text" maxlength="1" formControlName="otp5" (keyup)="moveFocus($event, 'otp6')" />
+            <input type="text" maxlength="1" formControlName="otp6" />
+            <button type="submit" class="btn btn-primary mt-3">Submit OTP</button>
+          </form> -->
+        </div>
+
+        <br>
+        <button class="btn" (click)="otpReVerify(false)"><img class="" style="width : 24px; color:white;"
+            *ngIf="isLoading2" src="../../assets/images/Rolling-1s-200px (2).gif"> <span class="btnSubmit"
+            *ngIf="!isLoading2">Submit</span></button>
+
+        <span class="signup mt-4"> <span style=" color: #46A6FF; cursor: pointer;;" (click)="callapi()">&nbsp;
+            Back</span></span>
+
+        <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}} Please log in to continue</span>
+     
+        <span class="errorMessage mt-2" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+        
+      </ng-container>
       </div>
     </div>
 
@@ -94,7 +138,7 @@
                 <span class="input-icon">
                   <img src="../../assets/userIcon.svg">
                 </span>
-                <input class="input-field" formControlName="f_name" name="f_name" type="text" placeholder="First name">
+                <input class="input-field" formControlName="f_name" name="f_name" type="text" placeholder="Student's First name">
               </div>
               <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="label__error border__error">
                 <div *ngIf="fname.errors?.['required']">
@@ -107,7 +151,7 @@
                 <span class="input-icon">
                   <img src="../../assets/userIcon.svg">
                 </span>
-                <input class="input-field" formControlName="l_name" name="l_name" type="text" placeholder="Last name">
+                <input class="input-field" formControlName="l_name" name="l_name" type="text" placeholder="Student's Last name">
               </div>
               <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="label__error border__error">
                 <div *ngIf="lname.errors?.['required']">
@@ -120,14 +164,14 @@
                 <span class="input-icon">
                   <img src="../../assets/public/icon-email.svg">
                 </span>
-                <input style="margin-left:-7px"class="input-field" formControlName="email" name="email"  type="text"  placeholder="Email">
+                <input style="margin-left:-7px"class="input-field" formControlName="email" name="email"  type="text"  placeholder="Student's E-mail">
               </div>
               <div *ngIf="emails.invalid && (emails.dirty || emails.touched)" class="label__error border__error">
                 <div *ngIf="emails.errors?.['required']">
-                  Email is required
+                  Student's E-mail is required
                 </div>
                 <div *ngIf="emails.errors?.['pattern']">
-                  Invalid Email
+                  Invalid Student's E-mail
 
                 </div>
               </div>
@@ -154,10 +198,10 @@
               <!-- parentemailend -->
               <div class="input-container input-signup" >
                 <span class="input-icon">
-                  <img src="../../assets/school.svg">
+                  <img src="../../assets/calendar.png">
                 </span>
 
-                <input style="margin-left: -7px; margin-top: 1px"class="input-field" formControlName="date" name="date"  
+                <input style="margin-left: -3px; margin-top: 1px"class="input-field" formControlName="date" name="date"  
      (change)="validateAge(date)" type="date" 
     >
 
@@ -167,7 +211,7 @@
                   Date is required
                 </div> -->
                 <div *ngIf="date.errors?.['required']">Student's Date of Birth is required.</div>
-                <div *ngIf="date.errors?.['date']">Enter a valid Date.</div>
+                <div *ngIf="date.errors?.['date']">Enter a valid Date of Birth.</div>
                 <div *ngIf="date.errors?.['futureDate']">Student's Date of Birth cannot be in the future.</div>
               </div>
 
@@ -243,11 +287,11 @@
             <div class="otp-field mt-31">
               <div class="otp-field mt-31">
                 <form [formGroup]="otpForm" class="otp-field mt-31">
-                  <input type="text" maxlength="1" formControlName="otp1" />
-                  <input type="text" maxlength="1" formControlName="otp2" />
-                  <input class="space" type="text" maxlength="1" formControlName="otp3" />
-                  <input type="text" maxlength="1" formControlName="otp4" />
-                  <input type="text" maxlength="1" formControlName="otp5" />
+                  <input type="text" maxlength="1" formControlName="otp1" (keyup)="moveFocus($event, 'otp2')"/>
+                  <input type="text" maxlength="1" formControlName="otp2" (keyup)="moveFocus($event, 'otp3') "/>
+                  <input class="space" type="text" maxlength="1" formControlName="otp3" (keyup)="moveFocus($event, 'otp4')" />
+                  <input type="text" maxlength="1" formControlName="otp4"(keyup)="moveFocus($event, 'otp5')" />
+                  <input type="text" maxlength="1" formControlName="otp5" (keyup)="moveFocus($event, 'otp6')" />
                   <input type="text" maxlength="1" formControlName="otp6" />
                 </form>
               </div>
@@ -270,8 +314,10 @@
             <span class="signup mt-4"> <span style=" color: #46A6FF; cursor: pointer;;" (click)="signInFun()">&nbsp;
                 Back</span></span>
 
-            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}}</span>
+            <span class="successMessage mt-3" *ngIf="showMessage">{{showMessage}} Please log in to continue</span>
+         
             <span class="errorMessage mt-2" *ngIf="errorMessage.length > 0">{{errorMessage}}</span>
+            
           </ng-container>
         </div>
       </div>
@@ -321,11 +367,11 @@
 
             <div class="otp-field mt-31">
               <form [formGroup]="otpForm" class="otp-field mt-31">
-                <input type="text" maxlength="1" formControlName="otp1" />
-                <input type="text" maxlength="1" formControlName="otp2" />
-                <input class="space" type="text" maxlength="1" formControlName="otp3" />
-                <input type="text" maxlength="1" formControlName="otp4" />
-                <input type="text" maxlength="1" formControlName="otp5" />
+                <input type="text" maxlength="1" formControlName="otp1" (keyup)="moveFocus($event, 'otp2')" />
+                <input type="text" maxlength="1" formControlName="otp2"  (keyup)="moveFocus($event, 'otp3')"/>
+                <input class="space" type="text" maxlength="1" formControlName="otp3"  (keyup)="moveFocus($event, 'otp4')"/>
+                <input type="text" maxlength="1" formControlName="otp4"  (keyup)="moveFocus($event, 'otp5')" />
+                <input type="text" maxlength="1" formControlName="otp5"  (keyup)="moveFocus($event, 'otp6')"/>
                 <input type="text" maxlength="1" formControlName="otp6" />
               </form>
             </div>
@@ -378,7 +424,7 @@
                   Password is required
                 </div>
                 <div *ngIf="newPassword.errors?.['minlength']">
-                  Minimum 8 characters is required
+                  Password is required
                 </div>
               </div>
 
@@ -394,7 +440,7 @@
                   Password is required
                 </div>
                 <div *ngIf="confirmPassword.errors?.['minlength']">
-                  Minimum 8 characters is required
+                  Password is required
                 </div>
               </div>
 
@@ -420,7 +466,33 @@
       </div>
     </div>
 
+    <!--success otp  -->
+    <!-- <div class="modal-content" *ngIf="otpsuccessForm" style="    margin-top: 100px;">
+      <div class="modal-body">
+        <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
 
 
-  </div>
+      
+        <div class="innerBox">
+
+    
+          <span class="successMessage mt-3" >Please Log in to continue..</span>
+
+            <span class="subHeading mt-1">OTP has been verified</span>
+
+           </div>
+           </div>
+           </div> -->
+
+           
+
+
+
+            
+                
+
+
+       
+
+  
 </div>
