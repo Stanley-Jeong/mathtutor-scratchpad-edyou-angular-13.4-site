@@ -8,30 +8,33 @@ main {
 }
 .countdownHeadingTop{
     text-align: center;
-    font-size: 48px;
-  
+    /* font-size: 48px; */
+    font-size: 60px;
     font-family: DM Sans;
-font-size: 48px;
-font-weight: 500;
-line-height: 62.5px;
+/* font-size: 48px; */
+    /* font-weight: 500; */
+    font-weight: 800;
+    line-height: 62.5px;
 
 
 }
 .countdownHeadingTopSubheading{
-font-family: DM Sans;
-font-size: 30px;
-font-weight: 500;
-line-height: 31.25px;
-text-align: center;
-font-family: DM Sans;
+    font-family: DM Sans;
+    /* font-size: 30px; */
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 31.25px;
+    text-align: center;
+    font-family: DM Sans;
 
-width: 845px;
-margin-left: 16%;
+    width: 845px;
+/* margin-left: 16%; */
 
 }
 .countdownHeadingDownSubheading{
     margin-top:2%;
-    font-size: 30px;
+    /* font-size: 30px; */
+    font-size: 28px;
     font-weight: 500;
     line-height: 31.25px;
     text-align: center;
@@ -668,6 +671,8 @@ position: absolute;
 }
 .courses-cards-container a img {
     transition: transform 0.3s ease-in-out;
+    border-radius: 16px;
+    border: 0.5px solid white;
 }
   
 .courses-cards-container a img:hover {
@@ -685,6 +690,7 @@ position: absolute;
     height: 200px;
     position: relative;
     padding: 0 10px;
+    border: 0.5px solid white;
 }
 
 .coming-soon-ribbon {
@@ -1246,14 +1252,15 @@ width:96%;
     .countdownHeadingTop {
         text-align: center;
         font-size: 48px;
-        font-family: DM Sans;
+        font-family: 'DM Sans';
         font-size: 45px;
         font-weight: 600;
         line-height: 62.5px;
     }
     .countdownHeadingTopSubheading {
-        font-family: DM Sans;
-        font-size: 22px;
+        font-family: 'DM Sans';
+        /* font-size: 22px; */
+        font-size: 20px;
         font-weight: 500;
         line-height: 31.25px;
         text-align: center;
@@ -1349,12 +1356,13 @@ margin-left:-5%;
 @media only screen and (max-device-width: 600px){
     .course-card span {
     
-        font-size: 14px;
+        font-size: 14px !important;
         font-weight: 400;
         line-height: 1;
     }
     .courses-cards-container{
         width: 95%;
+        gap: 22px;
     }
 }
 @media only screen and (min-device-width: 390px) and (max-device-width: 393px) {
@@ -1385,14 +1393,14 @@ margin-left:-5%;
         .countdownHeadingTopSubheading{
      
             width: 790px;
-            margin-left:10%;
+            /* margin-left:10%; */
           }
       }
       @media only screen and (min-device-width:2240px)  {
         .countdownHeadingTopSubheading{
      
            
-            margin-left:29%;
+            /* margin-left:29%; */
           
           }
         }
@@ -1400,7 +1408,7 @@ margin-left:-5%;
             .countdownHeadingTopSubheading{
          
                
-                margin-left:36%;
+                /* margin-left:36%; */
                 
               }
             }
@@ -1408,7 +1416,7 @@ margin-left:-5%;
                 .countdownHeadingTopSubheading{
              
                    
-                    margin-left:26%;
+                    /* margin-left:26%; */
                   
                   }}
                   .faq {

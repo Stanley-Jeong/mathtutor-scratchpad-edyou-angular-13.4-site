@@ -71,8 +71,8 @@
           <span class="signup">Don't Have Account? <span style=" color: #46A6FF; cursor: pointer;;"
               (click)="signUpFun()">&nbsp; Sign Up </span></span>
         </div>
-        <span class="errorMessage mb-1" *ngIf="errorMessage.length > 0">{{errorMessage}} , please click here To<span style=" color: #46A6FF; cursor: pointer;;"
-          (click)="callapi()">&nbsp;  Verify otp </span></span>
+        <span class="errorMessage mb-1" style="text-align: center;" *ngIf="errorMessage.length > 0">{{errorMessage}}, please click<span style=" color: #46A6FF; cursor: pointer;;"
+          (click)="callapi()">&nbsp;  Verify OTP </span></span>
       <!-- //  <span class="errorMessage mt-2"  *ngIf="errorMessage.length > 0" > </span> -->
       </div>
       <div class ="modal-body" *ngIf="otreverify">
@@ -325,7 +325,7 @@
 
 
     <!-- forget  form-->
-    <div class="modal-content" *ngIf="forgetInForm" style="    margin-top: 100px;">
+    <div class="modal-content" *ngIf="forgetInForm" style="    margin-top: 100px;" >
       <div class="modal-body">
         <button data-dismiss="modal" class="close" (click)="closePopup()">&times;</button>
 

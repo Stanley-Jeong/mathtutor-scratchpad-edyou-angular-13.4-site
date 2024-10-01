@@ -80,10 +80,19 @@ body {
     background: #FFF;
     z-index: 9999;
   
-  
+    /* position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
   
   }
-  
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+   
+  }
   .form-control {
     margin: 1em 0;
   }
@@ -206,6 +215,7 @@ body {
     display: flex;
     margin-bottom: -20px;
     justify-content: center;
+    align-items: center;
     font-family: "DM Sans";
     font-size: 14px;
     font-style: normal;
@@ -334,7 +344,14 @@ body {
       max-width: 370px;
       height: 500px;
       margin: 1.75rem auto;
-  }
+    }
+    .otp-field input {
+      width: 48px;
+    }
+
+    .otp-field {
+      margin-left: -23px;
+    }
   
   }
   
@@ -388,5 +405,6 @@ margin-left:3px;
   }
   .otp-fieldR {
     display: flex;
-    margin-left: 22px;
+    /* margin-left: 22px; */
+    margin-left: 30px;
 }

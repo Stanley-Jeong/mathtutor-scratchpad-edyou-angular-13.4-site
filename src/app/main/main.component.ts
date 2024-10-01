@@ -90,6 +90,22 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'USMLE Step 3',
       image: '../../assets/course-icons/USMLE.png'
     },
+    {
+      title: 'Toxicology',
+      image: '../../assets/course-icons/Framet.png'
+    },
+    {
+      title: 'Neurology',
+      image: '../../assets/course-icons/Framen.png'
+    },
+    {
+      title: 'Sexually Transmitted Diseases',
+      image: '../../assets/course-icons/Frame s.png'
+    },
+    {
+      title: 'Heart Failure',
+      image: '../../assets/course-icons/Frame 14 h.png'
+    },
   ]
 
   public washingtonManualInspiredCourses = [

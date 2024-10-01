@@ -14,7 +14,9 @@ export class ProfileComponent implements OnInit {
   activeTab: string = 'accountDetails';
   edit:boolean = false
   isSpinner: boolean = false ;
-  userDetails: any = [];
+  userDetails: any 
+  createdDate:any;
+
   selectedProfileData: any;
   user: any;
   isLoading2: boolean = false;
@@ -109,6 +111,9 @@ export class ProfileComponent implements OnInit {
 
 //res.data.cus_id
         this.userDetails = res.data;
+          this.createdDate = this.userDetails.created_at
+          console.log(this.userDetails)
+          console.log(this.createdDate)
         this.bindWithSelectedPrfileData( this.userDetails);
         if(this.userDetails.cus_id){
           let payload ={
