@@ -324,12 +324,30 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
  
  
   }
-  menuToggle() {
+  menuToggle(event?: MouseEvent) {
 
     const toggleMenu: any = document.querySelector("#menuId");
     toggleMenu.classList.toggle("active");
-
+    if (toggleMenu.classList.contains('active')) {
+      // Add click event listener to the document to handle closing
+      document.addEventListener('click', this.closeMenuOnClickOutside);
+    } else {
+      // If the menu is closed, remove the event listener
+      document.removeEventListener('click', this.closeMenuOnClickOutside);
+    }
     console.log('hit menu')
+  }
+  closeMenuOnClickOutside = (event: MouseEvent) => {
+    const toggleMenu: any = document.querySelector("#menuId");
+    const profile: any = document.querySelector(".profile");
+  
+    // Check if the click is outside both the menu and profile
+    if (!toggleMenu.contains(event.target as Node) && !profile.contains(event.target as Node)) {
+      toggleMenu.classList.remove('active');
+      
+      // Remove the event listener once the menu is closed
+      document.removeEventListener('click', this.closeMenuOnClickOutside);
+    }
   }
   checkUserLogin(){
     const storedLoginState = localStorage.getItem('LoginState');
@@ -340,7 +358,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     // Check the login state and perform the corresponding action
     if (isLoggedIn == true) {
       this.getProfileDetail
-      this.menuToggle
+    //  this.menuToggle()
     
       //  let  x :any = this.userservice.buttonName;
       //  console.log(x,'navitem')

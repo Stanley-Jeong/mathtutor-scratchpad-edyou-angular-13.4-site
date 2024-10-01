@@ -324,7 +324,7 @@ margin-bottom: 0rem;
 
 .action .menu h3 {
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   padding: 10px 0;
   font-weight: 500;
@@ -494,4 +494,7 @@ margin-bottom: 0rem;
   }
   .buttonProfile {
     margin-right: 70px;}
+}
+.learnbutton{
+ background-color:#2A7CC7;
 }

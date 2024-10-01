@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
   subscriptionDetailCustomer: any;
   subscdata: any;
   shouldScrollToFragment: boolean = false;
+  modalSuccess: boolean =false;
+  modalSuccessProfile : boolean = false;
   constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
@@ -188,19 +190,20 @@ export class ProfileComponent implements OnInit {
         console.log(editProfilePayload);
         this.service.updateProfileAPI(editProfilePayload).subscribe((res: any) => {
           if (res.statusCode == 200) {
+            this.openModal('profile')
             this.isLoading2 = false
-            Swal.fire({
-              // title: "Welcome",
-              text: res.body,
-              confirmButtonText: "ok ",
-              showConfirmButton: false,
-              confirmButtonColor: '#2a7cc7',
-              timer: 2000,
-              allowOutsideClick: false,
-            }).then((result) => {
+            // Swal.fire({
+            //   // title: "Welcome",
+            //   text: res.body,
+            //   confirmButtonText: "ok ",
+            //   showConfirmButton: false,
+            //   confirmButtonColor: '#2a7cc7',
+            //   timer: 2000,
+            //   allowOutsideClick: false,
+            // }).then((result) => {
             
            
-            });
+            // });
            } else if (res.statusCode == 401) {
             this.isLoading2 = false
            } else if (res.statusCode == 402) {
@@ -215,6 +218,8 @@ export class ProfileComponent implements OnInit {
   cancelSubscription() {
  // console.log(this.subscdata)
 // this.checkUserSubscription
+
+
 let subscdata = localStorage.getItem('subscription')
 if(subscdata)
 
@@ -223,6 +228,7 @@ if(subscdata)
  {
   this.subscdata = []
  }
+ 
  console.log(this.subscdata[0].subscription_id)
  if (this.subscdata && Array.isArray(this.subscdata) && this.subscdata.length > 0) {}
   console.log('First subscription:', this.subscdata[0]);  // Check the first element
@@ -235,7 +241,10 @@ if(subscdata)
     };
     this.service.getSubscriptionDetail(data).subscribe((res: any) => {
       if (res.statusCode == 200) {
-     alert("Success")
+   //  alert("Success")
+  // this.isModalOpen
+   this.openModal('plan')
+ //  this.modalSuccess  = true;
      
     this.togglecancel = true
     let sc = localStorage.getItem('url') 
@@ -251,7 +260,7 @@ if(subscdata)
 
 
       }else{
-        alert("We are currently not able to process.")
+       // alert("We are currently not able to process.")
       }
     })
 
@@ -346,5 +355,34 @@ if(subscdata)
     } else {
         this.buttonName = 'Cancel';
     }
+}
+isModalOpen: boolean = false;
+
+// Method to open the modal
+openModal(data:any) {
+ // this.isModalOpen = true;
+ if(data == 'profile'){
+  this.modalSuccessProfile = true
+}else if 
+(data == 'plan'){
+  this.modalSuccess = true
+}else{
+  this.isModalOpen = true;
+}
+}
+// Method to close the modal
+closeModal() {
+  this.isModalOpen = false;
+  this.modalSuccess = false;
+  this.modalSuccessProfile = false;
+}
+confirmCancellation() {
+
+  this.cancelSubscription(); // Call the method to cancel the subscription
+   // Close the modal first
+   this.closeModal();
+}
+can(){
+  this.isModalOpen = true;
 }
 }

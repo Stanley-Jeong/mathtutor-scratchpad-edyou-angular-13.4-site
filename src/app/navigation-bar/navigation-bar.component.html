@@ -280,7 +280,7 @@
                 data-id="116a01ad" data-element_type="container" style="display: flex;justify-content: left;align-items: center;margin-left: -20px;"
                 data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
                 <div class="action">
-                    <div class="profile" (click)="menuToggle()">
+                    <div class="profile" (click)="menuToggle($event)">
                       <img src="../../assets/images/holder.png" />
                     </div>
                     <div class="menu" id="menuId">
@@ -298,10 +298,11 @@
                       </ul>
                     </div>
                 </div> 
+                <button *ngIf="buttonName == 'Startfree' && this.b2cloggin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
                 <button *ngIf="!buttonName && this.b2cloggin"(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
-                <button *ngIf="!buttonName && this.scloggedin" style="background-color:#2A7CC7;" x(click)="linkToedyouUser()" class=" buttonProfile" > <span>Learn Now</span></button>
-                <button *ngIf="buttonName =='Startfree' "(click)="scrollToPricing()" class=" buttonProfile" > <span>Start Free</span></button>
-                <button  *ngIf="buttonName =='Learn'" style=" background-color:#2A7CC7;" (click)="linkToedyouUser()" class="buttonProfile" > <span>Learn Now</span></button>
+                <button *ngIf="!buttonName && this.scloggedin" (click)="linkToedyouUser()" class=" buttonProfile learnbutton" > <span>Learn Now</span></button>
+                <button *ngIf="buttonName =='Startfree' && this.scloggedin" (click)="linkToedyouUser()" class=" buttonProfile learnbutton" > <span>Learn Now</span></button>
+                <button  *ngIf="buttonName =='Learn'"  (click)="linkToedyouUser()" class="buttonProfile learnbutton" > <span>Learn Now</span></button>
                 <button  [attr.disabled]="   this.isbuttondisabled  ? true : null" *ngIf="buttonName =='Renew'" (click)="scrollToPricing()" class="loginBtn buttonProfile" > <span>Learn Now</span></button>
             
             </div>
