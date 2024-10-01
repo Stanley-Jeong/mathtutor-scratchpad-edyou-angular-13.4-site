@@ -108,6 +108,7 @@ export class MainComponent implements OnInit, OnDestroy {
     },
   ]
 
+  
   public washingtonManualInspiredCourses = [
     {
       title: 'Toxicology',
