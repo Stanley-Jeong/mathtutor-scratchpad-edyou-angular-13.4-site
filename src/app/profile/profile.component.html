@@ -273,4 +273,9 @@
      
     </div>
 </div>
-  
+<div class="overlay" *ngIf="!newLoader"></div>
+<div class="loadercard"  *ngIf="!newLoader">
+  <p style="display: flex;align-items: center;color: rgb(71, 70, 70);margin-top: 20px;">
+  <span class="loaderssss"></span> &nbsp; Loading ....
+  </p>
+</div>

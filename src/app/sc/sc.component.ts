@@ -274,7 +274,8 @@ export class ScComponent implements OnInit {
     }
 
   }
-
+// Trailblazer - prod_QpTSBxSdj6Z0BT - price_1PxoVxALy7MM11rqUZ3kCKxz
+// devTrailblazer - prod_QofbY9vz5uizFD - price_1Px2G4ALy7MM11rqM4TsGY5P
 
   planAPI(email: string) {
     this.isloaderpricing = true;

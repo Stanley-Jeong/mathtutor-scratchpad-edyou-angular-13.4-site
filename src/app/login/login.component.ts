@@ -230,6 +230,7 @@ export class LoginComponent implements OnInit {
            
          
             let payload ={
+             
               "request": "get_customer_product",
              "customer_id": data.body.cus_id
             }

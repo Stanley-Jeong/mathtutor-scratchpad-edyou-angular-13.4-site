@@ -777,7 +777,16 @@ export class MainComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-  
+//   DEV
+// platinum - prod_QvPcLe2x2J5JXO - price_1Q3YncALy7MM11rqdQIA8mTi
+// gold - prod_QvPc1yzCUHcSCv - price_1Q3YmqALy7MM11rq84K4saZ2
+// silver - prod_QvPYwWXIKFLUpK -price_1Q3YjZALy7MM11rqpdgvJvyM 
+
+// Prod
+// platinum - prod_QwygA7KuOOd0FQ - price_1Q54jNALy7MM11rqD8rNVuSC
+// gold - prod_QwygmbTidgM5Ma - price_1Q54jIALy7MM11rqm10DW5la
+// silver - prod_QwyfxUyiCMsQUh - price_1Q54iSALy7MM11rqsMbzYyOW
+
   planAPI(email: string,plan:string) {
     this.isloading = true;
     this.newLoader = true
@@ -787,15 +796,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Silver';
          payload = {
           "email": email,
-          "prod_id": "prod_QvPYwWXIKFLUpK",
+          "prod_id": "prod_QwyfxUyiCMsQUh",
         //  "prod_id": "prod_QmrFV8irjoWH9E",
           // "prod_id": "prod_Qkv0CvSnYSA23r",
           "plan": plan,
-          "price_id": "price_1Q3YjZALy7MM11rqpdgvJvyM",
+          "price_id": "price_1Q54iSALy7MM11rqsMbzYyOW",
          // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
           // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "mode": "setup",
-          "price": "price_1Q3YjZALy7MM11rqpdgvJvyM",
+          "price": "price_1Q54iSALy7MM11rqsMbzYyOW",
           // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "price_amount": "19.99",
           // "price_amount": "39",
@@ -808,15 +817,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Gold';
        payload = {
           "email": email,
-          "prod_id": "prod_QvPc1yzCUHcSCv",
+          "prod_id": "prod_QwygmbTidgM5Ma",
          // "prod_id": "prod_QmrFLWOmU2oDzr",
           // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
           "plan": plan,
-          "price_id": "price_1Q3YmqALy7MM11rq84K4saZ2",
+          "price_id": "price_1Q54jIALy7MM11rqm10DW5la",
          // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
           // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
-          "price": "price_1Q3YmqALy7MM11rq84K4saZ2",
+          "price": "price_1Q54jIALy7MM11rqm10DW5la",
           // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "price_amount": "74.99",
           "belong_to" :"nonsc",
@@ -833,15 +842,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Platinum';
         payload = {
           "email": email,
-          "prod_id": "prod_QvPcLe2x2J5JXO",
+          "prod_id": "prod_QwygA7KuOOd0FQ",
          // "prod_id": "prod_QmrFZUGlrjAclG",
           // "prod_id": "prod_Qkv3dLCQOXIq0z",
           "plan": plan,
-           "price_id": "price_1Q3YncALy7MM11rqdQIA8mTi",
+           "price_id": "price_1Q54jNALy7MM11rqD8rNVuSC",
          // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
           // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "mode": "setup",
-          "price": "price_1Q3YncALy7MM11rqdQIA8mTi",
+          "price": "price_1Q54jNALy7MM11rqD8rNVuSC",
           // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "price_amount": "199.99",
           // price_amount": "199",

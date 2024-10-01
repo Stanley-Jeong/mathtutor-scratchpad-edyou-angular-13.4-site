@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
   daysLeft:any;
   expireDaysLeft: number=0;
   url: any = '';
+  newLoader:boolean =false;
  isLoading:boolean = false;
   currentUrl: string ='url';
   buttonName: string = 'startFree';
@@ -36,8 +37,7 @@ export class ProfileComponent implements OnInit {
   constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
-    this.isLoading = true
-    
+    this.newLoader = false;
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
 
   
@@ -105,15 +105,16 @@ export class ProfileComponent implements OnInit {
     this.service.getProfileAPI(createToken).subscribe((res: any) => {
       if (res.statusCode == 200) {
 
-
-
-         this.isLoading = false;
+      
+        
         if (res != null) {
+       
+          this.isLoading = false;
         this.userOrderFull=res;
-
-//res.data.cus_id
         this.userDetails = res.data;
-        const createdDateString = '2024-10-01T00:00:00Z'; // Example ISO format string
+//res.data.cus_id
+      
+        const createdDateString = this.userDetails.created_at; // Example ISO format string
     const createdDate = new Date(createdDateString);
 
     // Extract day, month, and year and format as 'dd-MM-yyyy'
@@ -123,6 +124,7 @@ export class ProfileComponent implements OnInit {
 
     // Combine into 'dd-MM-yyyy' format
     this.createdDate = `${day}-${month}-${year}`;
+  
         ///  this.createdDate = new Date(this.userDetails.created_at);
           console.log(this.userDetails)
           console.log(this.createdDate)
@@ -134,6 +136,7 @@ export class ProfileComponent implements OnInit {
          }
           this.service.getSubscriptionDetail(payload).subscribe((res: any) => {
             if(res.statusCode == 200){
+              this.newLoader = true;
               this.subscriptionDetailCustomer = res.body;
               if(this.subscriptionDetailCustomer.length > 0){
               //  console.log(this.subscriptionDetailCustomer,'detail',this.subscriptionDetailCustomer[0].end_date,this.subscriptionDetailCustomer[0].activation_date)
@@ -239,15 +242,16 @@ if(subscdata)
   this.subscdata = []
  }
  
- console.log(this.subscdata[0].subscription_id)
+ //console.log(this.subscdata[0].subscription_id)
  if (this.subscdata && Array.isArray(this.subscdata) && this.subscdata.length > 0) {}
-  console.log('First subscription:', this.subscdata[0]);  // Check the first element
+ // console.log('First subscription:', this.subscdata[0],this.user.f_name,);  // Check the first element
 
     let data = {
-      name:this.user.f_name,
-      email:this.user.email,
+     
       request:"cancel_subscription",
       subscription_id: this.subscdata[0].subscription_id,
+      name:this.user.f_name,
+      email:this.user.email,
     // "request": "cancel_subscription",
  // "subscription_id": "sub_1Q3b40ALy7MM11rqGxkRf3Xq"}
     };
@@ -392,7 +396,8 @@ confirmCancellation() {
 
   this.cancelSubscription(); // Call the method to cancel the subscription
    // Close the modal first
-   this.closeModal();
+   //this.closeModal();
+   this.isModalOpen = false
 }
 can(){
   this.isModalOpen = true;

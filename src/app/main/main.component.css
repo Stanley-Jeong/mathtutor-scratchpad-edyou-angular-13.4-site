@@ -516,8 +516,42 @@ text-align: center;
 .pricing-title-section {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     gap: 20px;
+    flex-direction: column;
+    
+}
+/* newadded */
+.pricing-title-section_h6{
+    color: #FFF;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.betalaunchbutton{
+    color: #FFF;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    width: 162px;
+    height: 38px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--incomplete-question, rgba(42, 124, 199, 0.10));
+    margin-bottom: 20px;
+    cursor: context-menu;
 }
 
 .pre-launch-special-badge {
@@ -1480,3 +1514,4 @@ margin-left:-5%;
                       transform: rotate(360deg);
                     }
                   }
+                 
