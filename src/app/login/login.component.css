@@ -201,7 +201,7 @@ body {
   .successMessage{
     color: green;
     display: flex;
-    margin-bottom: -40px;
+    margin-bottom: 1px;
     justify-content: center;
     font-family: "DM Sans";
     font-size: 14px;
