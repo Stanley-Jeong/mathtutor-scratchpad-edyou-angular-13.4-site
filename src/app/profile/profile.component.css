@@ -1516,3 +1516,94 @@ margin-top: -40px;
   margin-top: 202px;
     margin-left: 115px;
 }
+/* Modal container */
+.modal {
+  display: flex;
+  position: fixed; 
+  z-index: 1000; /* Make sure it's above all content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Modal content box */
+.modal-content {
+  /* background-color: #fff; */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px; /* Optional: Max width for the modal */
+  width: 100%; /* Take full width up to max-width */
+}
+
+/* Blur effect for the background content */
+.content.blur {
+  filter: blur(5px); /* Apply blur when modal is open */
+}
+.modalp{
+
+    margin-top: 0px;
+    text-align: center;
+    color: black;
+    font-family: DM Sans;
+font-size: 14px;
+font-weight: 400;
+line-height: 18.23px;
+letter-spacing: -0.5px;
+text-align: center;
+
+
+}
+.modalbutton{
+  width: 159px;
+  border: none;
+  color: white;
+  height: 44px;
+  font-size: 16px;
+  align-content: top;
+  cursor: pointer; /* Pointer cursor on hover */
+  display: inline-flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.buttoncontainer{
+
+display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-between;
+}
+.close-icon {
+  position: absolute; /* Position absolutely within the modal-content */
+  top: 0px; /* Position from the top */
+  right: 10px; /* Position from the right */
+  font-size: 24px; /* Size of the close icon */
+  color: black; /* Color of the icon */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.close-icon:hover {
+  color: rgb(69, 63, 63); /* Change color on hover */
+}
+.modal-image {
+  max-width: 100%; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  width:113px;
+  height:113px;
+  margin: 20px 113px; /* Add margin for spacing */
+}
+.modal-heading{
+  font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  
+}

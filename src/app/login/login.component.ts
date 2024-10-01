@@ -299,11 +299,11 @@ export class LoginComponent implements OnInit {
 
   signUp() {
 console.log('signup',this.signUpForm.valueOf)
-console.log('this.schoolname','Form Submitted', this.signUpform.value)
+console.log('this.schoolname','Form Submitted', this.signUpform.value,this.signUpform.controls,this.signUpform.valid,this.isFormValid())
 
 
 
-    if ( this.signUpform) {
+    if ( this.isFormValid()) {
      // console.log('this.schoolname','Form Submitted', this.signUpform.value)
       let loginPayload = {
         "email": this.signUpform.value.email,
@@ -315,7 +315,7 @@ console.log('this.schoolname','Form Submitted', this.signUpform.value)
         "purchase": 0,
         "grade": "",
         "Parent_email":this.signUpform.value.parentEmail, 
-        "Parent_email_Status":this.showParent,
+        "Parent_email_Status":this.showParentb2c,
       }
       this.isLoading2 = true
       this.userserice.signUp(loginPayload).subscribe(
@@ -484,6 +484,7 @@ this.resetLoader = false
     this.signInForm = false
     this.signUpForm = true
     this.forgetInForm = false
+    this.isSignUpFormSubmit = false
   }
 
   signInFun() {
@@ -525,18 +526,24 @@ this.resetLoader = false
     
       // Check if email matches the allowed domains
       const isDomainValid = domainPattern.test(email);
-      //console.log(isDomainValid)
+      console.log(isDomainValid,"domainvalue")
       if(isDomainValid){
         this.showParentb2c = true;
     
         this.schoolname = "Sierra Canyon"
-       // this.signUpform.get('parentEmail')?.setValidators([Validators.required,Validators.email]);
-      // this.signUpform.get('parentEmail')?.updateValueAndValidity();
+        if(this.signUpform.get('parentEmail') ){
+       this.signUpform.get('parentEmail')?.setValidators([Validators.required,Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]);
+      this.signUpform.get('parentEmail')?.updateValueAndValidity();
+        }else{
+          this.signUpform.get('parentEmail')?.clearValidators();
+          this.signUpform.get('parentEmail')?.updateValueAndValidity();
+          this.signUpform.get('parentEmail')?.setValue('');
+        }
       // this.onAddValidationClick()
         console.log("sc")
        
       }else{
-        
+       
       this.showParentb2c = false;
 
      this.schoolname = "B2C"
@@ -545,14 +552,14 @@ this.resetLoader = false
      //this.onRemoveValidationClick()
 
      console.log("b2c")
-     // this.signUpform.get('parentEmail')?.clearValidators();
-     //this.signUpform.get('parentEmail')?.updateValueAndValidity();
+    //   this.signUpform.get('parentEmail')?.clearValidators();
+    //  this.signUpform.get('parentEmail')?.updateValueAndValidity();
    
          
       }
      // this.signUpform.get('parentEmail')?.updateValueAndValidity();
       // Return null if valid, else return error object
-      return isDomainValid ? null : { invalidDomain: true };
+      return isDomainValid ? null : null;
     };
   }
 
@@ -595,29 +602,27 @@ dateNotInFuture(): ValidatorFn {
     // Check if the input date is in the future
     return inputDate >= today ? { futureDate: true } : null;
   };}
-  toggleParentEmailValidators( valid: boolean) {
-    if ( valid) {
-      // Add validators
-      this.signUpform.get('parentEmail')?.setValidators([Validators.required, Validators.email]);
-    } else {
-      // Remove validators
-      this.signUpform.get('parentEmail')?.clearValidators();
-    }
+  // toggleParentEmailValidators( valid: boolean) {
+  //   if ( valid) {
+  //     // Add validators
+  //     this.signUpform.get('parentEmail')?.setValidators([Validators.required, Validators.email]);
+  //   } else {
+  //     // Remove validators
+  //     this.signUpform.get('parentEmail')?.clearValidators();
+  //   }
     
-    // Always call updateValueAndValidity after changing validators
-    this.signUpform.get('parentEmail')?.updateValueAndValidity();
-  }
+  //   // Always call updateValueAndValidity after changing validators
+  //   this.signUpform.get('parentEmail')?.updateValueAndValidity();
+  // }
   isFormValid(): boolean {
-    if (!this.signUpform) {
-      return false; // Return false if signUpform is not initialized
-    }
+  
   
     const emailValid = this.signUpform.get('email')?.valid || false;
     const passwordValid = this.signUpform.get('password')?.valid || false;
     const fNameValid = this.signUpform.get('f_name')?.valid || false;
     const lNameValid = this.signUpform.get('l_name')?.valid || false;
     const dateValid = this.signUpform.get('date')?.valid || false;
-  
+  console.log(this.signUpform.get('email'),emailValid,passwordValid,fNameValid,lNameValid,dateValid,'validfffffffffffffff')
     // Consider form valid if all relevant fields are valid, ignoring parentEmail
     return emailValid && passwordValid && fNameValid && lNameValid && dateValid;
   }

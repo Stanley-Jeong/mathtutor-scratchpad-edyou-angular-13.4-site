@@ -1,4 +1,4 @@
-<div class="account-details">
+<div class="account-details"[ngClass]="{'blur': isModalOpen}">
     <div class="div">
 
         <div class="frame">
@@ -44,7 +44,7 @@
                       : 'month'
                   }}</span>
             </p>
-            <button *ngIf=" this.buttonName == 'Cancel' &&  this.subscriptionDetailCustomer[0].is_canceled == false " class="button" (click)="cancelSubscription()"><button class="button-2">Cancel</button></button>
+            <button *ngIf=" this.buttonName == 'Cancel' &&  this.subscriptionDetailCustomer[0].is_canceled == false " class="button" (click)="can()"><button class="button-2">Cancel</button></button>
             <div *ngIf="this.subscriptionDetailCustomer">
             <button *ngIf="this.subscriptionDetailCustomer?.length == 0 ||  this.subscriptionDetailCustomer[0].is_canceled == true" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
             </div>
@@ -63,7 +63,7 @@
 
 
                 
-                    <form  *ngIf="!isLoading" class="mt-3" [formGroup]="editProfileForm">
+                    <form  *ngIf="!isLoading" class="mt-3" [formGroup]="editProfileForm" >
                     <div class="container">
                         <br>
                         <div class="row mt-2">
@@ -236,3 +236,41 @@
     </div>
 </div>
 <br><br>
+<!-- <div class="content" [ngClass]="{'blur': isModalOpen}">
+    <button (click)="openModal()">Open Success Modal</button>
+  </div> -->
+  
+  <!-- Modal Structure confirmation -->
+  <div class="modal" *ngIf="isModalOpen">
+    <div class="modal-content">
+        <span class="close-icon" (click)="closeModal()">&times;</span> <!-- Close Icon -->
+      <h5 style="color :black;  text-align: center;">Are You Sure?</h5>
+      <p class="modalp">you are about to cancel your subscription</p>
+      <div class="buttoncontainer">
+      <button  class ="modalbutton" (click)="confirmCancellation()">Yes</button>
+      <button  class ="modalbutton" (click)="closeModal()">No</button>
+      </div>
+    </div>
+  </div> 
+
+  <!-- cancelled successfully -->
+  <div class="modal" *ngIf="modalSuccess">
+    <div class="modal-content">
+        <span class="close-icon" (click)="closeModal()">&times;</span> <!-- Close Icon -->
+        <img src="../../assets/course-icons/doneblue.png" alt="Success" class="modal-image" />
+      <h5 class="modal-heading" style="color :black;  text-align: center;">Cancelled Successfully!</h5>
+      <p class="modalp">
+        Your current subscription is cancelled successfully</p>
+     
+    </div>
+  </div>
+  <div class="modal" *ngIf="modalSuccessProfile">
+    <div class="modal-content">
+        <span class="close-icon" (click)="closeModal()">&times;</span> <!-- Close Icon -->
+        <img src="../../assets/course-icons/doneblue.png" alt="Success" class="modal-image" />
+      <h5 class="modal-heading" style="color :black;  text-align: center;">Profile Updated Successfully!</h5>
+     
+     
+    </div>
+</div>
+  

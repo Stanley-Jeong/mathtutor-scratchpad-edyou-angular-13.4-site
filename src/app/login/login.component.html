@@ -186,7 +186,7 @@
                 <input style="margin-left:-7px"class="input-field" formControlName="parentEmail" name="parentEmail" type="text" placeholder="Parent's E-mail">
               </div>
             
-              <div  *ngIf="parentEmail.invalid && (parentEmail.dirty || parentEmail.touched) && showParentb2c" class="label__error border__error">
+              <div  *ngIf="parentEmail.invalid  && showParentb2c" class="label__error border__error">
                 <div *ngIf="parentEmail.errors?.['required']">
                   Parent's E-mail is required
                 </div>
