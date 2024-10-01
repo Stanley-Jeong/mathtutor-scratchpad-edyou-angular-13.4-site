@@ -113,7 +113,17 @@ export class ProfileComponent implements OnInit {
 
 //res.data.cus_id
         this.userDetails = res.data;
-          this.createdDate = this.userDetails.created_at
+        const createdDateString = '2024-10-01T00:00:00Z'; // Example ISO format string
+    const createdDate = new Date(createdDateString);
+
+    // Extract day, month, and year and format as 'dd-MM-yyyy'
+    const day = ('0' + createdDate.getDate()).slice(-2); // Add leading zero if necessary
+    const month = ('0' + (createdDate.getMonth() + 1)).slice(-2); // Months are zero-indexed, so add 1
+    const year = createdDate.getFullYear();
+
+    // Combine into 'dd-MM-yyyy' format
+    this.createdDate = `${day}-${month}-${year}`;
+        ///  this.createdDate = new Date(this.userDetails.created_at);
           console.log(this.userDetails)
           console.log(this.createdDate)
         this.bindWithSelectedPrfileData( this.userDetails);
@@ -234,6 +244,8 @@ if(subscdata)
   console.log('First subscription:', this.subscdata[0]);  // Check the first element
 
     let data = {
+      name:this.user.f_name,
+      email:this.user.email,
       request:"cancel_subscription",
       subscription_id: this.subscdata[0].subscription_id,
     // "request": "cancel_subscription",
