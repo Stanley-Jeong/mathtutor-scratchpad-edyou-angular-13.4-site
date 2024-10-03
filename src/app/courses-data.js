@@ -756,9 +756,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Psychiatry",
     title: "Intro to Psychiatry",
     images : [
-      { src: '../assets/course-banners/course-slides/pedia1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/pedia2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/pedia3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/ps1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/ps2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/ps3.jpeg', alt: 'Slide 3' },
     ],
     description: `Begin your journey into mental health care with our Intro to Psychiatry course! This course provides an overview of key concepts in psychiatry, covering mental health disorders, diagnostic criteria, and treatment approaches. You’ll explore conditions like depression, anxiety, bipolar disorder, and schizophrenia, while learning about therapeutic techniques such as psychotherapy, medication management, and behavioral interventions. Ideal for medical students, healthcare professionals, or anyone interested in mental health, this course equips you with the foundational knowledge to understand and manage psychiatric conditions effectively.
 
