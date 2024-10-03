@@ -252,6 +252,10 @@ opacity: 0px;
         padding: 0 2em;
         max-width: 1280px;
     }
+    .courses-cards-container1{
+        padding: 0 2em;
+        max-width: 1280px;
+    }
 }
 
 @media (max-width: 1281px)  {
@@ -266,6 +270,9 @@ opacity: 0px;
     }
 
     .courses-cards-container{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .courses-cards-container1{
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
@@ -1433,14 +1440,24 @@ margin-left:-5%;
         width: 95%;
         gap: 22px;
     }
+    .courses-cards-container1{
+        width: 95%;
+        gap: 22px;
+    }
 }
 @media only screen and (min-device-width: 390px) and (max-device-width: 393px) {
     .courses-cards-container{
         width: 95%;
     }
+    .courses-cards-container1{
+        width: 95%;
+    }
 }
 @media only screen and (min-device-width: 430px) and (max-device-width: 393px) {
     .courses-cards-container{
+        width: 95%;
+    }
+    .courses-cards-container1{
         width: 95%;
     }
 }

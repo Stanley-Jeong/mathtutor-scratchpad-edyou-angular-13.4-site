@@ -14,72 +14,21 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 export class MainComponent implements OnInit, OnDestroy {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   public iteCourses = [
-    {
-      title: 'Cardiology',
-      id:'Cardiology',
-      image: '../../assets/course-icons/Frame 3.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Endocrinology',
-      id:'Endocrinology',
-      image: '../../assets/course-icons/Frame 20.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Gastroenterology',
-      id:'Gastroenterology',
-      image: '../../assets/course-icons/Frame 21.png',
-      hoverImage: ''
-    },
+  
     {
       title: 'Intro to Internal Medicine',
       id:'Intro-to-Internal-Medicine',
       image: '../../assets/course-icons/Internal Medicine.png',
       hoverImage: ''
     },
-    {
-      title: 'Geriatric Medicine',
-      id:'Geriatric-Medicine',
-      image: '../../assets/course-icons/Frame 19.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Hematology and Oncology',
-      id:'Hematology-and-Oncology',
-      image: '../../assets/course-icons/Hematology and Oncology.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Infectious Diseases',
-      id:'Infectious-Diseases',
-      image: '../../assets/course-icons/Frame 22.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Nephrology',
-      id:'Nephrology',
-      image: '../../assets/course-icons/Frame 13.png',
-      hoverImage: ''
-    },
+    
     {
       title: 'Intro to Neurology',
       id:'Intro-to-Neurology',
       image: '../../assets/course-icons/Framen.png',
       hoverImage: ''
     },
-    {
-      title: 'Pulmonary and Critical Care Medicine',
-      id:'Pulmonary-and-Critical-Care-Medicine',
-      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png',
-      hoverImage: ''
-    },
-    {
-      title: 'Rheumatology',
-      id:'Rheumatology',
-      image: '../../assets/course-icons/Framer.png',
-      hoverImage: ''
-    },
+    
     {
       title: 'Intro to Family Medicine',
       id:'Intro-to-Family-Medicine',
@@ -111,23 +60,77 @@ export class MainComponent implements OnInit, OnDestroy {
       hoverImage: ''
     },
     {
-      title: 'USMLE Step 1',
-      id:'USMLE-Step-1',
-      image: '../../assets/course-icons/USMLE.png',
+      title: 'Cardiology',
+      id:'Cardiology',
+      image: '../../assets/course-icons/Frame 3.png',
       hoverImage: ''
     },
     {
-      title: 'USMLE Step 2',
-      id:'USMLE-Step-2',
-      image: '../../assets/course-icons/USMLE.png',
+      title: 'Endocrinology',
+      id:'Endocrinology',
+      image: '../../assets/course-icons/Frame 20.png',
       hoverImage: ''
     },
     {
-      title: 'USMLE Step 3',
-      id:'USMLE-Step-3',
-      image: '../../assets/course-icons/USMLE.png',
+      title: 'Gastroenterology',
+      id:'Gastroenterology',
+      image: '../../assets/course-icons/Frame 21.png',
       hoverImage: ''
     },
+    {
+      title: 'Pulmonary and Critical Care Medicine',
+      id:'Pulmonary-and-Critical-Care-Medicine',
+      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Rheumatology',
+      id:'Rheumatology',
+      image: '../../assets/course-icons/Framer.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Geriatric Medicine',
+      id:'Geriatric-Medicine',
+      image: '../../assets/course-icons/Frame 19.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Hematology and Oncology',
+      id:'Hematology-and-Oncology',
+      image: '../../assets/course-icons/Hematology and Oncology.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Infectious Diseases',
+      id:'Infectious-Diseases',
+      image: '../../assets/course-icons/Frame 22.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Nephrology',
+      id:'Nephrology',
+      image: '../../assets/course-icons/Frame 13.png',
+      hoverImage: ''
+    },
+    // {
+    //   title: 'USMLE Step 1',
+    //   id:'USMLE-Step-1',
+    //   image: '../../assets/course-icons/USMLE.png',
+    //   hoverImage: ''
+    // },
+    // {
+    //   title: 'USMLE Step 2',
+    //   id:'USMLE-Step-2',
+    //   image: '../../assets/course-icons/USMLE.png',
+    //   hoverImage: ''
+    // },
+    // {
+    //   title: 'USMLE Step 3',
+    //   id:'USMLE-Step-3',
+    //   image: '../../assets/course-icons/USMLE.png',
+    //   hoverImage: ''
+    // },
     {
       title: 'Toxicology',
       id:'Toxicology',
@@ -235,7 +238,7 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Mathematics',
       id:'Mathematics',
       image: '../../assets/course-icons/fmath.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/hover 1.png'
     },
     {
       title: 'Biology',
@@ -363,7 +366,7 @@ export class MainComponent implements OnInit, OnDestroy {
     {
       title: 'LSAT',
       id: 'LSAT',
-      image: '../../assets/course-icons/USMLE.png'
+      image: '../../assets/course-icons/LSAT.png'
     },
   ]
 
