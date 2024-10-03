@@ -212,81 +212,11 @@ Discover the rich tapestry of American history with interactive lessons designed
     bullet1: `Explore digestive system disorders.`,
     bullet2: `Learn diagnosis and treatment techniques`,
   },
-  {
-    id: 'Intro-to-Internal-Medicine',
-    title: 'Intro to Internal Medicine',
-    images : [
-      { src: '../assets/course-icons/course-images/4_intro_to_internal_medicine.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
-    ],
-   // hoverImage: '../../assets/course-icons/course-images/4_intro_to_internal_medicine.jpeg',
-    description: `Gain a comprehensive understanding of the foundations of adult healthcare with our Intro to Internal Medicine course! This course covers the diagnosis, treatment, and management of a wide range of common diseases affecting the internal organs, including conditions like hypertension, diabetes, and infectious diseases. You’ll explore key medical principles and clinical practices essential to treating adult patients, making this course perfect for medical students, healthcare professionals, or anyone looking to deepen their knowledge of internal medicine and its vital role in overall healthcare.`,
-    bullet1: `Study adult healthcare management.`,
-    bullet2: `Diagnose and treat common diseases.`,
-  },
-  {
-    id: 'Geriatric-Medicine',
-    title: 'Geriatric Medicine',
-    images : [
-      { src: '../assets/course-icons/course-images/5_geriatric_medicine.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
-    ],
-  //  hoverImage: '../../assets/course-icons/course-images/5_geriatric_medicine.jpeg',
-    description: `Specialize in the care of aging adults with our Geriatric Medicine course! This course focuses on the unique health challenges faced by older adults, including chronic disease management, cognitive decline, mobility issues, and polypharmacy. You’ll learn about the prevention, diagnosis, and treatment of age-related conditions such as dementia, osteoporosis, and heart disease. Designed for medical students, healthcare professionals, or anyone interested in elderly care, this course equips you with the skills to provide comprehensive, compassionate care for an aging population.`,
-    bullet1: `Care for aging populations.`,
-    bullet2: `Manage age-related health conditions.`,
-  },
-  {
-    id: 'Hematology-and-Oncology',
-    title: 'Hematology and Oncology',
-    images : [
-      { src: '../assets/course-icons/course-images/6_hematology_and_oncology.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
-    ],
-    //hoverImage: '../../assets/course-icons/course-images/6_hematology_and_oncology.jpeg',
-    description: `Master the complexities of blood disorders and cancer care with our Hematology and Oncology course! This comprehensive course covers the diagnosis, treatment, and management of various blood-related conditions such as anemia, clotting disorders, and leukemias, as well as cancers like lymphoma, breast cancer, and lung cancer. You’ll learn about cutting-edge therapies, diagnostic tools, and patient care strategies. Ideal for medical students, healthcare professionals, or anyone interested in these critical fields, this course equips you with the knowledge to understand and treat hematologic and oncologic diseases effectively.`,
-    bullet1: `Study blood disorders and cancers.`,
-    bullet2: `Learn modern diagnostic tools.`,
-  },
-  {
-    id: 'infectious-diseases',
-    title: 'Infectious Diseases',
-    image: '../../assets/course-icons/Frame 22.png',
-    hoverImage: '../../assets/course-icons/course-images/7_infectious_diseases.jpeg',
-    description: `Understand the mechanisms behind global health challenges with our Infectious Diseases course! This course delves into the study of bacteria, viruses, fungi, and parasites, covering key topics like disease transmission, outbreak control, and the immune response. You’ll learn about the diagnosis, treatment, and prevention of common and emerging infectious diseases, such as HIV/AIDS, tuberculosis, influenza, and COVID-19. Ideal for medical students, healthcare professionals, or anyone interested in public health, this course equips you with essential knowledge to address infectious diseases effectively.`,
-    bullet1: `Understand disease transmission.`,
-    bullet2: `Learn treatment and prevention methods.`,
-  },
-  {
-    id: 'nephrology',
-    title: 'Nephrology',
-    image: '../../assets/course-icons/Frame 13.png',
-    hoverImage: '../../assets/course-icons/course-images/8_nephrology.jpeg',
-    description: `Dive into the study of kidney function and diseases with our Nephrology course! This course explores the structure and function of the kidneys, as well as common conditions such as chronic kidney disease, glomerulonephritis, and electrolyte imbalances. You’ll learn diagnostic techniques, treatment approaches, and strategies for managing kidney-related disorders, including dialysis and kidney transplantation. Perfect for medical students, healthcare professionals, or anyone interested in renal health, this course equips you with the knowledge to understand and treat nephrological conditions effectively.`,
-    bullet1: `Understand disease transmission.`,
-    bullet2: `Learn treatment and prevention methods.`,
-  },
-  {
-    id: 'intro-to-neurology',
-    title: 'Intro to Neurology',
-    image: '../../assets/course-icons/Framen.png',
-    hoverImage: '../../assets/course-icons/course-images/9_intro_to_neurology.jpeg',
-    description: `Unlock the complexities of the brain and nervous system with our Intro to Neurology course! This course provides an overview of the anatomy and physiology of the nervous system, covering essential topics such as neurodegenerative diseases, stroke, epilepsy, and multiple sclerosis. You’ll learn diagnostic methods, treatment options, and the latest advancements in neurological care. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with foundational knowledge to understand and manage neurological disorders effectively.`,
-    bullet1: `Study brain and nervous system.`,
-    bullet2: `Diagnose and manage neurological disorders`,
-  },
-  {
-    id: 'pulmonary-and-critical-care-medicine',
-    title: 'Pulmonary and Critical Care Medicine',
-    image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png',
-    hoverImage: '../../assets/course-icons/course-images/10_pulmonary.jpeg',
-    description: `Explore lung health and intensive care with our Pulmonary and Critical Care Medicine course! Covering respiratory disorders like asthma, COPD, pneumonia, and pulmonary embolism, along with managing critically ill patients, you'll learn diagnostic tools, treatment options, and ICU care strategies. Topics include lung function tests, mechanical ventilation, and emergency interventions. Ideal for medical students, healthcare professionals, or anyone interested in critical care, this course equips you with essential skills to handle complex respiratory and ICU cases effectively.`,
-    bullet1: `Study respiratory and ICU care.`,
-    bullet2: `Learn critical care interventions.`,
-  },
+  
+ 
+ 
+ 
+ 
   {
     id: 'rheumatology',
     title: 'Rheumatology',
@@ -473,7 +403,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/sc-prealgebra2.jpg', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
     ],
-    description: `Pre-Algebra is your gateway to more advanced mathematical concepts. In this course, you’ll build a strong foundation in numbers, variables, and equations, preparing you for success in Algebra and beyond. With your study buddy guiding you through, you’ll learn to solve problems step by step and gain confidence in your math abilities. Each lesson is interactive and personalized, ensuring that concepts click at your own pace.`
+    description: `Build a strong foundation in mathematics with our Pre-Algebra course! This course introduces essential concepts like integers, fractions, decimals, ratios, and basic equations, preparing you for higher-level math such as Algebra and Geometry. Through interactive lessons and problem-solving exercises, you’ll gain the skills needed to understand mathematical relationships, work with variables, and solve real-world problems. Perfect for students transitioning to more advanced math or anyone looking to strengthen their fundamental math skills.`
 
    
   },
@@ -770,5 +700,308 @@ Discover the rich tapestry of American history with interactive lessons designed
 `
 
    
-  }
+  }, {
+    id: "Intro-to-Neurology",
+    title: "Intro to Neurology",
+    images : [
+      { src: '../assets/course-banners/course-slides/N1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/N3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Unlock the complexities of the brain and nervous system with our Intro to Neurology course! This course provides an overview of the anatomy and physiology of the nervous system, covering essential topics such as neurodegenerative diseases, stroke, epilepsy, and multiple sclerosis. You’ll learn diagnostic methods, treatment options, and the latest advancements in neurological care. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with foundational knowledge to understand and manage neurological disorders effectively.
+
+
+
+
+
+
+
+
+`
+
+   
+  },{
+    id: "Intro-to-Internal-Medicine",
+    title: "Intro to Internal Medicine",
+    images : [
+      { src: '../assets/course-banners/course-slides/IIM 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IIM 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IIM 3.png', alt: 'Slide 3' },
+    ],
+    description: `Gain a comprehensive understanding of the foundations of adult healthcare with our Intro to Internal Medicine course! This course covers the diagnosis, treatment, and management of a wide range of common diseases affecting the internal organs, including conditions like hypertension, diabetes, and infectious diseases. You’ll explore key medical principles and clinical practices essential to treating adult patients, making this course perfect for medical students, healthcare professionals, or anyone looking to deepen their knowledge of internal medicine and its vital role in overall healthcare.
+
+
+
+
+
+
+`
+
+   
+  },{
+    id: "Interview-Prep",
+    title: "Interview Prep",
+    images : [
+      { src: '../assets/course-banners/course-slides/Interview Prep 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/Interview Prep 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Interview Prep 3.png', alt: 'Slide 3' },
+    ],
+    description: `Boost your confidence and interview skills with our Interview Prep course! Learn how to craft standout answers to common questions, master non-verbal communication, and navigate various interview formats, including virtual ones. Through mock interviews and personalized feedback, you’ll practice how to highlight your strengths, address challenging questions, and leave a lasting impression. Ideal for anyone looking to improve their interviewing skills and land their dream job, this course equips you with the tools for success in today’s competitive job market.
+
+
+
+
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Infectious-Diseases",
+    title: "Infectious Diseases",
+    images : [
+      { src: '../assets/course-banners/course-slides/i11.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/i22.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/i33.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Understand the mechanisms behind global health challenges with our Infectious Diseases course! This course delves into the study of bacteria, viruses, fungi, and parasites, covering key topics like disease transmission, outbreak control, and the immune response. You’ll learn about the diagnosis, treatment, and prevention of common and emerging infectious diseases, such as HIV/AIDS, tuberculosis, influenza, and COVID-19. Ideal for medical students, healthcare professionals, or anyone interested in public health, this course equips you with essential knowledge to address infectious diseases effectively.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  },
+  //add
+  {
+    id: "Biology",
+    title: "Biology",
+    images : [
+      { src: '../assets/course-banners/course-slides/B1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/B2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/B3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Unlock the mysteries of life with our biology course! From cell structures to ecosystems, this course covers core topics like genetics, evolution, and human anatomy, offering a hands-on, interactive approach to learning. Perfect for exam prep or simply deepening your understanding of the natural world, you'll gain insights into how living organisms function and how they are connected within our environment.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, {
+    id: "Bully-Help",
+    title: "Bully Help",
+    images : [
+      { src: '../assets/course-banners/course-slides/Bully Help 2.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/Bully Help 1.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Bully Help 3.png', alt: 'Slide 3' },
+    ],
+    description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all.
+.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, {
+    id: "Clinical-Neuro/Psych",
+    title: "Clinical Neuro/Psych",
+    images : [
+      { src: '../assets/course-banners/course-slides/CNP 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/CNP 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/CNP 3.png', alt: 'Slide 3' },
+    ],
+    description: `Dive into the complex relationship between the brain and behavior with our Clinical Neuro/Psych course! This course focuses on the intersection of neurology and psychology, exploring how neurological conditions affect mental health and behavior. You’ll study disorders such as traumatic brain injury, stroke, and neurodegenerative diseases, along with their psychological impact. The course covers diagnostic tools, treatment strategies, and rehabilitation approaches, making it ideal for medical students, psychologists, and healthcare professionals looking to better understand and manage neuropsychological conditions.
+
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, {
+    id: "Conflict-Resolution",
+    title: "Conflict-Resolution",
+    images : [
+      { src: '../assets/course-banners/course-slides/CR 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/CR 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/CR 3.png', alt: 'Slide 3' },
+    ],
+    description: `Master the art of managing disagreements with our Conflict Resolution course! You’ll learn essential techniques like active listening, empathy, and problem-solving to resolve conflicts in personal and professional settings. This course equips you with practical tools to approach conflicts with confidence, turning disagreements into opportunities for growth and cooperation. Whether you’re improving workplace dynamics or strengthening relationships, this course helps you foster positive outcomes and build stronger connections.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, {
+    id: "Intro-to-Family-Medicine",
+    title: "Intro to Family Medicine",
+    images : [
+      { src: '../assets/course-banners/course-slides/F1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/F2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/F3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Get a comprehensive overview of primary care with our Intro to Family Medicine course! This course covers the diagnosis, treatment, and prevention of common health conditions across all age groups, focusing on holistic and long-term patient care. You’ll learn about managing chronic diseases, preventive care, and addressing both physical and mental health needs. Perfect for medical students, healthcare professionals, or those interested in primary care, this course provides a strong foundation for delivering patient-centered healthcare in a family medicine setting.
+
+
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, {
+    id: "Geriatric-Medicine",
+    title: "Geriatric Medicine",
+    images : [
+      { src: '../assets/course-banners/course-slides/G1 (1).jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/G2 (1).jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/G3 (1).jpeg', alt: 'Slide 3' },
+    ],
+    description: `Specialize in the care of aging adults with our Geriatric Medicine course! This course focuses on the unique health challenges faced by older adults, including chronic disease management, cognitive decline, mobility issues, and polypharmacy. You’ll learn about the prevention, diagnosis, and treatment of age-related conditions such as dementia, osteoporosis, and heart disease. Designed for medical students, healthcare professionals, or anyone interested in elderly care, this course equips you with the skills to provide comprehensive, compassionate care for an aging population.
+
+
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, 
+  {
+    id: "Hematology-and-Oncology",
+    title: "Hematology and Oncology'",
+    images : [
+      { src: '../assets/course-banners/course-slides/H1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/H2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/H3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Understand the mechanisms behind global health challenges with our Infectious Diseases course! This course delves into the study of bacteria, viruses, fungi, and parasites, covering key topics like disease transmission, outbreak control, and the immune response. You’ll learn about the diagnosis, treatment, and prevention of common and emerging infectious diseases, such as HIV/AIDS, tuberculosis, influenza, and COVID-19. Ideal for medical students, healthcare professionals, or anyone interested in public health, this course equips you with essential knowledge to address infectious diseases effectively.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, 
+  {
+    id: "Heart-Failure",
+    title: "Heart-Failure",
+    images : [
+      { src: '../assets/course-banners/course-slides/heart1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/heart2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/heart3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Master the essentials of managing cardiovascular disease with our Heart Failure course! This course covers the causes, symptoms, diagnosis, and treatment options for heart failure, from lifestyle changes to advanced therapies like medications and surgery. You’ll learn how impaired heart function leads to complications and explore the latest interventions. Perfect for medical students, healthcare professionals, or anyone interested in cardiac care, this course equips you with the knowledge needed to effectively diagnose and manage heart failure.
+
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, 
+  {
+    id: "Behavioral/Social-Science",
+    title: "Behavioral/Social-Science",
+    images : [
+      { src: '../assets/course-banners/course-slides/BSS 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/BSS 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/BSS 3.png', alt: 'Slide 3' },
+    ],
+    description: `Discover the factors shaping human behavior and social interactions with our Behavioral / Social Sciences course! This course explores psychological, sociological, and cultural influences on individual and group behavior. Topics include cognitive development, socialization, and the impact of society on mental health and well-being. Ideal for students, healthcare professionals, and anyone curious about human behavior, this course offers valuable insights into how people think, interact, and function within social structures, equipping you with the tools to understand and address social and behavioral challenges.
+
+
+
+
+
+
+
+
+
+
+`
+
+   
+  },  {
+    id: "Accent-Reduction",
+    title: "Accent Reduction",
+    images : [
+      { src: '../assets/course-banners/course-slides/AR 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/AR 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/AR 3.png', alt: 'Slide 3' },
+    ],
+    description: `Enhance your communication skills with our Accent Reduction course! This course helps you refine your pronunciation and speech patterns, making your English clearer and more confident. You’ll learn techniques to adjust intonation, stress, and sound articulation while maintaining your unique voice. Ideal for non-native speakers or professionals, the course will help you speak with greater clarity in both personal and professional settings, improving your overall communication and boosting your confidence in conversations.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  }, 
 ]
