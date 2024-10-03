@@ -182,24 +182,25 @@ export class MainComponent implements OnInit, OnDestroy {
   public SurgeryCourses = [
     {
       title: 'Patient Care',
-
+       id: 'Patient-Care',
       image: '../../assets/course-icons/Patient Care.png',
       hoverImage: ''
     },
     {
       title: 'Medical Knowledge',
-
+      id: 'Medical-Knowledge',
       image: '../../assets/course-icons/Medical Knowledge.png',
       hoverImage: ''
     },
     {
       title: 'Radiology',
-
+      id: 'Radiology',
       image: '../../assets/course-icons/Radiology.png',
       hoverImage: ''
     },
     {
       title: 'Outcomes Ethics',
+      id: 'Outcomes-Ethics',
       image: '../../assets/course-icons/Outcome Ethics.png',
       hoverImage: ''
 
