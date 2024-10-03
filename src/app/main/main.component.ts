@@ -15,48 +15,12 @@ export class MainComponent implements OnInit, OnDestroy {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   public iteCourses = [
     {
-      title: 'Cardiology',
-      image: '../../assets/course-icons/Frame 3.png'
-    },
-    {
-      title: 'Endocrinology',
-      image: '../../assets/course-icons/Frame 20.png'
-    },
-    {
-      title: 'Gastroenterology',
-      image: '../../assets/course-icons/Frame 21.png'
-    },
-    {
-      title: 'Intro to Internal Medicine',
-      image: '../../assets/course-icons/Internal Medicine.png'
-    },
-    {
-      title: 'Geriatric Medicine',
-      image: '../../assets/course-icons/Frame 19.png'
-    },
-    {
-      title: 'Hematology and Oncology',
-      image: '../../assets/course-icons/Hematology and Oncology.png'
-    },
-    {
-      title: 'Infectious Diseases',
-      image: '../../assets/course-icons/Frame 22.png'
-    },
-    {
-      title: 'Nephrology',
-      image: '../../assets/course-icons/Frame 13.png'
-    },
-    {
       title: 'Intro to Neurology',
       image: '../../assets/course-icons/Framen.png'
     },
     {
-      title: 'Pulmonary and Critical Care Medicine',
-      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png'
-    },
-    {
-      title: 'Rheumatology',
-      image: '../../assets/course-icons/Framer.png'
+      title: 'Intro to Internal Medicine',
+      image: '../../assets/course-icons/Internal Medicine.png'
     },
     {
       title: 'Intro to Family Medicine',
@@ -79,16 +43,42 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/Psychiatry.png'
     },
     {
-      title: 'USMLE Step 1',
-      image: '../../assets/course-icons/USMLE.png'
+      title: 'Cardiology',
+      image: '../../assets/course-icons/Frame 3.png'
     },
     {
-      title: 'USMLE Step 2',
-      image: '../../assets/course-icons/USMLE.png'
+      title: 'Endocrinology',
+      image: '../../assets/course-icons/Frame 20.png'
     },
     {
-      title: 'USMLE Step 3',
-      image: '../../assets/course-icons/USMLE.png'
+      title: 'Gastroenterology',
+      image: '../../assets/course-icons/Frame 21.png'
+    },
+    
+    {
+      title: 'Geriatric Medicine',
+      image: '../../assets/course-icons/Frame 19.png'
+    },
+    {
+      title: 'Hematology and Oncology',
+      image: '../../assets/course-icons/Hematology and Oncology.png'
+    },
+    {
+      title: 'Infectious Diseases',
+      image: '../../assets/course-icons/Frame 22.png'
+    },
+    {
+      title: 'Nephrology',
+      image: '../../assets/course-icons/Frame 13.png'
+    },
+    
+    {
+      title: 'Pulmonary and Critical Care Medicine',
+      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png'
+    },
+    {
+      title: 'Rheumatology',
+      image: '../../assets/course-icons/Framer.png'
     },
     {
       title: 'Toxicology',
@@ -238,9 +228,43 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Test prep',
       image: '../../assets/course-icons/Test prep.png'
     },
+    {
+      title: 'Exam Anxiety Course',
+      image: '../../assets/course-icons/Exam anixty.png'
+    },
     
   ] 
 
+  public  tests = [
+    {
+      title: 'USMLE Step 1',
+      image: '../../assets/course-icons/USMLE.png'
+    },
+    {
+      title: 'USMLE Step 2',
+      image: '../../assets/course-icons/USMLE.png'
+    },
+    {
+      title: 'USMLE Step 3',
+      image: '../../assets/course-icons/USMLE.png'
+    },
+    {
+      title: 'High School SAT',
+      image: '../../assets/course-icons/SAT.png'
+    },
+    {
+      title: 'High School ACT',
+      image: '../../assets/course-icons/ACT.png'
+    },
+    {
+      title: 'GRE',
+      image: '../../assets/course-icons/gre.png'
+    },
+    {
+      title: 'LSAT',
+      image: '../../assets/course-icons/USMLE.png'
+    },
+  ]
 
   private ngUnsubscribe = new Subject();
   scrollKey: any;

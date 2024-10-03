@@ -146,38 +146,49 @@ opacity: 0px;
 .connect-learn-thrive-item {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    /* margin: 20px; */
+    margin: 18px;
     min-width: 300px;
     max-width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.learn-para{
+    margin-bottom: 30px;
+}
+.thrive-para{
+    margin-bottom: 28px;
 }
 
 .clt-header-text {
     margin-bottom: 2px;
-    margin-left: 86px;
+    /* margin-left: 86px; */
 }
 
 .clt-icon {
     width: 60px;
-    margin-left: 116px;
+    /* margin-left: 116px; */
 }
 
 .connect-icon {
    
-    margin-bottom: 19px;
-    margin-top: 12px;
+    /* margin-bottom: 19px; */
+    /* margin-top: 12px; */
 }
 
 
 .learn-icon {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .thrive-icon {
   
     width: 39px;
-    margin-right: 10px;
-    margin-bottom: 22px;
-    margin-left: 142px;
+    /* margin-right: 10px; */
+    /* margin-bottom: 22px; */
+    /* margin-left: 142px; */
 
 }
 
@@ -551,7 +562,7 @@ text-align: center;
     border-radius: 8px;
     background: var(--incomplete-question, rgba(42, 124, 199, 0.10));
     margin-bottom: 20px;
-    cursor: context-menu;
+    cursor: default;
 }
 
 .pre-launch-special-badge {
@@ -1170,7 +1181,7 @@ width:96%;
     
 }
 .mobileFonts{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -1263,7 +1274,9 @@ width:96%;
 }
 }
 @media all and  (min-width: 375px)and (max-width:700px) {
- 
+    .textalign{
+        text-align: center;
+    }
     .video-container {
        
         margin-left: 1%;
@@ -1318,7 +1331,11 @@ width:96%;
 margin-left:-5%;
 }
 
-
+@media only screen and (min-width: 768px){
+    .elementor-20 .elementor-element.elementor-element-a04703d{
+        width: 100%;
+    }
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
     .hero-text{
@@ -1354,7 +1371,25 @@ margin-left:-5%;
         width: 759px;
         margin-left: -2%;}
 }
-
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .textalign{
+        text-align: center;
+    }
+    .course-card{
+        height: 280px;
+    }
+    .mobileFonts{
+        font-size: 24px !important;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .course-card{
+        height: 270px;
+    }
+    .mobileFonts{
+        font-size: 24px !important;
+    }
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait) {
  
     .countdownHeadingTopSubheading{
