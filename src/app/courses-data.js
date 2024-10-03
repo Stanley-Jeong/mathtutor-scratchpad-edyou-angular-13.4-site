@@ -721,6 +721,28 @@ Discover the rich tapestry of American history with interactive lessons designed
 
    
   },{
+    id: "Neurology",
+    title: "Neurology",
+    images : [
+      { src: '../assets/course-banners/course-slides/N1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/N3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Delve into the complexities of the nervous system with our Neurology course! This course covers the diagnosis, treatment, and management of neurological disorders such as stroke, epilepsy, multiple sclerosis, and Parkinson's disease. You’ll learn about the anatomy and function of the brain, spinal cord, and nerves, along with the latest diagnostic tools and treatment methods. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with the knowledge to understand and manage neurological conditions effectively.
+
+
+
+
+
+
+
+
+
+`
+
+   
+  },
+  {
     id: "Intro-to-Internal-Medicine",
     title: "Intro to Internal Medicine",
     images : [
@@ -808,10 +830,10 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Bully Help",
     images : [
       { src: '../assets/course-banners/course-slides/Bully Help 2.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/Bully Help 1.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/Bully Help 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/Bully Help1.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Bully Help3.png', alt: 'Slide 3' },
     ],
-    description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all.
+    description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all
 .
 
 
@@ -917,13 +939,14 @@ Discover the rich tapestry of American history with interactive lessons designed
   }, 
   {
     id: "Hematology-and-Oncology",
-    title: "Hematology and Oncology'",
+    title: "Hematology and Oncology",
     images : [
       { src: '../assets/course-banners/course-slides/H1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/H2.jpeg', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/H3.jpeg', alt: 'Slide 3' },
     ],
-    description: `Understand the mechanisms behind global health challenges with our Infectious Diseases course! This course delves into the study of bacteria, viruses, fungi, and parasites, covering key topics like disease transmission, outbreak control, and the immune response. You’ll learn about the diagnosis, treatment, and prevention of common and emerging infectious diseases, such as HIV/AIDS, tuberculosis, influenza, and COVID-19. Ideal for medical students, healthcare professionals, or anyone interested in public health, this course equips you with essential knowledge to address infectious diseases effectively.
+    description: `Master the complexities of blood disorders and cancer care with our Hematology and Oncology course! This comprehensive course covers the diagnosis, treatment, and management of various blood-related conditions such as anemia, clotting disorders, and leukemias, as well as cancers like lymphoma, breast cancer, and lung cancer. You’ll learn about cutting-edge therapies, diagnostic tools, and patient care strategies. Ideal for medical students, healthcare professionals, or anyone interested in these critical fields, this course equips you with the knowledge to understand and treat hematologic and oncologic diseases effectively.
+
 
 
 

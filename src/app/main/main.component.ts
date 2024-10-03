@@ -324,7 +324,7 @@ export class MainComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Test prep',
-      id:'Test-Prep',
+      id:'Test-prep',
       image: '../../assets/course-icons/Test prep.png',
       hoverImage: ''
     },
