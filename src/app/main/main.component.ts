@@ -55,7 +55,7 @@ export class MainComponent implements OnInit, OnDestroy {
     },
     {
       title: 'Intro to Psychiatry',
-      id:'Cardiology',
+      id:'Intro-to-Psychiatry',
       image: '../../assets/course-icons/Psychiatry.png',
       hoverImage: ''
     },
@@ -211,21 +211,24 @@ export class MainComponent implements OnInit, OnDestroy {
 
   public PsychiatryCourses = [
     {
+      id:'Neuroscience',
       title: 'Neuroscience',
       image: '../../assets/course-icons/Neurosciences.png',
       hoverImage: ''
     },
-    {
+    { id:'Clinical-Neuro/Psych',
       title: 'Clinical Neuro/Psych',
       image: '../../assets/course-icons/Clinical Neuro.png',
       hoverImage: ''
     },
     {
+      id:'Behavioral/Social-Science',
       title: 'Behavioral/Social Science',
       image: '../../assets/course-icons/Behavioral Sciences.png',
       hoverImage: ''
     },
     {
+      id:'Issues-in-Practice',
       title: 'Issues in Practice',
       image: '../../assets/course-icons/Issues in Practice.png',
       hoverImage: ''
