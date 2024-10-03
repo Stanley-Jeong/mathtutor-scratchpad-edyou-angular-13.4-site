@@ -408,7 +408,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/Po3.jpeg', alt: 'Slide 3' },
     ],
     description: `Dive into the dynamic world of governance with our Politics course! This course explores the key concepts of political theory, government systems, international relations, and the impact of political decisions on society. You’ll learn about different ideologies, the workings of democratic and authoritarian regimes, and the role of political institutions. Through case studies and interactive discussions, this course will help you understand how power is distributed, how policies are made, and how citizens can influence change. Perfect for students, aspiring politicians, or anyone interested in the mechanics of politics and its global impact.
-.
+
 `,
     bullet1: ``,
     bullet2: ``,
@@ -633,7 +633,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/NS 2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/NS 3.png', alt: 'Slide 3' },
     ],
-    description: `Explore the intricacies of the nervous system with our Neurosciences course! This course covers the structure and function of the brain, spinal cord, and peripheral nervous system, along with neurological conditions like epilepsy, Parkinson’s disease, and Alzheimer’s. You’ll dive into neuroanatomy, neurophysiology, and cognitive neuroscience, gaining a deep understanding of how the brain influences behavior and bodily functions. Ideal for medical students, healthcare professionals, or anyone fascinated by the brain, this course equips you with the foundational knowledge to understand and address neurological disorders effectively.
+    description: `Explore the intricacies of the nervous system with our Neuroscience course! This course covers the structure and function of the brain, spinal cord, and peripheral nervous system, along with neurological conditions like epilepsy, Parkinson’s disease, and Alzheimer’s. You’ll dive into neuroanatomy, neurophysiology, and cognitive neuroscience, gaining a deep understanding of how the brain influences behavior and bodily functions. Ideal for medical students, healthcare professionals, or anyone fascinated by the brain, this course equips you with the foundational knowledge to understand and address neurological disorders effectively.
 
 
 
@@ -684,7 +684,7 @@ Discover the rich tapestry of American history with interactive lessons designed
   },
   {
     id: "Issues-in-Practice",
-    title: "'Issues in Practice'",
+    title: "Issues in Practice",
     images : [
       { src: '../assets/course-banners/course-slides/IP 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/IP 2.png', alt: 'Slide 2' },
@@ -742,8 +742,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/pedia2.jpeg', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/pedia3.jpeg', alt: 'Slide 3' },
     ],
-    description: `Start your exploration of children's healthcare with our Intro to Pediatrics course! This course covers the fundamentals of diagnosing, treating, and managing the health of infants, children, and adolescents. You’ll learn about growth and development, common pediatric diseases, immunizations, and preventive care. The course also includes guidance on managing acute and chronic conditions in young patients. Ideal for medical students, healthcare professionals, or anyone interested in child healthcare, this course provides the foundation needed to deliver compassionate and effective pediatric care
-.
+    description: `Start your exploration of children's healthcare with our Intro to Pediatrics course! This course covers the fundamentals of diagnosing, treating, and managing the health of infants, children, and adolescents. You’ll learn about growth and development, common pediatric diseases, immunizations, and preventive care. The course also includes guidance on managing acute and chronic conditions in young patients. Ideal for medical students, healthcare professionals, or anyone interested in child healthcare, this course provides the foundation needed to deliver compassionate and effective pediatric care.
 
 
 
