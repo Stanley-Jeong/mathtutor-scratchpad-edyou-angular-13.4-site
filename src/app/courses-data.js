@@ -454,7 +454,7 @@ Discover the rich tapestry of American history with interactive lessons designed
    
   },
   {
-    id: "Word Problems",
+    id: "Word-Problems",
     title: "Word Problems",
     images : [
       { src: '../assets/course-banners/course-slides/WP1.jpeg', alt: 'Slide 1' },
@@ -477,7 +477,104 @@ Discover the rich tapestry of American history with interactive lessons designed
 
    
   },
+  {
+    id: "Test-prep",
+    title: "Test Prep",
+    images : [
+      { src: '../assets/course-banners/course-slides/TP 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/TP 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/TP 3.png', alt: 'Slide 3' },
+    ],
+    description: `Ace your exams with our Test Prep course! This course equips you with the strategies and tools needed to succeed on a wide range of standardized tests. You’ll learn how to approach different question types, manage time effectively, and reduce test anxiety. Through practice tests, study guides, and expert tips, you'll improve your problem-solving skills and build confidence. Whether you're preparing for school exams, entrance tests, or professional certifications, this course will help you perform at your best.
+.`
+
+   
+  }, {
+    id: "Sexually-Transmitted-Diseases",
+    title: "Sexually Transmitted Diseases",
+    images : [
+      { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/S3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
+
+`
+
+   
+  },
+  {
+    id: "Sexually-Transmitted-Diseases",
+    title: "Sexually Transmitted Diseases",
+    images : [
+      { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/S3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
+
+`
+
+   
+  },
+  {
+    id: "Self-Care",
+    title: "Self-Care",
+    images : [
+      { src: '../assets/course-banners/course-slides/SC 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/SC 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Sc 3.png', alt: 'Slide 3' },
+    ],
+    description: `Take charge of your well-being with our Self-Care course! Learn practical techniques for managing stress, practicing mindfulness, and building healthy habits. This course provides tools for nurturing your mental, emotional, and physical health, helping you create a balanced and sustainable routine. Whether you're looking to improve daily self-care practices or build resilience, this course empowers you to prioritize yourself and maintain a positive mindset, so you can thrive in every area of life.
+
+
+`
+
+   
+  },
+  {
+    id: "Rheumatology",
+    title: "Rheumatology",
+    images : [
+      { src: '../assets/course-banners/course-slides/RL 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/RL 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/RL 3.png', alt: 'Slide 3' },
+    ],
+    description: `Gain a deep understanding of joint and autoimmune disorders with our Rheumatology course! This course explores the diagnosis, treatment, and management of diseases such as rheumatoid arthritis, lupus, gout, and osteoarthritis. You’ll learn about the immune system's role in these conditions, diagnostic tools like lab tests and imaging, and cutting-edge treatments including biologics and disease-modifying therapies. Ideal for medical students, healthcare professionals, or anyone interested in musculoskeletal health, this course equips you with the knowledge to manage rheumatologic conditions effectively.
 
 
 
+`
+
+   
+  },
+
+  {
+    id: "Radiology",
+    title: "Radiology",
+    images : [
+      { src: '../assets/course-banners/course-slides/R1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/R2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/R3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Discover the power of medical imaging with our Radiology course! This course covers key radiologic techniques, including X-rays, CT scans, MRIs, and ultrasounds, used to diagnose and treat medical conditions. You’ll learn how to interpret images, understand different imaging modalities, and apply radiologic knowledge to clinical practice. Ideal for medical students, healthcare professionals, or anyone interested in diagnostic imaging, this course equips you with the skills to analyze and utilize radiological data for effective patient care and diagnosis.
+
+`
+
+   
+  },
+  {
+    id: "Pulmonary-and-Critical-Care-Medicine",
+    title: "Pulmonary and Critical Care-Medicine",
+    images : [
+      { src: '../assets/course-banners/course-slides/P1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/P2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/P3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Explore lung health and intensive care with our Pulmonary and Critical Care Medicine course! Covering respiratory disorders like asthma, COPD, pneumonia, and pulmonary embolism, along with managing critically ill patients, you'll learn diagnostic tools, treatment options, and ICU care strategies. Topics include lung function tests, mechanical ventilation, and emergency interventions. Ideal for medical students, healthcare professionals, or anyone interested in critical care, this course equips you with essential skills to handle complex respiratory and ICU cases effectively.
+
+`
+
+   
+  },
 ]
