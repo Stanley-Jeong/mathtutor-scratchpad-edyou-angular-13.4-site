@@ -720,8 +720,8 @@ position: absolute;
     border: 0.5px solid white;
 }
   
-.courses-cards-container a img:hover {
-    transform: scale(1.1); /* Adjust the scale value to control the zoom level */
+.courses-cards-container :hover {
+    transform: scale(1.03); /* Adjust the scale value to control the zoom level */
 }
 
 .course-card {

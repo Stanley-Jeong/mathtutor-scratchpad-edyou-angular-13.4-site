@@ -15,86 +15,142 @@ export class MainComponent implements OnInit, OnDestroy {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   public iteCourses = [
     {
-      title: 'Intro to Neurology',
-      image: '../../assets/course-icons/Framen.png'
-    },
-    {
-      title: 'Intro to Internal Medicine',
-      image: '../../assets/course-icons/Internal Medicine.png'
-    },
-    {
-      title: 'Intro to Family Medicine',
-      image: '../../assets/course-icons/Family Medicine.png'
-    },
-    {
-      title: 'Intro to Surgery',
-      image: '../../assets/course-icons/Surgery.png'
-    },
-    {
-      title: 'Intro to Obstetrics/Gynaecology',
-      image: '../../assets/course-icons/gyno.png'
-    },
-    {
-      title: 'Intro to  Pediatrics',
-      image: '../../assets/course-icons/Pediatrics.png'
-    },
-    {
-      title: 'Intro to Psychiatry',
-      image: '../../assets/course-icons/Psychiatry.png'
-    },
-    {
       title: 'Cardiology',
-      image: '../../assets/course-icons/Frame 3.png'
+      id:'Cardiology',
+      image: '../../assets/course-icons/Frame 3.png',
+      hoverImage: ''
     },
     {
       title: 'Endocrinology',
-      image: '../../assets/course-icons/Frame 20.png'
+      id:'Endocrinology',
+      image: '../../assets/course-icons/Frame 20.png',
+      hoverImage: ''
     },
     {
       title: 'Gastroenterology',
-      image: '../../assets/course-icons/Frame 21.png'
+      id:'Gastroenterology',
+      image: '../../assets/course-icons/Frame 21.png',
+      hoverImage: ''
     },
-    
+    {
+      title: 'Intro to Internal Medicine',
+      id:'Intro-to-Internal-Medicine',
+      image: '../../assets/course-icons/Internal Medicine.png',
+      hoverImage: ''
+    },
     {
       title: 'Geriatric Medicine',
-      image: '../../assets/course-icons/Frame 19.png'
+      id:'Geriatric-Medicine',
+      image: '../../assets/course-icons/Frame 19.png',
+      hoverImage: ''
     },
     {
       title: 'Hematology and Oncology',
-      image: '../../assets/course-icons/Hematology and Oncology.png'
+      id:'Hematology-and-Oncology',
+      image: '../../assets/course-icons/Hematology and Oncology.png',
+      hoverImage: ''
     },
     {
       title: 'Infectious Diseases',
-      image: '../../assets/course-icons/Frame 22.png'
+      id:'Infectious-Diseases',
+      image: '../../assets/course-icons/Frame 22.png',
+      hoverImage: ''
     },
     {
       title: 'Nephrology',
-      image: '../../assets/course-icons/Frame 13.png'
+      id:'Nephrology',
+      image: '../../assets/course-icons/Frame 13.png',
+      hoverImage: ''
     },
-    
+    {
+      title: 'Intro to Neurology',
+      id:'Intro-to-Neurology',
+      image: '../../assets/course-icons/Framen.png',
+      hoverImage: ''
+    },
     {
       title: 'Pulmonary and Critical Care Medicine',
-      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png'
+      id:'Pulmonary-and-Critical-Care-Medicine',
+      image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png',
+      hoverImage: ''
     },
     {
       title: 'Rheumatology',
-      image: '../../assets/course-icons/Framer.png'
+      id:'Rheumatology',
+      image: '../../assets/course-icons/Framer.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Intro to Family Medicine',
+      id:'Intro-to-Family-Medicine',
+      image: '../../assets/course-icons/Family Medicine.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Intro to Surgery',
+      id:'Intro-to-Surgery',
+      image: '../../assets/course-icons/Surgery.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Intro to Obstetrics/Gynaecology',
+      id:'Intro-to-Obstetrics/Gynaecology',
+      image: '../../assets/course-icons/gyno.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Intro to  Pediatrics',
+      id:'Intro-to-Pediatrics',
+      image: '../../assets/course-icons/Pediatrics.png',
+      hoverImage: ''
+    },
+    {
+      title: 'Intro to Psychiatry',
+      id:'Cardiology',
+      image: '../../assets/course-icons/Psychiatry.png',
+      hoverImage: ''
+    },
+    {
+      title: 'USMLE Step 1',
+      id:'USMLE-Step-1',
+      image: '../../assets/course-icons/USMLE.png',
+      hoverImage: ''
+    },
+    {
+      title: 'USMLE Step 2',
+      id:'USMLE-Step-2',
+      image: '../../assets/course-icons/USMLE.png',
+      hoverImage: ''
+    },
+    {
+      title: 'USMLE Step 3',
+      id:'USMLE-Step-3',
+      image: '../../assets/course-icons/USMLE.png',
+      hoverImage: ''
     },
     {
       title: 'Toxicology',
-      image: '../../assets/course-icons/Framet.png'
+      id:'Toxicology',
+      image: '../../assets/course-icons/Framet.png',
+      hoverImage: ''
     },
     {
       title: 'Neurology',
-      image: '../../assets/course-icons/Framen.png'
+      id:'Neurology',
+      image: '../../assets/course-icons/Framen.png',
+      hoverImage: ''
     },
     {
       title: 'Sexually Transmitted Diseases',
-      image: '../../assets/course-icons/Frame s.png'
+      id:'Sexually-Transmitted-Diseases',
+      image: '../../assets/course-icons/Frame s.png',
+      hoverImage: ''
     },
     {
       title: 'Heart Failure',
-      image: '../../assets/course-icons/Frame 14 h.png'
+      id:'Heart-Failure',
+      image: '../../assets/course-icons/Frame 14 h.png',
+      hoverImage: ''
     },
   ]
 
@@ -102,19 +158,23 @@ export class MainComponent implements OnInit, OnDestroy {
   public washingtonManualInspiredCourses = [
     {
       title: 'Toxicology',
-      image: '../../assets/course-icons/Framet.png'
+      image: '../../assets/course-icons/Framet.png',
+      hoverImage: ''
     },
     {
       title: 'Neurology',
-      image: '../../assets/course-icons/Framen.png'
+      image: '../../assets/course-icons/Framen.png',
+      hoverImage: ''
     },
     {
       title: 'Sexually Transmitted Diseases',
-      image: '../../assets/course-icons/Frame s.png'
+      image: '../../assets/course-icons/Frame s.png',
+      hoverImage: ''
     },
     {
       title: 'Heart Failure',
-      image: '../../assets/course-icons/Frame 14 h.png'
+      image: '../../assets/course-icons/Frame 14 h.png',
+      hoverImage: ''
     },
   ]
 
@@ -123,21 +183,25 @@ export class MainComponent implements OnInit, OnDestroy {
     {
       title: 'Patient Care',
 
-      image: '../../assets/course-icons/Patient Care.png'
+      image: '../../assets/course-icons/Patient Care.png',
+      hoverImage: ''
     },
     {
-      title: ' Medical Knowledge',
+      title: 'Medical Knowledge',
 
-      image: '../../assets/course-icons/Medical Knowledge.png'
+      image: '../../assets/course-icons/Medical Knowledge.png',
+      hoverImage: ''
     },
     {
       title: 'Radiology',
 
-      image: '../../assets/course-icons/Radiology.png'
+      image: '../../assets/course-icons/Radiology.png',
+      hoverImage: ''
     },
     {
       title: 'Outcomes Ethics',
-      image: '../../assets/course-icons/Outcome Ethics.png'
+      image: '../../assets/course-icons/Outcome Ethics.png',
+      hoverImage: ''
 
     },
   ]
@@ -145,54 +209,69 @@ export class MainComponent implements OnInit, OnDestroy {
   public PsychiatryCourses = [
     {
       title: 'Neuroscience',
-      image: '../../assets/course-icons/Neurosciences.png'
+      image: '../../assets/course-icons/Neurosciences.png',
+      hoverImage: ''
     },
     {
       title: 'Clinical Neuro/Psych',
-      image: '../../assets/course-icons/Clinical Neuro.png'
+      image: '../../assets/course-icons/Clinical Neuro.png',
+      hoverImage: ''
     },
     {
       title: 'Behavioral/Social Science',
-      image: '../../assets/course-icons/Behavioral Sciences.png'
+      image: '../../assets/course-icons/Behavioral Sciences.png',
+      hoverImage: ''
     },
     {
       title: 'Issues in Practice',
-      image: '../../assets/course-icons/Issues in Practice.png'
+      image: '../../assets/course-icons/Issues in Practice.png',
+      hoverImage: ''
     },
   ]
 
   public  AcademicUpcomingCourses = [
-    {
-      title: 'Latin',
-      image: '../../assets/course-icons/fLatin.png'
-    },
+   
     {
       title: 'Mathematics',
-      image: '../../assets/course-icons/fmath.png'
+      id:'Mathematics',
+      image: '../../assets/course-icons/fmath.png',
+      hoverImage: ''
     },
     {
       title: 'Biology',
-      image: '../../assets/course-icons/fbio.png'
+      id:'Biology',
+      image: '../../assets/course-icons/fbio.png',
+      hoverImage: ''
     },
     {
       title: 'Poetry',
-      image: '../../assets/course-icons/fpoetry.png'
+      id:'Poetry',
+      image: '../../assets/course-icons/fpoetry.png',
+      hoverImage: ''
     },
     {
       title: 'Writing',
-      image: '../../assets/course-icons/fwriting.png'
+      id:'Writing',
+      image: '../../assets/course-icons/fwriting.png',
+      hoverImage: ''
     },
     {
       title: 'Word Problems',
-      image: '../../assets/course-icons/fwordproblem.png'
+      id:'Word-Problems',
+      image: '../../assets/course-icons/fwordproblem.png',
+      hoverImage: ''
     },
     {
       title: 'Pre-Algebra',
-      image: '../../assets/course-icons/Pre-Algebra.png'
+      id:'Pre-Algebra',
+      image: '../../assets/course-icons/Pre-Algebra.png',
+      hoverImage: ''
     },
     {
       title: 'Politics',
-      image: '../../assets/course-icons/Politics.png'
+      id:'Politics',
+      image: '../../assets/course-icons/Politics.png',
+      hoverImage: ''
     },
     // {
     //   title: 'Test prep',
@@ -202,34 +281,49 @@ export class MainComponent implements OnInit, OnDestroy {
   public  skillForLifeUpcomingCourses = [
     {
       title: 'Interview Prep',
-      image: '../../assets/course-icons/Interview prep.png'
+      id: 'Interview-Prep',
+      image: '../../assets/course-icons/Interview prep.png',
+      hoverImage: ''
     },
     {
       title: 'Bully Help',
-      image: '../../assets/course-icons/Bully Help.png'
+      id: 'Bully-Help',
+      image: '../../assets/course-icons/Bully Help.png',
+      hoverImage: ''
     },
     {
       title: 'Accent Reduction',
-      image: '../../assets/course-icons/Accent Reduction.png'
+      id: 'Accent-Reduction',
+      image: '../../assets/course-icons/Accent Reduction.png',
+      hoverImage: ''
     },
     {
       title: 'Conflict Resolution',
-      image: '../../assets/course-icons/Conflict Resolution.png'
+      id: 'Conflict-Resolution',
+      image: '../../assets/course-icons/Conflict Resolution.png',
+      hoverImage: ''
     },
     {
       title: 'Time Management',
-      image: '../../assets/course-icons/Time Management.png'
+      id:'Time-Management',
+      image: '../../assets/course-icons/Time Management.png',
+      hoverImage: ''
     },
     {
       title: 'Self-Care',
-      image: '../../assets/course-icons/Self-Care.png'
+      id:'Self-Care',
+      image: '../../assets/course-icons/Self-Care.png',
+      hoverImage: ''
     },
     {
       title: 'Test prep',
-      image: '../../assets/course-icons/Test prep.png'
+      id:'Test-Prep',
+      image: '../../assets/course-icons/Test prep.png',
+      hoverImage: ''
     },
     {
       title: 'Exam Anxiety Course',
+      id: 'Exam-Anxiety-Course',
       image: '../../assets/course-icons/Exam anixty.png'
     },
     
@@ -238,30 +332,37 @@ export class MainComponent implements OnInit, OnDestroy {
   public  tests = [
     {
       title: 'USMLE Step 1',
+      id: 'USMLE-Step-1',
       image: '../../assets/course-icons/USMLE.png'
     },
     {
       title: 'USMLE Step 2',
+      id: 'USMLE-Step-2',
       image: '../../assets/course-icons/USMLE.png'
     },
     {
       title: 'USMLE Step 3',
+      id: 'USMLE-Step-3',
       image: '../../assets/course-icons/USMLE.png'
     },
     {
       title: 'High School SAT',
+      id: 'High-School-SAT',
       image: '../../assets/course-icons/SAT.png'
     },
     {
       title: 'High School ACT',
+      id: 'High-School-ACT',
       image: '../../assets/course-icons/ACT.png'
     },
     {
       title: 'GRE',
+      id: 'GRE',
       image: '../../assets/course-icons/gre.png'
     },
     {
       title: 'LSAT',
+      id: 'LSAT',
       image: '../../assets/course-icons/USMLE.png'
     },
   ]
@@ -494,6 +595,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   /* COURSES NAVIGATION */
   navigateToCoursePage(url: string | UrlTree) {
+    console.log(url)
     this.router.navigateByUrl(url);
     // this.router.navigate(['/us-history']);
   }
@@ -920,6 +1022,9 @@ export class MainComponent implements OnInit, OnDestroy {
       }
     }
     }
+  }
+  toggleHover(courseTitle: string, isHovering: boolean): void {
+    this.isHovered[courseTitle] = isHovering;
   }
 }
 
