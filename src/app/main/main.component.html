@@ -131,7 +131,7 @@
     <h4>Psychiatry (PRITE Inspired)</h4>
     <div class="courses-cards-container">
       <div class="course-card" *ngFor="let course of PsychiatryCourses"  (mouseenter)="toggleHover(course.title, true)" 
-      (mouseleave)="toggleHover(course.title, false)"(click)="navigateToCoursePage(course.title)">
+      (mouseleave)="toggleHover(course.title, false)"(click)="navigateToCoursePage(course.id)">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
          <div  >
            <img class="sizeImage"

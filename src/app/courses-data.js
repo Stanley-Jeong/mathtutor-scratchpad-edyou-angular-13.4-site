@@ -213,7 +213,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     bullet2: `Learn diagnosis and treatment techniques`,
   },
   {
-    id: 'Intro to Internal Medicine',
+    id: 'Intro-to-Internal-Medicine',
     title: 'Intro to Internal Medicine',
     images : [
       { src: '../assets/course-icons/course-images/4_intro_to_internal_medicine.jpeg', alt: 'Slide 1' },
@@ -226,7 +226,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     bullet2: `Diagnose and treat common diseases.`,
   },
   {
-    id: 'Geriatric Medicine',
+    id: 'Geriatric-Medicine',
     title: 'Geriatric Medicine',
     images : [
       { src: '../assets/course-icons/course-images/5_geriatric_medicine.jpeg', alt: 'Slide 1' },
@@ -239,7 +239,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     bullet2: `Manage age-related health conditions.`,
   },
   {
-    id: 'Hematology and Oncology',
+    id: 'Hematology-and-Oncology',
     title: 'Hematology and Oncology',
     images : [
       { src: '../assets/course-icons/course-images/6_hematology_and_oncology.jpeg', alt: 'Slide 1' },
@@ -577,4 +577,199 @@ Discover the rich tapestry of American history with interactive lessons designed
 
    
   },
+  {
+    id: "Patient-Care",
+    title: "Patient Care",
+    images : [
+      { src: '../assets/course-banners/course-slides/PC 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/PC 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/PC 3.png', alt: 'Slide 3' },
+    ],
+    description: `Navigate the real-world challenges of healthcare with our Issues in Practice course! This course addresses the key ethical, legal, and professional dilemmas that healthcare professionals face in their day-to-day practice. You’ll explore topics such as patient confidentiality, informed consent, healthcare disparities, and decision-making in complex cases. Designed for medical students, healthcare workers, and professionals, this course equips you with the knowledge and tools to handle difficult situations with confidence, ensuring ethical and effective patient care.
+
+
+
+`
+
+   
+  },
+  {
+    id: "Outcomes-Ethics",
+    title: "Outcomes Ethics",
+    images : [
+      { src: '../assets/course-banners/course-slides/OE 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/OE 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/OE 3.png', alt: 'Slide 3' },
+    ],
+    description: `Explore the ethical considerations of healthcare with our Outcomes Ethics course! This course delves into the moral and ethical challenges faced in medical practice, focusing on patient outcomes, equity in healthcare, and the decision-making process. You’ll learn about balancing patient autonomy, resource allocation, and ethical dilemmas in treatment planning. Ideal for medical students, healthcare professionals, or anyone interested in medical ethics, this course equips you with the skills to make informed, ethical decisions that prioritize patient well-being and fair healthcare outcomes.
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Intro-to-Obstetrics/Gynaecology",
+    title: "Intro to Obstetrics/Gynaecology",
+    images : [
+      { src: '../assets/course-banners/course-slides/O1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/Og2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Og3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Begin your journey into women’s health with our Intro to Obstetrics/Gynecology course! This comprehensive course covers key areas such as prenatal care, labor, reproductive health, and the diagnosis and treatment of gynecological conditions. You’ll explore topics like fertility, pregnancy management, contraception, and common women’s health issues. Designed for medical students, healthcare professionals, or anyone interested in women’s health, this course provides the knowledge needed to support women’s unique healthcare needs throughout different stages of life.
+
+
+`
+
+   
+  },
+  {
+    id: "Neuroscience",
+    title: "Neuroscience",
+    images : [
+      { src: '../assets/course-banners/course-slides/NS 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/NS 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/NS 3.png', alt: 'Slide 3' },
+    ],
+    description: `Explore the intricacies of the nervous system with our Neurosciences course! This course covers the structure and function of the brain, spinal cord, and peripheral nervous system, along with neurological conditions like epilepsy, Parkinson’s disease, and Alzheimer’s. You’ll dive into neuroanatomy, neurophysiology, and cognitive neuroscience, gaining a deep understanding of how the brain influences behavior and bodily functions. Ideal for medical students, healthcare professionals, or anyone fascinated by the brain, this course equips you with the foundational knowledge to understand and address neurological disorders effectively.
+
+
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Medical-Knowledge",
+    title: "Medical Knowledge",
+    images : [
+      { src: '../assets/course-banners/course-slides/MK 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/MK 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/MK 3.png', alt: 'Slide 3' },
+    ],
+    description: `Expand your understanding of core medical concepts with our Medical Knowledge course! This course covers the essential principles of medicine, including anatomy, physiology, pathology, pharmacology, and diagnostics. You’ll gain a deeper understanding of how the human body functions, how diseases develop, and how medical professionals diagnose and treat various conditions. Ideal for medical students, healthcare professionals, or anyone interested in health sciences, this course provides the foundational knowledge needed to excel in patient care and medical decision-making.
+
+
+
+`
+
+   
+  },
+  {
+    id: "Mathematics",
+    title: "Mathematics",
+    images : [
+      { src: '../assets/course-banners/course-slides/M 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/M 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/M 3.png', alt: 'Slide 3' },
+    ],
+    description: `Master the world of numbers with our Mathematics course, designed for students and learners worldwide! Covering essential topics like arithmetic, algebra, geometry, and calculus, this course combines interactive lessons with real-world problem-solving activities. Whether you're preparing for exams or looking to improve your math skills, you'll build a strong foundation in equations, data, and mathematical thinking, empowering you to tackle complex problems confidently.
+
+
+
+
+`
+
+   
+
+  
+
+
+   
+  },
+  {
+    id: "Issues-in-Practice",
+    title: "'Issues in Practice'",
+    images : [
+      { src: '../assets/course-banners/course-slides/IP 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IP 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IP 3.png', alt: 'Slide 3' },
+    ],
+    description: `Navigate the real-world challenges of healthcare with our Issues in Practice course! This course addresses the key ethical, legal, and professional dilemmas that healthcare professionals face in their day-to-day practice. You’ll explore topics such as patient confidentiality, informed consent, healthcare disparities, and decision-making in complex cases. Designed for medical students, healthcare workers, and professionals, this course equips you with the knowledge and tools to handle difficult situations with confidence, ensuring ethical and effective patient care.
+
+
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Nephrology",
+    title: "Nephrology",
+    images : [
+      { src: '../assets/course-banners/course-slides/n2 (1).jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/n3 (1).jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/n1 (1).jpeg', alt: 'Slide 3' },
+    ],
+    description: `Dive into the study of kidney function and diseases with our Nephrology course! This course explores the structure and function of the kidneys, as well as common conditions such as chronic kidney disease, glomerulonephritis, and electrolyte imbalances. You’ll learn diagnostic techniques, treatment approaches, and strategies for managing kidney-related disorders, including dialysis and kidney transplantation. Perfect for medical students, healthcare professionals, or anyone interested in renal health, this course equips you with the knowledge to understand and treat nephrological conditions effectively.
+
+
+
+`
+
+   
+  },
+  {
+    id: "Intro-to-Surgery",
+    title: "Intro to Surgery",
+    images : [
+      { src: '../assets/course-banners/course-slides/sur1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/sur2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/sur3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Explore the fundamentals of surgery with our Intro to Surgery course! This course provides an overview of essential surgical principles, techniques, and procedures. You’ll learn about preoperative and postoperative care, sterile techniques, and the basics of suturing and wound management. Covering both minor and major surgeries, the course is ideal for medical students, healthcare professionals, or anyone interested in gaining foundational knowledge in the field of surgery. Equip yourself with the skills needed to navigate the operating room and understand the surgical care process.
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Intro-to-Pediatrics",
+    title: "Intro to Pediatrics",
+    images : [
+      { src: '../assets/course-banners/course-slides/pedia1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/pedia2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/pedia3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Start your exploration of children's healthcare with our Intro to Pediatrics course! This course covers the fundamentals of diagnosing, treating, and managing the health of infants, children, and adolescents. You’ll learn about growth and development, common pediatric diseases, immunizations, and preventive care. The course also includes guidance on managing acute and chronic conditions in young patients. Ideal for medical students, healthcare professionals, or anyone interested in child healthcare, this course provides the foundation needed to deliver compassionate and effective pediatric care
+.
+
+
+
+
+`
+
+   
+  },
+  {
+    id: "Intro-to-Psychiatry",
+    title: "Intro to Psychiatry",
+    images : [
+      { src: '../assets/course-banners/course-slides/pedia1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/pedia2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/pedia3.jpeg', alt: 'Slide 3' },
+    ],
+    description: `Begin your journey into mental health care with our Intro to Psychiatry course! This course provides an overview of key concepts in psychiatry, covering mental health disorders, diagnostic criteria, and treatment approaches. You’ll explore conditions like depression, anxiety, bipolar disorder, and schizophrenia, while learning about therapeutic techniques such as psychotherapy, medication management, and behavioral interventions. Ideal for medical students, healthcare professionals, or anyone interested in mental health, this course equips you with the foundational knowledge to understand and manage psychiatric conditions effectively.
+
+
+
+
+
+
+
+`
+
+   
+  }
 ]
