@@ -55,17 +55,17 @@
       Beta Launch
     </button>
     <h4>Academic</h4>
-    <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)" (mouseleave)="toggleGif('us-history', false)">
+    <div class="courses-cards-container" >
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)" (mouseleave)="toggleGif('us-history', false)">
         <img [src]="isHovered['us-history'] ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png'" />
       </a>
-      <a (click)="navigateToCoursePage('algebra')" (mouseenter)="toggleGif('algebra', true)" (mouseleave)="toggleGif('algebra', false)">
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('algebra')" (mouseenter)="toggleGif('algebra', true)" (mouseleave)="toggleGif('algebra', false)">
         <img [src]="isHovered['algebra'] ? '../../assets/course-icons/hover 2.png' : './assets/course-icons/algebra.png'" />
       </a>
-      <a (click)="navigateToCoursePage('english')" (mouseenter)="toggleGif('english', true)" (mouseleave)="toggleGif('english', false)">
+      <a  style="border: 0.5px solid white; border-radius: 16px;"(click)="navigateToCoursePage('english')" (mouseenter)="toggleGif('english', true)" (mouseleave)="toggleGif('english', false)">
         <img [src]="isHovered['english'] ? '../../assets/course-icons/hover 3.png' : './assets/course-icons/english.png'" />
       </a>
-      <a (click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
+      <a  style="border: 0.5px solid white; border-radius: 16px;"(click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
         <img [src]="isHovered['computer-science'] ? '../../assets/course-icons/Computer-hover.png' : './assets/course-icons/computer-science.png'" />
       </a>
     </div>
@@ -73,59 +73,137 @@
       <div class="course-card" *ngFor="let course of AcademicUpcomingCourses" style="cursor: pointer;"  (mouseenter)="toggleHover(course.title, true)" 
       (mouseleave)="toggleHover(course.title, false)" (click)="navigateToCoursePage(course.id)" >
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div  >
+         <div  *ngIf="!isHovered[course.title]">
           <img class="sizeImage" 
           src="{{course.image}}" 
           alt="{{ course.title }}" 
           style="margin-top: 22px;">
         </div>
-          <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+          <span *ngIf="!isHovered[course.title]" class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+            <!-- Hover card -->
+            <div class="hover-card" *ngIf="isHovered[course.title]">
+              <a (click)="navigateToCoursePage('course.id')" >
+                <img src="{{course.hoverImage}}" />
+              </a>
+            </div>
       </div>
     </div>
     
     <h4>Skills For Life</h4>
     <div class="courses-cards-container">
-      <a (click)="navigateToCoursePage('leadership')" (mouseenter)="toggleGif('leadership', true)" (mouseleave)="toggleGif('leadership', false)">
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('leadership')" (mouseenter)="toggleGif('leadership', true)" (mouseleave)="toggleGif('leadership', false)">
         <img [src]="isHovered['leadership'] ? '../../assets/course-icons/leader-hover.png' : './assets/course-icons/leadership.png'" />
       </a>
-      <a (click)="navigateToCoursePage('communications')" (mouseenter)="toggleGif('communications', true)" (mouseleave)="toggleGif('communications', false)">
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('communications')" (mouseenter)="toggleGif('communications', true)" (mouseleave)="toggleGif('communications', false)">
         <img [src]="isHovered['communications'] ? '../../assets/course-icons/hover 5.png' : './assets/course-icons/communications.png'" />
       </a>
-      <a (click)="navigateToCoursePage('entrepreneurship')" (mouseenter)="toggleGif('entrepreneurship', true)" (mouseleave)="toggleGif('entrepreneurship', false)">
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('entrepreneurship')" (mouseenter)="toggleGif('entrepreneurship', true)" (mouseleave)="toggleGif('entrepreneurship', false)">
         <img [src]="isHovered['entrepreneurship'] ? '../../assets/course-icons/entre-new.png' : './assets/course-icons/entrepreneurship.png'" />
       </a>
-      <a (click)="navigateToCoursePage('project-management')" (mouseenter)="toggleGif('project-management', true)" (mouseleave)="toggleGif('project-management', false)">
+      <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('project-management')" (mouseenter)="toggleGif('project-management', true)" (mouseleave)="toggleGif('project-management', false)">
         <img [src]="isHovered['project-management'] ? '../../assets/course-icons/hover 8.png' : './assets/course-icons/pm.png'" />
       </a>
       
     </div>
-    <div class="courses-cards-container" style="margin-top: -40px;" >
-      <div class="course-card" [style.cursor]="course.title === 'Exam Anxiety Course' ? 'default' : 'pointer'"  *ngFor="let course of skillForLifeUpcomingCourses"(mouseenter)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, true)" 
-      (mouseleave)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, false)" (click)="navigateToCoursePage(course.id)">
-        <img class="coming-soon-ribbon" *ngIf="course.title == 'Exam Anxiety Course'" src="./assets/course-icons/coming-soon-ribbon-blue.png" alt="coming-soon-ribbon">
-         <div  >
-          <img class="sizeImage"   src="{{course.image}}"  alt="" style="margin-top: 22px;"  >
+    <!-- <div class="courses-cards-container" style="margin-top: -40px;">
+      <div class="course-card" 
+         
+           *ngFor="let course of skillForLifeUpcomingCourses" 
+           (mouseenter)="toggleHover(course.title, true)" 
+           (mouseleave)=" toggleHover(course.title, false)" 
+           (click)=" navigateToCoursePage(course.id)">
+           
+          <div *ngIf="!isHovered[course.title] && course.title !== 'Anxiety'">
+              
+              <div>
+                  <img class="sizeImage" src="{{course.image}}" alt="" style="margin-top: 22px;">
+              </div>
+              <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+          </div>
+          
+          <div class="hover-card" *ngIf="isHovered[course.title] && course.title !== 'Anxiety'">
+              <a >
+                  <img src="{{course.hoverImage}}" />
+              </a>
+          </div>
+          <div class="hover-card" *ngIf="!isHovered[course.title] && course.title == 'Anxiety' ">
+            <a >
+                <img src="{{course.hoverImage}}" />
+            </a>
         </div>
-          <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
       </div>
+      <div class="course-card" style="border: 0.5px solid white; border-radius: 16px;" >
+
+        <img style= " width: 100%;height: 100%;color: #1B2C43"src="./assets/course-icons/Ea.png" />
+    
+      </div>
+  </div> -->
+  <div class="courses-cards-container" style="margin-top: -40px;">
+    <div class="course-card" 
+         [style.cursor]="course.title === 'Exam Anxiety Course' ? 'default' : 'pointer'"  
+         *ngFor="let course of skillForLifeUpcomingCourses" 
+         (mouseenter)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, true)" 
+         (mouseleave)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, false)" 
+         (click)="course.title !== 'Exam Anxiety Course' && navigateToCoursePage(course.id)">
+         
+        <div *ngIf="!isHovered[course.title]">
+            <img class="coming-soon-ribbon" 
+                 *ngIf="course.title === 'Exam Anxiety Course' " 
+                 src="./assets/course-icons/coming-soon-ribbon-blue.png" 
+                 alt="coming-soon-ribbon">
+            <div>
+                <img class="sizeImage" src="{{course.image}}" alt="" style="margin-top: 22px;">
+            </div>
+            <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+        </div>
+        
+        <div class="hover-card" *ngIf="isHovered[course.title] && course.title != 'Exam Anxiety Course'">
+            <a (click)="navigateToCoursePage('course.id')">
+                <img src="{{course.hoverImage}}" />
+            </a>
+        </div>
     </div>
+</div>
+
+  <!-- <div class="courses-cards-container1" style="margin-top: -40px;">
+  <a style="border: 0.5px solid white; border-radius: 16px;" >
+
+    <img style= " color: #1B2C43"src="./assets/course-icons/Ea.png" />
+
+</a>
+</div> -->
+  
+  <!-- [style.cursor]="course.title === 'Exam Anxiety Course' ? 'default' : 'pointer'"   -->
 
     <!-- <h4>Medicine (ITE Inspired)</h4> -->
     <h4>Internal Medicine ITE</h4>
 
 
-    <div class="courses-cards-container">
-      <div class="course-card" *ngFor="let course of iteCourses" style="cursor: pointer;"   style="cursor: pointer;"  (mouseenter)="toggleHover(course.title, true)" 
-      (mouseleave)="toggleHover(course.title, false)"(click)="navigateToCoursePage(course.id)">
-        <!-- <img class="coming-soon-ribbon" src="../../assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
-         <div class="" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
-          <!-- <img [src]="course.image" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : 10}"> -->
-          <img 
-           src="{{course.image}}" alt="" style="margin-top: 10px;"   [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : (course.image === '../../assets/course-icons/USMLE.png') ? 20 : 10}"> 
-          
+    <div class="courses-cards-container" style="border: none;">
+    
+        <div class="course-card" *ngFor="let course of iteCourses" 
+             style="cursor: pointer;"  
+             (mouseenter)="toggleHover(course.title, true)" 
+             (mouseleave)="toggleHover(course.title, false)" 
+             (click)="navigateToCoursePage(course.id)">
+           
+            <div *ngIf="!isHovered[course.title]" [ngClass]="{'special-style': course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine'}">
+                <img 
+                    src="{{course.image}}" 
+                    alt="" 
+                    style="margin-top: 10px;" 
+                    [ngStyle]="{'margin-top.px': (course.title === 'Hematology and Oncology' || course.title === 'Pulmonary and Critical Care Medicine') ? 18 : (course.image === '../../assets/course-icons/USMLE.png') ? 20 : 10}"> 
+            </div>
+            
+            <span *ngIf="!isHovered[course.title]"class="mobileFonts" style="font-size: 18px;"> {{course.title}}</span>
+    
+            <!-- Hover card -->
+            <div class="hover-card" *ngIf="isHovered[course.title]">
+              <a (click)="navigateToCoursePage('course.id')" >
+                <img src="{{course.hoverImage}}" />
+              </a>
+            </div>
         </div>
-          <span class="mobileFonts" style="font-size: 18px;"> {{course.title}}</span>
-      </div>
     </div>
 
     <h4>Psychiatry (PRITE Inspired)</h4>
@@ -134,10 +212,16 @@
       (mouseleave)="toggleHover(course.title, false)"(click)="navigateToCoursePage(course.id)" style="cursor: pointer;">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
          <div  >
-           <img class="sizeImage"
+           <img *ngIf="!isHovered[course.title] "class="sizeImage"
           src="{{course.image}}" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Behavioral/Social Sciences' || course.title === 'Issues in Practice') ? 29 : 22}">
         </div>
-          <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+          <span *ngIf="!isHovered[course.title] " class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+               <!-- Hover card -->
+               <div class="hover-card" *ngIf="isHovered[course.title]">
+                <a (click)="navigateToCoursePage('course.id')" >
+                  <img src="{{course.hoverImage}}" />
+                </a>
+              </div>
       </div>
     </div>
 
@@ -147,10 +231,16 @@
       (mouseleave)="toggleHover(course.title, false)"(click)="navigateToCoursePage(course.id)">
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
          <div class="" >
-          <img class="sizeImage"
+          <img *ngIf="!isHovered[course.title] " class="sizeImage"
           src="{{course.image}}" alt="" style="margin-top: 22px;"   [ngStyle]="{'margin-top.px': (course.title === 'Radiology' || course.title === 'Outcomes Ethics') ? 29 : 22}">
         </div>
-          <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+          <span *ngIf="!isHovered[course.title] " class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+            <!-- Hover card -->
+            <div class="hover-card" *ngIf="isHovered[course.title]">
+              <a (click)="navigateToCoursePage('course.id')" >
+                <img src="{{course.hoverImage}}" />
+              </a>
+            </div>
       </div>
     </div>
 
@@ -165,6 +255,7 @@
           <img src="{{course.image}}" alt="" style="margin-top: 10px;">
         </div>
          <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
+         
      </div>
     </div>
     <h6 class="pricing-title-section_h6">More courses coming monthly.</h6>

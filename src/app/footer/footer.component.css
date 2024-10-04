@@ -159,3 +159,8 @@ a{
         text-align: center;
     }
 }
+.image-container {
+    position: relative;
+    width: 500px;
+    height: 20px;
+  }

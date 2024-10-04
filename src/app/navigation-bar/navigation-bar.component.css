@@ -498,3 +498,8 @@ margin-bottom: 0rem;
 .learnbutton{
  background-color:#2A7CC7;
 }
+.image-container {
+  position: relative;
+  width: 500px;
+  height: 20px;
+}

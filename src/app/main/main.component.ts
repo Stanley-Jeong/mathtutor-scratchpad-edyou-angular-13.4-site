@@ -19,99 +19,101 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Intro to Internal Medicine',
       id:'Intro-to-Internal-Medicine',
       image: '../../assets/course-icons/Internal Medicine.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ite1.1.png',
+      bullet1: `Understand heart function and diseases.`,
+      bullet2: `Learn diagnostic and treatment techniques.`,
     },
     
     {
       title: 'Intro to Neurology',
       id:'Intro-to-Neurology',
       image: '../../assets/course-icons/Framen.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/itny.png'
     },
     
     {
       title: 'Intro to Family Medicine',
       id:'Intro-to-Family-Medicine',
       image: '../../assets/course-icons/Family Medicine.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ifm.png'
     },
     {
       title: 'Intro to Surgery',
       id:'Intro-to-Surgery',
       image: '../../assets/course-icons/Surgery.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/isty.png'
     },
     {
       title: 'Intro to Obstetrics/Gynaecology',
       id:'Intro-to-Obstetrics/Gynaecology',
       image: '../../assets/course-icons/gyno.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/igno.png'
     },
     {
       title: 'Intro to  Pediatrics',
       id:'Intro-to-Pediatrics',
       image: '../../assets/course-icons/Pediatrics.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ipd.png'
     },
     {
       title: 'Intro to Psychiatry',
       id:'Intro-to-Psychiatry',
       image: '../../assets/course-icons/Psychiatry.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ipstry.png'
     },
     {
       title: 'Cardiology',
       id:'Cardiology',
       image: '../../assets/course-icons/Frame 3.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ite1.png'
     },
     {
       title: 'Endocrinology',
       id:'Endocrinology',
       image: '../../assets/course-icons/Frame 20.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ite1.2.png'
     },
     {
       title: 'Gastroenterology',
       id:'Gastroenterology',
       image: '../../assets/course-icons/Frame 21.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/gstr.png'
     },
     {
       title: 'Pulmonary and Critical Care Medicine',
       id:'Pulmonary-and-Critical-Care-Medicine',
       image: '../../assets/course-icons/Pulmonary & Critical Care Medicine.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/pmn.png'
     },
     {
       title: 'Rheumatology',
       id:'Rheumatology',
       image: '../../assets/course-icons/Framer.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/rheum.png'
     },
     {
       title: 'Geriatric Medicine',
       id:'Geriatric-Medicine',
       image: '../../assets/course-icons/Frame 19.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/geritc.png'
     },
     {
       title: 'Hematology and Oncology',
       id:'Hematology-and-Oncology',
       image: '../../assets/course-icons/Hematology and Oncology.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/hology.png'
     },
     {
       title: 'Infectious Diseases',
       id:'Infectious-Diseases',
       image: '../../assets/course-icons/Frame 22.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ids.png'
     },
     {
       title: 'Nephrology',
       id:'Nephrology',
       image: '../../assets/course-icons/Frame 13.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/nph.png'
     },
     // {
     //   title: 'USMLE Step 1',
@@ -135,25 +137,25 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Toxicology',
       id:'Toxicology',
       image: '../../assets/course-icons/Framet.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/txlogy.png'
     },
     {
       title: 'Neurology',
       id:'Neurology',
       image: '../../assets/course-icons/Framen.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/nuro.png'
     },
     {
       title: 'Sexually Transmitted Diseases',
       id:'Sexually-Transmitted-Diseases',
       image: '../../assets/course-icons/Frame s.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/19_stds.png'
     },
     {
       title: 'Heart Failure',
       id:'Heart-Failure',
       image: '../../assets/course-icons/Frame 14 h.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/hfl.png'
     },
   ]
 
@@ -187,25 +189,25 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Patient Care',
        id: 'Patient-Care',
       image: '../../assets/course-icons/Patient Care.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ptc.png'
     },
     {
       title: 'Medical Knowledge',
       id: 'Medical-Knowledge',
       image: '../../assets/course-icons/Medical Knowledge.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/mkw.png'
     },
     {
       title: 'Radiology',
       id: 'Radiology',
       image: '../../assets/course-icons/Radiology.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/rdlogy.png'
     },
     {
       title: 'Outcomes Ethics',
       id: 'Outcomes-Ethics',
       image: '../../assets/course-icons/Outcome Ethics.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/oets.png'
 
     },
   ]
@@ -215,24 +217,24 @@ export class MainComponent implements OnInit, OnDestroy {
       id:'Neuroscience',
       title: 'Neuroscience',
       image: '../../assets/course-icons/Neurosciences.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ns1.png'
     },
     { id:'Clinical-Neuro/Psych',
       title: 'Clinical Neuro/Psych',
       image: '../../assets/course-icons/Clinical Neuro.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/cnpl.png'
     },
     {
       id:'Behavioral/Social-Science',
       title: 'Behavioral/Social Science',
       image: '../../assets/course-icons/Behavioral Sciences.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/bsc1.png'
     },
     {
       id:'Issues-in-Practice',
       title: 'Issues in Practice',
       image: '../../assets/course-icons/Issues in Practice.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/iip1.png'
     },
   ]
 
@@ -242,43 +244,43 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Mathematics',
       id:'Mathematics',
       image: '../../assets/course-icons/fmath.png',
-      hoverImage: '../../assets/course-icons/hover 1.png'
+      hoverImage: '../../assets/course-icons/e-mathematics.png'
     },
     {
       title: 'Biology',
       id:'Biology',
       image: '../../assets/course-icons/fbio.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/f-biology.png'
     },
     {
       title: 'Poetry',
       id:'Poetry',
       image: '../../assets/course-icons/fpoetry.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/g-poetry.png'
     },
     {
       title: 'Writing',
       id:'Writing',
       image: '../../assets/course-icons/fwriting.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/h-writing.png'
     },
     {
       title: 'Word Problems',
       id:'Word-Problems',
       image: '../../assets/course-icons/fwordproblem.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/i-word-problems.png'
     },
     {
       title: 'Pre-Algebra',
       id:'Pre-Algebra',
       image: '../../assets/course-icons/Pre-Algebra.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/j-pre-algebra.png'
     },
     {
       title: 'Politics',
       id:'Politics',
       image: '../../assets/course-icons/Politics.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/k-politics.png'
     },
     // {
     //   title: 'Test prep',
@@ -290,49 +292,51 @@ export class MainComponent implements OnInit, OnDestroy {
       title: 'Interview Prep',
       id: 'Interview-Prep',
       image: '../../assets/course-icons/Interview prep.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/ppinterview.png'
     },
     {
       title: 'Bully Help',
       id: 'Bully-Help',
       image: '../../assets/course-icons/Bully Help.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/q-bully-help.png'
     },
     {
       title: 'Accent Reduction',
       id: 'Accent-Reduction',
       image: '../../assets/course-icons/Accent Reduction.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/r-accent-reduction.png'
     },
     {
       title: 'Conflict Resolution',
       id: 'Conflict-Resolution',
       image: '../../assets/course-icons/Conflict Resolution.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/s-conflict-resolution.png'
     },
     {
       title: 'Time Management',
       id:'Time-Management',
       image: '../../assets/course-icons/Time Management.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/t-time-management.png'
     },
     {
       title: 'Self-Care',
       id:'Self-Care',
       image: '../../assets/course-icons/Self-Care.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/u-self-care.png'
     },
     {
       title: 'Test prep',
       id:'Test-prep',
       image: '../../assets/course-icons/Test prep.png',
-      hoverImage: ''
+      hoverImage: '../../assets/course-icons/v-test-prep.png'
     },
     {
       title: 'Exam Anxiety Course',
-      id: 'Exam-Anxiety-Course',
-      image: '../../assets/course-icons/Exam anixty.png'
+      id:'Exam Anxiety Course',
+      image: './assets/course-icons/Exam anixty.png',
+      hoverImage: ''
     },
+  
     
   ] 
 
@@ -358,9 +362,9 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/SAT.png'
     },
     {
-      title: 'High School ACT',
+      title: '',
       id: 'High-School-ACT',
-      image: '../../assets/course-icons/ACT.png'
+      image: '../../assets/course-icons/ACT1.png'
     },
     {
       title: 'GRE',
@@ -929,15 +933,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Silver';
          payload = {
           "email": email,
-          "prod_id": "prod_QwyfxUyiCMsQUh",
+          "prod_id": "prod_QvPYwWXIKFLUpK",
         //  "prod_id": "prod_QmrFV8irjoWH9E",
           // "prod_id": "prod_Qkv0CvSnYSA23r",
           "plan": plan,
-          "price_id": "price_1Q54iSALy7MM11rqsMbzYyOW",
+          "price_id": "price_1Q3YjZALy7MM11rqpdgvJvyM ",
          // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
           // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "mode": "setup",
-          "price": "price_1Q54iSALy7MM11rqsMbzYyOW",
+          "price": "price_1Q3YjZALy7MM11rqpdgvJvyM ",
           // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "price_amount": "19.99",
           // "price_amount": "39",
@@ -950,15 +954,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Gold';
        payload = {
           "email": email,
-          "prod_id": "prod_QwygmbTidgM5Ma",
+          "prod_id": "prod_QvPc1yzCUHcSCv",
          // "prod_id": "prod_QmrFLWOmU2oDzr",
           // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
           "plan": plan,
-          "price_id": "price_1Q54jIALy7MM11rqm10DW5la",
+          "price_id": "price_1Q3YmqALy7MM11rq84K4saZ2",
          // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
           // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
-          "price": "price_1Q54jIALy7MM11rqm10DW5la",
+          "price": "price_1Q3YmqALy7MM11rq84K4saZ2",
           // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "price_amount": "74.99",
           "belong_to" :"nonsc",
@@ -975,15 +979,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Platinum';
         payload = {
           "email": email,
-          "prod_id": "prod_QwygA7KuOOd0FQ",
+          "prod_id": "prod_QvPcLe2x2J5JXO",
          // "prod_id": "prod_QmrFZUGlrjAclG",
           // "prod_id": "prod_Qkv3dLCQOXIq0z",
           "plan": plan,
-           "price_id": "price_1Q54jNALy7MM11rqD8rNVuSC",
+           "price_id": "price_1Q3YncALy7MM11rqdQIA8mTi",
          // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
           // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "mode": "setup",
-          "price": "price_1Q54jNALy7MM11rqD8rNVuSC",
+          "price": "price_1Q3YncALy7MM11rqdQIA8mTi",
           // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "price_amount": "199.99",
           // price_amount": "199",

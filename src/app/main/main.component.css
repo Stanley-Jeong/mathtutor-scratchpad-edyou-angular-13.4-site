@@ -726,7 +726,7 @@ position: absolute;
 .courses-cards-container a img {
     transition: transform 0.3s ease-in-out;
     border-radius: 16px;
-    border: 0.5px solid white;
+    /* border: 0.5px solid white; */
 }
   
 .courses-cards-container :hover {
@@ -746,6 +746,7 @@ position: absolute;
     padding: 0 10px;
     border: 0.5px solid white;
 }
+
 
 .coming-soon-ribbon {
     position: absolute;
