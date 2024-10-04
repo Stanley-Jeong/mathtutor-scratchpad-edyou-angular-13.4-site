@@ -282,11 +282,11 @@ export class ScComponent implements OnInit {
     this.newLoader = true
     let payload = {
       "email": email,
-      "prod_id": "prod_QofbY9vz5uizFD",
+      "prod_id": "prod_QpTSBxSdj6Z0BT",
       "plan": "Trailblazers",
-      "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+      "price_id": "price_1PxoVxALy7MM11rqUZ3kCKxz",
       "mode": "setup",
-      "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+      "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
       "price_amount": "199.00",
       "belong_to" :"sc",
           

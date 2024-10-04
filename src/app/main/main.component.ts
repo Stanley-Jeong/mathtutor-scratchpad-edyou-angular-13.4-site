@@ -241,10 +241,28 @@ export class MainComponent implements OnInit, OnDestroy {
   public  AcademicUpcomingCourses = [
    
     {
-      title: 'Mathematics',
-      id:'Mathematics',
-      image: '../../assets/course-icons/fmath.png',
-      hoverImage: '../../assets/course-icons/e-mathematics.png'
+      title: 'US History',
+      id:'us-history',
+      image: './assets/course-icons/us-h1.png',
+      hoverImage: '../../assets/course-icons/hover 1.png'
+    },
+    {
+      title: 'Algebra',
+      id:'algebra',
+      image: '../../assets/course-icons/alge1.png',
+      hoverImage: '../../assets/course-icons/hover 2.png'
+    },
+    {
+      title: 'English',
+      id:'english',
+      image: '../../assets/course-icons/eng1.png',
+      hoverImage: '../../assets/course-icons/hover 3.png'
+    },
+    {
+      title: 'Computer Science',
+      id:'computer-science',
+      image: '../../assets/course-icons/comp2.png',
+      hoverImage: '../../assets/course-icons/Computer-hover.png'
     },
     {
       title: 'Biology',
@@ -288,6 +306,29 @@ export class MainComponent implements OnInit, OnDestroy {
     // },
   ] 
   public  skillForLifeUpcomingCourses = [
+    {
+      title: 'Leadership',
+      id: 'leadership',
+      image: '../../assets/course-icons/lead1.png',
+      hoverImage: '../../assets/course-icons/leader-hover.png'
+    }, {
+      title: 'Communications',
+      id: 'communications',
+      image: '../../assets/course-icons/comm11.png',
+      hoverImage: '../../assets/course-icons/hover 5.png'
+    },
+    {
+      title: 'Entrepreneurship',
+      id: 'entrepreneurship',
+      image: '../../assets/course-icons/roket.png',
+      hoverImage: '../../assets/course-icons/ppinterview.png'
+    },
+    {
+      title: 'Project Management',
+      id: 'project-management',
+      image: '../../assets/course-icons/pmm122.png',
+      hoverImage: '../../assets/course-icons/hover 8.png'
+    },
     {
       title: 'Interview Prep',
       id: 'Interview-Prep',
@@ -362,7 +403,7 @@ export class MainComponent implements OnInit, OnDestroy {
       image: '../../assets/course-icons/SAT.png'
     },
     {
-      title: '',
+      title: 'High School ACT',
       id: 'High-School-ACT',
       image: '../../assets/course-icons/ACT1.png'
     },
@@ -938,15 +979,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Silver';
          payload = {
           "email": email,
-          "prod_id": "prod_QvPYwWXIKFLUpK",
+          "prod_id": "prod_QwyfxUyiCMsQUh",
         //  "prod_id": "prod_QmrFV8irjoWH9E",
           // "prod_id": "prod_Qkv0CvSnYSA23r",
           "plan": plan,
-          "price_id": "price_1Q3YjZALy7MM11rqpdgvJvyM ",
+          "price_id": "price_1Q54iSALy7MM11rqsMbzYyOW",
          // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
           // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "mode": "setup",
-          "price": "price_1Q3YjZALy7MM11rqpdgvJvyM ",
+          "price": "price_1Q54iSALy7MM11rqsMbzYyOW",
           // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
           "price_amount": "19.99",
           // "price_amount": "39",
@@ -959,15 +1000,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Gold';
        payload = {
           "email": email,
-          "prod_id": "prod_QvPc1yzCUHcSCv",
+          "prod_id": "prod_QwygmbTidgM5Ma",
          // "prod_id": "prod_QmrFLWOmU2oDzr",
           // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
           "plan": plan,
-          "price_id": "price_1Q3YmqALy7MM11rq84K4saZ2",
+          "price_id": "price_1Q54jIALy7MM11rqm10DW5la",
          // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
           // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "mode": "setup",
-          "price": "price_1Q3YmqALy7MM11rq84K4saZ2",
+          "price": "price_1Q54jIALy7MM11rqm10DW5la",
           // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
           "price_amount": "74.99",
           "belong_to" :"nonsc",
@@ -984,15 +1025,15 @@ export class MainComponent implements OnInit, OnDestroy {
         plan = 'Platinum';
         payload = {
           "email": email,
-          "prod_id": "prod_QvPcLe2x2J5JXO",
+          "prod_id": "prod_QwygA7KuOOd0FQ",
          // "prod_id": "prod_QmrFZUGlrjAclG",
           // "prod_id": "prod_Qkv3dLCQOXIq0z",
           "plan": plan,
-           "price_id": "price_1Q3YncALy7MM11rqdQIA8mTi",
+           "price_id": "price_1Q54jNALy7MM11rqD8rNVuSC",
          // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
           // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "mode": "setup",
-          "price": "price_1Q3YncALy7MM11rqdQIA8mTi",
+          "price": "price_1Q54jNALy7MM11rqD8rNVuSC",
           // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
           "price_amount": "199.99",
           // price_amount": "199",

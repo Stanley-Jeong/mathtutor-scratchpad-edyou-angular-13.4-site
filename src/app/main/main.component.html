@@ -55,7 +55,7 @@
       Beta Launch
     </button>
     <h4>Academic</h4>
-    <div class="courses-cards-container" >
+    <!-- <div class="courses-cards-container" >
       <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('us-history')" (mouseenter)="toggleGif('us-history', true)" (mouseleave)="toggleGif('us-history', false)">
         <img [src]="isHovered['us-history'] ? '../../assets/course-icons/hover 1.png' : './assets/course-icons/us-history.png'" />
       </a>
@@ -68,8 +68,8 @@
       <a  style="border: 0.5px solid white; border-radius: 16px;"(click)="navigateToCoursePage('computer-science')" (mouseenter)="toggleGif('computer-science', true)" (mouseleave)="toggleGif('computer-science', false)">
         <img [src]="isHovered['computer-science'] ? '../../assets/course-icons/Computer-hover.png' : './assets/course-icons/computer-science.png'" />
       </a>
-    </div>
-    <div class="courses-cards-container" style="margin-top: -40px;">
+    </div> -->
+    <div class="courses-cards-container" >
       <div class="course-card" *ngFor="let course of AcademicUpcomingCourses" style="cursor: pointer;"  (mouseenter)="toggleHover(course.title, true)" 
       (mouseleave)="toggleHover(course.title, false)" (click)="navigateToCoursePage(course.id)" >
         <!-- <img class="coming-soon-ribbon" src="./assets/course-icons/available-post-launch-ribbon-blue.png" alt="coming-soon-ribbon"> -->
@@ -90,7 +90,7 @@
     </div>
     
     <h4>Skills For Life</h4>
-    <div class="courses-cards-container">
+    <!-- <div class="courses-cards-container">
       <a style="border: 0.5px solid white; border-radius: 16px;" (click)="navigateToCoursePage('leadership')" (mouseenter)="toggleGif('leadership', true)" (mouseleave)="toggleGif('leadership', false)">
         <img [src]="isHovered['leadership'] ? '../../assets/course-icons/leader-hover.png' : './assets/course-icons/leadership.png'" />
       </a>
@@ -104,7 +104,7 @@
         <img [src]="isHovered['project-management'] ? '../../assets/course-icons/hover 8.png' : './assets/course-icons/pm.png'" />
       </a>
       
-    </div>
+    </div> -->
     <!-- <div class="courses-cards-container" style="margin-top: -40px;">
       <div class="course-card" 
          
@@ -138,7 +138,7 @@
     
       </div>
   </div> -->
-  <div class="courses-cards-container" style="margin-top: -40px;">
+  <div class="courses-cards-container" >
     <div class="course-card" 
     [ngStyle]="{ 'pointer-events': course.title === 'Exam Anxiety Course' ? 'none' : 'auto', 
     'cursor': course.title === 'Exam Anxiety Course' ? 'default' : 'pointer' }" 
