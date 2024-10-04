@@ -140,7 +140,8 @@
   </div> -->
   <div class="courses-cards-container" style="margin-top: -40px;">
     <div class="course-card" 
-         [style.cursor]="course.title === 'Exam Anxiety Course' ? 'default' : 'pointer'"  
+    [ngStyle]="{ 'pointer-events': course.title === 'Exam Anxiety Course' ? 'none' : 'auto', 
+    'cursor': course.title === 'Exam Anxiety Course' ? 'default' : 'pointer' }" 
          *ngFor="let course of skillForLifeUpcomingCourses" 
          (mouseenter)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, true)" 
          (mouseleave)="course.title !== 'Exam Anxiety Course' && toggleHover(course.title, false)" 
@@ -157,7 +158,7 @@
             <span class="mobileFonts" style="font-size: 18px;">{{course.title}}</span>
         </div>
         
-        <div class="hover-card" *ngIf="isHovered[course.title] && course.title != 'Exam Anxiety Course'">
+        <div class="hover-card" *ngIf="isHovered[course.title] && course.title !='Exam Anxiety Course'">
             <a (click)="navigateToCoursePage('course.id')">
                 <img src="{{course.hoverImage}}" />
             </a>
