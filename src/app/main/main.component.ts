@@ -265,6 +265,12 @@ export class MainComponent implements OnInit, OnDestroy {
       hoverImage: '../../assets/course-icons/Computer-hover.png'
     },
     {
+      title: 'Mathematics',
+      id:'Mathematics',
+      image: '../../assets/course-icons/Math2.png',
+      hoverImage: '../../assets/course-icons/e-mathematics.png'
+    },
+    {
       title: 'Biology',
       id:'Biology',
       image: '../../assets/course-icons/fbio.png',
