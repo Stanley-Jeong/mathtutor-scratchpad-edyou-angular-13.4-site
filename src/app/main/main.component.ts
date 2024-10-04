@@ -411,7 +411,7 @@ export class MainComponent implements OnInit, OnDestroy {
     {
       title: 'High School ACT',
       id: 'High-School-ACT',
-      image: '../../assets/course-icons/ACT1.png'
+      image: '../../assets/course-icons/act new.png'
     },
     {
       title: 'GRE',
