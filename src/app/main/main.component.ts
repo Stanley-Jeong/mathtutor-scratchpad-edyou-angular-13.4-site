@@ -407,7 +407,10 @@ export class MainComponent implements OnInit, OnDestroy {
     console.log(this.isBrowser,this.platformId)
     this.service.getIp().subscribe((res: any) => {
       console.log(res, "my ip----------------------------------------------")
-   
+      this.isBrowser = isPlatformBrowser(this.platformId);
+      this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 ;
+  
+      console.log(this.isBrowser, this.platformId);
 
     }) 
 
@@ -654,6 +657,8 @@ export class MainComponent implements OnInit, OnDestroy {
   openForm: boolean = false;
   isloading: boolean = false;
   sendEmail: any;
+  isTouchDevice: boolean = false;
+
 
   updateCountdown(): void {
     

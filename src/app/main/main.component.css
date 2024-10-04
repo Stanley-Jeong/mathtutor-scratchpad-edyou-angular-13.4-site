@@ -1569,4 +1569,8 @@ margin-left:-5%;
                       transform: rotate(360deg);
                     }
                   }
-                 
+                  @media (hover: none) {
+                    .hover-card {
+                        display: none; /* Prevent hover cards from displaying on touch devices */
+                    }
+                }
