@@ -415,8 +415,7 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/TP 2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/TP 3.png', alt: 'Slide 3' },
     ],
-    description: `Ace your exams with our Test Prep course! This course equips you with the strategies and tools needed to succeed on a wide range of standardized tests. You’ll learn how to approach different question types, manage time effectively, and reduce test anxiety. Through practice tests, study guides, and expert tips, you'll improve your problem-solving skills and build confidence. Whether you're preparing for school exams, entrance tests, or professional certifications, this course will help you perform at your best.
-.`
+    description: `Ace your exams with our Test Prep course! This course equips you with the strategies and tools needed to succeed on a wide range of standardized tests. You’ll learn how to approach different question types, manage time effectively, and reduce test anxiety. Through practice tests, study guides, and expert tips, you'll improve your problem-solving skills and build confidence. Whether you're preparing for school exams, entrance tests, or professional certifications, this course will help you perform at your best.`
 
    
   }, {
@@ -833,8 +832,8 @@ Discover the rich tapestry of American history with interactive lessons designed
       { src: '../assets/course-banners/course-slides/Bully Help1.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/Bully Help3.png', alt: 'Slide 3' },
     ],
-    description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all
-.
+    description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all.
+
 
 
 
