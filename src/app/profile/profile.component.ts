@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   activeTab: string = 'accountDetails';
   edit:boolean = false
   isSpinner: boolean = false ;
-  userDetails: any 
+  userDetails: any = {};
   createdDate:any;
 
   selectedProfileData: any;
@@ -115,6 +115,7 @@ export class ProfileComponent implements OnInit {
 //res.data.cus_id
       
         const createdDateString = this.userDetails.created_at; // Example ISO format string
+        console.log()
     const createdDate = new Date(createdDateString);
 
     // Extract day, month, and year and format as 'dd-MM-yyyy'

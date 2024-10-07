@@ -27,7 +27,9 @@
               <br /><button class="buttonProfile"  *ngIf="url" (click)="delete()">delete</button>
               <img class="loadercss" style="width : 24px; color:white;"
                 *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
-              <div class="text-wrapper-2">{{this.userDetails.name}}</div>
+              <div class="text-wrapper-2">{{this.userDetails.name}}<br>Joined on{{createdDate}}</div>
+             
+            
         </div>
         <div class="frame-2">
             <img class="loadercss" style="width : 24px; color:white;"
@@ -48,7 +50,7 @@
             <div *ngIf="this.subscriptionDetailCustomer">
             <button *ngIf="this.subscriptionDetailCustomer?.length == 0 ||  this.subscriptionDetailCustomer[0].is_canceled == true" class="button" (click)="Subscription()"><button class="button-2">Choose Plan</button></button>
             </div>
-            <button *ngIf=" this.buttonName == 'Renew'" class="button" (click)="Subscription()"><button class="button-2">Renew Plan</button></button>
+            <!-- <button *ngIf=" this.buttonName == 'Renew'" class="button" (click)="Subscription()"><button class="button-2">Renew Plan</button></button> -->
             <!-- <button class="button-wrapper"><button class="button-2">Upgrade</button></button> -->
             <!-- <div class="text-wrapper-8">{{daysLeft}} days left for free trial</div> -->
             <div class="text-wrapper-9">Membership Detail</div>

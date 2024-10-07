@@ -191,7 +191,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: 'Endocrinology',
     images : [
       { src: '../assets/course-banners/course-slides/E1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/E2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/E2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/E3.jpeg', alt: 'Slide 3' },
     ],
  
@@ -246,7 +246,7 @@ Discover the rich tapestry of American history with interactive lessons designed
   },
   {
     id: 'intro-to-obstetrics-gynaecology',
-    title: 'Intro to Obstetrics/Gynaecology',
+    title: 'Intro to Obstetrics / Gynaecology',
     image: '../../assets/course-icons/gyno.png',
     hoverImage: '../../assets/course-icons/course-images/14_intro_to_obstetrics_gynaecology.jpeg',
     description: `Begin your journey into women's health with our Intro to Obstetrics/Gynecology course! This comprehensive course covers key areas such as prenatal care, labor, reproductive health, and the diagnosis and treatment of gynecological conditions. You’ll explore topics like fertility, pregnancy management, contraception, and common women’s health issues. Designed for medical students, healthcare professionals, or anyone interested in women’s health, this course provides the knowledge needed to support women’s unique healthcare needs throughout different stages of life.`,
@@ -322,7 +322,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/P1.jpg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/P2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/P3.jpg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/P3.png', alt: 'Slide 3' },
     ],
     description: `Immerse yourself in the art of words with our Poetry course! This course takes you on a journey through the rich world of poetic expression, covering different forms, styles, and techniques. You’ll learn how to analyze famous works, understand rhythm and meter, and explore themes ranging from love to nature to the human experience. Whether you're a budding writer or simply a lover of literature, this course will inspire creativity and enhance your appreciation for the beauty of language, while also guiding you to craft your own poems with confidence.
 `,
@@ -334,7 +334,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: 'Politics',
     images : [
       { src: '../assets/course-banners/course-slides/Po1 .jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/Po2 .jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/PO2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/Po3.jpeg', alt: 'Slide 3' },
     ],
     description: `Dive into the dynamic world of governance with our Politics course! This course explores the key concepts of political theory, government systems, international relations, and the impact of political decisions on society. You’ll learn about different ideologies, the workings of democratic and authoritarian regimes, and the role of political institutions. Through case studies and interactive discussions, this course will help you understand how power is distributed, how policies are made, and how citizens can influence change. Perfect for students, aspiring politicians, or anyone interested in the mechanics of politics and its global impact.
@@ -372,7 +372,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Writing",
     title: "Writing",
     images : [
-      { src: '../assets/course-banners/course-slides/W1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/W1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/w2.jpeg', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/w3.jpeg', alt: 'Slide 3' },
     ],
@@ -389,7 +389,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/WP1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/WP2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/WP3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/WP3.png', alt: 'Slide 3' },
     ],
     description: `Sharpen your problem-solving skills with our Word Problems course! This course focuses on helping you master the art of translating real-world scenarios into mathematical problems. You’ll learn strategies for tackling word problems in various subjects like arithmetic, algebra, geometry, and beyond. Through step-by-step lessons and practical examples, you’ll develop the ability to break down complex situations, identify relevant information, and apply the correct math concepts. Perfect for students preparing for exams or anyone looking to improve their critical thinking and analytical skills in everyday situations.`
 
@@ -399,9 +399,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Pre-Algebra",
     title: "Pre-Algebra",
     images : [
-      { src: '../assets/course-banners/course-slides/sc-prealgebra1.jpg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/sc-prealgebra3.jpg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/PA1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/PA2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/PA3.png', alt: 'Slide 3' },
     ],
     description: `Build a strong foundation in mathematics with our Pre-Algebra course! This course introduces essential concepts like integers, fractions, decimals, ratios, and basic equations, preparing you for higher-level math such as Algebra and Geometry. Through interactive lessons and problem-solving exercises, you’ll gain the skills needed to understand mathematical relationships, work with variables, and solve real-world problems. Perfect for students transitioning to more advanced math or anyone looking to strengthen their fundamental math skills.`
 
@@ -413,7 +413,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/TP 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/TP 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/TP 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/TP 3 (1).png', alt: 'Slide 3' },
     ],
     description: `Ace your exams with our Test Prep course! This course equips you with the strategies and tools needed to succeed on a wide range of standardized tests. You’ll learn how to approach different question types, manage time effectively, and reduce test anxiety. Through practice tests, study guides, and expert tips, you'll improve your problem-solving skills and build confidence. Whether you're preparing for school exams, entrance tests, or professional certifications, this course will help you perform at your best.`
 
@@ -452,7 +452,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/SC 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/SC 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/Sc 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/SC 3 (1).png', alt: 'Slide 3' },
     ],
     description: `Take charge of your well-being with our Self-Care course! Learn practical techniques for managing stress, practicing mindfulness, and building healthy habits. This course provides tools for nurturing your mental, emotional, and physical health, helping you create a balanced and sustainable routine. Whether you're looking to improve daily self-care practices or build resilience, this course empowers you to prioritize yourself and maintain a positive mindset, so you can thrive in every area of life.
 
@@ -465,9 +465,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Rheumatology",
     title: "Rheumatology",
     images : [
-      { src: '../assets/course-banners/course-slides/RL 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/RL 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/RL 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/R1 (1).jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/R2 (1).jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/R3 (1).jpeg', alt: 'Slide 3' },
     ],
     description: `Gain a deep understanding of joint and autoimmune disorders with our Rheumatology course! This course explores the diagnosis, treatment, and management of diseases such as rheumatoid arthritis, lupus, gout, and osteoarthritis. You’ll learn about the immune system's role in these conditions, diagnostic tools like lab tests and imaging, and cutting-edge treatments including biologics and disease-modifying therapies. Ideal for medical students, healthcare professionals, or anyone interested in musculoskeletal health, this course equips you with the knowledge to manage rheumatologic conditions effectively.
 
@@ -497,8 +497,8 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Pulmonary and Critical Care-Medicine",
     images : [
       { src: '../assets/course-banners/course-slides/P1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/P2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/P3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/P2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/P3 (2).png', alt: 'Slide 3' },
     ],
     description: `Explore lung health and intensive care with our Pulmonary and Critical Care Medicine course! Covering respiratory disorders like asthma, COPD, pneumonia, and pulmonary embolism, along with managing critically ill patients, you'll learn diagnostic tools, treatment options, and ICU care strategies. Topics include lung function tests, mechanical ventilation, and emergency interventions. Ideal for medical students, healthcare professionals, or anyone interested in critical care, this course equips you with essential skills to handle complex respiratory and ICU cases effectively.
 
@@ -541,7 +541,7 @@ Discover the rich tapestry of American history with interactive lessons designed
   },
   {
     id: "Intro-to-Obstetrics/Gynaecology",
-    title: "Intro to Obstetrics/Gynaecology",
+    title: "Intro to Obstetrics / Gynaecology",
     images : [
       { src: '../assets/course-banners/course-slides/O1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/Og2.jpeg', alt: 'Slide 2' },
@@ -595,7 +595,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/M 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/M 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/M 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/M3-1.png', alt: 'Slide 3' },
     ],
     description: `Master the world of numbers with our Mathematics course, designed for students and learners worldwide! Covering essential topics like arithmetic, algebra, geometry, and calculus, this course combines interactive lessons with real-world problem-solving activities. Whether you're preparing for exams or looking to improve your math skills, you'll build a strong foundation in equations, data, and mathematical thinking, empowering you to tackle complex problems confidently.
 
@@ -650,9 +650,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Surgery",
     title: "Intro to Surgery",
     images : [
-      { src: '../assets/course-banners/course-slides/sur1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/sur2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/sur3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/IS 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IS 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IS 3.png', alt: 'Slide 3' },
     ],
     description: `Explore the fundamentals of surgery with our Intro to Surgery course! This course provides an overview of essential surgical principles, techniques, and procedures. You’ll learn about preoperative and postoperative care, sterile techniques, and the basics of suturing and wound management. Covering both minor and major surgeries, the course is ideal for medical students, healthcare professionals, or anyone interested in gaining foundational knowledge in the field of surgery. Equip yourself with the skills needed to navigate the operating room and understand the surgical care process.
 
@@ -685,7 +685,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Intro to Psychiatry",
     images : [
       { src: '../assets/course-banners/course-slides/ps1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/ps2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/ps2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/ps3.jpeg', alt: 'Slide 3' },
     ],
     description: `Begin your journey into mental health care with our Intro to Psychiatry course! This course provides an overview of key concepts in psychiatry, covering mental health disorders, diagnostic criteria, and treatment approaches. You’ll explore conditions like depression, anxiety, bipolar disorder, and schizophrenia, while learning about therapeutic techniques such as psychotherapy, medication management, and behavioral interventions. Ideal for medical students, healthcare professionals, or anyone interested in mental health, this course equips you with the foundational knowledge to understand and manage psychiatric conditions effectively.
@@ -703,9 +703,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Neurology",
     title: "Intro to Neurology",
     images : [
-      { src: '../assets/course-banners/course-slides/N1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/N3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/IN 1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IN 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IN 3.png', alt: 'Slide 3' },
     ],
     description: `Unlock the complexities of the brain and nervous system with our Intro to Neurology course! This course provides an overview of the anatomy and physiology of the nervous system, covering essential topics such as neurodegenerative diseases, stroke, epilepsy, and multiple sclerosis. You’ll learn diagnostic methods, treatment options, and the latest advancements in neurological care. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with foundational knowledge to understand and manage neurological disorders effectively.
 
@@ -725,7 +725,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/N1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/N3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/N3.png', alt: 'Slide 3' },
     ],
     description: `Delve into the complexities of the nervous system with our Neurology course! This course covers the diagnosis, treatment, and management of neurological disorders such as stroke, epilepsy, multiple sclerosis, and Parkinson's disease. You’ll learn about the anatomy and function of the brain, spinal cord, and nerves, along with the latest diagnostic tools and treatment methods. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with the knowledge to understand and manage neurological conditions effectively.
 
@@ -745,9 +745,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Internal-Medicine",
     title: "Intro to Internal Medicine",
     images : [
-      { src: '../assets/course-banners/course-slides/IIM 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/IIM 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/IIM 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/IIM 1(1).png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IIM 2(1).png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IIM 3(1).png', alt: 'Slide 3' },
     ],
     description: `Gain a comprehensive understanding of the foundations of adult healthcare with our Intro to Internal Medicine course! This course covers the diagnosis, treatment, and management of a wide range of common diseases affecting the internal organs, including conditions like hypertension, diabetes, and infectious diseases. You’ll explore key medical principles and clinical practices essential to treating adult patients, making this course perfect for medical students, healthcare professionals, or anyone looking to deepen their knowledge of internal medicine and its vital role in overall healthcare.
 
@@ -784,9 +784,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Infectious-Diseases",
     title: "Infectious Diseases",
     images : [
-      { src: '../assets/course-banners/course-slides/i11.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/i22.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/i33.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/I1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/I2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/I3.png', alt: 'Slide 3' },
     ],
     description: `Understand the mechanisms behind global health challenges with our Infectious Diseases course! This course delves into the study of bacteria, viruses, fungi, and parasites, covering key topics like disease transmission, outbreak control, and the immune response. You’ll learn about the diagnosis, treatment, and prevention of common and emerging infectious diseases, such as HIV/AIDS, tuberculosis, influenza, and COVID-19. Ideal for medical students, healthcare professionals, or anyone interested in public health, this course equips you with essential knowledge to address infectious diseases effectively.
 
@@ -808,8 +808,8 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Biology",
     images : [
       { src: '../assets/course-banners/course-slides/B1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/B2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/B3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/B2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/B3.png', alt: 'Slide 3' },
     ],
     description: `Unlock the mysteries of life with our biology course! From cell structures to ecosystems, this course covers core topics like genetics, evolution, and human anatomy, offering a hands-on, interactive approach to learning. Perfect for exam prep or simply deepening your understanding of the natural world, you'll gain insights into how living organisms function and how they are connected within our environment.
 
@@ -828,9 +828,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Bully-Help",
     title: "Bully Help",
     images : [
-      { src: '../assets/course-banners/course-slides/Bully Help 2.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/Bully Help1.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/Bully Help3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/Bully Help 1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/Bully Help 2 (1).png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/Bully Help 3.png', alt: 'Slide 3' },
     ],
     description: `Learn how to handle bullying with confidence through our Bully Help course. This course teaches you to recognize and respond to different forms of bullying, whether in person or online. You’ll gain strategies to build resilience, seek support, and create a safer environment for yourself or others. Perfect for students, parents, and educators, this course empowers individuals with practical tools to address bullying situations and promote a positive, supportive community for all.
 
@@ -872,9 +872,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Conflict-Resolution",
     title: "Conflict-Resolution",
     images : [
-      { src: '../assets/course-banners/course-slides/CR 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/CR 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/CR 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/CR 1 (1).png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/CR 2 (1).png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/CR 3 (1).png', alt: 'Slide 3' },
     ],
     description: `Master the art of managing disagreements with our Conflict Resolution course! You’ll learn essential techniques like active listening, empathy, and problem-solving to resolve conflicts in personal and professional settings. This course equips you with practical tools to approach conflicts with confidence, turning disagreements into opportunities for growth and cooperation. Whether you’re improving workplace dynamics or strengthening relationships, this course helps you foster positive outcomes and build stronger connections.
 
@@ -894,7 +894,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Intro to Family Medicine",
     images : [
       { src: '../assets/course-banners/course-slides/F1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/F2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/F2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/F3.jpeg', alt: 'Slide 3' },
     ],
     description: `Get a comprehensive overview of primary care with our Intro to Family Medicine course! This course covers the diagnosis, treatment, and prevention of common health conditions across all age groups, focusing on holistic and long-term patient care. You’ll learn about managing chronic diseases, preventive care, and addressing both physical and mental health needs. Perfect for medical students, healthcare professionals, or those interested in primary care, this course provides a strong foundation for delivering patient-centered healthcare in a family medicine setting.
@@ -918,7 +918,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/G1 (1).jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/G2 (1).jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/G3 (1).jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/G3.png', alt: 'Slide 3' },
     ],
     description: `Specialize in the care of aging adults with our Geriatric Medicine course! This course focuses on the unique health challenges faced by older adults, including chronic disease management, cognitive decline, mobility issues, and polypharmacy. You’ll learn about the prevention, diagnosis, and treatment of age-related conditions such as dementia, osteoporosis, and heart disease. Designed for medical students, healthcare professionals, or anyone interested in elderly care, this course equips you with the skills to provide comprehensive, compassionate care for an aging population.
 
@@ -942,7 +942,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/H1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/H2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/H3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/H3.png', alt: 'Slide 3' },
     ],
     description: `Master the complexities of blood disorders and cancer care with our Hematology and Oncology course! This comprehensive course covers the diagnosis, treatment, and management of various blood-related conditions such as anemia, clotting disorders, and leukemias, as well as cancers like lymphoma, breast cancer, and lung cancer. You’ll learn about cutting-edge therapies, diagnostic tools, and patient care strategies. Ideal for medical students, healthcare professionals, or anyone interested in these critical fields, this course equips you with the knowledge to understand and treat hematologic and oncologic diseases effectively.
 
@@ -1010,7 +1010,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/AR 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/AR 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/AR 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/AR3.png', alt: 'Slide 3' },
     ],
     description: `Enhance your communication skills with our Accent Reduction course! This course helps you refine your pronunciation and speech patterns, making your English clearer and more confident. You’ll learn techniques to adjust intonation, stress, and sound articulation while maintaining your unique voice. Ideal for non-native speakers or professionals, the course will help you speak with greater clarity in both personal and professional settings, improving your overall communication and boosting your confidence in conversations.
 
