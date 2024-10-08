@@ -451,7 +451,16 @@ setSubscriptionData(data: any) {
   }
   stripe(data:any){
     // stripe---
-     return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
+    //new method added
+    return  this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/stripe/Stripe_Product_data',data)
+   //  return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
+  // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/stripe_checkout_setup',data)
+  }
+  stripe_checkout(data:any){
+    // stripe---
+    //new method added
+    //return  this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/stripe/Stripe_Product_data',data)
+    return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Development/Stripe/stripe_checkout_setup',data)
   // return this.http.post('https://w9muye41uk.execute-api.us-west-2.amazonaws.com/Production/Stripe/stripe_checkout_setup',data)
   }
   signUp(data: any) {

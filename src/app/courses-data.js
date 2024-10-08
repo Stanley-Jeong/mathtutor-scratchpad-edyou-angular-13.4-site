@@ -80,9 +80,9 @@ export const courses = [
     id: "entrepreneurship",
     title: "Entrepreneurship",
     images : [
-      { src: '../assets/course-banners/course-slides/entrepreneurship-1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/entrepreneurship-2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/entrepreneurship-3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/E1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/Entre2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/E3.png', alt: 'Slide 3' },
     ],
     description: `Unleash your entrepreneurial potential in this hands-on course that guides you from idea to successful business launch. Learn to identify market needs, develop innovative solutions, and navigate the challenges of entrepreneurship. You'll gain essential skills in market research, business planning, branding, and financial management, while also mastering the art of spotting opportunities and assembling a winning team. Whether you're launching a new venture or honing your entrepreneurial mindset, this course equips you with the tools to turn your vision into reality. Start building your future today!`,
     icon: '',
@@ -180,7 +180,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets//course-banners/course-slides/C1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/C2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/C3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/C3.png', alt: 'Slide 3' },
     ],
     description: `Explore the intricacies of heart health with our Cardiology course! This comprehensive course covers the anatomy and physiology of the cardiovascular system, common heart diseases, diagnostic techniques, and treatment options. You’ll learn about conditions such as hypertension, coronary artery disease, heart failure, and arrhythmias, alongside cutting-edge interventions like angioplasty and cardiac rehabilitation. Perfect for medical students, healthcare professionals, or anyone interested in heart health, this course provides practical knowledge and up-to-date information to help you understand and manage cardiovascular conditions effectively.`,
     bullet1: `Understand heart function and diseases.`,
@@ -359,9 +359,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Toxicology",
     title: "Toxicology",
     images : [
-      { src: '../assets/course-banners/course-slides/T1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/T2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/T3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/T1 (1).jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/T2 (1).jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/T3.png', alt: 'Slide 3' },
     ],
     description: `Uncover the science of poisons with our Toxicology course! This course covers the study of harmful substances, including their detection, effects on the human body, and methods of treatment. You’ll explore topics such as drug overdoses, chemical exposure, and environmental toxins, learning how toxic agents affect organs and bodily systems. Ideal for medical students, healthcare professionals, or anyone interested in public health and safety, this course provides critical knowledge for diagnosing and managing toxic exposures and poisonings effectively.
 `
@@ -372,9 +372,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Writing",
     title: "Writing",
     images : [
-      { src: '../assets/course-banners/course-slides/W1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/w2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/w3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/W1.1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/W1.2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/W1.3.png', alt: 'Slide 3' },
     ],
     description: `Develop your writing skills with our Writing course! This course is designed to help you explore various forms of writing, from creative fiction to persuasive essays. You’ll learn key techniques like structuring arguments, creating compelling narratives, and refining your voice through practice and feedback. Whether you're writing for academic purposes, professional communication, or personal expression, this course will guide you in mastering the craft of writing, ensuring your ideas are clear, engaging, and impactful.
 
@@ -424,7 +424,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/S3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/S3.png', alt: 'Slide 3' },
     ],
     description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
 
@@ -432,20 +432,20 @@ Discover the rich tapestry of American history with interactive lessons designed
 
    
   },
-  {
-    id: "Sexually-Transmitted-Diseases",
-    title: "Sexually Transmitted Diseases",
-    images : [
-      { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/S3.jpeg', alt: 'Slide 3' },
-    ],
-    description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
+//   {
+//     id: "Sexually-Transmitted-Diseases",
+//     title: "Sexually Transmitted Diseases",
+//     images : [
+//       { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
+//       { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
+//       { src: '../assets/course-banners/course-slides/S3.jpeg', alt: 'Slide 3' },
+//     ],
+//     description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
 
-`
+// `
 
    
-  },
+//   },
   {
     id: "Self-Care",
     title: "Self-Care",
@@ -482,9 +482,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Radiology",
     title: "Radiology",
     images : [
-      { src: '../assets/course-banners/course-slides/R1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/R2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/R3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/RL 1 (1).png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/RL 2 (1).png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/RL3.png', alt: 'Slide 3' },
     ],
     description: `Discover the power of medical imaging with our Radiology course! This course covers key radiologic techniques, including X-rays, CT scans, MRIs, and ultrasounds, used to diagnose and treat medical conditions. You’ll learn how to interpret images, understand different imaging modalities, and apply radiologic knowledge to clinical practice. Ideal for medical students, healthcare professionals, or anyone interested in diagnostic imaging, this course equips you with the skills to analyze and utilize radiological data for effective patient care and diagnosis.
 
@@ -496,7 +496,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Pulmonary-and-Critical-Care-Medicine",
     title: "Pulmonary and Critical Care-Medicine",
     images : [
-      { src: '../assets/course-banners/course-slides/P1.jpeg', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/P1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/P2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/P3 (2).png', alt: 'Slide 3' },
     ],
@@ -528,7 +528,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/OE 1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/OE 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/OE 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/OE 3 (1).png', alt: 'Slide 3' },
     ],
     description: `Explore the ethical considerations of healthcare with our Outcomes Ethics course! This course delves into the moral and ethical challenges faced in medical practice, focusing on patient outcomes, equity in healthcare, and the decision-making process. You’ll learn about balancing patient autonomy, resource allocation, and ethical dilemmas in treatment planning. Ideal for medical students, healthcare professionals, or anyone interested in medical ethics, this course equips you with the skills to make informed, ethical decisions that prioritize patient well-being and fair healthcare outcomes.
 
@@ -543,9 +543,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Obstetrics/Gynaecology",
     title: "Intro to Obstetrics / Gynaecology",
     images : [
-      { src: '../assets/course-banners/course-slides/O1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/Og2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/Og3.jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/OB1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/OB2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/OB3.png', alt: 'Slide 3' },
     ],
     description: `Begin your journey into women’s health with our Intro to Obstetrics/Gynecology course! This comprehensive course covers key areas such as prenatal care, labor, reproductive health, and the diagnosis and treatment of gynecological conditions. You’ll explore topics like fertility, pregnancy management, contraception, and common women’s health issues. Designed for medical students, healthcare professionals, or anyone interested in women’s health, this course provides the knowledge needed to support women’s unique healthcare needs throughout different stages of life.
 
@@ -589,20 +589,20 @@ Discover the rich tapestry of American history with interactive lessons designed
 
    
   },
-  {
-    id: "Mathematics",
-    title: "Mathematics",
-    images : [
-      { src: '../assets/course-banners/course-slides/M 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/M 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/M3-1.png', alt: 'Slide 3' },
-    ],
-    description: `Master the world of numbers with our Mathematics course, designed for students and learners worldwide! Covering essential topics like arithmetic, algebra, geometry, and calculus, this course combines interactive lessons with real-world problem-solving activities. Whether you're preparing for exams or looking to improve your math skills, you'll build a strong foundation in equations, data, and mathematical thinking, empowering you to tackle complex problems confidently.
+//   {
+//     id: "Mathematics",
+//     title: "Mathematics",
+//     images : [
+//       { src: '../assets/course-banners/course-slides/M 1.png', alt: 'Slide 1' },
+//       { src: '../assets/course-banners/course-slides/M 2.png', alt: 'Slide 2' },
+//       { src: '../assets/course-banners/course-slides/M3-1.png', alt: 'Slide 3' },
+//     ],
+//     description: `Master the world of numbers with our Mathematics course, designed for students and learners worldwide! Covering essential topics like arithmetic, algebra, geometry, and calculus, this course combines interactive lessons with real-world problem-solving activities. Whether you're preparing for exams or looking to improve your math skills, you'll build a strong foundation in equations, data, and mathematical thinking, empowering you to tackle complex problems confidently.
 
 
 
 
-`
+// `
 
    
 
@@ -610,13 +610,13 @@ Discover the rich tapestry of American history with interactive lessons designed
 
 
    
-  },
+//   },
   {
     id: "Issues-in-Practice",
     title: "Issues in Practice",
     images : [
       { src: '../assets/course-banners/course-slides/IP 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/IP 2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IP2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/IP 3.png', alt: 'Slide 3' },
     ],
     description: `Navigate the real-world challenges of healthcare with our Issues in Practice course! This course addresses the key ethical, legal, and professional dilemmas that healthcare professionals face in their day-to-day practice. You’ll explore topics such as patient confidentiality, informed consent, healthcare disparities, and decision-making in complex cases. Designed for medical students, healthcare workers, and professionals, this course equips you with the knowledge and tools to handle difficult situations with confidence, ensuring ethical and effective patient care.
@@ -699,33 +699,35 @@ Discover the rich tapestry of American history with interactive lessons designed
 `
 
    
-  }, {
-    id: "Intro-to-Neurology",
-    title: "Intro to Neurology",
+  },
+// {
+//     id: "Intro-to-Neurology",
+//     title: "Intro to Neurology",
+//     images : [
+//       { src: '../assets/course-banners/course-slides/IN 1.jpeg', alt: 'Slide 1' },
+//       { src: '../assets/course-banners/course-slides/IN 2.png', alt: 'Slide 2' },
+//       { src: '../assets/course-banners/course-slides/IN 3.png', alt: 'Slide 3' },
+//     ],
+//     description: `Unlock the complexities of the brain and nervous system with our Intro to Neurology course! This course provides an overview of the anatomy and physiology of the nervous system, covering essential topics such as neurodegenerative diseases, stroke, epilepsy, and multiple sclerosis. You’ll learn diagnostic methods, treatment options, and the latest advancements in neurological care. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with foundational knowledge to understand and manage neurological disorders effectively.
+
+
+
+
+
+
+
+
+// `
+
+   
+//   },
+{
+    id: "Neurology",
+    title: "Neurology",
     images : [
       { src: '../assets/course-banners/course-slides/IN 1.jpeg', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/IN 2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/IN 3.png', alt: 'Slide 3' },
-    ],
-    description: `Unlock the complexities of the brain and nervous system with our Intro to Neurology course! This course provides an overview of the anatomy and physiology of the nervous system, covering essential topics such as neurodegenerative diseases, stroke, epilepsy, and multiple sclerosis. You’ll learn diagnostic methods, treatment options, and the latest advancements in neurological care. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with foundational knowledge to understand and manage neurological disorders effectively.
-
-
-
-
-
-
-
-
-`
-
-   
-  },{
-    id: "Neurology",
-    title: "Neurology",
-    images : [
-      { src: '../assets/course-banners/course-slides/N1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/N3.png', alt: 'Slide 3' },
     ],
     description: `Delve into the complexities of the nervous system with our Neurology course! This course covers the diagnosis, treatment, and management of neurological disorders such as stroke, epilepsy, multiple sclerosis, and Parkinson's disease. You’ll learn about the anatomy and function of the brain, spinal cord, and nerves, along with the latest diagnostic tools and treatment methods. Ideal for medical students, healthcare professionals, or anyone interested in brain health, this course equips you with the knowledge to understand and manage neurological conditions effectively.
 
@@ -745,9 +747,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Internal-Medicine",
     title: "Intro to Internal Medicine",
     images : [
-      { src: '../assets/course-banners/course-slides/IIM 1(1).png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/IIM 2(1).png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/IIM 3(1).png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/IIM 1.1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IIM 2 (1).png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IIM 3 (1).png', alt: 'Slide 3' },
     ],
     description: `Gain a comprehensive understanding of the foundations of adult healthcare with our Intro to Internal Medicine course! This course covers the diagnosis, treatment, and management of a wide range of common diseases affecting the internal organs, including conditions like hypertension, diabetes, and infectious diseases. You’ll explore key medical principles and clinical practices essential to treating adult patients, making this course perfect for medical students, healthcare professionals, or anyone looking to deepen their knowledge of internal medicine and its vital role in overall healthcare.
 
@@ -916,9 +918,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Geriatric-Medicine",
     title: "Geriatric Medicine",
     images : [
-      { src: '../assets/course-banners/course-slides/G1 (1).jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/G2 (1).jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/G3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/G1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/G2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/G3.1.png', alt: 'Slide 3' },
     ],
     description: `Specialize in the care of aging adults with our Geriatric Medicine course! This course focuses on the unique health challenges faced by older adults, including chronic disease management, cognitive decline, mobility issues, and polypharmacy. You’ll learn about the prevention, diagnosis, and treatment of age-related conditions such as dementia, osteoporosis, and heart disease. Designed for medical students, healthcare professionals, or anyone interested in elderly care, this course equips you with the skills to provide comprehensive, compassionate care for an aging population.
 
@@ -986,9 +988,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Behavioral/Social-Science",
     title: "Behavioral/Social-Science",
     images : [
-      { src: '../assets/course-banners/course-slides/BSS 1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/BSS 2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/BSS 3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/BSS1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/BSS2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/BSS3.png', alt: 'Slide 3' },
     ],
     description: `Discover the factors shaping human behavior and social interactions with our Behavioral / Social Sciences course! This course explores psychological, sociological, and cultural influences on individual and group behavior. Topics include cognitive development, socialization, and the impact of society on mental health and well-being. Ideal for students, healthcare professionals, and anyone curious about human behavior, this course offers valuable insights into how people think, interact, and function within social structures, equipping you with the tools to understand and address social and behavioral challenges.
 

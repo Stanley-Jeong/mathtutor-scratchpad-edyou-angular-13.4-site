@@ -151,6 +151,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   })
   this.userservice.subscription$.subscribe(subscriptionData => {
     this.subscriptionDetailinfo = subscriptionData || [];
+    console.log( this.subscriptionDetailinfo,'navinformation')
     this.buttonName = this.subscriptionDetailinfo.length === 0 ? "Startfree" : "Learn";
     this.cd.detectChanges(); // Update the UI accordingly
   });

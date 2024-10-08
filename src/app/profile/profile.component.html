@@ -2,7 +2,7 @@
     <div class="div">
 
         <div class="frame">
-            <!-- <p class="text-wrapper">Joined on {{createdDate}}</p> -->
+            <p class="text-wrapper">Joined on {{createdDate}}</p>
             
             <!-- <div class="text-wrapper-3">Carnegie Vanguard High School.</div> -->
             <!-- <div class="text-wrapper-4">(Grade 6)</div> -->
@@ -15,19 +15,19 @@
                  
                 </label>
                 <br />
-                <input
+                <!-- <input
                   id="fileInput"
                   type="file"
                   [(ngModel)]="url"
                   class="select-profile-picture"
                   (change)="onSelectFile($event)"
                 />
-              
+               -->
               </div>
               <br /><button class="buttonProfile"  *ngIf="url" (click)="delete()">delete</button>
               <img class="loadercss" style="width : 24px; color:white;"
                 *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
-              <div class="text-wrapper-2">{{this.userDetails.name}}<br>Joined on{{createdDate}}</div>
+              <div class="text-wrapper-2">{{this.userDetails.name}}</div>
              
             
         </div>

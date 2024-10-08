@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit {
   constructor(private service:UserService , private router :Router) { }
 
   ngOnInit(): void {
+   
     this.newLoader = false;
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
 
@@ -114,17 +115,38 @@ export class ProfileComponent implements OnInit {
         this.userDetails = res.data;
 //res.data.cus_id
       
-        const createdDateString = this.userDetails.created_at; // Example ISO format string
-        console.log()
-    const createdDate = new Date(createdDateString);
-
+       // const createdDateString = this.userDetails.created_at; // Example ISO format string
+        console.log("l",this.userDetails.created_at)
+        
+    //const createdDate = new Date(createdDateString);
+    const createdDateString = this.userDetails.created_at; // Example ISO format string
+    console.log('Raw date string:', createdDateString); // Log the raw date string
+    
+    // Replace comma with space to ensure proper formatting
+    const formattedDateString = createdDateString.replace(',', ' ');
+    
+    const createdDate = new Date(formattedDateString);
+    
+    // Check if the createdDate is valid
+    if (!isNaN(createdDate.getTime())) {
+        // Extract day, month, and year and format as 'dd-MM-yyyy'
+        const day = ('0' + createdDate.getDate()).slice(-2); // Add leading zero if necessary
+        const month = ('0' + (createdDate.getMonth() + 1)).slice(-2); // Months are zero-indexed, so add 1
+        const year = createdDate.getFullYear();
+    
+        // Combine into 'dd-MM-yyyy' format
+        this.createdDate = `${day}-${month}-${year}`;
+    } else {
+        console.error('Invalid date:', formattedDateString);
+        this.createdDate = 'Invalid date'; // Set a fallback value
+    }
     // Extract day, month, and year and format as 'dd-MM-yyyy'
-    const day = ('0' + createdDate.getDate()).slice(-2); // Add leading zero if necessary
-    const month = ('0' + (createdDate.getMonth() + 1)).slice(-2); // Months are zero-indexed, so add 1
-    const year = createdDate.getFullYear();
+    // const day = ('0' + createdDate.getDate()).slice(-2); // Add leading zero if necessary
+    // const month = ('0' + (createdDate.getMonth() + 1)).slice(-2); // Months are zero-indexed, so add 1
+    // const year = createdDate.getFullYear();
 
-    // Combine into 'dd-MM-yyyy' format
-    this.createdDate = `${day}-${month}-${year}`;
+    // // Combine into 'dd-MM-yyyy' format
+    // this.createdDate = `${day}-${month}-${year}`;
   
         ///  this.createdDate = new Date(this.userDetails.created_at);
           console.log(this.userDetails)
@@ -244,7 +266,7 @@ if(subscdata)
  }
  
  //console.log(this.subscdata[0].subscription_id)
- if (this.subscdata && Array.isArray(this.subscdata) && this.subscdata.length > 0) {}
+ if (this.subscdata && Array.isArray(this.subscdata) && this.subscdata.length > 0) {
  // console.log('First subscription:', this.subscdata[0],this.user.f_name,);  // Check the first element
 
     let data = {
@@ -260,27 +282,32 @@ if(subscdata)
       if (res.statusCode == 200) {
    //  alert("Success")
   // this.isModalOpen
-   this.openModal('plan')
- //  this.modalSuccess  = true;
+   //this.openModal('plan')
+   this.modalSuccess  = true;
+  // this.modalSuccess  = true;
+    //  setTimeout(() => {
+    //   this.togglecancel = true
+    //   let sc = localStorage.getItem('url') 
+    //   //this.router.url.includes('/sc')
+    
+    //  if(sc && sc.includes('sc') ){
+    //   this.router.navigate(['/SC']);
      
-    this.togglecancel = true
-    let sc = localStorage.getItem('url') 
-    //this.router.url.includes('/sc')
-  
-   if(sc && sc.includes('sc') ){
-    this.router.navigate(['/SC']);
+    //  }else if(sc){
+    //  this.router.navigate(['/']);
+    
+    //   }else{
+    //     this.router.navigate(['/']);
+    //   }
+    //  }, 2000);
    
-   }else if(sc){
-   this.router.navigate(['/']);
+
   
-    }
-
-
       }else{
        // alert("We are currently not able to process.")
       }
     })
-
+  }
   }
 
 
@@ -380,8 +407,7 @@ openModal(data:any) {
  // this.isModalOpen = true;
  if(data == 'profile'){
   this.modalSuccessProfile = true
-}else if 
-(data == 'plan'){
+}else if (data == 'plan'){
   this.modalSuccess = true
 }else{
   this.isModalOpen = true;
@@ -394,11 +420,11 @@ closeModal() {
   this.modalSuccessProfile = false;
 }
 confirmCancellation() {
-
-  this.cancelSubscription(); // Call the method to cancel the subscription
+ 
+ this.cancelSubscription(); // Call the method to cancel the subscription
    // Close the modal first
    //this.closeModal();
-   this.isModalOpen = false
+  // this.isModalOpen = false
 }
 can(){
   this.isModalOpen = true;
