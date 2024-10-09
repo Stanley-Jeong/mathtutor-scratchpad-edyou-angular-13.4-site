@@ -320,9 +320,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: 'Poetry',
     title: 'Poetry',
     images : [
-      { src: '../assets/course-banners/course-slides/P1.jpg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/P2.jpg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/P3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/P1.1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/P1.2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/P1.3.png', alt: 'Slide 3' },
     ],
     description: `Immerse yourself in the art of words with our Poetry course! This course takes you on a journey through the rich world of poetic expression, covering different forms, styles, and techniques. You’ll learn how to analyze famous works, understand rhythm and meter, and explore themes ranging from love to nature to the human experience. Whether you're a budding writer or simply a lover of literature, this course will inspire creativity and enhance your appreciation for the beauty of language, while also guiding you to craft your own poems with confidence.
 `,
@@ -424,7 +424,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     images : [
       { src: '../assets/course-banners/course-slides/S1.1.png', alt: 'Slide 1' },
       { src: '../assets/course-banners/course-slides/S1.2.png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/S3.png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/S1.3.png', alt: 'Slide 3' },
     ],
     description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
 
@@ -635,8 +635,8 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Nephrology",
     images : [
       { src: '../assets/course-banners/course-slides/N1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/n1 (1).jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/N2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/n3nephro.png', alt: 'Slide 3' },
     ],
     description: `Dive into the study of kidney function and diseases with our Nephrology course! This course explores the structure and function of the kidneys, as well as common conditions such as chronic kidney disease, glomerulonephritis, and electrolyte imbalances. You’ll learn diagnostic techniques, treatment approaches, and strategies for managing kidney-related disorders, including dialysis and kidney transplantation. Perfect for medical students, healthcare professionals, or anyone interested in renal health, this course equips you with the knowledge to understand and treat nephrological conditions effectively.
 

@@ -249,7 +249,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
     }
   }
   openLoginPopup(event: any) {
-    console.log(event,'login')
+  //  console.log(event,'login')
     event.stopPropagation();
   this.userservice.showPopup();
   }
@@ -274,7 +274,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
   }
   
   scrollToPricing(): void {
-  console.log(  this.currentUrl)
+//  console.log(  this.currentUrl)
  
   if(this.currentUrl == '/SC/profile'|| this.currentUrl == '/SC'){
     this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
@@ -336,7 +336,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       // If the menu is closed, remove the event listener
       document.removeEventListener('click', this.closeMenuOnClickOutside);
     }
-    console.log('hit menu')
+   // console.log('hit menu')
   }
   closeMenuOnClickOutside = (event: MouseEvent) => {
     const toggleMenu: any = document.querySelector("#menuId");
@@ -355,7 +355,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
 
     // Parse the JSON string to a boolean value
     const isLoggedIn = storedLoginState ? JSON.parse(storedLoginState) : false;
-    console.log(typeof(isLoggedIn), 'user check',isLoggedIn)
+ //   console.log(typeof(isLoggedIn), 'user check',isLoggedIn)
     // Check the login state and perform the corresponding action
     if (isLoggedIn == true) {
       this.getProfileDetail
@@ -372,9 +372,9 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       //  this.userObj = res.user;
       // this.shared.SharedData(this.userObj);
 
-      console.log(" this.userDetails", this.userDetails)
+    //  console.log(" this.userDetails", this.userDetails)
 
-      console.log('true state')
+     // console.log('true state')
       this.isLoggedIn = true 
       // if (this.user.f_name && this.user.l_name) {
       //   this.userName = this.user.f_name + " " + this.user.l_name
@@ -387,7 +387,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       this.userservice.loggedIn$.subscribe(state => {
   
         this.isLoggedIn = state;
-        console.log('else state ==',isLoggedIn)
+     //   console.log('else state ==',isLoggedIn)
         
        // console.log('state login', this.isLoggedIn)
       //  if (this.user.f_name && this.user.l_name) {
@@ -398,7 +398,7 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
  
 
     let loggedin_User = localStorage.getItem('Login_User');
-    console.log(loggedin_User)
+   // console.log(loggedin_User)
     if(isLoggedIn == true && loggedin_User == '"SC"'){
      
       // let subscription_exist =  localStorage.getItem('subscription[0].end_date');
@@ -410,13 +410,13 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
       this.no_user_Loggedin  =false
 
     }else if(isLoggedIn == true && loggedin_User == '"B2C"'){
-      console.log('b2c logged in')
+    //  console.log('b2c logged in')
       this.scloggedin = false
       this.b2cloggin = true
       this.no_user_Loggedin  =false
     }
       else if (isLoggedIn == true && loggedin_User == '"SC"'){
-        console.log('!logged in')
+      //  console.log('!logged in')
         this.scloggedin = true
         this.b2cloggin = false
         this.no_user_Loggedin  = true

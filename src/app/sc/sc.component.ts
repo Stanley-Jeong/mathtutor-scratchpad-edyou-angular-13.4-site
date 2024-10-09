@@ -76,7 +76,7 @@ export class ScComponent implements OnInit {
     video.muted = true;
     
     video.play().catch(error => {
-      console.error('Video playback failed:', error);
+  //    console.error('Video playback failed:', error);
     });
     video.addEventListener('volumechange', () => {
       this.handleVolumeChange(video);
@@ -171,7 +171,7 @@ export class ScComponent implements OnInit {
   
     this.storedLogin = localStorage.getItem('user');
    this.email_id = localStorage.getItem('email');
-    console.log('state',this.storedLogin,this.email_id)
+  //  console.log('state',this.storedLogin,this.email_id)
 
    
     if(this.storedLogin){
@@ -196,7 +196,7 @@ export class ScComponent implements OnInit {
     this.isModalOpen = false;
   }
   closeForm() {
-    this.openForm = !this.openForm
+   // this.openForm = !this.openForm
     this.subjectform.reset()
     this.isloading = false
     this.showParent = false;
@@ -232,8 +232,8 @@ export class ScComponent implements OnInit {
         "DOB":this.subjectform.value.date
       }
       this.isloading = true
-      console.log(this.showParent)
-      console.log(loginPayload)
+    //  console.log(this.showParent)
+    //  console.log(loginPayload)
       this.service.sendwaitlistDataSc(loginPayload).subscribe((res: any) => {
 
         if (res.statusCode == 200) {
@@ -280,45 +280,45 @@ export class ScComponent implements OnInit {
   planAPI(email: string) {
     this.isloaderpricing = true;
     this.newLoader = true
-    let payload 
+    // let payload 
     //live
-    payload ={
-      "env":"test","product":"Trailblazers"}
-    console.log(payload)
-    // let payload = {
-    //   "email": email,
-    //   "prod_id": "prod_QpTSBxSdj6Z0BT",
-    //   "plan": "Trailblazers",
-    //   "price_id": "price_1PxoVxALy7MM11rqUZ3kCKxz",
-    //   "mode": "setup",
-    //   "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
-    //   "price_amount": "199.00",
-    //   "belong_to" :"sc",
+    // payload ={
+    //   "env":"test","product":"Trailblazers"}
+    // console.log(payload)
+    let payload = {
+      "email": email,
+      "prod_id": "prod_QpTSBxSdj6Z0BT",
+      "plan": "Trailblazers",
+      "price_id": "price_1PxoVxALy7MM11rqUZ3kCKxz",
+      "mode": "setup",
+      "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
+      "price_amount": "199.00",
+      "belong_to" :"sc",
           
-    //   "type":"setup"
-    // }
-    this.service.stripe(payload).subscribe((res: any) => {
+      "type":"setup"
+    }
+  //  this.service.stripe(payload).subscribe((res: any) => {
       
      
-      if (res.statusCode == 200) {
-        let resvalue = res;
-        console.log(resvalue)
-       let payload1 ={ "email": email,
-           "prod_id": res.body.prod_id,
+      // if (res.statusCode == 200) {
+      //   let resvalue = res;
+      //   console.log(resvalue)
+      //  let payload1 ={ "email": email,
+      //      "prod_id": res.body.prod_id,
     
-           "plan": res.body.product,
-           "price_id": res.body.price_id,
-           "mode": "setup",
-          "price": res.body.amount ,
-          "price_amount": res.body.amount,
+      //      "plan": res.body.product,
+      //      "price_id": res.body.price_id,
+      //      "mode": "setup",
+      //     "price": res.body.amount ,
+      //     "price_amount": res.body.amount,
         
-           "belong_to" :"nonsc",
+      //      "belong_to" :"nonsc",
 
-           "type":"subscription"
-       }
+      //      "type":"subscription"
+      //  }
       
-       this.service.stripe_checkout(payload1).subscribe((res: any) => {
-        console.log(payload1)
+       this.service.stripe_checkout(payload).subscribe((res: any) => {
+      //  console.log(payload)
         if (res.statusCode == 303) {
         this.newLoader = false
         window.location.href = res.headers.Location;
@@ -333,10 +333,10 @@ export class ScComponent implements OnInit {
        
        
         this.isloading =false;
-      }else{
-        return
-      }
-    })
+    //   }else{
+    //     return
+    //   }
+    // })
 
 
   }
@@ -345,7 +345,7 @@ export class ScComponent implements OnInit {
      this.openSuccessPopup = !this.openSuccessPopup
    }
   validateAge(control: any): { [key: string]: boolean } | null {
-    console.log(control,this.subjectform.controls['date'].value)
+  //  console.log(control,this.subjectform.controls['date'].value)
     
    
     const dob = new Date(this.subjectform.controls['date'].value);

@@ -255,7 +255,11 @@ export class ProfileComponent implements OnInit {
  // console.log(this.subscdata)
 // this.checkUserSubscription
 
+this.modalSuccess  = true;
 
+  this.togglecancel = true
+  
+ 
 let subscdata = localStorage.getItem('subscription')
 if(subscdata)
 
@@ -299,7 +303,7 @@ if(subscdata)
       }else{
         this.router.navigate(['/']);
       }
-     }, 1000);
+     }, 500);
    
 
   
@@ -428,5 +432,14 @@ confirmCancellation() {
 }
 can(){
   this.isModalOpen = true;
+}
+navigatetoProfile(){
+  const currentUrl = this.router.url;
+  // Navigate to the same route
+  this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    this.router.navigate([currentUrl]);
+    console.log('sc',"into",currentUrl)
+  });
+  this.closeModal()
 }
 }
