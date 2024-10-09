@@ -422,8 +422,8 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Sexually-Transmitted-Diseases",
     title: "Sexually Transmitted Diseases",
     images : [
-      { src: '../assets/course-banners/course-slides/S1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/S2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/S1.1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/S1.2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/S3.png', alt: 'Slide 3' },
     ],
     description: `Understand and manage the complexities of sexually transmitted infections with our Sexually Transmitted Diseases course! This course covers the diagnosis, treatment, and prevention of common STDs such as HIV, chlamydia, gonorrhea, syphilis, and herpes. You’ll learn about the transmission, symptoms, complications, and public health strategies for controlling outbreaks. Ideal for medical students, healthcare professionals, or anyone interested in sexual health, this course equips you with the knowledge to provide effective patient care and promote awareness in the prevention of STDs.
@@ -465,9 +465,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Rheumatology",
     title: "Rheumatology",
     images : [
-      { src: '../assets/course-banners/course-slides/R1 (1).jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/R2 (1).jpeg', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/R3 (1).jpeg', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/R1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/R2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/R3.png', alt: 'Slide 3' },
     ],
     description: `Gain a deep understanding of joint and autoimmune disorders with our Rheumatology course! This course explores the diagnosis, treatment, and management of diseases such as rheumatoid arthritis, lupus, gout, and osteoarthritis. You’ll learn about the immune system's role in these conditions, diagnostic tools like lab tests and imaging, and cutting-edge treatments including biologics and disease-modifying therapies. Ideal for medical students, healthcare professionals, or anyone interested in musculoskeletal health, this course equips you with the knowledge to manage rheumatologic conditions effectively.
 
@@ -634,8 +634,8 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Nephrology",
     title: "Nephrology",
     images : [
-      { src: '../assets/course-banners/course-slides/n2 (1).jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/n3 (1).jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/N1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/N2.jpeg', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/n1 (1).jpeg', alt: 'Slide 3' },
     ],
     description: `Dive into the study of kidney function and diseases with our Nephrology course! This course explores the structure and function of the kidneys, as well as common conditions such as chronic kidney disease, glomerulonephritis, and electrolyte imbalances. You’ll learn diagnostic techniques, treatment approaches, and strategies for managing kidney-related disorders, including dialysis and kidney transplantation. Perfect for medical students, healthcare professionals, or anyone interested in renal health, this course equips you with the knowledge to understand and treat nephrological conditions effectively.
@@ -747,9 +747,9 @@ Discover the rich tapestry of American history with interactive lessons designed
     id: "Intro-to-Internal-Medicine",
     title: "Intro to Internal Medicine",
     images : [
-      { src: '../assets/course-banners/course-slides/IIM 1.1.png', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/IIM 2 (1).png', alt: 'Slide 2' },
-      { src: '../assets/course-banners/course-slides/IIM 3 (1).png', alt: 'Slide 3' },
+      { src: '../assets/course-banners/course-slides/IIM1.png', alt: 'Slide 1' },
+      { src: '../assets/course-banners/course-slides/IIM2.png', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/IIM3.png', alt: 'Slide 3' },
     ],
     description: `Gain a comprehensive understanding of the foundations of adult healthcare with our Intro to Internal Medicine course! This course covers the diagnosis, treatment, and management of a wide range of common diseases affecting the internal organs, including conditions like hypertension, diabetes, and infectious diseases. You’ll explore key medical principles and clinical practices essential to treating adult patients, making this course perfect for medical students, healthcare professionals, or anyone looking to deepen their knowledge of internal medicine and its vital role in overall healthcare.
 
@@ -943,7 +943,7 @@ Discover the rich tapestry of American history with interactive lessons designed
     title: "Hematology and Oncology",
     images : [
       { src: '../assets/course-banners/course-slides/H1.jpeg', alt: 'Slide 1' },
-      { src: '../assets/course-banners/course-slides/H2.jpeg', alt: 'Slide 2' },
+      { src: '../assets/course-banners/course-slides/H2.png', alt: 'Slide 2' },
       { src: '../assets/course-banners/course-slides/H3.png', alt: 'Slide 3' },
     ],
     description: `Master the complexities of blood disorders and cancer care with our Hematology and Oncology course! This comprehensive course covers the diagnosis, treatment, and management of various blood-related conditions such as anemia, clotting disorders, and leukemias, as well as cancers like lymphoma, breast cancer, and lung cancer. You’ll learn about cutting-edge therapies, diagnostic tools, and patient care strategies. Ideal for medical students, healthcare professionals, or anyone interested in these critical fields, this course equips you with the knowledge to understand and treat hematologic and oncologic diseases effectively.

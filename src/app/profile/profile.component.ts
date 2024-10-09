@@ -285,21 +285,21 @@ if(subscdata)
    //this.openModal('plan')
    this.modalSuccess  = true;
   // this.modalSuccess  = true;
-    //  setTimeout(() => {
-    //   this.togglecancel = true
-    //   let sc = localStorage.getItem('url') 
-    //   //this.router.url.includes('/sc')
+     setTimeout(() => {
+      this.togglecancel = true
+      let sc = localStorage.getItem('url') 
+      //this.router.url.includes('/sc')
     
-    //  if(sc && sc.includes('sc') ){
-    //   this.router.navigate(['/SC']);
+     if(sc && sc.includes('sc') ){
+      this.router.navigate(['/SC/profile']);
      
-    //  }else if(sc){
-    //  this.router.navigate(['/']);
+     }else if(sc){
+     this.router.navigate(['/profile']);
     
-    //   }else{
-    //     this.router.navigate(['/']);
-    //   }
-    //  }, 2000);
+      }else{
+        this.router.navigate(['/']);
+      }
+     }, 1000);
    
 
   
