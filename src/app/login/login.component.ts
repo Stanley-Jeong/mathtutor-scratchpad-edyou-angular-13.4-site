@@ -181,6 +181,7 @@ export class LoginComponent implements OnInit {
     this.restPasswordForm.reset()
     this.otpForm.reset()
     this.errorMessage = ''
+    
   }
 
   openLoginModal(): void {
