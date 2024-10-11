@@ -61,7 +61,7 @@ export class FailedpaymentComponent implements OnInit {
            if(res.statusCode == 200){
            
           this.subscribedata = res.body
-       //   this.service.setSubscriptionData(this.subscribedata);
+         this.service.setSubscriptionData(this.subscribedata);
           localStorage.setItem("subscription", JSON.stringify(this.subscribedata));
           }else{
             //localStorage.removeItem("subscription");
@@ -71,7 +71,7 @@ export class FailedpaymentComponent implements OnInit {
           }
         } )
         
-        //  localStorage.setItem("subscription", JSON.stringify(res.body));
+        // localStorage.setItem("subscription", JSON.stringify(res.body));
         //  console.log(this.loggedInDaTa)
           if (this.loggedInDaTa.url.includes('/sc')) {
             console.log('URL contains /sc',this.loggedInDaTa.url);
