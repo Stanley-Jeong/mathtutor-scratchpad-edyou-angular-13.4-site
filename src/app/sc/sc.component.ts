@@ -283,7 +283,7 @@ export class ScComponent implements OnInit {
     let payload 
    // live
     payload ={
-      "env":"test","product":"Trailblazers"}
+      "env":"live","product":"Trailblazers"}
     console.log(payload)
     // let payload = {
     //   "email": email,
@@ -312,7 +312,7 @@ export class ScComponent implements OnInit {
           "price": res.body.amount ,
           "price_amount": res.body.amount,
         
-           "belong_to" :"nonsc",
+           "belong_to" :"sc",
 
            "type":"subscription"
        }

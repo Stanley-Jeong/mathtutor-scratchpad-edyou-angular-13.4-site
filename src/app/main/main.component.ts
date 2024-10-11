@@ -980,9 +980,11 @@ export class MainComponent implements OnInit, OnDestroy {
     this.isloading = true;
     this.newLoader = true
     let payload 
-    //live
+    //live test
+    
     payload ={
-      "env":"test","product":plan}
+
+      "env":"live","product":plan}
     // console.log(payload)
     // switch (plan) {
     //   case 'Silver':
@@ -1066,20 +1068,43 @@ export class MainComponent implements OnInit, OnDestroy {
      
       if (res.statusCode == 200) {
         let resvalue = res;
+        let payload1
         console.log(resvalue)
-       let payload1 ={ "email": email,
-           "prod_id": res.body.prod_id,
-    
-           "plan": res.body.product,
-           "price_id": res.body.price_id,
-           "mode": "setup",
-          "price": res.body.amount ,
-          "price_amount": res.body.amount,
-        
-           "belong_to" :"nonsc",
-
-           "type":"subscription"
-       }  
+        switch (plan) {
+            case 'Silver':
+              plan = 'Silver';
+              payload1 ={ "email": email,
+                "prod_id": res.body.prod_id,
+         
+                "plan": res.body.product,
+                "price_id": res.body.price_id,
+                "mode": "setup",
+               "price": res.body.amount ,
+               "price_amount": res.body.amount,
+             
+                "belong_to" :"nonsc",
+     
+                "type":"payment"
+            }  
+              break;
+            default:
+                  payload1 ={ "email": email,
+                      "prod_id": res.body.prod_id,
+               
+                      "plan": res.body.product,
+                      "price_id": res.body.price_id,
+                      "mode": "setup",
+                     "price": res.body.amount ,
+                     "price_amount": res.body.amount,
+                   
+                      "belong_to" :"nonsc",
+           
+                      "type":"subscription"
+                  }  
+                 
+                   break;
+            }
+     
       
        this.service.stripe_checkout(payload1).subscribe((res: any) => {
        // console.log(payload1)
