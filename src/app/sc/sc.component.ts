@@ -280,44 +280,44 @@ export class ScComponent implements OnInit {
   planAPI(email: string) {
     this.isloaderpricing = true;
     this.newLoader = true
-    // let payload 
-    //live
-    // payload ={
-    //   "env":"test","product":"Trailblazers"}
-    // console.log(payload)
-    let payload = {
-      "email": email,
-      "prod_id": "prod_QpTSBxSdj6Z0BT",
-      "plan": "Trailblazers",
-      "price_id": "price_1PxoVxALy7MM11rqUZ3kCKxz",
-      "mode": "setup",
-      "price": "price_1PxoVxALy7MM11rqUZ3kCKxz",
-      "price_amount": "199.00",
-      "belong_to" :"sc",
+    let payload 
+   // live
+    payload ={
+      "env":"test","product":"Trailblazers"}
+    console.log(payload)
+    // let payload = {
+    //   "email": email,
+    //   "prod_id": "prod_QofbY9vz5uizFD",
+    //   "plan": "Trailblazers",
+    //   "price_id": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+    //   "mode": "setup",
+    //   "price": "price_1Px2G4ALy7MM11rqM4TsGY5P",
+    //   "price_amount": "199.00",
+    //   "belong_to" :"sc",
           
-      "type":"setup"
-    }
-  //  this.service.stripe(payload).subscribe((res: any) => {
+    //   "type":"setup"
+    // }
+   this.service.stripe(payload).subscribe((res: any) => {
       
      
-      // if (res.statusCode == 200) {
-      //   let resvalue = res;
-      //   console.log(resvalue)
-      //  let payload1 ={ "email": email,
-      //      "prod_id": res.body.prod_id,
+      if (res.statusCode == 200) {
+        let resvalue = res;
+        console.log(resvalue)
+       let payload1 ={ "email": email,
+           "prod_id": res.body.prod_id,
     
-      //      "plan": res.body.product,
-      //      "price_id": res.body.price_id,
-      //      "mode": "setup",
-      //     "price": res.body.amount ,
-      //     "price_amount": res.body.amount,
+           "plan": res.body.product,
+           "price_id": res.body.price_id,
+           "mode": "setup",
+          "price": res.body.amount ,
+          "price_amount": res.body.amount,
         
-      //      "belong_to" :"nonsc",
+           "belong_to" :"nonsc",
 
-      //      "type":"subscription"
-      //  }
+           "type":"subscription"
+       }
       
-       this.service.stripe_checkout(payload).subscribe((res: any) => {
+       this.service.stripe_checkout(payload1).subscribe((res: any) => {
       //  console.log(payload)
         if (res.statusCode == 303) {
         this.newLoader = false
@@ -333,10 +333,10 @@ export class ScComponent implements OnInit {
        
        
         this.isloading =false;
-    //   }else{
-    //     return
-    //   }
-    // })
+      }else{
+        return
+      }
+    })
 
 
   }

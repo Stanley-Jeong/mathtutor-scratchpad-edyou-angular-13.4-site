@@ -35,7 +35,8 @@
             <img class="loadercss" style="width : 24px; color:white;"
             *ngIf="isLoading" src="../../assets/images/Rolling-1s-200px (2).gif"> 
             <div class="text-wrapper-5">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0]?.product_name) ? this.subscriptionDetailCustomer[0].product_name:'No Plan Active'}}</div>
-            <div  class="text-wrapper-6">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].duration_days ) ? this.subscriptionDetailCustomer[0].duration_days :'0'}} Days left </div>
+            <div  class="text-wrapper-6">{{(this.subscriptionDetailCustomer?.length > 0 && this.subscriptionDetailCustomer[0].duration_days ) ? this.subscriptionDetailCustomer[0].duration_days :'0'}} Days left <a>{{(this.subscriptionDetailCustomer?.length > 0 )? this.subscriptionDetailCustomer[0].status:'' }}</a></div>
+            <!-- <div  class="text-wrapper-6" > </div> -->
             <!-- <div *ngIf="!daysLeft" class="text-wrapper-6"> No active plan </div> -->
             <p class="element-month" *ngIf="this.subscriptionDetailCustomer?.length > 0" >
                 <span class="span">$</span>

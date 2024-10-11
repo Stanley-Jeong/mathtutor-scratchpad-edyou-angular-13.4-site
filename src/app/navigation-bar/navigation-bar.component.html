@@ -219,7 +219,8 @@
                     <div class="elementor-icon">
                         <div class="scLogoimg" *ngIf="no_user_Loggedin"  >
                             <span *ngIf="fordesktop == true" style="display: flex; justify-content: center;align-items: center;">
-                                <img  *ngIf="isScPage == false " class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                                <img  *ngIf="isScPage == false && isSafetyState == false" class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/SClogoprofile.png" alt=""  >
+                                <img  *ngIf="isScPage == false && isSafetyState == true" class ="scLogoimgMobile " style="cursor : pointer"src ="../assets/icons/sc-black.png" alt=""  >
                                 <img  *ngIf="isScPage == false" class ="scLogoimgMobilebutton "(click)="navigateToSC()" src ="../assets/icons/buttonSc.png" alt=""   >
                             </span>
                             <span *ngIf= "forIpad == true"  >

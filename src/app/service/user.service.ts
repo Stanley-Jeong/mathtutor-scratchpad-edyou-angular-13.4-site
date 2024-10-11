@@ -485,8 +485,8 @@ setSubscriptionData(data: any) {
   }
 
   signupNewsletter(data: any) {
-   //  return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/website/newsletter_subscription', data)
-     return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/website/newsletter_subscription',data)
+    return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/website/newsletter_subscription', data)
+    // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/website/newsletter_subscription',data)
   }
   loadSubscriptionData() {
     const storedData = localStorage.getItem("subscription");
