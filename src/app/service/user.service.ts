@@ -50,7 +50,7 @@ export class UserService {
     private http: HttpClient, @Inject(PLATFORM_ID) private platformId: any
     
   ) {
-    this.loadSubscriptionData();
+   // this.loadSubscriptionData();
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     // this.token = JSON.parse(localStorage.getItem('token') || '[]')
@@ -123,10 +123,10 @@ export class UserService {
     this.objectValue.next(link);
     console.log(link)
   }
-setSubscriptionData(data: any) {
-  this.subscriptionSubject.next(data);
-  localStorage.setItem("subscription", JSON.stringify(data));
-}
+// setSubscriptionData(data: any) {
+//   this.subscriptionSubject.next(data);
+//   localStorage.setItem("subscription", JSON.stringify(data));
+// }
   updateAudioLinkData(audio: any) {
     this.audioFileData.next(audio);
   }
@@ -488,11 +488,11 @@ setSubscriptionData(data: any) {
    // return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Development/website/newsletter_subscription', data)
      return this.http.post('https://qzxk7csj32.execute-api.us-west-2.amazonaws.com/Production/website/newsletter_subscription',data)
   }
-  loadSubscriptionData() {
-    const storedData = localStorage.getItem("subscription");
-    if (storedData) {
-      const data = JSON.parse(storedData);
-      this.subscriptionSubject.next(data);
-    }
-  }
+  // loadSubscriptionData() {
+  //   const storedData = localStorage.getItem("subscription");
+  //   if (storedData) {
+  //     const data = JSON.parse(storedData);
+  //     this.subscriptionSubject.next(data);
+  //   }
+  // }
 }

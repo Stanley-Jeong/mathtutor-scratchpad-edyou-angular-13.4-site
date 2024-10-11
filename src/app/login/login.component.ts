@@ -241,7 +241,7 @@ export class LoginComponent implements OnInit {
              if(res.statusCode == 200){
              
             this.subscribedata = res.body
-            this.userserice.setSubscriptionData(this.subscribedata);
+          //  this.userserice.setSubscriptionData(this.subscribedata);
             localStorage.setItem("subscription", JSON.stringify(this.subscribedata));
             }else{
               //localStorage.removeItem("subscription");

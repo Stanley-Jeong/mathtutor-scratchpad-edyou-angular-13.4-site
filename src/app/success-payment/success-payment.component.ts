@@ -59,7 +59,7 @@ export class SuccessPaymentComponent implements OnInit {
            if(res.statusCode == 200){
            
           this.subscribedata = res.body
-          this.service.setSubscriptionData(this.subscribedata);
+         // this.service.setSubscriptionData(this.subscribedata);
           localStorage.setItem("subscription", JSON.stringify(this.subscribedata));
           }else{
             //localStorage.removeItem("subscription");
