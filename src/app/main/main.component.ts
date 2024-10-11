@@ -980,105 +980,133 @@ export class MainComponent implements OnInit, OnDestroy {
     this.isloading = true;
     this.newLoader = true
     let payload 
-    //live
-    // payload ={
-    //   "env":"test","product":plan}
-    // console.log(payload)
-    switch (plan) {
-      case 'Silver':
-        plan = 'Silver';
-         payload = {
-          "email": email,
-          "prod_id": "prod_QwyfxUyiCMsQUh",
-        //  "prod_id": "prod_QmrFV8irjoWH9E",
-          // "prod_id": "prod_Qkv0CvSnYSA23r",
-          "plan": plan,
-          "price_id": "price_1Q54iSALy7MM11rqsMbzYyOW",
-         // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
-          // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
-          "mode": "setup",
-          "price": "price_1Q54iSALy7MM11rqsMbzYyOW",
-          // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
-          "price_amount": "19.99",
-          // "price_amount": "39",
-          "belong_to" :"nonsc",
+    //live test
+    
+    payload ={
 
-          "type":"payment"
-        }
-        break;
-      case 'Gold':
-        plan = 'Gold';
-       payload = {
-          "email": email,
-          "prod_id": "prod_QwygmbTidgM5Ma",
-         // "prod_id": "prod_QmrFLWOmU2oDzr",
-          // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
-          "plan": plan,
-          "price_id": "price_1Q54jIALy7MM11rqm10DW5la",
-         // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
-          // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
-          "mode": "setup",
-          "price": "price_1Q54jIALy7MM11rqm10DW5la",
-          // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
-          "price_amount": "74.99",
-          "belong_to" :"nonsc",
+      "env":"live","product":plan}
+    // console.log(payload)
+    // switch (plan) {
+    //   case 'Silver':
+    //     plan = 'Silver';
+    //      payload = {
+    //       "email": email,
+    //      // silver - prod_QvPYwWXIKFLUpK -price_1Q3YjZALy7MM11rqpdgvJvyM 
+    //       "prod_id": "prod_QvPYwWXIKFLUpK",
+    //     //  "prod_id": "prod_QmrFV8irjoWH9E",
+    //       // "prod_id": "prod_Qkv0CvSnYSA23r",
+    //       "plan": plan,
+    //       "price_id": "price_1Q3YjZALy7MM11rqpdgvJvyM",
+    //      // "price_id": "price_1PxoBRALy7MM11rqkjD1f8DB",
+    //       // "price_id": "price_1PxjA1ALy7MM11rqNsEDK3ke",
+    //       "mode": "setup",
+    //       "price": "price_1Q3YjZALy7MM11rqpdgvJvyM",
+    //       // "price": "price_1PxjA1ALy7MM11rqNsEDK3ke",
+    //       "price_amount": "19.99",
+    //       // "price_amount": "39",
+    //       "belong_to" :"nonsc",
+
+    //       "type":"payment"
+    //     }
+    //     break;
+    //   case 'Gold':
+    //     plan = 'Gold';
+    //    payload = {
+    //       "email": email,
+    //     //  gold - prod_QvPc1yzCUHcSCv - price_1Q3YmqALy7MM11rq84K4saZ2
+    //       "prod_id": "prod_QvPc1yzCUHcSCv",
+    //      // "prod_id": "prod_QmrFLWOmU2oDzr",
+    //       // "prod_id": "prod_Qkv5HTR2zZJ9Dd",
+    //       "plan": plan,
+    //       "price_id": "price_1Q3YmqALy7MM11rq84K4saZ2",
+    //      // "price_id": "price_1Pxo9IALy7MM11rqfEWyUv4i",
+    //       // "price_id": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+    //       "mode": "setup",
+    //       "price": "price_1Q3YmqALy7MM11rq84K4saZ2",
+    //       // "price": "price_1Pxj7tALy7MM11rqzdYpQN8y",
+    //       "price_amount": "74.99",
+    //       "belong_to" :"nonsc",
          
-          "type":"subscription"
+    //       "type":"subscription"
           
-        }
-        break;
-        //package updated 27sep2024
-        //platinum - prod_QvPcLe2x2J5JXO - price_1Q3YncALy7MM11rqdQIA8mTi
-      //gold - prod_QvPc1yzCUHcSCv - price_1Q3YmqALy7MM11rq84K4saZ2
-      //silver - prod_QvPYwWXIKFLUpK -price_1Q3YjZALy7MM11rqpdgvJvyM
-      case 'Platinum':
-        plan = 'Platinum';
-        payload = {
-          "email": email,
-          "prod_id": "prod_QwygA7KuOOd0FQ",
-         // "prod_id": "prod_QmrFZUGlrjAclG",
-          // "prod_id": "prod_Qkv3dLCQOXIq0z",
-          "plan": plan,
-           "price_id": "price_1Q54jNALy7MM11rqD8rNVuSC",
-         // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
-          // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
-          "mode": "setup",
-          "price": "price_1Q54jNALy7MM11rqD8rNVuSC",
-          // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
-          "price_amount": "199.99",
-          // price_amount": "199",
-          "belong_to" :"nonsc",
+    //     }
+    //     break;
+    //     //package updated 27sep2024
+    //     //platinum - prod_QvPcLe2x2J5JXO - price_1Q3YncALy7MM11rqdQIA8mTi
+    //   //gold - prod_QvPc1yzCUHcSCv - price_1Q3YmqALy7MM11rq84K4saZ2
+    //   //silver - prod_QvPYwWXIKFLUpK -price_1Q3YjZALy7MM11rqpdgvJvyM
+    //   case 'Platinum':
+    //     plan = 'Platinum';
+    //     payload = {
+    //      // platinum - prod_QvPcLe2x2J5JXO - price_1Q3YncALy7MM11rqdQIA8mTi
+    //       "email": email,
+    //       "prod_id": "prod_QvPcLe2x2J5JXO",
+    //      // "prod_id": "prod_QmrFZUGlrjAclG",
+    //       // "prod_id": "prod_Qkv3dLCQOXIq0z",
+    //       "plan": plan,
+    //        "price_id": "price_1Q3YncALy7MM11rqdQIA8mTi",
+    //      // "price_id": "price_1PxoB0ALy7MM11rqYdsqSzJN",
+    //       // "price_id": "price_1PxjHqALy7MM11rqGyaxNJY1",
+    //       "mode": "setup",
+    //       "price": "price_1Q3YncALy7MM11rqdQIA8mTi",
+    //       // "price": "price_1PxjHqALy7MM11rqGyaxNJY1",
+    //       "price_amount": "199.99",
+    //       // price_amount": "199",
+    //       "belong_to" :"nonsc",
           
-          "type":"subscription"
-        }
-        break;
-        default:
-        {}
+    //       "type":"subscription"
+    //     }
+    //     break;
+    //     default:
+    //     {}
        
-        break;
-    }
+    //     break;
+    // }
  
-   // this.service.stripe(payload).subscribe((res: any) => {
+   this.service.stripe(payload).subscribe((res: any) => {
       
      
-      // if (res.statusCode == 200) {
-      //   let resvalue = res;
-      //   console.log(resvalue)
-      //  let payload1 ={ "email": email,
-      //      "prod_id": res.body.prod_id,
-    
-      //      "plan": res.body.product,
-      //      "price_id": res.body.price_id,
-      //      "mode": "setup",
-      //     "price": res.body.amount ,
-      //     "price_amount": res.body.amount,
-        
-      //      "belong_to" :"nonsc",
-
-      //      "type":"subscription"
-      //  }  })
+      if (res.statusCode == 200) {
+        let resvalue = res;
+        let payload1
+        console.log(resvalue)
+        switch (plan) {
+            case 'Silver':
+              plan = 'Silver';
+              payload1 ={ "email": email,
+                "prod_id": res.body.prod_id,
+         
+                "plan": res.body.product,
+                "price_id": res.body.price_id,
+                "mode": "setup",
+               "price": res.body.amount ,
+               "price_amount": res.body.amount,
+             
+                "belong_to" :"nonsc",
+     
+                "type":"payment"
+            }  
+              break;
+            default:
+                  payload1 ={ "email": email,
+                      "prod_id": res.body.prod_id,
+               
+                      "plan": res.body.product,
+                      "price_id": res.body.price_id,
+                      "mode": "setup",
+                     "price": res.body.amount ,
+                     "price_amount": res.body.amount,
+                   
+                      "belong_to" :"nonsc",
+           
+                      "type":"subscription"
+                  }  
+                 
+                   break;
+            }
+     
       
-       this.service.stripe_checkout(payload).subscribe((res: any) => {
+       this.service.stripe_checkout(payload1).subscribe((res: any) => {
        // console.log(payload1)
         if (res.statusCode == 303) {
         this.newLoader = false
@@ -1094,9 +1122,9 @@ export class MainComponent implements OnInit, OnDestroy {
        
        
         this.isloading =false;
-      // }else{
-      //   return
-      // }
+      } )}else{
+        return
+      }
     })
 
   }

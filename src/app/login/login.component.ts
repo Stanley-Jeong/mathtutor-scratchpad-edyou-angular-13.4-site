@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     //   this.emailDomainValidator()(this.signUpForm.get('email')!); // Call validator
     // });
   
-   
+    this.errorMessage = ''
   }
 
   // form group
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
   // form group
   signUpform = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),this.emailDomainValidator()]),
-    password: new FormControl('', Validators.required),
+    password: new FormControl('', [Validators.required,Validators.minLength(8)]),
     f_name: new FormControl('', Validators.required),
    // date: new FormControl('', Validators.required),
    // school: new FormControl('', Validators.required),
@@ -180,6 +180,7 @@ export class LoginComponent implements OnInit {
     this.forgetForm.reset()
     this.restPasswordForm.reset()
     this.otpForm.reset()
+    this.errorMessage = ''
   }
 
   openLoginModal(): void {

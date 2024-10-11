@@ -278,24 +278,35 @@ export class NavigationBarComponent implements OnInit ,OnDestroy {
  
   if(this.currentUrl == '/SC/profile'|| this.currentUrl == '/SC'){
     this.router.navigate(['/SC'], { fragment: 'pricing_section_id' });
-    
-   const element = document.getElementById('pricing_section_id');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }else if (this.currentUrl == '/profile'||this.currentUrl == '/'){
-   
-    this.router.navigate(['/'], { fragment: 'pricing_section_id' });
-    // const element = document.getElementById('pricing_section_id');
-    // if (element) {
-    //   element.scrollIntoView({ behavior: 'smooth' });
-    // }
-    setTimeout(() => {
+    this.router.events
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe(() => {
       const element = document.getElementById('pricing_section_id');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100);  // Delay to ensure navigation is complete before scrolling
+    });
+  //  const element = document.getElementById('pricing_section_id');
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  }else if (this.currentUrl == '/profile'||this.currentUrl == '/'){
+   
+    this.router.navigate(['/main'], { fragment: 'pricing_section_id' });
+    this.router.events
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe(() => {
+      const element = document.getElementById('pricing_section_id');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    // setTimeout(() => {
+    //   const element = document.getElementById('pricing_section_id');
+    //   if (element) {
+    //     element.scrollIntoView({ behavior: 'smooth' });
+    //   }
+    // }, 100);  // Delay to ensure navigation is complete before scrolling
   }
 //this.scrollToFragment
   }

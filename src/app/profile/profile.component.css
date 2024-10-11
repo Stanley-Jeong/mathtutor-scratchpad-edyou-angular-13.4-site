@@ -5,7 +5,11 @@
     justify-content: center;
     width: 100%;
   }
-  
+  .price{
+    margin-left: 12px;
+    margin-left: 239px;
+    margin-top: -40px;
+    }
   .account-details .div {
     background-color: #092a4b;
     width: 1366px;
@@ -1182,6 +1186,7 @@
   
     .account-details .group {
       left: 15px;
+      width:510px;
     }
   
     .account-details .group-2 {
@@ -1280,7 +1285,11 @@
       letter-spacing: 0;
       line-height: normal;
     }
-  
+    .price {
+      margin-left: 12px;
+      margin-left: 412px;
+      margin-top: -40px;
+  }
   
   }
   
@@ -1395,11 +1404,17 @@
     .account-details .group {
       top: 84px;
       position: absolute;
-      width: 250px;
+      width: 287px;
       /* background: red; */
-      height: 42px;
+      height: 167px;
       left: 32px;
     }
+    /* added */
+    .price {
+      margin-left: 12px;
+      margin-left: 185px;
+      margin-top: -40px;
+  }
   
     .account-details .group-2 {
       top: 150px;
@@ -1488,11 +1503,7 @@
   border: 1px solid black;
 
 }
-.price{
-margin-left: 12px;
-margin-left: 239px;
-margin-top: -40px;
-}
+
 .imgplan{
   margin-left: -3px;
   margin-top: -75px;
