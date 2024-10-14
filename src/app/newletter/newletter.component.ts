@@ -25,7 +25,7 @@ export class NewletterComponent implements OnInit {
     script.id = 'hs-script-loader';
     script.async = true;
     script.defer = true;
-    script.src = '//js.hs-scripts.com/8174166.js';
+    script.src = '//js.hs-scripts.com/8174166.js?businessUnitId=2039573';
     document.body.appendChild(script);
 }
 }
