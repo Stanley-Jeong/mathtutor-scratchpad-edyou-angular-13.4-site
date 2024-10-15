@@ -711,7 +711,8 @@ video {
   /* margin-top: 20px; */
   margin-top: 0px;
   border-radius: 10px;
-  margin-left: -10px;
+  /* margin-left: -10px; */
+  margin-left: -60px;
 
 }
 

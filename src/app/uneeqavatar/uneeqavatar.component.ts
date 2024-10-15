@@ -7,6 +7,7 @@ import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 import { SpeechRecognizer } from 'microsoft-cognitiveservices-speech-sdk';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location, isPlatformBrowser } from '@angular/common';
+import { Uneeq } from 'uneeq-js';
 declare var $: any;
 declare var tour: any;
 // import { tour } from '../../assets/js/index.js';
@@ -187,6 +188,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   stopIconHeightPosition: any;
   private platformBrowser;
   hideMaximizeArrow: boolean = false;
+  private _swalService: any;
+  videoElement: any;
   constructor(private router: Router, private ngZone: NgZone, private _location: Location, private elementRef: ElementRef, private renderer: Renderer2,
     private ser: UserService, private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: any,
   private service: ColorChangeService) {
@@ -196,9 +199,30 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    // Wait for the DOM elements to be dynamically added
+    const smVideoDiv = document.getElementById('sm-video');
 
+    if (smVideoDiv) {
+      // Observe when new elements are added to the 'sm-video' div
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node: any) => {
+            if (node.tagName === 'VIDEO') {
+              this.videoElement = node as HTMLVideoElement;
+              this.videoElement.muted = false // Set initial muted state
+
+              // Add a 'loadedmetadata' event listener to ensure the video is loaded
+              this.videoElement.addEventListener('loadedmetadata', () => {
+                console.log('Video loaded, attaching mute functionality.');
+              });
+            }
+          });
+        });
+      });
+
+      observer.observe(smVideoDiv, { childList: true, subtree: true });
+    }
   }
-
 
   ngOnInit(): void {
     window.onbeforeunload = function () {
@@ -212,7 +236,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.fullScreen = true
     this.isSpinner = true
     this.avatarName = this.ser.avatar
-    this.getColorAPI()
+   // this.getColorAPI()
     // this.checkcolor()
     // this.onLoadCard('')
     if(this.platformBrowser){
@@ -237,7 +261,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
    
     }
 
-    this.avatarFunction()
+   // this.avatarFunction()
+   this.startAvatarFunction()
     this.ser.getIp().subscribe((res: any) => {
       console.log(res.ip, "my ip----------------------------------------------")
       if(this.platformBrowser){
@@ -623,6 +648,233 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     sessionStorage.clear();
     }
   }
+
+
+
+   // uneeq function start
+
+   startAvatarFunction() {
+    //this.msgDisplay = document.getElementById('msg');
+    const v1: any = document.getElementById('sm-video');
+    let options = {
+      url: 'https://api.us.uneeq.io',
+
+      // hannah local
+     // conversationId: '9fd11d0e-b63c-4ef0-8de3-2432abc37e2b',
+      //  eddie prod
+     conversationId: 'e5b57466-9384-4916-b5f0-5dd5d3f8c19e',
+    
+      avatarVideoContainerElement: v1,
+      localVideoContainerElement: v1,
+      messageHandler: (msg: any) => this.messageHandler(msg),
+      sendLocalVideo: false,
+      enableMicrophone: true,
+      speechToTextLocales: 'en-US:ja-JP:de-DE',
+      micActivityMessages: true,
+      playWelcome: true,
+      //logging:true,
+      enableTransparentBackground: true,
+      voiceInputMode: "PUSH_TO_TALK",
+      // voiceInputMode: "VOICE_ACTIVITY",
+      sendLocalAudio: true
+    }
+
+    this.uneeq = new Uneeq(options);
+    let uneeqPayload = {
+ 
+      personaId: 'e5b57466-9384-4916-b5f0-5dd5d3f8c19e'
+    
+    }
+    this.ser.uneeqAvatar(uneeqPayload).subscribe((res: any) => {
+      if (res.statusCode == 200) {
+        this.ser.updateSharedData(this.uneeq);
+        //
+        this.tourGuideValueCheck = res.loginCheck
+        this.uneeq.initWithToken(res.body.token);
+      //  this.setVariableUneeq()
+        // $('#avatarLoaders').css('display', 'none')
+        // 30 sec prompt to
+        //  document.body.addEventListener('click', () => this.reset());
+        //  document.body.addEventListener('mouseover', () => this.reset());
+        //  document.body.addEventListener('keypress', () => this.reset());
+      } else if (res.statusCode == 400) {
+        var error = res.statusCode
+        this.storedErrorCode.emit(error);
+      } else {
+        var error = res.statusCode
+        this.storedErrorCode.emit(error);
+      }
+    })
+  }
+
+  sessionLiveForAvatar() {
+    //this.uneeq.uneeqSetCustomChatMetadata(JSON.stringify({name:'mohit rai'}))
+    $('#avatarLoaders').css('display', 'none')
+    $('#chat-widget-minimized').css('display', 'none');
+    $('#chat-widget-container').css('height', '4px');
+    this.isSpinner = false
+    //  this.checkConnectionSpeed()
+    // this.avatarsizechangeonCall()
+
+    // Add key listeners on spacebar for start and stop recording
+
+    this.addSpacebarEventListeners()
+    localStorage.setItem('sessionId', this.uneeq.sessionId)
+    let zoomPayload = {
+      "sessionID": this.uneeq.sessionId,
+      "email": this.user.email,
+     
+    }
+    //  this.ser.zoomSetting(zoomPayload).subscribe((res: any) => {
+    //  })
+  }
+
+  setVariableUneeq(){
+    let value =  {
+      "email": this.user.email,
+      "approaches": [
+      ],
+      "autoScroll": "",
+      "back_button": "",
+      "click": "",
+      "color": "",
+      "current_testPrep_length": "",
+      "display_message": "",
+      "error": "",
+      "handlingMessge": "",
+      "id": "",
+      "math_Question": "",
+      "next_button": "",
+      "options": "",
+      "position": "",
+      "Question": "",
+      "resume": false,
+      "test_prep_response": "",
+      "total_testPrep_length": "",
+      "User_Question": ""
+     }
+    this.ser.setVariable(value).subscribe(res => {
+
+    })
+
+  }
+
+
+  messageHandler(msg: any) {
+    // console.log('all uneeq message =>', msg)
+
+    switch (msg.uneeqMessageType) {
+
+      // SessionLive: Everything has loaded and the digital human is ready for interaction
+      case 'SessionLive':
+        this.sessionLiveForAvatar()
+        this.hideMaximizeArrow = true
+        break;
+      case 'StartedSpeaking':
+        this.runLoderGPT = false
+        this.dotIndicatorAnimation = true
+        $('#stopavatarId').removeClass('showI')
+
+        break;
+
+      case 'FinishedSpeaking':
+        this.dotIndicatorAnimation = false
+        $('#stopavatarId').addClass('showI')
+
+        break;
+
+      case 'AvatarQuestionText':
+       // this.userAskQuestionDisplayText(msg.question)
+        //
+        if ((localStorage.getItem('screen') === "TestSeries")) {
+          if (msg.question == 'yes' || msg.question == 'Yes.' || msg.question == 'Yes' || msg.question == 'repeat' || msg.question == 'Repeat' || msg.question == 'repeat.') {
+            this.showOptionOnlyFOrMobile()
+          }
+        }
+        break;
+      // The digital human has an answer to the question
+      case 'AvatarAnswer':
+        var data = msg.answerAvatar
+        var finalData = JSON.parse(data)
+        console.log('after parse', finalData)
+
+        this.DescAnswer = finalData.instructions.customData?.display_message
+
+        this.User_Question = finalData.instructions.customData?.User_Question
+        this.approachesList = finalData.instructions.customData?.approaches
+        this.mathsQuestion = finalData.instructions.customData?.math_question
+        this.handlingMessgeForMaths = finalData.instructions.customData?.handlingMessge
+      
+
+        const screen = localStorage.getItem('screen');
+     
+        this.avatarAnswerMessageHandler()
+
+     
+
+        if (this.DescAnswer) {
+          this.showLoaderMess = false
+        }
+
+        if (screen !== "TestSeries" && this.toggleValue == false) {
+          const noprintMessage = [
+            "Exiting the Mathematics Zone.",
+            "closing the learning module",
+            "Great job! You have successfully completed this module.",
+            "don't hide the chat bubble",
+            "Let me think!",
+            "",
+            " "
+          ];
+
+          let time = this.getCurrentTime()
+          if (noprintMessage.includes(this.DescAnswer)) {
+            // No action needed for exit messages
+          } else {
+            //        console.log('message handler run-- bubble --', this.DescAnswer);
+            this.chatBubbleMessage('persona', this.DescAnswer, time);
+          }
+
+
+        
+
+          // ----------
+          // mathametic
+          if (this.handlingMessgeForMaths == "continue loading" || this.handlingMessgeForMaths == 'continue loading') {
+            var m: any = document.getElementById('outputDesc')
+            if (m) m.innerHTML = '.';
+            this.runLoderGPT = true
+            setTimeout(() => {
+              this.uneeq.sendTranscript('get response')
+              //  this.persona.conversationSend('get response', {}, {});
+            }, 10000)
+
+          } else if (this.handlingMessgeForMaths == "") {
+            this.runLoderGPT = false
+          }
+
+
+          if (finalData.instructions.customData?.error == 'If issue persists, please contact livechat support from Help & Support page bottom left button.') {
+            this._swalService.error('There seems to be an error', '', 7000, `<b> Please refresh the website and try again</b>.<br>If issue persists, please contact livechat support from Help & Support page bottom left button.`)
+          }
+        }
+
+        // openAI maths
+      //  this.OpenAIMathematicsSoulMachine(finalData)
+        //
+       // this.callPieAI(this.DescAnswer)
+
+        break;
+      default:
+        // console.log('uneeq-js:message \'' + msg.uneeqMessageType + '\'', msg);
+        this.avatarConnectionStatus(msg.uneeqMessageType)
+        break;
+
+    }
+  }
+
+
+
 
 
 
@@ -1141,7 +1393,7 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       this.checkOptionColor = body.output['context']['public-context']?.color
       setTimeout(() => {
         if (this.checkOptionColor !== 'none') {
-          this.addColorToApproach(this.checkOptionColor)
+         // this.addColorToApproach(this.checkOptionColor)
         }
       }, 1200)
 
@@ -1304,7 +1556,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
     this.isManualScrolling = true
     this.dotIndicatorAnimation = false
     this.stopAvatarOnClick = !this.stopAvatarOnClick
-    this.persona.stopSpeaking()
+  //  this.persona.stopSpeaking()
+  this.uneeq.stopSpeaking()
     this.stopSubtitleAnimation()
 
   }
@@ -1320,17 +1573,10 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   muteunmuteVoice() {
     this.muteVoiceAvatar = !this.muteVoiceAvatar
 
-    //  if (videoVoice) {
-
-    //     videoVoice.muted = !videoVoice.muted
-
-    //     console.log('muted', videoVoice.muted)
-    // }
-    // if(this.platformBrowser){
-    const videoEl: any = document.getElementById('smVideo');
-    if (videoEl) videoEl.muted = this.muteVoiceAvatar
-    // }
-
+    if (this.videoElement) {
+      // this.isMuted = !this.isMuted;
+      this.videoElement.muted = this.muteVoiceAvatar;
+    }
   }
 
   customWelcomeMessge() {
@@ -1401,7 +1647,8 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
   }
 
   sendTextToAvatar() {
-    this.persona.stopSpeaking()
+    //this.persona.stopSpeaking()
+    this.uneeq.stopSpeaking()
     const personaInstance = this.persona
     //let text = this.userText
     this.stop();
@@ -1420,8 +1667,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       if (completeText) {
 
         this.userInputText = completeText;
-        console.log('user', this.userInputText);
-        const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
+      //  console.log('user', this.userInputText);
+       // const result = personaInstance.conversationSend(completeText, {}, { /* optionalArgs */ });
+       this.uneeq.sendTranscript(completeText)
       }
     }
     // var  textSet = 'User: ' + completeText
@@ -1562,8 +1810,6 @@ getCurrentTimeInGMT() {
 
 
   checkMicPosition() {
-
-
     // if(this.platformBrowser){
     setTimeout(() => {
       if (this.fullScreen === true) {
@@ -1587,108 +1833,6 @@ getCurrentTimeInGMT() {
   }
 
 
-  /**
-   * use azure STT 
-   * Mic speak to text function
-   * getting text and sending to uneeq function 
-   */
-  // onclickMic() {
-  //   this.checkMicPosition()
-  //   if (this.isMicButtonActive === true) {
-  //     this.stop();
-  //     this.isMicButtonActive = false;
-  //     this.isSubtitleAnimationRunning = false;
-  //   }
-  //   else {
-  //     this.recognizerSetup()
-  //     if (this.voiceText) {
-  //       this.voiceText = ""
-  //       // this.uneeq.stopSpeaking()
-  //       this.persona.stopSpeaking()
-  //       this.stopSubtitleAnimation()
-  //     }
-
-  //     this.showMic = true
-  //     this.persona.stopSpeaking()
-  //     this.isvoiceAnimationOn = true
-  //     this.dotIndicatorAnimation = true
-
-
-  //     this.isMicButtonActive = true;
-
-  //     const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
-  //     const speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.serviceRegion);
-  //     speechConfig.speechRecognitionLanguage = this.language;
-  //     this.recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig)
-
-  //     //  console.log(this.recognizer)
-  //     this.recognizer.recognizing = (s: any, e: any) => {
-  //        console.log(`RECOGNIZING: Text=${e.result.text}`);
-  //        this.userInputText  = e.result.text
-  //     };
-
-
-  //     this.recognizer.recognized = (s: any, e: any) => {
-  //       if (e.result.reason === sdk.ResultReason.RecognizedSpeech) {
-  //         //  console.log(`RECOGNIZED: Text=${e.result.text}`);
-  //         console.log('final', e.result.text);
-  //         this.voiceText = e.result.text;
-  //         this.userInputText = this.voiceText
-  //         this.checkButton()
-  //         this.UserQuestion_Display = ""
-  //         //  this.uneeq.sendTranscript(this.voiceText)
-  //         this.clearAvatarContentBox()
-  //         this.persona.conversationSend(this.voiceText, {}, {});
-  //         this.disableMicButton = true
-  //         this.hideOptionOnlyFOrMobile()
-  //         // this.recognizer.close();
-  //         //this.recognizer.AudioConfig.turnOff()
-  //         if (this.voiceText) {
-  //           this.stop()
-
-  //         }
-  //       } else if (e.result.reason === sdk.ResultReason.NoMatch) {
-
-  //         const noMatchDetail = sdk.NoMatchDetails.fromResult(e.result);
-  //         console.log("No speech recognized." + " | NoMatchReason: " + sdk.NoMatchReason[noMatchDetail.reason]);
-  //         // this.recognizer.AudioConfig.turnOff()
-  //         // this.recognizer.close();
-  //         this.isMicButtonActive = false;
-  //         this.showMic = false
-  //         this.isvoiceAnimationOn = false
-  //         this.dotIndicatorAnimation = false
-  //         //  this.recognizer.stopContinuousRecognitionAsync(() => {
-  //         //   this.recognizer.close();
-  //         // })
-  //         // Perform actions when no speech is recognized.
-  //       } else {
-  //         console.log(`ERROR: ${e.errorDetails}`);
-  //       }
-  //     };
-  //     this.recognizer.canceled = (s: any, e: any) => {
-  //       console.log(`CANCELED: Reason=${e.reason}`);
-  //       if (e.reason == sdk.CancellationReason.Error) {
-  //         console.log(`"CANCELED: ErrorCode=${e.errorCode}`);
-  //         console.log(`"CANCELED: ErrorDetails=${e.errorDetails}`);
-  //       }
-
-  //       this.recognizer.stopContinuousRecognitionAsync();
-  //     };
-
-  //     this.recognizer.speechEndDetected = (s: any, e: any) => {
-  //       //   console.log(`(speechEndDetected) SessionId: ${e.sessionId}`);
-  //       this.recognizer.close();
-  //       this.recognizer = undefined;
-  //     };
-  //     this.recognizer.sessionStopped = (s: any, e: any) => {
-  //       //  console.log("\n    Session stopped event.");
-  //       this.recognizer.stopContinuousRecognitionAsync();
-  //       // Perform actions when speech ends, such as stopping the recognition or handling the final result.
-  //     };
-  //     this.recognizer.startContinuousRecognitionAsync();
-  //     // }
-  //   }
-  // }
 
   async onclickMic() {
     this.checkMicPosition();
@@ -1700,12 +1844,14 @@ getCurrentTimeInGMT() {
       this.recognizerSetup();
       if (this.voiceText) {
         this.voiceText = "";
-        this.persona.stopSpeaking();
+        this.uneeq.stopSpeaking()
+       // this.persona.stopSpeaking();
         this.stopSubtitleAnimation();
       }
 
       this.showMic = true;
-      this.persona.stopSpeaking();
+      this.uneeq.stopSpeaking()
+    //  this.persona.stopSpeaking();
       this.isvoiceAnimationOn = true;
       this.dotIndicatorAnimation = true
 
@@ -1763,7 +1909,8 @@ getCurrentTimeInGMT() {
           this.checkButton();
           this.UserQuestion_Display = "";
           this.clearAvatarContentBox();
-          this.persona.conversationSend(this.voiceText, {}, {});
+          this.uneeq.sendTranscript(this.voiceText)
+         // this.persona.conversationSend(this.voiceText, {}, {});
           this.userText = ""
           this.disableMicButton = true;
           this.hideOptionOnlyFOrMobile();
@@ -1880,10 +2027,7 @@ getCurrentTimeInGMT() {
    * on or off, providing control over the display of captions for content.
    */
   userCCOnOf() {
-    // let toggle = JSON.parse(localStorage.getItem('mathtoggle') || 'undefined')
-    // if (toggle == true) {
-
-    // }else{
+    
     console.log('else consition ')
     const userText = this.elementRef.nativeElement.querySelector('#userText');
     if (this.UserccOnOff == true) {
@@ -1900,20 +2044,6 @@ getCurrentTimeInGMT() {
 
 
 
-  /**
-   * Toggle test prep Question card Closed Captions (CC) setting.
-   * This function is responsible for toggling the question card Closed Captions setting
-   * on or off, providing control over the display of captions for content.
-   */
-  QuestionCCOnOf() {
-    const QuestionDisplay = this.elementRef.nativeElement.querySelector('#QuestionDisplay');
-    if (this.QuestionccOnOff == true) {
-      this.renderer.addClass(QuestionDisplay, 'hideMessage');
-    } else if (this.QuestionccOnOff == false) {
-      this.renderer.removeClass(QuestionDisplay, 'hideMessage');
-    }
-    this.QuestionccOnOff = !this.QuestionccOnOff
-  }
 
 
 
@@ -2091,21 +2221,6 @@ getCurrentTimeInGMT() {
     }
     // }
   }
-
-
-  addColorOnOption(color: any, position: number) {
-   
-  }
-
-  /**
-* Function to add color to an mathematices appraoch  option at a specific position
-* @param {number} index - The position of the option to which the color should be added
-*/
-  addColorToApproach(index: any) {
-
-  }
-
-
 
 
 
@@ -3166,13 +3281,6 @@ getCurrentTimeInGMT() {
   }
 
 
-
-  // navigate to profile page
-  profile() {
-    this.router.navigate(['user/profile'])
-  }
-
-
   // uneeq end senssion
   endSession() {
     this.uneeq.endSession();
@@ -3262,35 +3370,6 @@ getCurrentTimeInGMT() {
 
 
 
-
-  /**
-   * Function to handle the selection of an option in the Maths List
-   * @param {any} event - The event associated with the selection
-   * @param {any} index - The index of the selected option
-   */
-  selectMathsListOption(event: any, index: any) {
-    if (this.voiceText) {
-      this.voiceText = ""
-
-      this.stopSubtitleAnimation()
-    }
-    //  this.uneeq.stopSpeaking()
-    this.persona.stopSpeaking()
-    this.userInputText = ""
-    var textData = this.mathsQuestion + " by " + event
-    this.userInputText = textData
-    // this.uneeq.sendTranscript(tt)
-    this.persona.conversationSend(textData, {}, {});
-  }
-
-  loadGraphDataForMaths() {
-    this.isgraphLoaded = true;
-    // if(this.platformBrowser) {
-    $('#graphButton').removeClass('showMessage')
-    // }
-  }
-
-
   // Function to handle sending text to uneeq
   sendTextFun() {
 
@@ -3322,51 +3401,9 @@ getCurrentTimeInGMT() {
 
   }
 
-  // Function to navigate to the next question
-  nextQuestion() {
-    if (this.voiceText) {
-      this.voiceText = ""
-      //  this.uneeq.stopSpeaking()
-      this.stopSubtitleAnimation()
-    }
-    this.optionList = []
-    // this.uneeq.stopSpeaking()
-    this.persona.stopSpeaking()
-    this.showOptionOnlyFOrMobile()
-    var nextQ = "next"
-    this.persona.conversationSend(nextQ, {}, {});
-    // this.uneeq.sendTranscript(nextQ)
-  }
 
-  // Function to navigate to the same question
-  resumeQuestion() {
-    if (this.voiceText) {
-      this.voiceText = ""
-      // this.uneeq.stopSpeaking()
-      this.stopSubtitleAnimation()
-    }
-    // this.uneeq.stopSpeaking()
-    this.persona.stopSpeaking()
-    this.showOptionOnlyFOrMobile()
-    //  var resumeQ = "resume"
-    this.persona.conversationSend('next', {}, {});
-    //  this.uneeq.sendTranscript(resumeQ)
-  }
+ 
 
-  // Function to navigate to the previous question
-  previousQuestion() {
-    if (this.voiceText) {
-      this.voiceText = ""
-      //  this.uneeq.stopSpeaking()
-      this.stopSubtitleAnimation()
-    }
-    this.persona.stopSpeaking()
-    // this.uneeq.stopSpeaking()
-    this.showOptionOnlyFOrMobile()
-    var backQ = "back"
-    this.persona.conversationSend(backQ, {}, {});
-    // this.uneeq.sendTranscript(backQ)
-  }
 
 
   showOptionOnlyFOrMobile() {  // show only for on mibile screen
@@ -3755,169 +3792,109 @@ getCurrentTimeInGMT() {
   }
 
 
-  /**
+    /**
  * Function to change the size of the avatar
  */
-  changeAvatarSize() {
-    // if(this.platformBrowser) {
-    if (this.fullScreen === false) {
-      // condition for making big screen avatar card
-      console.warn('viewport width', window.innerWidth
-        , 'viewport height', window.innerHeight)
-      const width = window.screen.width
-      const height = window.screen.height
-      var t: any = document.querySelector('#sm-video')
-      var videoTag: any = document.querySelector('#smVideo')
-      // console.log('canvas',t)
-      if (t) {
-        t.style.width = '100%'
-        if (window.innerWidth < 480) {
-          //  this.setVideo(600, 650)
-          // this.setVideo(700, 600)
-          this.setVideo(600, 700)
-          console.log('when the fulldcreen variable false mobile')
-          // t.style.height = '440px'
-          t.style.width = '80%'
-          $('#message').css('width', '')
-          $(t).css('margin-left', '0px')
-          $(videoTag).css('margin-left', '0px')
-          videoTag.style.width = '100%'
-          videoTag.style.height = '100%'
-          // $(t).css('margin-left', '-60px')
-          $('#sidebar').addClass(' sidebar_small')
-
-
-        } else if (innerWidth >= 600 && innerWidth <= 1024) {
-          t.style.width = '80%'
-          // console.log(' 600 and less then 1024')
-          $(t).css('margin-left', '0px')
-          $(t).css('margin-left', '0px')
-          //  $(videoTag).css('margin-left', '0px')
-          console.log('its a 768 and 1024')
-          this.setVideo(750, 500)
-
-        } else if (innerWidth >= 1025 && innerWidth < 2290) {
-          t.style.width = '80%'
-          console.log("full screen avatar for laptop below 2244")
-          // $(videoTag).css('margin-left', '-140px')
-
-          // for landscape
-
-          // if ((innerHeight == 950 || innerHeight == 905 || innerHeight == 1024  || innerHeight == 956) && (innerWidth == 1366) || (window.screen.height == 1024 && window.screen.width == 1366) ) { //  landsvape ipad 12 
-          if ((innerHeight >= 900 && innerHeight <= 1024) && (innerWidth == 1366)) { //  landsvape ipad 12
-            t.style.width = '90%'
-            console.log('landscape ipad 12')
-            //   $(videoTag).css('margin-left', '0px')
-            $(t).css('margin-left', '0px')
-            //  $(videoTag).css('margin-left', '0px')
-            this.setVideo(700, 250)
-            //} else if ((innerHeight == 746 || innerHeight == 820 || innerHeight == 701) && (innerWidth == 1180)) {  // landsvape ipad  10 
-          } else if ((innerHeight >= 700 && innerHeight <= 820) && (innerWidth == 1180)) {  // landsvape ipad  10 
-            t.style.width = '90%'
-            $(videoTag).css('margin-left', '0px')
-            console.log('landscape ipad 10')
-            $(t).css('margin-left', '0px')
-            console.log('landscape one with ipad')
-            this.setVideo(700, 300)
-
-            // } else if ((innerHeight == 810 || innerHeight == 740 || innerHeight == 695) && (innerWidth == 1080)) {  // landsvape ipad 9 
-          } else if ((innerHeight >= 680 && innerHeight <= 810) && (innerWidth == 1080)) {  // landsvape ipad 9 
-            t.style.width = '90%'
-            $(videoTag).css('margin-left', '0px')
-            $(t).css('margin-left', '0px')
-            console.log('landscape one with ipad 9')
-            this.setVideo(650, 250)
-
-            // } else if (innerHeight == 760 && innerWidth == 1194) { 
-            // } else if ((innerHeight == 760 || innerHeight == 715) && (innerWidth == 1194)) {  // landscape ipad 11
-          } else if ((innerHeight >= 700 && innerHeight <= 834) && (innerWidth == 1194)) {  // landscape ipad 11
-            t.style.width = '90%'
-            console.log('landscape ipad 11')
-            //   $(videoTag).css('margin-left', '0px')
-            $(t).css('margin-left', '0px')
-            //  $(videoTag).css('margin-left', '0px')
-            this.setVideo(700, 250)
-
-          } else if ((innerHeight >= 1100 && innerHeight <= 1500) && (innerWidth == 1024)) { // landscape ipad 11
-            console.log('----- ipad 12 inside ---------------')
-
-          } else if ((height >= 1150 && height <= 1450) && (width == 1024)) {
-            console.log('----- ipad 12 inside ---------------')
-            t.style.width = '90%'
-            console.log('landscape ipad 12')
-            $(videoTag).css('margin-left', '0px !impotant')
-            $(t).css('margin-left', '0px')
-            this.setVideo(900, 550)
-
-          } else {
-            $(t).css('margin-left', '0px')
-            //  $(videoTag).css('margin-left', '-140px')
-            let width = window.screen.width
-            // let height = window.screen.height - 200
-            let height = window.screen.height - 60
-
-            // this.setVideo(900, 390)
-            console.warn('big screen')
-            console.log('========', width, height)
-
-            this.setVideo(width, height)
-
+    changeAvatarSize() {
+      console.log('W=>', window.screen.width, 'H=>', window.screen.height)
+      if (this.fullScreen === false) {
+        var t: any = document.querySelector('#sm-video canvas')
+        // console.log('canvas',t)
+        if (t !== null) {
+          t.style.width = '100%';
+          if (window.screen.height === 1440 && window.screen.width === 2560) { // imac 27
+            t.style.height = '900px'
+            //  console.log('dfdfdfdfdfdfdfddf')
+          } else if (window.screen.height == 1180 && window.screen.width == 820) {
+  
+            t.style.height = '580px'
+            // $(t).css('margin-left', '20px')
+          } else if ((window.screen.height == 1194 || window.screen.height == 1091) && (window.screen.width == 834)) {
+  
+            t.style.height = '580px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1133 && window.screen.width == 774) {
+            t.style.height = '590px'
+          } else if (window.screen.height == 1024 && window.screen.width == 768) {
+            t.style.height = '590px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1366 && window.screen.width == 1024) {//ipad 12
+            t.style.height = '660px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1302 && window.screen.width == 1032) {//ipad 13
+            t.style.height = '660px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1138 && window.screen.width == 712) {
+            t.style.height = '600px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 720 && window.screen.width == 540) {
+            t.style.height = '520px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1368 && window.screen.width == 912) {
+            t.style.height = '580px'
+            // $(t).css('margin-left', '20px')
+          } else if (window.screen.height == 1280 && window.screen.width == 800) {
+            t.style.height = '580px'
+            // $(t).css('margin-left', '20px')
           }
-
-
+          else if (window.screen.height == 960 && window.screen.width == 600) {
+            t.style.height = '520px'
+            // $(t).css('margin-left', '20px')
+          }
+          else if (window.screen.height == 960 && window.screen.width == 600) {
+            t.style.height = '520px'
+            // $(t).css('margin-left', '20px')
+  
+          }
+          else if (window.screen.height == 1080 && window.screen.width == 810) {
+            t.style.height = '490px'
+            // $(t).css('margin-left', '20px')
+  
+          }
+          // } else if (innerWidth >= 600 && innerWidth <= 1024) {
+          //   console.log('600 to 1024 size common')
+          //   t.style.height = '520px'
+          // }
+          // else if (window.screen.height < 575) { // landscape Mobile
+          //   t.style.height = '270px'     
+          // }
+          else if (window.innerWidth < 480) {
+            // t.style.height = '440px'
+            t.style.height = '370px'
+            t.style.width = '100%'
+            $('#message').css('width', '')
+            // $(t).css('margin-left', '0px')
+            $('#sidebar').addClass(' sidebar_small')
+  
+          } else if (innerWidth >= 2047) {
+            t.style.height = '900px'
+          } else if (innerWidth >= 3100) {
+            t.style.height = '1300px'
+          }
+  
+  
+          else {
+            t.style.height = '100%'
+          }
         }
-        else if (innerWidth >= 2300) {
-          t.style.width = '90%'
-          console.log("full screen avatar for laptop for 2300")
-          $(t).css('margin-left', '0px')
-          const width = window.screen.width
-          const height = window.screen.height - 200
-          this.setVideo(width, height)
-          console.warn('big screen for 2300')
-
-        }
-
-      }
-
-    } else {
-      // condition for making small screen avatar card
-      console.log('run when in small card view', 'else')
-      var t: any = document.querySelector('#sm-video')
-      var videoTag: any = document.querySelector('#smVideo')
-      // this.setVideo(330, 180)
-      // this.setVideo(600, 300)
-      // setTimeout(()=>{
-      //   this.setVideo(500, 300)
-      // })
-      this.setVideo(600, 400)
-      console.log('small screen run pixel for avavtar')
-      if (window.innerWidth < 480) {
-        if (t !== null) {
-          t.style.width = '80%'
-          // t.style.height = '100%'
-          $(t).css('margin-left', '-60px')
-          $(videoTag).css('margin-left', '0px')
-          videoTag.style.width = '100%'
-          videoTag.style.height = '100%'
-        }
-
       } else {
+        var t: any = document.querySelector('#sm-video canvas')
+        console.log('canvas', 'else consition')
         if (t !== null) {
-
-          // t.style.width = '90%'
-          t.style.width = '70%'
-          $(t).css('margin-left', '-80px')
-          // $(t).css('margin-left', '-39px')
-          $(videoTag).css('margin-left', '0px')
-          videoTag.style.width = '100%'
-          videoTag.style.height = '100%'
+  
+          const screen = localStorage.getItem('screen');
+          if (screen == "TestSeries" || screen == "LearningScreen") {
+            t.style.width = '50%'
+            t.style.height = '150%'
+          } else {
+            t.style.width = '100%'
+            t.style.height = '100%'
+          }
+  
         }
       }
     }
-    // }
-  }
-
-
+  
 
 
   smallcardSetPosition() {
@@ -4279,22 +4256,6 @@ this.bubblewindowOnOff = true
 
 
 
-  // function to open feedback form
-  openFeedback() {
-    if (this.feedback == true) {
-      this.openFeedbackForm = false
-    } else if (this.feedback == false) {
-      this.openFeedbackForm = true
-    }
-    this.feedback = !this.feedback
-  }
-
-
-  // close feedbackForm 
-  closeFeedback(d: any) {
-    this.openFeedbackForm = d
-    this.feedback = false
-  }
 
 
 

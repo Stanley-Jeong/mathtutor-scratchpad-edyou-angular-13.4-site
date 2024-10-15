@@ -347,6 +347,21 @@ export class UserService {
     return this.buttonName
   }
   
+
+  uneeqAvatar(payload: any) {
+   
+   return this.http.post<any>('https://wsj22r4n27.execute-api.us-west-2.amazonaws.com/Development/Uneeq/uneeqToken', payload);
+ // return this.http.post<any>('https://wsj22r4n27.execute-api.us-west-2.amazonaws.com/Production/Uneeq/uneeqToken', payload);
+ 
+  }
+
+  
+  setVariable(payload: any) {
+  
+    return this.http.post<any>('', payload,);
+   // return this.http.post<any>('https://029ye69ycb.execute-api.us-west-2.amazonaws.com/Development/uneeq/setVariable', payload,httpOptions);
+  }
+
    
   
     getTenant(data: any) {
