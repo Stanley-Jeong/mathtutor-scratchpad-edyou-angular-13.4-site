@@ -662,8 +662,9 @@ export class UneeqavatarComponent implements OnInit, AfterViewInit {
       // hannah local
      // conversationId: '9fd11d0e-b63c-4ef0-8de3-2432abc37e2b',
       //  eddie prod
-     conversationId: 'e5b57466-9384-4916-b5f0-5dd5d3f8c19e',
-    
+    // conversationId: 'e5b57466-9384-4916-b5f0-5dd5d3f8c19e',
+     conversationId:'3d7f9919-8ccc-416e-b084-417786ddfcc0',//kanx
+
       avatarVideoContainerElement: v1,
       localVideoContainerElement: v1,
       messageHandler: (msg: any) => this.messageHandler(msg),
