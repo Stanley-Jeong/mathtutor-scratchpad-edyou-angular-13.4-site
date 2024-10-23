@@ -8,29 +8,25 @@
       <h1 class="countdownHeadingTop">Welcome to edYOU</h1>
       <h4 class="countdownHeadingTopSubheading">Personalized, conversational AI tutors to enhance your knowledge across a diverse range of subjects.</h4>
     </div>
-    <div class="right-avatar">
-      <!-- PLACEHOLDER VIDEO -->
-      <!-- <iframe class="iframe-video" src="https://www.youtube.com/embed/WVWF8HZmTWY?si=n2rGcdx9cTimtDpC&amp;controls=0&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-      <div class="video-container">
-        <video controls  #heroVideo autoplay loop playsinline id="hero-video">
-          <source src="https://edyouwebsite.s3.us-west-2.amazonaws.com/edyouVideo/Hannah's+Generic_1.mp4" type="video/mp4">
-        </video>
-        <!-- <video [muted]="'muted'" controls loop autoplay [src]="videoSource"></video> -->
 
-      </div>
-      <div class="left-header">
-       
-        <h4 class="countdownHeadingDownSubheading">For educators. For Students. For life long learners. For You!</h4>
 
+      <!-- Button to open the modal -->
+      <button class="btn btn-primary" (click)="openMathModal()">Open in Modal</button>
+
+      <!-- Modal -->
+      <div class="math-modal" [ngClass]="{'show d-block': showMathModal, 'fade': !showMathModal}">
+        <div class="math-modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="closeMathModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span class="math-modal-title"><strong>Math Tutor Scratchpad</strong></span>
+          <span class="math-modal-title"> </span>
+        </div>
+        <!-- Custom Math Pad component -->
+        <math-tutor-scratch-pad #scratchPad></math-tutor-scratch-pad>
       </div>
-      <a (click)="scrollToId('pricing_section_id')">
-        <button class="pricing-buttonvdo"style="margin-top:2%;display:flex;justify-content:center;align-items:center;">Subscribe Now</button>
-      </a>
-      <!-- <a href="https://hello.edyou.com/" target="_blank"><img src="./assets/avatars/hannah-red.webp"/>
-        <button class="right-avatar-button">Try Course</button>
-      </a> -->
-      <!-- <img src="./assets/edyou-gen-video-placeholder.png" alt="edyou-gen-video-placeholder-image"> -->
-    </div>
+
+
   </div>
 <!-- SC -->
 <!-- <div class="scCard">
@@ -2845,7 +2841,7 @@ data-core-v316-plus="true" style="display: flex;">
       <h1 class="errorTop">You have already subscribed for a package</h1>
       <div class="errorbottom">
         <h5 class="errorbottomText1">For any query, please contact</h5>
-        <h5 class="errorbottomText2">support@edyou.com</h5>
+        <h5 class="errorbottomText2">support&#64;edyou.com</h5>
       </div>
       
     </div>

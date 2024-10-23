@@ -9,10 +9,22 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit, OnDestroy {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('scratchPad') scratchPad!: ElementRef;
+
+
+  showMathModal: boolean = false;
+  openMathModal() {
+    this.showMathModal = true;
+  }
+  closeMathModal() {
+    this.showMathModal = false;
+  }
+
+
   public iteCourses = [
   
     {
@@ -490,20 +502,45 @@ export class MainComponent implements OnInit, OnDestroy {
 
   async ngAfterViewInit() {
 
+    const customElementInstance = this.scratchPad.nativeElement;
+    console.log("customElementInstance: ", customElementInstance);
+
+    // Dynamically load the custom element script as a module
+    import('../../assets/math-tutor-htmlelement-stan/components/math-tutor-scratch-pad.js')
+      .then(() => {
+        console.log('Custom element loaded successfully.');
+      })
+      .catch((error) => {
+        console.error('Error loading custom element script:', error);
+      });
+
+      // Create a link element
+      const linkElement = document.createElement('link');
+          
+      // Set attributes
+      linkElement.rel = 'stylesheet';
+      linkElement.href = '../../assets/math-tutor-htmlelement-stan/math-tutor.css'; // Correct path to the CSS file
+      
+      // Append the link element to the document head
+      document.head.appendChild(linkElement);
+
+      console.log('CSS file loaded successfully');
+
+
     //kanx video changes 
-    const video = this.heroVideo.nativeElement;
+  //   const video = this.heroVideo.nativeElement;
    
-    // Set volume to 0
-    video.volume = 0;
-    video.muted = true;
+  //   // Set volume to 0
+  //   video.volume = 0;
+  //   video.muted = true;
     
-    video.play().catch(error => {
-   //   console.error('Video playback failed:', error);
-    });
-    video.addEventListener('volumechange', () => {
-      this.handleVolumeChange(video);
-    });
-    this.navigateAndReplaceClass();
+  //   video.play().catch(error => {
+  //  //   console.error('Video playback failed:', error);
+  //   });
+  //   video.addEventListener('volumechange', () => {
+  //     this.handleVolumeChange(video);
+  //   });
+  //   this.navigateAndReplaceClass();
     // Autoplay the video by triggering a play event
     
     // if (this.isBrowser) {
@@ -570,6 +607,14 @@ export class MainComponent implements OnInit, OnDestroy {
     this.subscription = interval(1000).subscribe(() => {
       this.updateCountdown();
     }); 
+
+
+
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = '../../src/assets/math-tutor-htmlelement-stan/components/math-tutor-scratch-pad.js';  // Ensure path is correct
+    console.log(script)
+    document.body.appendChild(script);
 
 
     

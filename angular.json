@@ -41,7 +41,6 @@
               "src/assets/js/tour.js",
               "src/assets/js/index.js",
               "src/assets/js/smwebsdk.js",
-            
               "./node_modules/jquery/dist/jquery.min.js",
               "src/assets/scripts/appear.js"
             ]

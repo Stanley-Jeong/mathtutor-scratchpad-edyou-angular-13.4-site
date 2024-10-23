@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -99,6 +99,7 @@ const routerOptions: ExtraOptions = {
       multi: true,
     },
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this line
   bootstrap: [AppComponent]
 })
 export class AppModule {

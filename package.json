@@ -28,6 +28,8 @@
     "@nguniversal/express-engine": "^13.1.1",
     "@sentry/angular-ivy": "^7.114.0",
     "@soulmachines/smwebsdk": "^15.7.0",
+    "@webcomponents/custom-elements": "^1.6.0",
+    "@webcomponents/webcomponentsjs": "^2.8.0",
     "aws-sdk": "^2.1497.0",
     "express": "^4.15.2",
     "jquery": "^3.7.1",
