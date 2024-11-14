@@ -192,6 +192,7 @@ export class InfoTabsContainer extends HTMLElement {
     const infoTitle = document.createElement('h3');
     infoTitle.textContent = sectionName;
     infoTitle.style.textAlign = 'center';
+    infoTitle.classList.add('tabContentTitle');
     infoArea.appendChild(infoTitle);
 
     const horizontalLine = document.createElement('hr');

@@ -96,13 +96,22 @@ export class DrawingPadContainer extends HTMLElement {
     let widthMult = 0.48;
     let heightMult = 0.78;
 
-    // console.log(window.innerHeight);
+    console.log("innerwidth: ", window.innerWidth);
 
     if (window.innerHeight < 767) {
       // widthMult = 0.46;
       heightMult = 0.74;
     }
-    
+
+    if (window.innerWidth < 981 && window.innerHeight > 431) {
+      heightMult = 0.35;
+      widthMult = 0.88;
+    }
+
+    if (window.innerHeight < 431) {
+      widthMult = 0.46;
+    }
+
     canvas.width = window.innerWidth * widthMult;
     canvas.height = window.innerHeight * heightMult;
     
@@ -127,9 +136,12 @@ export class DrawingPadContainer extends HTMLElement {
     this.isEraserActive = false;
     this.currentTool = 'Pen';
     // let penColor = 'black';
+    const defaultColor = '#ffffff';
+    this.colorPicker.value = defaultColor;
     this.penColor = this.colorPicker.value;
     let penSize = 2;
-    let eraserColor = '#f6f6f6';
+    // let eraserColor = '#f6f6f6';
+    let eraserColor = '#4C7596';
     let eraserSize = 20;
     
 

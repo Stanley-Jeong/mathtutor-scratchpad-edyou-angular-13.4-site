@@ -16,11 +16,11 @@
       <!-- Modal -->
       <div class="math-modal" [ngClass]="{'show d-block': showMathModal, 'fade': !showMathModal}">
         <div class="math-modal-header">
-          <button type="button" class="close" aria-label="Close" (click)="closeMathModal()">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <div class="math-modal-header-left-placeholder"> </div>
           <span class="math-modal-title"><strong>Math Tutor Scratchpad</strong></span>
-          <span class="math-modal-title"> </span>
+          <button type="button" class="close" aria-label="Close" (click)="closeMathModal()">
+            <img src="./assets/math-tutor-htmlelement-stan/icons/x-button.png" class="scratchpad-x-button" />
+          </button>
         </div>
         <!-- Custom Math Pad component -->
         <math-tutor-scratch-pad #scratchPad></math-tutor-scratch-pad>
