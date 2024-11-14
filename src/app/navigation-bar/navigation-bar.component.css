@@ -120,23 +120,27 @@ ul {
     /* To show hamburger menu on desktop size as well */
     display: block;
 }
+
 .mobile {
     /* Mobile styles here */
-  }
-  .desktop {
+}
+
+#targetDiv {
+  position: fixed; 
+ top: 0;
+ left: 0;
+  width: auto; 
+ min-height: 0;
+ max-height: 0;
+ overflow-y:scroll;
+ background-color: #F5F5F7;
+ transition: min-height 0.5s ease;
+ transition: max-height 0.5s ease;
+}
+
+.desktop {
     /* Desktop styles here */
-    #targetDiv {
-         position: fixed; 
-        top: 0;
-        left: 0;
-         width: auto; 
-        min-height: 0;
-        max-height: 0;
-        overflow-y:scroll;
-        background-color: #F5F5F7;
-        transition: min-height 0.5s ease;
-        transition: max-height 0.5s ease;
-    }
+
   }
   .targetDivsmall {
     position: fixed;
