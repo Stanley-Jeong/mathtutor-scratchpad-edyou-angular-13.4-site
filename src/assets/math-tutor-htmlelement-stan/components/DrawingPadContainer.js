@@ -136,7 +136,7 @@ export class DrawingPadContainer extends HTMLElement {
     this.isEraserActive = false;
     this.currentTool = 'Pen';
     // let penColor = 'black';
-    const defaultColor = '#ffffff';
+    const defaultColor = '#EEEEEE';
     this.colorPicker.value = defaultColor;
     this.penColor = this.colorPicker.value;
     let penSize = 2;
